@@ -16,7 +16,7 @@ async function integrateDiscovery(source,seed,state,snapshot,options={}){
  for(const field of ['requiresManualReview','blockedUntil','httpStatus'])if(discovery[field]!==undefined)next[field]=discovery[field];
  if(discovery.status==='access_stopped'||next.requiresManualReview){next.status='partial_failure';next.errors=[...(next.errors||[]),'discovery_access_stopped'];}
  let verification=null;
- if(seed.adapter==='cafe24_category_links'&&remaining>0&&!['access_stopped','quarantined','backoff','disabled'].includes(discovery.status)&&!next.requiresManualReview){
+ if(require('./legacy-discovery.cjs').ADAPTERS.has(seed.adapter)&&remaining>0&&!['access_stopped','quarantined','backoff','disabled'].includes(discovery.status)&&!next.requiresManualReview){
   const ids=new Map();for(const item of [...sourceItems(snapshot,source),...(next.products||[])]){try{const key=productKey(item.product_url);if(!ids.has(key))ids.set(key,[]);ids.get(key).push(item);}catch{}}
   const detailLimit=options.coverageLive?Math.min(remaining,20):seed.maxProductVerifications,selection=takeFairCandidates([...pending.values()].filter(eligible),detailLimit,next.detailQueueCursor||0);next.detailQueueCursor=selection.cursor;
   const candidates=selection.candidates.map(p=>{const matches=ids.get(productKey(p.url))||[],unique=[...new Map(matches.map(x=>[x.id,x])).values()];return unique.length===1?{...p,existingId:unique[0].id}:p;});

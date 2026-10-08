@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T15:44:28.122Z",
+  "generatedAt": "2026-10-08T16:03:42.690Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -66,7 +66,7 @@
   "discoveryScope": {
     "mappedSources": 32,
     "observedSeeds": 139,
-    "adapterEnabledSources": 26,
+    "adapterEnabledSources": 30,
     "fullCatalogCoverage": false
   },
   "sources": [
@@ -272,8 +272,8 @@
       "officialUrl": "http://www.greenfish.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 1,
-      "collectorProductCount": 1,
+      "snapshotProductCount": 9,
+      "collectorProductCount": 9,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -282,13 +282,13 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:27:48.899Z",
-      "collectorLastSuccess": "2026-10-08T10:01:34.451Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T15:58:53.973Z",
+      "collectorLastSuccess": "2026-10-08T15:59:08.155Z",
       "collectorLastError": null,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "discovery": {
         "entryPoints": [
@@ -298,33 +298,52 @@
           "http://greenfish.co.kr/shop/shopbrand.html?xcode=005&type=X",
           "http://greenfish.co.kr/shop/shopbrand.html?xcode=013&type=X"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "budget_limited",
+        "adapter": "makeshop_category_links",
         "mappedSeedCount": 5,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 5,
-        "pagesVisited": 0,
-        "detailBudget": 7,
-        "newCandidates": 0,
-        "verifiedItems": 0,
-        "pendingCandidates": 0,
-        "pendingByGroup": {},
+        "pagesVisited": 2,
+        "detailBudget": 8,
+        "newCandidates": 30,
+        "verifiedItems": 8,
+        "pendingCandidates": 22,
+        "pendingByGroup": {
+          "fish": 22
+        },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T15:27:48.941Z",
-        "errors": [],
-        "cursorCategories": []
+        "nextCategoryIndex": 1,
+        "lastAttempt": "2026-10-08T15:58:53.977Z",
+        "errors": [
+          "product_budget_reached:http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X",
+          "page_budget_reached:http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X",
+            "nextUrl": "http://greenfish.co.kr/shop/shopbrand.html?type=X&xcode=002&sort=order&page=2",
+            "expectedProductCount": 470,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X",
+              "http://greenfish.co.kr/shop/shopbrand.html?type=X&xcode=002&sort=order&page=2"
+            ],
+            "headProbePending": false
+          }
+        ]
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
@@ -3104,8 +3123,8 @@
       "officialUrl": "http://www.aquapet.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 1,
-      "collectorProductCount": 1,
+      "snapshotProductCount": 9,
+      "collectorProductCount": 9,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -3114,13 +3133,13 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:27:49.499Z",
-      "collectorLastSuccess": "2026-10-08T10:01:36.713Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T15:59:10.054Z",
+      "collectorLastSuccess": "2026-10-08T15:59:20.271Z",
       "collectorLastError": null,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "discovery": {
         "entryPoints": [
@@ -3130,33 +3149,51 @@
           "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=001",
           "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=013"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "partial_discovery",
+        "adapter": "makeshop_category_links",
         "mappedSeedCount": 5,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 5,
-        "pagesVisited": 0,
-        "detailBudget": 7,
-        "newCandidates": 0,
-        "verifiedItems": 0,
-        "pendingCandidates": 0,
-        "pendingByGroup": {},
+        "pagesVisited": 1,
+        "detailBudget": 8,
+        "newCandidates": 30,
+        "verifiedItems": 8,
+        "pendingCandidates": 22,
+        "pendingByGroup": {
+          "fish": 22
+        },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T15:27:49.537Z",
-        "errors": [],
-        "cursorCategories": []
+        "nextCategoryIndex": 1,
+        "lastAttempt": "2026-10-08T15:59:10.058Z",
+        "errors": [
+          "expected_total_unverified:http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002",
+          "product_budget_reached:http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002",
+            "nextUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002"
+            ],
+            "headProbePending": false
+          }
+        ]
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
@@ -3435,12 +3472,12 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:27:50.032Z",
+      "collectorLastAttempt": "2026-10-08T16:01:20.826Z",
       "collectorLastSuccess": "2026-10-08T09:56:27.273Z",
       "collectorLastError": null,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "discovery": {
         "entryPoints": [
@@ -3449,33 +3486,206 @@
           "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=008",
           "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "partial_discovery",
+        "adapter": "makeshop_category_links",
         "mappedSeedCount": 4,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 4,
-        "pagesVisited": 0,
+        "representativeSeedCount": 1,
+        "pagesVisited": 1,
         "detailBudget": 7,
-        "newCandidates": 0,
+        "newCandidates": 17,
         "verifiedItems": 0,
-        "pendingCandidates": 0,
-        "pendingByGroup": {},
-        "reviewRequired": 0,
-        "reviewReasons": {},
-        "reviewQueue": [],
+        "pendingCandidates": 40,
+        "pendingByGroup": {
+          "mixed": 40
+        },
+        "reviewRequired": 7,
+        "reviewReasons": {
+          "Mixed or unresolved product category requires review": 3,
+          "Feed/artificial plant/supply conflict blocks livestock classification": 4
+        },
+        "reviewQueue": [
+          {
+            "key": "trofish.net:3528134",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528134&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=Zmh3UQ%3D%3D",
+            "title": "SUDO 수도 수초포트(사각) L (S-846)",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528134&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=Zmh3UQ%3D%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          },
+          {
+            "key": "trofish.net:3528133",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528133&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=Zmx3UA%3D%3D",
+            "title": "SUDO 수도 항아리 수초포트 M (S-843)",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528133&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=Zmx3UA%3D%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          },
+          {
+            "key": "trofish.net:3528697",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528697&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=a2t3Uw%3D%3D",
+            "title": "이스타 바바 씨앗수초 미니 헤어 M (2개입)",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528697&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=a2t3Uw%3D%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          },
+          {
+            "key": "trofish.net:3528698",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528698&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=aGt3Ug%3D%3D",
+            "title": "이스타 바바 씨앗수초 미니 헤어 S (1개입)",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528698&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=aGt3Ug%3D%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          },
+          {
+            "key": "trofish.net:3528699",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528699&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bmx7W1g%3D",
+            "title": "이스타 바바 씨앗수초 S (1개입)",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528699&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bmx7W1g%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          },
+          {
+            "key": "trofish.net:3528700",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528700&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bm59W1k%3D",
+            "title": "이스타 바바 씨앗수초 M (2개입)",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528700&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bm59W1k%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          },
+          {
+            "key": "trofish.net:3528349",
+            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528349&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bmx3Vw%3D%3D",
+            "title": "8포인트 모스카펫 S [MC-05] 10개입",
+            "candidate": {
+              "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528349&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bmx3Vw%3D%3D",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+              "discoveredAt": "2026-10-08T15:50:02.762Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T16:01:33.116Z"
+          }
+        ],
         "excludedCandidates": 0,
         "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T15:27:50.137Z",
-        "errors": [],
-        "cursorCategories": []
+        "lastAttempt": "2026-10-08T16:01:20.829Z",
+        "errors": [
+          "expected_total_unverified:https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=006",
+            "nextUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=006",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=006"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 17,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-08T16:01:20.835Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 17,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005"
+            ],
+            "headProbePending": false
+          }
+        ]
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
@@ -3550,8 +3760,8 @@
       "officialUrl": "https://suaqua.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 1,
-      "collectorProductCount": 1,
+      "snapshotProductCount": 9,
+      "collectorProductCount": 9,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -3560,13 +3770,13 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:27:50.735Z",
-      "collectorLastSuccess": "2026-10-08T09:49:46.925Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T15:59:36.714Z",
+      "collectorLastSuccess": "2026-10-08T16:00:27.154Z",
       "collectorLastError": null,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "discovery": {
         "entryPoints": [
@@ -3576,33 +3786,74 @@
           "https://suaqua.co.kr/goods/goods_list.php?cateCd=005",
           "https://suaqua.co.kr/goods/goods_list.php?cateCd=001014"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "success",
+        "adapter": "godo_category_links",
         "mappedSeedCount": 5,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 5,
-        "pagesVisited": 0,
-        "detailBudget": 7,
-        "newCandidates": 0,
-        "verifiedItems": 0,
-        "pendingCandidates": 0,
-        "pendingByGroup": {},
+        "pagesVisited": 2,
+        "detailBudget": 8,
+        "newCandidates": 13,
+        "verifiedItems": 8,
+        "pendingCandidates": 5,
+        "pendingByGroup": {
+          "fish": 5
+        },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T15:27:50.910Z",
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T15:59:36.717Z",
         "errors": [],
-        "cursorCategories": []
+        "cursorCategories": [
+          {
+            "entryUrl": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001001",
+            "nextUrl": null,
+            "expectedProductCount": 13,
+            "cycleSeenProductCount": 13,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-08T15:59:36.725Z",
+              "reportedCount": 13,
+              "observedUniqueLinks": 13,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://suaqua.co.kr/goods/goods_list.php?cateCd=001001"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001013",
+            "nextUrl": null,
+            "expectedProductCount": 0,
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-08T15:59:36.728Z",
+              "reportedCount": 0,
+              "observedUniqueLinks": 0,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://suaqua.co.kr/goods/goods_list.php?cateCd=001013"
+            ],
+            "headProbePending": false
+          }
+        ]
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
@@ -5183,7 +5434,7 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:32:06.651Z",
+      "collectorLastAttempt": "2026-10-08T16:00:30.000Z",
       "collectorLastSuccess": "2026-10-08T09:53:26.801Z",
       "collectorLastError": null,
       "blockers": [
@@ -5210,9 +5461,13 @@
         "knownProductUrlsOnly": true,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
+        "blockers": [
+          "Public category HTML contains shopProductWrapper skeletons without product hrefs or pagination; isolated editorial links do not establish the list. Client-generated listing remains unsupported; no hidden API or robots-denied route requested.",
+          "Reviewed seeds are aquarium supplies; no reviewed live organism category."
+        ],
         "representativeSeedCount": 5,
         "pagesVisited": 0,
-        "detailBudget": 7,
+        "detailBudget": 8,
         "newCandidates": 0,
         "verifiedItems": 0,
         "pendingCandidates": 0,
@@ -5222,7 +5477,7 @@
         "reviewQueue": [],
         "excludedCandidates": 0,
         "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T15:32:06.830Z",
+        "lastAttempt": "2026-10-08T16:00:30.002Z",
         "errors": [],
         "cursorCategories": []
       },

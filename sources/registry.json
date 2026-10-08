@@ -109,8 +109,8 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "publicHttpApproved": true,
       "discovery": {
@@ -121,16 +121,16 @@
           "http://greenfish.co.kr/shop/shopbrand.html?xcode=005&type=X",
           "http://greenfish.co.kr/shop/shopbrand.html?xcode=013&type=X"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "bounded_public_discovery_enabled",
+        "adapter": "makeshop_category_links",
         "mappedSeedCount": 5,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false
       }
@@ -1140,8 +1140,8 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "publicHttpApproved": true,
       "discovery": {
@@ -1152,16 +1152,16 @@
           "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=001",
           "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=013"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "bounded_public_discovery_enabled",
+        "adapter": "makeshop_category_links",
         "mappedSeedCount": 5,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false
       }
@@ -1442,8 +1442,8 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "discovery": {
         "entryPoints": [
@@ -1452,16 +1452,16 @@
           "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=008",
           "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "bounded_public_discovery_enabled",
+        "adapter": "makeshop_category_links",
         "mappedSeedCount": 4,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false
       }
@@ -1558,8 +1558,8 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Known product URLs only; full catalog discovery and pagination are not implemented.",
-        "Scheduled run, data commit and Render deployment not yet verified."
+        "Scheduled run, data commit and Render deployment not yet verified.",
+        "Only reviewed representative categories are connected; full retailer coverage remains unknown."
       ],
       "discovery": {
         "entryPoints": [
@@ -1569,16 +1569,16 @@
           "https://suaqua.co.kr/goods/goods_list.php?cateCd=005",
           "https://suaqua.co.kr/goods/goods_list.php?cateCd=001014"
         ],
-        "status": "adapter_not_implemented",
-        "adapter": "not_implemented",
+        "status": "bounded_public_discovery_enabled",
+        "adapter": "godo_category_links",
         "mappedSeedCount": 5,
         "pageBudget": 2,
         "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false
       }
@@ -2265,7 +2265,11 @@
         "newProductDiscovery": false,
         "knownProductUrlsOnly": true,
         "observationsAreRepresentative": true,
-        "deletionEnabled": false
+        "deletionEnabled": false,
+        "blockers": [
+          "Public category HTML contains shopProductWrapper skeletons without product hrefs or pagination; isolated editorial links do not establish the list. Client-generated listing remains unsupported; no hidden API or robots-denied route requested.",
+          "Reviewed seeds are aquarium supplies; no reviewed live organism category."
+        ]
       }
     },
     {

@@ -35,3 +35,37 @@ test('robots denial, disabled sources and HTTP403 stop without alternate probing
 test('category HTTP404 is failure evidence and never empties the published catalog',async()=>{
  const out=await discoverSource(source,{},transport({}));assert.equal(out.status,'partial_discovery');assert.equal(out.coverage.deletionAllowed,false);assert.ok(out.errors.some(e=>e.startsWith('category_http_404')));
 });
+const legacy=require('../scripts/collector/legacy-discovery.cjs'),fixtures=require('./fixtures/legacy-listings.json');
+test('Greenfish table listing excludes recommended images and preserves the observed next anchor',()=>{
+ const url=fixtures.provenance.greenfish,r=legacy.parseCategoryPage(fixtures.greenfish,url,'http://www.greenfish.co.kr/');assert.equal(r.products.length,1);assert.ok(r.products[0].includes('branduid=1522'));assert.equal(r.expectedTotal,470);assert.equal(r.nextPage,'http://greenfish.co.kr/shop/shopbrand.html?type=X&xcode=002&sort=order&page=2');assert.equal(r.terminal,false);
+});
+test('Aquapet primary list excludes best recommendations and accepts observed type M to X paging',()=>{
+ const url=fixtures.provenance.aquapet,r=legacy.parseCategoryPage(fixtures.aquapet,url,'http://www.aquapet.co.kr/');assert.equal(r.products.length,1);assert.ok(r.products[0].includes('branduid=3310'));assert.equal(r.expectedTotal,null);assert.equal(require('../scripts/collector/discovery.cjs').categoryKey(r.nextPage),require('../scripts/collector/discovery.cjs').categoryKey(url));
+});
+test('Trofish terminal primary list excludes specials without inventing a category total',()=>{
+ const r=legacy.parseCategoryPage(fixtures.trofish,fixtures.provenance.trofish,'https://trofish.net/');assert.equal(r.products.length,1);assert.ok(r.products[0].includes('3528134'));assert.equal(r.expectedTotal,null);assert.equal(r.terminal,true);
+});
+test('Godo list extracts goodsNo, visible total and actual terminal pager',()=>{
+ const r=legacy.parseCategoryPage(fixtures.suaqua,fixtures.provenance.suaqua,'https://suaqua.co.kr/');assert.equal(r.products.length,2);assert.equal(r.expectedTotal,13);assert.equal(r.terminal,true);assert.equal(r.nextPage,null);
+});
+test('Legacy pagination rejects credentials, external hosts, category changes, gaps and unobserved routes',()=>{
+ const url=fixtures.provenance.aquapet,h=fixtures.aquapet.replace('page=2','page=3')+"<div class='paging'><a href='http://other.invalid/shop/shopbrand.html?xcode=002&page=2'>2</a><a href='?xcode=003&page=2'>2</a></div>";assert.ok(legacy.parseCategoryPage(h,url,'http://www.aquapet.co.kr/').issues.includes('pagination_gap'));assert.equal(legacy.categoryUrl('http://user:password@www.aquapet.co.kr/shop/shopbrand.html?xcode=002',url,url),null);assert.equal(legacy.categoryUrl('?xcode=002&action=delete',url,url),null);assert.equal(legacy.categoryUrl('http://suaqua.co.kr/goods/goods_list.php?cateCd=001001',fixtures.provenance.suaqua,'https://suaqua.co.kr/'),null);
+});
+test('Legacy daily cursor resumes the actual next URL without declaring complete retailer coverage',async()=>{
+ const {discoverDaily}=require('../scripts/collector/daily-discovery.cjs'),url=fixtures.provenance.greenfish,config={id:'fixture',adapter:'makeshop_category_links',maxPages:1,maxProducts:30,maxProductVerifications:3,probeFirstPage:false,categories:[{url,type:'live',subtype:'fish'}]},cfg={...source,officialURL:'http://greenfish.co.kr/',publicHttpApproved:true,cacheTtlMs:0,delayMs:0},calls=[];
+ const t={fetch:async u=>{calls.push(u);return new Response(u.endsWith('robots.txt')?'User-agent: *\nAllow: /':fixtures.greenfish.replace('branduid=1522',u.includes('page=2')?'branduid=183':'branduid=1522'));},sleep:async()=>{}};
+ const a=await discoverDaily(cfg,config,{},t),b=await discoverDaily(cfg,config,a,t);assert.ok(calls.some(u=>u.includes('page=2')));assert.ok(b.products[0].url.includes('branduid=183'));assert.equal(b.coverage.coverageComplete,false);assert.equal(b.coverage.deletionAllowed,false);
+});
+test('Legacy discovery obeys robots and quarantines HTTP403 before any alternate request',async()=>{
+ const {discoverDaily}=require('../scripts/collector/daily-discovery.cjs'),url=fixtures.provenance.aquapet,seed={adapter:'makeshop_category_links',maxPages:1,maxProducts:3,categories:[{url,type:'live',subtype:'fish'}]},cfg={...source,officialURL:'http://www.aquapet.co.kr/',publicHttpApproved:true,delayMs:0};let calls=0;
+ const denied=await discoverDaily(cfg,seed,{}, {fetch:async()=>{calls++;return new Response('User-agent: *\nDisallow: /shop/');}});assert.equal(calls,1);assert.equal(denied.products.length,0);
+ const stopped=await discoverDaily(cfg,seed,{}, {fetch:async u=>new Response(u.endsWith('robots.txt')?'User-agent: *\nAllow: /':'denied',{status:u.endsWith('robots.txt')?200:403}),sleep:async()=>{}});assert.equal(stopped.requiresManualReview,true);const again=await discoverDaily(cfg,seed,stopped,{fetch:()=>{throw Error('no retry');}});assert.equal(again.status,'quarantined');
+});
+test('Godo discovered details require corroborated price and matching goods identity, with no inferred stock',async()=>{
+ const {verifyDiscovered}=require('../scripts/collector/verify-discovered.cjs'),cfg={...source,adapter:'godo_public_price',officialURL:'https://suaqua.co.kr/',sourceDomain:'suaqua.co.kr',photosAllowed:true,delayMs:0},url='https://suaqua.co.kr/goods/goods_view.php?goodsNo=1000009710',candidate={url,type:'live',subtype:'fish',mixedCategories:false},seed={maxProductVerifications:1,categories:[]};
+ const run=html=>verifyDiscovered(cfg,seed,[candidate],{}, {fetch:async u=>new Response(u.endsWith('/robots.txt')?'User-agent: *\nAllow: /':html),sleep:async()=>{}}),good=await run(fixtures.suaquaDetail);assert.equal(good.products.length,1);assert.equal(good.products[0].subtype,'fish');assert.equal(good.products[0].price_amount,7500);assert.equal(good.products[0].stock_quantity,null);assert.equal(good.products[0].registered_at,null);assert.ok(good.products[0].photo.verified_https_url);
+ for(const html of [fixtures.suaquaDetail.replace("value='7500'","value='6500'"),fixtures.suaquaDetail.replace("name='goodsNo[]' value='1000009710'","name='goodsNo[]' value='999'")])assert.equal((await run(html)).products.length,0);
+});
+test('Dynamic Sixshop skeletons never become discovered products or fake pagination',()=>{
+ const r=legacy.parseCategoryPage("<div class='shopProductWrapper skeleton'><a>가격</a></div><a href='/product/untitled-146'>별도 안내</a>",'https://ssadagun.com/untitled-3','https://ssadagun.com/');assert.equal(r.products.length,0);assert.equal(r.terminal,false);assert.ok(r.issues.includes('product_list_not_found'));
+});

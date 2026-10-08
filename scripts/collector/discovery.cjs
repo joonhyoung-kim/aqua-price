@@ -1,25 +1,26 @@
 'use strict';
-// Independent discovery experiment. The deployed collector does not call this module.
+// Shared public-category scanning and URL identity helpers.
 const {request,robotsAllows}=require('./engine.cjs');
 const VOID=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
 const decode=s=>String(s||'').replace(/&(?:amp|quot|apos|lt|gt|#(\d+)|#x([\da-f]+));/gi,(all,n,h)=>n||h?String.fromCodePoint(Math.min(0x10ffff,parseInt(n||h,h?16:10))):({'&amp;':'&','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>'})[all.toLowerCase()]||all);
 function attributes(tag){const result={};for(const m of tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g))result[m[1].toLowerCase()]=decode(m[2]??m[3]??m[4]);return result;}
 function sameHost(a,b){try{return new URL(a).hostname.replace(/^www\./,'')===new URL(b).hostname.replace(/^www\./,'');}catch{return false;}}
 function safeUrl(href,base,official){try{const url=new URL(decode(href),base);if(url.protocol!=='https:'||url.username||url.password||!sameHost(url.href,official))return null;url.hash='';return url;}catch{return null;}}
-function categoryKey(value){const u=new URL(value);const route=u.pathname.match(/^\/category\/[^/]+\/(\d+)\/?$/);if(route)return u.hostname.replace(/^www\./,'')+':'+route[1];if(/^\/product\/list(?:\d+_\d+)?\.html$/.test(u.pathname)&&/^\d+$/.test(u.searchParams.get('cate_no')||''))return u.hostname.replace(/^www\./,'')+':'+u.searchParams.get('cate_no');return null;}
+function categoryKey(value){const u=new URL(value),host=u.hostname.replace(/^www\./,'');if(u.pathname==='/shop/shopbrand.html'&&/^\d+$/.test(u.searchParams.get('xcode')||''))return host+':makeshop:'+['xcode','mcode','scode'].map(k=>u.searchParams.get(k)||'').join(':');if(u.pathname==='/goods/goods_list.php'&&/^\d+$/.test(u.searchParams.get('cateCd')||''))return host+':godo:'+u.searchParams.get('cateCd');const route=u.pathname.match(/^\/category\/[^/]+\/(\d+)\/?$/);if(route)return host+':'+route[1];if(/^\/product\/list(?:\d+_\d+)?\.html$/.test(u.pathname)&&/^\d+$/.test(u.searchParams.get('cate_no')||''))return host+':'+u.searchParams.get('cate_no');return null;}
 function categoryUrl(href,base,official){const u=safeUrl(href,base,official);if(!u||!categoryKey(u.href))return null;const p=u.searchParams.get('page');u.search='';if(/^\/product\/list(?:\d+_\d+)?\.html$/.test(u.pathname))u.searchParams.set('cate_no',new URL(decode(href),base).searchParams.get('cate_no'));if(p&&/^\d+$/.test(p)&&Number(p)>1)u.searchParams.set('page',String(Number(p)));return u.href;}
 function nextCategoryUrl(href,base,official){const u=safeUrl(href,base,official);if(!u||!categoryKey(u.href)||[...u.searchParams.keys()].some(k=>!['cate_no','page','sort_method'].includes(k)))return null;return u.href;}
 function productUrl(href,base,official){const u=safeUrl(href,base,official);if(!u)return null;if(/^\/product\/[^/]+\/\d+\/(?:category\/.*)?$/.test(u.pathname))return u.href;const id=u.searchParams.get('product_no');if(u.pathname==='/product/detail.html'&&/^\d+$/.test(id||''))return u.href;return null;}
 function productKey(value){const u=new URL(value);return u.hostname.replace(/^www\./,'')+':'+(u.pathname.match(/^\/product\/[^/]+\/(\d+)\//)?.[1]||u.searchParams.get('product_no')||u.searchParams.get('goodsNo')||u.searchParams.get('branduid')||u.pathname.replace(/\/$/,''));}
-function scanHtml(html){
+function scanHtml(html,profile={}){
  const input=String(html).replace(/<!--[\s\S]*?-->|<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,'');const stack=[],links=[],counts=[];let paginationFound=false,listFound=false;
  for(const token of input.match(/<[^>]+>|[^<]+/g)||[]){
   if(!token.startsWith('<')){for(const f of stack)if(f.capture)f.text+=decode(token);continue;}
   const close=token.match(/^<\/([\w-]+)/);if(close){const at=stack.findLastIndex(f=>f.tag===close[1].toLowerCase());if(at>=0){for(const f of stack.splice(at))if(f.count)counts.push(f.text.trim());}continue;}
   const start=token.match(/^<([\w-]+)/);if(!start)continue;const tag=start[1].toLowerCase(),a=attributes(token),classes=(a.class||'').split(/\s+/);
-  const list=classes.some(c=>c==='prdList'||c==='xans-product-listnormal'),pager=classes.some(c=>['paginate','pagination','xans-product-normalpaging'].includes(c)),count=classes.includes('prdCount');listFound||=list;paginationFound||=pager;
-  const f={tag,list,pager,count,text:'',capture:tag==='a'||count};
-  if((tag==='a'||tag==='link')&&a.href){f.href=a.href;f.rel=a.rel||'';f.inList=list||stack.some(s=>s.list);f.inPager=pager||stack.some(s=>s.pager);links.push(f);}
+  const list=classes.some(c=>(profile.listClasses||['prdList','xans-product-listnormal']).includes(c)),pager=classes.some(c=>(profile.pagerClasses||['paginate','pagination','xans-product-normalpaging']).includes(c)),count=classes.some(c=>(profile.countClasses||['prdCount']).includes(c)),blocked=classes.some(c=>(profile.blockClasses||[]).includes(c));listFound||=list;paginationFound||=pager;
+  const f={tag,list,pager,count,blocked,text:'',capture:tag==='a'||count};
+  if(tag==='img'&&classes.some(c=>(profile.productImageClasses||[]).includes(c))){const anchor=stack.findLast(s=>s.tag==='a'&&s.href);if(anchor&&!stack.some(s=>s.blocked)){anchor.inList=true;listFound=true;}}
+  if((tag==='a'||tag==='link')&&a.href){f.href=a.href;f.rel=a.rel||'';f.inList=(list||stack.some(s=>s.list))&&!blocked&&!stack.some(s=>s.blocked);f.inPager=pager||stack.some(s=>s.pager);links.push(f);}
   if(!VOID.has(tag)&&!token.endsWith('/>'))stack.push(f);
  }
  for(const f of stack)if(f.count)counts.push(f.text.trim());return {links,counts,paginationFound,listFound};

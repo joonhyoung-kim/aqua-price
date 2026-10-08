@@ -1,11 +1,12 @@
 'use strict';
-const {categoryUrl,categoryKey,productKey,parseCategoryPage}=require('./discovery.cjs');const {request,robotsAllows}=require('./engine.cjs');
+const {categoryKey,productKey}=require('./discovery.cjs');const {request,robotsAllows}=require('./engine.cjs');
 async function discoverDaily(source,seed,previous={},options={}){
+ const legacy=require('./legacy-discovery.cjs'),routes=seed.adapter==='cafe24_category_links'?require('./discovery.cjs'):legacy,{categoryUrl,parseCategoryPage}=routes;
  const now=options.now||Date.now,prior=structuredClone(previous),cursor=prior.cursor?.schemaVersion===1?structuredClone(prior.cursor):{schemaVersion:1,nextCategoryIndex:0,categories:{}};
  const run={now,deadline:options.deadline,fetch:options.fetch||fetch,sleep:options.sleep||((ms)=>new Promise(r=>setTimeout(r,ms))),requests:0,lastRequest:prior.lastRequestAt??null};const limits={delayMs:2000,cacheTtlMs:10800000,timeoutMs:15000,maxBytes:2000000,maxRequests:10,...source};
  const out={sourceId:source.id,status:'pending',lastAttempt:new Date(now()).toISOString(),cursor,categories:[],products:[],requests:0,errors:[],coverage:{kind:'representative_category_seeds',coverageComplete:false,deletionAllowed:false,pageBudget:seed.maxPages,productBudget:seed.maxProducts,pagesVisited:0,representativeSeedCount:seed.categories.length},cache:prior.cache||{}};const found=new Map();const known=new Set(options.knownProductKeys||[]);
  const finish=status=>({...out,status,products:[...found.values()],requests:run.requests,lastRequestAt:run.lastRequest,cache:prior.cache||{}});
- if(!source.enabled||source.technicalReadiness==='blocked')return finish('disabled');if(prior.requiresManualReview)return finish('quarantined');if(prior.blockedUntil&&now()<Date.parse(prior.blockedUntil))return finish('backoff');if(seed.adapter!=='cafe24_category_links')return finish('adapter_not_implemented');
+ if(!source.enabled||source.technicalReadiness==='blocked')return finish('disabled');if(prior.requiresManualReview)return finish('quarantined');if(prior.blockedUntil&&now()<Date.parse(prior.blockedUntil))return finish('backoff');if(!legacy.ADAPTERS.has(seed.adapter))return finish('adapter_not_implemented');
  if(!Number.isSafeInteger(seed.maxPages)||seed.maxPages<1||seed.maxPages>10||!Number.isSafeInteger(seed.maxProducts)||seed.maxProducts<1||seed.maxProducts>100)throw Error('Invalid daily discovery budget');
  const entries=seed.categories.filter(c=>!c.excluded);if(!entries.length)return finish('no_reviewed_categories');
  try{

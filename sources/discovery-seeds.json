@@ -36,7 +36,7 @@
       "id": "retailer-02",
       "sourceDomain": "greenfish.co.kr",
       "platform": "MakeShop",
-      "adapter": "not_implemented",
+      "adapter": "makeshop_category_links",
       "maxPages": 2,
       "maxPagesPerCategory": 1,
       "maxProducts": 30,
@@ -104,7 +104,11 @@
           "reviewBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
           "caution": "Excluded terrestrial/ornamental category; not an aquatic-livestock seed"
         }
-      ]
+      ],
+      "adapterEvidence": {
+        "checkedAt": "2026-10-08T15:50:15.297Z",
+        "method": "Observed primary public listing containers and actual pagination anchors; representative scope only"
+      }
     },
     {
       "id": "retailer-04",
@@ -1162,7 +1166,7 @@
       "id": "retailer-22",
       "sourceDomain": "aquapet.co.kr",
       "platform": "MakeShop",
-      "adapter": "not_implemented",
+      "adapter": "makeshop_category_links",
       "maxPages": 2,
       "maxPagesPerCategory": 1,
       "maxProducts": 30,
@@ -1230,7 +1234,11 @@
           "reviewBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
           "caution": null
         }
-      ]
+      ],
+      "adapterEvidence": {
+        "checkedAt": "2026-10-08T15:50:15.297Z",
+        "method": "Observed primary public listing containers and actual pagination anchors; representative scope only"
+      }
     },
     {
       "id": "retailer-23",
@@ -1384,7 +1392,7 @@
       "id": "retailer-29",
       "sourceDomain": "trofish.net",
       "platform": "MakeShop",
-      "adapter": "not_implemented",
+      "adapter": "makeshop_category_links",
       "maxPages": 2,
       "maxPagesPerCategory": 1,
       "maxProducts": 30,
@@ -1440,13 +1448,17 @@
           "reviewBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
           "caution": "Do not infer animal/plant subtype; verify product detail and exclude live food, supplies, terrestrial animals and artificial plants"
         }
-      ]
+      ],
+      "adapterEvidence": {
+        "checkedAt": "2026-10-08T15:50:15.297Z",
+        "method": "Observed primary public listing containers and actual pagination anchors; representative scope only"
+      }
     },
     {
       "id": "retailer-32",
       "sourceDomain": "suaqua.co.kr",
       "platform": "Godo",
-      "adapter": "not_implemented",
+      "adapter": "godo_category_links",
       "maxPages": 2,
       "maxPagesPerCategory": 1,
       "maxProducts": 30,
@@ -1514,7 +1526,11 @@
           "reviewBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
           "caution": null
         }
-      ]
+      ],
+      "adapterEvidence": {
+        "checkedAt": "2026-10-08T15:50:15.297Z",
+        "method": "Observed primary public listing containers and actual pagination anchors; representative scope only"
+      }
     },
     {
       "id": "retailer-33",
@@ -2120,6 +2136,10 @@
           "reviewBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
           "caution": null
         }
+      ],
+      "blockers": [
+        "Public category HTML contains shopProductWrapper skeletons without product hrefs or pagination; isolated editorial links do not establish the list. Client-generated listing remains unsupported; no hidden API or robots-denied route requested.",
+        "Reviewed seeds are aquarium supplies; no reviewed live organism category."
       ]
     }
   ]

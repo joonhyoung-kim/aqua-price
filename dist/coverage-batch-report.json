@@ -1,0 +1,4069 @@
+{
+  "schemaVersion": 1,
+  "batchId": "coverage-batch-1791488797644",
+  "startedAt": "2026-10-08T19:46:37.644Z",
+  "deadline": "2026-10-08T20:18:37.644Z",
+  "limits": {
+    "rounds": 3,
+    "minutes": 32,
+    "roundRequests": 60,
+    "totalRequests": 180
+  },
+  "before": {
+    "products": 808,
+    "unvisited": 700,
+    "terminalCategories": 29,
+    "pending": 940,
+    "review": 159
+  },
+  "sourceVisits": {
+    "retailer-33": 1,
+    "retailer-37": 1,
+    "retailer-50": 1,
+    "retailer-34": 1,
+    "retailer-23": 1,
+    "retailer-01": 1,
+    "retailer-40": 1,
+    "retailer-17": 1,
+    "retailer-42": 1,
+    "retailer-22": 1,
+    "retailer-07": 1,
+    "retailer-36": 1,
+    "retailer-38": 1,
+    "retailer-12": 1,
+    "retailer-49": 1
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-08T19:46:37.648Z",
+      "before": {
+        "products": 808,
+        "unvisited": 700,
+        "terminalCategories": 29,
+        "pending": 940,
+        "review": 159
+      },
+      "plan": [
+        {
+          "id": "retailer-33",
+          "name": "셀바스",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 0,
+          "unvisited": 2
+        },
+        {
+          "id": "retailer-37",
+          "name": "미미네아쿠아",
+          "mode": "drain",
+          "maxRequests": 12,
+          "eligiblePending": 16,
+          "unvisited": 30
+        },
+        {
+          "id": "retailer-50",
+          "name": "힐링아쿠아",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 22,
+          "unvisited": 48
+        },
+        {
+          "id": "retailer-34",
+          "name": "청룡아쿠아",
+          "mode": "drain",
+          "maxRequests": 12,
+          "eligiblePending": 24,
+          "unvisited": 0
+        },
+        {
+          "id": "retailer-23",
+          "name": "에이투비",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 10,
+          "unvisited": 40
+        }
+      ],
+      "sources": [
+        {
+          "id": "retailer-33",
+          "name": "셀바스",
+          "mode": "explore",
+          "startedAt": "2026-10-08T19:46:37.653Z",
+          "finishedAt": "2026-10-08T19:46:58.656Z",
+          "requestLimit": 12,
+          "requests": 3,
+          "before": 6,
+          "after": 6,
+          "pendingBefore": 0,
+          "pendingAfter": 2,
+          "newCandidates": 2,
+          "verifiedOffers": 0,
+          "pagesVisited": 2,
+          "detailBudget": 9,
+          "status": "budget_limited",
+          "errors": [],
+          "tree": {
+            "discoveredCategoryCount": 175,
+            "allowedCategoryCount": 2,
+            "excludedCategoryCount": 94,
+            "reviewCategoryCount": 79,
+            "pagesVisited": 4,
+            "pendingCategoryCount": 2,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://selvas.co.kr/category/%EC%88%98%EC%B4%88%EC%86%8C%EC%9D%BC/371/",
+                "nextPageUrl": "https://selvas.co.kr/category/%EC%88%98%EC%B4%88%EC%86%8C%EC%9D%BC/371/"
+              },
+              {
+                "categoryUrl": "https://selvas.co.kr/category/%EC%B9%98%EB%A3%8C%EC%A0%9C%EB%8B%AC%ED%8C%BD%EC%9D%B4%EC%A0%9C%EA%B1%B0/390/",
+                "nextPageUrl": "https://selvas.co.kr/category/%EC%B9%98%EB%A3%8C%EC%A0%9C%EB%8B%AC%ED%8C%BD%EC%9D%B4%EC%A0%9C%EA%B1%B0/390/"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 6,
+            "pendingProductCount": 2,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-37",
+          "name": "미미네아쿠아",
+          "mode": "drain",
+          "startedAt": "2026-10-08T19:46:59.724Z",
+          "finishedAt": "2026-10-08T19:48:50.169Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 17,
+          "after": 27,
+          "pendingBefore": 16,
+          "pendingAfter": 6,
+          "newCandidates": 0,
+          "verifiedOffers": 10,
+          "pagesVisited": 0,
+          "detailBudget": 12,
+          "status": "budget_limited",
+          "errors": [
+            "request_budget_reached"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 208,
+            "allowedCategoryCount": 32,
+            "excludedCategoryCount": 127,
+            "reviewCategoryCount": 49,
+            "pagesVisited": 2,
+            "pendingCategoryCount": 31,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/217/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/217/?page=2"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/385/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/385/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/382/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/382/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC/379/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC/379/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/215/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/215/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EA%B4%80%EC%83%81%EC%96%B4/216/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EA%B4%80%EC%83%81%EC%96%B4/216/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/402/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/402/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%82%9C%ED%83%9C%EC%83%9D%EB%82%9C%EC%83%9D%EC%86%A1%EC%82%AC%EB%A6%AC/378/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%82%9C%ED%83%9C%EC%83%9D%EB%82%9C%EC%83%9D%EC%86%A1%EC%82%AC%EB%A6%AC/378/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%9E%89%EC%96%B4%EA%B3%BC%ED%82%AC%EB%A6%AC%ED%94%BC%EC%89%AC/384/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%9E%89%EC%96%B4%EA%B3%BC%ED%82%AC%EB%A6%AC%ED%94%BC%EC%89%AC/384/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EA%B8%B0%EC%88%98%EC%96%B4%EB%B3%B5%EC%96%B4/386/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EA%B8%B0%EC%88%98%EC%96%B4%EB%B3%B5%EC%96%B4/386/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EA%B5%AC%ED%94%BC/377/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EA%B5%AC%ED%94%BC/377/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%9C%A1%EC%8B%9D%EC%96%B4/383/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%9C%A1%EC%8B%9D%EC%96%B4/383/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%83%88%EC%9A%B0/387/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%83%88%EC%9A%B0/387/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EA%B0%80%EC%9E%AC/388/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EA%B0%80%EC%9E%AC/388/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%ED%81%AC%EB%9E%A9%EC%86%8C%EB%9D%BC%EA%B2%8C/389/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%ED%81%AC%EB%9E%A9%EC%86%8C%EB%9D%BC%EA%B2%8C/389/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%8A%A4%EB%84%A4%EC%9D%BC%EA%B8%B0%ED%83%80%EC%83%9D%EB%AC%BC/391/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%8A%A4%EB%84%A4%EC%9D%BC%EA%B8%B0%ED%83%80%EC%83%9D%EB%AC%BC/391/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%A0%84%EA%B2%BD%EC%88%98%EC%B4%88/393/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%A0%84%EA%B2%BD%EC%88%98%EC%B4%88/393/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%A4%91%ED%9B%84%EA%B2%BD%EC%88%98%EC%B4%88/394/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%A4%91%ED%9B%84%EA%B2%BD%EC%88%98%EC%B4%88/394/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%AA%A8%EC%8A%A4/395/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%AA%A8%EC%8A%A4/395/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%ED%8F%AC%ED%8A%B8%EC%9D%8C%EC%84%B1%ED%99%9C%EC%B0%A9%EC%88%98%EC%B4%88/396/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%ED%8F%AC%ED%8A%B8%EC%9D%8C%EC%84%B1%ED%99%9C%EC%B0%A9%EC%88%98%EC%B4%88/396/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%B6%80%EC%83%81%EC%88%98%EC%B4%88/397/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%B6%80%EC%83%81%EC%88%98%EC%B4%88/397/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%AA%A8%EC%8A%A4%EB%B3%BC%EB%A7%88%EB%A6%AC%EB%AA%A8/398/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%AA%A8%EC%8A%A4%EB%B3%BC%EB%A7%88%EB%A6%AC%EB%AA%A8/398/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%AC%B4%EA%B7%A0%EB%B0%B0%EC%96%91%EC%88%98%EC%B4%88/399/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%AC%B4%EA%B7%A0%EB%B0%B0%EC%96%91%EC%88%98%EC%B4%88/399/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%8C%80%EB%A7%8C%EC%A7%81%EC%88%98%EC%9E%85%EC%88%98%EC%B4%88/400/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%8C%80%EB%A7%8C%EC%A7%81%EC%88%98%EC%9E%85%EC%88%98%EC%B4%88/400/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A4%91%EC%97%BD-%EC%88%98%EC%B4%88/456/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A4%91%EC%97%BD-%EC%88%98%EC%B4%88/456/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%AC%B4%EA%B2%B0%EC%A0%90%EC%88%98%EC%B4%88/401/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%AC%B4%EA%B2%B0%EC%A0%90%EC%88%98%EC%B4%88/401/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/482/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/482/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%EB%AC%B4%EA%B7%A0%EC%88%98%EC%B4%88/483/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%EB%AC%B4%EA%B7%A0%EC%88%98%EC%B4%88/483/"
+              },
+              {
+                "categoryUrl": "https://mimineaqua.co.kr/category/%ED%8F%AC%ED%8A%B8%EC%9D%8C%EC%84%B1%ED%99%9C%EC%B0%A9%EC%88%98%EC%B4%88/484/",
+                "nextPageUrl": "https://mimineaqua.co.kr/category/%ED%8F%AC%ED%8A%B8%EC%9D%8C%EC%84%B1%ED%99%9C%EC%B0%A9%EC%88%98%EC%B4%88/484/"
+              }
+            ],
+            "terminalCategoryCount": 1,
+            "verifiedProductCount": 27,
+            "pendingProductCount": 6,
+            "reviewProductCount": 1,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-50",
+          "name": "힐링아쿠아",
+          "mode": "explore",
+          "startedAt": "2026-10-08T19:48:51.396Z",
+          "finishedAt": "2026-10-08T19:50:41.842Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 8,
+          "after": 17,
+          "pendingBefore": 22,
+          "pendingAfter": 22,
+          "newCandidates": 9,
+          "verifiedOffers": 9,
+          "pagesVisited": 2,
+          "detailBudget": 9,
+          "status": "partial_discovery",
+          "errors": [
+            "expected_total_unverified:https://healingaqua.co.kr/product/list.html?cate_no=712",
+            "product_list_not_found:https://healingaqua.co.kr/product/list.html?cate_no=739",
+            "pagination_terminal_unverified:https://healingaqua.co.kr/product/list.html?cate_no=739",
+            "expected_total_unverified:https://healingaqua.co.kr/product/list.html?cate_no=739",
+            "page_budget_reached:https://healingaqua.co.kr/product/list.html?cate_no=739"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 118,
+            "allowedCategoryCount": 49,
+            "excludedCategoryCount": 3,
+            "reviewCategoryCount": 66,
+            "pagesVisited": 3,
+            "pendingCategoryCount": 48,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=238"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=739",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=739"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=245",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=245"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=244",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=244"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=345",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=345"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=346",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=346"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=738",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=738"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=724",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=724"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=352",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=352"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=831",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=831"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=833",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=833"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=832",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=832"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=835",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=835"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=836",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=836"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=250",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=250"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=746",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=746"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=247",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=247"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=349",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=349"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=248",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=248"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=727",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=727"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=741",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=741"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=246",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=246"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=718",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=718"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=731",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=731"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=343",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=343"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=703",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=703"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=737",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=737"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=725",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=725"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=344",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=344"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=351",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=351"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=353",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=353"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=354",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=354"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=742",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=742"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=744",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=744"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=834",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=834"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=837",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=837"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=743",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=743"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=745",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=745"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=747",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=747"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=348",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=348"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=713",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=713"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=355",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=355"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=740",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=740"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=302",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=302"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=726",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=726"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=732",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=732"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=774",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=774"
+              },
+              {
+                "categoryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=656",
+                "nextPageUrl": "https://healingaqua.co.kr/product/list.html?cate_no=656"
+              }
+            ],
+            "terminalCategoryCount": 1,
+            "verifiedProductCount": 17,
+            "pendingProductCount": 22,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-34",
+          "name": "청룡아쿠아",
+          "mode": "drain",
+          "startedAt": "2026-10-08T19:51:01.095Z",
+          "finishedAt": "2026-10-08T19:52:51.670Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 1,
+          "after": 1,
+          "pendingBefore": 24,
+          "pendingAfter": 18,
+          "newCandidates": 0,
+          "verifiedOffers": 0,
+          "pagesVisited": 0,
+          "detailBudget": 12,
+          "status": "budget_limited",
+          "errors": [
+            "request_budget_reached"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 14,
+            "allowedCategoryCount": 1,
+            "excludedCategoryCount": 5,
+            "reviewCategoryCount": 8,
+            "pagesVisited": 1,
+            "pendingCategoryCount": 1,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://bluedragonaqua.com/product/list.html?cate_no=197",
+                "nextPageUrl": "https://bluedragonaqua.com/product/list.html?cate_no=197"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 1,
+            "pendingProductCount": 18,
+            "reviewProductCount": 16,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-23",
+          "name": "에이투비",
+          "mode": "explore",
+          "startedAt": "2026-10-08T19:52:52.774Z",
+          "finishedAt": "2026-10-08T19:54:43.208Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 25,
+          "after": 34,
+          "pendingBefore": 11,
+          "pendingAfter": 32,
+          "newCandidates": 30,
+          "verifiedOffers": 9,
+          "pagesVisited": 1,
+          "detailBudget": 10,
+          "status": "partial_discovery",
+          "errors": [
+            "expected_total_unverified:https://a2be.net/product/list.html?cate_no=751",
+            "product_budget_reached:https://a2be.net/product/list.html?cate_no=751",
+            "detail_parse_failed:https://a2be.net/product/detail.html?product_no=15526&cate_no=751&display_group=1"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 60,
+            "allowedCategoryCount": 41,
+            "excludedCategoryCount": 8,
+            "reviewCategoryCount": 11,
+            "pagesVisited": 2,
+            "pendingCategoryCount": 41,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=748",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=748"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=589",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=589"
+              },
+              {
+                "categoryUrl": "https://a2be.net/category/%EC%88%98%EC%B4%88/197/",
+                "nextPageUrl": "https://a2be.net/category/%EC%88%98%EC%B4%88/197/"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=1017",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=1017"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=751",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=751"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=928",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=928"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=924",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=924"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=925",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=925"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=762",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=762"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=753"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=881",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=881"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=38",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=38"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=763",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=763"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=755",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=755"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=754",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=754"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=758",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=758"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=629",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=629"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=759",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=759"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=760",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=760"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=757",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=757"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=930",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=930"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=750",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=750"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=895",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=895"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=633",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=633"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=635",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=635"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=631",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=631"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=634",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=634"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=719",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=719"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=944",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=944"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=721",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=721"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=722",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=722"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=632",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=632"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=735",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=735"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=24",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=24"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=41",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=41"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=40",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=40"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=42",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=42"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=39",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=39"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=926",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=926"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=764",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=764"
+              },
+              {
+                "categoryUrl": "https://a2be.net/product/list.html?cate_no=918",
+                "nextPageUrl": "https://a2be.net/product/list.html?cate_no=918"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 34,
+            "pendingProductCount": 32,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        }
+      ],
+      "finishedAt": "2026-10-08T19:54:44.679Z",
+      "after": {
+        "products": 836,
+        "unvisited": 697,
+        "terminalCategories": 30,
+        "pending": 947,
+        "review": 170
+      },
+      "requests": 51,
+      "progress": true
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-08T19:54:44.684Z",
+      "before": {
+        "products": 836,
+        "unvisited": 697,
+        "terminalCategories": 30,
+        "pending": 947,
+        "review": 170
+      },
+      "plan": [
+        {
+          "id": "retailer-01",
+          "name": "애니몰로",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 52,
+          "unvisited": 57
+        },
+        {
+          "id": "retailer-40",
+          "name": "에이엠펫",
+          "mode": "drain",
+          "maxRequests": 12,
+          "eligiblePending": 25,
+          "unvisited": 0
+        },
+        {
+          "id": "retailer-17",
+          "name": "매직아쿠아",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 14,
+          "unvisited": 27
+        },
+        {
+          "id": "retailer-42",
+          "name": "아쿠아가든 쇼핑몰",
+          "mode": "drain",
+          "maxRequests": 12,
+          "eligiblePending": 25,
+          "unvisited": 0
+        },
+        {
+          "id": "retailer-22",
+          "name": "아쿠아펫",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 12,
+          "unvisited": 24
+        }
+      ],
+      "sources": [
+        {
+          "id": "retailer-01",
+          "name": "애니몰로",
+          "mode": "explore",
+          "startedAt": "2026-10-08T19:54:44.687Z",
+          "finishedAt": "2026-10-08T19:56:35.278Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 10,
+          "after": 18,
+          "pendingBefore": 52,
+          "pendingAfter": 63,
+          "newCandidates": 30,
+          "verifiedOffers": 8,
+          "pagesVisited": 2,
+          "detailBudget": 10,
+          "status": "budget_limited",
+          "errors": [
+            "product_budget_reached:https://animallo.kr/category/%EC%BD%94%EB%A6%AC/327/",
+            "page_budget_reached:https://animallo.kr/category/%EC%BD%94%EB%A6%AC/327/"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 72,
+            "allowedCategoryCount": 59,
+            "excludedCategoryCount": 2,
+            "reviewCategoryCount": 11,
+            "pagesVisited": 4,
+            "pendingCategoryCount": 58,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
+                "nextPageUrl": "https://animallo.kr/product/list.html?cate_no=25"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%B2%A0%ED%83%80/323/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%B2%A0%ED%83%80/323/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%BD%94%EB%A6%AC/327/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%BD%94%EB%A6%AC/327/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/499/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/499/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0%EB%AA%B0%EB%A6%AC/85/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0%EB%AA%B0%EB%A6%AC/85/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%AA%B0%EB%A6%AC/410/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%AA%B0%EB%A6%AC/410/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%82%A8%EB%AF%B8-%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/33/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%82%A8%EB%AF%B8-%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/33/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%95%84%ED%94%BC%EC%8A%A4%ED%86%A0%EA%B7%B8%EB%9D%BC%EB%A7%88/573/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%95%84%ED%94%BC%EC%8A%A4%ED%86%A0%EA%B7%B8%EB%9D%BC%EB%A7%88/573/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4-%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/86/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4-%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/86/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/87/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/87/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/409/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/409/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%82%9C%EC%83%9D-%EC%86%A1%EC%82%AC%EB%A6%AC%EA%B3%BC/529/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%82%9C%EC%83%9D-%EC%86%A1%EC%82%AC%EB%A6%AC%EA%B3%BC/529/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%B0%94%EB%B8%8C/402/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%B0%94%EB%B8%8C/402/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/403/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/403/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%83%95%EA%B0%80%EB%8B%88%EC%B9%B4-%ED%98%B8%EC%88%98/417/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%83%95%EA%B0%80%EB%8B%88%EC%B9%B4-%ED%98%B8%EC%88%98/417/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%A7%90%EB%9D%BC%EC%9C%84-%ED%98%B8%EC%88%98/418/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%A7%90%EB%9D%BC%EC%9C%84-%ED%98%B8%EC%88%98/418/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%82%AC%EB%A6%AC%ED%94%BC%EC%89%AC/577/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%82%AC%EB%A6%AC%ED%94%BC%EC%89%AC/577/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0%ED%94%BC%EC%89%AC/324/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0%ED%94%BC%EC%89%AC/324/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0-%ED%94%BC%EC%89%AC/612/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0-%ED%94%BC%EC%89%AC/612/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/325/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/325/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%8B%A4%EB%AC%BC-%EA%B8%88%EB%B6%95%EC%96%B4/572/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%8B%A4%EB%AC%BC-%EA%B8%88%EB%B6%95%EC%96%B4/572/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%98%A4%EB%9E%80%EB%8B%A4-%EA%B8%88%EB%B6%95%EC%96%B4/426/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%98%A4%EB%9E%80%EB%8B%A4-%EA%B8%88%EB%B6%95%EC%96%B4/426/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%82%9C%EC%A3%BC-%EA%B8%88%EB%B6%95%EC%96%B4/427/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%82%9C%EC%A3%BC-%EA%B8%88%EB%B6%95%EC%96%B4/427/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%95%88%EC%8B%9C%ED%94%8C%EB%A0%88%EC%BD%94/326/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%95%88%EC%8B%9C%ED%94%8C%EB%A0%88%EC%BD%94/326/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%95%88%EC%8B%9C/502/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%95%88%EC%8B%9C/502/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94/503/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94/503/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%A1%9C%EC%B9%98/608/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%A1%9C%EC%B9%98/608/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%A1%9C%EC%B9%98/500/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%A1%9C%EC%B9%98/500/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%B3%B5%EC%96%B4/610/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%B3%B5%EC%96%B4/610/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B5%AC%ED%94%BC/84/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B5%AC%ED%94%BC/84/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%98%88%EC%81%9C-%EA%B5%AC%ED%94%BC/412/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%98%88%EC%81%9C-%EA%B5%AC%ED%94%BC/412/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%08%EB%B2%A0%EC%9D%BC%ED%85%8C%EC%9D%BC%EC%9E%85%EB%AC%B8%EC%A2%85/422/",
+                "nextPageUrl": "https://animallo.kr/category/%08%EB%B2%A0%EC%9D%BC%ED%85%8C%EC%9D%BC%EC%9E%85%EB%AC%B8%EC%A2%85/422/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%95%98%ED%94%84%EB%AC%B8-%EB%B0%98%EB%8B%AC/423/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%95%98%ED%94%84%EB%AC%B8-%EB%B0%98%EB%8B%AC/423/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%94%8C%EB%9D%BC%EC%BA%87/424/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%94%8C%EB%9D%BC%EC%BA%87/424/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%95%BC%EC%83%9D-%EB%B2%A0%ED%83%80/425/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%95%BC%EC%83%9D-%EB%B2%A0%ED%83%80/425/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/411/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/411/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%9E%88%ED%8E%98%EC%86%8C%EB%B8%8C%EB%A6%AC%EC%BD%98%EC%86%8D/414/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%9E%88%ED%8E%98%EC%86%8C%EB%B8%8C%EB%A6%AC%EC%BD%98%EC%86%8D/414/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%97%A4%EB%AF%B8%EA%B7%B8%EB%9D%BC%EB%AC%B4%EC%8A%A4%EC%86%8D/415/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%97%A4%EB%AF%B8%EA%B7%B8%EB%9D%BC%EB%AC%B4%EC%8A%A4%EC%86%8D/415/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%8C%8C%EB%9D%BC%EC%BC%80%EC%9D%B4%EB%A1%9C%EB%8F%88%EC%86%8D/416/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%8C%8C%EB%9D%BC%EC%BC%80%EC%9D%B4%EB%A1%9C%EB%8F%88%EC%86%8D/416/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B8%B0%ED%83%80/528/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B8%B0%ED%83%80/528/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B2%8C%EC%98%A4%ED%8C%8C%EA%B1%B0%EC%8A%A4/407/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B2%8C%EC%98%A4%ED%8C%8C%EA%B1%B0%EC%8A%A4/407/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80/408/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80/408/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B0%80%EC%9D%B4%EC%95%84%EB%82%98%EC%B9%B4%EB%9D%BC/576/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B0%80%EC%9D%B4%EC%95%84%EB%82%98%EC%B9%B4%EB%9D%BC/576/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B8%B0%ED%83%80/574/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B8%B0%ED%83%80/574/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%88%AD%EB%88%88-%EC%BD%94%EB%A9%94%ED%8A%B8-%EC%9E%94%EB%B6%95%EC%96%B4/428/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%88%AD%EB%88%88-%EC%BD%94%EB%A9%94%ED%8A%B8-%EC%9E%94%EB%B6%95%EC%96%B4/428/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/501/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/501/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%95%8C%EC%A7%80%EC%9D%B4%ED%84%B0/527/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%95%8C%EC%A7%80%EC%9D%B4%ED%84%B0/527/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%8B%9C%EB%85%B8%EB%8F%88%ED%8B%B0%EC%8A%A4/593/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%8B%9C%EB%85%B8%EB%8F%88%ED%8B%B0%EC%8A%A4/593/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%ED%83%80%ED%8B%B0%EC%95%84/596/",
+                "nextPageUrl": "https://animallo.kr/category/%ED%83%80%ED%8B%B0%EC%95%84/596/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%83%88%EC%9A%B0%EA%B0%91%EA%B0%81%EB%A5%98/28/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%83%88%EC%9A%B0%EA%B0%91%EA%B0%81%EB%A5%98/28/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%8A%AC%EB%9D%BC%EC%9B%A8%EC%8B%9C-%EC%83%88%EC%9A%B0/598/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%8A%AC%EB%9D%BC%EC%9B%A8%EC%8B%9C-%EC%83%88%EC%9A%B0/598/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EC%83%9D%EC%9D%B4%EA%B3%84%EC%97%B4/252/",
+                "nextPageUrl": "https://animallo.kr/category/%EC%83%9D%EC%9D%B4%EA%B3%84%EC%97%B4/252/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/crs%EA%B3%84%EC%97%B4/321/",
+                "nextPageUrl": "https://animallo.kr/category/crs%EA%B3%84%EC%97%B4/321/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B0%80%EC%9E%AC%EB%A5%98/253/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B0%80%EC%9E%AC%EB%A5%98/253/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EA%B8%B0%ED%83%80/396/",
+                "nextPageUrl": "https://animallo.kr/category/%EA%B8%B0%ED%83%80/396/"
+              },
+              {
+                "categoryUrl": "https://animallo.kr/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/604/",
+                "nextPageUrl": "https://animallo.kr/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/604/"
+              }
+            ],
+            "terminalCategoryCount": 1,
+            "verifiedProductCount": 18,
+            "pendingProductCount": 63,
+            "reviewProductCount": 20,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-40",
+          "name": "에이엠펫",
+          "mode": "drain",
+          "startedAt": "2026-10-08T19:56:36.388Z",
+          "finishedAt": "2026-10-08T19:58:26.972Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 1,
+          "after": 1,
+          "pendingBefore": 25,
+          "pendingAfter": 19,
+          "newCandidates": 0,
+          "verifiedOffers": 0,
+          "pagesVisited": 0,
+          "detailBudget": 12,
+          "status": "budget_limited",
+          "errors": [
+            "request_budget_reached"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 43,
+            "allowedCategoryCount": 1,
+            "excludedCategoryCount": 33,
+            "reviewCategoryCount": 9,
+            "pagesVisited": 2,
+            "pendingCategoryCount": 1,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://www.ampet.co.kr/product/list.html?cate_no=45",
+                "nextPageUrl": "https://www.ampet.co.kr/product/list.html?cate_no=45&page=2"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 1,
+            "pendingProductCount": 19,
+            "reviewProductCount": 16,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-17",
+          "name": "매직아쿠아",
+          "mode": "explore",
+          "startedAt": "2026-10-08T19:59:20.350Z",
+          "finishedAt": "2026-10-08T20:01:10.849Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 23,
+          "after": 32,
+          "pendingBefore": 14,
+          "pendingAfter": 34,
+          "newCandidates": 30,
+          "verifiedOffers": 9,
+          "pagesVisited": 2,
+          "detailBudget": 9,
+          "status": "partial_discovery",
+          "errors": [
+            "expected_total_unverified:https://magicaqua.kr/product/list1_1.html?cate_no=299",
+            "expected_total_unverified:https://magicaqua.kr/product/list1_1.html?cate_no=297",
+            "product_budget_reached:https://magicaqua.kr/product/list1_1.html?cate_no=297",
+            "page_budget_reached:https://magicaqua.kr/product/list1_1.html?cate_no=297"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 32,
+            "allowedCategoryCount": 28,
+            "excludedCategoryCount": 2,
+            "reviewCategoryCount": 2,
+            "pagesVisited": 3,
+            "pendingCategoryCount": 27,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=276",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=276"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list2_1.html?cate_no=473",
+                "nextPageUrl": "https://magicaqua.kr/product/list2_1.html?cate_no=473"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list3_1.html?cate_no=302",
+                "nextPageUrl": "https://magicaqua.kr/product/list3_1.html?cate_no=302"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=306",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=306"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=297",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=297"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=279",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=279"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=293",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=293"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=294",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=294"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=295",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=295"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=301",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=301"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=277",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=277"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=278",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=278"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=296",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=296"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=283",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=283"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=300",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=300"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=287",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=287"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=292",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=292"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=280",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=280"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=281",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=281"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=282",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=282"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=284",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=284"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=285",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=285"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=288",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=288"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=286",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=286"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=289",
+                "nextPageUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=289"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=509",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=509"
+              },
+              {
+                "categoryUrl": "https://magicaqua.kr/product/list.html?cate_no=508",
+                "nextPageUrl": "https://magicaqua.kr/product/list.html?cate_no=508"
+              }
+            ],
+            "terminalCategoryCount": 1,
+            "verifiedProductCount": 32,
+            "pendingProductCount": 34,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-42",
+          "name": "아쿠아가든 쇼핑몰",
+          "mode": "drain",
+          "startedAt": "2026-10-08T20:04:20.817Z",
+          "finishedAt": "2026-10-08T20:05:10.983Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 1,
+          "after": 1,
+          "pendingBefore": 25,
+          "pendingAfter": 25,
+          "newCandidates": 0,
+          "verifiedOffers": 0,
+          "pagesVisited": 0,
+          "detailBudget": 6,
+          "status": "budget_limited",
+          "errors": [
+            "request_budget_reached"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 18,
+            "allowedCategoryCount": 1,
+            "excludedCategoryCount": 6,
+            "reviewCategoryCount": 11,
+            "pagesVisited": 2,
+            "pendingCategoryCount": 1,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://aquagardenshop.com/product/list.html?cate_no=28",
+                "nextPageUrl": "https://aquagardenshop.com/product/list.html?cate_no=28&page=2"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 1,
+            "pendingProductCount": 25,
+            "reviewProductCount": 10,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-22",
+          "name": "아쿠아펫",
+          "mode": "explore",
+          "startedAt": "2026-10-08T20:05:11.948Z",
+          "finishedAt": "2026-10-08T20:05:34.239Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 19,
+          "after": 29,
+          "pendingBefore": 12,
+          "pendingAfter": 32,
+          "newCandidates": 30,
+          "verifiedOffers": 10,
+          "pagesVisited": 1,
+          "detailBudget": 10,
+          "status": "partial_discovery",
+          "errors": [
+            "expected_total_unverified:http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=006",
+            "product_budget_reached:http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=006"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 118,
+            "allowedCategoryCount": 25,
+            "excludedCategoryCount": 77,
+            "reviewCategoryCount": 16,
+            "pagesVisited": 2,
+            "pendingCategoryCount": 25,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=004",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=004"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=006",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=006"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=003",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=003"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=005",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=005"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=004",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=004"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=002",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=002"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=033&mcode=001",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=033&mcode=001"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=010",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=010"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=013",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=013"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=004",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=004"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=010",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=010"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=001",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=002&scode=001"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=008",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=008"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=004",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=004"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=003",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=003"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=006",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=004&mcode=006"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=002",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=002"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=011",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=011"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=003",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=003"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=007",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=007"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=001",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=001"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=005",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=005"
+              },
+              {
+                "categoryUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=006",
+                "nextPageUrl": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008&scode=006"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 29,
+            "pendingProductCount": 32,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        }
+      ],
+      "finishedAt": "2026-10-08T20:05:35.288Z",
+      "after": {
+        "products": 863,
+        "unvisited": 692,
+        "terminalCategories": 32,
+        "pending": 992,
+        "review": 188
+      },
+      "requests": 60,
+      "progress": true
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-08T20:05:35.293Z",
+      "before": {
+        "products": 863,
+        "unvisited": 692,
+        "terminalCategories": 32,
+        "pending": 992,
+        "review": 188
+      },
+      "plan": [
+        {
+          "id": "retailer-07",
+          "name": "아쿠아프로 트레이딩",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 50,
+          "unvisited": 68
+        },
+        {
+          "id": "retailer-36",
+          "name": "샘아쿠아",
+          "mode": "drain",
+          "maxRequests": 12,
+          "eligiblePending": 17,
+          "unvisited": 22
+        },
+        {
+          "id": "retailer-38",
+          "name": "아쿠아유쥬",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 13,
+          "unvisited": 21
+        },
+        {
+          "id": "retailer-12",
+          "name": "비지떡",
+          "mode": "drain",
+          "maxRequests": 12,
+          "eligiblePending": 16,
+          "unvisited": 2
+        },
+        {
+          "id": "retailer-49",
+          "name": "피셔맨브라더스",
+          "mode": "explore",
+          "maxRequests": 12,
+          "eligiblePending": 23,
+          "unvisited": 21
+        }
+      ],
+      "sources": [
+        {
+          "id": "retailer-07",
+          "name": "아쿠아프로 트레이딩",
+          "mode": "explore",
+          "startedAt": "2026-10-08T20:05:35.296Z",
+          "finishedAt": "2026-10-08T20:07:25.705Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 7,
+          "after": 14,
+          "pendingBefore": 50,
+          "pendingAfter": 70,
+          "newCandidates": 30,
+          "verifiedOffers": 7,
+          "pagesVisited": 2,
+          "detailBudget": 10,
+          "status": "partial_discovery",
+          "errors": [
+            "expected_total_unverified:https://aquapro.kr/product/list.html?cate_no=925",
+            "expected_total_unverified:https://aquapro.kr/product/list.html?cate_no=920",
+            "product_budget_reached:https://aquapro.kr/product/list.html?cate_no=920",
+            "page_budget_reached:https://aquapro.kr/product/list.html?cate_no=920"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 106,
+            "allowedCategoryCount": 71,
+            "excludedCategoryCount": 13,
+            "reviewCategoryCount": 22,
+            "pagesVisited": 5,
+            "pendingCategoryCount": 69,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=892"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/932/",
+                "nextPageUrl": "https://aquapro.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/932/"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=923",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=923"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=912",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=912"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=920",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=920"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=893",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=893"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=894",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=894"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=896",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=896"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1155",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1155"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=906",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=906"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1160",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1160"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1164",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1164"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1167",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1167"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1165",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1165"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1166",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1166"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=910",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=910"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=914",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=914"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1153",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1153"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=918",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=918"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1154",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1154"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=915",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=915"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=895",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=895"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=942",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=942"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1148",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1148"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=963",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=963"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=964",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=964"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=948",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=948"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1169",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1169"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=921",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=921"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1132",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1132"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=922",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=922"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=928",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=928"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1173",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1173"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1174",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1174"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=929",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=929"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=938",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=938"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=939",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=939"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1180",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1180"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1187",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1187"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1182",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1182"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=919",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=919"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1098",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1098"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=911",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=911"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1150",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1150"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=965",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=965"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=952",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=952"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=951",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=951"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1178",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1178"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=962",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=962"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=916",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=916"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1151",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1151"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1152",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1152"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=924",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=924"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1156",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1156"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1157",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1157"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1158",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1158"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1159",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1159"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1161",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1161"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1162",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1162"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1163",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1163"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=936",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=936"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=940",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=940"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1175",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1175"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=967",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=967"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1099",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1099"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1101",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1101"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1102",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1102"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1103",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1103"
+              },
+              {
+                "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1307",
+                "nextPageUrl": "https://aquapro.kr/product/list.html?cate_no=1307"
+              }
+            ],
+            "terminalCategoryCount": 2,
+            "verifiedProductCount": 14,
+            "pendingProductCount": 70,
+            "reviewProductCount": 10,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-36",
+          "name": "샘아쿠아",
+          "mode": "drain",
+          "startedAt": "2026-10-08T20:07:26.711Z",
+          "finishedAt": "2026-10-08T20:09:17.282Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 19,
+          "after": 29,
+          "pendingBefore": 17,
+          "pendingAfter": 25,
+          "newCandidates": 0,
+          "verifiedOffers": 10,
+          "pagesVisited": 0,
+          "detailBudget": 12,
+          "status": "budget_limited",
+          "errors": [
+            "request_budget_reached"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 195,
+            "allowedCategoryCount": 23,
+            "excludedCategoryCount": 136,
+            "reviewCategoryCount": 36,
+            "pagesVisited": 4,
+            "pendingCategoryCount": 21,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EA%B5%AC%ED%94%BC%EB%82%9C%ED%83%9C%EC%83%9D%EA%B3%BC%EC%86%A1%EC%82%AC%EB%A6%AC/470/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EA%B5%AC%ED%94%BC%EB%82%9C%ED%83%9C%EC%83%9D%EA%B3%BC%EC%86%A1%EC%82%AC%EB%A6%AC/470/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%B4%88%EB%B3%B4%EC%9E%90-%EC%88%98%EC%B4%88/460/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%B4%88%EB%B3%B4%EC%9E%90-%EC%88%98%EC%B4%88/460/?page=2"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/472/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/472/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C%ED%83%95%EA%B0%80%EB%8B%88%EC%B9%B4/471/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C%ED%83%95%EA%B0%80%EB%8B%88%EC%B9%B4/471/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%97%94%EC%A0%A4%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/477/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%97%94%EC%A0%A4%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/477/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/469/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/469/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EB%A9%94%EA%B8%B0%ED%94%8C%EB%A0%88%EC%BD%94%EA%B3%BC/473/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EB%A9%94%EA%B8%B0%ED%94%8C%EB%A0%88%EC%BD%94%EA%B3%BC/473/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EB%AF%BC%EB%AC%BC%EA%B3%A0%EA%B8%B0%EC%9E%89%EC%96%B4%EC%9E%89%EC%96%B4%EA%B3%BC%EC%97%B4%EB%8C%80%EC%96%B4/475/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EB%AF%BC%EB%AC%BC%EA%B3%A0%EA%B8%B0%EC%9E%89%EC%96%B4%EC%9E%89%EC%96%B4%EA%B3%BC%EC%97%B4%EB%8C%80%EC%96%B4/475/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EB%8C%80%ED%98%95%EA%B8%B0%EC%88%98%EA%B8%B0%ED%83%80/474/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EB%8C%80%ED%98%95%EA%B8%B0%EC%88%98%EA%B8%B0%ED%83%80/474/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%88%98%EC%B4%88-%EA%B4%80%EB%A0%A8/52/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%88%98%EC%B4%88-%EA%B4%80%EB%A0%A8/52/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/Dennerle-%EB%8D%B0%EB%84%AC-%EC%88%98%EC%B4%88/801/",
+                "nextPageUrl": "https://www.samaqua.com/category/Dennerle-%EB%8D%B0%EB%84%AC-%EC%88%98%EC%B4%88/801/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/Aqua-art-%EC%95%84%EC%BF%A0%EC%95%84%EC%95%84%ED%8A%B8-%EC%88%98%EC%B4%88/804/",
+                "nextPageUrl": "https://www.samaqua.com/category/Aqua-art-%EC%95%84%EC%BF%A0%EC%95%84%EC%95%84%ED%8A%B8-%EC%88%98%EC%B4%88/804/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%A0%84%EA%B2%BD%EC%A4%91%EA%B2%BD%ED%9B%84%EA%B2%BD/462/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%A0%84%EA%B2%BD%EC%A4%91%EA%B2%BD%ED%9B%84%EA%B2%BD/462/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EB%AA%A8%EC%8A%A4%ED%99%9C%EC%B0%A9%EC%88%98%EC%B4%88/463/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EB%AA%A8%EC%8A%A4%ED%99%9C%EC%B0%A9%EC%88%98%EC%B4%88/463/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EA%B3%A0%EA%B8%89-%EC%88%98%EC%B4%88/461/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EA%B3%A0%EA%B8%89-%EC%88%98%EC%B4%88/461/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/Co2-%EC%A0%80%EC%95%95%EA%B4%80%EB%A0%A8/464/",
+                "nextPageUrl": "https://www.samaqua.com/category/Co2-%EC%A0%80%EC%95%95%EA%B4%80%EB%A0%A8/464/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/Co2-%EA%B3%A0%EC%95%95%EA%B4%80%EB%A0%A8/465/",
+                "nextPageUrl": "https://www.samaqua.com/category/Co2-%EA%B3%A0%EC%95%95%EA%B4%80%EB%A0%A8/465/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%9D%B4%EB%81%BC%EB%8B%AC%ED%8C%BD%EC%9D%B4/466/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%9D%B4%EB%81%BC%EB%8B%AC%ED%8C%BD%EC%9D%B4/466/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EA%B0%80%EC%9C%84%ED%95%80%EC%85%8B-%EA%B8%B0%ED%83%80/468/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EA%B0%80%EC%9C%84%ED%95%80%EC%85%8B-%EA%B8%B0%ED%83%80/468/"
+              },
+              {
+                "categoryUrl": "https://www.samaqua.com/category/%EC%9D%B4%EB%81%BC%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/491/",
+                "nextPageUrl": "https://www.samaqua.com/category/%EC%9D%B4%EB%81%BC%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/491/"
+              }
+            ],
+            "terminalCategoryCount": 2,
+            "verifiedProductCount": 29,
+            "pendingProductCount": 25,
+            "reviewProductCount": 14,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-38",
+          "name": "아쿠아유쥬",
+          "mode": "explore",
+          "startedAt": "2026-10-08T20:09:18.317Z",
+          "finishedAt": "2026-10-08T20:11:09.105Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 21,
+          "after": 30,
+          "pendingBefore": 13,
+          "pendingAfter": 34,
+          "newCandidates": 30,
+          "verifiedOffers": 9,
+          "pagesVisited": 2,
+          "detailBudget": 9,
+          "status": "budget_limited",
+          "errors": [
+            "product_budget_reached:https://aquauju.com/product/list.html?cate_no=482",
+            "page_budget_reached:https://aquauju.com/product/list.html?cate_no=482"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 107,
+            "allowedCategoryCount": 28,
+            "excludedCategoryCount": 68,
+            "reviewCategoryCount": 11,
+            "pagesVisited": 3,
+            "pendingCategoryCount": 26,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=463",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=463"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=466",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=466"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=421",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=421"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=482",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=482"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=453",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=453"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=458",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=458"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=455",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=455"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=449",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=449"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=456",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=456"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=464",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=464"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=465",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=465"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=652",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=652"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=447",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=447"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=651",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=651"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=650",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=650"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=435",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=435"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=436",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=436"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=437",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=437"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=438",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=438"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=439",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=439"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=646",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=646"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=440",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=440"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=454",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=454"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=647",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=647"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=648",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=648"
+              },
+              {
+                "categoryUrl": "https://aquauju.com/product/list.html?cate_no=649",
+                "nextPageUrl": "https://aquauju.com/product/list.html?cate_no=649"
+              }
+            ],
+            "terminalCategoryCount": 2,
+            "verifiedProductCount": 30,
+            "pendingProductCount": 34,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-12",
+          "name": "비지떡",
+          "mode": "drain",
+          "startedAt": "2026-10-08T20:11:10.134Z",
+          "finishedAt": "2026-10-08T20:13:00.542Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 2,
+          "after": 5,
+          "pendingBefore": 16,
+          "pendingAfter": 18,
+          "newCandidates": 0,
+          "verifiedOffers": 3,
+          "pagesVisited": 0,
+          "detailBudget": 12,
+          "status": "budget_limited",
+          "errors": [
+            "request_budget_reached"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 13,
+            "allowedCategoryCount": 3,
+            "excludedCategoryCount": 2,
+            "reviewCategoryCount": 8,
+            "pagesVisited": 1,
+            "pendingCategoryCount": 3,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://bizidduk.com/product/list.html?cate_no=27",
+                "nextPageUrl": "https://bizidduk.com/product/list.html?cate_no=27"
+              },
+              {
+                "categoryUrl": "https://bizidduk.com/product/list.html?cate_no=36",
+                "nextPageUrl": "https://bizidduk.com/product/list.html?cate_no=36"
+              },
+              {
+                "categoryUrl": "https://bizidduk.com/category/%EC%83%88%EC%9A%B0-%EB%B0%8F-%EA%B0%80%EC%9E%AC/31/",
+                "nextPageUrl": "https://bizidduk.com/category/%EC%83%88%EC%9A%B0-%EB%B0%8F-%EA%B0%80%EC%9E%AC/31/"
+              }
+            ],
+            "terminalCategoryCount": 0,
+            "verifiedProductCount": 5,
+            "pendingProductCount": 18,
+            "reviewProductCount": 21,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        },
+        {
+          "id": "retailer-49",
+          "name": "피셔맨브라더스",
+          "mode": "explore",
+          "startedAt": "2026-10-08T20:13:01.585Z",
+          "finishedAt": "2026-10-08T20:14:52.242Z",
+          "requestLimit": 12,
+          "requests": 12,
+          "before": 13,
+          "after": 31,
+          "pendingBefore": 23,
+          "pendingAfter": 44,
+          "newCandidates": 30,
+          "verifiedOffers": 18,
+          "pagesVisited": 2,
+          "detailBudget": 9,
+          "status": "budget_limited",
+          "errors": [
+            "product_budget_reached:https://fishermanbt.com/product/list.html?cate_no=79",
+            "page_budget_reached:https://fishermanbt.com/product/list.html?cate_no=79"
+          ],
+          "tree": {
+            "discoveredCategoryCount": 26,
+            "allowedCategoryCount": 22,
+            "excludedCategoryCount": 3,
+            "reviewCategoryCount": 1,
+            "pagesVisited": 4,
+            "pendingCategoryCount": 21,
+            "pendingPageUrls": [
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=42",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=42&page=2"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=79",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=79"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=162",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=162"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=72",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=72"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=76",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=76"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=83",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=83"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=73",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=73"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=169",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=169"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=301",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=301"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=75",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=75"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=74",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=74"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=163",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=163"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=78",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=78"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=165",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=165"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=71",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=71"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=260",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=260"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=261",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=261"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=181",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=181"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=164",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=164"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=80",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=80"
+              },
+              {
+                "categoryUrl": "https://fishermanbt.com/product/list.html?cate_no=81",
+                "nextPageUrl": "https://fishermanbt.com/product/list.html?cate_no=81"
+              }
+            ],
+            "terminalCategoryCount": 1,
+            "verifiedProductCount": 31,
+            "pendingProductCount": 44,
+            "reviewProductCount": 0,
+            "menuCoverage": "unknown",
+            "terminalCoverage": "incomplete",
+            "fullRetailerCoverage": false
+          }
+        }
+      ],
+      "finishedAt": "2026-10-08T20:14:53.212Z",
+      "after": {
+        "products": 910,
+        "unvisited": 690,
+        "terminalCategories": 35,
+        "pending": 1064,
+        "review": 194
+      },
+      "requests": 60,
+      "progress": true
+    }
+  ],
+  "transactions": [
+    {
+      "round": 1,
+      "sourceId": "retailer-33",
+      "url": "https://selvas.co.kr/robots.txt",
+      "requestedAt": "2026-10-08T19:46:37.676Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:46:37.772Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-33",
+      "url": "https://selvas.co.kr/category/Light-(%EC%A1%B0%EB%AA%85)/532/",
+      "requestedAt": "2026-10-08T19:46:47.689Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:46:47.925Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-33",
+      "url": "https://selvas.co.kr/category/%EC%82%AC%EB%A3%8C/124/",
+      "requestedAt": "2026-10-08T19:46:57.694Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:46:58.478Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/robots.txt",
+      "requestedAt": "2026-10-08T19:46:59.786Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:46:59.852Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EC%83%9D%EB%AC%BC%EC%8B%A4-%ED%95%A0%EC%9D%B8%EC%A0%84-%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%EB%AC%BC%EA%B3%A0%EA%B8%B0-%EB%8F%84%EB%91%91%EA%B2%8C-1%EB%A7%88%EB%A6%AC-%EC%8A%A4%EB%A7%88%EC%9D%BC-%ED%81%AC%EB%9E%A9/20358/category/481/display/1/",
+      "requestedAt": "2026-10-08T19:47:09.792Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:47:10.029Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88-%EC%97%90%ED%82%A4%EB%85%B8%EB%8F%84%EB%A3%A8%EC%8A%A4-%EB%A0%88%EB%93%9C-%EB%A3%A8%EB%B9%88-1%ED%8F%AC%ED%8A%B8/20691/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:47:19.795Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:47:20.305Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88-%EC%97%90%ED%82%A4%EB%85%B8%EB%8F%84%EB%A3%A8%EC%8A%A4-%ED%8C%8C%EB%A5%B4%EB%B9%84-%ED%94%8C%EB%A1%9C%EB%A3%A8%EC%8A%A4-1%ED%8F%AC%ED%8A%B8/20690/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:47:29.801Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:47:30.077Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88-%ED%81%AC%EB%A6%BD%ED%86%A0%EC%BD%94%EB%A6%AC%EB%84%A4-%EB%B2%A0%EA%B2%8C%ED%8B%B0-1%ED%8F%AC%ED%8A%B8/20685/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:47:39.813Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:47:40.084Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88-%ED%81%AC%EB%A6%BD%ED%86%A0%EC%BD%94%EB%A6%AC%EB%84%A4-%ED%8E%AB%EC%B9%98%EC%9D%B4-1%ED%8F%AC%ED%8A%B8/20684/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:47:49.819Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:47:50.139Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88-%ED%81%AC%EB%A6%BD%ED%86%A0%EC%BD%94%EB%A6%AC%EB%84%A4-%ED%94%8C%EB%A1%9C%EB%A6%AC%EB%8B%A4-%EC%8D%AC%EC%85%8B-1%ED%8F%AC%ED%8A%B8/20683/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:47:59.827Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:00.099Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88-%ED%81%AC%EB%A6%BD%ED%86%A0%EC%BD%94%EB%A6%AC%EB%84%A4-%EC%9A%B4%EB%91%98%EB%9D%BC%ED%88%AC%EC%8A%A4-1%ED%8F%AC%ED%8A%B8/20682/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:48:09.830Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:10.097Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%EC%88%98%EC%B4%88-%EB%9D%BC%EC%A7%80-%ED%8E%84%EA%B7%B8%EB%9D%BC%EC%8A%A4-%ED%99%94%EC%9D%B4%ED%8A%B8-1%EC%B4%89/20620/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:48:19.840Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:20.136Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%EB%AF%B8%EB%8B%88%ED%8F%AC%ED%8A%B8-%EC%88%98%EC%B4%88-%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EC%95%84%ED%8B%80%EB%9E%80%ED%8B%B0%EC%8A%A4/20614/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:48:29.847Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:30.119Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%EB%AF%B8%EB%8B%88%ED%8F%AC%ED%8A%B8-%EC%88%98%EC%B4%88-%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EB%A6%AC%EB%A6%AC%ED%83%80/20613/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:48:39.849Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:40.140Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-37",
+      "url": "https://mimineaqua.co.kr/product/%EB%AF%B8%EB%AF%B8%EB%84%A4%EC%95%84%EC%BF%A0%EC%95%84-%EC%88%98%EC%83%81%EC%88%98%EC%B4%88-%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%A1%9C%EC%B9%B4%EB%A5%B4%ED%8C%8C-3%EC%B4%89/20612/category/217/display/1/",
+      "requestedAt": "2026-10-08T19:48:49.862Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:50.131Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/robots.txt",
+      "requestedAt": "2026-10-08T19:48:51.476Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:48:51.538Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/list.html?cate_no=712",
+      "requestedAt": "2026-10-08T19:49:01.480Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:49:01.817Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/list.html?cate_no=739",
+      "requestedAt": "2026-10-08T19:49:11.483Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:49:11.664Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4735&cate_no=238&display_group=1",
+      "requestedAt": "2026-10-08T19:49:21.489Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:49:21.778Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4365&cate_no=712&display_group=1",
+      "requestedAt": "2026-10-08T19:49:31.493Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:49:31.802Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4733&cate_no=238&display_group=1",
+      "requestedAt": "2026-10-08T19:49:41.501Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:49:41.785Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4049&cate_no=712&display_group=1",
+      "requestedAt": "2026-10-08T19:49:51.512Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:49:51.766Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4732&cate_no=238&display_group=1",
+      "requestedAt": "2026-10-08T19:50:01.515Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:50:01.853Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4048&cate_no=712&display_group=1",
+      "requestedAt": "2026-10-08T19:50:11.529Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:50:11.793Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4731&cate_no=238&display_group=1",
+      "requestedAt": "2026-10-08T19:50:21.543Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:50:21.822Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4047&cate_no=712&display_group=1",
+      "requestedAt": "2026-10-08T19:50:31.543Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:50:31.789Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-50",
+      "url": "https://healingaqua.co.kr/product/detail.html?product_no=4729&cate_no=238&display_group=1",
+      "requestedAt": "2026-10-08T19:50:41.558Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:50:41.813Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/robots.txt",
+      "requestedAt": "2026-10-08T19:51:01.117Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:51:01.224Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7887&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:51:11.122Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:51:12.002Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7886&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:51:21.131Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:51:21.546Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7885&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:51:31.141Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:51:31.540Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7884&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:51:41.146Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:51:41.553Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7883&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:51:51.153Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:51:51.567Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7882&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:52:01.163Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:01.584Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7877&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:52:11.165Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:11.765Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7876&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:52:21.173Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:21.586Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=7874&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:52:31.186Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:31.579Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=6192&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:52:41.200Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:41.590Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-34",
+      "url": "https://bluedragonaqua.com/product/detail.html?product_no=6191&cate_no=197&display_group=1",
+      "requestedAt": "2026-10-08T19:52:51.209Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:51.642Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/robots.txt",
+      "requestedAt": "2026-10-08T19:52:52.846Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:52:52.880Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/list.html?cate_no=751",
+      "requestedAt": "2026-10-08T19:53:02.860Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:53:03.153Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=28342&cate_no=748&display_group=1",
+      "requestedAt": "2026-10-08T19:53:12.871Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:53:13.125Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=21429&cate_no=751&display_group=1",
+      "requestedAt": "2026-10-08T19:53:22.885Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:53:23.154Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=28345&cate_no=748&display_group=1",
+      "requestedAt": "2026-10-08T19:53:32.895Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:53:33.133Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=21426&cate_no=751&display_group=1",
+      "requestedAt": "2026-10-08T19:53:42.895Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:53:43.126Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=28348&cate_no=748&display_group=1",
+      "requestedAt": "2026-10-08T19:53:52.903Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:53:53.133Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=19171&cate_no=751&display_group=1",
+      "requestedAt": "2026-10-08T19:54:02.905Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:03.107Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=28349&cate_no=748&display_group=1",
+      "requestedAt": "2026-10-08T19:54:12.907Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:13.146Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=16494&cate_no=751&display_group=1",
+      "requestedAt": "2026-10-08T19:54:22.913Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:23.156Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=15770&cate_no=748&display_group=1",
+      "requestedAt": "2026-10-08T19:54:32.922Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:33.140Z"
+    },
+    {
+      "round": 1,
+      "sourceId": "retailer-23",
+      "url": "https://a2be.net/product/detail.html?product_no=15526&cate_no=751&display_group=1",
+      "requestedAt": "2026-10-08T19:54:42.933Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:43.168Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/category/%EB%B2%A0%ED%83%80/419/",
+      "requestedAt": "2026-10-08T19:54:44.781Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:45.350Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/category/%EC%BD%94%EB%A6%AC/327/",
+      "requestedAt": "2026-10-08T19:54:54.795Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:54:55.341Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EC%95%BC%EC%83%9D-%EB%B8%8C%EB%A1%9C%ED%82%A4%EC%8A%A4-%EC%8A%A4%ED%94%8C%EB%A0%8C%EB%8D%B4%EC%8A%A4%1D5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5399/category/327/display/1/",
+      "requestedAt": "2026-10-08T19:55:04.802Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:55:05.187Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EB%93%9C%EC%9B%8C%ED%94%84-%EA%B5%AC%EB%9D%BC%EB%AF%B8/737/category/323/display/1/",
+      "requestedAt": "2026-10-08T19:55:14.806Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:55:15.207Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EC%BA%94%EB%94%94-%EB%B2%A0%ED%83%80-4cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4467/category/419/display/1/",
+      "requestedAt": "2026-10-08T19:55:24.814Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:55:25.185Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%99%8D%EB%B0%B1-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5406/category/25/display/1/",
+      "requestedAt": "2026-10-08T19:55:34.820Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:55:35.203Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EA%B0%80%EC%98%A4%EB%A6%AC-%EB%B9%84%ED%8C%8C-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5398/category/327/display/1/",
+      "requestedAt": "2026-10-08T19:55:44.832Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:55:45.339Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%ED%95%98%ED%94%84%EB%AC%B8-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7-%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4/721/category/323/display/1/",
+      "requestedAt": "2026-10-08T19:55:54.845Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:55:55.254Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EB%B2%A0%ED%83%80-%EB%A3%A8%ED%8B%B8%EB%9E%80%EC%8A%A4-4cm%EB%82%B4%EC%99%B8-1%EC%8C%8D/4466/category/419/display/1/",
+      "requestedAt": "2026-10-08T19:56:04.856Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:05.244Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8-%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0%ED%94%BC%EC%89%AC-5cm-%EB%82%B4%EC%99%B8/5404/category/25/display/1/",
+      "requestedAt": "2026-10-08T19:56:14.859Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:15.260Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%ED%98%B8%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A1%9C%EC%B9%98-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5386/category/327/display/1/",
+      "requestedAt": "2026-10-08T19:56:24.861Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:25.238Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-01",
+      "url": "https://animallo.kr/product/%EC%95%BC%EC%83%9D-%ED%8E%84-%EA%B5%AC%EB%9D%BC%EB%AF%B8/5376/category/323/display/1/",
+      "requestedAt": "2026-10-08T19:56:34.869Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:35.254Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://ampet.co.kr/robots.txt",
+      "requestedAt": "2026-10-08T19:56:36.428Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:36.479Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3789&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:56:46.440Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:46.879Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3785&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:56:56.443Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:56:56.857Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3782&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:57:06.457Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:57:06.880Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3781&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:57:16.459Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:57:16.863Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3780&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:57:26.459Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:57:26.894Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3779&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:57:36.466Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:57:36.870Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3778&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:57:46.475Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:57:47.373Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3777&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:57:56.481Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:57:56.889Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3775&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:58:06.496Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:58:06.926Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3774&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:58:16.499Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:58:16.922Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-40",
+      "url": "https://www.ampet.co.kr/product/detail.html?product_no=3724&cate_no=45&display_group=1",
+      "requestedAt": "2026-10-08T19:58:26.508Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:58:26.936Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/robots.txt",
+      "requestedAt": "2026-10-08T19:59:20.368Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:59:20.422Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/list1_1.html?cate_no=299",
+      "requestedAt": "2026-10-08T19:59:30.372Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:59:30.731Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/list1_1.html?cate_no=297",
+      "requestedAt": "2026-10-08T19:59:40.373Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:59:40.764Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=2961&cate_no=276&display_group=1",
+      "requestedAt": "2026-10-08T19:59:50.378Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T19:59:50.723Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=9146&cate_no=299&display_group=1",
+      "requestedAt": "2026-10-08T20:00:00.384Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:00:00.722Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=9352&cate_no=297&display_group=1",
+      "requestedAt": "2026-10-08T20:00:10.395Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:00:10.778Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=8816&cate_no=276&display_group=1",
+      "requestedAt": "2026-10-08T20:00:20.409Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:00:20.763Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=3619&cate_no=299&display_group=1",
+      "requestedAt": "2026-10-08T20:00:30.422Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:00:30.779Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=9129&cate_no=297&display_group=1",
+      "requestedAt": "2026-10-08T20:00:40.435Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:00:40.782Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=8815&cate_no=276&display_group=1",
+      "requestedAt": "2026-10-08T20:00:50.446Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:00:50.785Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=3618&cate_no=299&display_group=1",
+      "requestedAt": "2026-10-08T20:01:00.453Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:00.819Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-17",
+      "url": "https://magicaqua.kr/product/detail.html?product_no=8284&cate_no=297&display_group=1",
+      "requestedAt": "2026-10-08T20:01:10.463Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:10.810Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/robots.txt",
+      "requestedAt": "2026-10-08T20:01:12.224Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:12.336Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%9D%B4%EC%8A%A4%ED%83%80-%EC%94%A8%EC%95%97%EC%88%98%EC%B4%88-%ED%95%98%EC%9D%B4%EA%B7%B8%EB%A1%9C%ED%95%84%EB%9D%BC-1pcs/2809/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:01:22.236Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:22.717Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%9D%B4%EC%8A%A4%ED%83%80-%EC%94%A8%EC%95%97%EC%88%98%EC%B4%88-%EB%AF%B8%EB%8B%88%ED%97%A4%EC%96%B4%ED%83%80%EC%9E%85-1pcs/2808/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:01:32.248Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:32.659Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-12cm-%EB%AF%B8%EC%84%B8-%ED%95%80%EC%85%8B/2746/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:01:42.256Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:42.663Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-12cm-%EB%AF%B8%EC%84%B8-%EA%B3%A1-%ED%95%80%EC%85%8B/2745/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:01:52.256Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:01:52.740Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-15cm-%ED%81%B4%EB%A6%BD-%ED%95%80%EC%85%8B/2742/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:02:02.266Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:02:02.678Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/robots.txt",
+      "requestedAt": "2026-10-08T20:04:20.848Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:04:20.980Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%9D%B4%EC%8A%A4%ED%83%80-%EC%94%A8%EC%95%97%EC%88%98%EC%B4%88-%ED%95%98%EC%9D%B4%EA%B7%B8%EB%A1%9C%ED%95%84%EB%9D%BC-1pcs/2809/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:04:30.851Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:04:30.895Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%9D%B4%EC%8A%A4%ED%83%80-%EC%94%A8%EC%95%97%EC%88%98%EC%B4%88-%EB%AF%B8%EB%8B%88%ED%97%A4%EC%96%B4%ED%83%80%EC%9E%85-1pcs/2808/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:04:40.863Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:04:40.900Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-12cm-%EB%AF%B8%EC%84%B8-%ED%95%80%EC%85%8B/2746/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:04:50.863Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:04:50.929Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-12cm-%EB%AF%B8%EC%84%B8-%EA%B3%A1-%ED%95%80%EC%85%8B/2745/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:05:00.876Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:01.917Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-42",
+      "url": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-15cm-%ED%81%B4%EB%A6%BD-%ED%95%80%EC%85%8B/2742/category/28/display/1/",
+      "requestedAt": "2026-10-08T20:05:10.890Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:10.955Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/robots.txt",
+      "requestedAt": "2026-10-08T20:05:12.028Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:12.083Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=006",
+      "requestedAt": "2026-10-08T20:05:14.040Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:14.315Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=3307&xcode=002&mcode=002&scode=001&type=X&sort=order&current_category=002002&search=&GfDT=bm51W11M",
+      "requestedAt": "2026-10-08T20:05:16.046Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:16.205Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=1118431&xcode=002&mcode=006&scode=&type=X&sort=order&current_category=002006&search=&GfDT=Z2d3UQ%3D%3D",
+      "requestedAt": "2026-10-08T20:05:18.050Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:18.161Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=86923&xcode=002&mcode=002&scode=002&type=X&sort=order&current_category=002002&search=&GfDT=am13UFU%3D",
+      "requestedAt": "2026-10-08T20:05:20.063Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:20.203Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=1118399&xcode=002&mcode=006&scode=&type=X&sort=order&current_category=002006&search=&GfDT=bm58W10%3D",
+      "requestedAt": "2026-10-08T20:05:22.077Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:22.202Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=2843&xcode=002&mcode=002&scode=002&type=X&sort=order&current_category=002002&search=&GfDT=bml9W15E",
+      "requestedAt": "2026-10-08T20:05:24.080Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:24.195Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=1109814&xcode=002&mcode=006&scode=&type=X&sort=order&current_category=002006&search=&GfDT=aWh3Uw%3D%3D",
+      "requestedAt": "2026-10-08T20:05:26.080Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:26.257Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=4065&xcode=002&mcode=002&scode=001&type=X&sort=order&current_category=002002&search=&GfDT=bmt%2FW15F",
+      "requestedAt": "2026-10-08T20:05:28.086Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:28.198Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=298677&xcode=002&mcode=006&scode=&type=X&sort=order&current_category=002006&search=&GfDT=a2d3Ug%3D%3D",
+      "requestedAt": "2026-10-08T20:05:30.098Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:30.204Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=1894&xcode=002&mcode=002&scode=001&type=X&sort=order&current_category=002002&search=&GfDT=bmx4W15G",
+      "requestedAt": "2026-10-08T20:05:32.112Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:32.233Z"
+    },
+    {
+      "round": 2,
+      "sourceId": "retailer-22",
+      "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=1479&xcode=002&mcode=006&scode=&type=X&sort=order&current_category=002006&search=&GfDT=bWl3VQ%3D%3D",
+      "requestedAt": "2026-10-08T20:05:34.113Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:34.218Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/list.html?cate_no=925",
+      "requestedAt": "2026-10-08T20:05:35.362Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:35.721Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/list.html?cate_no=920",
+      "requestedAt": "2026-10-08T20:05:45.366Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:45.597Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=6090&cate_no=892&display_group=1",
+      "requestedAt": "2026-10-08T20:05:55.367Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:05:55.619Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=8182&cate_no=1177&display_group=1",
+      "requestedAt": "2026-10-08T20:06:05.378Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:06:05.620Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=11040&cate_no=912&display_group=1",
+      "requestedAt": "2026-10-08T20:06:15.385Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:06:15.635Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=11453&cate_no=925&display_group=1",
+      "requestedAt": "2026-10-08T20:06:25.389Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:06:25.619Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=7738&cate_no=892&display_group=1",
+      "requestedAt": "2026-10-08T20:06:35.400Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:06:35.648Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=11229&cate_no=920&display_group=1",
+      "requestedAt": "2026-10-08T20:06:45.402Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:06:45.665Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=8181&cate_no=1177&display_group=1",
+      "requestedAt": "2026-10-08T20:06:55.415Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:06:55.653Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=11023&cate_no=912&display_group=1",
+      "requestedAt": "2026-10-08T20:07:05.420Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:05.676Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=8934&cate_no=892&display_group=1",
+      "requestedAt": "2026-10-08T20:07:15.423Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:15.676Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-07",
+      "url": "https://aquapro.kr/product/detail.html?product_no=11117&cate_no=925&display_group=1",
+      "requestedAt": "2026-10-08T20:07:25.426Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:25.678Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://samaqua.com/robots.txt",
+      "requestedAt": "2026-10-08T20:07:26.901Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:26.943Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EB%85%B8%EB%9E%AD%EC%9D%B4-%EC%83%88%EC%9A%B0-4%EB%A7%88%EB%A6%AC/3410/category/476/display/1/",
+      "requestedAt": "2026-10-08T20:07:36.916Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:37.165Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EC%9B%8C%ED%84%B0-%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B8/2657/category/460/display/1/",
+      "requestedAt": "2026-10-08T20:07:46.931Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:47.176Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%ED%94%BC%EB%85%B8%ED%82%A4%EC%98%A4-%EC%83%88%EC%9A%B0-4%EB%A7%88%EB%A6%AC/3407/category/476/display/1/",
+      "requestedAt": "2026-10-08T20:07:56.934Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:07:57.234Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EC%B9%B4%EB%94%94%EB%84%90%EB%A6%AC%EC%8A%A4/2654/category/460/display/1/",
+      "requestedAt": "2026-10-08T20:08:06.934Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:08:07.190Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/crs-%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88-%EB%A0%88%EB%93%9C%EB%B9%84-%EC%89%AC%EB%A6%BC%ED%94%84-ss%EA%B8%89-1%EB%A7%88%EB%A6%AC/3012/category/476/display/1/",
+      "requestedAt": "2026-10-08T20:08:16.939Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:08:17.184Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EB%A1%9C%EB%B2%A0%EB%A6%AC%EC%95%84/2673/category/460/display/1/",
+      "requestedAt": "2026-10-08T20:08:26.943Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:08:27.195Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EB%A0%88%EB%93%9C-%EB%88%84%EB%A6%AC-%EC%89%AC%EB%A6%BC%ED%94%84-3%EB%A7%88%EB%A6%AC/3695/category/476/display/1/",
+      "requestedAt": "2026-10-08T20:08:36.954Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:08:37.178Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EB%A3%A8%EB%93%9C%EC%A7%80%EC%95%84-%EC%98%A4%EB%B0%9C%EB%A6%AC%EC%8A%A4/2668/category/460/display/1/",
+      "requestedAt": "2026-10-08T20:08:46.969Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:08:47.271Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EC%98%A4%EB%A0%8C%EC%A7%80-%EB%88%84%EB%A6%AC-%EC%89%AC%EB%A6%BC%ED%94%84-3%EB%A7%88%EB%A6%AC/3694/category/476/display/1/",
+      "requestedAt": "2026-10-08T20:08:56.969Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:08:57.233Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EB%B0%9C%EB%A6%AC%EC%8A%A4%EB%84%A4%EB%A6%AC%EC%95%84/2664/category/460/display/1/",
+      "requestedAt": "2026-10-08T20:09:06.974Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:07.280Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/product/%EB%B8%94%EB%9E%99-%ED%82%B9%EC%BD%A9-%EC%89%AC%EB%A6%BC%ED%94%84-1%EB%A7%88%EB%A6%AC/3606/category/476/display/1/",
+      "requestedAt": "2026-10-08T20:09:16.981Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:17.252Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/robots.txt",
+      "requestedAt": "2026-10-08T20:09:18.404Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:18.474Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/list.html?cate_no=450",
+      "requestedAt": "2026-10-08T20:09:28.408Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:28.966Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/list.html?cate_no=482",
+      "requestedAt": "2026-10-08T20:09:38.413Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:38.923Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/m-%EB%93%9C%EB%9E%98%EA%B3%A4-%EA%B5%AC%ED%94%BC-1%EC%8C%8D/13795/category/448/display/1/",
+      "requestedAt": "2026-10-08T20:09:48.415Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:49.034Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8-%EB%A7%88%EB%B8%94-%EA%B5%AC%EB%9D%BC%EB%AF%B8-2%EB%A7%88%EB%A6%AC/14207/category/450/display/1/",
+      "requestedAt": "2026-10-08T20:09:58.423Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:09:59.072Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/m-%EC%95%88%EC%8B%9C-%EB%A1%B1%ED%95%80-2%EB%A7%88%EB%A6%AC/14231/category/482/display/1/",
+      "requestedAt": "2026-10-08T20:10:08.434Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:10:09.117Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/%EC%98%90%EB%A1%9C%EC%9A%B0%EB%A0%88%EC%9D%B4%EC%8A%A4-%EA%B8%80%EB%9D%BC%EC%8A%A4%EB%B2%A8%EB%A6%AC-%EC%88%8F%EB%B0%94%EB%94%94%EB%9D%BC%EC%9D%B4%EC%B8%84-%EA%B5%AC%ED%94%BC-1%EC%8C%8D/13398/category/448/display/1/",
+      "requestedAt": "2026-10-08T20:10:18.448Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:10:19.076Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8-%EB%A7%88%EB%B8%94-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/14206/category/450/display/1/",
+      "requestedAt": "2026-10-08T20:10:28.457Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:10:29.053Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/m-%EC%95%88%EC%8B%9C-%EB%A1%B1%ED%95%80-1%EB%A7%88%EB%A6%AC/14230/category/482/display/1/",
+      "requestedAt": "2026-10-08T20:10:38.467Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:10:39.068Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/%EC%98%90%EB%A1%9C%EC%9A%B0-%ED%8C%AC%EC%8B%9C%EA%B5%AC%ED%94%BC1%EC%8C%8D/9190/category/448/display/1/",
+      "requestedAt": "2026-10-08T20:10:48.481Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:10:49.030Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/m-%EA%B3%A8%EB%93%A0-%ED%97%88%EB%8B%88-%EA%B5%AC%EB%9D%BC%EB%AF%B8-3%EB%A7%88%EB%A6%AC/14056/category/450/display/1/",
+      "requestedAt": "2026-10-08T20:10:58.493Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:10:59.055Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-38",
+      "url": "https://aquauju.com/product/%EB%93%9C%EB%9E%98%EA%B3%A4-%EA%B5%AC%ED%94%BC1%EC%8C%8D/9187/category/448/display/1/",
+      "requestedAt": "2026-10-08T20:11:08.502Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:11:09.074Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/robots.txt",
+      "requestedAt": "2026-10-08T20:11:10.173Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:11:10.239Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EC%83%9D%EC%9D%B4%EC%83%88%EC%9A%B0-100-%EB%A7%88%EB%A6%AC-%EC%A0%84%EC%9A%A9%EC%82%AC%EB%A3%8C%EC%A6%9D%EC%A0%95-%EC%83%9D%EB%AC%BC%ED%8F%AC%EC%9E%A5%EB%B9%84%EC%97%86%EC%9D%8C/5426/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:11:20.184Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:11:20.444Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EB%85%B8%EB%9E%AD%EC%9D%B4%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC%EC%8B%9C%EA%B8%88%EC%B9%98-%EA%B5%AC%EC%8A%AC-1%EA%B0%9C/5206/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:11:30.185Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:11:30.466Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%ED%94%8C%EB%9E%98%ED%8B%B0%EB%84%98-%EC%97%94%EC%A0%A4-1%EB%A7%88%EB%A6%AC/5125/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:11:40.196Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:11:40.445Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-30%EB%A7%88%EB%A6%AC/4339/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:11:50.201Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:11:50.462Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-4-%EB%A7%88%EB%A6%AC/1531/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:12:00.201Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:12:00.472Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EC%98%A4%EB%9E%80%EB%8B%A4-%EA%B8%88%EB%B6%95%EC%96%B4-57cm-1%EB%A7%88%EB%A6%AC/5934/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:12:10.206Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:12:10.469Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EC%83%9D%EC%9D%B4%EC%83%88%EC%9A%B0-100%EB%A7%88%EB%A6%AC-%EB%B9%84%EC%A7%80%EB%96%A1-%EC%83%88%EC%9A%B0%EC%9E%A1%EC%9D%B4-90g/5164/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:12:20.216Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:12:20.499Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EB%B8%94%EB%9E%99%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-20-%EB%A7%88%EB%A6%AC/1530/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:12:30.227Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:12:30.558Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EC%B9%B4%EB%94%94%EB%82%A0-%ED%85%8C%ED%8A%B8%EB%9D%BC-10-%EB%A7%88%EB%A6%AC/1137/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:12:40.233Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:12:40.522Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EC%A7%84%EC%A3%BC%EB%A6%B0-1%EB%A7%88%EB%A6%AC/1123/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:12:50.250Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:12:50.585Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-12",
+      "url": "https://bizidduk.com/product/%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-5-%EB%A7%88%EB%A6%AC/1694/category/27/display/1/",
+      "requestedAt": "2026-10-08T20:13:00.256Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:00.516Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/robots.txt",
+      "requestedAt": "2026-10-08T20:13:01.626Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:01.670Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/list.html?cate_no=154",
+      "requestedAt": "2026-10-08T20:13:11.632Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:12.166Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/list.html?cate_no=79",
+      "requestedAt": "2026-10-08T20:13:21.643Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:22.057Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=1366&cate_no=42&display_group=1",
+      "requestedAt": "2026-10-08T20:13:31.645Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:32.141Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=5306&cate_no=154&display_group=1",
+      "requestedAt": "2026-10-08T20:13:41.656Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:42.116Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=1844&cate_no=79&display_group=1",
+      "requestedAt": "2026-10-08T20:13:51.656Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:13:52.179Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=71&cate_no=42&display_group=1",
+      "requestedAt": "2026-10-08T20:14:01.667Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:14:02.172Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=1316&cate_no=154&display_group=1",
+      "requestedAt": "2026-10-08T20:14:11.671Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:14:12.119Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=1845&cate_no=79&display_group=1",
+      "requestedAt": "2026-10-08T20:14:21.676Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:14:22.161Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=3009&cate_no=42&display_group=1",
+      "requestedAt": "2026-10-08T20:14:31.677Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:14:32.153Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=1321&cate_no=154&display_group=1",
+      "requestedAt": "2026-10-08T20:14:41.677Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:14:42.137Z"
+    },
+    {
+      "round": 3,
+      "sourceId": "retailer-49",
+      "url": "https://fishermanbt.com/product/detail.html?product_no=3075&cate_no=79&display_group=1",
+      "requestedAt": "2026-10-08T20:14:51.680Z",
+      "httpStatus": 200,
+      "method": "standard_same_official_host_https",
+      "checkedAt": "2026-10-08T20:14:52.213Z"
+    }
+  ],
+  "finishedAt": "2026-10-08T20:14:53.215Z",
+  "stopReason": "finite_round_limit",
+  "fullCatalogCoverage": false,
+  "lastCheckpointAt": "2026-10-08T20:14:52.242Z",
+  "after": {
+    "products": 910,
+    "unvisited": 685,
+    "terminalCategories": 35,
+    "pending": 1064,
+    "review": 194
+  },
+  "resumptions": [
+    {
+      "resumedAt": "2026-10-08T20:04:20.816Z",
+      "requestsAlreadySpent": 93,
+      "lastCompletedCheckpoint": "2026-10-08T20:01:10.849Z",
+      "deadlinePreserved": "2026-10-08T20:18:37.644Z"
+    }
+  ],
+  "requestBudgetVerified": true,
+  "baselineProductsRemoved": 0,
+  "collectionAfter": {
+    "products": 910,
+    "unvisited": 690,
+    "terminalCategories": 35,
+    "pending": 1064,
+    "review": 194
+  },
+  "scopeReview": {
+    "newlyExcludedDuringFinalReview": [
+      {
+        "sourceId": "retailer-09",
+        "url": "https://alphafish.co.kr/category/%EC%98%A4%EB%A9%94%EA%B0%80-%EC%86%8C%EC%9D%BC%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88/212/",
+        "label": "오메가 소일포트수초",
+        "evidencePage": "https://alphafish.co.kr/product/%EA%B8%80%EB%A1%9C%EC%86%8C%EC%8A%A4-%ED%8B%B0%EA%B7%B8%EB%A7%88-%EC%86%8C%EC%8A%A4%EC%BB%B5-2%EC%BB%B5/2632/category/44/display/1/"
+      },
+      {
+        "sourceId": "retailer-29",
+        "url": "https://www.trofish.net/shop/shopbrand.html?xcode=001&mcode=007&scode=018&type=X",
+        "label": "달팽이제거",
+        "evidencePage": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005"
+      },
+      {
+        "sourceId": "retailer-32",
+        "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=011004",
+        "label": "이끼/달팽이제거",
+        "evidencePage": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001001"
+      },
+      {
+        "sourceId": "retailer-33",
+        "url": "https://selvas.co.kr/category/%EC%88%98%EC%B4%88%EC%86%8C%EC%9D%BC/371/",
+        "label": "수초소일",
+        "evidencePage": "https://selvas.co.kr/category/%EC%82%AC%EB%A3%8C/124/"
+      },
+      {
+        "sourceId": "retailer-33",
+        "url": "https://selvas.co.kr/category/%EC%B9%98%EB%A3%8C%EC%A0%9C%EB%8B%AC%ED%8C%BD%EC%9D%B4%EC%A0%9C%EA%B1%B0/390/",
+        "label": "치료제/달팽이제거",
+        "evidencePage": "https://selvas.co.kr/category/%EC%82%AC%EB%A3%8C/124/"
+      }
+    ],
+    "productRowsRemoved": 0
+  },
+  "actualPreviouslyUnvisitedCategoriesVisited": 14,
+  "initialUnvisitedSupplyCategoriesExcluded": [
+    {
+      "sourceId": "retailer-09",
+      "url": "https://alphafish.co.kr/category/%EC%98%A4%EB%A9%94%EA%B0%80-%EC%86%8C%EC%9D%BC%ED%8F%AC%ED%8A%B8%EC%88%98%EC%B4%88/212/",
+      "label": "오메가 소일포트수초"
+    },
+    {
+      "sourceId": "retailer-29",
+      "url": "https://www.trofish.net/shop/shopbrand.html?xcode=001&mcode=007&scode=018&type=X",
+      "label": "달팽이제거"
+    },
+    {
+      "sourceId": "retailer-32",
+      "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=011004",
+      "label": "이끼/달팽이제거"
+    },
+    {
+      "sourceId": "retailer-33",
+      "url": "https://selvas.co.kr/category/%EC%88%98%EC%B4%88%EC%86%8C%EC%9D%BC/371/",
+      "label": "수초소일"
+    },
+    {
+      "sourceId": "retailer-33",
+      "url": "https://selvas.co.kr/category/%EC%B9%98%EB%A3%8C%EC%A0%9C%EB%8B%AC%ED%8C%BD%EC%9D%B4%EC%A0%9C%EA%B1%B0/390/",
+      "label": "치료제/달팽이제거"
+    },
+    {
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/category/%EC%86%8C%EC%9D%BC/777/",
+      "label": "소일"
+    },
+    {
+      "sourceId": "retailer-36",
+      "url": "https://www.samaqua.com/category/%EC%88%98%EC%B4%88%EC%98%81%EC%96%91%EC%A0%9C%EB%B9%84%EB%A3%8C/467/",
+      "label": "수초영양제/비료"
+    }
+  ],
+  "requestTiming": [
+    {
+      "sourceId": "retailer-33",
+      "requests": 3,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10005
+    },
+    {
+      "sourceId": "retailer-37",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10002
+    },
+    {
+      "sourceId": "retailer-50",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "sourceId": "retailer-34",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10002
+    },
+    {
+      "sourceId": "retailer-23",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "sourceId": "retailer-01",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10002
+    },
+    {
+      "sourceId": "retailer-40",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "sourceId": "retailer-17",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10001
+    },
+    {
+      "sourceId": "retailer-42",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "sourceId": "retailer-22",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": null,
+      "minObservedGapMs": 2000
+    },
+    {
+      "sourceId": "retailer-07",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10001
+    },
+    {
+      "sourceId": "retailer-36",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "sourceId": "retailer-38",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10002
+    },
+    {
+      "sourceId": "retailer-12",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "sourceId": "retailer-49",
+      "requests": 12,
+      "configuredDelayMs": 2000,
+      "robotsDelayMs": 10000,
+      "minObservedGapMs": 10000
+    }
+  ],
+  "delayVerified": true,
+  "uniqueMerchantsProcessed": 15,
+  "currentCatalogProducts": 910
+}

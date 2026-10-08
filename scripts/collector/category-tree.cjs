@@ -3,7 +3,7 @@ const {categoryKey}=require('./discovery.cjs');
 const VOID=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
 const text=s=>String(s||'').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/\s+/g,' ').trim();
 const fish=/구피|플래티|플라티|플레티|몰리|코리|테트라|메다카|송사리|베타|시클리드|디스커스|엔젤|라스보라|바브|미꾸라지|로치|플레코|금붕어|비단잉어|난태생|카라신|열대어|관상어|해수어|탕가|탕카|말라위|킬리|아로와나|기수어|복어|다니오|레인보우|오토싱|안시|아피스토|민물고기|철갑상어|메기|가오리/;
-const excluded=/사료|먹이|용품|장식|모형|인조|조명|여과|어항|수조|침대|과립|플레이크|치어용|램프|소켓|약품|씨앗|알테미아|브라인|냉동|건조|파충|양서|곤충|거북|육지|관상용식물|원예|선주문/;
+const excluded=/사료|먹이|용품|장식|모형|인조|조명|여과|어항|수조|침대|과립|플레이크|치어용|램프|소켓|약품|치료제|제거제|달팽이제거|소일|바닥재|비료|씨앗|알테미아|브라인|냉동|건조|파충|양서|곤충|거북|육지|관상용식물|원예|선주문/;
 function scope(label,ancestors=[]){const lineage=[...ancestors,label].join(' > ');if(excluded.test(lineage))return {scope:'excluded',reason:'Supply, feed, terrestrial, unsupported animal or preorder ancestry'};
  const matches=[];if(fish.test(lineage))matches.push('fish');if(/새우|shrimp|CRS|CBS/i.test(lineage))matches.push('shrimp');if(/수초|음성수초|양성수초|활착수초/.test(lineage))matches.push('aquatic_plant');if(/스네일|달팽이|우렁이|snail/i.test(lineage))matches.push('snail');
  // Specific leaf overrides a broad aquatic parent, but unrelated sibling labels never enter ancestry.

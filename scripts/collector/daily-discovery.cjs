@@ -11,9 +11,10 @@ async function discoverDaily(source,seed,previous={},options={}){
  const entries=seed.categories.filter(c=>!c.excluded);if(!entries.length)return finish('no_reviewed_categories');
  try{
   const robots=await request(new URL('/robots.txt',source.officialURL).href,limits,run,prior);if(robots.status!==200)return finish('robots_unverified');const crawl=[...robots.text.matchAll(/^\s*Crawl-delay:\s*(\d+(?:\.\d+)?)\s*$/gmi)].map(m=>Number(m[1])*1000);if(crawl.length)limits.delayMs=Math.max(limits.delayMs,...crawl);
-  const start=cursor.nextCategoryIndex%entries.length;
-  for(let offset=0;offset<entries.length;offset++){
-   if(out.coverage.pagesVisited>=seed.maxPages||found.size>=seed.maxProducts)break;const index=(start+offset)%entries.length,entry=entries[index],first=categoryUrl(entry.url,entry.url,source.officialURL),key=first&&categoryKey(first);if(!first||!key){out.errors.push('unsupported_category_route');continue;}
+  const start=cursor.nextCategoryIndex%entries.length,order=Array.from({length:entries.length},(_,offset)=>(start+offset)%entries.length);
+  if(options.preferUnvisitedCategories===true)order.sort((a,b)=>Number(Boolean(cursor.categories[categoryKey(entries[a].url)]?.visitedPageUrls?.length))-Number(Boolean(cursor.categories[categoryKey(entries[b].url)]?.visitedPageUrls?.length)));
+  for(const index of order){
+   if(out.coverage.pagesVisited>=seed.maxPages||found.size>=seed.maxProducts)break;const entry=entries[index];if(options.coverageLive&&entry.type==='gear')continue;const first=categoryUrl(entry.url,entry.url,source.officialURL),key=first&&categoryKey(first);if(!first||!key){out.errors.push('unsupported_category_route');continue;}
    let saved=cursor.categories[key];if(!saved||saved.entryUrl!==first||!saved.nextUrl){saved={entryUrl:first,nextUrl:first,seenKeys:[],cycleStartedAt:new Date(now()).toISOString(),cyclesCompleted:saved?.cyclesCompleted||0,lastCycle:saved?.lastCycle||null,visitedPageUrls:[]};}
    if(categoryKey(saved.nextUrl)!==key||categoryUrl(saved.nextUrl,saved.nextUrl,source.officialURL)===null){out.errors.push('invalid_saved_cursor');saved.nextUrl=first;saved.seenKeys=[];}
    cursor.categories[key]=saved;

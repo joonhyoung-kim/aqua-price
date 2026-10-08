@@ -57,8 +57,17 @@ The collector stops starting network requests after an 18-minute wall-clock budg
 
 ### Verified partial Actions run
 
-Manual workflow run 37767325227, attempt 2, published bot data commit 2d4967239b82952965efb8ace08cb2f08a45845a. Its data validation, commit, push and Render preview file hashes were verified. The overall job remains failed because source errors are reported explicitly. 71 products were added and 9 existing records updated; no existing prices changed and no products were removed. PRFish is held after public fetch failure. Two Aquavillage product identities are held for review; verified products remain visible. The 18-minute budget deferred remaining sources, so this is partial representative discovery. Cron execution has not yet been observed.
+Manual workflow run 37767325227, attempt 2, published bot data commit 2d4967239b82952965efb8ace08cb2f08a45845a. Its data validation, commit, push and Render preview file hashes were verified. The overall job remains failed because source errors are reported explicitly. 71 products were added and 9 existing records updated; no existing prices changed and no products were removed. PRFish is held after public fetch failure. Two Aquavillage product identities are held for review; verified products remain visible. The 18-minute budget deferred remaining sources, so this is partial representative discovery. A later scheduled run 37828093605 completed successfully and published preview data commit 15e120b; its event, job steps and result are recorded in dist/automation-run-evidence.json.
 
 
 ### 생물 후보 확인과 어종 필터
 전체/대조 수집은 알려진 가격 재조회보다 미확인 생물 후보 확인을 우선합니다. 가격 갱신은 기존 live/gear 실행에서 진행하며 `--refresh-known`으로 전체 알려진 URL 재조회도 가능합니다. 요청 상한(판매처당 20회), robots 대기, 18분 실행 한도와 차단 정책은 유지합니다. 확인된 생물·물고기 상품만 어종을 구분하며 플레티 검색은 플래티와 함께 검색합니다. 품종 구분이 모호한 물고기는 기타로 표시합니다. 판매처별 상세 후보와 검토 사유는 공개 읽기 전용 collector-status.json에 보존하며 카테고리 끝 페이지 확인은 전체 상품 상세 확인 완료를 뜻하지 않습니다.
+
+
+### Bounded coverage batches
+
+Resuming rejects a prior recorded process that is still running or whose status cannot be verified.
+
+Run `node scripts/collect-coverage-batch.cjs --rounds 3 --minutes 32` to alternate observed category discovery and pending-detail draining across merchants. The batch has at most three 60-request rounds, five merchants per round, and at most 12 requests per merchant slot; stricter registered limits, robots delays, denial quarantine and candidate retry holds remain active. Merchant selection rotates untouched merchants and considers observed coverage and last attempt. Category totals remain separate and do not establish whole-retailer totals.
+
+Each completed merchant saves catalog data, state and queue/page tails. The request journal is saved before each network attempt. An interrupted batch can use `--resume` with its original remaining request budget and deadline; completed batches cannot be resumed into a fresh budget. Public progress is in `dist/coverage-batch-report.json`. Stop reasons distinguish finite round limits, elapsed collection time, no eligible sources and no collection progress. The operator reviews and validates output before publishing preview data.

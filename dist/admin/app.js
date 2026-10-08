@@ -11,7 +11,7 @@ function render(){if(!data)return;const q=$('#query').value.trim().toLowerCase()
 fetch('status.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(value=>{
  if(value.schemaVersion!==1||!Array.isArray(value.sources))throw Error();data=value;
  $('#summary').innerHTML=[`최초 판매처 ${data.sources.length}곳`,`수집 설정 켜짐 ${data.sources.filter(s=>s.enabled).length}곳`,`수집 성공 ${data.sources.filter(s=>s.collectorStatus==='success').length}곳`,`자동 실행 검증 ${data.sources.filter(s=>s.autoRefreshVerified).length}곳`].map(escapeText).map(t=>'<span>'+t+'</span>').join('');
- $('#automation').textContent=data.automation.verifiedRun?'예약 자동 갱신의 실행을 확인했습니다. 전체 상품 실시간 수집은 아닙니다.':data.automation.configured?'예약 설정은 등록되어 있지만 첫 자동 실행·배포 반영 검증은 아직 완료되지 않았습니다.':'자동 갱신은 아직 배포·실행 검증되지 않았습니다.';
+ $('#automation').textContent=data.automation.dataPipelineVerified?'수동 GitHub Actions 수집 결과의 데이터 저장·미리보기 배포를 확인했습니다. 일부 판매처 오류로 마지막 작업 결론은 실패입니다. 시간 예산에 따른 부분 수집이며, 예약 cron 실행은 아직 검증하지 않았습니다.':data.automation.verifiedRun?'예약 자동 갱신의 실행을 확인했습니다. 전체 상품 실시간 수집은 아닙니다.':data.automation.configured?'예약 설정은 등록되어 있지만 첫 자동 실행·배포 반영 검증은 아직 완료되지 않았습니다.':'자동 갱신은 아직 배포·실행 검증되지 않았습니다.';
  $('#scope').textContent='관찰 지도 '+(data.discoveryScope?.mappedSources||0)+'곳 · 대표 링크 '+(data.discoveryScope?.observedSeeds||0)+'개 · 목록 파서 대상 '+(data.discoveryScope?.adapterEnabledSources||0)+'곳. 대표 카테고리만 한도 내에서 이어 읽으며 전체 상품 수집 완료를 뜻하지 않습니다.';
  $('#updated').textContent='상태 생성 시각: '+data.generatedAt+' · 최초 45곳 외 확인본 도메인 '+data.additionalSnapshotDomains.length+'곳은 위 목록 분모에 포함하지 않습니다.';
  render();

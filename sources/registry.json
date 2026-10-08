@@ -868,7 +868,21 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false
-      }
+      },
+      "reviewHoldProducts": [
+        {
+          "url": "https://www.aquavillage.co.kr/product/고정구피-알비노-실버라도-레드테일구피/2461/?item_code=P0000DQR000A",
+          "reason": "identity_not_corroborated",
+          "runId": "37767325227",
+          "observedAt": "2026-10-08T11:48:54.467Z"
+        },
+        {
+          "url": "https://www.aquavillage.co.kr/product/플레임-구피/2458/?item_code=P0000DQO000A",
+          "reason": "identity_not_corroborated",
+          "runId": "37767325227",
+          "observedAt": "2026-10-08T11:48:54.467Z"
+        }
+      ]
     },
     {
       "id": "retailer-17",
@@ -1066,10 +1080,10 @@
       "original45": true,
       "platform": "unverified",
       "adapter": "legacy_godo_public_price",
-      "enabled": true,
+      "enabled": false,
       "photosAllowed": true,
-      "technicalReadiness": "adapter_sample_tested",
-      "currentIntegrationStatus": "local_collection_failed",
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "public_fetch_review_required",
       "products": [
         {
           "url": "https://www.prfish.com/shop/goods/goods_view.php?goodsno=21050&category=022001",
@@ -1086,7 +1100,7 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "fetch failed",
+        "GitHub Actions attempt 2: public fetch failed; source held pending review. No alternate route, authentication or TLS bypass.",
         "Previous verified snapshot is retained."
       ],
       "discovery": {

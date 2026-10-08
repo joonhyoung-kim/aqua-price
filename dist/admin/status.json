@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T11:48:54.594Z",
+  "generatedAt": "2026-10-08T11:53:37.204Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -18,9 +18,50 @@
       "gear": "29 */6 * * *",
       "reconcile": "43 2 * * *"
     },
-    "newProductDiscovery": false,
+    "newProductDiscovery": true,
     "deletionEnabled": false,
-    "mainWorkflowCommit": "7b63ad3c19b813c3b4879b40b28f67ab142a9561"
+    "mainWorkflowCommit": "7b63ad3c19b813c3b4879b40b28f67ab142a9561",
+    "dataPipelineVerified": true,
+    "scheduledRunVerified": false,
+    "fullCatalogCoverage": false,
+    "verifiedDeploymentAt": "2026-10-08T11:50:38.285Z",
+    "lastRun": {
+      "id": 37767325227,
+      "url": "https://github.com/joonhyoung-kim/aqua-price/actions/runs/37767325227",
+      "attempt": 2,
+      "trigger": "workflow_dispatch",
+      "mode": "all",
+      "conclusion": "failure",
+      "dataCommit": "2d4967239b82952965efb8ace08cb2f08a45845a",
+      "startedAt": "2026-10-08T11:31:12.702Z",
+      "finishedAt": "2026-10-08T11:48:54.467Z",
+      "successfulSources": 25,
+      "partialFailureSources": [
+        "retailer-16"
+      ],
+      "failedSources": [
+        "retailer-21"
+      ],
+      "budgetLimitedSources": [
+        "retailer-37"
+      ],
+      "deferredSourceIds": [
+        "retailer-38",
+        "retailer-39",
+        "retailer-40",
+        "retailer-41",
+        "retailer-42",
+        "retailer-43",
+        "retailer-44",
+        "retailer-45",
+        "retailer-46"
+      ],
+      "addedProducts": 71,
+      "updatedProducts": 9,
+      "priceChangedProducts": 0,
+      "deletionCount": 0,
+      "coverageComplete": false
+    }
   },
   "discoveryScope": {
     "mappedSources": 32,
@@ -90,7 +131,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -149,7 +190,7 @@
         "cursorCategories": []
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -266,7 +307,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -340,7 +381,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -420,7 +461,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -502,7 +543,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -576,7 +617,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -648,7 +689,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -726,7 +767,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -806,7 +847,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -879,7 +920,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -956,7 +997,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1030,7 +1071,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1114,7 +1155,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1264,7 +1305,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1343,7 +1384,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1439,7 +1480,7 @@
         "cursorCategories": []
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1447,8 +1488,8 @@
       "name": "피알피쉬",
       "domain": "prfish.com",
       "officialUrl": "https://prfish.com/",
-      "technicalReadiness": "adapter_sample_tested",
-      "enabled": true,
+      "technicalReadiness": "blocked",
+      "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
       "refreshScope": {
@@ -1463,7 +1504,7 @@
       "collectorLastSuccess": null,
       "collectorLastError": "fetch failed",
       "blockers": [
-        "fetch failed",
+        "GitHub Actions attempt 2: public fetch failed; source held pending review. No alternate route, authentication or TLS bypass.",
         "Previous verified snapshot is retained."
       ],
       "discovery": {
@@ -1478,7 +1519,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+      "schedule": null
     },
     {
       "id": "retailer-22",
@@ -1536,7 +1577,7 @@
         "cursorCategories": []
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1611,7 +1652,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1694,7 +1735,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1863,7 +1904,7 @@
         "cursorCategories": []
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1996,7 +2037,7 @@
         "cursorCategories": []
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -2079,7 +2120,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -2152,7 +2193,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -2268,7 +2309,7 @@
         ]
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {

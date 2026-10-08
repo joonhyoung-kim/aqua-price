@@ -50,22 +50,22 @@
   }
   function selectProducts(catalog, filters) {
     validateCatalog(catalog);
-    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales'].includes(filters.sort) && [7, 30, 90].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
+    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
-    const end = Date.parse(catalog.asOf), start = end - filters.days * DAY;
-    const startAt = new Date(start).toISOString(), endAt = new Date(end).toISOString();
+    const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
+    const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
     const needle = filters.query.trim().toLowerCase();
     let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || p.subtype === filters.subtype) && [p.name, p.originalTitle || '', p.spec].some(value => value.toLowerCase().includes(needle)));
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
-    const includeUnknown = filters.includeUnknownRegistration === true && filters.sort !== 'new';
+    const includeUnknown = (filters.days === 'all' || filters.includeUnknownRegistration === true) && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
     const includedUnknownRegistration = includeUnknown ? unknownCount : 0;
-    rows = rows.filter(p => p.registeredAt === null ? includeUnknown : Date.parse(p.registeredAt) >= start && Date.parse(p.registeredAt) <= end);
+    rows = rows.filter(p => p.registeredAt === null ? includeUnknown : filters.days === 'all' || Date.parse(p.registeredAt) >= start && Date.parse(p.registeredAt) <= end);
     const excludedPrice = rows.filter(p => p.price === null).length;
     if (filters.sort === 'low' || filters.sort === 'high') rows = rows.filter(p => p.price !== null);
     let excludedSales = 0;
     if (filters.sort === 'sales') {
-      const matches = p => p.periodSales !== null && Date.parse(p.periodSales.startAt) === start && Date.parse(p.periodSales.endAt) === end;
+      const matches = p => start !== null && p.periodSales !== null && Date.parse(p.periodSales.startAt) === start && Date.parse(p.periodSales.endAt) === end;
       excludedSales = rows.filter(p => !matches(p)).length;
       rows = rows.filter(matches).sort((a, b) => b.periodSales.count - a.periodSales.count);
     } else if (filters.sort === 'new') rows.sort((a, b) => Date.parse(b.registeredAt) - Date.parse(a.registeredAt));

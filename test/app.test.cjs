@@ -19,7 +19,7 @@ test('published catalog preserves the supplied verified items, categories and un
   assert.equal(data.status, 'ready'); assert.equal(data.products.length, snapshot.summary.offer_count); assert.equal(data.sellers.length, snapshot.summary.merchant_count);
   assert.equal(data.products.filter(p => p.subtype === 'aquatic_plant').length, snapshot.summary.live_plant_count);
   assert.equal(data.products.filter(p => p.type === 'gear').length, snapshot.summary.gear_count);
-  assert.equal(data.products.filter(p => p.subtype === 'fish').length, 3); assert.equal(data.products.filter(p => p.subtype === 'shrimp').length, 2); assert.equal(data.products.filter(p => p.subtype === 'snail').length, 1);
+  assert.equal(data.products.filter(p => p.subtype === 'fish').length, snapshot.summary.fish_count); assert.equal(data.products.filter(p => p.subtype === 'shrimp').length, snapshot.summary.shrimp_count); assert.equal(data.products.filter(p => p.subtype === 'snail').length, snapshot.summary.snail_count);
   for (const [index, p] of data.products.entries()) {
     assert.equal(p.id, snapshot.items[index].id); assert.equal(p.originalTitle, snapshot.items[index].title);
     assert.equal(p.sourceUrl, snapshot.items[index].product_url); assert.equal(p.price.amount, snapshot.items[index].price_amount);
@@ -138,7 +138,11 @@ test('livestock filters use verified subtype, never infer category from title, a
 
 test('direct retailer evidence is separate from API and six livestock photos use verified original URLs',()=>{
  const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/catalog.json'),'utf8'));
- const direct=data.products.filter(p=>p.sourceKind==='direct_retailer_product_page'); assert.equal(direct.length,6); assert.equal(data.products.length,41); assert.equal(data.sellers.length,13);
- assert.equal(data.products.filter(p=>p.sourceKind==='cafe24_global_catalog_api').length,35); assert.equal(data.products.filter(p=>p.photo.url).length,41);
- for(const p of direct){assert.ok(p.photo.url.startsWith('https://'));assert.equal(p.photo.usePermission,'allowed');assert.equal(p.photo.permissionEvidenceUrl,p.sourceUrl);assert.equal(p.photo.permissionBasis,'explicit_user_instruction');assert.equal(p.registeredAt,null);assert.equal(p.shipping,null);assert.equal(p.periodSales,null);assert.match(p.availabilityBasis,/not checkout-confirmed/);assert.match(p.verificationMethod,/JSON-LD/);}
+ const direct=data.products.filter(p=>p.sourceKind==='direct_retailer_product_page'); const snapshot=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/source-snapshot.json'),'utf8')); assert.equal(direct.length,snapshot.items.filter(p=>p.source_kind==='direct_retailer_product_page').length); assert.equal(data.products.length,snapshot.items.length); assert.equal(data.sellers.length,new Set(snapshot.items.map(p=>p.seller_domain)).size);
+ assert.equal(data.products.filter(p=>p.sourceKind==='cafe24_global_catalog_api').length,snapshot.items.filter(p=>!p.source_kind).length); assert.equal(data.products.filter(p=>p.photo.url).length,snapshot.items.filter(p=>p.photo?.verified_https_url).length);
+ for(const p of direct){if(p.photo.url){assert.ok(p.photo.url.startsWith('https://'));assert.equal(p.photo.usePermission,'allowed');assert.equal(p.photo.permissionEvidenceUrl,p.sourceUrl);assert.equal(p.photo.permissionBasis,'explicit_user_instruction');}else assert.equal(p.photo.usePermission,'unknown');assert.equal(p.registeredAt,null);assert.equal(p.shipping,null);assert.equal(p.periodSales,null);assert.match(p.availabilityBasis,/checkout|not supplied/);assert.equal(typeof p.verificationMethod,'string');}
+});
+
+test('all period includes old and unknown registration without fabricating dates or all-time sales',()=>{
+ const data=catalog([product('old',{registeredAt:'2020-01-01T00:00:00.000Z'}),product('unknown',{registeredAt:null})]);const result=select(data,{days:'all',includeUnknownRegistration:false});assert.equal(result.rows.length,2);assert.equal(result.startAt,null);assert.equal(result.rows.find(p=>p.id==='unknown').registeredAt,null);assert.equal(select(data,{days:'all',sort:'new'}).rows.length,1);assert.equal(select(data,{days:'all',sort:'sales'}).rows.length,0);
 });

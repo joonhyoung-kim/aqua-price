@@ -1,6 +1,6 @@
 'use strict';
 const $ = selector => document.querySelector(selector);
-let filters = { type: 'gear', subtype: 'aquatic_plant', sort: 'low', days: 30, query: '', includeUnknownRegistration: true };
+let filters = { type: 'gear', subtype: 'aquatic_plant', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true };
 let catalog = { schemaVersion: 1, status: 'pending', reason: '검증된 판매처 데이터를 불러오는 중입니다.', asOf: null, sellers: [], products: [] };
 const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const formatTime = value => value === null ? '미확인' : new Date(value).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ' KST';
@@ -16,6 +16,7 @@ function syncSubtypeControls() {
 function render(resetPage = true) {
   if (resetPage) visibleLimit = PAGE_SIZE;
   syncSubtypeControls();
+  $('#includeUnknown').disabled = filters.days === 'all';
   const result = AquaCatalog.selectProducts(catalog, filters);
   const visibleRows = result.rows.slice(0, visibleLimit);
   const sellerById = new Map(catalog.sellers.map(seller => [seller.id, seller]));
@@ -30,7 +31,7 @@ function render(resetPage = true) {
   $('#resultNote').textContent = '표시가격 기준 · 배송비 별도 · 규격 확인';
   $('#dataStatus').textContent = catalog.status === 'ready' ? catalog.notice || `확인된 관찰 데이터 · 기준 ${formatTime(catalog.asOf)} · 현재 가격·재고는 판매처에서 확인하세요.` : catalog.reason;
   const exclusions = [result.excludedRegistration ? `등록일 미확인 ${result.excludedRegistration}개 제외` : '', (filters.sort === 'low' || filters.sort === 'high') && result.excludedPrice ? `가격 미확인 ${result.excludedPrice}개 제외` : '', result.excludedSales ? `선택 기간 판매량 미확인 ${result.excludedSales}개 제외` : ''].filter(Boolean);
-  $('#hint').textContent = '기간은 실제 상품 등록일 기준 · 관찰 시각은 등록일이 아닙니다.' + (result.includedUnknownRegistration ? ` · 등록일 미확인 ${result.includedUnknownRegistration}개 포함: 선택 기간 해당 여부를 판단할 수 없습니다.` : '') + (exclusions.length ? ' · ' + exclusions.join(' · ') : '');
+  $('#hint').textContent = (filters.days === 'all' ? '전체 기간 · 등록일 미확인 상품도 포함합니다. 신상품순은 확인된 등록일이 필요합니다.' : '기간은 실제 상품 등록일 기준') + ' · 관찰 시각은 등록일이 아닙니다.' + (result.includedUnknownRegistration ? ` · 등록일 미확인 ${result.includedUnknownRegistration}개 포함: 선택 기간 해당 여부를 판단할 수 없습니다.` : '') + (exclusions.length ? ' · ' + exclusions.join(' · ') : '');
   $('#sellerLinks').innerHTML = connectedSellers.length ? '<span>이번 확인본에 상품이 있는 판매처: </span>' + connectedSellers.map(s => `<a href="${escapeHtml(s.officialUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)} ↗</a>`).join(' · ') : '이번 확인본에 상품이 있는 판매처가 없습니다.';
   if (!result.rows.length) {
     $('#grid').innerHTML = `<div class="empty"><strong>확인 가능한 상품이 없어요</strong>${escapeHtml(result.reason)}<br>낮은·높은 가격순에서 등록일 미확인 상품을 포함하거나 판매처에서 직접 확인할 수 있습니다.</div>`;
@@ -62,7 +63,7 @@ document.querySelectorAll('[data-sort]').forEach(button => button.addEventListen
   render();
 }));
 document.querySelectorAll('[data-subtype]').forEach(button => button.addEventListener('click', () => { filters.subtype = button.dataset.subtype; render(); }));
-$('#period').addEventListener('change', () => { filters.days = Number($('#period').value); render(); });
+$('#period').addEventListener('change', () => { filters.days = $('#period').value === 'all' ? 'all' : Number($('#period').value); render(); });
 $('#includeUnknown').addEventListener('change', () => { filters.includeUnknownRegistration = $('#includeUnknown').checked; render(); });
 $('#moreResults').addEventListener('click', () => { visibleLimit += PAGE_SIZE; render(false); });
 $('#search').addEventListener('submit', event => { event.preventDefault(); filters.query = $('#query').value.trim(); render(); });
@@ -78,7 +79,7 @@ fetch('catalog.json', { cache: 'no-store' }).then(response => {
 if (document.modelContext?.registerTool) {
   try { Promise.resolve(document.modelContext.registerTool({
     name: 'set_product_filters', description: '검증된 관찰 상품의 종류·정렬·실제 등록 기간·검색어를 변경합니다. 데이터가 없거나 미확인이면 결과가 비어 있습니다.',
-    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, subtype: { enum: ['fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new'] }, days: { enum: [7, 30, 90] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
+    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, subtype: { enum: ['fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
     annotations: { readOnlyHint: false },
     execute(value) {
       const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };

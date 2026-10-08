@@ -1439,7 +1439,7 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Prior generic HTTP/tunnel403 origin is unverified; standard same-origin robots and listing GET200 on 2026-10-08T18:02:38.689Z. Full allowed menu traversal and detail coverage remain incomplete."
+        "Prior HTTP/tunnel 403 cause remains unknown; fresh standard same-official-host robots and listing returned HTTP 200 at 2026-10-08T19:01Z. Full allowed menu traversal and detail coverage remain incomplete."
       ],
       "discovery": {
         "entryPoints": [
@@ -1459,7 +1459,7 @@
         "deletionEnabled": false
       },
       "accessReview": {
-        "checkedAt": "2026-10-08T18:02:38.689Z",
+        "checkedAt": "2026-10-08T19:01:11.845Z",
         "previousBlocker": [
           "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
         ],
@@ -1478,9 +1478,26 @@
             "status": 200
           }
         ],
-        "method": "Standard same-official-host HTTPS, no authentication or alternate route",
+        "method": "Fresh standard same-official-host HTTPS; no authentication, alternate host or bypass",
         "currentAccess": "200",
-        "robotsAllowsCategory": true
+        "robotsAllowsCategory": true,
+        "latestRequests": [
+          {
+            "sourceId": "retailer-25",
+            "url": "https://sangaqua.co.kr/robots.txt",
+            "httpStatus": 200,
+            "checkedAt": "2026-10-08T19:01:01.496Z",
+            "method": "standard_same_official_host_https"
+          },
+          {
+            "sourceId": "retailer-25",
+            "url": "https://sangaqua.co.kr/category/%EC%83%9D%EB%AC%BC/24/",
+            "httpStatus": 200,
+            "checkedAt": "2026-10-08T19:01:11.814Z",
+            "method": "standard_same_official_host_https"
+          }
+        ],
+        "old403Cause": "unknown"
       }
     },
     {
@@ -2448,7 +2465,7 @@
       "enabled": true,
       "photosAllowed": true,
       "technicalReadiness": "adapter_sample_tested",
-      "currentIntegrationStatus": "single_offer_sample_verified_partial_category_discovery",
+      "currentIntegrationStatus": "public_single_axis_options_verified_partial_category_discovery",
       "products": [
         {
           "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1918&GC=GD00",
@@ -2462,7 +2479,7 @@
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Strict public single-offer details only; unknown options and inconsistent prices require review",
+        "Public single-axis option IDs, labels, absolute prices and displayed deltas corroborated; unsupported multi-axis or inconsistent options remain review",
         "Mixed listing includes supplies; each detail requires primary breadcrumb and scope conflict checks",
         "Complete retailer coverage unverified"
       ],

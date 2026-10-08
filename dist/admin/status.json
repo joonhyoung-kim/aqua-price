@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T20:55:56.813Z",
+  "generatedAt": "2026-10-08T21:26:01.121Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -77,8 +77,8 @@
       "officialUrl": "https://animallo.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 24,
-      "collectorProductCount": 24,
+      "snapshotProductCount": 34,
+      "collectorProductCount": 34,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 4,
@@ -88,8 +88,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T20:43:21.425Z",
-      "collectorLastSuccess": "2026-10-08T20:45:11.995Z",
+      "collectorLastAttempt": "2026-10-08T21:02:32.972Z",
+      "collectorLastSuccess": "2026-10-08T21:04:23.584Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -112,18 +112,18 @@
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 59,
-        "pagesVisited": 1,
-        "detailBudget": 11,
-        "newCandidates": 30,
-        "verifiedItems": 6,
-        "pendingCandidates": 69,
+        "pagesVisited": 0,
+        "detailBudget": 12,
+        "newCandidates": 0,
+        "verifiedItems": 10,
+        "pendingCandidates": 58,
         "pendingByGroup": {
-          "mixed": 20,
-          "fish": 49
+          "mixed": 19,
+          "fish": 39
         },
-        "reviewRequired": 25,
+        "reviewRequired": 26,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 22,
+          "Mixed or unresolved product category requires review": 23,
           "Feed/artificial plant/supply conflict blocks livestock classification": 3
         },
         "reviewQueue": [
@@ -601,13 +601,32 @@
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
             "reviewedAt": "2026-10-08T20:45:11.997Z"
+          },
+          {
+            "key": "animallo.kr:5365",
+            "url": "https://animallo.kr/product/%EC%B4%88%EC%BD%9C%EB%A0%9B-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/5365/category/25/display/1/",
+            "title": "초콜렛 새우 10마리",
+            "candidate": {
+              "url": "https://animallo.kr/product/%EC%B4%88%EC%BD%9C%EB%A0%9B-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/5365/category/25/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://animallo.kr/product/list.html?cate_no=25",
+              "discoveredAt": "2026-10-08T14:51:28.217Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:04:23.586Z"
           }
         ],
         "excludedCandidates": 0,
         "nextCategoryIndex": 5,
-        "lastAttempt": "2026-10-08T20:43:21.503Z",
+        "lastAttempt": "2026-10-08T21:02:33.059Z",
         "errors": [
-          "product_budget_reached:https://animallo.kr/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/499/"
+          "request_budget_reached"
         ],
         "cursorCategories": [
           {
@@ -920,9 +939,9 @@
             }
           ],
           "terminalCategoryCount": 1,
-          "verifiedProductCount": 24,
-          "pendingProductCount": 69,
-          "reviewProductCount": 25,
+          "verifiedProductCount": 34,
+          "pendingProductCount": 58,
+          "reviewProductCount": 26,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -939,8 +958,8 @@
       "officialUrl": "http://www.greenfish.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 26,
-      "collectorProductCount": 26,
+      "snapshotProductCount": 34,
+      "collectorProductCount": 34,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -949,9 +968,9 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T18:53:21.762Z",
-      "collectorLastSuccess": "2026-10-08T11:03:05.473Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T21:09:59.800Z",
+      "collectorLastSuccess": "2026-10-08T21:10:22.102Z",
       "collectorLastError": null,
       "blockers": [
         "Scheduled run, data commit and Render deployment not yet verified.",
@@ -977,24 +996,45 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 26,
+        "representativeSeedCount": 40,
         "pagesVisited": 2,
-        "detailBudget": 8,
-        "newCandidates": 30,
+        "detailBudget": 9,
+        "newCandidates": 23,
         "verifiedItems": 8,
-        "pendingCandidates": 32,
+        "pendingCandidates": 45,
         "pendingByGroup": {
-          "fish": 32
+          "fish": 45
         },
-        "reviewRequired": 0,
-        "reviewReasons": {},
-        "reviewQueue": [],
+        "reviewRequired": 1,
+        "reviewReasons": {
+          "Feed/artificial plant/supply conflict blocks livestock classification": 1
+        },
+        "reviewQueue": [
+          {
+            "key": "greenfish.co.kr:1244270",
+            "url": "http://greenfish.co.kr/shop/shopdetail.html?branduid=1244270&xcode=006&mcode=011&scode=&type=X&sort=order&current_category=006011&search=&GfDT=amt3UQ%3D%3D",
+            "title": "히카리 코리도라스 사료 25g",
+            "candidate": {
+              "url": "http://greenfish.co.kr/shop/shopdetail.html?branduid=1244270&xcode=006&mcode=011&scode=&type=X&sort=order&current_category=006011&search=&GfDT=amt3UQ%3D%3D",
+              "type": "live",
+              "subtype": "fish",
+              "mixedCategories": false,
+              "classificationBasis": "Reviewed explicit ornamental-fish menu link observed in cached public retailer page; verified detail identity and contradictory breadcrumb/title checks still required",
+              "discoveredInCategory": "http://greenfish.co.kr/shop/shopbrand.html?xcode=006&mcode=011&type=X",
+              "discoveredAt": "2026-10-08T21:10:02.087Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:10:22.103Z"
+          }
+        ],
         "excludedCandidates": 1,
-        "nextCategoryIndex": 7,
-        "lastAttempt": "2026-10-08T17:54:10.934Z",
+        "nextCategoryIndex": 9,
+        "lastAttempt": "2026-10-08T21:09:59.896Z",
         "errors": [
-          "product_budget_reached:http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=005",
-          "page_budget_reached:http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=005"
+          "page_budget_reached:http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=003"
         ],
         "cursorCategories": [
           {
@@ -1040,15 +1080,46 @@
               "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=005"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=006&mcode=011&type=X",
+            "nextUrl": null,
+            "expectedProductCount": 8,
+            "cycleSeenProductCount": 8,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-08T21:10:02.092Z",
+              "reportedCount": 8,
+              "observedUniqueLinks": 8,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "http://greenfish.co.kr/shop/shopbrand.html?xcode=006&mcode=011&type=X"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=003",
+            "nextUrl": "http://greenfish.co.kr/shop/shopbrand.html?type=X&xcode=002&mcode=003&sort=order&page=2",
+            "expectedProductCount": 167,
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=003"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
-          "discoveredCategoryCount": 127,
-          "allowedCategoryCount": 34,
+          "discoveredCategoryCount": 133,
+          "allowedCategoryCount": 38,
           "excludedCategoryCount": 45,
-          "reviewCategoryCount": 48,
-          "pagesVisited": 4,
-          "pendingCategoryCount": 33,
+          "reviewCategoryCount": 50,
+          "pagesVisited": 6,
+          "pendingCategoryCount": 36,
           "pendingPageUrls": [
             {
               "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X",
@@ -1071,12 +1142,8 @@
               "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=005"
             },
             {
-              "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=006&mcode=011&type=X",
-              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=006&mcode=011&type=X"
-            },
-            {
               "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=003",
-              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=003"
+              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?type=X&xcode=002&mcode=003&sort=order&page=2"
             },
             {
               "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X&mcode=003&scode=001",
@@ -1181,12 +1248,28 @@
             {
               "categoryUrl": "http://www.greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=004&scode=001",
               "nextPageUrl": "http://www.greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=004&scode=001"
+            },
+            {
+              "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=003",
+              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=003"
+            },
+            {
+              "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=007",
+              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=007"
+            },
+            {
+              "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=008",
+              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=008"
+            },
+            {
+              "categoryUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=011",
+              "nextPageUrl": "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=M&mcode=003&scode=011"
             }
           ],
-          "terminalCategoryCount": 1,
-          "verifiedProductCount": 26,
-          "pendingProductCount": 32,
-          "reviewProductCount": 0,
+          "terminalCategoryCount": 2,
+          "verifiedProductCount": 34,
+          "pendingProductCount": 45,
+          "reviewProductCount": 1,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -1242,8 +1325,8 @@
       "officialUrl": "https://raraaqua.com/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 60,
-      "collectorProductCount": 60,
+      "snapshotProductCount": 71,
+      "collectorProductCount": 71,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -1253,8 +1336,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T19:08:10.211Z",
-      "collectorLastSuccess": "2026-10-08T19:08:11.997Z",
+      "collectorLastAttempt": "2026-10-08T21:10:23.308Z",
+      "collectorLastSuccess": "2026-10-08T21:12:14.054Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -1268,7 +1351,7 @@
           "https://raraaqua.com/category/%EC%97%AC%EA%B3%BC%EB%AA%A8%ED%84%B0-N/651/",
           "https://raraaqua.com/category/%EC%96%91%EC%84%9C%ED%8C%8C%EC%B6%A9%EB%A5%98-N/806/"
         ],
-        "status": "success",
+        "status": "budget_limited",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 14,
         "pageBudget": 2,
@@ -1280,23 +1363,24 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 22,
-        "pagesVisited": 2,
-        "detailBudget": 7,
-        "newCandidates": 21,
-        "verifiedItems": 7,
-        "pendingCandidates": 19,
+        "representativeSeedCount": 30,
+        "pagesVisited": 0,
+        "detailBudget": 12,
+        "newCandidates": 0,
+        "verifiedItems": 11,
+        "pendingCandidates": 8,
         "pendingByGroup": {
-          "aquatic_plant": 3,
-          "fish": 16
+          "fish": 8
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
         "nextCategoryIndex": 7,
-        "lastAttempt": "2026-10-08T17:54:30.045Z",
-        "errors": [],
+        "lastAttempt": "2026-10-08T21:10:23.531Z",
+        "errors": [
+          "request_budget_reached"
+        ],
         "cursorCategories": [
           {
             "entryUrl": "https://raraaqua.com/category/%EA%B5%AC%ED%94%BC/580/",
@@ -1497,8 +1581,8 @@
             }
           ],
           "terminalCategoryCount": 3,
-          "verifiedProductCount": 60,
-          "pendingProductCount": 19,
+          "verifiedProductCount": 71,
+          "pendingProductCount": 8,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -1506,7 +1590,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1526,9 +1610,9 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T18:54:11.377Z",
-      "collectorLastSuccess": "2026-10-08T18:57:22.892Z",
+      "collectorStatus": "no_confirmed_products",
+      "collectorLastAttempt": "2026-10-08T21:14:06.860Z",
+      "collectorLastSuccess": "2026-10-08T09:46:21.308Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -1541,7 +1625,7 @@
           "https://medakagallery.com/category/%EC%84%A0%EB%B3%84-%EB%A9%94%EB%8B%A4%EC%B9%B4/68/",
           "https://medakagallery.com/category/%EC%88%98%EC%B4%88/50/"
         ],
-        "status": "draining_pending",
+        "status": "budget_limited",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 4,
         "pageBudget": 2,
@@ -1553,18 +1637,18 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 4,
+        "representativeSeedCount": 5,
         "pagesVisited": 0,
-        "detailBudget": 9,
+        "detailBudget": 12,
         "newCandidates": 0,
         "verifiedItems": 0,
-        "pendingCandidates": 21,
+        "pendingCandidates": 10,
         "pendingByGroup": {
-          "mixed": 21
+          "mixed": 10
         },
-        "reviewRequired": 24,
+        "reviewRequired": 30,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 24
+          "Mixed or unresolved product category requires review": 30
         },
         "reviewQueue": [
           {
@@ -1584,7 +1668,7 @@
             "status": "needs_review",
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
-            "reviewedAt": "2026-10-08T14:45:22.029Z"
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
           },
           {
             "key": "medakagallery.com:478",
@@ -1603,7 +1687,7 @@
             "status": "needs_review",
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
-            "reviewedAt": "2026-10-08T14:45:22.029Z"
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
           },
           {
             "key": "medakagallery.com:552",
@@ -1622,7 +1706,7 @@
             "status": "needs_review",
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
-            "reviewedAt": "2026-10-08T14:45:22.029Z"
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
           },
           {
             "key": "medakagallery.com:551",
@@ -1641,7 +1725,7 @@
             "status": "needs_review",
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
-            "reviewedAt": "2026-10-08T14:45:22.029Z"
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
           },
           {
             "key": "medakagallery.com:549",
@@ -1660,7 +1744,7 @@
             "status": "needs_review",
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
-            "reviewedAt": "2026-10-08T14:45:22.029Z"
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
           },
           {
             "key": "medakagallery.com:548",
@@ -2022,12 +2106,128 @@
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
             "reviewedAt": "2026-10-08T17:57:31.394Z"
+          },
+          {
+            "key": "medakagallery.com:557",
+            "url": "https://medakagallery.com/product/%EC%8B%A4%EB%AC%BC%EA%B0%9C%EC%B2%B4-%ED%99%94%EB%AC%B5-%EC%96%B4%EC%8A%A4%EC%95%84%EC%9D%B4-%EB%A9%94%EB%8B%A4%EC%B9%B4-2%EC%8C%8D/557/category/24/display/1/",
+            "title": "[실물개체] 화묵 어스아이 메다카 2쌍",
+            "candidate": {
+              "url": "https://medakagallery.com/product/%EC%8B%A4%EB%AC%BC%EA%B0%9C%EC%B2%B4-%ED%99%94%EB%AC%B5-%EC%96%B4%EC%8A%A4%EC%95%84%EC%9D%B4-%EB%A9%94%EB%8B%A4%EC%B9%B4-2%EC%8C%8D/557/category/24/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+              "discoveredAt": "2026-10-08T14:44:31.994Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
+          },
+          {
+            "key": "medakagallery.com:556",
+            "url": "https://medakagallery.com/product/%EC%8B%A4%EB%AC%BC%EA%B0%9C%EC%B2%B4-%ED%99%8D%EB%B0%B1%ED%8C%AC%EB%8D%94-%EB%A9%94%EB%8B%A4%EC%B9%B4-2%EC%8C%8D/556/category/24/display/1/",
+            "title": "[실물개체] 홍백팬더 메다카 2쌍",
+            "candidate": {
+              "url": "https://medakagallery.com/product/%EC%8B%A4%EB%AC%BC%EA%B0%9C%EC%B2%B4-%ED%99%8D%EB%B0%B1%ED%8C%AC%EB%8D%94-%EB%A9%94%EB%8B%A4%EC%B9%B4-2%EC%8C%8D/556/category/24/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+              "discoveredAt": "2026-10-08T14:44:31.994Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
+          },
+          {
+            "key": "medakagallery.com:555",
+            "url": "https://medakagallery.com/product/%EC%84%A0%EB%B3%84%EA%B8%89-%EB%A0%88%EC%9D%B4%EB%B8%8C-2%EC%8C%8D/555/category/24/display/1/",
+            "title": "[선별급] 레이브 2쌍",
+            "candidate": {
+              "url": "https://medakagallery.com/product/%EC%84%A0%EB%B3%84%EA%B8%89-%EB%A0%88%EC%9D%B4%EB%B8%8C-2%EC%8C%8D/555/category/24/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+              "discoveredAt": "2026-10-08T14:44:31.994Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
+          },
+          {
+            "key": "medakagallery.com:554",
+            "url": "https://medakagallery.com/product/%EC%84%A0%EB%B3%84%EA%B8%89-%EC%8A%A4%EB%AF%B8%ED%97%A4%ED%82%A4%EA%B0%84-%ED%86%A0%EB%9D%BC-2%EC%8C%8D%EC%88%AB1/554/category/24/display/1/",
+            "title": "[선별급] 스미헤키간 토라 2쌍+숫1",
+            "candidate": {
+              "url": "https://medakagallery.com/product/%EC%84%A0%EB%B3%84%EA%B8%89-%EC%8A%A4%EB%AF%B8%ED%97%A4%ED%82%A4%EA%B0%84-%ED%86%A0%EB%9D%BC-2%EC%8C%8D%EC%88%AB1/554/category/24/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+              "discoveredAt": "2026-10-08T14:44:31.994Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
+          },
+          {
+            "key": "medakagallery.com:550",
+            "url": "https://medakagallery.com/product/%EC%82%AC%ED%8C%8C%EC%9D%B4%EC%96%B4-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/550/category/24/display/1/",
+            "title": "사파이어 메다카 1마리",
+            "candidate": {
+              "url": "https://medakagallery.com/product/%EC%82%AC%ED%8C%8C%EC%9D%B4%EC%96%B4-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/550/category/24/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+              "discoveredAt": "2026-10-08T14:44:31.994Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
+          },
+          {
+            "key": "medakagallery.com:547",
+            "url": "https://medakagallery.com/product/%EC%98%90%EB%A1%9C%EC%9A%B0-%EB%A7%88%EB%A6%AC%EC%95%84%EC%A3%BC-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/547/category/24/display/1/",
+            "title": "옐로우 마리아주 메다카 1마리",
+            "candidate": {
+              "url": "https://medakagallery.com/product/%EC%98%90%EB%A1%9C%EC%9A%B0-%EB%A7%88%EB%A6%AC%EC%95%84%EC%A3%BC-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/547/category/24/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+              "discoveredAt": "2026-10-08T14:44:31.994Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:15:57.282Z"
           }
         ],
         "excludedCandidates": 0,
         "nextCategoryIndex": 1,
-        "lastAttempt": "2026-10-08T17:56:01.191Z",
-        "errors": [],
+        "lastAttempt": "2026-10-08T21:14:06.910Z",
+        "errors": [
+          "request_budget_reached"
+        ],
         "cursorCategories": [
           {
             "entryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
@@ -2074,8 +2274,8 @@
           ],
           "terminalCategoryCount": 0,
           "verifiedProductCount": 4,
-          "pendingProductCount": 21,
-          "reviewProductCount": 24,
+          "pendingProductCount": 10,
+          "reviewProductCount": 30,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -2092,8 +2292,8 @@
       "officialUrl": "https://liviaqua.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 28,
-      "collectorProductCount": 28,
+      "snapshotProductCount": 39,
+      "collectorProductCount": 39,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 6,
@@ -2103,8 +2303,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T18:57:23.321Z",
-      "collectorLastSuccess": "2026-10-08T18:58:04.556Z",
+      "collectorLastAttempt": "2026-10-08T21:18:14.383Z",
+      "collectorLastSuccess": "2026-10-08T21:20:04.993Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -2129,23 +2329,23 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 5,
-        "pagesVisited": 2,
-        "detailBudget": 7,
-        "newCandidates": 4,
-        "verifiedItems": 7,
-        "pendingCandidates": 12,
+        "representativeSeedCount": 6,
+        "pagesVisited": 0,
+        "detailBudget": 12,
+        "newCandidates": 0,
+        "verifiedItems": 11,
+        "pendingCandidates": 1,
         "pendingByGroup": {
-          "fish": 12
+          "fish": 1
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
         "nextCategoryIndex": 1,
-        "lastAttempt": "2026-10-08T17:57:32.103Z",
+        "lastAttempt": "2026-10-08T21:18:14.442Z",
         "errors": [
-          "page_budget_reached:https://liviaqua.co.kr/product/list.html?cate_no=24"
+          "request_budget_reached"
         ],
         "cursorCategories": [
           {
@@ -2200,8 +2400,8 @@
             }
           ],
           "terminalCategoryCount": 0,
-          "verifiedProductCount": 28,
-          "pendingProductCount": 12,
+          "verifiedProductCount": 39,
+          "pendingProductCount": 1,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -2219,8 +2419,8 @@
       "officialUrl": "https://aquapro.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 21,
-      "collectorProductCount": 21,
+      "snapshotProductCount": 29,
+      "collectorProductCount": 29,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -2230,9 +2430,9 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "partial_failure",
-      "collectorLastAttempt": "2026-10-08T20:47:04.945Z",
-      "collectorLastSuccess": "2026-10-08T20:48:45.411Z",
-      "collectorLastError": "detail_parse_failed:https://aquapro.kr/product/detail.html?product_no=10781&cate_no=925&display_group=1",
+      "collectorLastAttempt": "2026-10-08T21:08:08.168Z",
+      "collectorLastSuccess": "2026-10-08T21:09:58.619Z",
+      "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
         "Scheduled run, data commit and Render deployment not yet verified."
@@ -2258,17 +2458,17 @@
         "deletionEnabled": false,
         "representativeSeedCount": 73,
         "pagesVisited": 1,
-        "detailBudget": 11,
+        "detailBudget": 10,
         "newCandidates": 30,
-        "verifiedItems": 7,
-        "pendingCandidates": 90,
+        "verifiedItems": 8,
+        "pendingCandidates": 96,
         "pendingByGroup": {
-          "mixed": 21,
-          "fish": 69
+          "mixed": 19,
+          "fish": 77
         },
-        "reviewRequired": 13,
+        "reviewRequired": 15,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 13
+          "Mixed or unresolved product category requires review": 15
         },
         "reviewQueue": [
           {
@@ -2517,15 +2717,52 @@
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
             "reviewedAt": "2026-10-08T20:48:55.418Z"
+          },
+          {
+            "key": "aquapro.kr:7882",
+            "url": "https://aquapro.kr/product/detail.html?product_no=7882&cate_no=892&display_group=1",
+            "title": "아피스토그라마 비타에니아타 (3-4cm)",
+            "candidate": {
+              "url": "https://aquapro.kr/product/detail.html?product_no=7882&cate_no=892&display_group=1",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://aquapro.kr/product/list.html?cate_no=892",
+              "discoveredAt": "2026-10-08T14:47:54.795Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:09:58.620Z"
+          },
+          {
+            "key": "aquapro.kr:11649",
+            "url": "https://aquapro.kr/product/detail.html?product_no=11649&cate_no=892&display_group=1",
+            "title": "불개미테트라 (1~2cm)",
+            "candidate": {
+              "url": "https://aquapro.kr/product/detail.html?product_no=11649&cate_no=892&display_group=1",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://aquapro.kr/product/list.html?cate_no=892",
+              "discoveredAt": "2026-10-08T14:47:54.795Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:09:58.620Z"
           }
         ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 9,
-        "lastAttempt": "2026-10-08T20:47:05.025Z",
+        "nextCategoryIndex": 10,
+        "lastAttempt": "2026-10-08T21:08:08.278Z",
         "errors": [
-          "expected_total_unverified:https://aquapro.kr/product/list.html?cate_no=893",
-          "product_budget_reached:https://aquapro.kr/product/list.html?cate_no=893",
-          "detail_parse_failed:https://aquapro.kr/product/detail.html?product_no=10781&cate_no=925&display_group=1"
+          "expected_total_unverified:https://aquapro.kr/product/list.html?cate_no=894",
+          "product_budget_reached:https://aquapro.kr/product/list.html?cate_no=894"
         ],
         "cursorCategories": [
           {
@@ -2613,6 +2850,18 @@
               "https://aquapro.kr/product/list.html?cate_no=893"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://aquapro.kr/product/list.html?cate_no=894",
+            "nextUrl": "https://aquapro.kr/product/list.html?cate_no=894",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://aquapro.kr/product/list.html?cate_no=894"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -2620,7 +2869,7 @@
           "allowedCategoryCount": 71,
           "excludedCategoryCount": 13,
           "reviewCategoryCount": 22,
-          "pagesVisited": 6,
+          "pagesVisited": 7,
           "pendingCategoryCount": 69,
           "pendingPageUrls": [
             {
@@ -2901,9 +3150,9 @@
             }
           ],
           "terminalCategoryCount": 2,
-          "verifiedProductCount": 21,
-          "pendingProductCount": 90,
-          "reviewProductCount": 13,
+          "verifiedProductCount": 29,
+          "pendingProductCount": 96,
+          "reviewProductCount": 15,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -2920,8 +3169,8 @@
       "officialUrl": "https://zoonimal.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 33,
-      "collectorProductCount": 33,
+      "snapshotProductCount": 42,
+      "collectorProductCount": 42,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -2931,8 +3180,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T19:08:12.581Z",
-      "collectorLastSuccess": "2026-10-08T19:08:14.612Z",
+      "collectorLastAttempt": "2026-10-08T21:21:58.013Z",
+      "collectorLastSuccess": "2026-10-08T21:23:48.485Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -2958,19 +3207,19 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 17,
-        "pagesVisited": 2,
-        "detailBudget": 7,
-        "newCandidates": 30,
-        "verifiedItems": 8,
-        "pendingCandidates": 37,
+        "representativeSeedCount": 20,
+        "pagesVisited": 0,
+        "detailBudget": 12,
+        "newCandidates": 0,
+        "verifiedItems": 9,
+        "pendingCandidates": 26,
         "pendingByGroup": {
-          "mixed": 13,
-          "fish": 24
+          "mixed": 10,
+          "fish": 16
         },
-        "reviewRequired": 10,
+        "reviewRequired": 12,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 10
+          "Mixed or unresolved product category requires review": 12
         },
         "reviewQueue": [
           {
@@ -3162,14 +3411,51 @@
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
             "reviewedAt": "2026-10-08T18:02:04.489Z"
+          },
+          {
+            "key": "zoonimal.co.kr:7839",
+            "url": "https://zoonimal.co.kr/product/%EB%B0%98%EC%88%98%EC%83%9D%EA%B2%8C-%EB%A0%88%EB%93%9C-%EB%8D%B0%EB%B9%8C-%EB%B1%80%ED%8C%8C%EC%9D%B4%EC%96%B4-%ED%81%AC%EB%9E%A9-3cm-%EB%82%B4%EC%99%B8/7839/category/410/display/1/",
+            "title": "[반수생게] 레드 데빌 뱀파이어 크랩 3cm 내외",
+            "candidate": {
+              "url": "https://zoonimal.co.kr/product/%EB%B0%98%EC%88%98%EC%83%9D%EA%B2%8C-%EB%A0%88%EB%93%9C-%EB%8D%B0%EB%B9%8C-%EB%B1%80%ED%8C%8C%EC%9D%B4%EC%96%B4-%ED%81%AC%EB%9E%A9-3cm-%EB%82%B4%EC%99%B8/7839/category/410/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
+              "discoveredAt": "2026-10-08T14:21:26.782Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:23:48.486Z"
+          },
+          {
+            "key": "zoonimal.co.kr:7838",
+            "url": "https://zoonimal.co.kr/product/%EB%B0%98%EC%88%98%EC%83%9D%EA%B2%8C-%EB%A0%88%EB%93%9C%EC%B9%B4%EB%8B%88%EB%B0%9C-%ED%81%AC%EB%9E%A9-3cm-%EB%82%B4%EC%99%B8/7838/category/410/display/1/",
+            "title": "[반수생게] 레드카니발 크랩 3cm 내외",
+            "candidate": {
+              "url": "https://zoonimal.co.kr/product/%EB%B0%98%EC%88%98%EC%83%9D%EA%B2%8C-%EB%A0%88%EB%93%9C%EC%B9%B4%EB%8B%88%EB%B0%9C-%ED%81%AC%EB%9E%A9-3cm-%EB%82%B4%EC%99%B8/7838/category/410/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
+              "discoveredAt": "2026-10-08T14:21:26.782Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:23:48.486Z"
           }
         ],
         "excludedCandidates": 0,
         "nextCategoryIndex": 7,
-        "lastAttempt": "2026-10-08T18:00:34.227Z",
+        "lastAttempt": "2026-10-08T21:21:58.109Z",
         "errors": [
-          "product_budget_reached:https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/",
-          "page_budget_reached:https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/"
+          "request_budget_reached"
         ],
         "cursorCategories": [
           {
@@ -3296,16 +3582,16 @@
             }
           ],
           "terminalCategoryCount": 0,
-          "verifiedProductCount": 33,
-          "pendingProductCount": 37,
-          "reviewProductCount": 10,
+          "verifiedProductCount": 42,
+          "pendingProductCount": 26,
+          "reviewProductCount": 12,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -3636,8 +3922,8 @@
       "officialUrl": "https://rooaqua.com/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 7,
-      "collectorProductCount": 7,
+      "snapshotProductCount": 14,
+      "collectorProductCount": 14,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -3646,9 +3932,9 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T19:07:40.821Z",
-      "collectorLastSuccess": "2026-10-08T11:10:03.775Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T21:20:06.224Z",
+      "collectorLastSuccess": "2026-10-08T21:21:56.796Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -3662,7 +3948,7 @@
           "https://rooaqua.com/product/list.html?cate_no=42",
           "https://rooaqua.com/product/list.html?cate_no=25"
         ],
-        "status": "success",
+        "status": "budget_limited",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 15,
         "pageBudget": 2,
@@ -3674,19 +3960,19 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "representativeSeedCount": 15,
-        "pagesVisited": 1,
-        "detailBudget": 8,
+        "representativeSeedCount": 17,
+        "pagesVisited": 2,
+        "detailBudget": 9,
         "newCandidates": 30,
-        "verifiedItems": 6,
-        "pendingCandidates": 52,
+        "verifiedItems": 7,
+        "pendingCandidates": 69,
         "pendingByGroup": {
-          "mixed": 28,
-          "fish": 24
+          "mixed": 22,
+          "fish": 47
         },
-        "reviewRequired": 8,
+        "reviewRequired": 10,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 8
+          "Mixed or unresolved product category requires review": 10
         },
         "reviewQueue": [
           {
@@ -3840,12 +4126,53 @@
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
             "reviewedAt": "2026-10-08T18:05:06.821Z"
+          },
+          {
+            "key": "rooaqua.com:908",
+            "url": "https://rooaqua.com/product/%ED%81%AC%EB%9D%BC%EC%9A%B4%EB%A1%9C%EC%B9%98-45cm/908/category/45/display/1/",
+            "title": "크라운로치 4~5cm",
+            "candidate": {
+              "url": "https://rooaqua.com/product/%ED%81%AC%EB%9D%BC%EC%9A%B4%EB%A1%9C%EC%B9%98-45cm/908/category/45/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://rooaqua.com/product/list.html?cate_no=45",
+              "discoveredAt": "2026-10-08T14:49:05.970Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:21:56.796Z"
+          },
+          {
+            "key": "rooaqua.com:907",
+            "url": "https://rooaqua.com/product/%ED%86%A0%EB%AF%B8%EB%8B%88%ED%83%B1s/907/category/45/display/1/",
+            "title": "토미니탱S",
+            "candidate": {
+              "url": "https://rooaqua.com/product/%ED%86%A0%EB%AF%B8%EB%8B%88%ED%83%B1s/907/category/45/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://rooaqua.com/product/list.html?cate_no=45",
+              "discoveredAt": "2026-10-08T14:49:05.970Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:21:56.796Z"
           }
         ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 6,
-        "lastAttempt": "2026-10-08T18:03:36.383Z",
-        "errors": [],
+        "nextCategoryIndex": 8,
+        "lastAttempt": "2026-10-08T21:20:06.260Z",
+        "errors": [
+          "product_budget_reached:https://rooaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/52/",
+          "page_budget_reached:https://rooaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/52/"
+        ],
         "cursorCategories": [
           {
             "entryUrl": "https://rooaqua.com/product/list.html?cate_no=45",
@@ -3877,6 +4204,37 @@
               "https://rooaqua.com/category/%EC%BD%94%EB%A6%AC-%EC%BA%A3%ED%94%BC%EC%89%AC-%ED%94%8C%EB%A0%88%EC%BD%94/53/"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://rooaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0-%EB%AA%B0%EB%A6%AC-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/50/",
+            "nextUrl": null,
+            "expectedProductCount": 16,
+            "cycleSeenProductCount": 16,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-08T21:20:16.721Z",
+              "reportedCount": 16,
+              "observedUniqueLinks": 16,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://rooaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0-%EB%AA%B0%EB%A6%AC-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/50/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://rooaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/52/",
+            "nextUrl": "https://rooaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/52/",
+            "expectedProductCount": 39,
+            "cycleSeenProductCount": 14,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://rooaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/52/"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -3884,8 +4242,8 @@
           "allowedCategoryCount": 16,
           "excludedCategoryCount": 8,
           "reviewCategoryCount": 4,
-          "pagesVisited": 2,
-          "pendingCategoryCount": 15,
+          "pagesVisited": 4,
+          "pendingCategoryCount": 14,
           "pendingPageUrls": [
             {
               "categoryUrl": "https://rooaqua.com/product/list.html?cate_no=45",
@@ -3902,10 +4260,6 @@
             {
               "categoryUrl": "https://rooaqua.com/product/list.html?cate_no=42",
               "nextPageUrl": "https://rooaqua.com/product/list.html?cate_no=42"
-            },
-            {
-              "categoryUrl": "https://rooaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0-%EB%AA%B0%EB%A6%AC-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/50/",
-              "nextPageUrl": "https://rooaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0-%EB%AA%B0%EB%A6%AC-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/50/"
             },
             {
               "categoryUrl": "https://rooaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/52/",
@@ -3948,10 +4302,10 @@
               "nextPageUrl": "https://rooaqua.com/category/%EA%B8%B0%ED%83%80/55/"
             }
           ],
-          "terminalCategoryCount": 1,
-          "verifiedProductCount": 7,
-          "pendingProductCount": 52,
-          "reviewProductCount": 8,
+          "terminalCategoryCount": 2,
+          "verifiedProductCount": 14,
+          "pendingProductCount": 69,
+          "reviewProductCount": 10,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -5486,8 +5840,8 @@
       "officialUrl": "https://aquavillage.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 18,
-      "collectorProductCount": 18,
+      "snapshotProductCount": 26,
+      "collectorProductCount": 26,
       "refreshScope": {
         "reviewHeldProductCount": 2,
         "verifiedUrlCount": 10,
@@ -5496,10 +5850,10 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T19:35:30.147Z",
-      "collectorLastSuccess": "2026-10-08T19:35:44.608Z",
-      "collectorLastError": null,
+      "collectorStatus": "partial_failure",
+      "collectorLastAttempt": "2026-10-08T21:17:50.451Z",
+      "collectorLastSuccess": "2026-10-08T21:18:13.067Z",
+      "collectorLastError": "detail_parse_failed:https://www.aquavillage.co.kr/product/%EA%B3%A8%EB%93%A0%EB%84%88%EA%B2%9F%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/2323/category/79/display/1/",
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
         "Scheduled run, data commit and Render deployment not yet verified."
@@ -5511,7 +5865,7 @@
           "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/",
           "https://www.aquavillage.co.kr/category/%EC%9A%A9%ED%92%88/85/"
         ],
-        "status": "budget_limited",
+        "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 17,
         "pageBudget": 2,
@@ -5525,17 +5879,17 @@
         "deletionEnabled": false,
         "representativeSeedCount": 28,
         "pagesVisited": 2,
-        "detailBudget": 5,
+        "detailBudget": 10,
         "newCandidates": 30,
-        "verifiedItems": 4,
-        "pendingCandidates": 49,
+        "verifiedItems": 8,
+        "pendingCandidates": 70,
         "pendingByGroup": {
-          "mixed": 23,
-          "fish": 26
+          "mixed": 21,
+          "fish": 49
         },
-        "reviewRequired": 16,
+        "reviewRequired": 18,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 16
+          "Mixed or unresolved product category requires review": 18
         },
         "reviewQueue": [
           {
@@ -5841,14 +6195,53 @@
             "reason": "Mixed or unresolved product category requires review",
             "classificationVersion": 5,
             "reviewedAt": "2026-10-08T19:35:44.611Z"
+          },
+          {
+            "key": "aquavillage.co.kr:732",
+            "url": "https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8-%EA%B0%80%EC%9E%AC-4xm%EB%82%B4%EC%99%B8/732/category/61/display/1/",
+            "title": "블루 가재 4xm내외",
+            "candidate": {
+              "url": "https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8-%EA%B0%80%EC%9E%AC-4xm%EB%82%B4%EC%99%B8/732/category/61/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+              "discoveredAt": "2026-10-08T14:20:31.841Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:18:13.069Z"
+          },
+          {
+            "key": "aquavillage.co.kr:2157",
+            "url": "https://www.aquavillage.co.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%9A%B0%ED%8C%8C%EB%A3%A8%ED%8C%8C-3cm-%EC%A0%84%ED%9B%84/2157/category/61/display/1/",
+            "title": "알비노 화이트 우파루파  3cm 전후",
+            "candidate": {
+              "url": "https://www.aquavillage.co.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%9A%B0%ED%8C%8C%EB%A3%A8%ED%8C%8C-3cm-%EC%A0%84%ED%9B%84/2157/category/61/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+              "discoveredAt": "2026-10-08T14:20:31.841Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:18:13.069Z"
           }
         ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 6,
-        "lastAttempt": "2026-10-08T19:35:30.236Z",
+        "nextCategoryIndex": 8,
+        "lastAttempt": "2026-10-08T21:17:50.594Z",
         "errors": [
-          "product_budget_reached:https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/",
-          "page_budget_reached:https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/"
+          "product_budget_reached:https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+          "page_budget_reached:https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+          "detail_parse_failed:https://www.aquavillage.co.kr/product/%EA%B3%A8%EB%93%A0%EB%84%88%EA%B2%9F%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/2323/category/79/display/1/"
         ],
         "cursorCategories": [
           {
@@ -5887,6 +6280,30 @@
               "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/?page=2",
+            "expectedProductCount": 31,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+            "expectedProductCount": 78,
+            "cycleSeenProductCount": 6,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -5894,7 +6311,7 @@
           "allowedCategoryCount": 27,
           "excludedCategoryCount": 0,
           "reviewCategoryCount": 2,
-          "pagesVisited": 4,
+          "pagesVisited": 6,
           "pendingCategoryCount": 27,
           "pendingPageUrls": [
             {
@@ -5919,7 +6336,7 @@
             },
             {
               "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
-              "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/"
+              "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/?page=2"
             },
             {
               "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
@@ -6007,9 +6424,9 @@
             }
           ],
           "terminalCategoryCount": 0,
-          "verifiedProductCount": 18,
-          "pendingProductCount": 49,
-          "reviewProductCount": 16,
+          "verifiedProductCount": 26,
+          "pendingProductCount": 70,
+          "reviewProductCount": 18,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -6026,8 +6443,8 @@
       "officialUrl": "https://magicaqua.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 32,
-      "collectorProductCount": 32,
+      "snapshotProductCount": 42,
+      "collectorProductCount": 42,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 13,
@@ -6037,8 +6454,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T19:59:20.350Z",
-      "collectorLastSuccess": "2026-10-08T20:01:10.817Z",
+      "collectorLastAttempt": "2026-10-08T21:12:15.204Z",
+      "collectorLastSuccess": "2026-10-08T21:14:05.678Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -6065,25 +6482,64 @@
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 29,
-        "pagesVisited": 2,
-        "detailBudget": 9,
+        "pagesVisited": 1,
+        "detailBudget": 11,
         "newCandidates": 30,
-        "verifiedItems": 9,
-        "pendingCandidates": 34,
+        "verifiedItems": 10,
+        "pendingCandidates": 53,
         "pendingByGroup": {
-          "fish": 34
+          "fish": 53
         },
-        "reviewRequired": 0,
-        "reviewReasons": {},
-        "reviewQueue": [],
+        "reviewRequired": 2,
+        "reviewReasons": {
+          "Feed/artificial plant/supply conflict blocks livestock classification": 2
+        },
+        "reviewQueue": [
+          {
+            "key": "magicaqua.kr:3580",
+            "url": "https://magicaqua.kr/product/detail.html?product_no=3580&cate_no=299&display_group=1",
+            "title": "하프문베타 블루계열 - 베타침대 증정",
+            "candidate": {
+              "url": "https://magicaqua.kr/product/detail.html?product_no=3580&cate_no=299&display_group=1",
+              "type": "live",
+              "subtype": "fish",
+              "mixedCategories": false,
+              "classificationBasis": "Reviewed explicit ornamental-fish menu link observed in cached public retailer page; verified detail identity and contradictory breadcrumb/title checks still required",
+              "discoveredInCategory": "https://magicaqua.kr/product/list1_1.html?cate_no=299",
+              "discoveredAt": "2026-10-08T19:59:30.737Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:14:05.679Z"
+          },
+          {
+            "key": "magicaqua.kr:3579",
+            "url": "https://magicaqua.kr/product/detail.html?product_no=3579&cate_no=299&display_group=1",
+            "title": "하프문베타 레드계열 - 베타침대 증정",
+            "candidate": {
+              "url": "https://magicaqua.kr/product/detail.html?product_no=3579&cate_no=299&display_group=1",
+              "type": "live",
+              "subtype": "fish",
+              "mixedCategories": false,
+              "classificationBasis": "Reviewed explicit ornamental-fish menu link observed in cached public retailer page; verified detail identity and contradictory breadcrumb/title checks still required",
+              "discoveredInCategory": "https://magicaqua.kr/product/list1_1.html?cate_no=299",
+              "discoveredAt": "2026-10-08T19:59:30.737Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 5,
+            "reviewedAt": "2026-10-08T21:14:05.679Z"
+          }
+        ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 7,
-        "lastAttempt": "2026-10-08T19:59:20.368Z",
+        "nextCategoryIndex": 8,
+        "lastAttempt": "2026-10-08T21:12:15.236Z",
         "errors": [
-          "expected_total_unverified:https://magicaqua.kr/product/list1_1.html?cate_no=299",
-          "expected_total_unverified:https://magicaqua.kr/product/list1_1.html?cate_no=297",
-          "product_budget_reached:https://magicaqua.kr/product/list1_1.html?cate_no=297",
-          "page_budget_reached:https://magicaqua.kr/product/list1_1.html?cate_no=297"
+          "expected_total_unverified:https://magicaqua.kr/product/list1_1.html?cate_no=279",
+          "product_budget_reached:https://magicaqua.kr/product/list1_1.html?cate_no=279"
         ],
         "cursorCategories": [
           {
@@ -6128,6 +6584,18 @@
               "https://magicaqua.kr/product/list1_1.html?cate_no=297"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=279",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=279",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 37,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://magicaqua.kr/product/list1_1.html?cate_no=279"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -6135,7 +6603,7 @@
           "allowedCategoryCount": 28,
           "excludedCategoryCount": 2,
           "reviewCategoryCount": 2,
-          "pagesVisited": 3,
+          "pagesVisited": 4,
           "pendingCategoryCount": 27,
           "pendingPageUrls": [
             {
@@ -6248,9 +6716,9 @@
             }
           ],
           "terminalCategoryCount": 1,
-          "verifiedProductCount": 32,
-          "pendingProductCount": 34,
-          "reviewProductCount": 0,
+          "verifiedProductCount": 42,
+          "pendingProductCount": 53,
+          "reviewProductCount": 2,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -7015,8 +7483,8 @@
       "officialUrl": "https://a2be.net/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 45,
-      "collectorProductCount": 45,
+      "snapshotProductCount": 55,
+      "collectorProductCount": 55,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 19,
@@ -7026,8 +7494,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "partial_failure",
-      "collectorLastAttempt": "2026-10-08T20:31:09.330Z",
-      "collectorLastSuccess": "2026-10-08T20:32:59.786Z",
+      "collectorLastAttempt": "2026-10-08T21:00:41.266Z",
+      "collectorLastSuccess": "2026-10-08T21:02:31.724Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -7054,23 +7522,25 @@
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 42,
-        "pagesVisited": 1,
-        "detailBudget": 11,
+        "pagesVisited": 2,
+        "detailBudget": 10,
         "newCandidates": 30,
-        "verifiedItems": 11,
-        "pendingCandidates": 36,
+        "verifiedItems": 10,
+        "pendingCandidates": 48,
         "pendingByGroup": {
-          "fish": 36
+          "fish": 48
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 7,
-        "lastAttempt": "2026-10-08T20:31:09.440Z",
+        "nextCategoryIndex": 9,
+        "lastAttempt": "2026-10-08T21:00:41.404Z",
         "errors": [
-          "expected_total_unverified:https://a2be.net/product/list.html?cate_no=928",
-          "product_budget_reached:https://a2be.net/product/list.html?cate_no=928"
+          "expected_total_unverified:https://a2be.net/product/list.html?cate_no=924",
+          "expected_total_unverified:https://a2be.net/product/list.html?cate_no=925",
+          "product_budget_reached:https://a2be.net/product/list.html?cate_no=925",
+          "page_budget_reached:https://a2be.net/product/list.html?cate_no=925"
         ],
         "cursorCategories": [
           {
@@ -7108,6 +7578,37 @@
               "https://a2be.net/product/list.html?cate_no=928"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://a2be.net/product/list.html?cate_no=924",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 23,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-08T21:00:41.692Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 23,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://a2be.net/product/list.html?cate_no=924"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://a2be.net/product/list.html?cate_no=925",
+            "nextUrl": "https://a2be.net/product/list.html?cate_no=925",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 11,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://a2be.net/product/list.html?cate_no=925"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -7115,8 +7616,8 @@
           "allowedCategoryCount": 41,
           "excludedCategoryCount": 9,
           "reviewCategoryCount": 10,
-          "pagesVisited": 3,
-          "pendingCategoryCount": 41,
+          "pagesVisited": 5,
+          "pendingCategoryCount": 40,
           "pendingPageUrls": [
             {
               "categoryUrl": "https://a2be.net/product/list.html?cate_no=748",
@@ -7141,10 +7642,6 @@
             {
               "categoryUrl": "https://a2be.net/product/list.html?cate_no=928",
               "nextPageUrl": "https://a2be.net/product/list.html?cate_no=928"
-            },
-            {
-              "categoryUrl": "https://a2be.net/product/list.html?cate_no=924",
-              "nextPageUrl": "https://a2be.net/product/list.html?cate_no=924"
             },
             {
               "categoryUrl": "https://a2be.net/product/list.html?cate_no=925",
@@ -7283,9 +7780,9 @@
               "nextPageUrl": "https://a2be.net/product/list.html?cate_no=918"
             }
           ],
-          "terminalCategoryCount": 0,
-          "verifiedProductCount": 45,
-          "pendingProductCount": 36,
+          "terminalCategoryCount": 1,
+          "verifiedProductCount": 55,
+          "pendingProductCount": 48,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -9805,8 +10302,8 @@
       "officialUrl": "https://mimineaqua.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 37,
-      "collectorProductCount": 37,
+      "snapshotProductCount": 47,
+      "collectorProductCount": 47,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 10,
@@ -9816,8 +10313,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T20:38:36.520Z",
-      "collectorLastSuccess": "2026-10-08T20:40:27.011Z",
+      "collectorLastAttempt": "2026-10-08T21:23:49.713Z",
+      "collectorLastSuccess": "2026-10-08T21:25:40.258Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9830,7 +10327,7 @@
           "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
           "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD/220/"
         ],
-        "status": "budget_limited",
+        "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 16,
         "pageBudget": 2,
@@ -9845,12 +10342,12 @@
         "representativeSeedCount": 34,
         "pagesVisited": 2,
         "detailBudget": 10,
-        "newCandidates": 30,
+        "newCandidates": 20,
         "verifiedItems": 10,
-        "pendingCandidates": 26,
+        "pendingCandidates": 36,
         "pendingByGroup": {
-          "aquatic_plant": 4,
-          "fish": 22
+          "aquatic_plant": 1,
+          "fish": 35
         },
         "reviewRequired": 1,
         "reviewReasons": {
@@ -9878,11 +10375,11 @@
           }
         ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 6,
-        "lastAttempt": "2026-10-08T20:38:36.631Z",
+        "nextCategoryIndex": 8,
+        "lastAttempt": "2026-10-08T21:23:49.882Z",
         "errors": [
-          "product_budget_reached:https://mimineaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/382/",
-          "page_budget_reached:https://mimineaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/382/"
+          "product_list_not_found:https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/",
+          "page_budget_reached:https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/"
         ],
         "cursorCategories": [
           {
@@ -9939,6 +10436,30 @@
               "https://mimineaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/382/"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/",
+            "nextUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/?page=2",
+            "expectedProductCount": 98,
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/",
+            "nextUrl": "https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/",
+            "expectedProductCount": 0,
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -9946,7 +10467,7 @@
           "allowedCategoryCount": 32,
           "excludedCategoryCount": 127,
           "reviewCategoryCount": 49,
-          "pagesVisited": 4,
+          "pagesVisited": 6,
           "pendingCategoryCount": 31,
           "pendingPageUrls": [
             {
@@ -9963,7 +10484,7 @@
             },
             {
               "categoryUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/",
-              "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/"
+              "nextPageUrl": "https://mimineaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/380/?page=2"
             },
             {
               "categoryUrl": "https://mimineaqua.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/381/",
@@ -10075,8 +10596,8 @@
             }
           ],
           "terminalCategoryCount": 1,
-          "verifiedProductCount": 37,
-          "pendingProductCount": 26,
+          "verifiedProductCount": 47,
+          "pendingProductCount": 36,
           "reviewProductCount": 1,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -10094,8 +10615,8 @@
       "officialUrl": "https://aquauju.com/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 42,
-      "collectorProductCount": 42,
+      "snapshotProductCount": 53,
+      "collectorProductCount": 53,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -10105,8 +10626,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T20:45:13.183Z",
-      "collectorLastSuccess": "2026-10-08T20:47:03.923Z",
+      "collectorLastAttempt": "2026-10-08T21:15:58.459Z",
+      "collectorLastSuccess": "2026-10-08T21:17:49.216Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -10120,7 +10641,7 @@
           "https://aquauju.com/product/list.html?cate_no=421",
           "https://aquauju.com/product/list.html?cate_no=26"
         ],
-        "status": "draining_pending",
+        "status": "budget_limited",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 15,
         "pageBudget": 2,
@@ -10133,21 +10654,23 @@
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
         "representativeSeedCount": 29,
-        "pagesVisited": 0,
-        "detailBudget": 12,
-        "newCandidates": 0,
-        "verifiedItems": 12,
-        "pendingCandidates": 22,
+        "pagesVisited": 1,
+        "detailBudget": 11,
+        "newCandidates": 30,
+        "verifiedItems": 11,
+        "pendingCandidates": 41,
         "pendingByGroup": {
-          "fish": 22
+          "fish": 41
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 7,
-        "lastAttempt": "2026-10-08T20:45:13.291Z",
-        "errors": [],
+        "nextCategoryIndex": 8,
+        "lastAttempt": "2026-10-08T21:15:58.621Z",
+        "errors": [
+          "product_budget_reached:https://aquauju.com/product/list.html?cate_no=453"
+        ],
         "cursorCategories": [
           {
             "entryUrl": "https://aquauju.com/product/list.html?cate_no=448",
@@ -10198,6 +10721,18 @@
               "https://aquauju.com/product/list.html?cate_no=482"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://aquauju.com/product/list.html?cate_no=453",
+            "nextUrl": "https://aquauju.com/product/list.html?cate_no=453",
+            "expectedProductCount": 53,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://aquauju.com/product/list.html?cate_no=453"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -10205,7 +10740,7 @@
           "allowedCategoryCount": 28,
           "excludedCategoryCount": 68,
           "reviewCategoryCount": 11,
-          "pagesVisited": 3,
+          "pagesVisited": 4,
           "pendingCategoryCount": 26,
           "pendingPageUrls": [
             {
@@ -10314,8 +10849,8 @@
             }
           ],
           "terminalCategoryCount": 2,
-          "verifiedProductCount": 42,
-          "pendingProductCount": 22,
+          "verifiedProductCount": 53,
+          "pendingProductCount": 41,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -11544,8 +12079,8 @@
       "officialUrl": "https://chunjane.com/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 129,
-      "collectorProductCount": 129,
+      "snapshotProductCount": 138,
+      "collectorProductCount": 138,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -11555,8 +12090,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T20:33:00.883Z",
-      "collectorLastSuccess": "2026-10-08T20:34:51.575Z",
+      "collectorLastAttempt": "2026-10-08T21:06:16.325Z",
+      "collectorLastSuccess": "2026-10-08T21:08:07.027Z",
       "collectorLastError": null,
       "blockers": [
         "구피 상위 목록의 실제 마지막 페이지와 개별 상세를 검증했습니다. 다른 카테고리와 판매처 전체 범위는 미완료입니다."
@@ -11579,18 +12114,18 @@
         "productBudget": 30,
         "detailBudget": 12,
         "newCandidates": 0,
-        "verifiedItems": 12,
-        "pendingCandidates": 19,
+        "verifiedItems": 9,
+        "pendingCandidates": 7,
         "pendingByGroup": {
-          "fish": 19
+          "fish": 7
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
-        "excludedCandidates": 0,
+        "excludedCandidates": 3,
         "deletionEnabled": false,
         "nextCategoryIndex": 4,
-        "lastAttempt": "2026-10-08T20:33:01.070Z",
+        "lastAttempt": "2026-10-08T21:06:16.515Z",
         "errors": [],
         "cursorCategories": [
           {
@@ -11891,8 +12426,8 @@
             }
           ],
           "terminalCategoryCount": 3,
-          "verifiedProductCount": 129,
-          "pendingProductCount": 19,
+          "verifiedProductCount": 138,
+          "pendingProductCount": 7,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -12118,8 +12653,8 @@
       "officialUrl": "https://healingaqua.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 28,
-      "collectorProductCount": 28,
+      "snapshotProductCount": 39,
+      "collectorProductCount": 39,
       "refreshScope": {
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
@@ -12129,8 +12664,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T20:34:52.679Z",
-      "collectorLastSuccess": "2026-10-08T20:36:43.108Z",
+      "collectorLastAttempt": "2026-10-08T21:04:24.694Z",
+      "collectorLastSuccess": "2026-10-08T21:06:15.179Z",
       "collectorLastError": null,
       "blockers": [
         "Representative categories only; complete retailer coverage unverified"
@@ -12152,20 +12687,20 @@
         "detailBudget": 11,
         "newCandidates": 30,
         "verifiedItems": 11,
-        "pendingCandidates": 41,
+        "pendingCandidates": 60,
         "pendingByGroup": {
-          "fish": 41
+          "fish": 60
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
         "deletionEnabled": false,
-        "nextCategoryIndex": 4,
-        "lastAttempt": "2026-10-08T20:34:52.749Z",
+        "nextCategoryIndex": 5,
+        "lastAttempt": "2026-10-08T21:04:24.798Z",
         "errors": [
-          "expected_total_unverified:https://healingaqua.co.kr/product/list.html?cate_no=245",
-          "product_budget_reached:https://healingaqua.co.kr/product/list.html?cate_no=245"
+          "expected_total_unverified:https://healingaqua.co.kr/product/list.html?cate_no=244",
+          "product_budget_reached:https://healingaqua.co.kr/product/list.html?cate_no=244"
         ],
         "cursorCategories": [
           {
@@ -12222,6 +12757,18 @@
               "https://healingaqua.co.kr/product/list.html?cate_no=245"
             ],
             "headProbePending": false
+          },
+          {
+            "entryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=244",
+            "nextUrl": "https://healingaqua.co.kr/product/list.html?cate_no=244",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://healingaqua.co.kr/product/list.html?cate_no=244"
+            ],
+            "headProbePending": false
           }
         ],
         "categoryTree": {
@@ -12229,7 +12776,7 @@
           "allowedCategoryCount": 49,
           "excludedCategoryCount": 3,
           "reviewCategoryCount": 66,
-          "pagesVisited": 4,
+          "pagesVisited": 5,
           "pendingCategoryCount": 48,
           "pendingPageUrls": [
             {
@@ -12426,8 +12973,8 @@
             }
           ],
           "terminalCategoryCount": 1,
-          "verifiedProductCount": 28,
-          "pendingProductCount": 41,
+          "verifiedProductCount": 39,
+          "pendingProductCount": 60,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",

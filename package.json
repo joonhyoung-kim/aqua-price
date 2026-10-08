@@ -1,0 +1,11 @@
+{
+  "name": "aqua-price",
+  "version": "0.1.0",
+  "private": true,
+  "description": "아쿠아픽 정적 샘플 프로토타입",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "test": "node --check dist/app.js && node test/app.test.cjs"
+  },
+  "engines": { "node": ">=18" }
+}

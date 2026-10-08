@@ -38,13 +38,13 @@ async function setup(data = actual, fail = false) {
   const context = vm.createContext({ document, AquaCatalog, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
-  return { nodes, types, subtypes, fishGroups, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { nodes, types, subtypes, fishGroups, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('cards show only photo, seller, full product name, price and one seller link', async () => {
  const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
  assert.match(app.nodes.dataStatus.textContent,/실시간 가격·재고·전체 판매처 비교가 아닙니다/);
  const cards=[...app.nodes.grid.innerHTML.matchAll(/<article class="card">([\s\S]*?)<\/article>/g)];assert.equal(cards.length,Math.min(24,gear.length));
- for(const card of cards){assert.doesNotMatch(card[1],/<details|class="(?:spec|meta|badge|provenance|original)"/);assert.match(card[1],/<div class="body"><div class="category">[^<]*<\/div><h3>[^<]*<\/h3><div class="price">[^<]*<\/div><a class="source"[^>]*>판매처 이동 ↗<\/a><\/div>$/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
+ for(const card of cards){assert.doesNotMatch(card[1],/<details|class="(?:spec|meta|badge|provenance|original)"/);assert.match(card[1],/<div class="body"><div class="category">[^<]*<\/div><h3 title="[^"]*">[^<]*<\/h3><div class="price">[^<]*<\/div><a class="source"[^>]*>판매처 이동 ↗<\/a><\/div>$/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
  for(const product of gear.slice(0,24))assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.sourceUrl)));
  assert.equal(app.images.length,gear.slice(0,24).filter(p=>p.photo.url).length);
 });

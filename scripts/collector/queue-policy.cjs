@@ -1,7 +1,7 @@
 'use strict';
 const {productKey}=require('./discovery.cjs');
 const GROUPS=['fish','shrimp','aquatic_plant','snail','mixed'];
-const CLASSIFICATION_VERSION=3;
+const CLASSIFICATION_VERSION=4;
 function candidateGroup(candidate){return GROUPS.includes(candidate.subtype)?candidate.subtype:'mixed';}
 function takeFairCandidates(candidates,limit,cursor=0,now=Date.now()){
  const buckets=GROUPS.map(group=>candidates.filter(c=>candidateGroup(c)===group&&(!c.retryAfter||now>=Date.parse(c.retryAfter))));const selected=[];let position=cursor%GROUPS.length,empty=0;

@@ -45,7 +45,7 @@ function render(resetPage = true) {
   $('#grid').innerHTML = visibleRows.map(product => {
     const seller = sellerById.get(product.sellerId);
     const photo = AquaCatalog.usablePhoto(product);
-    return `<article class="card"><div class="art${photo ? '' : ' no-photo'}"${photo ? '' : ' role="img" aria-label="상품 사진 없음"'}>${photo ? `<img src="${escapeHtml(photo)}" alt="${escapeHtml(product.name)} 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden role="img" aria-label="상품 사진 없음"></span>` : ''}</div><div class="body"><div class="category">${escapeHtml(seller.name)}</div><h3>${escapeHtml(product.name)}</h3><div class="price">${priceText(product.price)}</div><a class="source" href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener noreferrer">판매처 이동 ↗</a></div></article>`;
+    return `<article class="card"><div class="art${photo ? '' : ' no-photo'}"${photo ? '' : ' role="img" aria-label="상품 사진 없음"'}>${photo ? `<img src="${escapeHtml(photo)}" alt="${escapeHtml(product.name)} 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden role="img" aria-label="상품 사진 없음"></span>` : ''}</div><div class="body"><div class="category">${escapeHtml(seller.name)}</div><h3 title="${escapeHtml(product.name)}">${escapeHtml(product.name)}</h3><div class="price">${priceText(product.price)}</div><a class="source" href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener noreferrer">판매처 이동 ↗</a></div></article>`;
   }).join('');
   $('#grid').querySelectorAll('img').forEach(img => {
     const showFallback = () => { img.hidden = true; img.parentElement.querySelector('.photo-fallback').hidden = false; };

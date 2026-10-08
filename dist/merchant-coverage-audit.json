@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-08T22:32:02.879Z",
+  "checkedAt": "2026-10-08T23:07:22.051Z",
   "fullRetailerTotals": "unknown",
   "categoryTotalsMustNotBeAdded": true,
   "fullCatalogCoverage": false,
@@ -11,35 +11,27 @@
       "domain": "animallo.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T22:06:45.013Z",
-        "latestSuccess": "2026-10-08T22:08:25.702Z",
+        "latestAttempt": "2026-10-08T22:52:11.849Z",
+        "latestSuccess": "2026-10-08T22:53:32.530Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 49,
-      "verifiedFish": 48,
+      "verifiedProducts": 59,
+      "verifiedFish": 58,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
         "discovered": 72,
         "allowed": 59,
-        "unvisited": 51,
-        "pendingCategories": 57,
-        "terminalCategories": 2,
+        "unvisited": 49,
+        "pendingCategories": 56,
+        "terminalCategories": 3,
         "detailCompleteCategories": 1,
         "menuScope": "unknown"
       },
       "unvisitedCategories": [
-        {
-          "url": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
-          "label": "디스커스"
-        },
-        {
-          "url": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
-          "label": "엔젤피쉬"
-        },
         {
           "url": "https://animallo.kr/category/%EC%95%84%ED%94%BC%EC%8A%A4%ED%86%A0%EA%B7%B8%EB%9D%BC%EB%A7%88/573/",
           "label": "아피스토그라마"
@@ -248,31 +240,21 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 3,
+          "verifiedObservedLinks": 13,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "animallo.kr:5436",
-            "animallo.kr:5434",
-            "animallo.kr:5429",
             "animallo.kr:5427",
             "animallo.kr:5423",
             "animallo.kr:5422",
-            "animallo.kr:5420",
-            "animallo.kr:5419",
             "animallo.kr:5418",
             "animallo.kr:5415",
             "animallo.kr:5414",
-            "animallo.kr:5407",
-            "animallo.kr:5406",
             "animallo.kr:5404",
             "animallo.kr:5403",
             "animallo.kr:5389",
             "animallo.kr:5388",
-            "animallo.kr:5387",
             "animallo.kr:5383",
-            "animallo.kr:5381",
-            "animallo.kr:5380",
-            "animallo.kr:5377",
             "animallo.kr:5368",
             "animallo.kr:5365",
             "animallo.kr:5364",
@@ -338,12 +320,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 19,
-          "verifiedObservedLinks": 9,
+          "verifiedObservedLinks": 12,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "animallo.kr:5429",
-            "animallo.kr:5381",
-            "animallo.kr:5380",
             "animallo.kr:4762",
             "animallo.kr:4761",
             "animallo.kr:4748",
@@ -365,12 +344,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 31,
-          "verifiedObservedLinks": 10,
+          "verifiedObservedLinks": 13,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "animallo.kr:5429",
-            "animallo.kr:5381",
-            "animallo.kr:5380",
             "animallo.kr:4762",
             "animallo.kr:4761",
             "animallo.kr:4748",
@@ -403,15 +379,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 33,
-          "verifiedObservedLinks": 6,
+          "verifiedObservedLinks": 12,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "animallo.kr:5420",
-            "animallo.kr:5419",
-            "animallo.kr:5407",
-            "animallo.kr:5406",
-            "animallo.kr:5387",
-            "animallo.kr:5377",
             "animallo.kr:5004",
             "animallo.kr:4951",
             "animallo.kr:4950",
@@ -447,13 +417,9 @@
           "terminalPageReached": true,
           "listingCountMatched": true,
           "observedUniqueLinks": 21,
-          "verifiedObservedLinks": 3,
+          "verifiedObservedLinks": 7,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "animallo.kr:5420",
-            "animallo.kr:5419",
-            "animallo.kr:5387",
-            "animallo.kr:5377",
             "animallo.kr:4951",
             "animallo.kr:4950",
             "animallo.kr:810",
@@ -482,10 +448,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 11,
-          "verifiedObservedLinks": 1,
+          "verifiedObservedLinks": 2,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "animallo.kr:5434",
             "animallo.kr:5302",
             "animallo.kr:5117",
             "animallo.kr:5001",
@@ -498,11 +463,75 @@
           ],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
+        },
+        {
+          "url": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+          "reportedProductCount": 20,
+          "actualVisitedPageUrls": [
+            "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 20,
+          "verifiedObservedLinks": 0,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "animallo.kr:4924",
+            "animallo.kr:5332",
+            "animallo.kr:5003",
+            "animallo.kr:5002",
+            "animallo.kr:4977",
+            "animallo.kr:4976",
+            "animallo.kr:4975",
+            "animallo.kr:4974",
+            "animallo.kr:4933",
+            "animallo.kr:4932",
+            "animallo.kr:4931",
+            "animallo.kr:4930",
+            "animallo.kr:4929",
+            "animallo.kr:4928",
+            "animallo.kr:4927",
+            "animallo.kr:4767",
+            "animallo.kr:4703",
+            "animallo.kr:4484",
+            "animallo.kr:841",
+            "animallo.kr:840"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
+        },
+        {
+          "url": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+          "reportedProductCount": 19,
+          "actualVisitedPageUrls": [
+            "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/"
+          ],
+          "nextActualPageUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+          "terminalPageReached": false,
+          "listingCountMatched": false,
+          "observedUniqueLinks": 11,
+          "verifiedObservedLinks": 1,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "animallo.kr:5001",
+            "animallo.kr:5000",
+            "animallo.kr:4730",
+            "animallo.kr:4704",
+            "animallo.kr:818",
+            "animallo.kr:746",
+            "animallo.kr:5426",
+            "animallo.kr:5282",
+            "animallo.kr:4791",
+            "animallo.kr:4788"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
         }
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 78,
+        "count": 97,
         "retryHeld": 0,
         "candidates": [
           {
@@ -530,56 +559,8 @@
             "retryAfter": null
           },
           {
-            "key": "animallo.kr:5420",
-            "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5420/category/25/display/1/",
-            "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "animallo.kr:5419",
-            "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5419/category/25/display/1/",
-            "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "animallo.kr:5387",
-            "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5387/category/25/display/1/",
-            "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "animallo.kr:5377",
-            "url": "https://animallo.kr/product/%EB%8B%AC%EB%A7%88%EC%8B%9C%EC%95%88-%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5377/category/25/display/1/",
-            "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
             "key": "animallo.kr:5403",
             "url": "https://animallo.kr/product/%EB%A0%88%EB%AA%AC-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5403/category/25/display/1/",
-            "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "animallo.kr:5381",
-            "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%9C%A0%EC%96%B4-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5381/category/25/display/1/",
-            "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "animallo.kr:5380",
-            "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%9C%A0%EC%96%B4/5380/category/25/display/1/",
             "categoryUrl": "https://animallo.kr/product/list.html?cate_no=25",
             "type": null,
             "subtype": null,
@@ -1128,6 +1109,206 @@
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:5332",
+            "url": "https://animallo.kr/product/%EB%8A%90%ED%95%98%EB%AC%B8%EB%8B%A4-%EB%B8%94%EB%A3%A8-%ED%97%A4%EC%BC%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-9cm-%EB%82%B4%EC%99%B8/5332/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:5003",
+            "url": "https://animallo.kr/product/%EB%A0%88%EB%93%9C-%ED%8C%90%EB%8B%A4-%ED%94%BC%EC%A3%A4-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-7cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/5003/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:5002",
+            "url": "https://animallo.kr/product/%EA%B3%A8%EB%93%A0-%ED%94%84%EB%A6%AC%EC%A7%80%EC%95%84-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-7cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/5002/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4977",
+            "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8-%ED%84%B0%EC%BD%B0%EC%9D%B4%EC%A6%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-5cm-%EB%82%B4%EC%99%B8/4977/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4976",
+            "url": "https://animallo.kr/product/%ED%83%80%EC%9D%B4%EA%B1%B0-%ED%84%B0%EC%BD%B0%EC%9D%B4%EC%A6%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-6cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4976/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4975",
+            "url": "https://animallo.kr/product/%ED%83%80%EC%9D%B4%EA%B1%B0-%ED%84%B0%EC%BD%B0%EC%9D%B4%EC%A6%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-12cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4975/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4974",
+            "url": "https://animallo.kr/product/%EB%8A%90%ED%95%98%EB%AC%B8%EB%8B%A4-%EB%B8%94%EB%A3%A8-%ED%97%A4%EC%BC%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-11cm-%EB%82%B4%EC%99%B8/4974/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4933",
+            "url": "https://animallo.kr/product/%ED%8C%8C%EB%9D%BC%EC%BD%94%EB%8B%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-%EC%86%94%EB%A6%AC%EB%93%9C-%ED%83%80%EC%9E%85-15cm-%EB%82%B4%EC%99%B8/4933/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4932",
+            "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8%ED%8E%98%EC%9D%B4%EC%8A%A4-%ED%97%A4%EC%BC%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-15cm-%EB%82%B4%EC%99%B8/4932/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4931",
+            "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8%ED%8E%98%EC%9D%B4%EC%8A%A4-%ED%97%A4%EC%BC%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-12cm-%EB%82%B4%EC%99%B8/4931/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4930",
+            "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8%ED%8E%98%EC%9D%B4%EC%8A%A4-%ED%97%A4%EC%BC%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-10cm-%EB%82%B4%EC%99%B8/4930/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4929",
+            "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8%ED%8E%98%EC%9D%B4%EC%8A%A4-%ED%97%A4%EC%BC%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-6cm-%EB%82%B4%EC%99%B8/4929/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4928",
+            "url": "https://animallo.kr/product/%EB%85%B8%EC%8A%A4%ED%8C%9F-%ED%85%8C%ED%8E%98%EA%B7%B8%EB%A6%B0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-15cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4928/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4927",
+            "url": "https://animallo.kr/product/%EB%85%B8%EB%A9%80%EC%8A%A4%ED%8C%9F-%ED%85%8C%ED%8E%98%EA%B7%B8%EB%A6%B0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-15cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4927/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4767",
+            "url": "https://animallo.kr/product/%EB%A0%88%EB%93%9C-%ED%84%B0%EC%BD%B0%EC%9D%B4%EC%A6%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-5cm-%EB%82%B4%EC%99%B8/4767/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4703",
+            "url": "https://animallo.kr/product/%ED%92%80%EC%8A%A4%ED%8C%9F-%ED%85%8C%ED%8E%98%EA%B7%B8%EB%A6%B0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-16cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4703/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4484",
+            "url": "https://animallo.kr/product/%EB%B8%94%EB%A3%A8-%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-5cm-%EB%82%B4%EC%99%B8/4484/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:841",
+            "url": "https://animallo.kr/product/%EC%9E%85%EB%AC%B8%EC%9A%A9-%ED%86%A0%EB%A7%88%ED%86%A0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-1%EB%A7%88%EB%A6%AC-7cm%EB%82%B4%EC%99%B8/841/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:840",
+            "url": "https://animallo.kr/product/%EC%9E%85%EB%AC%B8%EC%9A%A9-%EA%B3%A8%EB%93%A0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-1%EB%A7%88%EB%A6%AC-7cm%EB%82%B4%EC%99%B8/840/category/406/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/406/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:818",
+            "url": "https://animallo.kr/product/%EC%82%BC%EC%83%89-%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/818/category/405/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:746",
+            "url": "https://animallo.kr/product/%EC%82%BC%EC%83%89-%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/746/category/405/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:5426",
+            "url": "https://animallo.kr/product/%EB%A6%AC%EC%96%BC-%ED%8E%98%EB%A3%A8%EC%95%8C%ED%85%80-%EB%A6%AC%EC%98%A4-%EB%82%98%EB%82%98%EC%9D%B4-%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC-xxl-%EB%B2%88%EC%8B%9D-%EA%B0%80%EB%8A%A5%EC%82%AC%EC%9D%B4%EC%A6%88/5426/category/405/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:5282",
+            "url": "https://animallo.kr/product/%EB%B6%88%EA%B0%80%EB%A6%AC%EC%95%88-%EC%94%B0-%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5282/category/405/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4791",
+            "url": "https://animallo.kr/product/%EC%BA%98%EB%A6%AC%ED%8F%AC%EB%8B%88%EC%95%84-%EA%B7%B8%EB%A6%B0-%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC-6cm%EB%82%B4%EC%99%B8-1%EB%A7%88%EB%A6%AC/4791/category/405/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "animallo.kr:4788",
+            "url": "https://animallo.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%EB%A0%88%EB%93%9C%EC%BA%A1-%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/4788/category/405/display/1/",
+            "categoryUrl": "https://animallo.kr/category/%EC%97%94%EC%A0%A4%ED%94%BC%EC%89%AC/405/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
           }
         ]
       },
@@ -1136,18 +1317,6 @@
           "key": "animallo.kr:5436",
           "url": "https://animallo.kr/product/%EC%9E%85%EB%AC%B8%EC%9A%A9-%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4-1%EB%A7%88%EB%A6%AC-7cm%EC%A0%84%ED%9B%84%EA%B8%89/5436/category/25/display/1/",
           "title": "입문용 비단잉어 1마리 7cm전후급",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5434",
-          "url": "https://animallo.kr/product/%EC%95%BC%EC%83%9D-%EB%B0%94%EC%9D%B4%EC%98%A4%ED%86%A0%EB%8F%84%EB%A7%88-%ED%81%90%ED%94%BC%EB%8F%84-sm-size-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5434/category/25/display/1/",
-          "title": "*야생 바이오토도마 큐피도 sm size (5마리 세트)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5429",
-          "url": "https://animallo.kr/product/%EC%95%BC%EC%83%9D-%EB%B8%8C%EB%A1%9C%ED%82%A4%EC%8A%A4-%EB%A9%80%ED%8B%B0%EB%A0%88%EB%94%94%EC%95%84%ED%88%AC%EC%8A%A4-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5429/category/25/display/1/",
-          "title": "야생 브로키스 멀티레디아투스 5마리 세트",
           "reason": "Mixed or unresolved product category requires review"
         },
         {
@@ -1169,45 +1338,9 @@
           "reason": "Mixed or unresolved product category requires review"
         },
         {
-          "key": "animallo.kr:5420",
-          "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5420/category/25/display/1/",
-          "title": "화이트 풍선몰리 5마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5419",
-          "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5419/category/25/display/1/",
-          "title": "블랙 풍선몰리 5마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5387",
-          "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5387/category/25/display/1/",
-          "title": "블랙 몰리 5마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5377",
-          "url": "https://animallo.kr/product/%EB%8B%AC%EB%A7%88%EC%8B%9C%EC%95%88-%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5377/category/25/display/1/",
-          "title": "달마시안 몰리 5마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
           "key": "animallo.kr:5403",
           "url": "https://animallo.kr/product/%EB%A0%88%EB%AA%AC-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5403/category/25/display/1/",
           "title": "레몬 테트라 10마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5381",
-          "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%9C%A0%EC%96%B4-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5381/category/25/display/1/",
-          "title": "화이트 팬더 롱핀 코리도라스 유어 5마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5380",
-          "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%9C%A0%EC%96%B4/5380/category/25/display/1/",
-          "title": "화이트 팬더 롱핀 코리도라스 유어",
           "reason": "Mixed or unresolved product category requires review"
         },
         {
@@ -1232,18 +1365,6 @@
           "key": "animallo.kr:5414",
           "url": "https://animallo.kr/product/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%8C%9F-%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC-%EB%8F%84%EC%8B%9C%EC%98%A4%EC%85%80%EB%9D%BC%ED%83%80/5414/category/25/display/1/",
           "title": "(아이스팟) 라스보라 도시오셀라타",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5407",
-          "url": "https://animallo.kr/product/%ED%8C%8C%EC%9D%B8%EC%95%A0%ED%94%8C-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5407/category/25/display/1/",
-          "title": "파인애플 소드테일 5마리 세트",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5406",
-          "url": "https://animallo.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%99%8D%EB%B0%B1-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5406/category/25/display/1/",
-          "title": "알비노 홍백 소드테일 5마리 세트",
           "reason": "Mixed or unresolved product category requires review"
         },
         {
@@ -1315,18 +1436,6 @@
           "reason": "Mixed or unresolved product category requires review"
         },
         {
-          "key": "animallo.kr:5434",
-          "url": "https://animallo.kr/product/%EC%95%BC%EC%83%9D-%EB%B0%94%EC%9D%B4%EC%98%A4%ED%86%A0%EB%8F%84%EB%A7%88-%ED%81%90%ED%94%BC%EB%8F%84-sm-size-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5434/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5429",
-          "url": "https://animallo.kr/product/%EC%95%BC%EC%83%9D-%EB%B8%8C%EB%A1%9C%ED%82%A4%EC%8A%A4-%EB%A9%80%ED%8B%B0%EB%A0%88%EB%94%94%EC%95%84%ED%88%AC%EC%8A%A4-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5429/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
           "key": "animallo.kr:5427",
           "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-50%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5427/category/25/display/1/",
           "status": "needs_review",
@@ -1345,44 +1454,8 @@
           "reason": "Mixed or unresolved product category requires review"
         },
         {
-          "key": "animallo.kr:5420",
-          "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5420/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5419",
-          "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5419/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5387",
-          "url": "https://animallo.kr/product/%EB%B8%94%EB%9E%99-%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5387/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5377",
-          "url": "https://animallo.kr/product/%EB%8B%AC%EB%A7%88%EC%8B%9C%EC%95%88-%EB%AA%B0%EB%A6%AC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5377/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
           "key": "animallo.kr:5403",
           "url": "https://animallo.kr/product/%EB%A0%88%EB%AA%AC-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5403/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5381",
-          "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%9C%A0%EC%96%B4-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5381/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5380",
-          "url": "https://animallo.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%9C%A0%EC%96%B4/5380/category/25/display/1/",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
         },
@@ -1407,18 +1480,6 @@
         {
           "key": "animallo.kr:5414",
           "url": "https://animallo.kr/product/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%8C%9F-%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC-%EB%8F%84%EC%8B%9C%EC%98%A4%EC%85%80%EB%9D%BC%ED%83%80/5414/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5407",
-          "url": "https://animallo.kr/product/%ED%8C%8C%EC%9D%B8%EC%95%A0%ED%94%8C-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5407/category/25/display/1/",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "animallo.kr:5406",
-          "url": "https://animallo.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%99%8D%EB%B0%B1-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC-5%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8/5406/category/25/display/1/",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
         },
@@ -1489,7 +1550,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 45,
+        "missingSeparateOptionLabel": 55,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -2343,23 +2404,23 @@
       "domain": "raraaqua.com",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T21:36:46.510Z",
-        "latestSuccess": "2026-10-08T21:37:57.323Z",
+        "latestAttempt": "2026-10-08T22:56:50.958Z",
+        "latestSuccess": "2026-10-08T22:58:41.822Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 79,
-      "verifiedFish": 29,
+      "verifiedProducts": 89,
+      "verifiedFish": 39,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
         "discovered": 223,
         "allowed": 28,
-        "unvisited": 24,
-        "pendingCategories": 25,
-        "terminalCategories": 3,
+        "unvisited": 22,
+        "pendingCategories": 23,
+        "terminalCategories": 5,
         "detailCompleteCategories": 3,
         "menuScope": "unknown"
       },
@@ -2371,14 +2432,6 @@
         {
           "url": "https://raraaqua.com/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/587/",
           "label": "디스커스"
-        },
-        {
-          "url": "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/",
-          "label": "테트라/소형어"
-        },
-        {
-          "url": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
-          "label": "플래티(난태생)"
         },
         {
           "url": "https://raraaqua.com/category/%EB%A1%9C%EC%B9%98%ED%94%8C%EB%A0%88%EC%BD%94/585/",
@@ -2541,13 +2594,138 @@
           "unresolvedObservedKeys": [],
           "observedDetailsResolved": true,
           "detailCoverageComplete": true
+        },
+        {
+          "url": "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/",
+          "reportedProductCount": 9,
+          "actualVisitedPageUrls": [
+            "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 9,
+          "verifiedObservedLinks": 5,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "raraaqua.com:6831",
+            "raraaqua.com:6145",
+            "raraaqua.com:6133",
+            "raraaqua.com:6124"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
+        },
+        {
+          "url": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+          "reportedProductCount": 11,
+          "actualVisitedPageUrls": [
+            "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 11,
+          "verifiedObservedLinks": 5,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "raraaqua.com:6150",
+            "raraaqua.com:6149",
+            "raraaqua.com:6148",
+            "raraaqua.com:6147",
+            "raraaqua.com:6119",
+            "raraaqua.com:6118"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
         }
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 0,
+        "count": 10,
         "retryHeld": 0,
-        "candidates": []
+        "candidates": [
+          {
+            "key": "raraaqua.com:6831",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EB%9F%AC%EB%AF%B8%EB%85%B8%EC%A6%88-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC/6831/category/583/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6145",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EB%B8%94%EB%9E%99-%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-20%EB%A7%88%EB%A6%AC/6145/category/583/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6133",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-20%EB%A7%88%EB%A6%AC/6133/category/583/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6124",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EC%BD%A9%EA%B3%A0-%ED%85%8C%ED%8A%B8%EB%9D%BC-4%EB%A7%88%EB%A6%AC-5cm-%EB%82%B4%EC%99%B8/6124/category/583/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%86%8C%ED%98%95%EC%96%B4/583/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6150",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EC%99%81-%ED%94%8C%EB%9E%98%ED%8B%B0-10%EB%A7%88%EB%A6%AC/6150/category/581/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6149",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-10%EB%A7%88%EB%A6%AC/6149/category/581/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6148",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EC%98%90%EB%A1%9C%EC%9A%B0-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-10%EB%A7%88%EB%A6%AC/6148/category/581/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6147",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EA%B3%A8%EB%8D%B4-%EB%9D%BC%EC%9D%B4%EC%96%B4-%EB%AA%B0%EB%A6%AC-10%EB%A7%88%EB%A6%AC/6147/category/581/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6119",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EB%B8%94%EB%9E%99-%EB%AA%B0%EB%A6%AC-10%EB%A7%88%EB%A6%AC/6119/category/581/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "raraaqua.com:6118",
+            "url": "https://raraaqua.com/product/%EC%83%9D%EB%AC%BC-%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-10%EB%A7%88%EB%A6%AC/6118/category/581/display/1/",
+            "categoryUrl": "https://raraaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0(%EB%82%9C%ED%83%9C%EC%83%9D)/581/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          }
+        ]
       },
       "classificationReview": [],
       "unresolvedDetailFailures": [],
@@ -2557,13 +2735,14 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 77,
+        "missingSeparateOptionLabel": 87,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
         "unvisited_menu_categories",
         "first_page_only_with_remaining_cursor",
-        "remaining_actual_page_cursor"
+        "remaining_actual_page_cursor",
+        "pending_detail_verification"
       ],
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -2576,7 +2755,7 @@
       "domain": "medakagallery.com",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T21:14:06.860Z",
+        "latestAttempt": "2026-10-08T23:03:10.724Z",
         "latestSuccess": "2026-10-08T09:46:21.308Z",
         "status": "no_confirmed_products",
         "manualReview": false,
@@ -2666,90 +2845,9 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 10,
+        "count": 0,
         "retryHeld": 0,
-        "candidates": [
-          {
-            "key": "medakagallery.com:548",
-            "url": "https://medakagallery.com/product/%ED%99%94%EB%AC%B5-%EB%B2%94-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/548/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:546",
-            "url": "https://medakagallery.com/product/%EB%A3%A8%EB%AF%B8%EB%82%98-%EB%B8%94%EB%A3%A8-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/546/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:543",
-            "url": "https://medakagallery.com/product/%ED%94%84%EB%A1%9C%EB%A7%88%EC%A5%AC-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/543/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:540",
-            "url": "https://medakagallery.com/product/%EB%AA%A8%EC%95%84%EB%82%98%EB%A6%AC%ED%94%84-1%EB%A7%88%EB%A6%AC/540/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:537",
-            "url": "https://medakagallery.com/product/%EB%AF%B8%EB%93%9C%EB%82%98%EC%9E%87%ED%94%84%EB%A6%B4-%EC%B2%B4%EC%99%B8%EA%B4%91-1%EB%A7%88%EB%A6%AC/537/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:535",
-            "url": "https://medakagallery.com/product/%EB%A0%88%EC%BF%A0%EC%9E%90-1%EB%A7%88%EB%A6%AC/535/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:532",
-            "url": "https://medakagallery.com/product/%EC%9A%94%EB%B3%80%EC%B2%9C%EB%AA%A9-1%EB%A7%88%EB%A6%AC/532/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:531",
-            "url": "https://medakagallery.com/product/%EB%AF%B8%EB%93%9C%EB%82%98%EC%9E%87%ED%94%84%EB%A6%B4-%EC%B9%A0%ED%9D%91-1%EB%A7%88%EB%A6%AC/531/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:530",
-            "url": "https://medakagallery.com/product/%EB%9E%98%EA%B4%91-%EB%AF%B8%EB%9F%AC%EB%A6%B0-1%EB%A7%88%EB%A6%AC/530/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "medakagallery.com:512",
-            "url": "https://medakagallery.com/product/%ED%99%94%EB%AC%B5-%EB%A9%94%EB%8B%A4%EC%B9%B4-1%EB%A7%88%EB%A6%AC/512/category/24/display/1/",
-            "categoryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          }
-        ]
+        "candidates": []
       },
       "classificationReview": [
         {
@@ -3127,7 +3225,6 @@
       "missingReasons": [
         "unvisited_menu_categories",
         "remaining_actual_page_cursor",
-        "pending_detail_verification",
         "classification_review"
       ],
       "blockers": [
@@ -3251,15 +3348,15 @@
       "domain": "aquapro.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T22:16:06.069Z",
-        "latestSuccess": "2026-10-08T22:17:56.622Z",
+        "latestAttempt": "2026-10-08T22:53:34.429Z",
+        "latestSuccess": "2026-10-08T22:54:55.120Z",
         "status": "partial_failure",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 52,
-      "verifiedFish": 50,
+      "verifiedProducts": 62,
+      "verifiedFish": 60,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -3528,23 +3625,18 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 31,
-          "verifiedObservedLinks": 3,
+          "verifiedObservedLinks": 8,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "aquapro.kr:10621",
             "aquapro.kr:10284",
-            "aquapro.kr:8929",
             "aquapro.kr:11033",
             "aquapro.kr:10227",
             "aquapro.kr:11511",
-            "aquapro.kr:11529",
-            "aquapro.kr:6090",
-            "aquapro.kr:7738",
             "aquapro.kr:8934",
             "aquapro.kr:8977",
             "aquapro.kr:11515",
             "aquapro.kr:7543",
-            "aquapro.kr:7882",
             "aquapro.kr:11649",
             "aquapro.kr:8106",
             "aquapro.kr:6972",
@@ -3573,12 +3665,10 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 12,
-          "verifiedObservedLinks": 11,
+          "verifiedObservedLinks": 12,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "aquapro.kr:10651"
-          ],
-          "observedDetailsResolved": false,
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
           "detailCoverageComplete": false
         },
         {
@@ -3591,11 +3681,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 18,
-          "verifiedObservedLinks": 11,
+          "verifiedObservedLinks": 13,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquapro.kr:8929",
-            "aquapro.kr:7638",
             "aquapro.kr:7469",
             "aquapro.kr:6958",
             "aquapro.kr:6468",
@@ -3615,11 +3703,10 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 24,
-          "verifiedObservedLinks": 6,
+          "verifiedObservedLinks": 7,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "aquapro.kr:10781",
-            "aquapro.kr:10824",
             "aquapro.kr:10758",
             "aquapro.kr:10755",
             "aquapro.kr:10754",
@@ -3650,11 +3737,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 6,
-          "verifiedObservedLinks": 5,
+          "verifiedObservedLinks": 6,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "aquapro.kr:9429"
-          ],
+          "unresolvedObservedKeys": [],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
         },
@@ -3668,10 +3753,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 4,
+          "verifiedObservedLinks": 5,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquapro.kr:11412",
             "aquapro.kr:11362",
             "aquapro.kr:11136",
             "aquapro.kr:10954",
@@ -3755,10 +3839,9 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 22,
-          "verifiedObservedLinks": 6,
+          "verifiedObservedLinks": 7,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquapro.kr:11412",
             "aquapro.kr:11362",
             "aquapro.kr:11136",
             "aquapro.kr:10304",
@@ -3788,18 +3871,16 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 10,
-          "verifiedObservedLinks": 1,
+          "verifiedObservedLinks": 3,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquapro.kr:11529",
             "aquapro.kr:11528",
             "aquapro.kr:11436",
             "aquapro.kr:10749",
             "aquapro.kr:10684",
             "aquapro.kr:10611",
             "aquapro.kr:9752",
-            "aquapro.kr:7888",
-            "aquapro.kr:7882"
+            "aquapro.kr:7888"
           ],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
@@ -3814,7 +3895,7 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 1,
+          "verifiedObservedLinks": 3,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "aquapro.kr:11621",
@@ -3831,11 +3912,9 @@
             "aquapro.kr:8771",
             "aquapro.kr:8095",
             "aquapro.kr:7853",
-            "aquapro.kr:7738",
             "aquapro.kr:7634",
             "aquapro.kr:6899",
             "aquapro.kr:6440",
-            "aquapro.kr:6090",
             "aquapro.kr:11636",
             "aquapro.kr:11460",
             "aquapro.kr:11429",
@@ -3853,25 +3932,9 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 117,
+        "count": 109,
         "retryHeld": 1,
         "candidates": [
-          {
-            "key": "aquapro.kr:7113",
-            "url": "https://aquapro.kr/product/detail.html?product_no=7113&cate_no=892&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "aquapro.kr:11650",
-            "url": "https://aquapro.kr/product/detail.html?product_no=11650&cate_no=892&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
           {
             "key": "aquapro.kr:6635",
             "url": "https://aquapro.kr/product/detail.html?product_no=6635&cate_no=892&display_group=1",
@@ -3937,14 +4000,6 @@
             "retryAfter": null
           },
           {
-            "key": "aquapro.kr:8929",
-            "url": "https://aquapro.kr/product/detail.html?product_no=8929&cate_no=892&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
             "key": "aquapro.kr:11033",
             "url": "https://aquapro.kr/product/detail.html?product_no=11033&cate_no=892&display_group=1",
             "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
@@ -3966,22 +4021,6 @@
             "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
             "type": null,
             "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "aquapro.kr:10651",
-            "url": "https://aquapro.kr/product/detail.html?product_no=10651&cate_no=1177&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=1177",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquapro.kr:7638",
-            "url": "https://aquapro.kr/product/detail.html?product_no=7638&cate_no=912&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=912",
-            "type": "live",
-            "subtype": "fish",
             "retryAfter": null
           },
           {
@@ -4031,14 +4070,6 @@
             "type": "live",
             "subtype": "fish",
             "retryAfter": "2026-10-09T20:48:55.418Z"
-          },
-          {
-            "key": "aquapro.kr:10824",
-            "url": "https://aquapro.kr/product/detail.html?product_no=10824&cate_no=925&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=925",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
           },
           {
             "key": "aquapro.kr:10758",
@@ -4164,22 +4195,6 @@
             "key": "aquapro.kr:5977",
             "url": "https://aquapro.kr/product/detail.html?product_no=5977&cate_no=925&display_group=1",
             "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=925",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquapro.kr:9429",
-            "url": "https://aquapro.kr/product/detail.html?product_no=9429&cate_no=920&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=920",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquapro.kr:11412",
-            "url": "https://aquapro.kr/product/detail.html?product_no=11412&cate_no=893&display_group=1",
-            "categoryUrl": "https://aquapro.kr/product/list.html?cate_no=893",
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
@@ -4808,12 +4823,6 @@
           "reason": "Mixed or unresolved product category requires review"
         },
         {
-          "key": "aquapro.kr:8929",
-          "url": "https://aquapro.kr/product/detail.html?product_no=8929&cate_no=892&display_group=1",
-          "title": "스터바이 코리도라스 (3~4cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
           "key": "aquapro.kr:11033",
           "url": "https://aquapro.kr/product/detail.html?product_no=11033&cate_no=892&display_group=1",
           "title": "팬더 가라 (4cm)",
@@ -4829,24 +4838,6 @@
           "key": "aquapro.kr:11511",
           "url": "https://aquapro.kr/product/detail.html?product_no=11511&cate_no=892&display_group=1",
           "title": "호스 페이스 로치 (7~8cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:11529",
-          "url": "https://aquapro.kr/product/detail.html?product_no=11529&cate_no=892&display_group=1",
-          "title": "아피스토그라마 스테인다크네리 (3-4cm) 한쌍10%할인",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:6090",
-          "url": "https://aquapro.kr/product/detail.html?product_no=6090&cate_no=892&display_group=1",
-          "title": "알비노 게오파거스 헤켈리 (13~16cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:7738",
-          "url": "https://aquapro.kr/product/detail.html?product_no=7738&cate_no=892&display_group=1",
-          "title": "게오파거스 헤켈리(12~15cm)",
           "reason": "Mixed or unresolved product category requires review"
         },
         {
@@ -4871,12 +4862,6 @@
           "key": "aquapro.kr:7543",
           "url": "https://aquapro.kr/product/detail.html?product_no=7543&cate_no=892&display_group=1",
           "title": "앵추이 (9~11cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:7882",
-          "url": "https://aquapro.kr/product/detail.html?product_no=7882&cate_no=892&display_group=1",
-          "title": "아피스토그라마 비타에니아타 (3-4cm)",
           "reason": "Mixed or unresolved product category requires review"
         },
         {
@@ -4914,6 +4899,18 @@
           "url": "https://aquapro.kr/product/detail.html?product_no=7050&cate_no=892&display_group=1",
           "title": "타이어 트랙 일 (9-11cm)",
           "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "aquapro.kr:7113",
+          "url": "https://aquapro.kr/product/detail.html?product_no=7113&cate_no=892&display_group=1",
+          "title": "L-90 파파 플레코 \"오조 치코\"  (6~7cm)",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "aquapro.kr:11650",
+          "url": "https://aquapro.kr/product/detail.html?product_no=11650&cate_no=892&display_group=1",
+          "title": "볼터치 골든 볼 라미레지 (3~4cm)",
+          "reason": "Mixed or unresolved product category requires review"
         }
       ],
       "unresolvedDetailFailures": [
@@ -4926,12 +4923,6 @@
         {
           "key": "aquapro.kr:10284",
           "url": "https://aquapro.kr/product/detail.html?product_no=10284&cate_no=892&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:8929",
-          "url": "https://aquapro.kr/product/detail.html?product_no=8929&cate_no=892&display_group=1",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
         },
@@ -4950,24 +4941,6 @@
         {
           "key": "aquapro.kr:11511",
           "url": "https://aquapro.kr/product/detail.html?product_no=11511&cate_no=892&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:11529",
-          "url": "https://aquapro.kr/product/detail.html?product_no=11529&cate_no=892&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:6090",
-          "url": "https://aquapro.kr/product/detail.html?product_no=6090&cate_no=892&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:7738",
-          "url": "https://aquapro.kr/product/detail.html?product_no=7738&cate_no=892&display_group=1",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
         },
@@ -4998,12 +4971,6 @@
         {
           "key": "aquapro.kr:7543",
           "url": "https://aquapro.kr/product/detail.html?product_no=7543&cate_no=892&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "aquapro.kr:7882",
-          "url": "https://aquapro.kr/product/detail.html?product_no=7882&cate_no=892&display_group=1",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
         },
@@ -5042,15 +5009,27 @@
           "url": "https://aquapro.kr/product/detail.html?product_no=7050&cate_no=892&display_group=1",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "aquapro.kr:7113",
+          "url": "https://aquapro.kr/product/detail.html?product_no=7113&cate_no=892&display_group=1",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "aquapro.kr:11650",
+          "url": "https://aquapro.kr/product/detail.html?product_no=11650&cate_no=892&display_group=1",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
         }
       ],
       "availability": {
         "unknown": 0,
-        "reportedUnavailable": 17,
+        "reportedUnavailable": 20,
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 52,
+        "missingSeparateOptionLabel": 62,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -5072,22 +5051,22 @@
       "domain": "zoonimal.co.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T21:21:58.013Z",
-        "latestSuccess": "2026-10-08T21:23:48.485Z",
+        "latestAttempt": "2026-10-08T23:04:42.894Z",
+        "latestSuccess": "2026-10-08T23:06:33.435Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 42,
-      "verifiedFish": 17,
+      "verifiedProducts": 51,
+      "verifiedFish": 25,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
-        "discovered": 40,
-        "allowed": 19,
-        "unvisited": 16,
-        "pendingCategories": 19,
+        "discovered": 41,
+        "allowed": 20,
+        "unvisited": 15,
+        "pendingCategories": 20,
         "terminalCategories": 0,
         "detailCompleteCategories": 0,
         "menuScope": "unknown"
@@ -5104,14 +5083,6 @@
         {
           "url": "https://zoonimal.co.kr/category/%EC%88%98%EC%B4%88/403/",
           "label": "수초"
-        },
-        {
-          "url": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
-          "label": "몰리/플래티/소드"
-        },
-        {
-          "url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
-          "label": "디스커스 전문관"
         },
         {
           "url": "https://zoonimal.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/333/",
@@ -5155,7 +5126,11 @@
         },
         {
           "url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%97%94%EC%A0%A4/330/",
-          "label": "디스커스/엔젤 ()"
+          "label": "디스커스/엔젤"
+        },
+        {
+          "url": "https://zoonimal.co.kr/category/%EC%97%94%EC%A0%A4/413/",
+          "label": "엔젤 ()"
         }
       ],
       "categories": [
@@ -5170,7 +5145,7 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 17,
+          "verifiedObservedLinks": 18,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "zoonimal.co.kr:8439",
@@ -5184,8 +5159,7 @@
             "zoonimal.co.kr:7867",
             "zoonimal.co.kr:7840",
             "zoonimal.co.kr:7839",
-            "zoonimal.co.kr:7838",
-            "zoonimal.co.kr:7746"
+            "zoonimal.co.kr:7838"
           ],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
@@ -5200,11 +5174,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 20,
-          "verifiedObservedLinks": 7,
+          "verifiedObservedLinks": 9,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "zoonimal.co.kr:6796",
-            "zoonimal.co.kr:7595",
             "zoonimal.co.kr:7325",
             "zoonimal.co.kr:6957",
             "zoonimal.co.kr:8407",
@@ -5230,12 +5202,71 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 10,
-          "verifiedObservedLinks": 7,
+          "verifiedObservedLinks": 9,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "zoonimal.co.kr:6956",
-            "zoonimal.co.kr:8540",
             "zoonimal.co.kr:7830"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
+        },
+        {
+          "url": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+          "reportedProductCount": 76,
+          "actualVisitedPageUrls": [
+            "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/"
+          ],
+          "nextActualPageUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/?page=2",
+          "terminalPageReached": false,
+          "listingCountMatched": false,
+          "observedUniqueLinks": 20,
+          "verifiedObservedLinks": 2,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "zoonimal.co.kr:4884",
+            "zoonimal.co.kr:7449",
+            "zoonimal.co.kr:7373",
+            "zoonimal.co.kr:7007",
+            "zoonimal.co.kr:6495",
+            "zoonimal.co.kr:8400",
+            "zoonimal.co.kr:8223",
+            "zoonimal.co.kr:8411",
+            "zoonimal.co.kr:8399",
+            "zoonimal.co.kr:8199",
+            "zoonimal.co.kr:8441",
+            "zoonimal.co.kr:8093",
+            "zoonimal.co.kr:7865",
+            "zoonimal.co.kr:7078",
+            "zoonimal.co.kr:7009",
+            "zoonimal.co.kr:6781",
+            "zoonimal.co.kr:8433",
+            "zoonimal.co.kr:8429"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
+        },
+        {
+          "url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+          "reportedProductCount": 60,
+          "actualVisitedPageUrls": [
+            "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/"
+          ],
+          "nextActualPageUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+          "terminalPageReached": false,
+          "listingCountMatched": false,
+          "observedUniqueLinks": 10,
+          "verifiedObservedLinks": 1,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "zoonimal.co.kr:7986",
+            "zoonimal.co.kr:8520",
+            "zoonimal.co.kr:8471",
+            "zoonimal.co.kr:8130",
+            "zoonimal.co.kr:7996",
+            "zoonimal.co.kr:7990",
+            "zoonimal.co.kr:8304",
+            "zoonimal.co.kr:7978",
+            "zoonimal.co.kr:8563"
           ],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
@@ -5243,33 +5274,9 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 26,
+        "count": 46,
         "retryHeld": 0,
         "candidates": [
-          {
-            "key": "zoonimal.co.kr:7746",
-            "url": "https://zoonimal.co.kr/product/%EC%83%9D%EC%9D%B4%EC%83%88%EC%9A%B0%EB%B8%94%EB%9E%99%EB%A1%9C%EC%A6%88-%EC%89%AC%EB%A6%BC%ED%94%84-5%EB%A7%88%EB%A6%AC/7746/category/410/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "zoonimal.co.kr:8439",
-            "url": "https://zoonimal.co.kr/product/%EB%AF%BC%EB%AC%BC%EA%B0%80%EC%9E%AC-%EB%B8%94%EB%A3%A8-%EA%B0%80%EC%9E%AC-34cm%EB%82%B4%EC%99%B8/8439/category/410/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "zoonimal.co.kr:8554",
-            "url": "https://zoonimal.co.kr/product/%EC%95%A0%EC%99%84%EC%83%88%EC%9A%B0%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%A0%84%EC%9A%A9%EB%B8%94%EB%A3%A8%EB%A6%B4%EB%A6%AC-%EC%89%AC%EB%A6%BC%ED%94%84/8554/category/410/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
           {
             "key": "zoonimal.co.kr:6907",
             "url": "https://zoonimal.co.kr/product/%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%A0%84%EC%9A%A9%EB%AF%B8%EB%8B%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EA%B0%80%EC%9E%AC/6907/category/410/display/1/",
@@ -5324,22 +5331,6 @@
             "categoryUrl": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
             "type": null,
             "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "zoonimal.co.kr:6796",
-            "url": "https://zoonimal.co.kr/product/%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%A0%84%EC%9A%A9-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7-%EB%9E%9C%EB%8D%A4%EB%B0%9C%EC%86%A1/6796/category/324/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "zoonimal.co.kr:7595",
-            "url": "https://zoonimal.co.kr/product/%EB%B8%94%EB%A3%A8%EB%A7%88%EB%B8%94%EB%8F%84%ED%8A%B8-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7-%EB%9E%9C%EB%8D%A4%EB%B0%9C%EC%86%A1/7595/category/324/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
-            "type": "live",
-            "subtype": "fish",
             "retryAfter": null
           },
           {
@@ -5431,25 +5422,225 @@
             "retryAfter": null
           },
           {
-            "key": "zoonimal.co.kr:6956",
-            "url": "https://zoonimal.co.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%BD%94%EB%A6%AC-%EC%95%8C%EB%B9%84%EB%85%B8-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-3cm-%EB%82%B4%EC%99%B8/6956/category/422/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "zoonimal.co.kr:8540",
-            "url": "https://zoonimal.co.kr/product/%ED%83%80%EC%9D%B4%EA%B1%B0%EC%87%BC%EB%B2%A8-%EC%BA%A3%ED%94%BC%EC%89%AC-7-8cm%EB%82%B4%EC%99%B8/8540/category/422/display/1/",
-            "categoryUrl": "https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
             "key": "zoonimal.co.kr:7830",
             "url": "https://zoonimal.co.kr/product/%EC%B2%AD%EC%86%8C%EB%AC%BC%EA%B3%A0%EA%B8%B0-%EC%95%8C%EB%B9%84%EB%85%B8-%EB%82%98%EB%B9%84%EB%B9%84%ED%8C%8C-79cm%EC%A0%84%ED%9B%84-%EC%95%8C%EB%82%98%EB%B9%84/7830/category/422/display/1/",
             "categoryUrl": "https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:4884",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EB%A0%88%EB%93%9C%EC%BD%94%EB%9E%84%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC-%EC%BD%94%EB%9E%84%EC%82%BC%EA%B0%81%ED%94%8C%EB%9E%98%ED%8B%B0/4884/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7449",
+            "url": "https://zoonimal.co.kr/product/%EC%83%88%EB%81%BC%EB%82%B3%EB%8A%94%EB%82%9C%ED%83%9C%EC%83%9D-%EA%B3%A8%EB%93%A0%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/7449/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7373",
+            "url": "https://zoonimal.co.kr/product/10%EB%A7%88%EB%A6%AC%ED%95%9C%EC%A0%95%EB%82%9C%ED%83%9C%EC%83%9D-%EC%95%8C%EB%B9%84%EB%85%B8-%EC%8A%88%ED%8D%BC%EB%A0%88%EB%93%9C-%EC%BB%AC%EB%A6%AC%ED%94%8C%EB%9D%BC%EC%9B%8C-%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/7373/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7007",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D%EB%B2%94%EB%B8%94%EB%B9%84%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC/7007/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:6495",
+            "url": "https://zoonimal.co.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EB%84%98-%EB%9D%BC%EC%9D%B4%EC%96%B4%ED%85%8C%EC%9D%BC-%EB%AA%B0%EB%A6%AC-4cm%EB%82%B4%EC%99%B8-3%EB%A7%88%EB%A6%AC/6495/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8400",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EC%82%B4%EA%B5%AC-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3cm-%EC%9D%B4%EB%82%B4-3%EB%A7%88%EB%A6%AC/8400/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8223",
+            "url": "https://zoonimal.co.kr/product/%EB%85%B8%EB%9E%91%EB%82%9C%ED%83%9C%EC%83%9D-%EA%B3%A8%EB%93%9C-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC/8223/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8411",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EB%B8%94%EB%A3%A8-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3cm-%EC%9D%B4%EB%82%B4-3%EB%A7%88%EB%A6%AC/8411/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8399",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EB%A0%88%EB%93%9C%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%BA%98%EB%A6%AC%EC%BD%94-%ED%94%8C%EB%9E%98%ED%8B%B0-3cm-%EC%9D%B4%EB%82%B4-3%EB%A7%88%EB%A6%AC/8399/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8199",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%ED%83%80%EC%9D%B4%EA%B1%B0-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC/8199/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8441",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%ED%94%8C%EB%9E%98%ED%8B%B0%EB%84%98-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EC%96%B4%ED%85%8C%EC%9D%BC-3%EB%A7%88%EB%A6%AC/8441/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8093",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EB%A0%88%EB%93%9C-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC/8093/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7865",
+            "url": "https://zoonimal.co.kr/product/%ED%82%A4%EC%9A%B0%EA%B8%B0%EC%89%AC%EC%9A%B4%EB%82%9C%ED%83%9C%EC%83%9D-%EC%86%A1%EC%82%AC%EB%A6%AC-%ED%94%8C%EB%9E%98%ED%8B%B0%EB%84%98-%EB%B2%8C%EB%A3%AC%EB%AA%B0%EB%A6%AC-%EB%B3%B4%EC%84%9D%EB%88%88-1%EC%8C%8D-%ED%8A%B8%EB%A6%AC%EC%98%A4/7865/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7078",
+            "url": "https://zoonimal.co.kr/product/%EA%B3%A8%EB%93%A0%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-3cm%EB%82%B4%EC%99%B8-3%EB%A7%88%EB%A6%AC/7078/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7009",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EC%86%A1%EC%82%AC%EB%A6%AC%EA%B3%A8%EB%93%A0%EB%B8%94%EB%9E%99%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/7009/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:6781",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%ED%94%8C%EB%9E%98%ED%8B%B0-%EB%AF%B9%EC%8A%A4-10%EB%A7%88%EB%A6%AC-%EC%84%B8%ED%8A%B8-%EB%9E%9C%EB%8D%A4%EC%B6%9C%EA%B3%A0/6781/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8433",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EC%83%A4%ED%94%84%EB%9E%80-%EB%AA%B0%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EC%96%B4%ED%85%8C%EC%9D%BC-3%EB%A7%88%EB%A6%AC/8433/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8429",
+            "url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EB%A0%88%EC%98%A4%ED%8C%8C%EB%93%9C-%EB%AA%B0%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EC%96%B4%ED%85%8C%EC%9D%BC-3%EB%A7%88%EB%A6%AC/8429/category/359/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7986",
+            "url": "https://zoonimal.co.kr/product/%EB%A0%88%EB%93%9C-%ED%8C%AC%EB%8D%94-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-8cm%EB%82%B4%EC%99%B8/7986/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8520",
+            "url": "https://zoonimal.co.kr/product/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%9C%A0%EC%96%B4-5cm%EC%A0%84%ED%9B%84-%EB%9E%9C%EB%8D%A4-5%EB%A7%88%EB%A6%AC-%ED%98%BC%ED%95%A9%EC%84%B8%ED%8A%B8-%EA%B1%B4%EA%B0%95%EA%B0%9C%EC%B2%B4-%EC%84%A0%EB%B3%84/8520/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8471",
+            "url": "https://zoonimal.co.kr/product/%EB%A0%88%EB%93%9C-%ED%84%B0%EC%BD%B0%EC%9D%B4%EC%A6%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-6-8cm%EB%82%B4%EC%99%B8/8471/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8130",
+            "url": "https://zoonimal.co.kr/product/%EC%98%90%EB%A1%9C%EC%9A%B0-%EB%A9%9C%EB%A1%A0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-10cm-%EB%82%B4%EC%99%B8/8130/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7996",
+            "url": "https://zoonimal.co.kr/product/%EB%B8%94%EB%A3%A8-%ED%84%B0%EC%BD%B0%EC%9D%B4%EC%A6%88-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-8cm%EB%82%B4%EC%99%B8/7996/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7990",
+            "url": "https://zoonimal.co.kr/product/%EB%A0%88%EB%93%9C%EB%A9%9C%EB%A1%A0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-8cm-%EB%82%B4%EC%99%B8/7990/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8304",
+            "url": "https://zoonimal.co.kr/product/%ED%94%BC%EC%A3%A4-%ED%83%80%EC%9D%B4%EA%B1%B0-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-8cm-%EB%82%B4%EC%99%B8/8304/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:7978",
+            "url": "https://zoonimal.co.kr/product/%EB%A0%88%EB%93%9C%EC%B2%B4%EC%BB%A4%EB%B3%B4%EB%93%9C-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-10cm%EB%82%B4%EC%99%B8/7978/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "zoonimal.co.kr:8563",
+            "url": "https://zoonimal.co.kr/product/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%9C%A0%EC%96%B4-5cm%EC%A0%84%ED%9B%84-%EB%9E%9C%EB%8D%A4-1%EB%A7%88%EB%A6%AC-%EA%B1%B4%EA%B0%95%EA%B0%9C%EC%B2%B4-%EC%84%A0%EB%B3%84/8563/category/391/display/1/",
+            "categoryUrl": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
@@ -5606,11 +5797,11 @@
       ],
       "availability": {
         "unknown": 0,
-        "reportedUnavailable": 3,
+        "reportedUnavailable": 4,
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 27,
+        "missingSeparateOptionLabel": 36,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -8269,15 +8460,15 @@
       "domain": "liveaqua.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T20:49:51.588Z",
-        "latestSuccess": "2026-10-08T20:51:41.961Z",
+        "latestAttempt": "2026-10-08T22:54:58.799Z",
+        "latestSuccess": "2026-10-08T22:56:29.251Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 8,
-      "verifiedFish": 8,
+      "verifiedProducts": 16,
+      "verifiedFish": 16,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -8342,14 +8533,13 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 31,
-          "verifiedObservedLinks": 1,
+          "verifiedObservedLinks": 2,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "liveaqua.kr:1580",
             "liveaqua.kr:1579",
             "liveaqua.kr:1578",
             "liveaqua.kr:1577",
-            "liveaqua.kr:1576",
             "liveaqua.kr:1574",
             "liveaqua.kr:1565",
             "liveaqua.kr:1564",
@@ -8389,18 +8579,10 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 14,
-          "verifiedObservedLinks": 7,
+          "verifiedObservedLinks": 14,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "liveaqua.kr:1427",
-            "liveaqua.kr:1377",
-            "liveaqua.kr:1376",
-            "liveaqua.kr:1375",
-            "liveaqua.kr:1374",
-            "liveaqua.kr:1373",
-            "liveaqua.kr:1372"
-          ],
-          "observedDetailsResolved": false,
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
           "detailCoverageComplete": false
         },
         {
@@ -8413,18 +8595,16 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 1,
-          "verifiedObservedLinks": 0,
+          "verifiedObservedLinks": 1,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "liveaqua.kr:1576"
-          ],
-          "observedDetailsResolved": false,
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
           "detailCoverageComplete": false
         }
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 35,
+        "count": 23,
         "retryHeld": 4,
         "candidates": [
           {
@@ -8458,38 +8638,6 @@
             "type": null,
             "subtype": null,
             "retryAfter": "2026-10-09T15:33:17.683Z"
-          },
-          {
-            "key": "liveaqua.kr:1470",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1470&cate_no=24&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1469",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1469&cate_no=24&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1468",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1468&cate_no=24&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1467",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1467&cate_no=24&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
           },
           {
             "key": "liveaqua.kr:1466",
@@ -8550,14 +8698,6 @@
           {
             "key": "liveaqua.kr:1454",
             "url": "https://www.liveaqua.kr/product/detail.html?product_no=1454&cate_no=24&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1576",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1576&cate_no=24&display_group=1",
             "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
             "type": null,
             "subtype": null,
@@ -8650,72 +8790,10 @@
             "type": null,
             "subtype": null,
             "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1427",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1427&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1377",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1377&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1376",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1376&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1375",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1375&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1374",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1374&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1373",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1373&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "liveaqua.kr:1372",
-            "url": "https://www.liveaqua.kr/product/detail.html?product_no=1372&cate_no=42&display_group=1",
-            "categoryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
           }
         ]
       },
       "classificationReview": [
-        {
-          "key": "liveaqua.kr:1576",
-          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1576&cate_no=24&display_group=1",
-          "title": "마블보석눈몰리 1쌍",
-          "reason": "Mixed or unresolved product category requires review"
-        },
         {
           "key": "liveaqua.kr:1574",
           "url": "https://www.liveaqua.kr/product/detail.html?product_no=1574&cate_no=24&display_group=1",
@@ -8793,6 +8871,30 @@
           "url": "https://www.liveaqua.kr/product/detail.html?product_no=1471&cate_no=24&display_group=1",
           "title": "미키마우스 플래티(5마리)",
           "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1470",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1470&cate_no=24&display_group=1",
+          "title": "미키마우스 플래티(1마리)",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1469",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1469&cate_no=24&display_group=1",
+          "title": "왁 플래티(5마리)",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1468",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1468&cate_no=24&display_group=1",
+          "title": "왁 플래티(1마리)",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1467",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1467&cate_no=24&display_group=1",
+          "title": "선셋구피(1쌍)",
+          "reason": "Mixed or unresolved product category requires review"
         }
       ],
       "unresolvedDetailFailures": [
@@ -8819,12 +8921,6 @@
           "url": "https://www.liveaqua.kr/product/detail.html?product_no=1577&cate_no=24&display_group=1",
           "status": "detail_parse_failed",
           "reason": "missing_or_invalid_krw_price"
-        },
-        {
-          "key": "liveaqua.kr:1576",
-          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1576&cate_no=24&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
         },
         {
           "key": "liveaqua.kr:1574",
@@ -8903,6 +8999,30 @@
           "url": "https://www.liveaqua.kr/product/detail.html?product_no=1471&cate_no=24&display_group=1",
           "status": "needs_review",
           "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1470",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1470&cate_no=24&display_group=1",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1469",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1469&cate_no=24&display_group=1",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1468",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1468&cate_no=24&display_group=1",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "liveaqua.kr:1467",
+          "url": "https://www.liveaqua.kr/product/detail.html?product_no=1467&cate_no=24&display_group=1",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
         }
       ],
       "availability": {
@@ -8911,7 +9031,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 7,
+        "missingSeparateOptionLabel": 15,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -8933,15 +9053,15 @@
       "domain": "aquavillage.co.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T21:17:50.451Z",
-        "latestSuccess": "2026-10-08T21:18:13.067Z",
+        "latestAttempt": "2026-10-08T23:06:35.174Z",
+        "latestSuccess": "2026-10-08T23:06:57.998Z",
         "status": "partial_failure",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 26,
-      "verifiedFish": 20,
+      "verifiedProducts": 35,
+      "verifiedFish": 28,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -9096,12 +9216,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 25,
-          "verifiedObservedLinks": 4,
+          "verifiedObservedLinks": 7,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquavillage.co.kr:1960",
-            "aquavillage.co.kr:2337",
-            "aquavillage.co.kr:2094",
             "aquavillage.co.kr:2256",
             "aquavillage.co.kr:1907",
             "aquavillage.co.kr:2260",
@@ -9134,11 +9251,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 5,
-          "verifiedObservedLinks": 4,
+          "verifiedObservedLinks": 5,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "aquavillage.co.kr:2421"
-          ],
+          "unresolvedObservedKeys": [],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
         },
@@ -9152,12 +9267,10 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 25,
-          "verifiedObservedLinks": 2,
+          "verifiedObservedLinks": 4,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "aquavillage.co.kr:2323",
-            "aquavillage.co.kr:391",
-            "aquavillage.co.kr:1912",
             "aquavillage.co.kr:1913",
             "aquavillage.co.kr:1915",
             "aquavillage.co.kr:1914",
@@ -9192,11 +9305,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 6,
-          "verifiedObservedLinks": 2,
+          "verifiedObservedLinks": 4,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquavillage.co.kr:2369",
-            "aquavillage.co.kr:2368",
             "aquavillage.co.kr:2367",
             "aquavillage.co.kr:1452"
           ],
@@ -9206,7 +9317,7 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 70,
+        "count": 59,
         "retryHeld": 6,
         "candidates": [
           {
@@ -9248,30 +9359,6 @@
             "type": null,
             "subtype": null,
             "retryAfter": "2026-10-09T14:21:06.066Z"
-          },
-          {
-            "key": "aquavillage.co.kr:2164",
-            "url": "https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8%EC%BD%A9-%EA%B0%80%EC%9E%AC-10cm-%EC%A0%84%ED%9B%84/2164/category/61/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:2457",
-            "url": "https://www.aquavillage.co.kr/product/%EA%B7%B8%EB%A6%B0-%EB%A6%B4%EB%A6%AC-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/2457/category/61/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:2453",
-            "url": "https://www.aquavillage.co.kr/product/cbs%EB%AA%A8%EC%8A%A4%EB%9D%BC%EA%B8%89-115cm/2453/category/61/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
           },
           {
             "key": "aquavillage.co.kr:2449",
@@ -9375,30 +9462,6 @@
             "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
             "type": null,
             "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:1960",
-            "url": "https://www.aquavillage.co.kr/product/%EC%95%84%EC%8A%A4%ED%8A%B8%EB%A1%9C-%EB%83%89%EB%8F%99-%EC%9E%A5%EA%B5%AC%EB%B2%8C%EB%A0%88-%EB%83%89%EC%A7%B1-1%EA%B3%BD-1%ED%8C%90-100g32pcs/1960/category/49/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:2337",
-            "url": "https://www.aquavillage.co.kr/product/%EB%A0%88%EB%93%9C-%EC%8A%A4%EB%85%B8%EC%9A%B0-%EB%93%9C%EB%9E%98%EA%B3%A4-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7/2337/category/49/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:2094",
-            "url": "https://www.aquavillage.co.kr/product/%EC%BA%94%EB%94%94%EB%AF%B9%EC%8A%A4-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7/2094/category/49/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
-            "type": "live",
-            "subtype": "fish",
             "retryAfter": null
           },
           {
@@ -9546,36 +9609,12 @@
             "retryAfter": null
           },
           {
-            "key": "aquavillage.co.kr:2421",
-            "url": "https://www.aquavillage.co.kr/product/l-471-%EB%B9%85%EC%8A%A4%ED%8C%9F%ED%94%8C%EB%A0%88%EC%BD%94-1%EC%8C%8D/2421/category/59/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
             "key": "aquavillage.co.kr:2323",
             "url": "https://www.aquavillage.co.kr/product/%EA%B3%A8%EB%93%A0%EB%84%88%EA%B2%9F%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/2323/category/79/display/1/",
             "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
             "type": "live",
             "subtype": "fish",
             "retryAfter": "2026-10-09T21:18:13.069Z"
-          },
-          {
-            "key": "aquavillage.co.kr:391",
-            "url": "https://www.aquavillage.co.kr/product/%EC%9D%BC%EB%B0%98-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-%EB%AF%B9%EC%8A%A4-5%EB%A7%88%EB%A6%AC-%EC%84%A0%EB%B3%84%EB%B6%88%EA%B0%80/391/category/79/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:1912",
-            "url": "https://www.aquavillage.co.kr/product/%EC%9D%BC%EB%B0%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC/1912/category/79/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
           },
           {
             "key": "aquavillage.co.kr:1913",
@@ -9738,22 +9777,6 @@
             "retryAfter": null
           },
           {
-            "key": "aquavillage.co.kr:2369",
-            "url": "https://www.aquavillage.co.kr/product/%EA%B3%A8%EB%93%A0-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80-5cm%EC%A0%84%ED%9B%84/2369/category/51/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquavillage.co.kr:2368",
-            "url": "https://www.aquavillage.co.kr/product/%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A6%AD-%EB%B8%94%EB%A3%A8-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80-5cm-%EC%A0%84%ED%9B%84/2368/category/51/display/1/",
-            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
             "key": "aquavillage.co.kr:2367",
             "url": "https://www.aquavillage.co.kr/product/%EA%B3%A8%EB%93%A0%ED%97%A4%EB%93%9C-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80-5cm-%EC%A0%84%ED%9B%84/2367/category/51/display/1/",
             "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
@@ -9878,6 +9901,12 @@
           "key": "aquavillage.co.kr:2157",
           "url": "https://www.aquavillage.co.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%9A%B0%ED%8C%8C%EB%A3%A8%ED%8C%8C-3cm-%EC%A0%84%ED%9B%84/2157/category/61/display/1/",
           "title": "알비노 화이트 우파루파  3cm 전후",
+          "reason": "Mixed or unresolved product category requires review"
+        },
+        {
+          "key": "aquavillage.co.kr:2164",
+          "url": "https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8%EC%BD%A9-%EA%B0%80%EC%9E%AC-10cm-%EC%A0%84%ED%9B%84/2164/category/61/display/1/",
+          "title": "블루콩 가재 10cm 전후",
           "reason": "Mixed or unresolved product category requires review"
         }
       ],
@@ -10025,6 +10054,12 @@
           "url": "https://www.aquavillage.co.kr/product/%EA%B3%A8%EB%93%A0%EB%84%88%EA%B2%9F%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/2323/category/79/display/1/",
           "status": "detail_parse_failed",
           "reason": "visible_price_unverified"
+        },
+        {
+          "key": "aquavillage.co.kr:2164",
+          "url": "https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8%EC%BD%A9-%EA%B0%80%EC%9E%AC-10cm-%EC%A0%84%ED%9B%84/2164/category/61/display/1/",
+          "status": "needs_review",
+          "reason": "Mixed or unresolved product category requires review"
         }
       ],
       "availability": {
@@ -10033,7 +10068,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 20,
+        "missingSeparateOptionLabel": 27,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -10871,15 +10906,15 @@
       "domain": "oqua.co.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T22:14:14.054Z",
-        "latestSuccess": "2026-10-08T22:16:04.549Z",
+        "latestAttempt": "2026-10-08T22:50:49.564Z",
+        "latestSuccess": "2026-10-08T22:52:10.008Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 20,
-      "verifiedFish": 2,
+      "verifiedProducts": 31,
+      "verifiedFish": 8,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -10888,7 +10923,7 @@
         "unvisited": 11,
         "pendingCategories": 13,
         "terminalCategories": 2,
-        "detailCompleteCategories": 0,
+        "detailCompleteCategories": 2,
         "menuScope": "unknown"
       },
       "unvisitedCategories": [
@@ -10948,18 +10983,11 @@
           "terminalPageReached": true,
           "listingCountMatched": true,
           "observedUniqueLinks": 8,
-          "verifiedObservedLinks": 2,
+          "verifiedObservedLinks": 8,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "oqua.co.kr:4013",
-            "oqua.co.kr:3279",
-            "oqua.co.kr:3257",
-            "oqua.co.kr:3217",
-            "oqua.co.kr:2632",
-            "oqua.co.kr:2242"
-          ],
-          "observedDetailsResolved": false,
-          "detailCoverageComplete": false
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
+          "detailCoverageComplete": true
         },
         {
           "url": "https://oqua.co.kr/product/list.html?cate_no=73",
@@ -10971,16 +10999,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 22,
-          "verifiedObservedLinks": 16,
-          "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "oqua.co.kr:3666",
-            "oqua.co.kr:3664",
-            "oqua.co.kr:3660",
-            "oqua.co.kr:3659",
-            "oqua.co.kr:3658",
-            "oqua.co.kr:3656"
-          ],
+          "verifiedObservedLinks": 21,
+          "excludedObservedLinks": 1,
+          "unresolvedObservedKeys": [],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
         },
@@ -10994,18 +11015,11 @@
           "terminalPageReached": true,
           "listingCountMatched": true,
           "observedUniqueLinks": 8,
-          "verifiedObservedLinks": 2,
+          "verifiedObservedLinks": 8,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "oqua.co.kr:4013",
-            "oqua.co.kr:3279",
-            "oqua.co.kr:3257",
-            "oqua.co.kr:3217",
-            "oqua.co.kr:2632",
-            "oqua.co.kr:2242"
-          ],
-          "observedDetailsResolved": false,
-          "detailCoverageComplete": false
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
+          "detailCoverageComplete": true
         },
         {
           "url": "https://oqua.co.kr/product/list.html?cate_no=110",
@@ -11057,57 +11071,9 @@
         }
       ],
       "pending": {
-        "count": 28,
+        "count": 22,
         "retryHeld": 0,
         "candidates": [
-          {
-            "key": "oqua.co.kr:3666",
-            "url": "https://oqua.co.kr/product/detail.html?product_no=3666&cate_no=73&display_group=1",
-            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "retryAfter": null
-          },
-          {
-            "key": "oqua.co.kr:3664",
-            "url": "https://oqua.co.kr/product/detail.html?product_no=3664&cate_no=73&display_group=1",
-            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "retryAfter": null
-          },
-          {
-            "key": "oqua.co.kr:3660",
-            "url": "https://oqua.co.kr/product/detail.html?product_no=3660&cate_no=73&display_group=1",
-            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "retryAfter": null
-          },
-          {
-            "key": "oqua.co.kr:3659",
-            "url": "https://oqua.co.kr/product/detail.html?product_no=3659&cate_no=73&display_group=1",
-            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "retryAfter": null
-          },
-          {
-            "key": "oqua.co.kr:3658",
-            "url": "https://oqua.co.kr/product/detail.html?product_no=3658&cate_no=73&display_group=1",
-            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "retryAfter": null
-          },
-          {
-            "key": "oqua.co.kr:3656",
-            "url": "https://oqua.co.kr/product/detail.html?product_no=3656&cate_no=73&display_group=1",
-            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "retryAfter": null
-          },
           {
             "key": "oqua.co.kr:157",
             "url": "https://oqua.co.kr/product/detail.html?product_no=157&cate_no=110&display_group=1",
@@ -11286,80 +11252,13 @@
           }
         ]
       },
-      "classificationReview": [
-        {
-          "key": "oqua.co.kr:4013",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=4013&cate_no=518&display_group=1",
-          "title": "비단잉어(35~40cm) 1마리",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:3279",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=3279&cate_no=518&display_group=1",
-          "title": "비단잉어 1마리(22~25cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:3257",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=3257&cate_no=518&display_group=1",
-          "title": "비단잉어 1마리(12~15cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:3217",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=3217&cate_no=518&display_group=1",
-          "title": "비단잉어(30cm내외) 1마리",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:2632",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=2632&cate_no=518&display_group=1",
-          "title": "비단잉어 1마리(15~20cm)",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:2242",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=2242&cate_no=518&display_group=1",
-          "title": "플래티넘 버터플라이 코이(13~15cm)1마리",
-          "reason": "Mixed or unresolved product category requires review"
-        }
-      ],
+      "classificationReview": [],
       "unresolvedDetailFailures": [
         {
-          "key": "oqua.co.kr:4013",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=4013&cate_no=518&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:3279",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=3279&cate_no=518&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:3257",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=3257&cate_no=518&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:3217",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=3217&cate_no=518&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:2632",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=2632&cate_no=518&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
-        },
-        {
-          "key": "oqua.co.kr:2242",
-          "url": "https://oqua.co.kr/product/detail.html?product_no=2242&cate_no=518&display_group=1",
-          "status": "needs_review",
-          "reason": "Mixed or unresolved product category requires review"
+          "key": "oqua.co.kr:3658",
+          "url": "https://oqua.co.kr/product/detail.html?product_no=3658&cate_no=73&display_group=1",
+          "status": "excluded_scope",
+          "reason": "Terrestrial, reptile, amphibian or horticultural scope is not supported"
         }
       ],
       "availability": {
@@ -11368,15 +11267,14 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 20,
+        "missingSeparateOptionLabel": 31,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
         "unvisited_menu_categories",
         "first_page_only_with_remaining_cursor",
         "remaining_actual_page_cursor",
-        "pending_detail_verification",
-        "classification_review"
+        "pending_detail_verification"
       ],
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -12463,21 +12361,21 @@
       "domain": "a2be.net",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T21:45:50.486Z",
-        "latestSuccess": "2026-10-08T21:47:41.082Z",
+        "latestAttempt": "2026-10-08T23:00:35.914Z",
+        "latestSuccess": "2026-10-08T23:02:26.479Z",
         "status": "partial_failure",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 66,
-      "verifiedFish": 65,
+      "verifiedProducts": 76,
+      "verifiedFish": 75,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
         "discovered": 60,
         "allowed": 41,
-        "unvisited": 35,
+        "unvisited": 34,
         "pendingCategories": 40,
         "terminalCategories": 1,
         "detailCompleteCategories": 0,
@@ -12495,10 +12393,6 @@
         {
           "url": "https://a2be.net/product/list.html?cate_no=1017",
           "label": "모둠수초"
-        },
-        {
-          "url": "https://a2be.net/product/list.html?cate_no=753",
-          "label": "플래티/몰리"
         },
         {
           "url": "https://a2be.net/product/list.html?cate_no=881",
@@ -12654,12 +12548,10 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 14,
+          "verifiedObservedLinks": 16,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "a2be.net:15526",
-            "a2be.net:21575",
-            "a2be.net:21573",
             "a2be.net:21568",
             "a2be.net:21560",
             "a2be.net:21559",
@@ -12687,19 +12579,15 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 14,
+          "verifiedObservedLinks": 18,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "a2be.net:21575",
-            "a2be.net:21573",
             "a2be.net:21568",
             "a2be.net:21560",
             "a2be.net:21559",
             "a2be.net:21556",
             "a2be.net:21555",
             "a2be.net:21542",
-            "a2be.net:21206",
-            "a2be.net:21204",
             "a2be.net:21203",
             "a2be.net:21202",
             "a2be.net:21200",
@@ -12720,7 +12608,7 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 23,
-          "verifiedObservedLinks": 8,
+          "verifiedObservedLinks": 10,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "a2be.net:15526",
@@ -12730,8 +12618,6 @@
             "a2be.net:21332",
             "a2be.net:21310",
             "a2be.net:21252",
-            "a2be.net:18342",
-            "a2be.net:16364",
             "a2be.net:16363",
             "a2be.net:16362",
             "a2be.net:15042",
@@ -12752,12 +12638,10 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 11,
-          "verifiedObservedLinks": 4,
+          "verifiedObservedLinks": 6,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
             "a2be.net:21261",
-            "a2be.net:616",
-            "a2be.net:22016",
             "a2be.net:21299",
             "a2be.net:16820",
             "a2be.net:16819",
@@ -12776,10 +12660,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 35,
-          "verifiedObservedLinks": 7,
+          "verifiedObservedLinks": 8,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "a2be.net:23321",
             "a2be.net:23320",
             "a2be.net:23244",
             "a2be.net:23168",
@@ -12810,11 +12693,57 @@
           ],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
+        },
+        {
+          "url": "https://a2be.net/product/list.html?cate_no=753",
+          "reportedProductCount": null,
+          "actualVisitedPageUrls": [
+            "https://a2be.net/product/list.html?cate_no=753"
+          ],
+          "nextActualPageUrl": "https://a2be.net/product/list.html?cate_no=753",
+          "terminalPageReached": false,
+          "listingCountMatched": false,
+          "observedUniqueLinks": 31,
+          "verifiedObservedLinks": 2,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "a2be.net:27869",
+            "a2be.net:27868",
+            "a2be.net:27867",
+            "a2be.net:27866",
+            "a2be.net:23415",
+            "a2be.net:23331",
+            "a2be.net:23292",
+            "a2be.net:23280",
+            "a2be.net:23276",
+            "a2be.net:23272",
+            "a2be.net:23264",
+            "a2be.net:23219",
+            "a2be.net:23218",
+            "a2be.net:23194",
+            "a2be.net:23193",
+            "a2be.net:23188",
+            "a2be.net:23179",
+            "a2be.net:23065",
+            "a2be.net:23064",
+            "a2be.net:23056",
+            "a2be.net:19349",
+            "a2be.net:16063",
+            "a2be.net:15585",
+            "a2be.net:15584",
+            "a2be.net:15583",
+            "a2be.net:14213",
+            "a2be.net:14210",
+            "a2be.net:3940",
+            "a2be.net:28010"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
         }
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 67,
+        "count": 87,
         "retryHeld": 2,
         "candidates": [
           {
@@ -12832,22 +12761,6 @@
             "type": "live",
             "subtype": "fish",
             "retryAfter": "2026-10-09T19:54:43.179Z"
-          },
-          {
-            "key": "a2be.net:21575",
-            "url": "https://a2be.net/product/detail.html?product_no=21575&cate_no=751&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=751",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "a2be.net:21573",
-            "url": "https://a2be.net/product/detail.html?product_no=21573&cate_no=751&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=751",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
           },
           {
             "key": "a2be.net:21568",
@@ -12954,22 +12867,6 @@
             "retryAfter": null
           },
           {
-            "key": "a2be.net:21206",
-            "url": "https://a2be.net/product/detail.html?product_no=21206&cate_no=928&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=928",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "a2be.net:21204",
-            "url": "https://a2be.net/product/detail.html?product_no=21204&cate_no=928&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=928",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
             "key": "a2be.net:21203",
             "url": "https://a2be.net/product/detail.html?product_no=21203&cate_no=928&display_group=1",
             "categoryUrl": "https://a2be.net/product/list.html?cate_no=928",
@@ -13013,22 +12910,6 @@
             "key": "a2be.net:21181",
             "url": "https://a2be.net/product/detail.html?product_no=21181&cate_no=928&display_group=1",
             "categoryUrl": "https://a2be.net/product/list.html?cate_no=928",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "a2be.net:18342",
-            "url": "https://a2be.net/product/detail.html?product_no=18342&cate_no=924&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=924",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "a2be.net:16364",
-            "url": "https://a2be.net/product/detail.html?product_no=16364&cate_no=924&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=924",
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
@@ -13082,22 +12963,6 @@
             "retryAfter": null
           },
           {
-            "key": "a2be.net:616",
-            "url": "https://a2be.net/product/detail.html?product_no=616&cate_no=925&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=925",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "a2be.net:22016",
-            "url": "https://a2be.net/product/detail.html?product_no=22016&cate_no=925&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=925",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
             "key": "a2be.net:21299",
             "url": "https://a2be.net/product/detail.html?product_no=21299&cate_no=925&display_group=1",
             "categoryUrl": "https://a2be.net/product/list.html?cate_no=925",
@@ -13125,14 +12990,6 @@
             "key": "a2be.net:16818",
             "url": "https://a2be.net/product/detail.html?product_no=16818&cate_no=925&display_group=1",
             "categoryUrl": "https://a2be.net/product/list.html?cate_no=925",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "a2be.net:23321",
-            "url": "https://a2be.net/product/detail.html?product_no=23321&cate_no=762&display_group=1",
-            "categoryUrl": "https://a2be.net/product/list.html?cate_no=762",
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
@@ -13352,6 +13209,238 @@
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
+          },
+          {
+            "key": "a2be.net:27869",
+            "url": "https://a2be.net/product/detail.html?product_no=27869&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:27868",
+            "url": "https://a2be.net/product/detail.html?product_no=27868&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:27867",
+            "url": "https://a2be.net/product/detail.html?product_no=27867&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:27866",
+            "url": "https://a2be.net/product/detail.html?product_no=27866&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23415",
+            "url": "https://a2be.net/product/detail.html?product_no=23415&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23331",
+            "url": "https://a2be.net/product/detail.html?product_no=23331&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23292",
+            "url": "https://a2be.net/product/detail.html?product_no=23292&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23280",
+            "url": "https://a2be.net/product/detail.html?product_no=23280&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23276",
+            "url": "https://a2be.net/product/detail.html?product_no=23276&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23272",
+            "url": "https://a2be.net/product/detail.html?product_no=23272&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23264",
+            "url": "https://a2be.net/product/detail.html?product_no=23264&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23219",
+            "url": "https://a2be.net/product/detail.html?product_no=23219&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23218",
+            "url": "https://a2be.net/product/detail.html?product_no=23218&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23194",
+            "url": "https://a2be.net/product/detail.html?product_no=23194&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23193",
+            "url": "https://a2be.net/product/detail.html?product_no=23193&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23188",
+            "url": "https://a2be.net/product/detail.html?product_no=23188&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23179",
+            "url": "https://a2be.net/product/detail.html?product_no=23179&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23065",
+            "url": "https://a2be.net/product/detail.html?product_no=23065&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23064",
+            "url": "https://a2be.net/product/detail.html?product_no=23064&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:23056",
+            "url": "https://a2be.net/product/detail.html?product_no=23056&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:19349",
+            "url": "https://a2be.net/product/detail.html?product_no=19349&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:16063",
+            "url": "https://a2be.net/product/detail.html?product_no=16063&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:15585",
+            "url": "https://a2be.net/product/detail.html?product_no=15585&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:15584",
+            "url": "https://a2be.net/product/detail.html?product_no=15584&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:15583",
+            "url": "https://a2be.net/product/detail.html?product_no=15583&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:14213",
+            "url": "https://a2be.net/product/detail.html?product_no=14213&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:14210",
+            "url": "https://a2be.net/product/detail.html?product_no=14210&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:3940",
+            "url": "https://a2be.net/product/detail.html?product_no=3940&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "a2be.net:28010",
+            "url": "https://a2be.net/product/detail.html?product_no=28010&cate_no=753&display_group=1",
+            "categoryUrl": "https://a2be.net/product/list.html?cate_no=753",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
           }
         ]
       },
@@ -13372,11 +13461,11 @@
       ],
       "availability": {
         "unknown": 0,
-        "reportedUnavailable": 24,
+        "reportedUnavailable": 32,
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 66,
+        "missingSeparateOptionLabel": 76,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -13397,15 +13486,15 @@
       "domain": "myungaqua.com",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T20:40:28.135Z",
-        "latestSuccess": "2026-10-08T20:42:18.712Z",
+        "latestAttempt": "2026-10-08T22:58:43.497Z",
+        "latestSuccess": "2026-10-08T23:00:34.225Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 40,
-      "verifiedFish": 40,
+      "verifiedProducts": 52,
+      "verifiedFish": 52,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -13478,13 +13567,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 36,
-          "verifiedObservedLinks": 33,
+          "verifiedObservedLinks": 36,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "myungaqua.com:4886",
-            "myungaqua.com:4806",
-            "myungaqua.com:4805"
-          ],
+          "unresolvedObservedKeys": [],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
         },
@@ -13498,17 +13583,9 @@
           "terminalPageReached": true,
           "listingCountMatched": false,
           "observedUniqueLinks": 26,
-          "verifiedObservedLinks": 3,
+          "verifiedObservedLinks": 11,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "myungaqua.com:5190",
-            "myungaqua.com:5102",
-            "myungaqua.com:5101",
-            "myungaqua.com:5069",
-            "myungaqua.com:5068",
-            "myungaqua.com:5047",
-            "myungaqua.com:5046",
-            "myungaqua.com:5025",
             "myungaqua.com:5024",
             "myungaqua.com:5023",
             "myungaqua.com:5022",
@@ -13538,108 +13615,18 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 4,
-          "verifiedObservedLinks": 3,
+          "verifiedObservedLinks": 4,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "myungaqua.com:5182"
-          ],
+          "unresolvedObservedKeys": [],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
         }
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 27,
+        "count": 15,
         "retryHeld": 0,
         "candidates": [
-          {
-            "key": "myungaqua.com:4886",
-            "url": "https://www.myungaqua.com/product/%EB%B8%94%EB%A3%A8-%EC%8B%9C%EC%A0%80%EC%8A%A4-%EA%B5%AC%ED%94%BC-1%EC%8C%8D/4886/category/147/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EA%B5%AC%ED%94%BC/147/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:4806",
-            "url": "https://www.myungaqua.com/product/%EB%A0%88%EB%93%9C%EA%B5%AC%ED%94%BC-2%EC%8C%8D/4806/category/147/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EA%B5%AC%ED%94%BC/147/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:4805",
-            "url": "https://www.myungaqua.com/product/%EB%A0%88%EB%93%9C%EA%B5%AC%ED%94%BC-1%EC%8C%8D/4805/category/147/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EA%B5%AC%ED%94%BC/147/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5190",
-            "url": "https://www.myungaqua.com/product/%ED%95%98%ED%94%84%EB%AC%B8-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7%EB%9E%9C%EB%8D%A4%EC%83%89%EC%83%81-1%EB%A7%88%EB%A6%AC/5190/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5102",
-            "url": "https://www.myungaqua.com/product/%EB%B8%94%EB%A3%A8%EB%A7%88%EB%B8%94-%EA%B5%AC%EB%9D%BC%EB%AF%B8-2%EB%A7%88%EB%A6%AC/5102/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5101",
-            "url": "https://www.myungaqua.com/product/%EB%B8%94%EB%A3%A8%EB%A7%88%EB%B8%94-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/5101/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5069",
-            "url": "https://www.myungaqua.com/product/%ED%95%98%ED%94%84%EB%AC%B8-%EB%B2%A0%ED%83%80-%EC%95%94%EC%BB%B7-2%EB%A7%88%EB%A6%AC/5069/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5068",
-            "url": "https://www.myungaqua.com/product/%ED%95%98%ED%94%84%EB%AC%B8-%EB%B2%A0%ED%83%80-%EC%95%94%EC%BB%B7-1%EB%A7%88%EB%A6%AC/5068/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5047",
-            "url": "https://www.myungaqua.com/product/%ED%8E%84%EA%B5%AC%EB%9D%BC%EB%AF%B8-3%EB%A7%88%EB%A6%AC/5047/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5046",
-            "url": "https://www.myungaqua.com/product/%ED%8E%84%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/5046/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5025",
-            "url": "https://www.myungaqua.com/product/%EC%BD%94%EC%9D%B4%EB%B2%A0%ED%83%80-%EC%95%94%EC%BB%B7-2%EB%A7%88%EB%A6%AC/5025/category/153/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/153/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
           {
             "key": "myungaqua.com:5024",
             "url": "https://www.myungaqua.com/product/%EC%BD%94%EC%9D%B4%EB%B2%A0%ED%83%80-%EC%95%94%EC%BB%B7-1%EB%A7%88%EB%A6%AC/5024/category/153/display/1/",
@@ -13759,14 +13746,6 @@
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
-          },
-          {
-            "key": "myungaqua.com:5182",
-            "url": "https://www.myungaqua.com/product/%EC%99%81%ED%94%8C%EB%9E%98%ED%8B%B0-5%EB%A7%88%EB%A6%AC/5182/category/156/display/1/",
-            "categoryUrl": "https://www.myungaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0%EB%AA%B0%EB%A6%AC/156/",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
           }
         ]
       },
@@ -13778,7 +13757,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 39,
+        "missingSeparateOptionLabel": 51,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -15065,7 +15044,7 @@
       "domain": "trofish.net",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T20:49:28.225Z",
+        "latestAttempt": "2026-10-08T23:02:28.172Z",
         "latestSuccess": "2026-10-08T09:56:27.273Z",
         "status": "no_confirmed_products",
         "manualReview": false,
@@ -15188,7 +15167,7 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 36,
+        "count": 30,
         "retryHeld": 0,
         "candidates": [
           {
@@ -15428,54 +15407,6 @@
             "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528769&xcode=001&mcode=006&scode=008&type=X&sort=order&current_category=001006&search=&GfDT=bW53U1U%3D",
             "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=006",
             "type": "gear",
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "trofish.net:3528133",
-            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528133&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=Zmx3UA%3D%3D",
-            "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "trofish.net:3528697",
-            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528697&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=a2t3Uw%3D%3D",
-            "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "trofish.net:3528698",
-            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528698&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=aGt3Ug%3D%3D",
-            "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "trofish.net:3528699",
-            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528699&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bmx7W1g%3D",
-            "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "trofish.net:3528700",
-            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528700&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bm59W1k%3D",
-            "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
-            "type": null,
-            "subtype": null,
-            "retryAfter": null
-          },
-          {
-            "key": "trofish.net:3528349",
-            "url": "https://www.trofish.net/shop/shopdetail.html?branduid=3528349&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=bmx3Vw%3D%3D",
-            "categoryUrl": "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005",
-            "type": null,
             "subtype": null,
             "retryAfter": null
           }
@@ -15804,7 +15735,7 @@
       "domain": "suaqua.co.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T20:48:56.649Z",
+        "latestAttempt": "2026-10-08T23:02:58.531Z",
         "latestSuccess": "2026-10-08T20:49:27.120Z",
         "status": "success",
         "manualReview": false,
@@ -15818,10 +15749,10 @@
       "tree": {
         "discovered": 158,
         "allowed": 27,
-        "unvisited": 23,
-        "pendingCategories": 23,
-        "terminalCategories": 4,
-        "detailCompleteCategories": 4,
+        "unvisited": 21,
+        "pendingCategories": 21,
+        "terminalCategories": 6,
+        "detailCompleteCategories": 6,
         "menuScope": "unknown"
       },
       "unvisitedCategories": [
@@ -15832,14 +15763,6 @@
         {
           "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001014",
           "label": "메다카 송사리"
-        },
-        {
-          "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001006",
-          "label": "코리/플레코/캣"
-        },
-        {
-          "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001004",
-          "label": "시클리드과"
         },
         {
           "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001005",
@@ -15972,6 +15895,38 @@
           "reportedProductCount": 0,
           "actualVisitedPageUrls": [
             "https://suaqua.co.kr/goods/goods_list.php?cateCd=001003001"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 0,
+          "verifiedObservedLinks": 0,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
+          "detailCoverageComplete": true
+        },
+        {
+          "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001006",
+          "reportedProductCount": 0,
+          "actualVisitedPageUrls": [
+            "https://suaqua.co.kr/goods/goods_list.php?cateCd=001006"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 0,
+          "verifiedObservedLinks": 0,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
+          "detailCoverageComplete": true
+        },
+        {
+          "url": "https://suaqua.co.kr/goods/goods_list.php?cateCd=001004",
+          "reportedProductCount": 0,
+          "actualVisitedPageUrls": [
+            "https://suaqua.co.kr/goods/goods_list.php?cateCd=001004"
           ],
           "nextActualPageUrl": null,
           "terminalPageReached": true,
@@ -17850,15 +17805,15 @@
       "domain": "aquauju.com",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T22:27:43.031Z",
-        "latestSuccess": "2026-10-08T22:29:23.969Z",
+        "latestAttempt": "2026-10-08T22:47:03.965Z",
+        "latestSuccess": "2026-10-08T22:48:54.902Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 61,
-      "verifiedFish": 60,
+      "verifiedProducts": 73,
+      "verifiedFish": 72,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -17867,7 +17822,7 @@
         "unvisited": 22,
         "pendingCategories": 25,
         "terminalCategories": 3,
-        "detailCompleteCategories": 1,
+        "detailCompleteCategories": 2,
         "menuScope": "unknown"
       },
       "unvisitedCategories": [
@@ -17987,13 +17942,9 @@
           "terminalPageReached": true,
           "listingCountMatched": true,
           "observedUniqueLinks": 28,
-          "verifiedObservedLinks": 15,
+          "verifiedObservedLinks": 19,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquauju.com:13833",
-            "aquauju.com:13832",
-            "aquauju.com:13831",
-            "aquauju.com:13830",
             "aquauju.com:13829",
             "aquauju.com:13828",
             "aquauju.com:13827",
@@ -18033,12 +17984,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 30,
-          "verifiedObservedLinks": 6,
+          "verifiedObservedLinks": 9,
           "excludedObservedLinks": 2,
           "unresolvedObservedKeys": [
-            "aquauju.com:13902",
-            "aquauju.com:13901",
-            "aquauju.com:13900",
             "aquauju.com:13899",
             "aquauju.com:13896",
             "aquauju.com:13895",
@@ -18072,14 +18020,11 @@
           "terminalPageReached": true,
           "listingCountMatched": true,
           "observedUniqueLinks": 4,
-          "verifiedObservedLinks": 2,
+          "verifiedObservedLinks": 4,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "aquauju.com:14080",
-            "aquauju.com:14079"
-          ],
-          "observedDetailsResolved": false,
-          "detailCoverageComplete": false
+          "unresolvedObservedKeys": [],
+          "observedDetailsResolved": true,
+          "detailCoverageComplete": true
         },
         {
           "url": "https://aquauju.com/product/list.html?cate_no=455",
@@ -18091,12 +18036,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 26,
-          "verifiedObservedLinks": 2,
+          "verifiedObservedLinks": 5,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "aquauju.com:14082",
-            "aquauju.com:14081",
-            "aquauju.com:14066",
             "aquauju.com:14065",
             "aquauju.com:13908",
             "aquauju.com:13907",
@@ -18125,41 +18067,9 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 61,
+        "count": 49,
         "retryHeld": 0,
         "candidates": [
-          {
-            "key": "aquauju.com:13833",
-            "url": "https://aquauju.com/product/m-%EC%84%A0%EC%85%8B-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/13833/category/450/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=450",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:13832",
-            "url": "https://aquauju.com/product/m-%EC%BD%94%EB%B0%9C%ED%8A%B8-%EA%B5%AC%EB%9D%BC%EB%AF%B8-3%EB%A7%88%EB%A6%AC/13832/category/450/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=450",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:13831",
-            "url": "https://aquauju.com/product/m-%EC%BD%94%EB%B0%9C%ED%8A%B8-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/13831/category/450/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=450",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:13830",
-            "url": "https://aquauju.com/product/m-%EB%93%9C%EC%9B%8C%ED%94%84-%EA%B5%AC%EB%9D%BC%EB%AF%B8-3%EB%A7%88%EB%A6%AC/13830/category/450/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=450",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
           {
             "key": "aquauju.com:13829",
             "url": "https://aquauju.com/product/m-%EB%93%9C%EC%9B%8C%ED%94%84-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/13829/category/450/display/1/",
@@ -18228,30 +18138,6 @@
             "key": "aquauju.com:9157",
             "url": "https://aquauju.com/product/%ED%82%A4%EC%8B%B1%EA%B5%AC%EB%9D%BC%EB%AF%B8/9157/category/450/display/1/",
             "categoryUrl": "https://aquauju.com/product/list.html?cate_no=450",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:13902",
-            "url": "https://aquauju.com/product/m-%ED%8A%B8%EB%A1%9C%ED%8E%98%EC%9A%B0%EC%8A%A4-%EB%93%9C%EB%B3%B4%EC%9D%B4%EC%8B%9C-2%EB%A7%88%EB%A6%AC/13902/category/453/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=453",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:13901",
-            "url": "https://aquauju.com/product/m-%ED%8A%B8%EB%A1%9C%ED%8E%98%EC%9A%B0%EC%8A%A4-%EB%93%9C%EB%B3%B4%EC%9D%B4%EC%8B%9C-1%EB%A7%88%EB%A6%AC/13901/category/453/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=453",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:13900",
-            "url": "https://aquauju.com/product/m-%ED%94%84%EB%A1%A0%ED%86%A0%EC%82%AC-%EB%B8%8C%EB%A3%AC%EB%94%94-2%EB%A7%88%EB%A6%AC/13900/category/453/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=453",
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
@@ -18404,46 +18290,6 @@
             "key": "aquauju.com:13807",
             "url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8-%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C-1%EB%A7%88%EB%A6%AC/13807/category/453/display/1/",
             "categoryUrl": "https://aquauju.com/product/list.html?cate_no=453",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:14080",
-            "url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8-%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-5cm-%EC%A0%84%ED%9B%84-2%EB%A7%88%EB%A6%AC/14080/category/458/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=458",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:14079",
-            "url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8-%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-5cm-%EC%A0%84%ED%9B%84-1%EB%A7%88%EB%A6%AC/14079/category/458/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=458",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:14082",
-            "url": "https://aquauju.com/product/m-%EA%B3%A8%EB%93%A0-%EB%B0%B1%EC%9A%B4%EC%82%B0-10%EB%A7%88%EB%A6%AC/14082/category/455/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=455",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:14081",
-            "url": "https://aquauju.com/product/m-%EA%B3%A8%EB%93%A0-%EB%B0%B1%EC%9A%B4%EC%82%B0-5%EB%A7%88%EB%A6%AC/14081/category/455/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=455",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "aquauju.com:14066",
-            "url": "https://aquauju.com/product/m-%EB%A0%88%EB%93%9C%ED%8E%9C%EC%8A%AC-%EB%B2%A1%ED%8F%B4%EB%94%94-5%EB%A7%88%EB%A6%AC/14066/category/455/display/1/",
-            "categoryUrl": "https://aquauju.com/product/list.html?cate_no=455",
             "type": "live",
             "subtype": "fish",
             "retryAfter": null
@@ -18639,7 +18485,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 60,
+        "missingSeparateOptionLabel": 72,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -20509,35 +20355,27 @@
       "domain": "chunjane.com",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T22:05:08.289Z",
-        "latestSuccess": "2026-10-08T22:06:29.078Z",
+        "latestAttempt": "2026-10-08T22:48:56.834Z",
+        "latestSuccess": "2026-10-08T22:50:47.685Z",
         "status": "partial_failure",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 154,
-      "verifiedFish": 154,
+      "verifiedProducts": 163,
+      "verifiedFish": 163,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
         "discovered": 68,
         "allowed": 54,
-        "unvisited": 47,
-        "pendingCategories": 50,
-        "terminalCategories": 4,
+        "unvisited": 45,
+        "pendingCategories": 48,
+        "terminalCategories": 6,
         "detailCompleteCategories": 4,
         "menuScope": "unknown"
       },
       "unvisitedCategories": [
-        {
-          "url": "https://chunjane.com/product/list.html?cate_no=440",
-          "label": "플래티"
-        },
-        {
-          "url": "https://chunjane.com/product/list.html?cate_no=439",
-          "label": "난태생"
-        },
         {
           "url": "https://chunjane.com/product/list.html?cate_no=441",
           "label": "킬리"
@@ -20834,11 +20672,53 @@
           "unresolvedObservedKeys": [],
           "observedDetailsResolved": true,
           "detailCoverageComplete": true
+        },
+        {
+          "url": "https://chunjane.com/product/list.html?cate_no=440",
+          "reportedProductCount": 12,
+          "actualVisitedPageUrls": [
+            "https://chunjane.com/product/list.html?cate_no=440"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 12,
+          "verifiedObservedLinks": 9,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "chunjane.com:3123",
+            "chunjane.com:3335",
+            "chunjane.com:3336"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
+        },
+        {
+          "url": "https://chunjane.com/product/list.html?cate_no=439",
+          "reportedProductCount": 20,
+          "actualVisitedPageUrls": [
+            "https://chunjane.com/product/list.html?cate_no=439"
+          ],
+          "nextActualPageUrl": null,
+          "terminalPageReached": true,
+          "listingCountMatched": true,
+          "observedUniqueLinks": 20,
+          "verifiedObservedLinks": 15,
+          "excludedObservedLinks": 0,
+          "unresolvedObservedKeys": [
+            "chunjane.com:3123",
+            "chunjane.com:3290",
+            "chunjane.com:3295",
+            "chunjane.com:3335",
+            "chunjane.com:3336"
+          ],
+          "observedDetailsResolved": false,
+          "detailCoverageComplete": false
         }
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 1,
+        "count": 6,
         "retryHeld": 1,
         "candidates": [
           {
@@ -20848,6 +20728,46 @@
             "type": "live",
             "subtype": "fish",
             "retryAfter": "2026-10-09T21:39:49.406Z"
+          },
+          {
+            "key": "chunjane.com:3123",
+            "url": "https://chunjane.com/product/01-%EB%B8%94%EB%A3%A8-%ED%94%8C%EB%9E%98%ED%8B%B025%EB%A7%88%EB%A6%AC/3123/category/439/display/1/",
+            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "chunjane.com:3335",
+            "url": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-2%EB%A7%88%EB%A6%AC/3335/category/439/display/1/",
+            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "chunjane.com:3336",
+            "url": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-5%EB%A7%88%EB%A6%AC/3336/category/439/display/1/",
+            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "chunjane.com:3290",
+            "url": "https://chunjane.com/product/01-%ED%81%AC%EB%9D%BC%EC%9A%B4-%ED%82%AC%EB%A6%AC5%EB%A7%88%EB%A6%AC/3290/category/439/display/1/",
+            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
+          },
+          {
+            "key": "chunjane.com:3295",
+            "url": "https://chunjane.com/product/01-%ED%81%AC%EB%9D%BC%EC%9A%B4-%ED%82%AC%EB%A6%AC10%EB%A7%88%EB%A6%AC/3295/category/439/display/1/",
+            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
+            "type": "live",
+            "subtype": "fish",
+            "retryAfter": null
           }
         ]
       },
@@ -20896,7 +20816,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 154,
+        "missingSeparateOptionLabel": 163,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -22711,15 +22631,15 @@
       "domain": "jdaqua.co.kr",
       "enabled": true,
       "access": {
-        "latestAttempt": "2026-10-08T20:51:43.040Z",
-        "latestSuccess": "2026-10-08T20:52:05.714Z",
+        "latestAttempt": "2026-10-08T23:02:42.188Z",
+        "latestSuccess": "2026-10-08T23:02:56.846Z",
         "status": "success",
         "manualReview": false,
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 18,
-      "verifiedFish": 18,
+      "verifiedProducts": 26,
+      "verifiedFish": 26,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
       "tree": {
@@ -22764,11 +22684,9 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 15,
-          "verifiedObservedLinks": 14,
+          "verifiedObservedLinks": 15,
           "excludedObservedLinks": 0,
-          "unresolvedObservedKeys": [
-            "jdaqua.co.kr:1083"
-          ],
+          "unresolvedObservedKeys": [],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
         },
@@ -22782,17 +22700,10 @@
           "terminalPageReached": false,
           "listingCountMatched": false,
           "observedUniqueLinks": 12,
-          "verifiedObservedLinks": 4,
+          "verifiedObservedLinks": 11,
           "excludedObservedLinks": 0,
           "unresolvedObservedKeys": [
-            "jdaqua.co.kr:1097",
-            "jdaqua.co.kr:746",
-            "jdaqua.co.kr:728",
-            "jdaqua.co.kr:757",
-            "jdaqua.co.kr:748",
-            "jdaqua.co.kr:702",
-            "jdaqua.co.kr:1191",
-            "jdaqua.co.kr:1084"
+            "jdaqua.co.kr:1097"
           ],
           "observedDetailsResolved": false,
           "detailCoverageComplete": false
@@ -22800,91 +22711,25 @@
       ],
       "duplicateObservedCategorySets": [],
       "pending": {
-        "count": 8,
+        "count": 0,
         "retryHeld": 0,
-        "candidates": [
-          {
-            "key": "jdaqua.co.kr:1083",
-            "url": "https://www.jdaqua.co.kr/171/?idx=1083",
-            "categoryUrl": "https://www.jdaqua.co.kr/171",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:746",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=746",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:728",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=728",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:757",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=757",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:748",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=748",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:702",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=702",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:1191",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=1191",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          },
-          {
-            "key": "jdaqua.co.kr:1084",
-            "url": "https://www.jdaqua.co.kr/1001468813/?idx=1084",
-            "categoryUrl": "https://www.jdaqua.co.kr/1001468813",
-            "type": "live",
-            "subtype": "fish",
-            "retryAfter": null
-          }
-        ]
+        "candidates": []
       },
       "classificationReview": [],
       "unresolvedDetailFailures": [],
       "availability": {
         "unknown": 0,
-        "reportedUnavailable": 5,
+        "reportedUnavailable": 10,
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 18,
+        "missingSeparateOptionLabel": 26,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
         "unvisited_menu_categories",
         "first_page_only_with_remaining_cursor",
-        "remaining_actual_page_cursor",
-        "pending_detail_verification"
+        "remaining_actual_page_cursor"
       ],
       "blockers": [
         "Representative categories only; complete retailer coverage unverified",

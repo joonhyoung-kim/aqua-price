@@ -45,7 +45,7 @@ test('gear default shows observed items with unknown delivery and catalog-stock 
   assert.ok(app.nodes.hint.textContent.includes(`미확인 ${gear.length}개 포함`)); assert.match(app.nodes.hint.textContent, /기간 해당 여부를 판단할 수 없습니다/);
   assert.match(app.nodes.grid.innerHTML, /배송비 미확인/); assert.match(app.nodes.grid.innerHTML, /최종 재고 보장 아님/);
   for (const product of gear.slice(0,24)) { assert.ok(app.nodes.grid.innerHTML.includes(product.sourceUrl)); assert.ok(app.nodes.grid.innerHTML.includes(product.originalTitle)); }
-  assert.equal(app.images.length, Math.min(24,gear.length)); assert.ok(app.images.every(img => img.src.startsWith('https://')));
+  assert.equal(app.images.length, gear.slice(0,24).filter(p=>p.photo.url).length); assert.ok(app.images.every(img => img.src.startsWith('https://')));
 });
 test('sorts stay exclusive, unknown dates never become newest or sales ranking', async () => {
   const app = await setup();
@@ -153,7 +153,7 @@ test('livestock controls wrap into four mobile columns with clear pressed state 
 
 test('missing verified subtype still explains only connected information; direct photos never become placeholders',async()=>{
  const data=structuredClone(actual); data.products=data.products.filter(p=>p.subtype!=='fish'); const app=await setup(data);app.type('live');app.subtype('fish');assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/현재 연결된 상품정보에 해당 생물이 없습니다/);assert.match(app.nodes.grid.innerHTML,/모든 판매처의 품절·미판매를 뜻하지 않습니다/);
- const actualApp=await setup();actualApp.type('live');actualApp.subtype('fish');assert.equal(actualApp.names().length,Math.min(24,fish.length));assert.equal(actualApp.images.length,Math.min(24,fish.length)); for (const img of actualApp.images) {assert.ok(img.src.startsWith('https://')); img.listeners.error(); assert.equal(img.hidden,true); assert.equal(img.fallback.hidden,false);}assert.match(actualApp.nodes.grid.innerHTML,/판매처 페이지 직접 확인/);assert.ok(!actualApp.nodes.grid.innerHTML.includes('카페24 공식 API'));
+ const actualApp=await setup();actualApp.type('live');actualApp.subtype('fish');assert.equal(actualApp.names().length,Math.min(24,fish.length));assert.equal(actualApp.images.length,fish.slice(0,24).filter(p=>p.photo.url).length); for (const img of actualApp.images) {assert.ok(img.src.startsWith('https://')); img.listeners.error(); assert.equal(img.hidden,true); assert.equal(img.fallback.hidden,false);}assert.match(actualApp.nodes.grid.innerHTML,/판매처 페이지 직접 확인/);assert.ok(!actualApp.nodes.grid.innerHTML.includes('카페24 공식 API'));
  actualApp.subtype('aquatic_plant');assert.equal(actualApp.images.length,Math.min(24,plants.filter(p=>p.photo.url).length));assert.match(actualApp.nodes.grid.innerHTML,/카페24 공식 API/);
 });
 

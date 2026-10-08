@@ -10,6 +10,10 @@
     try { const url = new URL(value); return typeof value === 'string' && url.protocol === 'https:' && !url.username && !url.password; }
     catch { return false; }
   }
+  function sourceUrl(value) {
+    if(httpsUrl(value))return true;
+    try {const url=new URL(value);return url.protocol==='http:'&&!url.username&&!url.password&&['greenfish.co.kr','aquapet.co.kr'].includes(url.hostname.replace(/^www\./,''));}catch{return false;}
+  }
   function requireValue(condition, message) { if (!condition) throw Error(message); }
   function validateCatalog(catalog) {
     requireValue(catalog && catalog.schemaVersion === 1, '지원하지 않는 데이터 형식');
@@ -22,14 +26,14 @@
     const sellers = new Set();
     for (const seller of catalog.sellers) {
       requireValue(seller && typeof seller.id === 'string' && seller.id && !sellers.has(seller.id), '판매처 ID 오류');
-      requireValue(typeof seller.name === 'string' && seller.name.trim() && httpsUrl(seller.officialUrl), '판매처 이름·공식 링크 필요');
+      requireValue(typeof seller.name === 'string' && seller.name.trim() && sourceUrl(seller.officialUrl), '판매처 이름·공식 링크 필요');
       sellers.add(seller.id);
     }
     const ids = new Set();
     for (const product of catalog.products) {
       requireValue(product && typeof product.id === 'string' && product.id && !ids.has(product.id), '상품 ID 오류');
       ids.add(product.id);
-      requireValue(product.verified === true && sellers.has(product.sellerId) && httpsUrl(product.sourceUrl), '검증된 판매처·출처 필요');
+      requireValue(product.verified === true && sellers.has(product.sellerId) && sourceUrl(product.sourceUrl), '검증된 판매처·출처 필요');
       requireValue(typeof product.name === 'string' && product.name.trim() && typeof product.spec === 'string', '상품 이름·규격 오류');
       requireValue(['live', 'gear'].includes(product.type), '상품 종류 오류');
       requireValue(validDate(product.observedAt) && Date.parse(product.observedAt) <= Date.parse(catalog.asOf), '관찰 시각 오류');
@@ -43,8 +47,8 @@
       const photo = product.photo;
       requireValue(photo && ['allowed', 'not_allowed', 'unknown'].includes(photo.usePermission), '사진 사용 가능 여부 필요');
       requireValue(photo.url === null || httpsUrl(photo.url), '사진 URL 오류');
-      requireValue(photo.permissionEvidenceUrl === null || httpsUrl(photo.permissionEvidenceUrl), '사진 사용 근거 URL 오류');
-      requireValue(photo.usePermission !== 'allowed' || (httpsUrl(photo.url) && httpsUrl(photo.permissionEvidenceUrl)), '사진 사용 허용 근거 필요');
+      requireValue(photo.permissionEvidenceUrl === null || sourceUrl(photo.permissionEvidenceUrl), '사진 사용 근거 URL 오류');
+      requireValue(photo.usePermission !== 'allowed' || (httpsUrl(photo.url) && sourceUrl(photo.permissionEvidenceUrl)), '사진 사용 허용 근거 필요');
     }
     return catalog;
   }
@@ -75,5 +79,5 @@
     return { rows, reason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  return { validateCatalog, selectProducts, usablePhoto, httpsUrl };
+  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl };
 });

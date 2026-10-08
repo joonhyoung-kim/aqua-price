@@ -14,7 +14,7 @@ function buildCatalog(snapshot) {
   const asOf = snapshot.snapshot_at_utc || (dates.length ? dates.reduce((latest, date) => Date.parse(date) > Date.parse(latest) ? date : latest) : null);
   const sellers = new Map();
   for (const item of snapshot.items) {
-    if (new URL(item.product_url).hostname !== item.seller_domain) throw Error('상품 출처와 판매처 도메인 불일치');
+    if (new URL(item.product_url).hostname.replace(/^www\./,'') !== new URL('https://'+item.seller_domain).hostname.replace(/^www\./,'')) throw Error('상품 출처와 판매처 도메인 불일치');
     if (!sellers.has(item.seller_domain)) sellers.set(item.seller_domain, { id: item.seller_domain, name: item.seller_domain, officialUrl: new URL(item.product_url).origin + '/', sellerNameConfirmed: false });
     if (item.retailer) { const seller = sellers.get(item.seller_domain); seller.name = item.retailer; seller.sellerNameConfirmed = true; }
   }
@@ -28,7 +28,7 @@ function buildCatalog(snapshot) {
   products: snapshot.items.map(item => {
     const type = item.type || (knownTitles[item.id] ? 'gear' : null);
     if (!['live', 'gear'].includes(type)) throw Error('새 상품은 검증된 live/gear 종류가 필요합니다');
-    const photoAvailable = item.photo && typeof item.photo.verified_https_url === 'string' && item.photo.verified_https_url.startsWith('https://') && ((item.photo.http_status === 200 && item.photo.content_type?.startsWith('image/')) || (snapshot.photo_validation?.https_head_status === 200 && snapshot.photo_validation.verified_count === snapshot.items.filter(p => !p.source_kind && p.photo?.verified_https_url).length));
+    const photoAvailable = item.photo && typeof item.photo.verified_https_url === 'string' && item.photo.verified_https_url.startsWith('https://') && (item.photo.permission_basis === 'explicit_user_instruction' || (item.photo.http_status === 200 && item.photo.content_type?.startsWith('image/')) || (snapshot.photo_validation?.https_head_status === 200 && (snapshot.photo_validation.verified_item_ids?.includes(item.id) || snapshot.photo_validation.verified_count === snapshot.items.filter(p => !p.source_kind && p.photo?.verified_https_url).length)));
     return {
     id: item.id, verified: true, sellerId: item.seller_domain, sourceUrl: item.product_url,
     name: item.display_title || knownTitles[item.id] || item.title, originalTitle: item.title, description: item.description, spec: '판매단위/옵션: ' + (item.variant_title || item.variant || '미확인'),

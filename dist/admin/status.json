@@ -1,0 +1,1410 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-08T10:07:07.705Z",
+  "originalSourceCount": 45,
+  "additionalSnapshotDomains": [
+    "sonstory.co.kr",
+    "honeystore075.cafe24.com",
+    "sulawesishrimpmart.com",
+    "hyunjeen043.cafe24.com"
+  ],
+  "automation": {
+    "configured": false,
+    "verifiedRun": false,
+    "workflowUrl": "https://github.com/joonhyoung-kim/aqua-price/actions/workflows/catalog-refresh.yml",
+    "dispatchMode": "all",
+    "scheduleUTC": {
+      "live": "17 */3 * * *",
+      "gear": "29 */6 * * *",
+      "reconcile": "43 2 * * *"
+    },
+    "newProductDiscovery": false,
+    "deletionEnabled": false
+  },
+  "sources": [
+    {
+      "id": "retailer-01",
+      "name": "애니몰로",
+      "domain": "animallo.kr",
+      "officialUrl": "https://animallo.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 4,
+      "collectorProductCount": 4,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:45:38.210Z",
+      "collectorLastSuccess": "2026-10-08T09:44:43.721Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://animallo.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-02",
+      "name": "그린피쉬",
+      "domain": "greenfish.co.kr",
+      "officialUrl": "http://www.greenfish.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T10:01:32.321Z",
+      "collectorLastSuccess": "2026-10-08T10:01:34.451Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "http://www.greenfish.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-03",
+      "name": "하비월드",
+      "domain": "hobbyworld7.com",
+      "officialUrl": "https://hobbyworld7.com/",
+      "technicalReadiness": "merchant_temporarily_closed",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:45:40.305Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Official homepage announces temporary closure.",
+      "blockers": [
+        "Official homepage announces temporary closure."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://hobbyworld7.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-04",
+      "name": "라라아쿠아",
+      "domain": "raraaqua.com",
+      "officialUrl": "https://raraaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 3,
+      "collectorProductCount": 3,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:45:40.310Z",
+      "collectorLastSuccess": "2026-10-08T09:46:10.864Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://raraaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-05",
+      "name": "메다카갤러리",
+      "domain": "medakagallery.com",
+      "officialUrl": "https://medakagallery.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:46:10.887Z",
+      "collectorLastSuccess": "2026-10-08T09:46:21.308Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://medakagallery.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-06",
+      "name": "리비아쿠아",
+      "domain": "liviaqua.co.kr",
+      "officialUrl": "https://liviaqua.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:46:21.325Z",
+      "collectorLastSuccess": "2026-10-08T09:46:32.443Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://liviaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-07",
+      "name": "아쿠아프로 트레이딩",
+      "domain": "aquapro.kr",
+      "officialUrl": "https://aquapro.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:46:32.460Z",
+      "collectorLastSuccess": "2026-10-08T09:46:42.783Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquapro.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-08",
+      "name": "주니멀",
+      "domain": "zoonimal.co.kr",
+      "officialUrl": "https://zoonimal.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 2,
+      "collectorProductCount": 2,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:46:42.826Z",
+      "collectorLastSuccess": "2026-10-08T09:47:03.108Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://zoonimal.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-09",
+      "name": "알파피쉬",
+      "domain": "alphafish.co.kr",
+      "officialUrl": "https://alphafish.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 3,
+      "collectorProductCount": 3,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:47:03.161Z",
+      "collectorLastSuccess": "2026-10-08T09:47:33.453Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://alphafish.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-10",
+      "name": "루아쿠아",
+      "domain": "rooaqua.com",
+      "officialUrl": "https://rooaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:47:33.482Z",
+      "collectorLastSuccess": "2026-10-08T09:47:44.035Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://rooaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-11",
+      "name": "하나아쿠아",
+      "domain": "hanaaqua.com",
+      "officialUrl": "https://hanaaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:47:44.069Z",
+      "collectorLastSuccess": "2026-10-08T09:47:54.584Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://hanaaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-12",
+      "name": "비지떡",
+      "domain": "bizidduk.com",
+      "officialUrl": "https://bizidduk.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:47:54.642Z",
+      "collectorLastSuccess": "2026-10-08T09:48:04.993Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://bizidduk.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-13",
+      "name": "아쿠아리",
+      "domain": "riaqua.com",
+      "officialUrl": "https://riaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:48:05.041Z",
+      "collectorLastSuccess": "2026-10-08T09:48:15.373Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://riaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-14",
+      "name": "한국구피",
+      "domain": "xn--2e0bb8861auda.com",
+      "officialUrl": "https://xn--2e0bb8861auda.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 2,
+      "collectorProductCount": 2,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:48:15.409Z",
+      "collectorLastSuccess": "2026-10-08T09:48:25.984Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://xn--2e0bb8861auda.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-15",
+      "name": "라이브아쿠아",
+      "domain": "liveaqua.kr",
+      "officialUrl": "https://liveaqua.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:48:26.018Z",
+      "collectorLastSuccess": "2026-10-08T09:48:36.293Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://liveaqua.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-16",
+      "name": "아쿠아빌리지",
+      "domain": "aquavillage.co.kr",
+      "officialUrl": "https://aquavillage.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 4,
+      "collectorProductCount": 4,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:56:18.676Z",
+      "collectorLastSuccess": "2026-10-08T09:48:38.765Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquavillage.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-17",
+      "name": "매직아쿠아",
+      "domain": "magicaqua.kr",
+      "officialUrl": "https://magicaqua.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:48:38.830Z",
+      "collectorLastSuccess": "2026-10-08T09:48:49.315Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://magicaqua.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-18",
+      "name": "오쿠아",
+      "domain": "oqua.co.kr",
+      "officialUrl": "https://oqua.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:48:49.341Z",
+      "collectorLastSuccess": "2026-10-08T09:48:59.691Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://oqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-19",
+      "name": "백경수족관",
+      "domain": "wwaqua.imweb.me",
+      "officialUrl": "https://wwaqua.imweb.me/",
+      "technicalReadiness": "blocked",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:48:59.747Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://wwaqua.imweb.me/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-20",
+      "name": "세진아쿠아리움",
+      "domain": "seijin.co.kr",
+      "officialUrl": "https://seijin.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:48:59.803Z",
+      "collectorLastSuccess": "2026-10-08T09:49:10.337Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://seijin.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-21",
+      "name": "피알피쉬",
+      "domain": "prfish.com",
+      "officialUrl": "https://prfish.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "failed",
+      "collectorLastAttempt": "2026-10-08T09:49:10.394Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "fetch failed",
+      "blockers": [
+        "fetch failed",
+        "Previous verified snapshot is retained."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://prfish.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-22",
+      "name": "아쿠아펫",
+      "domain": "aquapet.co.kr",
+      "officialUrl": "http://www.aquapet.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T10:01:34.585Z",
+      "collectorLastSuccess": "2026-10-08T10:01:36.713Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "http://www.aquapet.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-23",
+      "name": "에이투비",
+      "domain": "a2be.net",
+      "officialUrl": "https://a2be.net/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:49:12.628Z",
+      "collectorLastSuccess": "2026-10-08T09:49:22.912Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://a2be.net/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-24",
+      "name": "명아쿠아",
+      "domain": "myungaqua.com",
+      "officialUrl": "https://myungaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:49:22.981Z",
+      "collectorLastSuccess": "2026-10-08T09:49:33.906Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://myungaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-25",
+      "name": "상아쿠아",
+      "domain": "sangaqua.co.kr",
+      "officialUrl": "https://sangaqua.co.kr/",
+      "technicalReadiness": "blocked",
+      "enabled": false,
+      "snapshotProductCount": 7,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:49:33.956Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://sangaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-27",
+      "name": "아쿠아리스모",
+      "domain": "aquarismo.co.kr",
+      "officialUrl": "https://aquarismo.co.kr/",
+      "technicalReadiness": "blocked",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:49:34.002Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquarismo.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-28",
+      "name": "웨이브아쿠아",
+      "domain": "waveaqua.co.kr",
+      "officialUrl": "https://waveaqua.co.kr/",
+      "technicalReadiness": "blocked",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:49:34.064Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://waveaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-29",
+      "name": "트로피쉬넷",
+      "domain": "trofish.net",
+      "officialUrl": "https://trofish.net/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:56:26.996Z",
+      "collectorLastSuccess": "2026-10-08T09:56:27.273Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://trofish.net/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-30",
+      "name": "산마 SANMA",
+      "domain": "sanma.co.kr",
+      "officialUrl": "https://sanma.co.kr/",
+      "technicalReadiness": "catalog_fetch_failed",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:49:36.379Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Ordinary homepage HTTP503; no product sample recovered.",
+      "blockers": [
+        "Ordinary homepage HTTP503; no product sample recovered."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://sanma.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-31",
+      "name": "위더스펫",
+      "domain": "withuspet.co.kr",
+      "officialUrl": "https://withuspet.co.kr/",
+      "technicalReadiness": "public_reference_price_only",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:49:36.445Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Consumer/reference price only; actual guest sale price unavailable.",
+      "blockers": [
+        "Consumer/reference price only; actual guest sale price unavailable."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://withuspet.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-32",
+      "name": "수아쿠아",
+      "domain": "suaqua.co.kr",
+      "officialUrl": "https://suaqua.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:49:36.503Z",
+      "collectorLastSuccess": "2026-10-08T09:49:46.925Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://suaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-33",
+      "name": "셀바스",
+      "domain": "selvas.co.kr",
+      "officialUrl": "https://selvas.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 2,
+      "collectorProductCount": 2,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:56:18.692Z",
+      "collectorLastSuccess": "2026-10-08T09:56:18.693Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://selvas.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-34",
+      "name": "청룡아쿠아",
+      "domain": "bluedragonaqua.com",
+      "officialUrl": "https://bluedragonaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:49:59.936Z",
+      "collectorLastSuccess": "2026-10-08T09:50:10.377Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://bluedragonaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-35",
+      "name": "모비딕 도매몰",
+      "domain": "mobydickmall.com",
+      "officialUrl": "https://m.mobydickmall.com/",
+      "technicalReadiness": "guest_price_unavailable",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:50:10.438Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "No collector source execution or deployed automatic refresh verified.; Guest prices show wholesale-member restriction; do not login.",
+      "blockers": [
+        "No collector source execution or deployed automatic refresh verified.",
+        "Guest prices show wholesale-member restriction; do not login."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://m.mobydickmall.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-36",
+      "name": "샘아쿠아",
+      "domain": "samaqua.com",
+      "officialUrl": "https://samaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:50:10.501Z",
+      "collectorLastSuccess": "2026-10-08T09:50:20.784Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://samaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-37",
+      "name": "미미네아쿠아",
+      "domain": "mimineaqua.co.kr",
+      "officialUrl": "https://mimineaqua.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 13,
+      "collectorProductCount": 13,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:50:20.845Z",
+      "collectorLastSuccess": "2026-10-08T09:52:31.228Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://mimineaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-38",
+      "name": "아쿠아유쥬",
+      "domain": "aquauju.com",
+      "officialUrl": "https://aquauju.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:52:31.319Z",
+      "collectorLastSuccess": "2026-10-08T09:52:41.974Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquauju.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-39",
+      "name": "다팜아쿠아",
+      "domain": "dpaqua.com",
+      "officialUrl": "https://dpaqua.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 2,
+      "collectorProductCount": 2,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:52:42.059Z",
+      "collectorLastSuccess": "2026-10-08T09:53:02.601Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://dpaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-40",
+      "name": "에이엠펫",
+      "domain": "ampet.co.kr",
+      "officialUrl": "https://ampet.co.kr/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T10:01:36.859Z",
+      "collectorLastSuccess": "2026-10-08T10:01:37.621Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://ampet.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-41",
+      "name": "딩동수족관",
+      "domain": "dingdongaqua.co.kr",
+      "officialUrl": "https://dingdongaqua.co.kr/",
+      "technicalReadiness": "blocked",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:53:13.467Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://dingdongaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-42",
+      "name": "아쿠아가든 쇼핑몰",
+      "domain": "aquagardenshop.com",
+      "officialUrl": "https://aquagardenshop.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:53:13.563Z",
+      "collectorLastSuccess": "2026-10-08T09:53:23.986Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquagardenshop.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-43",
+      "name": "엘이디스토어",
+      "domain": "ledstore.kr",
+      "officialUrl": "https://ledstore.kr/",
+      "technicalReadiness": "blocked",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:53:24.102Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://ledstore.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-44",
+      "name": "페이토코리아",
+      "domain": "peytokorea.cafe24.com",
+      "officialUrl": "https://peytokorea.cafe24.com/",
+      "technicalReadiness": "guest_price_unavailable",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:53:24.186Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Wholesale-member prices, missing JSON-LD price; no login or script-zero inference.",
+      "blockers": [
+        "Wholesale-member prices, missing JSON-LD price; no login or script-zero inference."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://peytokorea.cafe24.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    },
+    {
+      "id": "retailer-45",
+      "name": "싸다군",
+      "domain": "ssadagun.com",
+      "officialUrl": "https://ssadagun.com/",
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 1,
+      "collectorProductCount": 1,
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T09:53:24.272Z",
+      "collectorLastSuccess": "2026-10-08T09:53:26.801Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://ssadagun.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
+    },
+    {
+      "id": "retailer-46",
+      "name": "아쿠아메이저랩",
+      "domain": "aquamajorlab.com",
+      "officialUrl": "https://aquamajorlab.com/",
+      "technicalReadiness": "product_fetch_failed",
+      "enabled": false,
+      "snapshotProductCount": 0,
+      "collectorProductCount": 0,
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T09:53:26.906Z",
+      "collectorLastSuccess": null,
+      "collectorLastError": "Product fetch HTTP502, not proof of impossible integration.",
+      "blockers": [
+        "Product fetch HTTP502, not proof of impossible integration."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquamajorlab.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": null
+    }
+  ]
+}

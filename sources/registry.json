@@ -1,0 +1,1962 @@
+{
+  "schemaVersion": 1,
+  "registryStatus": "final_audited_45_partial_product_collectors",
+  "originalSourceCount": 45,
+  "originalSourcesWithSnapshot": 9,
+  "collectorVerifiedSources": 0,
+  "additionalSnapshotDomains": [
+    "sonstory.co.kr",
+    "honeystore075.cafe24.com",
+    "sulawesishrimpmart.com",
+    "hyunjeen043.cafe24.com"
+  ],
+  "sources": [
+    {
+      "id": "retailer-01",
+      "name": "애니몰로",
+      "sourceDomain": "animallo.kr",
+      "officialURL": "https://animallo.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://animallo.kr/product/엠버-테트라-10마리-세트/799/",
+          "existingId": "direct_animallo_799",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "10마리 세트",
+          "quantityPerPack": 10
+        },
+        {
+          "url": "https://animallo.kr/product/입문용-알비노-풀레드-구피-1쌍/938/",
+          "existingId": "direct_animallo_938",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "1쌍"
+        },
+        {
+          "url": "https://animallo.kr/product/야생-오토싱/906/",
+          "existingId": "direct_animallo_906",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "기본 판매단위; 묶음 마릿수 별도 명시 없음"
+        },
+        {
+          "url": "https://animallo.kr/product/블러드메리-새우-10마리-세트/5258/",
+          "existingId": "direct_animallo_5258",
+          "type": "live",
+          "subtype": "shrimp",
+          "variant": "10마리 세트",
+          "quantityPerPack": 10
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://animallo.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-02",
+      "name": "그린피쉬",
+      "sourceDomain": "greenfish.co.kr",
+      "officialURL": "http://www.greenfish.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "http://www.greenfish.co.kr/shop/shopdetail.html?branduid=3873",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 1,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "publicHttpApproved": true,
+      "discovery": {
+        "entryPoints": [
+          "http://www.greenfish.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-03",
+      "name": "하비월드",
+      "sourceDomain": "hobbyworld7.com",
+      "officialURL": "https://hobbyworld7.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "merchant_temporarily_closed",
+      "currentIntegrationStatus": "merchant_temporarily_closed",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Official homepage announces temporary closure."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://hobbyworld7.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-04",
+      "name": "라라아쿠아",
+      "sourceDomain": "raraaqua.com",
+      "officialURL": "https://raraaqua.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://raraaqua.com/product/detail.html?product_no=6503",
+          "existingId": "cafe24_radcorp18_1_6503",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://raraaqua.com/product/detail.html?product_no=8873",
+          "existingId": "cafe24_radcorp18_1_8873",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://raraaqua.com/product/수초-라라-조직배양수초-쿠바펄/6496/",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://raraaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-05",
+      "name": "메다카갤러리",
+      "sourceDomain": "medakagallery.com",
+      "officialURL": "https://medakagallery.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://medakagallery.com/product/입문급-랜덤-믹스-메다카-51마리/408/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 6,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://medakagallery.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-06",
+      "name": "리비아쿠아",
+      "sourceDomain": "liviaqua.co.kr",
+      "officialURL": "https://liviaqua.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://liviaqua.co.kr/product/오노-오리지널-코마치-홍백-메다카-일본-수입개체-한쌍/1340/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://liviaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-07",
+      "name": "아쿠아프로 트레이딩",
+      "sourceDomain": "aquapro.kr",
+      "officialURL": "https://aquapro.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://aquapro.kr/product/라스보라-쿠보타이-23cm/7856/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquapro.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-08",
+      "name": "주니멀",
+      "sourceDomain": "zoonimal.co.kr",
+      "officialURL": "https://zoonimal.co.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://zoonimal.co.kr/product/detail.html?product_no=7791",
+          "existingId": "cafe24_zoonimal_1_7791",
+          "type": "gear",
+          "subtype": "hardscape",
+          "variant": "기본"
+        },
+        {
+          "url": "https://zoonimal.co.kr/product/청소물고기-나비비파-3-4cm-내외/6851/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://zoonimal.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-09",
+      "name": "알파피쉬",
+      "sourceDomain": "alphafish.co.kr",
+      "officialURL": "https://alphafish.co.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://alphafish.co.kr/product/detail.html?product_no=2521",
+          "existingId": "cafe24_alphafish_1_2521",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://alphafish.co.kr/product/crs-4마리/232/",
+          "existingId": "direct_alphafish_232",
+          "type": "live",
+          "subtype": "shrimp",
+          "variant": "4마리",
+          "quantityPerPack": 4
+        },
+        {
+          "url": "https://alphafish.co.kr/product/뾰족달팽이-20-마리-트럼펫스네일/1758/",
+          "existingId": "direct_alphafish_1758",
+          "type": "live",
+          "subtype": "snail",
+          "variant": "20마리",
+          "quantityPerPack": 20
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://alphafish.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-10",
+      "name": "루아쿠아",
+      "sourceDomain": "rooaqua.com",
+      "officialURL": "https://rooaqua.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://rooaqua.com/product/체리새우/146/",
+          "type": "live",
+          "subtype": "shrimp",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://rooaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-11",
+      "name": "하나아쿠아",
+      "sourceDomain": "hanaaqua.com",
+      "officialURL": "https://hanaaqua.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://hanaaqua.com/product/체리-새우-10마리/1294/",
+          "type": "live",
+          "subtype": "shrimp",
+          "quantityPerPack": 10,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://hanaaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-12",
+      "name": "비지떡",
+      "sourceDomain": "bizidduk.com",
+      "officialURL": "https://bizidduk.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://bizidduk.com/product/생이새우-10-마리/1167/",
+          "type": "live",
+          "subtype": "shrimp",
+          "quantityPerPack": 10,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://bizidduk.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-13",
+      "name": "아쿠아리",
+      "sourceDomain": "riaqua.com",
+      "officialURL": "https://riaqua.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.riaqua.com/product/네온테트라-5마리/11/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 5,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://riaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-14",
+      "name": "한국구피",
+      "sourceDomain": "xn--2e0bb8861auda.com",
+      "officialURL": "https://xn--2e0bb8861auda.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://xn--2e0bb8861auda.com/product/detail.html?product_no=208&cate_no=1&display_group=2",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 1,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://xn--2e0bb8861auda.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-15",
+      "name": "라이브아쿠아",
+      "sourceDomain": "liveaqua.kr",
+      "officialURL": "https://liveaqua.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.liveaqua.kr/product/네온테트라-10마리/1474/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 10,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://liveaqua.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-16",
+      "name": "아쿠아빌리지",
+      "sourceDomain": "aquavillage.co.kr",
+      "officialURL": "https://aquavillage.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.aquavillage.co.kr/product/오토싱-3cm내외/1518/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquavillage.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-17",
+      "name": "매직아쿠아",
+      "sourceDomain": "magicaqua.kr",
+      "officialURL": "https://magicaqua.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://magicaqua.kr/product/부세-파란드라-sp-레드-브라운-1벌브/9454/",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://magicaqua.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-18",
+      "name": "오쿠아",
+      "sourceDomain": "oqua.co.kr",
+      "officialURL": "https://oqua.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://oqua.co.kr/product/연꽃-모종발아-싹틔움-완료줄기-520cm20촉-미니-연꽃-씨앗-수련-키우기-국내-생산/4671/",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://oqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-19",
+      "name": "백경수족관",
+      "sourceDomain": "wwaqua.imweb.me",
+      "officialURL": "https://wwaqua.imweb.me/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "blocked",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://wwaqua.imweb.me/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-20",
+      "name": "세진아쿠아리움",
+      "sourceDomain": "seijin.co.kr",
+      "officialURL": "https://seijin.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "godo_public_price",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.seijin.co.kr/goods/goods_view.php?goodsNo=1000021073",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 10,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit",
+          "expectedName": "네온테트라 [10마리]"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://seijin.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-21",
+      "name": "피알피쉬",
+      "sourceDomain": "prfish.com",
+      "officialURL": "https://prfish.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "legacy_godo_public_price",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_collection_failed",
+      "products": [
+        {
+          "url": "https://www.prfish.com/shop/goods/goods_view.php?goodsno=21050&category=022001",
+          "type": "gear",
+          "subtype": "feed",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit",
+          "expectedName": "PRFISH 절대 무농약 삶은 냉동시금치 [15개 1SET]"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "fetch failed",
+        "Previous verified snapshot is retained."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://prfish.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-22",
+      "name": "아쿠아펫",
+      "sourceDomain": "aquapet.co.kr",
+      "officialURL": "http://www.aquapet.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "http://www.aquapet.co.kr/shop/shopdetail.html?branduid=1128672",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "classificationBasis": "Reviewed primary product sample from final parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "publicHttpApproved": true,
+      "discovery": {
+        "entryPoints": [
+          "http://www.aquapet.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-23",
+      "name": "에이투비",
+      "sourceDomain": "a2be.net",
+      "officialURL": "https://a2be.net/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://a2be.net/product/초보자용-수초세트-30센치-수조용/2338/",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://a2be.net/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-24",
+      "name": "명아쿠아",
+      "sourceDomain": "myungaqua.com",
+      "officialURL": "https://myungaqua.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.myungaqua.com/product/안시-숏핀-2마리/4917/",
+          "type": "live",
+          "subtype": "fish",
+          "quantityPerPack": 2,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://myungaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-25",
+      "name": "상아쿠아",
+      "sourceDomain": "sangaqua.co.kr",
+      "officialURL": "https://sangaqua.co.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "blocked",
+      "products": [
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=3586",
+          "existingId": "cafe24_sangaquamall_1_3586",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=11068",
+          "existingId": "cafe24_sangaquamall_1_11068",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=4052",
+          "existingId": "cafe24_sangaquamall_1_4052",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=865",
+          "existingId": "cafe24_sangaquamall_1_865",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=19352",
+          "existingId": "cafe24_sangaquamall_1_19352",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=20238",
+          "existingId": "cafe24_sangaquamall_1_20238",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://sangaqua.co.kr/product/detail.html?product_no=365",
+          "existingId": "cafe24_sangaquamall_1_365",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://sangaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-27",
+      "name": "아쿠아리스모",
+      "sourceDomain": "aquarismo.co.kr",
+      "officialURL": "https://aquarismo.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "blocked",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquarismo.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-28",
+      "name": "웨이브아쿠아",
+      "sourceDomain": "waveaqua.co.kr",
+      "officialURL": "https://waveaqua.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "blocked",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://waveaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-29",
+      "name": "트로피쉬넷",
+      "sourceDomain": "trofish.net",
+      "officialURL": "https://trofish.net/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.trofish.net/shop/shopdetail.html?branduid=1000005938",
+          "type": "gear",
+          "subtype": "feed",
+          "classificationBasis": "Reviewed primary product sample from final parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://trofish.net/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-30",
+      "name": "산마 SANMA",
+      "sourceDomain": "sanma.co.kr",
+      "officialURL": "https://sanma.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "catalog_fetch_failed",
+      "currentIntegrationStatus": "catalog_fetch_failed",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Ordinary homepage HTTP503; no product sample recovered."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://sanma.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-31",
+      "name": "위더스펫",
+      "sourceDomain": "withuspet.co.kr",
+      "officialURL": "https://withuspet.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "public_reference_price_only",
+      "currentIntegrationStatus": "public_reference_price_only",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Consumer/reference price only; actual guest sale price unavailable."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://withuspet.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-32",
+      "name": "수아쿠아",
+      "sourceDomain": "suaqua.co.kr",
+      "officialURL": "https://suaqua.co.kr/",
+      "original45": true,
+      "platform": "Godo/NHN Commerce",
+      "adapter": "godo_public_price",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.suaqua.co.kr/goods/goods_view.php?goodsNo=9690",
+          "type": "gear",
+          "subtype": "substrate",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit",
+          "expectedName": "수아쿠아 스타터 소일 1.8kg"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://suaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-33",
+      "name": "셀바스",
+      "sourceDomain": "selvas.co.kr",
+      "officialURL": "https://selvas.co.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://selvas.co.kr/product/pvc-게이트-밸브-15인치-호스용-화이트-다크그레이/6391/",
+          "type": "gear",
+          "subtype": "valve",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://selvas.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-34",
+      "name": "청룡아쿠아",
+      "sourceDomain": "bluedragonaqua.com",
+      "officialURL": "https://bluedragonaqua.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://bluedragonaqua.com/product/detail.html?product_no=3147&cate_no=1&display_group=3",
+          "type": "gear",
+          "subtype": "filter",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://bluedragonaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-35",
+      "name": "모비딕 도매몰",
+      "sourceDomain": "mobydickmall.com",
+      "officialURL": "https://m.mobydickmall.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "guest_price_unavailable",
+      "currentIntegrationStatus": "guest_price_unavailable",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "No collector source execution or deployed automatic refresh verified.",
+        "Guest prices show wholesale-member restriction; do not login."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://m.mobydickmall.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-36",
+      "name": "샘아쿠아",
+      "sourceDomain": "samaqua.com",
+      "officialURL": "https://samaqua.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://samaqua.com/product/detail.html?product_no=751",
+          "existingId": "cafe24_kimsh468_1_751",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://samaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-37",
+      "name": "미미네아쿠아",
+      "sourceDomain": "mimineaqua.co.kr",
+      "officialURL": "https://mimineaqua.co.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=16946",
+          "existingId": "cafe24_miminecorp_1_16946",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=16940",
+          "existingId": "cafe24_miminecorp_1_16940",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=6011",
+          "existingId": "cafe24_miminecorp_1_6011",
+          "type": "live",
+          "subtype": "aquatic_plant",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=8754",
+          "existingId": "cafe24_miminecorp_1_8754",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=8709",
+          "existingId": "cafe24_miminecorp_1_8709",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=8755",
+          "existingId": "cafe24_miminecorp_1_8755",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=8725",
+          "existingId": "cafe24_miminecorp_1_8725",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=8724",
+          "existingId": "cafe24_miminecorp_1_8724",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=19410",
+          "existingId": "cafe24_miminecorp_1_19410",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=18731",
+          "existingId": "cafe24_miminecorp_1_18731",
+          "type": "gear",
+          "subtype": "moss_shelf",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=3119",
+          "existingId": "cafe24_miminecorp_1_3119",
+          "type": "gear",
+          "subtype": "tank",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=18730",
+          "existingId": "cafe24_miminecorp_1_18730",
+          "type": "gear",
+          "subtype": "moss_shelf",
+          "variant": "기본"
+        },
+        {
+          "url": "https://mimineaqua.co.kr/product/detail.html?product_no=18728",
+          "existingId": "cafe24_miminecorp_1_18728",
+          "type": "gear",
+          "subtype": "moss_shelf",
+          "variant": "기본"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "pricePolicy": "Keep JSON-LD base price; do not prioritize sale metadata without verified discount conditions.",
+      "discovery": {
+        "entryPoints": [
+          "https://mimineaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-38",
+      "name": "아쿠아유쥬",
+      "sourceDomain": "aquauju.com",
+      "officialURL": "https://aquauju.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://aquauju.com/product/detail.html?product_no=10748",
+          "existingId": "cafe24_aquauju_1_10748",
+          "type": "gear",
+          "subtype": "filter",
+          "variant": "기본"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquauju.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-39",
+      "name": "다팜아쿠아",
+      "sourceDomain": "dpaqua.com",
+      "officialURL": "https://dpaqua.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://dpaqua.com/product/detail.html?product_no=2079",
+          "existingId": "cafe24_woqja0219_1_2079",
+          "type": "gear",
+          "subtype": "aquarium_set",
+          "variant": "기본"
+        },
+        {
+          "url": "https://dpaqua.com/product/detail.html?product_no=2080",
+          "existingId": "cafe24_woqja0219_1_2080",
+          "type": "gear",
+          "subtype": "aquarium_set",
+          "variant": "기본"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://dpaqua.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-40",
+      "name": "에이엠펫",
+      "sourceDomain": "ampet.co.kr",
+      "officialURL": "https://ampet.co.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://www.ampet.co.kr/product/detail.html?product_no=3855&cate_no=1&display_group=3",
+          "type": "gear",
+          "subtype": "container",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 5000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://ampet.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-41",
+      "name": "딩동수족관",
+      "sourceDomain": "dingdongaqua.co.kr",
+      "officialURL": "https://dingdongaqua.co.kr/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "blocked",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://dingdongaqua.co.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-42",
+      "name": "아쿠아가든 쇼핑몰",
+      "sourceDomain": "aquagardenshop.com",
+      "officialURL": "https://aquagardenshop.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://aquagardenshop.com/product/아마존-측면여과기-10w-hj-752/1386/",
+          "type": "gear",
+          "subtype": "filter",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "pricePolicy": "Keep JSON-LD base price; do not prioritize sale metadata without verified discount conditions.",
+      "discovery": {
+        "entryPoints": [
+          "https://aquagardenshop.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-43",
+      "name": "엘이디스토어",
+      "sourceDomain": "ledstore.kr",
+      "officialURL": "https://ledstore.kr/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "blocked",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://ledstore.kr/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-44",
+      "name": "페이토코리아",
+      "sourceDomain": "peytokorea.cafe24.com",
+      "officialURL": "https://peytokorea.cafe24.com/",
+      "original45": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "guest_price_unavailable",
+      "currentIntegrationStatus": "guest_price_unavailable",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Wholesale-member prices, missing JSON-LD price; no login or script-zero inference."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://peytokorea.cafe24.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-45",
+      "name": "싸다군",
+      "sourceDomain": "ssadagun.com",
+      "officialURL": "https://ssadagun.com/",
+      "original45": true,
+      "platform": "Sixshop",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "local_known_urls_verified",
+      "products": [
+        {
+          "url": "https://ssadagun.com/product/untitled-146",
+          "type": "gear",
+          "subtype": "filter",
+          "quantityPerPack": null,
+          "classificationBasis": "Reviewed verified primary product sample supplied by parent audit"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Known product URLs only; full catalog discovery and pagination are not implemented.",
+        "Scheduled run, data commit and Render deployment not yet verified."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://ssadagun.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-46",
+      "name": "아쿠아메이저랩",
+      "sourceDomain": "aquamajorlab.com",
+      "officialURL": "https://aquamajorlab.com/",
+      "original45": true,
+      "platform": "unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "product_fetch_failed",
+      "currentIntegrationStatus": "product_fetch_failed",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Product fetch HTTP502, not proof of impossible integration."
+      ],
+      "discovery": {
+        "entryPoints": [
+          "https://aquamajorlab.com/"
+        ],
+        "status": "not_implemented",
+        "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    }
+  ],
+  "auditSamplePassed": 33,
+  "auditBlocked": 6,
+  "workflowDeployed": false
+}

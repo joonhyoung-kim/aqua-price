@@ -1,60 +1,42 @@
-# 아쿠아픽 (aqua-price)
+# 아쿠아픽
 
-카페24 공식 API 상품 35개와 판매처 페이지에서 직접 확인한 생물 6개를 제공하는 정적 HTML/JavaScript 화면입니다. 총 41개·판매처 13곳이며 물고기 3개·새우 2개·수초 7개·달팽이 1개·용품 28개입니다. 전체 판매처 실시간 검색이나 전체 최저가 비교는 아닙니다. 기존 샘플 소스는 운영 main에 보존되어 있습니다. 상세 입력 계약은 [DATA-CONTRACT.md](DATA-CONTRACT.md)를 참고하세요.
+순수 정적 HTML/JavaScript 가격 조회 화면입니다. main은 운영용, preview는 검토용입니다. 운영 사이트 https://aqua-price.onrender.com 은 main, 미리보기 https://aqua-price-preview.onrender.com 은 preview를 각각 Render에서 배포합니다. 별도 Sites 사이트 https://aqua-price-jk.frostycorgi.chatgpt.site 는 두 GitHub 브랜치의 자동 배포와 연결되지 않았습니다.
 
 ## 로컬 실행
 
-Node.js 18 이상이 필요합니다. 외부 패키지 설치는 필요하지 않습니다.
+Node.js 24 권장. 의존성 설치가 필요 없습니다.
+`npm start` 후 http://127.0.0.1:8080 를 열고, `npm test`로 구문·데이터 계약·필터·화면·수집 실패 보존·관리자 상태 검사를 실행합니다.
 
-```sh
-npm start
-```
+main의 초기 화면은 가상 상품·가격 샘플이며, 기간은 샘플 상품 등록일 기준입니다. preview는 확인된 실제 상품의 시점별 공개 가격을 보여 줍니다. 실제 상품 등록일·배송비·선택 기간 판매량은 확인되지 않았습니다. 기본 기간은 전체이며, 1주·1개월·3개월은 확인된 실제 등록일 기준입니다. 등록일 미확인 항목을 포함해도 해당 기간의 신상품으로 주장하지 않습니다. 판매순은 미연동이며 순위를 만들지 않습니다.
 
-브라우저에서 <http://127.0.0.1:8080>을 엽니다. 종료는 `Ctrl+C`입니다. `dist/index.html`을 직접 열어도 샘플 화면을 사용할 수 있습니다.
+## 현재 수집 범위
 
-```sh
-npm test
-```
+2026-10-08 로컬 검증: 원래 45개 판매처 중 33곳 수집 활성화, 32곳 고정 상품 URL/옵션 58개 성공, PRFish 1곳 요청 실패. 나머지 12곳은 접근 중단·휴업·로그인 가격·유효 판매가 부재·503/502 등으로 비활성입니다. 차단된 판매처를 다른 경로로 우회하지 않습니다. 기존 확인본을 보존해 preview는 72개 상품, 37개 판매처 도메인입니다. 추가 4개 도메인은 원래 45곳 성공률 분모에 넣지 않습니다.
 
-JavaScript 구문 검사와 Node 기본 테스트로 실제 데이터 계약, 종류·기간·검색·가격순·신상품순·기간 판매량·사진 사용 근거를 확인합니다. 브라우저 시각 검사는 포함하지 않습니다.
+이 수집기는 registry에 검증된 상품 URL만 갱신합니다. 전체 카테고리 발견·페이지 순회·신상품 자동 발견은 미구현입니다. coverageComplete=false이며 실제 삭제는 비활성입니다. 404·품절·파싱 실패·요청 실패를 구분하고, 실패한 상품은 마지막 정상 확인본을 보존합니다. ProductGroup 옵션은 SKU별로 구분하며 묶음 수량이 명시된 경우만 단가를 계산합니다. 할인 메타데이터는 기본 Offer 가격과 따로 보존합니다. 재고 표시는 결제 단계에서 확인한 재고가 아닙니다.
 
-## 브랜치와 배포
+사진은 사용자 허용에 따라 판매처의 원본 HTTPS URL만 표시하고 다운로드·재호스팅하지 않습니다. 사진이 없거나 실패하면 판매처 링크와 안내를 표시합니다. Greenfish/Aquapet만 확인된 공개 HTTP 상품 주소를 허용하며, 인증·결제·비밀정보 전송에 사용하지 않습니다.
 
-- GitHub 저장소는 <https://github.com/joonhyoung-kim/aqua-price>이며 공개(PUBLIC) 저장소입니다.
-- `main`: 운영용 기준 브랜치이자 GitHub 기본 브랜치입니다.
-- `preview`: 검토용 브랜치이며 최초에는 `main`과 같은 커밋에서 시작합니다.
-- 운영 <https://aqua-price.onrender.com>은 `main`, 검토 <https://aqua-price-preview.onrender.com>는 `preview`에 연결되어 있습니다. Render는 두 브랜치의 push에 자동 배포하며 빌드는 `npm test`, 공개 디렉터리는 `dist`입니다. 서버·DB는 생성하지 않았습니다.
-- 두 브랜치는 Sites 자동 배포와 연결되지 않았습니다. GitHub push는 위 Render 사이트에 반영되며 Sites 사이트는 별도로 관리합니다.
-- 공개 사이트 <https://aqua-price-jk.frostycorgi.chatgpt.site>는 Sites에서 별도 관리합니다.
-- 이번 실제 상품 화면은 `preview`에만 반영합니다. 운영 `main`과 Render 설정 및 기존 Sites 배포는 변경하지 않습니다. GitHub Actions 배포 워크플로는 포함하지 않습니다.
-- Sites의 `.openai/hosting.json` 및 원본 저장소 토큰은 포함하지 않습니다.
+## 수집 실행과 예약
 
-## 실제 데이터의 의미
+`npm run collect -- --mode all`은 로컬 상태만 수집합니다. `--publish`를 추가하면 검증된 정적 JSON을 갱신합니다. mode는 all/live/gear/reconcile입니다. 수집 후 `node scripts/build-admin-status.cjs`와 `npm test`를 실행합니다. .collector 원문 캐시·lastgood는 gitignore로 제외합니다. 등록 호스트, robots, 요청 간격, 요청 수, 타임아웃, 응답 크기를 제한하며 403/429는 즉시 중단합니다.
 
-- `dist/source-snapshot.json`은 전달받은 공식 API 확인본이고, `dist/catalog.json`은 화면용 데이터입니다. 프런트는 이 정적 파일만 검색하며 판매처 전체를 실시간 조회하지 않습니다. 추가 페이지나 대량 수집을 수행하지 않았습니다.
-- 조회 기간은 데이터 기준 UTC 시각 `asOf`에서 7/30/90일 이내의 실제 상품 등록일을 기준으로 하며 경계값을 포함합니다. 관찰 시각과 등록일은 다릅니다.
-- 현재 41개 모두 등록일 미확인입니다. 기본 체크된 `등록일 미확인 상품 포함`은 이를 기간 판단 없이 표시합니다. 해제하면 기간 조건을 적용할 수 없어 제외합니다. 신상품순은 이 선택과 무관하게 실제 등록일이 없는 상품을 정렬하지 않습니다.
-- 가격은 배송비 제외 관찰된 표시가격입니다. 배송비 미확인은 무료배송을 뜻하지 않습니다.
-- 판매순은 선택 기간의 실제 판매량이 확인된 경우에만 표시합니다. 누적 판매수·다른 구간 판매수로 순위를 만들지 않습니다.
-- 신상품순은 실제 등록일을 기준으로 합니다. 판매처명은 미확인이므로 판매처 도메인을 표시하고 원래 상품명을 펼쳐 볼 수 있습니다. 카탈로그 판매 가능 표시는 최종 재고 보장이 아닙니다.
-- 사진은 API가 제공한 검증된 HTTPS URL만 소규모 상품 비교 카드에 원격 연결합니다. 다운로드·재호스팅하지 않습니다. 원상품 판매처 바로가기를 제공하고 이미지 오류 시 대체 안내를 표시합니다. 포괄적인 정적 이미지 재배포 라이선스가 확인됐다고 주장하지 않습니다.
-- `scripts/build-catalog.cjs`는 확인본을 화면용 계약으로 변환하는 로컬 도구이며 API를 호출하지 않습니다. `node scripts/build-catalog.cjs`로 재생성할 수 있습니다.
-- `/ucp-profile.json`은 검색·조회 협상을 위한 플랫폼 프로필입니다. 상품 API 서버나 결제 기능을 제공하지 않습니다. 배포 당시 캐시는 `public, max-age=0, s-maxage=300`으로 관찰되어 UCP `max-age ≥ 60` 요구를 충족하려면 별도 경로 헤더 조정이 필요합니다.
+예약 워크플로 원본은 sources/catalog-refresh.workflow.yml 입니다. main에는 .github/workflows/catalog-refresh.yml만 추가하고, 실행 시 preview를 체크아웃합니다. UTC 생물 매 3시간 17분, 용품 매 6시간 29분, 누락 검토 매일 02:43입니다. GitHub Actions는 지연될 수 있습니다. 누락 검토도 전체 수집 증거가 없어 상품 삭제를 수행하지 않습니다. GITHUB_TOKEN contents:write는 이 저장소의 preview 데이터 커밋에만 사용하며 외부 토큰을 저장하지 않습니다. 자동 커밋 허용 경로는 dist/catalog.json, dist/source-snapshot.json, dist/collector-status.json, dist/admin/status.json입니다. main 사이트 콘텐츠는 변경하지 않습니다.
 
-## 파일
+워크플로 등록 여부와 실제 실행·데이터 커밋·Render 반영 검증은 별개입니다. sources/automation-status.json과 /admin/에 확인 여부를 표시합니다. 첫 실제 실행의 최종 배포 검증 전에는 자동 갱신 성공으로 표시하지 않습니다. 직접 실행은 https://github.com/joonhyoung-kim/aqua-price/actions/workflows/catalog-refresh.yml 에서 Run workflow, main, mode=all 을 선택합니다.
 
-`dist/index.html`, `dist/app.js`: 화면·연결. `dist/data-model.js`: 입력 검증·필터. `dist/catalog.json`: 실제 확인 상품. `dist/source-snapshot.json`: 전달된 출처 확인본. `dist/ucp-profile.json`: 공개 협상 프로필. `DATA-CONTRACT.md`: 의미·제약. `scripts/build-catalog.cjs`: 로컬 변환. `scripts/serve.cjs`: 로컬 서버. `test/app.test.cjs`, `test/ui.test.cjs`: 계약·화면 로직 검증. `package.json`: 실행 명령. `.gitignore`: 임시 파일·환경 변수·Sites 설정 제외.
+## 관리자
 
-## 확장 확인본 범위
+/admin/은 45개 판매처의 수집 상태·상품 수·마지막 성공·오류·스케줄·전체 카탈로그 미지원 여부를 보여 주는 읽기 전용 화면입니다. 웹에서 수집 설정을 쓰지 않습니다. 설정 변경 링크는 GitHub 인증과 저장소 쓰기 권한을 요구하는 preview/sources/registry.json 편집 화면으로 연결됩니다.
 
-41개·13개 실제 상품 도메인을 표시하며, 조사 대상 사이트를 연결 판매처 수에 포함하지 않습니다. 19회 제한 검색(검색당 최대 8개·첫 페이지만)의 확인본입니다. 카드 24개를 먼저 표시하고 더 보기로 나머지를 엽니다. 필터 변경 시 첫 24개로 돌아갑니다. 2,000개 성능 검증은 메모리의 테스트 전용 데이터이며 공개 카탈로그에 넣지 않습니다.
+## 주요 파일
 
-AT-600F 이름이 겹치는 두 상품은 구성·소비전력·배송비·보증이 동일한지 확인되지 않았으므로 동등 상품 최저가라고 주장하지 않습니다. 사진은 승인된 API 비교 카드에 원격 HTTPS로 표시하며 다운로드·재호스팅하지 않습니다. 사진 HTTP 확인은 수집 작업에서 제공한 35개 HTTPS HEAD 200 결과이며, 미제공 사진 메타는 생성하지 않았습니다.
+- dist/index.html, app.js, data-model.js: 화면과 필터
+- dist/catalog.json, source-snapshot.json: 확인 상품과 출처
+- dist/collector-status.json, dist/admin/: 수집 상태와 관리자 화면
+- scripts/collector/, scripts/collect-catalog.cjs: 제한된 공개 수집
+- scripts/build-catalog.cjs, build-admin-status.cjs: 데이터 변환
+- sources/registry.json, automation-status.json, catalog-refresh.workflow.yml: 설정과 실행 증거
+- test/: 합성 테스트는 게시 데이터에 넣지 않음
 
-## 생물 하위분류
-
-생물을 선택하면 물고기·새우·수초·달팽이 중 하나로 조회합니다. 수초가 기본 선택이며, 용품을 보고 돌아와도 이전 생물 선택을 유지합니다. 분류는 확인된 subtype만 사용하며 상품명으로 추정하지 않습니다. 현재 생물은 물고기 3개·새우 2개·수초 7개·달팽이 1개입니다. 해당 분류가 없는 확인본의 빈 결과는 현재 연결된 상품정보에 없다는 뜻이며 모든 판매처의 품절이나 미판매를 뜻하지 않습니다. 검색·정렬·기간은 선택된 분류에 함께 적용합니다.
-
-## 판매처 직접 확인 생물 추가
-
-현재 확인본은 총 41개·13개 판매처입니다. 물고기 3개, 새우 2개, 수초 7개, 달팽이 1개, 용품 28개입니다. 카페24 API 35개를 유지하고 판매처 페이지 직접 확인 6개를 추가했습니다. source_kind=direct_retailer_product_page는 API 조회 결과가 아니며 JSON-LD Product Offers와 화면 가격을 대조한 관찰값입니다. 자동 크롤러·서버·실시간 수집은 구현하지 않았습니다. 최신 관찰은 2026-10-08 18:14 KST이며 카드마다 시각을 표시합니다. InStock은 판매처 표기로 결제 시점 재고 보장이 아닙니다. 직접 확인 생물 사진 6개는 제공된 원본 HTTPS URL을 연결합니다. 6개 모두 HEAD 200·image/jpeg를 확인했으며 다운로드·재호스팅하지 않습니다. 기존 API 사진 35개는 유지합니다. 사진 오류 시 판매처 안내를 표시하고 사진 없는 항목은 축소된 링크 영역을 사용합니다. 등록일·배송비·판매량 미확인 규칙과 main 보존은 동일합니다. API 35개에 해당하는 검색 범위와 사진 범위는 기존 그대로입니다.
+Sites .openai/hosting.json과 원본 저장소 토큰은 포함하지 않습니다. UCP 프로필은 읽기 전용이며 결제·배송 API를 제공하지 않습니다. 기존 Render 캐시 헤더는 UCP max-age 60초 요구와 별도 점검이 필요한 상태입니다.

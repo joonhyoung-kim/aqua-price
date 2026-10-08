@@ -2412,29 +2412,39 @@
       "officialAliases": [],
       "original45": false,
       "userApprovedAdditional": true,
-      "platform": "custom_or_unverified",
-      "adapter": "product_jsonld",
-      "enabled": false,
+      "platform": "Custom Durian public shop",
+      "adapter": "wpet_public_price",
+      "enabled": true,
       "photosAllowed": true,
-      "technicalReadiness": "adapter_not_implemented",
-      "currentIntegrationStatus": "custom_detail_adapter_not_implemented",
-      "products": [],
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "single_offer_sample_verified_partial_category_discovery",
+      "products": [
+        {
+          "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1918&GC=GD00",
+          "type": "live",
+          "subtype": "fish"
+        }
+      ],
       "maxRequests": 20,
       "delayMs": 2000,
       "cacheTtlMs": 10800000,
       "timeoutMs": 15000,
       "maxBytes": 2000000,
       "blockers": [
-        "Custom shop.goods_view detail has no Product JSON-LD; strict custom price adapter not implemented"
+        "Strict public single-offer details only; unknown options and inconsistent prices require review",
+        "Mixed listing includes supplies; each detail requires primary breadcrumb and scope conflict checks",
+        "Complete retailer coverage unverified"
       ],
       "discovery": {
-        "adapter": null,
-        "mappedSeedCount": 0,
-        "entryPoints": [],
-        "status": "not_implemented",
+        "adapter": "wpet_category_links",
+        "mappedSeedCount": 1,
+        "entryPoints": [
+          "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list"
+        ],
+        "status": "sample_verified",
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false
       }
     },
     {

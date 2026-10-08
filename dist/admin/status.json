@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T16:56:15.499Z",
+  "generatedAt": "2026-10-08T17:20:59.606Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -64,9 +64,9 @@
     }
   },
   "discoveryScope": {
-    "mappedSources": 36,
-    "observedSeeds": 145,
-    "adapterEnabledSources": 34,
+    "mappedSources": 37,
+    "observedSeeds": 146,
+    "adapterEnabledSources": 35,
     "fullCatalogCoverage": false
   },
   "sources": [
@@ -6063,37 +6063,82 @@
       "name": "신세계수족관",
       "domain": "wpet.co.kr",
       "officialUrl": "https://www.wpet.co.kr/",
-      "technicalReadiness": "adapter_not_implemented",
-      "enabled": false,
-      "snapshotProductCount": 0,
-      "collectorProductCount": 0,
+      "technicalReadiness": "adapter_sample_tested",
+      "enabled": true,
+      "snapshotProductCount": 3,
+      "collectorProductCount": 3,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 0,
-        "selectedUrlCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
         "productBudget": 10,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T16:51:43.559Z",
-      "collectorLastSuccess": null,
-      "collectorLastError": "Custom shop.goods_view detail has no Product JSON-LD; strict custom price adapter not implemented",
+      "collectorStatus": "partial_failure",
+      "collectorLastAttempt": "2026-10-08T17:18:50.120Z",
+      "collectorLastSuccess": "2026-10-08T17:19:02.321Z",
+      "collectorLastError": "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00",
       "blockers": [
-        "Custom shop.goods_view detail has no Product JSON-LD; strict custom price adapter not implemented"
+        "Strict public single-offer details only; unknown options and inconsistent prices require review",
+        "Mixed listing includes supplies; each detail requires primary breadcrumb and scope conflict checks",
+        "Complete retailer coverage unverified"
       ],
       "discovery": {
-        "adapter": null,
-        "mappedSeedCount": 0,
-        "entryPoints": [],
-        "status": "not_implemented",
+        "adapter": "wpet_category_links",
+        "mappedSeedCount": 1,
+        "entryPoints": [
+          "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list"
+        ],
+        "status": "partial_discovery",
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "representativeSeedCount": 1,
+        "pagesVisited": 1,
+        "pageBudget": 1,
+        "productBudget": 30,
+        "detailBudget": 8,
+        "newCandidates": 25,
+        "verifiedItems": 3,
+        "pendingCandidates": 22,
+        "pendingByGroup": {
+          "mixed": 22
+        },
+        "reviewRequired": 0,
+        "reviewReasons": {},
+        "reviewQueue": [],
+        "excludedCandidates": 0,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T17:18:50.122Z",
+        "errors": [
+          "expected_total_unverified:https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+          "page_budget_reached:https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1851&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1841&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1833&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1816&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "nextUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list&page=2",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list"
+            ],
+            "headProbePending": false
+          }
+        ]
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": null
+      "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
       "id": "retailer-48",

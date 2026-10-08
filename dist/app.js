@@ -74,7 +74,7 @@ $('#moreResults').addEventListener('click', () => { visibleLimit += PAGE_SIZE; r
 $('#search').addEventListener('submit', event => { event.preventDefault(); filters.query = $('#query').value.trim(); render(); });
 $('#query').addEventListener('input', event => { filters.query = event.target.value.trim(); render(); });
 render();
-fetch('catalog.json', { cache: 'no-store' }).then(response => {
+fetch('catalog.json?view='+Date.now(), { cache: 'no-store' }).then(response => {
   if (!response.ok) throw Error('data response ' + response.status);
   return response.json();
 }).then(value => { catalog = AquaCatalog.validateCatalog(value); render(); }).catch(() => {

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "experimental": false,
   "connectedToSchedule": true,
-  "observedSourceCount": 36,
-  "observedCategoryCount": 145,
+  "observedSourceCount": 37,
+  "observedCategoryCount": 146,
   "observationsAreRepresentative": true,
   "sources": [
     {
@@ -2267,6 +2267,32 @@
           "requiresProductClassification": true,
           "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
           "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        }
+      ]
+    },
+    {
+      "id": "retailer-47",
+      "sourceDomain": "wpet.co.kr",
+      "platform": "Custom Durian public shop",
+      "adapter": "wpet_category_links",
+      "maxPages": 1,
+      "maxPagesPerCategory": 1,
+      "maxProducts": 30,
+      "maxProductVerifications": 3,
+      "allSourceCategoriesReviewed": false,
+      "completeness": "unknown_representative_categories_only",
+      "categories": [
+        {
+          "label": "열대어 (용품 혼재)",
+          "url": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+          "observedHref": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+          "type": null,
+          "subtype": null,
+          "mixedCategories": true,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+          "caution": "No title-only species guess; supplies and uncertain options held for review"
         }
       ]
     }

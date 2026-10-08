@@ -72,9 +72,15 @@ async function collectSource(source, previous={}, options={}) {
       state.coverage.visitedPages++;
       const observedAt=page.cacheHit?(page.fetchedAt || prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
       const context={...product,url:product.url,sourceId:source.id,domain:source.sourceDomain,name:source.name,photosAllowed:source.photosAllowed===true,verifiedPhotoUrls:source.verifiedPhotoUrls,observedAt};
-      const parsed=limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
+      const parsed=limits.adapter==='wpet_public_price'?require('./wpet-public.cjs').parseWpetPage(page.text,context):limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
       if(parsed.status!=='success'){state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;continue;}
       if(parsed.issues.some(x=>x!=='duplicate_offer')){state.errors.push(...parsed.issues.filter(x=>x!=='duplicate_offer').map(x=>x+':'+product.url));state.coverage.parseFailures++;}
+      parsed.items=parsed.items.filter(item=>{
+        if(item.type!=='live'||item.subtype!=='fish'||!/새우|우렁|달팽/.test(item.title))return true;
+        const classified=require('./classification.cjs').classifyProduct(page.text,item,{url:product.url,type:product.type,subtype:product.subtype,mixedCategories:false},{categories:[]});
+        if(classified.status!=='classified'){state.errors.push('known_subtype_conflict:'+product.url);state.coverage.parseFailures++;return false;}
+        item.type=classified.type;item.subtype=classified.subtype;item.classification_basis=classified.basis;return true;
+      });
       incoming.push(...parsed.items);if(!page.cacheHit){fresh++;updatedKeys.push(...parsed.items.map(p=>p.collector_key));}else updatedKeys.push(...parsed.items.filter(p=>!state.products.some(old=>old.collector_key===p.collector_key)).map(p=>p.collector_key));
     }
     const merged=reconcile(state.products,incoming,state.coverage);state.products=merged.products;state.updatedKeys=updatedKeys;state.deletionAllowed=merged.deletionAllowed;state.cache=prior.cache||{};state.requests=run.requests;state.lastRequestAt=run.lastRequest;

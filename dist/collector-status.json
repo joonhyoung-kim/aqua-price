@@ -1,7 +1,7 @@
 {
   "executionBudgetMs": 1080000,
   "deferredSourceIds": [],
-  "startedAt": "2026-10-08T16:51:43.555Z",
+  "startedAt": "2026-10-08T17:18:50.114Z",
   "mode": "reconcile",
   "runTrigger": "local",
   "githubRunId": null,
@@ -16308,11 +16308,11 @@
     {
       "id": "retailer-47",
       "domain": "wpet.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T16:51:43.559Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "requests": 0,
+      "status": "partial_failure",
+      "collectorLastAttempt": "2026-10-08T17:18:50.120Z",
+      "collectorLastSuccess": "2026-10-08T17:19:02.321Z",
+      "count": 3,
+      "requests": 7,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -16324,25 +16324,363 @@
       },
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 0,
-        "selectedUrlCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
         "productBudget": 10,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "discovery": null,
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 1,
+        "adapter": "wpet_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 1,
+        "productBudget": 30,
+        "detailBudget": 8,
+        "newCandidates": 25,
+        "verifiedItems": 3,
+        "pendingCandidates": 22,
+        "pendingByGroup": {
+          "mixed": 22
+        },
+        "reviewRequired": 0,
+        "reviewReasons": {},
+        "reviewQueue": [],
+        "excludedCandidates": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T17:18:50.122Z",
+        "errors": [
+          "expected_total_unverified:https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+          "page_budget_reached:https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1851&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1841&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1833&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1816&GC=GD00",
+          "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "nextUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list&page=2",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list"
+            ],
+            "headProbePending": false
+          }
+        ]
+      },
       "discoveryProgress": {
         "schemaVersion": 1,
-        "cursor": null,
-        "categories": [],
-        "pendingCandidates": [],
+        "cursor": {
+          "schemaVersion": 1,
+          "nextCategoryIndex": 0,
+          "categories": {
+            "wpet.co.kr:wpet:GD00": {
+              "entryUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+              "nextUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list&page=2",
+              "seenKeys": [
+                "wpet.co.kr:1918",
+                "wpet.co.kr:1860",
+                "wpet.co.kr:1851",
+                "wpet.co.kr:1841",
+                "wpet.co.kr:1833",
+                "wpet.co.kr:1816",
+                "wpet.co.kr:1814",
+                "wpet.co.kr:1776",
+                "wpet.co.kr:1773",
+                "wpet.co.kr:1772",
+                "wpet.co.kr:1754",
+                "wpet.co.kr:1751",
+                "wpet.co.kr:1711",
+                "wpet.co.kr:1707",
+                "wpet.co.kr:1705",
+                "wpet.co.kr:1688",
+                "wpet.co.kr:1687",
+                "wpet.co.kr:1686",
+                "wpet.co.kr:1685",
+                "wpet.co.kr:1684",
+                "wpet.co.kr:1678",
+                "wpet.co.kr:1565",
+                "wpet.co.kr:1547",
+                "wpet.co.kr:1520",
+                "wpet.co.kr:1486"
+              ],
+              "cycleStartedAt": "2026-10-08T17:18:50.123Z",
+              "cyclesCompleted": 0,
+              "lastCycle": null,
+              "visitedPageUrls": [
+                "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list"
+              ],
+              "headProbePending": false,
+              "lastAttempt": "2026-10-08T17:18:50.122Z"
+            }
+          }
+        },
+        "categories": [
+          {
+            "url": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "label": "열대어 (용품 혼재)",
+            "visitedPages": [
+              "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list"
+            ],
+            "expectedProductCount": null,
+            "terminalPageReached": false,
+            "coverageComplete": false,
+            "errors": [
+              "expected_total_unverified",
+              "page_budget_reached"
+            ],
+            "headProbe": false,
+            "headProbeDeferred": false,
+            "nextPage": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list&page=2",
+            "cycleSeenProductCount": 25
+          }
+        ],
+        "pendingCandidates": [
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1851&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true,
+            "retryAfter": "2026-10-09T17:19:02.322Z"
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1841&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true,
+            "retryAfter": "2026-10-09T17:19:02.322Z"
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1833&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true,
+            "retryAfter": "2026-10-09T17:19:02.322Z"
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1816&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true,
+            "retryAfter": "2026-10-09T17:19:02.322Z"
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true,
+            "retryAfter": "2026-10-09T17:19:02.322Z"
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1773&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1772&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1754&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1751&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1711&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1707&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1705&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1688&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1687&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1686&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1685&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1684&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1678&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1565&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1547&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1520&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1486&GC=GD00",
+            "type": null,
+            "subtype": null,
+            "mixedCategories": true,
+            "classificationBasis": "User-provided URL; public mixed listing and primary product breadcrumb reviewed",
+            "discoveredInCategory": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
+            "discoveredAt": "2026-10-08T16:36:33.842Z",
+            "requiresProductClassification": true
+          }
+        ],
         "reviewQueue": [],
         "excludedCandidates": [],
         "requiresManualReview": false,
         "blockedUntil": null
       },
       "errors": [
-        "Custom shop.goods_view detail has no Product JSON-LD; strict custom price adapter not implemented"
+        "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1851&GC=GD00",
+        "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1841&GC=GD00",
+        "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1833&GC=GD00",
+        "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1816&GC=GD00",
+        "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00"
       ],
       "attemptedThisExecution": true,
       "executionRunId": null,
@@ -16713,7 +17051,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -17097,7 +17435,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -17467,7 +17805,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -17852,7 +18190,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -17895,21 +18233,16 @@
       "errors": [
         "Parent-reported HTTP403; manual review required, no requests or alternate route"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     }
   ],
   "executionBudgetLimited": false,
-  "finishedAt": "2026-10-08T16:55:25.692Z",
+  "finishedAt": "2026-10-08T17:19:03.820Z",
   "attemptedSourceIds": [
-    "retailer-47",
-    "retailer-48",
-    "retailer-49",
-    "retailer-50",
-    "retailer-51",
-    "retailer-52"
+    "retailer-47"
   ],
   "executionEnvironment": "local",
-  "productChanges": 37
+  "productChanges": 3
 }

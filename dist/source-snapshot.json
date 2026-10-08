@@ -10,10 +10,10 @@
     "merchant_count": 37,
     "live_plant_count": 15,
     "fish_count": 21,
-    "shrimp_count": 5,
+    "shrimp_count": 4,
     "snail_count": 1,
-    "fish_or_shrimp_count": 26,
-    "gear_count": 37,
+    "fish_or_shrimp_count": 25,
+    "gear_count": 38,
     "verified_https_photos": 75,
     "direct_retailer_products": 65
   },
@@ -1798,8 +1798,8 @@
       "seller_domain": "bizidduk.com",
       "source_kind": "direct_retailer_product_page",
       "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
-      "type": "live",
-      "subtype": "shrimp",
+      "type": "gear",
+      "subtype": null,
       "title": "생이새우 10 마리",
       "variant_title": "10마리 묶음",
       "quantity_per_pack": 10,
@@ -1827,7 +1827,8 @@
         "permission_basis": "explicit_user_instruction",
         "source_page_url": "https://bizidduk.com/product/생이새우-10-마리/1167/",
         "downloaded_or_rehosted": false
-      }
+      },
+      "classification_basis": "Verified product breadcrumb explicitly places this product under feed/supplies; live-food animals are not ornamental livestock"
     },
     {
       "id": "retailer-13:cafe24_spaquari_1_11:default",

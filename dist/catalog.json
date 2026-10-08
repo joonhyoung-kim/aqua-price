@@ -6,7 +6,7 @@
   "notice": "상품정보 확인본입니다. 가격은 항목별 확인 시각 기준이며 실시간 최저가·전체 판매처 비교가 아닙니다. 갱신 실패 시 마지막 확인 정보를 보존합니다. 배송비와 현재 재고는 판매처에서 확인하세요.",
   "sourceName": "Cafe24 Global Catalog MCP + directly verified retailer product pages",
   "sourceDocumentationUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
-  "livestockNotice": "이번 확인본: 물고기 21개 · 새우 5개 · 수초 15개 · 달팽이 1개. 공식 API 수초와 판매처 페이지 직접 확인 생물을 함께 표시합니다.",
+  "livestockNotice": "이번 확인본: 물고기 21개 · 새우 4개 · 수초 15개 · 달팽이 1개. 공식 API 수초와 판매처 페이지 직접 확인 생물을 함께 표시합니다.",
   "sellers": [
     {
       "id": "mimineaqua.co.kr",
@@ -2089,8 +2089,8 @@
       "originalTitle": "생이새우 10 마리",
       "spec": "판매단위/옵션: 10마리 묶음",
       "variantId": null,
-      "type": "live",
-      "subtype": "shrimp",
+      "type": "gear",
+      "subtype": null,
       "observedAt": "2026-10-08T09:48:04.993Z",
       "registeredAt": null,
       "price": {
@@ -2104,7 +2104,7 @@
       "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
       "sourceKind": "direct_retailer_product_page",
       "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
-      "classificationBasis": null,
+      "classificationBasis": "Verified product breadcrumb explicitly places this product under feed/supplies; live-food animals are not ornamental livestock",
       "discoveryCategoryUrl": null,
       "quantityPerPack": 10,
       "pairsPerPack": null,

@@ -2,126 +2,1134 @@
   "schemaVersion": 1,
   "status": "ready",
   "reason": "",
-  "asOf": "2026-10-08T07:59:03Z",
-  "notice": "카페24 공식 카탈로그에서 2026년 10월 8일 16:59(KST)에 확인한 상품정보입니다. 실시간 최저가 또는 전체 판매점 비교가 아니며, 배송비와 최종 재고·가격은 판매처에서 확인하세요.",
+  "asOf": "2026-10-08T08:26:32.120263+00:00",
+  "notice": "카페24 공식 카탈로그에서 확인한 35개 상품의 고정 확인본입니다. 항목별 확인 시각 기준 가격이며, 실시간 최저가·전체 판매처 비교가 아닙니다. 배송비와 현재 재고는 판매처에서 확인하세요.",
   "sourceName": "Cafe24 Global Catalog MCP",
   "sourceDocumentationUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
-  "livestockNotice": "이번 연동에서 확인된 생물 상품이 없습니다. 이번 제한된 검색의 결과이며 전체 카탈로그에 생물이 없다는 뜻은 아닙니다.",
+  "livestockNotice": "이번 확인본의 생물은 수초 7개입니다. 물고기·관상새우 상품은 아직 확보하지 못했습니다.",
   "sellers": [
     {
-      "id": "auroommobile.com",
-      "name": "auroommobile.com",
-      "officialUrl": "https://auroommobile.com/",
+      "id": "mimineaqua.co.kr",
+      "name": "mimineaqua.co.kr",
+      "officialUrl": "https://mimineaqua.co.kr/",
       "sellerNameConfirmed": false
     },
     {
-      "id": "honeystore033.cafe24.com",
-      "name": "honeystore033.cafe24.com",
-      "officialUrl": "https://honeystore033.cafe24.com/",
+      "id": "sangaqua.co.kr",
+      "name": "sangaqua.co.kr",
+      "officialUrl": "https://sangaqua.co.kr/",
       "sellerNameConfirmed": false
     },
     {
-      "id": "honeystore081.cafe24.com",
-      "name": "honeystore081.cafe24.com",
-      "officialUrl": "https://honeystore081.cafe24.com/",
+      "id": "alphafish.co.kr",
+      "name": "alphafish.co.kr",
+      "officialUrl": "https://alphafish.co.kr/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "raraaqua.com",
+      "name": "raraaqua.com",
+      "officialUrl": "https://raraaqua.com/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "samaqua.com",
+      "name": "samaqua.com",
+      "officialUrl": "https://samaqua.com/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "aquauju.com",
+      "name": "aquauju.com",
+      "officialUrl": "https://aquauju.com/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "zoonimal.co.kr",
+      "name": "zoonimal.co.kr",
+      "officialUrl": "https://zoonimal.co.kr/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "sonstory.co.kr",
+      "name": "sonstory.co.kr",
+      "officialUrl": "https://sonstory.co.kr/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "honeystore075.cafe24.com",
+      "name": "honeystore075.cafe24.com",
+      "officialUrl": "https://honeystore075.cafe24.com/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "dpaqua.com",
+      "name": "dpaqua.com",
+      "officialUrl": "https://dpaqua.com/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "sulawesishrimpmart.com",
+      "name": "sulawesishrimpmart.com",
+      "officialUrl": "https://sulawesishrimpmart.com/",
+      "sellerNameConfirmed": false
+    },
+    {
+      "id": "hyunjeen043.cafe24.com",
+      "name": "hyunjeen043.cafe24.com",
+      "officialUrl": "https://hyunjeen043.cafe24.com/",
       "sellerNameConfirmed": false
     }
   ],
   "products": [
     {
-      "id": "cafe24_auroom260404_1_24799",
+      "id": "cafe24_miminecorp_1_16946",
       "verified": true,
-      "sellerId": "auroommobile.com",
-      "sourceUrl": "https://auroommobile.com/product/detail.html?product_no=24799",
-      "name": "LED 미니어항 세트",
-      "originalTitle": "LED 어항 수도 여과기 시계 달력 온도계 탁상어항 인테리어수족관 수족관세트 미니어항 가정",
-      "description": "LED 어항 수도 여과기 시계 달력 온도계 탁상어항 인테리어수족관 수족관세트 미니어항 가정",
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=16946",
+      "name": "미미네아쿠아 2구 활착수초 - 모듬 수초",
+      "originalTitle": "미미네아쿠아 2구 활착수초 - 모듬 수초",
       "spec": "옵션: 기본",
-      "variantId": "cafe24_auroom260404_1_24799_P000BKRV000A",
-      "type": "gear",
-      "observedAt": "2026-10-08T07:59:03Z",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
       "registeredAt": null,
       "price": {
-        "amount": 62200,
+        "amount": 10000,
         "currency": "KRW"
       },
       "shipping": null,
       "cumulativeSales": null,
       "periodSales": null,
       "available": true,
-      "availabilityBasis": "Cafe24 catalog variant availability, not independently confirmed checkout stock",
-      "detailLookupVerified": false,
       "photo": {
-        "url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg3052b67433606047/auroom260404/web/product/big/20260825/20a8424a970ea557616b8b5e0091ab5b.jpg",
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202407/1f706431200fae371c3ee35ce4ec433e.jpg",
         "usePermission": "allowed",
         "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
         "permissionScope": "api-catalog-comparison",
         "generalRepublicationLicenseVerified": false,
-        "checkedAt": "2026-10-08T08:00:09Z"
+        "checkedAt": null
       }
     },
     {
-      "id": "cafe24_honeystore033_1_172379",
+      "id": "cafe24_sangaquamall_1_3586",
       "verified": true,
-      "sellerId": "honeystore033.cafe24.com",
-      "sourceUrl": "https://honeystore033.cafe24.com/product/detail.html?product_no=172379",
-      "name": "3구 상면 여과기 세트",
-      "originalTitle": "아크릴 미니 3구 버블 측면 저면 수족관 스폰지 상면 여과기 수조 A2WFGUI2Z",
-      "description": "아크릴 미니 상면 여과기 3구 수조 스펀지 어항 버블",
-      "spec": "옵션: 상면여과기3구세트",
-      "variantId": "cafe24_honeystore033_1_172379_P000JUZZ000A",
-      "type": "gear",
-      "observedAt": "2026-10-08T07:59:03Z",
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=3586",
+      "name": "[특가] 초보자 수초세트 (40cm어항용)",
+      "originalTitle": "[특가] 초보자 수초세트 (40cm어항용)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
       "registeredAt": null,
       "price": {
-        "amount": 33340,
+        "amount": 12000,
         "currency": "KRW"
       },
       "shipping": null,
       "cumulativeSales": null,
       "periodSales": null,
       "available": true,
-      "availabilityBasis": "Cafe24 catalog variant availability, not independently confirmed checkout stock",
-      "detailLookupVerified": true,
       "photo": {
-        "url": "https://cdn.ownerclan.com/zjwhkKCGzEihFldUiwfODE6SFJeLfmdcfXLICknCQ60/marketize/auto/as/v1.jpg",
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202403/3d025ea18207d30268e65404ccc89a78.jpg",
         "usePermission": "allowed",
         "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
         "permissionScope": "api-catalog-comparison",
         "generalRepublicationLicenseVerified": false,
-        "checkedAt": "2026-10-08T08:00:09Z"
+        "checkedAt": null
       }
     },
     {
-      "id": "cafe24_honeystore081_1_28988",
+      "id": "cafe24_miminecorp_1_16940",
       "verified": true,
-      "sellerId": "honeystore081.cafe24.com",
-      "sourceUrl": "https://honeystore081.cafe24.com/product/detail.html?product_no=28988",
-      "name": "LED 미니 수족관",
-      "originalTitle": "온도계 어항 LED 미니어항 미니 수도 미니수족관 달력 시계 아름다운 여과기 수족관 4AWA02396",
-      "description": "LED 미니 수족관 어항 수도 여과기 시계 달력 온도계",
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=16940",
+      "name": "미미네아쿠아 2구 활착수초 - 암브리아",
+      "originalTitle": "미미네아쿠아 2구 활착수초 - 암브리아",
       "spec": "옵션: 기본",
-      "variantId": "cafe24_honeystore081_1_28988_P000BQWY000A",
-      "type": "gear",
-      "observedAt": "2026-10-08T07:59:03Z",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
       "registeredAt": null,
       "price": {
-        "amount": 59060,
+        "amount": 11000,
         "currency": "KRW"
       },
       "shipping": null,
       "cumulativeSales": null,
       "periodSales": null,
       "available": true,
-      "availabilityBasis": "Cafe24 catalog variant availability, not independently confirmed checkout stock",
-      "detailLookupVerified": false,
       "photo": {
-        "url": "https://gi.esmplus.com/seedone12/SHOPP16/WA02396.jpg",
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202407/8a8be1aab2bffa66a10a31f0d8496e04.jpg",
         "usePermission": "allowed",
         "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
         "permissionScope": "api-catalog-comparison",
         "generalRepublicationLicenseVerified": false,
-        "checkedAt": "2026-10-08T08:00:09Z"
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_alphafish_1_2521",
+      "verified": true,
+      "sellerId": "alphafish.co.kr",
+      "sourceUrl": "https://alphafish.co.kr/product/detail.html?product_no=2521",
+      "name": "랜덤모듬수초 1포트 (1+1이벤트)",
+      "originalTitle": "랜덤모듬수초 1포트 (1+1이벤트)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 10000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/alphafish/web/product/big/202605/8f7f28687d2da69651a9feaf8b43bead.jpeg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_radcorp18_1_6503",
+      "verified": true,
+      "sellerId": "raraaqua.com",
+      "sourceUrl": "https://raraaqua.com/product/detail.html?product_no=6503",
+      "name": "[수초] 키우기 쉬운 수초 6종세트",
+      "originalTitle": "[수초] 키우기 쉬운 수초 6종세트",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 15000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/radcorp18/web/product/big/202608/3cce4833b48ea4104d5a6f696dc522d1.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_6011",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=6011",
+      "name": "미미네아쿠아 화산석 활착수초 - 부세파란드라 벨벳",
+      "originalTitle": "미미네아쿠아 화산석 활착수초 - 부세파란드라 벨벳",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 10000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202309/0c962cfb1f79e50832ceaa159a52dd06.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sangaquamall_1_11068",
+      "verified": true,
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=11068",
+      "name": "미니 포트수초 [미니마]",
+      "originalTitle": "미니 포트수초 [미니마]",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "observedAt": "2026-10-08T08:22:12.426429+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 10000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202403/c596f89495bb9a4464880ccda4dfeb3b.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_8754",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=8754",
+      "name": "아마존 측면여과기 20w (HJ-952) - 어항수족관 여과기",
+      "originalTitle": "아마존 측면여과기 20w (HJ-952) - 어항수족관 여과기",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 14000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202309/cf513f3a75efa75e2dd7e10b563423c4.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_8709",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=8709",
+      "name": "[theSALE] 업그레이드 고효율 어항 걸이식 상면여과기 S2",
+      "originalTitle": "[theSALE] 업그레이드 고효율 어항 걸이식 상면여과기 S2",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 19000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202309/4b2d0e0831dbaa9eca48cfebcadf6448.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_8755",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=8755",
+      "name": "아마존 측면여과기 10w (HJ-752) - 어항수족관 여과기",
+      "originalTitle": "아마존 측면여과기 10w (HJ-752) - 어항수족관 여과기",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 13000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202309/74d688432cca9222f4b5a24dac5ce7c6.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_8725",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=8725",
+      "name": "필그린 걸이식여과기 at-600f (어항여과기)",
+      "originalTitle": "필그린 걸이식여과기 at-600f (어항여과기)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 22000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202511/6e4cd7fdd362bb47897c4730601a77f2.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_radcorp18_1_8873",
+      "verified": true,
+      "sellerId": "raraaqua.com",
+      "sourceUrl": "https://raraaqua.com/product/detail.html?product_no=8873",
+      "name": "에하임 외부여과기 프로페셔널 5e 800 2078 어항여과기",
+      "originalTitle": "에하임 외부여과기 프로페셔널 5e 800 2078 어항여과기",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 1166990,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/radcorp18/web/product/big/202605/661a56ce8d16a8213f7b3ffb33503462.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_8724",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=8724",
+      "name": "필그린 걸이식여과기 at-301f (어항여과기)",
+      "originalTitle": "필그린 걸이식여과기 at-301f (어항여과기)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 10000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202511/8e8d9fefa180b2e24f8d5c8524322cde.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_kimsh468_1_751",
+      "verified": true,
+      "sellerId": "samaqua.com",
+      "sourceUrl": "https://samaqua.com/product/detail.html?product_no=751",
+      "name": "Kotobuki 고토부키 저면여과기 300 [30cm어항용]",
+      "originalTitle": "Kotobuki 고토부키 저면여과기 300 [30cm어항용]",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 13000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/kimsh468/web/product/big/202412/4dc2514d94b90c604696fc7fe9a0936f.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_aquauju_1_10748",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/detail.html?product_no=10748",
+      "name": "도핀 측면여과기 FC-603 (거북이어항 여과기)",
+      "originalTitle": "도핀 측면여과기 FC-603 (거북이어항 여과기)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:22:25.423070+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 13300,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/aquauju/web/product/big/202411/2841e38b632f183388f32b35515438a0.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_19410",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=19410",
+      "name": "아마존 저수위 걸이식 및 외부겸용 여과기 AMZ-YX500",
+      "originalTitle": "아마존 저수위 걸이식 및 외부겸용 여과기 AMZ-YX500",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:25:33.852846+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 51000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202509/12b64c3a38f2031f8367f7a32e1f03a8.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sangaquamall_1_4052",
+      "verified": true,
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=4052",
+      "name": "[특가] 테트라 스펀지여과기 슈퍼쌍기 [대]",
+      "originalTitle": "[특가] 테트라 스펀지여과기 슈퍼쌍기 [대]",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:25:33.852846+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 19000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202403/da9541ee4a0a65fe4d4581a2d79da696.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sangaquamall_1_865",
+      "verified": true,
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=865",
+      "name": "필그린 걸이식 여과기 AT-600F [6.5w]",
+      "originalTitle": "필그린 걸이식 여과기 AT-600F [6.5w]",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:25:33.852846+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 18000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202606/8d6704fa0732aed9a248af709bd5c6bd.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sangaquamall_1_19352",
+      "verified": true,
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=19352",
+      "name": "[신형] 에하임 2214외부여과기 [클래식VARIO+e 250]",
+      "originalTitle": "[신형] 에하임 2214외부여과기 [클래식VARIO+e 250]",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:25:33.852846+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 380000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202509/6af37a9aa56811962ee4f5616aa504d5.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sangaquamall_1_20238",
+      "verified": true,
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=20238",
+      "name": "필그린 하트온 DC 외부여과기 [HO-2000]",
+      "originalTitle": "필그린 하트온 DC 외부여과기 [HO-2000]",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:25:33.852846+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 280000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202606/505e35bbcb77db52694b2fbf5352cef4.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sangaquamall_1_365",
+      "verified": true,
+      "sellerId": "sangaqua.co.kr",
+      "sourceUrl": "https://sangaqua.co.kr/product/detail.html?product_no=365",
+      "name": "[특가] 에하임 외부여과기 뉴클래식 2213",
+      "originalTitle": "[특가] 에하임 외부여과기 뉴클래식 2213",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "filter",
+      "observedAt": "2026-10-08T08:25:33.852846+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 170000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/sangaquamall/web/product/big/202403/c4a0eec786b3119a4ac438f2ad2e5e1e.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_18731",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=18731",
+      "name": "미미네아쿠아 수조어항용 걸이식 아크릴 모스선반 4단",
+      "originalTitle": "미미네아쿠아 수조어항용 걸이식 아크릴 모스선반 4단",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "moss_shelf",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 15000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202502/d12d16c2a691fbf17a29a4799ffc485d.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_zoonimal_1_7791",
+      "verified": true,
+      "sellerId": "zoonimal.co.kr",
+      "sourceUrl": "https://zoonimal.co.kr/product/detail.html?product_no=7791",
+      "name": "황호석3kg/인테리어 조경석 수조장식 수석 어항돌(랜덤)",
+      "originalTitle": "황호석3kg/인테리어 조경석 수조장식 수석 어항돌(랜덤)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "hardscape",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 12000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/zoonimal/web/product/big/202501/32388b000db09b19d24d6c0e853abb90.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_3119",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=3119",
+      "name": "LDA 화이트 아크릴뚜껑 수조 (중) 400",
+      "originalTitle": "LDA 화이트 아크릴뚜껑 수조 (중) 400",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "tank",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 35000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202308/0a921e892c8e35c421cccb67d0c2eee8.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_18730",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=18730",
+      "name": "미미네아쿠아 수조어항용 걸이식 아크릴 모스선반 3단",
+      "originalTitle": "미미네아쿠아 수조어항용 걸이식 아크릴 모스선반 3단",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "moss_shelf",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 12000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202502/4b6616cb1628706ea3ff5249e1d28e69.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_miminecorp_1_18728",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/detail.html?product_no=18728",
+      "name": "미미네아쿠아 수조어항용 아크릴 계단식 모스선반 3단",
+      "originalTitle": "미미네아쿠아 수조어항용 아크릴 계단식 모스선반 3단",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "moss_shelf",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 15000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/miminecorp/web/product/big/202502/73b41792c6bce383dfc049670ec71901.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_yeoju_1_3529",
+      "verified": true,
+      "sellerId": "sonstory.co.kr",
+      "sourceUrl": "https://sonstory.co.kr/product/detail.html?product_no=3529",
+      "name": "분청 해바라기 수반 L 어항 수조",
+      "originalTitle": "분청 해바라기 수반 L 어항 수조",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "ceramic_aquarium_bowl",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 36000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/yeoju/web/product/big/202210/d8f67c38a09555030bbdf654df382c03.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_honeystore075_1_141608",
+      "verified": true,
+      "sellerId": "honeystore075.cafe24.com",
+      "sourceUrl": "https://honeystore075.cafe24.com/product/detail.html?product_no=141608",
+      "name": "수족관은신처 장식품은신처 겸 통나무 아름다운 수조장식품 수조온도계 수초 M3W127DE2",
+      "originalTitle": "수족관은신처 장식품은신처 겸 통나무 아름다운 수조장식품 수조온도계 수초 M3W127DE2",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "ornament_hide",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 42950,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cdn.ownerclan.com/Qnj_rxM0zxYLIq3SJrDpBWUU67TqhObLb1vQt1qpFXY/marketize/auto/as/v1.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_honeystore075_1_141627",
+      "verified": true,
+      "sellerId": "honeystore075.cafe24.com",
+      "sourceUrl": "https://honeystore075.cafe24.com/product/detail.html?product_no=141627",
+      "name": "어항인큐베이터 부화통인큐베이터 쉬림프 부화기 산란통 아름다운 수조장식품 M3W8AA8E2",
+      "originalTitle": "어항인큐베이터 부화통인큐베이터 쉬림프 부화기 산란통 아름다운 수조장식품 M3W8AA8E2",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "breeding_box",
+      "observedAt": "2026-10-08T08:25:47.071963+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 25720,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cdn.ownerclan.com/_PKWJ7uaXFmleORMJb2P_nJbS1L1Gc7_0ygvBUVaoK0/marketize/auto/as/v1.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_woqja0219_1_2079",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/detail.html?product_no=2079",
+      "name": "BMP BST-S 배면 섬프 일체형 어항 수조 수족관 3중 여과 시스템 LED 조명 포함 (400x240x250mm)",
+      "originalTitle": "BMP BST-S 배면 섬프 일체형 어항 수조 수족관 3중 여과 시스템 LED 조명 포함 (400x240x250mm)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "aquarium_set",
+      "observedAt": "2026-10-08T08:26:32.120263+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 105000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/woqja0219/web/product/big/202606/cc00916aabdeb399c1aaaff34f96d877.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sul06_1_37",
+      "verified": true,
+      "sellerId": "sulawesishrimpmart.com",
+      "sourceUrl": "https://sulawesishrimpmart.com/product/detail.html?product_no=37",
+      "name": "리빌 2세대 슬림 RGB LED 수족관 조명 450 (열대어 수초용)",
+      "originalTitle": "리빌 2세대 슬림 RGB LED 수족관 조명 450 (열대어 수초용)",
+      "spec": "옵션: 블랙",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "lighting",
+      "observedAt": "2026-10-08T08:26:32.120263+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 72000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg895b45617975073/sul06/web/product/big/20240329/c8f06e37fa1bc1ab73c276e96444159d.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_woqja0219_1_2080",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/detail.html?product_no=2080",
+      "name": "BMP BST-L 배면 섬프 일체형 어항 수조 수족관 3중 여과 시스템 LED 조명 포함 (500x270x300mm)",
+      "originalTitle": "BMP BST-L 배면 섬프 일체형 어항 수조 수족관 3중 여과 시스템 LED 조명 포함 (500x270x300mm)",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "aquarium_set",
+      "observedAt": "2026-10-08T08:26:32.120263+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 115000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/woqja0219/web/product/big/202606/3f034eeaa11c6d28e8e679ceaec8cb59.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sul06_1_28",
+      "verified": true,
+      "sellerId": "sulawesishrimpmart.com",
+      "sourceUrl": "https://sulawesishrimpmart.com/product/detail.html?product_no=28",
+      "name": "리빌 2세대 슬림 RGB LED 수족관 조명 300 (열대어 수초용)",
+      "originalTitle": "리빌 2세대 슬림 RGB LED 수족관 조명 300 (열대어 수초용)",
+      "spec": "옵션: 검은색",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "lighting",
+      "observedAt": "2026-10-08T08:26:32.120263+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 57000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg895b45617975073/sul06/web/product/big/20240329/0e1c494c9dac2ace56494d7d720f91f9.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_hyunjeen043_1_27244",
+      "verified": true,
+      "sellerId": "hyunjeen043.cafe24.com",
+      "sourceUrl": "https://hyunjeen043.cafe24.com/product/detail.html?product_no=27244",
+      "name": "1갤런 베타 수족관 LED 조명 전원 필터 있는 인공 수생 식물이 포함된 물고기 그릇",
+      "originalTitle": "1갤런 베타 수족관 LED 조명 전원 필터 있는 인공 수생 식물이 포함된 물고기 그릇",
+      "spec": "옵션: 기본",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "aquarium_set",
+      "observedAt": "2026-10-08T08:26:32.120263+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 91000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg3090b31672016017/hyunjeen043/web/product/12945155349/main_01.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "cafe24_sul06_1_45",
+      "verified": true,
+      "sellerId": "sulawesishrimpmart.com",
+      "sourceUrl": "https://sulawesishrimpmart.com/product/detail.html?product_no=45",
+      "name": "리빌 2세대 슬림 RGB LED 수족관 조명 900 (열대어 수초용)",
+      "originalTitle": "리빌 2세대 슬림 RGB LED 수족관 조명 900 (열대어 수초용)",
+      "spec": "옵션: 블랙",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "lighting",
+      "observedAt": "2026-10-08T08:26:32.120263+00:00",
+      "registeredAt": null,
+      "price": {
+        "amount": 123000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "photo": {
+        "url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg895b45617975073/sul06/web/product/big/20240329/0e1218a4352476ea9b73f0245ccd7ade.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+        "permissionScope": "api-catalog-comparison",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
       }
     }
   ]

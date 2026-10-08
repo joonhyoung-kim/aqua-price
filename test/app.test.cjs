@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { validateCatalog, selectProducts, usablePhoto } = require('../dist/data-model.js');
+const { buildCatalog } = require('../scripts/build-catalog.cjs');
 // Synthetic test fixtures only; never copied into the published catalog.
 const AS_OF = '2026-10-08T00:00:00.000Z';
 function product(id, overrides = {}) {
@@ -11,23 +12,27 @@ function product(id, overrides = {}) {
 function catalog(products = []) { return { schemaVersion: 1, status: 'ready', reason: '', asOf: AS_OF, sellers: [{ id: 'test-seller', name: '테스트 전용 판매처', officialUrl: 'https://example.invalid/' }], products }; }
 function select(data, overrides = {}) { return selectProducts(data, { type: 'live', sort: 'low', days: 7, query: '', ...overrides }); }
 
-test('published catalog preserves the supplied three actual items and unknown facts', () => {
+test('published catalog preserves the supplied verified items, categories and unknown facts', () => {
   const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
   validateCatalog(data);
-  assert.equal(data.status, 'ready'); assert.equal(data.products.length, 3); assert.equal(data.sellers.length, 3);
-  assert.equal(data.asOf, '2026-10-08T07:59:03Z');
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
+  assert.equal(data.status, 'ready'); assert.equal(data.products.length, snapshot.summary.offer_count); assert.equal(data.sellers.length, snapshot.summary.merchant_count);
+  assert.equal(data.products.filter(p => p.type === 'live').length, snapshot.summary.live_plant_count);
+  assert.equal(data.products.filter(p => p.type === 'gear').length, snapshot.summary.gear_count);
+  assert.ok(data.products.filter(p => p.type === 'live').every(p => p.subtype === 'aquatic_plant'));
   for (const [index, p] of data.products.entries()) {
     assert.equal(p.id, snapshot.items[index].id); assert.equal(p.originalTitle, snapshot.items[index].title);
     assert.equal(p.sourceUrl, snapshot.items[index].product_url); assert.equal(p.price.amount, snapshot.items[index].price_amount);
     assert.equal(p.photo.url, snapshot.items[index].photo.verified_https_url);
+    assert.equal(p.observedAt, snapshot.items[index].observed_at_utc);
     assert.equal(p.registeredAt, null); assert.equal(p.shipping, null); assert.equal(p.periodSales, null); assert.equal(p.cumulativeSales, null);
     assert.equal(new URL(p.sourceUrl).hostname, p.sellerId); assert.equal(p.photo.permissionScope, 'api-catalog-comparison');
     assert.equal(p.photo.generalRepublicationLicenseVerified, false);
   }
   assert.deepEqual(select(data).rows, []);
   const displayed = select(data, { type: 'gear', includeUnknownRegistration: true });
-  assert.deepEqual(displayed.rows.map(p => p.price.amount), [33340, 59060, 62200]);
+  assert.equal(displayed.rows.length, snapshot.summary.gear_count);
+  assert.deepEqual(displayed.rows.map(p => p.price.amount), snapshot.items.filter(p => p.type === 'gear').map(p => p.price_amount).sort((a,b) => a-b));
 });
 test('pending state contains no products and explains unavailable data', () => {
   const pending = { schemaVersion: 1, status: 'pending', reason: '아직 제공되지 않음', asOf: null, sellers: [], products: [] };
@@ -101,4 +106,24 @@ test('UI controls, data script order and honest status exist in HTML', () => {
   for (const value of [7, 30, 90]) assert.ok(html.includes(`value="${value}"`));
   assert.ok(html.indexOf('src="data-model.js"') < html.indexOf('src="app.js"'));
   assert.ok(html.includes('id="dataStatus"')); assert.ok(html.includes('id="sellerLinks"'));
+});
+test('expanded snapshot deduplicates sellers and requires explicit category for new items', () => {
+  const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
+  const next = structuredClone(snapshot.items[1]); next.id = 'SYNTHETIC-TEST-ONLY'; next.type = 'live'; next.title = 'TEST LIVESTOCK'; next.photo = null;
+  snapshot.items.push(next);
+  const result = buildCatalog(snapshot);
+  assert.equal(result.sellers.length, snapshot.summary.merchant_count); assert.equal(result.products.length, snapshot.summary.offer_count + 1);
+  assert.equal(result.products.at(-1).type, 'live'); assert.equal(result.products.at(-1).name, 'TEST LIVESTOCK');
+  assert.equal(result.products.at(-1).photo.url, null); assert.equal(result.products.at(-1).registeredAt, null);
+  delete next.type; assert.throws(() => buildCatalog(snapshot), /검증된 live\/gear/);
+});
+test('2,000-item filtering and price sorting meet a one-second local processing budget', () => {
+  const { performance } = require('node:perf_hooks');
+  const data = catalog(Array.from({ length: 2000 }, (_, i) => product('test-' + i, { registeredAt: null, price: { amount: 2000 - i, currency: 'KRW' } })));
+  const start = performance.now();
+  const result = select(data, { includeUnknownRegistration: true });
+  const elapsed = performance.now() - start;
+  assert.equal(result.rows.length, 2000); assert.equal(result.rows[0].price.amount, 1); assert.equal(result.rows.at(-1).price.amount, 2000);
+  assert.ok(elapsed < 1000, `processing ${elapsed.toFixed(1)} ms`);
+  console.log(`2,000-item filtering/sorting: ${elapsed.toFixed(1)} ms (Node only; browser painting not measured)`);
 });

@@ -17,16 +17,16 @@ test('published catalog preserves the supplied verified items, categories and un
   validateCatalog(data);
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
   assert.equal(data.status, 'ready'); assert.equal(data.products.length, snapshot.summary.offer_count); assert.equal(data.sellers.length, snapshot.summary.merchant_count);
-  assert.equal(data.products.filter(p => p.type === 'live').length, snapshot.summary.live_plant_count);
+  assert.equal(data.products.filter(p => p.subtype === 'aquatic_plant').length, snapshot.summary.live_plant_count);
   assert.equal(data.products.filter(p => p.type === 'gear').length, snapshot.summary.gear_count);
-  assert.ok(data.products.filter(p => p.type === 'live').every(p => p.subtype === 'aquatic_plant'));
+  assert.equal(data.products.filter(p => p.subtype === 'fish').length, 3); assert.equal(data.products.filter(p => p.subtype === 'shrimp').length, 2); assert.equal(data.products.filter(p => p.subtype === 'snail').length, 1);
   for (const [index, p] of data.products.entries()) {
     assert.equal(p.id, snapshot.items[index].id); assert.equal(p.originalTitle, snapshot.items[index].title);
     assert.equal(p.sourceUrl, snapshot.items[index].product_url); assert.equal(p.price.amount, snapshot.items[index].price_amount);
-    assert.equal(p.photo.url, snapshot.items[index].photo.verified_https_url);
+    assert.equal(p.photo.url, snapshot.items[index].photo?.verified_https_url ?? null);
     assert.equal(p.observedAt, snapshot.items[index].observed_at_utc);
     assert.equal(p.registeredAt, null); assert.equal(p.shipping, null); assert.equal(p.periodSales, null); assert.equal(p.cumulativeSales, null);
-    assert.equal(new URL(p.sourceUrl).hostname, p.sellerId); assert.equal(p.photo.permissionScope, 'api-catalog-comparison');
+    assert.equal(new URL(p.sourceUrl).hostname, p.sellerId); assert.equal(p.photo.permissionScope, p.sourceKind === 'direct_retailer_product_page' ? 'product-comparison' : 'api-catalog-comparison');
     assert.equal(p.photo.generalRepublicationLicenseVerified, false);
   }
   assert.deepEqual(select(data).rows, []);
@@ -134,4 +134,11 @@ test('livestock filters use verified subtype, never infer category from title, a
  assert.equal(select(data).rows.length,5);
  assert.throws(()=>select(data,{subtype:'unknown'}),/잘못된 조회 조건/);
  const absent=select(catalog([product('plant',{subtype:'aquatic_plant'})]),{subtype:'fish'}); assert.deepEqual(absent.rows,[]); assert.match(absent.reason,/현재 연결된 상품정보/);
+});
+
+test('direct retailer evidence is separate from API and six livestock photos use verified original URLs',()=>{
+ const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/catalog.json'),'utf8'));
+ const direct=data.products.filter(p=>p.sourceKind==='direct_retailer_product_page'); assert.equal(direct.length,6); assert.equal(data.products.length,41); assert.equal(data.sellers.length,13);
+ assert.equal(data.products.filter(p=>p.sourceKind==='cafe24_global_catalog_api').length,35); assert.equal(data.products.filter(p=>p.photo.url).length,41);
+ for(const p of direct){assert.ok(p.photo.url.startsWith('https://'));assert.equal(p.photo.usePermission,'allowed');assert.equal(p.photo.permissionEvidenceUrl,p.sourceUrl);assert.equal(p.photo.permissionBasis,'explicit_user_instruction');assert.equal(p.registeredAt,null);assert.equal(p.shipping,null);assert.equal(p.periodSales,null);assert.match(p.availabilityBasis,/not checkout-confirmed/);assert.match(p.verificationMethod,/JSON-LD/);}
 });

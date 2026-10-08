@@ -66,13 +66,20 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://animallo.kr/"
+          "https://animallo.kr/product/list.html?cate_no=25"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -108,13 +115,24 @@
       "publicHttpApproved": true,
       "discovery": {
         "entryPoints": [
-          "http://www.greenfish.co.kr/"
+          "http://greenfish.co.kr/shop/shopbrand.html?xcode=002&type=X",
+          "http://greenfish.co.kr/shop/shopbrand.html?xcode=013&mcode=001&scode=001&type=X",
+          "http://greenfish.co.kr/shop/shopbrand.html?xcode=003&type=X",
+          "http://greenfish.co.kr/shop/shopbrand.html?xcode=005&type=X",
+          "http://greenfish.co.kr/shop/shopbrand.html?xcode=013&type=X"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "adapter_not_implemented",
+        "adapter": "not_implemented",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
         "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "knownProductUrlsOnly": true,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -195,13 +213,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://raraaqua.com/"
+          "https://raraaqua.com/category/%EA%B5%AC%ED%94%BC/580/",
+          "https://raraaqua.com/category/%EC%83%88%EC%9A%B0%EA%B0%80%EC%9E%AC%EC%8A%A4%EB%84%A4%EC%9D%BC/579/",
+          "https://raraaqua.com/category/%EC%88%98%EC%B4%88-N/594/",
+          "https://raraaqua.com/category/%EC%97%AC%EA%B3%BC%EB%AA%A8%ED%84%B0-N/651/",
+          "https://raraaqua.com/category/%EC%96%91%EC%84%9C%ED%8C%8C%EC%B6%A9%EB%A5%98-N/806/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -236,13 +265,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://medakagallery.com/"
+          "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+          "https://medakagallery.com/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/49/",
+          "https://medakagallery.com/category/%EC%84%A0%EB%B3%84-%EB%A9%94%EB%8B%A4%EC%B9%B4/68/",
+          "https://medakagallery.com/category/%EC%88%98%EC%B4%88/50/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -277,13 +316,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://liviaqua.co.kr/"
+          "https://liviaqua.co.kr/product/list.html?cate_no=24",
+          "https://liviaqua.co.kr/product/list.html?cate_no=63",
+          "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "https://liviaqua.co.kr/product/list.html?cate_no=43"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -318,13 +367,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://aquapro.kr/"
+          "https://aquapro.kr/product/list.html?cate_no=892",
+          "https://aquapro.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/932/",
+          "https://aquapro.kr/product/list.html?cate_no=1316",
+          "https://aquapro.kr/product/list.html?cate_no=689"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -366,13 +425,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://zoonimal.co.kr/"
+          "https://zoonimal.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4%EB%AC%BC%EA%B3%A0%EA%B8%B0/322/",
+          "https://zoonimal.co.kr/category/%EA%B5%AC%ED%94%BC/326/",
+          "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
+          "https://zoonimal.co.kr/category/%EC%88%98%EC%B4%88/403/",
+          "https://zoonimal.co.kr/category/%EC%96%B4%ED%95%AD%EC%9A%A9%ED%92%88/581/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -423,13 +493,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://alphafish.co.kr/"
+          "https://alphafish.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/82/",
+          "https://alphafish.co.kr/category/%EC%83%88%EC%9A%B0%EA%B0%80%EC%9E%AC/43/",
+          "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+          "https://alphafish.co.kr/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4%EC%96%91%EC%84%9C%EB%A5%98%ED%8C%8C%EC%B6%A9%EB%A5%98/54/",
+          "https://alphafish.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/63/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -464,13 +545,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://rooaqua.com/"
+          "https://rooaqua.com/product/list.html?cate_no=45",
+          "https://rooaqua.com/product/list.html?cate_no=70",
+          "https://rooaqua.com/category/%EC%83%88%EC%9A%B0-%EA%B0%80%EC%9E%AC/54/",
+          "https://rooaqua.com/product/list.html?cate_no=42",
+          "https://rooaqua.com/product/list.html?cate_no=25"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -505,13 +597,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://hanaaqua.com/"
+          "https://hanaaqua.com/category/%EA%B5%AC%ED%94%BC%EC%96%B4%EC%A2%85/1023/",
+          "https://hanaaqua.com/category/%EA%B4%80%EC%83%81%EC%83%88%EC%9A%B0/1024/",
+          "https://hanaaqua.com/category/25%EB%85%84-%EC%88%98%EC%B4%88/997/",
+          "https://hanaaqua.com/category/25%EB%85%84-%EC%9A%A9%ED%92%88/1017/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -546,13 +648,22 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://bizidduk.com/"
+          "https://bizidduk.com/product/list.html?cate_no=27",
+          "https://bizidduk.com/product/list.html?cate_no=36",
+          "https://bizidduk.com/product/list.html?cate_no=128"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 3,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -587,13 +698,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://riaqua.com/"
+          "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/",
+          "https://www.riaqua.com/category/%EC%83%88%EC%9A%B0/58/",
+          "https://www.riaqua.com/category/%EC%88%98%EC%B4%88/64/",
+          "https://www.riaqua.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/70/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -628,13 +749,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://xn--2e0bb8861auda.com/"
+          "https://xn--2e0bb8861auda.com/product/list.html?cate_no=29",
+          "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/",
+          "https://xn--2e0bb8861auda.com/product/list.html?cate_no=65",
+          "https://xn--2e0bb8861auda.com/product/list.html?cate_no=44"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -669,13 +800,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://liveaqua.kr/"
+          "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "https://www.liveaqua.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/97/",
+          "https://www.liveaqua.kr/product/list.html?cate_no=102",
+          "https://www.liveaqua.kr/product/list.html?cate_no=28"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -710,13 +851,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://aquavillage.co.kr/"
+          "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/",
+          "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+          "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/",
+          "https://www.aquavillage.co.kr/category/%EC%9A%A9%ED%92%88/85/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -751,13 +902,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://magicaqua.kr/"
+          "https://magicaqua.kr/product/list1_1.html?cate_no=276",
+          "https://magicaqua.kr/product/list2_1.html?cate_no=473",
+          "https://magicaqua.kr/product/list3_1.html?cate_no=302",
+          "https://magicaqua.kr/product/list.html?cate_no=306",
+          "https://magicaqua.kr/product/list11_1.html?cate_no=404"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -792,13 +954,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://oqua.co.kr/"
+          "https://oqua.co.kr/product/list.html?cate_no=518",
+          "https://oqua.co.kr/product/list.html?cate_no=73",
+          "https://oqua.co.kr/product/list.html?cate_no=119",
+          "https://oqua.co.kr/product/list.html?cate_no=504"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -866,13 +1038,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://seijin.co.kr/"
+          "https://www.seijin.co.kr/goods/goods_list.php?cateCd=086009",
+          "https://www.seijin.co.kr/goods/goods_list.php?cateCd=086028",
+          "https://www.seijin.co.kr/goods/goods_list.php?cateCd=086024",
+          "https://www.seijin.co.kr/goods/goods_list.php?cateCd=099",
+          "https://www.seijin.co.kr/goods/goods_list.php?cateCd=003"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "adapter_not_implemented",
+        "adapter": "not_implemented",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
         "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "knownProductUrlsOnly": true,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -949,13 +1132,24 @@
       "publicHttpApproved": true,
       "discovery": {
         "entryPoints": [
-          "http://www.aquapet.co.kr/"
+          "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=002",
+          "http://www.aquapet.co.kr/shop/shopbrand.html?type=M&xcode=002&mcode=008",
+          "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=004",
+          "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=001",
+          "http://www.aquapet.co.kr/shop/shopbrand.html?type=X&xcode=013"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "adapter_not_implemented",
+        "adapter": "not_implemented",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
         "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "knownProductUrlsOnly": true,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -990,13 +1184,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://a2be.net/"
+          "https://a2be.net/product/list.html?cate_no=748",
+          "https://a2be.net/product/list.html?cate_no=589",
+          "https://a2be.net/category/%EC%88%98%EC%B4%88/197/",
+          "https://a2be.net/product/list.html?cate_no=1017",
+          "https://a2be.net/product/list.html?cate_no=786"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1031,13 +1236,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://myungaqua.com/"
+          "https://www.myungaqua.com/category/%EA%B5%AC%ED%94%BC/147/",
+          "https://www.myungaqua.com/category/%EC%83%88%EC%9A%B0/146/",
+          "https://www.myungaqua.com/category/%EC%88%98%EC%B4%88/57/",
+          "https://www.myungaqua.com/category/%EC%96%B4%ED%95%AD/55/",
+          "https://www.myungaqua.com/category/%EC%97%AC%EA%B3%BC/58/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1217,13 +1433,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://trofish.net/"
+          "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=006",
+          "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=018",
+          "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=008",
+          "https://www.trofish.net/shop/shopbrand.html?xcode=001&type=X&mcode=005&scode=005"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "adapter_not_implemented",
+        "adapter": "not_implemented",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
         "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "knownProductUrlsOnly": true,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1323,13 +1549,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://suaqua.co.kr/"
+          "https://suaqua.co.kr/goods/goods_list.php?cateCd=001001",
+          "https://suaqua.co.kr/goods/goods_list.php?cateCd=001013",
+          "https://suaqua.co.kr/goods/goods_list.php?cateCd=019",
+          "https://suaqua.co.kr/goods/goods_list.php?cateCd=005",
+          "https://suaqua.co.kr/goods/goods_list.php?cateCd=001014"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "adapter_not_implemented",
+        "adapter": "not_implemented",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
         "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "knownProductUrlsOnly": true,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1364,13 +1601,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://selvas.co.kr/"
+          "https://selvas.co.kr/category/Glass-Tank-(%EC%88%98%EC%A1%B0)/4/",
+          "https://selvas.co.kr/category/Freshwater-filter-(%EC%97%AC%EA%B3%BC%EA%B8%B0)/475/",
+          "https://selvas.co.kr/category/Light-(%EC%A1%B0%EB%AA%85)/532/",
+          "https://selvas.co.kr/category/%EC%82%AC%EB%A3%8C/124/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1405,13 +1652,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://bluedragonaqua.com/"
+          "https://bluedragonaqua.com/product/list.html?cate_no=197",
+          "https://bluedragonaqua.com/product/list.html?cate_no=223",
+          "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "https://bluedragonaqua.com/product/list.html?cate_no=275"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1479,13 +1736,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://samaqua.com/"
+          "https://www.samaqua.com/category/%EA%B5%AC%ED%94%BC%EB%82%9C%ED%83%9C%EC%83%9D%EA%B3%BC%EC%86%A1%EC%82%AC%EB%A6%AC/470/",
+          "https://www.samaqua.com/category/%EC%83%88%EC%9A%B0%EA%B0%80%EC%9E%AC/476/",
+          "https://www.samaqua.com/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/699/",
+          "https://www.samaqua.com/category/%EC%B4%88%EB%B3%B4%EC%9E%90-%EC%88%98%EC%B4%88/460/",
+          "https://www.samaqua.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/27/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1605,13 +1873,23 @@
       "pricePolicy": "Keep JSON-LD base price; do not prioritize sale metadata without verified discount conditions.",
       "discovery": {
         "entryPoints": [
-          "https://mimineaqua.co.kr/"
+          "https://mimineaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/481/",
+          "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/217/",
+          "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
+          "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD/220/"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1646,13 +1924,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://aquauju.com/"
+          "https://aquauju.com/product/list.html?cate_no=448",
+          "https://aquauju.com/product/list.html?cate_no=463",
+          "https://aquauju.com/product/list.html?cate_no=466",
+          "https://aquauju.com/product/list.html?cate_no=421",
+          "https://aquauju.com/product/list.html?cate_no=26"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1694,13 +1983,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://dpaqua.com/"
+          "https://dpaqua.com/product/list.html?cate_no=24",
+          "https://dpaqua.com/product/list.html?cate_no=341",
+          "https://dpaqua.com/product/list.html?cate_no=406",
+          "https://dpaqua.com/product/list.html?cate_no=218"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1735,13 +2034,23 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://ampet.co.kr/"
+          "https://www.ampet.co.kr/product/list.html?cate_no=45",
+          "https://www.ampet.co.kr/product/list.html?cate_no=24",
+          "https://www.ampet.co.kr/product/list.html?cate_no=23",
+          "https://www.ampet.co.kr/product/list.html?cate_no=25"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 4,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1809,13 +2118,24 @@
       "pricePolicy": "Keep JSON-LD base price; do not prioritize sale metadata without verified discount conditions.",
       "discovery": {
         "entryPoints": [
-          "https://aquagardenshop.com/"
+          "https://aquagardenshop.com/product/list.html?cate_no=28",
+          "https://aquagardenshop.com/product/list.html?cate_no=74",
+          "https://aquagardenshop.com/product/list.html?cate_no=24",
+          "https://aquagardenshop.com/product/list.html?cate_no=140",
+          "https://aquagardenshop.com/product/list.html?cate_no=73"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "representative_categories_configured",
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
-        "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {
@@ -1914,13 +2234,24 @@
       ],
       "discovery": {
         "entryPoints": [
-          "https://ssadagun.com/"
+          "https://ssadagun.com/untitled-3",
+          "https://ssadagun.com/untitled-2",
+          "https://ssadagun.com/shop",
+          "https://ssadagun.com/untitled-9",
+          "https://ssadagun.com/untitled-10"
         ],
-        "status": "not_implemented",
-        "nextPagePath": null,
+        "status": "adapter_not_implemented",
+        "adapter": "not_implemented",
+        "mappedSeedCount": 5,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "maxProductVerifications": 3,
+        "cursorResume": true,
         "coverageComplete": false,
         "newProductDiscovery": false,
-        "knownProductUrlsOnly": true
+        "knownProductUrlsOnly": true,
+        "observationsAreRepresentative": true,
+        "deletionEnabled": false
       }
     },
     {

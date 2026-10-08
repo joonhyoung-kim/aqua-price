@@ -6,8 +6,8 @@ const vm = require('node:vm');
 const AquaCatalog = require('../dist/data-model.js');
 const actual = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
 const gear = actual.products.filter(p => p.type === 'gear').sort((a,b) => a.price.amount - b.price.amount);
-const plants = actual.products.filter(p=>p.subtype==='aquatic_plant');
-const fish = actual.products.filter(p=>p.subtype==='fish');
+const plants = actual.products.filter(p=>p.subtype==='aquatic_plant').sort((a,b)=>a.price.amount-b.price.amount);
+const fish = actual.products.filter(p=>p.subtype==='fish').sort((a,b)=>a.price.amount-b.price.amount);
 const live = actual.products.filter(p => p.type === 'live');
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 async function setup(data = actual, fail = false) {
@@ -53,7 +53,7 @@ test('sorts stay exclusive, unknown dates never become newest or sales ranking',
   app.sort('sales'); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /실제 판매량이 없습니다/);
   assert.equal(app.sorts.filter(b => b.attributes['aria-pressed'] === 'true').length, 1);
   app.sort('new'); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /신상품순으로 정렬할 수 없습니다/);
-  app.sort('low'); app.type('live'); assert.equal(app.names().length, actual.products.filter(p=>p.subtype==='aquatic_plant').length); assert.ok(app.nodes.coverageNotice.textContent.includes('수초 '+plants.length+'개')); assert.ok(app.nodes.coverageNotice.textContent.includes('물고기 '+fish.length+'개'));
+  app.sort('low'); app.type('live'); assert.equal(app.names().length, Math.min(24,plants.length)); assert.ok(app.nodes.coverageNotice.textContent.includes('수초 '+plants.length+'개')); assert.ok(app.nodes.coverageNotice.textContent.includes('물고기 '+fish.length+'개'));
   assert.equal(app.types.filter(b => b.attributes['aria-pressed'] === 'true').length, 1);
 });
 test('unknown-registration checkbox and all three period choices are honest', async () => {
@@ -154,11 +154,11 @@ test('livestock controls wrap into four mobile columns with clear pressed state 
 test('missing verified subtype still explains only connected information; direct photos never become placeholders',async()=>{
  const data=structuredClone(actual); data.products=data.products.filter(p=>p.subtype!=='fish'); const app=await setup(data);app.type('live');app.subtype('fish');assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/현재 연결된 상품정보에 해당 생물이 없습니다/);assert.match(app.nodes.grid.innerHTML,/모든 판매처의 품절·미판매를 뜻하지 않습니다/);
  const actualApp=await setup();actualApp.type('live');actualApp.subtype('fish');assert.equal(actualApp.names().length,Math.min(24,fish.length));assert.equal(actualApp.images.length,fish.slice(0,24).filter(p=>p.photo.url).length); for (const img of actualApp.images) {assert.ok(img.src.startsWith('https://')); img.listeners.error(); assert.equal(img.hidden,true); assert.equal(img.fallback.hidden,false);}assert.match(actualApp.nodes.grid.innerHTML,/판매처 페이지 직접 확인/);assert.ok(!actualApp.nodes.grid.innerHTML.includes('카페24 공식 API'));
- actualApp.subtype('aquatic_plant');assert.equal(actualApp.images.length,Math.min(24,plants.filter(p=>p.photo.url).length));assert.match(actualApp.nodes.grid.innerHTML,/카페24 공식 API/);
+ actualApp.subtype('aquatic_plant');assert.equal(actualApp.images.length,plants.slice(0,24).filter(p=>p.photo.url).length);assert.match(actualApp.nodes.grid.innerHTML,/카페24 공식 API/);
 });
 
 test('direct livestock original photos have descriptive escaped alt text and retain seller fallback',async()=>{
- const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+p.name+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(p.photo.url));}assert.ok(app.nodes.grid.innerHTML.includes(p.sourceUrl));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
+ const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+p.name+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(p.photo.url));}assert.ok(app.nodes.grid.innerHTML.includes(p.sourceUrl));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
 });
 
 test('all period defaults without a registration bound and tool preserves category/query/sort',async()=>{

@@ -36,7 +36,7 @@ function buildCatalog(snapshot) {
     price: item.price_amount === null ? null : { amount: item.price_amount, currency: item.currency }, shipping: item.shipping_amount == null ? null : { amount: item.shipping_amount, currency: item.currency },
     cumulativeSales: null, periodSales: null, available: item.available, availabilityBasis: item.availability_basis,
     detailLookupVerified: item.detail_lookup_verified,
-    sourceKind: item.source_kind || "cafe24_global_catalog_api", verificationMethod: item.verification_method ?? null, quantityPerPack: item.quantity_per_pack ?? null, pairsPerPack: item.pairs_per_pack ?? null,
+    sourceKind: item.source_kind || "cafe24_global_catalog_api", verificationMethod: item.verification_method ?? null, classificationBasis:item.classification_basis??null,discoveryCategoryUrl:item.discovery_category_url??null, quantityPerPack: item.quantity_per_pack ?? null, pairsPerPack: item.pairs_per_pack ?? null,
     photo: { url: photoAvailable ? item.photo.verified_https_url : null, usePermission: photoAvailable ? 'allowed' : 'unknown', permissionEvidenceUrl: photoAvailable ? (item.source_kind === 'direct_retailer_product_page' ? item.product_url : snapshot.source_documentation_url) : null,
       permissionScope: photoAvailable ? (item.source_kind === 'direct_retailer_product_page' ? 'product-comparison' : 'api-catalog-comparison') : null, permissionBasis: item.photo?.permission_basis ?? null, generalRepublicationLicenseVerified: false, checkedAt: item.photo?.checked_at_utc ?? null },
   }; }),

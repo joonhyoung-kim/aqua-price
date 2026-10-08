@@ -28,9 +28,9 @@ function reconcile(previous, incoming, coverage) {
 async function request(url, source, runtime, prior, redirectDepth=0) {
   if(!sourceUrl(url)||!sameHost(url,source.officialURL)||new URL(url).protocol==='http:'&&source.publicHttpApproved!==true)throw Error('URL outside registered public source');
   const clock=runtime.now(), cached=prior.cache?.[url];
-  if(cached && clock-Date.parse(cached.fetchedAt)<source.cacheTtlMs)return {status:200,text:cached.text,cacheHit:true};
+  if(cached && clock-Date.parse(cached.fetchedAt)<source.cacheTtlMs)return {status:200,text:cached.text,cacheHit:true,fetchedAt:cached.fetchedAt};
   if(runtime.requests>=source.maxRequests)throw Error('request_limit');
-  if(runtime.lastRequest!==null)await runtime.sleep(Math.max(0,source.delayMs-(clock-runtime.lastRequest)));
+  if(runtime.lastRequest!==null)await runtime.sleep(Math.max(0,source.delayMs-Math.max(0,clock-runtime.lastRequest)));
   runtime.requests++;runtime.lastRequest=runtime.now();
   const response=await runtime.fetch(url,{headers:{'User-Agent':AGENT,Accept:'text/html,text/plain'},redirect:'manual',signal:AbortSignal.timeout(source.timeoutMs)});
   if([403,429].includes(response.status)){const error=Error('access_stopped');error.status=response.status;error.retryAfter=response.headers.get('retry-after');throw error;}
@@ -39,20 +39,20 @@ async function request(url, source, runtime, prior, redirectDepth=0) {
     if(!next||!sourceUrl(next)||!sameHost(next,source.officialURL)||new URL(next).protocol==='http:'&&source.publicHttpApproved!==true||redirectDepth>=2)throw Error('redirect_requires_explicit_review');
     return request(next,source,runtime,prior,redirectDepth+1);
   }
-  if(response.status===404)return {status:404,text:''};
+  if([404,410].includes(response.status))return {status:response.status,text:''};
   if(!response.ok)throw Error('http_'+response.status);
   const size=Number(response.headers.get('content-length'));if(Number.isFinite(size)&&size>source.maxBytes)throw Error('response_too_large');
   const reader=response.body?.getReader();let text='';
   if(reader){const parts=[];let bytes=0;while(true){const next=await reader.read();if(next.done)break;bytes+=next.value.byteLength;if(bytes>source.maxBytes){await reader.cancel();throw Error('response_too_large');}parts.push(next.value);}const buffer=Buffer.concat(parts);const header=response.headers.get('content-type')||'';const charset=header.match(/charset\s*=\s*["']?([\w-]+)/i)?.[1]||buffer.subarray(0,12000).toString('ascii').match(/charset\s*=\s*["']?([\w-]+)/i)?.[1]||'utf-8';text=new TextDecoder(charset).decode(buffer);}
   else {text=await response.text();if(Buffer.byteLength(text)>source.maxBytes)throw Error('response_too_large');}
   prior.cache=prior.cache||{};prior.cache[url]={text,fetchedAt:new Date(runtime.now()).toISOString()};
-  return {status:response.status,text,cacheHit:false};
+  return {status:response.status,text,cacheHit:false,fetchedAt:prior.cache[url].fetchedAt};
 }
 async function collectSource(source, previous={}, options={}) {
   const prior=structuredClone(previous), now=options.now||Date.now;
-  const run={now,fetch:options.fetch||fetch,sleep:options.sleep||((ms)=>new Promise(resolve=>setTimeout(resolve,ms))),requests:0,lastRequest:null};
+  const run={now,fetch:options.fetch||fetch,sleep:options.sleep||((ms)=>new Promise(resolve=>setTimeout(resolve,ms))),requests:0,lastRequest:options.lastRequestAt??prior.lastRequestAt??null};
   const state={...prior,products:prior.products||[],collectorLastAttempt:new Date(now()).toISOString(),status:'pending',coverage:{kind:'known_product_urls',paginationComplete:false,terminalPageReached:false,visitedPages:0,expectedPages:source.products?.length||0,parseFailures:0,requestFailures:0},errors:[]};
-  const fail=(status,error)=>({...state,cache:prior.cache||{},status,errors:[...state.errors,error],requests:run.requests});
+  const fail=(status,error)=>({...state,cache:prior.cache||{},status,errors:[...state.errors,error],requests:run.requests,lastRequestAt:run.lastRequest});
   if(source.technicalReadiness==='blocked'||source.enabled!==true)return fail('disabled',source.blockers?.join('; ')||'Not enabled');
   if(prior.requiresManualReview)return fail('quarantined','Prior HTTP403 requires review; no retry or alternate route');
   if(prior.blockedUntil && now()<Date.parse(prior.blockedUntil))return fail('backoff','Previous HTTP denial backoff');
@@ -66,20 +66,20 @@ async function collectSource(source, previous={}, options={}) {
     for(const product of limits.products||[]) {
       if(!robotsAllows(robots.text,product.url)){state.errors.push('robots_denied:'+product.url);state.coverage.requestFailures++;continue;}
       const page=await request(product.url,limits,run,prior);
-      if(page.status===404){state.errors.push('product_404_preserved:'+product.url);state.coverage.requestFailures++;continue;}
+      if([404,410].includes(page.status)){state.errors.push('product_'+page.status+'_preserved:'+product.url);state.coverage.requestFailures++;continue;}
       state.coverage.visitedPages++;
-      const observedAt=page.cacheHit?(prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
+      const observedAt=page.cacheHit?(page.fetchedAt || prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
       const context={...product,url:product.url,sourceId:source.id,domain:source.sourceDomain,name:source.name,photosAllowed:source.photosAllowed===true,observedAt};
       const parsed=limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
       if(parsed.status!=='success'){state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;continue;}
       if(parsed.issues.some(x=>x!=='duplicate_offer')){state.errors.push(...parsed.issues.filter(x=>x!=='duplicate_offer').map(x=>x+':'+product.url));state.coverage.parseFailures++;}
       incoming.push(...parsed.items);if(!page.cacheHit){fresh++;updatedKeys.push(...parsed.items.map(p=>p.collector_key));}else updatedKeys.push(...parsed.items.filter(p=>!state.products.some(old=>old.collector_key===p.collector_key)).map(p=>p.collector_key));
     }
-    const merged=reconcile(state.products,incoming,state.coverage);state.products=merged.products;state.updatedKeys=updatedKeys;state.deletionAllowed=merged.deletionAllowed;state.cache=prior.cache||{};state.requests=run.requests;
+    const merged=reconcile(state.products,incoming,state.coverage);state.products=merged.products;state.updatedKeys=updatedKeys;state.deletionAllowed=merged.deletionAllowed;state.cache=prior.cache||{};state.requests=run.requests;state.lastRequestAt=run.lastRequest;
     state.status=state.errors.length?'partial_failure':incoming.length?'success':'no_confirmed_products';
     if(incoming.length && !state.errors.length && (fresh>0||!prior.collectorLastSuccess))state.collectorLastSuccess=new Date(now()).toISOString();
     state.cacheOnly=fresh===0&&incoming.length>0&&updatedKeys.length===0;
     return state;
   }catch(error){state.coverage.requestFailures++;if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
 }
-module.exports={collectSource,reconcile,robotsAllows};
+module.exports={collectSource,reconcile,robotsAllows,request};

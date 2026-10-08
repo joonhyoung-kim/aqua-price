@@ -5,8 +5,9 @@
   "description": "아쿠아픽 정적 샘플 프로토타입",
   "scripts": {
     "start": "node scripts/serve.cjs",
-    "test": "node --check dist/app.js && node --check dist/data-model.js && node --check scripts/build-catalog.cjs && node test/app.test.cjs && node test/ui.test.cjs && node --check scripts/collect-catalog.cjs && node --check scripts/collector/engine.cjs && node --check scripts/collector/product-jsonld.cjs && node --check scripts/collector/publish.cjs && node test/collector.test.cjs && node --check scripts/build-admin-status.cjs && node --check dist/admin/app.js && node test/admin.test.cjs",
-    "collect": "node scripts/collect-catalog.cjs"
+    "test": "node --check dist/app.js && node --check dist/data-model.js && node --check scripts/build-catalog.cjs && node test/app.test.cjs && node test/ui.test.cjs && node --check scripts/collect-catalog.cjs && node --check scripts/collector/engine.cjs && node --check scripts/collector/product-jsonld.cjs && node --check scripts/collector/publish.cjs && node test/collector.test.cjs && node --check scripts/build-admin-status.cjs && node --check dist/admin/app.js && node test/admin.test.cjs && node --check scripts/discover-catalog.cjs && node --check scripts/collector/discovery.cjs && node --check scripts/collector/presence.cjs && node test/discovery.test.cjs && node test/presence.test.cjs && node --check scripts/collector/daily-discovery.cjs && node --check scripts/collector/classification.cjs && node --check scripts/collector/verify-discovered.cjs && node --check scripts/collector/integrate-discovery.cjs && node test/daily-discovery.test.cjs",
+    "collect": "node scripts/collect-catalog.cjs",
+    "discover": "node scripts/discover-catalog.cjs"
   },
   "engines": {
     "node": ">=18"

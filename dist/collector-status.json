@@ -1,10 +1,8 @@
 {
-  "schemaVersion": 1,
-  "mode": "verified_local_known_url_bootstrap",
-  "finishedAt": "2026-10-08T10:07:07.631Z",
+  "startedAt": "2026-10-08T10:52:07.692Z",
+  "mode": "explicit_local_run",
   "autoRefreshDeployed": false,
   "fullCatalogCoverage": false,
-  "productChanges": 58,
   "sources": [
     {
       "id": "retailer-01",
@@ -22,8 +20,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -42,8 +42,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -62,19 +64,21 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Official homepage announces temporary closure."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-04",
       "domain": "raraaqua.com",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:45:40.310Z",
-      "collectorLastSuccess": "2026-10-08T09:46:10.864Z",
-      "count": 3,
+      "collectorLastAttempt": "2026-10-08T10:51:36.823Z",
+      "collectorLastSuccess": "2026-10-08T10:52:07.340Z",
+      "count": 6,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -84,8 +88,40 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 4,
+      "refreshScope": {
+        "verifiedUrlCount": 3,
+        "selectedUrlCount": 3,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "success",
+        "representativeSeedCount": 1,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 8,
+        "verifiedItems": 3,
+        "pendingCandidates": 5,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T10:51:36.840Z",
+        "errors": [],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://raraaqua.com/category/%EA%B5%AC%ED%94%BC/580/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 8,
+            "cyclesCompleted": 1
+          }
+        ]
+      },
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -104,8 +140,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -124,8 +162,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -144,8 +184,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -164,17 +206,19 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 3,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-09",
       "domain": "alphafish.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:47:03.161Z",
-      "collectorLastSuccess": "2026-10-08T09:47:33.453Z",
-      "count": 3,
+      "collectorLastAttempt": "2026-10-08T10:48:37.660Z",
+      "collectorLastSuccess": "2026-10-08T10:49:18.000Z",
+      "count": 6,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -184,8 +228,43 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 4,
+      "refreshScope": {
+        "verifiedUrlCount": 3,
+        "selectedUrlCount": 3,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 1,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 27,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T10:48:37.677Z",
+        "errors": [
+          "product_budget_reached:https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+          "page_budget_reached:https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+            "nextUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -204,8 +283,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -224,8 +305,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -244,8 +327,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -264,8 +349,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -284,8 +371,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -304,8 +393,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -324,8 +415,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -344,8 +437,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -364,8 +459,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -384,10 +481,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -406,8 +505,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -426,10 +527,12 @@
         "parseFailures": 0,
         "requestFailures": 1
       },
-      "requests": 1,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "fetch failed"
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -448,8 +551,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -468,8 +573,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -488,8 +595,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -508,10 +617,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -530,10 +641,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -552,10 +665,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -574,8 +689,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 1,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -594,10 +711,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Ordinary homepage HTTP503; no product sample recovered."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -616,10 +735,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Consumer/reference price only; actual guest sale price unavailable."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -638,17 +759,19 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-33",
       "domain": "selvas.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:56:18.692Z",
-      "collectorLastSuccess": "2026-10-08T09:56:18.693Z",
-      "count": 2,
+      "collectorLastAttempt": "2026-10-08T10:52:07.694Z",
+      "collectorLastSuccess": "2026-10-08T10:52:18.123Z",
+      "count": 3,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -658,8 +781,40 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "success",
+        "representativeSeedCount": 1,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 1,
+        "verifiedItems": 1,
+        "pendingCandidates": 0,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T10:52:07.707Z",
+        "errors": [],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://selvas.co.kr/category/Glass-Tank-(%EC%88%98%EC%A1%B0)/4/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 1
+          }
+        ]
+      },
       "errors": [],
+      "attemptedThisExecution": true,
       "automatedExecutionVerified": false
     },
     {
@@ -678,8 +833,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -698,10 +855,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "No collector source execution or deployed automatic refresh verified.; Guest prices show wholesale-member restriction; do not login."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -720,8 +879,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -740,8 +901,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 14,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -760,8 +923,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -780,8 +945,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 3,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -800,8 +967,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 1,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -820,10 +989,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -842,8 +1013,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -862,10 +1035,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -884,10 +1059,12 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Wholesale-member prices, missing JSON-LD price; no login or script-zero inference."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -906,8 +1083,10 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 2,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     },
     {
@@ -926,11 +1105,19 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "requests": 0,
+      "refreshScope": null,
+      "discovery": null,
       "errors": [
         "Product fetch HTTP502, not proof of impossible integration."
       ],
+      "attemptedThisExecution": false,
       "automatedExecutionVerified": false
     }
-  ]
+  ],
+  "finishedAt": "2026-10-08T10:52:18.270Z",
+  "attemptedSourceIds": [
+    "retailer-33"
+  ],
+  "executionEnvironment": "local",
+  "productChanges": 1
 }

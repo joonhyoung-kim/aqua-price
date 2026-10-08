@@ -30,11 +30,23 @@ async function request(url, source, runtime, prior, redirectDepth=0) {
   const clock=runtime.now(), cached=prior.cache?.[url];
   if(cached && clock-Date.parse(cached.fetchedAt)<source.cacheTtlMs)return {status:200,text:cached.text,cacheHit:true,fetchedAt:cached.fetchedAt};
   if(runtime.requests>=source.maxRequests)throw Error('request_limit');
-  const wait=runtime.lastRequest===null?0:Math.max(0,source.delayMs-Math.max(0,clock-runtime.lastRequest));
-  if(Number.isFinite(runtime.deadline)&&clock+wait+source.timeoutMs>=runtime.deadline)throw Error('execution_deadline');
-  if(wait)await runtime.sleep(wait);
-  runtime.requests++;runtime.lastRequest=runtime.now();
-  const response=await runtime.fetch(url,{headers:{'User-Agent':AGENT,Accept:'text/html,text/plain'},redirect:'manual',signal:AbortSignal.timeout(source.timeoutMs)});
+  // Check both clocks after every wake: timers may return early, and wall time can jump.
+  const monotonic=runtime.monotonicNow||(runtime.now===Date.now?()=>performance.now():runtime.now);
+  const wallTarget=runtime.lastRequest==null?null:runtime.lastRequest+source.delayMs;
+  const monoTarget=runtime.lastRequestMonotonic==null?null:runtime.lastRequestMonotonic+source.delayMs;
+  for(;;){
+    const wall=runtime.now(),wait=Math.max(0,wallTarget==null?0:wallTarget-wall,monoTarget==null?0:monoTarget-monotonic());
+    if(Number.isFinite(runtime.deadline)&&wall+wait+source.timeoutMs>=runtime.deadline)throw Error('execution_deadline');
+    if(wait<=0)break;
+    await runtime.sleep(Math.ceil(wait));
+  }
+  runtime.requests++;
+  let pending;
+  // Anchor after the fetch wrapper dispatches, including synchronous checkpoint work.
+  // This makes recorded fetch-entry spacing conservative even at a 1ms clock boundary.
+  try{pending=runtime.fetch(url,{headers:{'User-Agent':AGENT,Accept:'text/html,text/plain'},redirect:'manual',signal:AbortSignal.timeout(source.timeoutMs)});}
+  finally{runtime.lastRequest=runtime.now();runtime.lastRequestMonotonic=monotonic();}
+  const response=await pending;
   if([403,429].includes(response.status)){const error=Error('access_stopped');error.status=response.status;error.retryAfter=response.headers.get('retry-after');throw error;}
   if(response.status>=300&&response.status<400){
     const target=response.headers.get('location');const next=target?new URL(target,url).href:null;

@@ -8,7 +8,48 @@
     "gear": "29 */6 * * *",
     "reconcile": "43 2 * * *"
   },
-  "newProductDiscovery": false,
+  "newProductDiscovery": true,
   "deletionEnabled": false,
-  "mainWorkflowCommit": "7b63ad3c19b813c3b4879b40b28f67ab142a9561"
+  "mainWorkflowCommit": "7b63ad3c19b813c3b4879b40b28f67ab142a9561",
+  "dataPipelineVerified": true,
+  "scheduledRunVerified": false,
+  "fullCatalogCoverage": false,
+  "verifiedDeploymentAt": "2026-10-08T11:50:38.285Z",
+  "lastRun": {
+    "id": 37767325227,
+    "url": "https://github.com/joonhyoung-kim/aqua-price/actions/runs/37767325227",
+    "attempt": 2,
+    "trigger": "workflow_dispatch",
+    "mode": "all",
+    "conclusion": "failure",
+    "dataCommit": "2d4967239b82952965efb8ace08cb2f08a45845a",
+    "startedAt": "2026-10-08T11:31:12.702Z",
+    "finishedAt": "2026-10-08T11:48:54.467Z",
+    "successfulSources": 25,
+    "partialFailureSources": [
+      "retailer-16"
+    ],
+    "failedSources": [
+      "retailer-21"
+    ],
+    "budgetLimitedSources": [
+      "retailer-37"
+    ],
+    "deferredSourceIds": [
+      "retailer-38",
+      "retailer-39",
+      "retailer-40",
+      "retailer-41",
+      "retailer-42",
+      "retailer-43",
+      "retailer-44",
+      "retailer-45",
+      "retailer-46"
+    ],
+    "addedProducts": 71,
+    "updatedProducts": 9,
+    "priceChangedProducts": 0,
+    "deletionCount": 0,
+    "coverageComplete": false
+  }
 }

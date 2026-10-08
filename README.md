@@ -54,3 +54,7 @@ Sites .openai/hosting.json과 원본 저장소 토큰은 포함하지 않습니�
 ### Execution deadline and resume
 
 The collector stops starting network requests after an 18-minute wall-clock budget, before the 25-minute Actions job timeout. It preserves verified partial results, lastgood, refusal quarantine and actual category cursors. Unattempted sources are reported explicitly; a per-mode source cursor resumes them in the next run. Robots delays are respected rather than shortened. A successful partial run does not mean complete source coverage.
+
+### Verified partial Actions run
+
+Manual workflow run 37767325227, attempt 2, published bot data commit 2d4967239b82952965efb8ace08cb2f08a45845a. Its data validation, commit, push and Render preview file hashes were verified. The overall job remains failed because source errors are reported explicitly. 71 products were added and 9 existing records updated; no existing prices changed and no products were removed. PRFish is held after public fetch failure. Two Aquavillage product identities are held for review; verified products remain visible. The 18-minute budget deferred remaining sources, so this is partial representative discovery. Cron execution has not yet been observed.

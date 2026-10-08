@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryStatus": "final_audited_45_partial_product_collectors",
+  "registryStatus": "original_45_plus_6_user_approved_partial_collectors",
   "originalSourceCount": 45,
   "originalSourcesWithSnapshot": 9,
   "collectorVerifiedSources": 0,
@@ -2399,6 +2399,249 @@
         ],
         "status": "not_implemented",
         "nextPagePath": null,
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-47",
+      "name": "신세계수족관",
+      "sourceDomain": "wpet.co.kr",
+      "officialURL": "https://www.wpet.co.kr/",
+      "officialAliases": [],
+      "original45": false,
+      "userApprovedAdditional": true,
+      "platform": "custom_or_unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_not_implemented",
+      "currentIntegrationStatus": "custom_detail_adapter_not_implemented",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Custom shop.goods_view detail has no Product JSON-LD; strict custom price adapter not implemented"
+      ],
+      "discovery": {
+        "adapter": null,
+        "mappedSeedCount": 0,
+        "entryPoints": [],
+        "status": "not_implemented",
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true
+      }
+    },
+    {
+      "id": "retailer-48",
+      "name": "춘자네수족관",
+      "sourceDomain": "chunjane.com",
+      "officialURL": "https://chunjane.com/",
+      "officialAliases": [
+        "https://m.chunjane.com/"
+      ],
+      "original45": false,
+      "userApprovedAdditional": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "sample_verified_partial_category_discovery",
+      "products": [
+        {
+          "url": "https://chunjane.com/product/01-%EC%95%84%ED%8A%B8%EB%A1%9C%ED%8D%BC%EC%86%8C%EB%82%98%ED%88%AC%EC%8A%A4-%EC%9A%94%EC%A0%95%EC%BD%94%EB%A6%AC-4cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/1231/category/432/display/1/",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "Retailer concrete offer"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Representative categories only; complete retailer coverage unverified"
+      ],
+      "discovery": {
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 2,
+        "entryPoints": [
+          "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+          "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/"
+        ],
+        "status": "sample_verified",
+        "coverageComplete": false,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false
+      }
+    },
+    {
+      "id": "retailer-49",
+      "name": "피셔맨브라더스",
+      "sourceDomain": "fishermanbt.com",
+      "officialURL": "https://fishermanbt.com/",
+      "officialAliases": [],
+      "original45": false,
+      "userApprovedAdditional": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "sample_verified_partial_category_discovery",
+      "products": [
+        {
+          "url": "https://fishermanbt.com/product/detail.html?product_no=319",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "Retailer concrete offer"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Representative categories only; complete retailer coverage unverified"
+      ],
+      "discovery": {
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 1,
+        "entryPoints": [
+          "https://fishermanbt.com/product/list.html?cate_no=42"
+        ],
+        "status": "sample_verified",
+        "coverageComplete": false,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false
+      }
+    },
+    {
+      "id": "retailer-50",
+      "name": "힐링아쿠아",
+      "sourceDomain": "healingaqua.co.kr",
+      "officialURL": "https://healingaqua.co.kr/",
+      "officialAliases": [],
+      "original45": false,
+      "userApprovedAdditional": true,
+      "platform": "Cafe24",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "sample_verified_partial_category_discovery",
+      "products": [
+        {
+          "url": "https://healingaqua.co.kr/product/detail.html?product_no=330",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "Retailer concrete offer"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Representative categories only; complete retailer coverage unverified"
+      ],
+      "discovery": {
+        "adapter": "cafe24_category_links",
+        "mappedSeedCount": 1,
+        "entryPoints": [
+          "https://healingaqua.co.kr/product/list.html?cate_no=238"
+        ],
+        "status": "sample_verified",
+        "coverageComplete": false,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false
+      }
+    },
+    {
+      "id": "retailer-51",
+      "name": "제이디아쿠아",
+      "sourceDomain": "jdaqua.co.kr",
+      "officialURL": "https://www.jdaqua.co.kr/",
+      "officialAliases": [
+        "https://jdaqua.imweb.me/"
+      ],
+      "original45": false,
+      "userApprovedAdditional": true,
+      "platform": "Imweb",
+      "adapter": "product_jsonld",
+      "enabled": true,
+      "photosAllowed": true,
+      "technicalReadiness": "adapter_sample_tested",
+      "currentIntegrationStatus": "sample_verified_partial_category_discovery",
+      "products": [
+        {
+          "url": "https://www.jdaqua.co.kr/?idx=419",
+          "type": "live",
+          "subtype": "fish",
+          "variant": "Retailer concrete offer"
+        }
+      ],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Representative categories only; complete retailer coverage unverified",
+        "Imweb pagination not corroborated; first observed category page only"
+      ],
+      "discovery": {
+        "adapter": "imweb_category_links",
+        "mappedSeedCount": 2,
+        "entryPoints": [
+          "https://www.jdaqua.co.kr/171",
+          "https://www.jdaqua.co.kr/1001468813"
+        ],
+        "status": "sample_verified",
+        "coverageComplete": false,
+        "newProductDiscovery": true,
+        "knownProductUrlsOnly": false
+      }
+    },
+    {
+      "id": "retailer-52",
+      "name": "메디피쉬",
+      "sourceDomain": "medifish.store",
+      "officialURL": "https://www.medifish.store/",
+      "officialAliases": [
+        "https://m.medifish.co.kr/"
+      ],
+      "original45": false,
+      "userApprovedAdditional": true,
+      "platform": "custom_or_unverified",
+      "adapter": "product_jsonld",
+      "enabled": false,
+      "photosAllowed": true,
+      "technicalReadiness": "blocked",
+      "currentIntegrationStatus": "http403_manual_review",
+      "products": [],
+      "maxRequests": 20,
+      "delayMs": 2000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Parent-reported HTTP403; manual review required, no requests or alternate route"
+      ],
+      "discovery": {
+        "adapter": null,
+        "mappedSeedCount": 0,
+        "entryPoints": [],
+        "status": "not_implemented",
         "coverageComplete": false,
         "newProductDiscovery": false,
         "knownProductUrlsOnly": true

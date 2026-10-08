@@ -2,8 +2,8 @@
 const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const {adminStatus}=require('../scripts/build-admin-status.cjs');
 test('admin reports actual results and never treats local execution as automated success',()=>{
  const registry=require('../sources/registry.json'),snapshot=require('../dist/source-snapshot.json'),report=require('../dist/collector-status.json');
- const status=adminStatus(registry,report,snapshot,{configured:true,verifiedRun:false});assert.equal(status.sources.length,45);assert.equal(status.sources.filter(s=>s.autoRefreshVerified).length,0);assert.equal(status.sources.filter(s=>s.fullCatalogCoverage).length,0);
- for(const s of status.sources){assert.equal(s.discovery.coverageComplete,false);assert.equal(s.discovery.newProductDiscovery,['cafe24_category_links','makeshop_category_links','godo_category_links'].includes(s.discovery.adapter));assert.equal(s.snapshotProductCount,snapshot.items.filter(p=>p.seller_domain===s.domain).length);}
+ const status=adminStatus(registry,report,snapshot,{configured:true,verifiedRun:false});assert.equal(status.sources.length,registry.sources.length);assert.equal(registry.sources.filter(s=>s.original45).length,45);assert.equal(status.sources.filter(s=>s.autoRefreshVerified).length,0);assert.equal(status.sources.filter(s=>s.fullCatalogCoverage).length,0);
+ for(const s of status.sources){assert.equal(s.discovery.coverageComplete,false);assert.equal(s.discovery.newProductDiscovery,['cafe24_category_links','makeshop_category_links','godo_category_links','imweb_category_links'].includes(s.discovery.adapter));assert.equal(s.snapshotProductCount,snapshot.items.filter(p=>p.seller_domain===s.domain).length);}
 });
 test('admin contains only read-only navigation and escapes retailer text',()=>{
  const js=fs.readFileSync('dist/admin/app.js','utf8'),html=fs.readFileSync('dist/admin/index.html','utf8');assert.match(js,/escapeText/);assert.doesNotMatch(js,/localStorage|method\s*:\s*['"](?:POST|PUT|DELETE)/);assert.match(html,/github\.com\/joonhyoung-kim\/aqua-price\/edit\/preview\/sources\/registry\.json/);

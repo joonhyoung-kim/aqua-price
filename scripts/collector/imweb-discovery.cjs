@@ -1,0 +1,6 @@
+'use strict';
+const {scanHtml,productKey}=require('./discovery.cjs');
+function safe(href,base,official){try{const u=new URL(href.replaceAll('&amp;','&'),base),o=new URL(official);if(u.protocol!=='https:'||u.username||u.password||u.hostname.replace(/^www\./,'')!==o.hostname.replace(/^www\./,''))return null;u.hash='';return u;}catch{return null;}}
+function categoryUrl(href,base,official){const u=safe(href,base,official);return u&&/^\/\d+\/?$/.test(u.pathname)&&[...u.searchParams.keys()].every(k=>k==='page')&&(!u.searchParams.has('page')||/^[1-9]\d*$/.test(u.searchParams.get('page')))?u.href:null;}
+function parseCategoryPage(html,pageUrl,official){const scan=scanHtml(html,{listClasses:['shop-item'],pagerClasses:['pagination','paging-block']}),products=new Map();for(const a of scan.links){if(!a.inList)continue;const u=safe(a.href,pageUrl,official);if(u&&/^\/(?:\d+\/?)?$/.test(u.pathname)&&[...u.searchParams.keys()].every(k=>k==='idx')&&/^[1-9]\d*$/.test(u.searchParams.get('idx')||''))products.set(productKey(u.href),u.href);}return {products:[...products.values()],expectedTotal:null,nextPage:null,terminal:false,issues:scan.listFound?['pagination_terminal_unverified']:['product_list_not_found']};}
+module.exports={categoryUrl,parseCategoryPage};

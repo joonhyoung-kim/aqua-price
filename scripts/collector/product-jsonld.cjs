@@ -31,6 +31,10 @@ function productIdentity(product, url) {
   if (typeof explicit === 'string' && explicit.trim()) return explicit.trim();
   const parsed = new URL(url), query = parsed.searchParams.get('product_no') || parsed.searchParams.get('goodsNo');
   if (query) return query;
+  const idx=parsed.searchParams.get('idx'),declared=product.offers?.url;
+  if(host(url)==='jdaqua.co.kr'&&/^\/(?:\d+\/?|shop_view\/?)?$/.test(parsed.pathname)&&/^[1-9]\d*$/.test(idx||'')&&typeof declared==='string'){
+    try{const offerUrl=new URL(declared);if(host(declared)===host(url)&&offerUrl.protocol==='https:'&&/^\/shop_view\/?$/.test(offerUrl.pathname)&&offerUrl.searchParams.get('idx')===idx)return idx;}catch{}
+  }
   const pathId = parsed.pathname.match(/\/product\/(?:[^/]+\/)?(\d+)(?:\/|$)/);
   return pathId ? pathId[1] : parsed.pathname.startsWith('/product/') ? parsed.pathname.replace(/\/$/,'').split('/').pop() : null;
 }

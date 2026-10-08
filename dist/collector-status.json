@@ -1,7 +1,7 @@
 {
-  "executionBudgetMs": 906359,
+  "executionBudgetMs": 1080000,
   "deferredSourceIds": [],
-  "startedAt": "2026-10-08T16:13:27.105Z",
+  "startedAt": "2026-10-08T16:51:43.555Z",
   "mode": "reconcile",
   "runTrigger": "local",
   "githubRunId": null,
@@ -904,7 +904,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -1194,7 +1194,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -2421,7 +2421,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -2728,7 +2728,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -6791,7 +6791,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -7084,7 +7084,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -7876,7 +7876,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -8989,7 +8989,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -10004,7 +10004,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -10268,7 +10268,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -10481,7 +10481,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -11737,7 +11737,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -14395,7 +14395,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -16304,31 +16304,1612 @@
       "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-47",
+      "domain": "wpet.co.kr",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T16:51:43.559Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "discoveryProgress": {
+        "schemaVersion": 1,
+        "cursor": null,
+        "categories": [],
+        "pendingCandidates": [],
+        "reviewQueue": [],
+        "excludedCandidates": [],
+        "requiresManualReview": false,
+        "blockedUntil": null
+      },
+      "errors": [
+        "Custom shop.goods_view detail has no Product JSON-LD; strict custom price adapter not implemented"
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": null,
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-48",
+      "domain": "chunjane.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T16:51:44.190Z",
+      "collectorLastSuccess": "2026-10-08T16:52:44.657Z",
+      "count": 8,
+      "requests": 7,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 2,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "detailBudget": 8,
+        "newCandidates": 30,
+        "verifiedItems": 8,
+        "pendingCandidates": 22,
+        "pendingByGroup": {
+          "fish": 22
+        },
+        "reviewRequired": 0,
+        "reviewReasons": {},
+        "reviewQueue": [],
+        "excludedCandidates": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 1,
+        "lastAttempt": "2026-10-08T16:51:44.194Z",
+        "errors": [
+          "product_budget_reached:https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "nextUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "expectedProductCount": 175,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/"
+            ],
+            "headProbePending": false
+          }
+        ]
+      },
+      "discoveryProgress": {
+        "schemaVersion": 1,
+        "cursor": {
+          "schemaVersion": 1,
+          "nextCategoryIndex": 1,
+          "categories": {
+            "chunjane.com:432": {
+              "entryUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+              "nextUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+              "seenKeys": [
+                "chunjane.com:1231",
+                "chunjane.com:1816",
+                "chunjane.com:2742",
+                "chunjane.com:3342",
+                "chunjane.com:3402",
+                "chunjane.com:4372",
+                "chunjane.com:4546",
+                "chunjane.com:442",
+                "chunjane.com:480",
+                "chunjane.com:520",
+                "chunjane.com:701",
+                "chunjane.com:2821",
+                "chunjane.com:3438",
+                "chunjane.com:4547",
+                "chunjane.com:4653",
+                "chunjane.com:797",
+                "chunjane.com:956",
+                "chunjane.com:3031",
+                "chunjane.com:3340",
+                "chunjane.com:3859",
+                "chunjane.com:4548",
+                "chunjane.com:811",
+                "chunjane.com:895",
+                "chunjane.com:2822",
+                "chunjane.com:4380",
+                "chunjane.com:2220",
+                "chunjane.com:2534",
+                "chunjane.com:2926",
+                "chunjane.com:3094",
+                "chunjane.com:3527"
+              ],
+              "cycleStartedAt": "2026-10-08T16:51:44.195Z",
+              "cyclesCompleted": 0,
+              "lastCycle": null,
+              "visitedPageUrls": [
+                "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/"
+              ],
+              "headProbePending": false,
+              "expectedProductCount": 175,
+              "lastAttempt": "2026-10-08T16:51:44.194Z"
+            }
+          }
+        },
+        "categories": [
+          {
+            "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "label": "열대어",
+            "visitedPages": [
+              "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/"
+            ],
+            "expectedProductCount": 175,
+            "terminalPageReached": false,
+            "coverageComplete": false,
+            "errors": [
+              "product_budget_reached"
+            ],
+            "headProbe": false,
+            "headProbeDeferred": false,
+            "nextPage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "cycleSeenProductCount": 30
+          }
+        ],
+        "pendingCandidates": [
+          {
+            "url": "https://chunjane.com/product/01-%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC/480/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0%EB%B3%BC-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A6%882%EB%A7%88%EB%A6%AC/520/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%B0%B1%EC%84%A4%EA%B3%B5%EC%A3%BC3cm%EA%B8%89-5%EB%A7%88%EB%A6%AC/701/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/011-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC5%EB%A7%88%EB%A6%AC/2821/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EC%95%84%EC%97%90%EB%84%A4%EC%9A%B0%EC%8A%A4-%EB%B8%8C%EB%A1%A0%EC%A6%883cm%EA%B8%89/3438/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC-%ED%95%A0%EB%A6%AC%ED%80%B8-5%EB%A7%88%EB%A6%AC/4547/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%B8%94%EB%A3%A8%EC%BD%94%EB%B0%9C%ED%8A%B8-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/4653/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0%EB%B3%BC-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A6%88%EB%A1%B1%ED%95%80-1%EB%A7%88%EB%A6%AC/797/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%82%98%EB%B9%84%EB%B9%84%ED%8C%8C-4cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/956/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%ED%8E%98%ED%8D%BC%EB%93%9C-%ED%95%98%EC%9D%B4%ED%95%80-3cm-%EA%B8%89-1%EB%A7%88%EB%A6%AC/3031/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0-%EC%95%8C%EC%A7%80%EC%9D%B4%ED%84%B01%EB%A7%88%EB%A6%AC/3340/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%AC%BC%ED%8B%B03cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/3859/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC-%ED%95%A0%EB%A6%AC%ED%80%B8-10%EB%A7%88%EB%A6%AC/4548/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%ED%94%BC%EA%B7%B8%EB%AF%B8%EC%9A%B0%EC%8A%A4-%EC%A4%80%EC%84%B1%EC%96%B4-2%EB%A7%88%EB%A6%AC/811/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0-%EC%95%8C%EC%A7%80%EC%9D%B4%ED%84%B03%EB%A7%88%EB%A6%AC/895/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/011-%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC5%EB%A7%88%EB%A6%AC/2822/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%ED%95%98%ED%94%84%EB%B9%85-%EB%8D%B8%EB%AA%A8%EA%B2%8C%EB%8B%88-1%EB%A7%88%EB%A6%AC/4380/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%ED%94%BC%EA%B7%B8%EB%AF%B8%EC%9A%B0%EC%8A%A4-%EC%A4%80%EC%84%B1%EC%96%B4-5%EB%A7%88%EB%A6%AC/2220/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EC%98%A4%ED%86%A0%EC%8B%B1%ED%81%AC%EB%A1%9C%EC%8A%A4-1%EB%A7%88%EB%A6%AC/2534/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EA%B7%B8%EB%A6%B0%EB%84%A4%EC%98%A8%ED%85%8C%ED%8A%B8%EB%9D%BC5%EB%A7%88%EB%A6%AC/2926/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EB%89%B4%EA%B8%B0%EB%8B%88%EC%95%84-%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B05%EB%A7%88%EB%A6%AC/3094/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144-%EC%95%94%EC%BB%B7-%EC%84%B1%EC%96%B4/3527/category/432/display/1/",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+            "discoveredAt": "2026-10-08T16:36:34.373Z",
+            "requiresProductClassification": true
+          }
+        ],
+        "reviewQueue": [],
+        "excludedCandidates": [],
+        "requiresManualReview": false,
+        "blockedUntil": null
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": null,
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-49",
+      "domain": "fishermanbt.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T16:52:45.179Z",
+      "collectorLastSuccess": "2026-10-08T16:53:55.747Z",
+      "count": 13,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 1,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "detailBudget": 7,
+        "newCandidates": 30,
+        "verifiedItems": 13,
+        "pendingCandidates": 23,
+        "pendingByGroup": {
+          "fish": 23
+        },
+        "reviewRequired": 0,
+        "reviewReasons": {},
+        "reviewQueue": [],
+        "excludedCandidates": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T16:52:45.181Z",
+        "errors": [
+          "product_budget_reached:https://fishermanbt.com/product/list.html?cate_no=42",
+          "page_budget_reached:https://fishermanbt.com/product/list.html?cate_no=42"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "nextUrl": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
+            "expectedProductCount": 1142,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://fishermanbt.com/product/list.html?cate_no=42",
+              "https://fishermanbt.com/product/list.html?cate_no=42&page=2"
+            ],
+            "headProbePending": false
+          }
+        ]
+      },
+      "discoveryProgress": {
+        "schemaVersion": 1,
+        "cursor": {
+          "schemaVersion": 1,
+          "nextCategoryIndex": 0,
+          "categories": {
+            "fishermanbt.com:42": {
+              "entryUrl": "https://fishermanbt.com/product/list.html?cate_no=42",
+              "nextUrl": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
+              "seenKeys": [
+                "fishermanbt.com:4961",
+                "fishermanbt.com:3657",
+                "fishermanbt.com:2989",
+                "fishermanbt.com:2828",
+                "fishermanbt.com:4273",
+                "fishermanbt.com:5337",
+                "fishermanbt.com:1048",
+                "fishermanbt.com:1366",
+                "fishermanbt.com:71",
+                "fishermanbt.com:3009",
+                "fishermanbt.com:4795",
+                "fishermanbt.com:296",
+                "fishermanbt.com:1738",
+                "fishermanbt.com:64",
+                "fishermanbt.com:102",
+                "fishermanbt.com:103",
+                "fishermanbt.com:319",
+                "fishermanbt.com:1060",
+                "fishermanbt.com:1061",
+                "fishermanbt.com:1733",
+                "fishermanbt.com:1737",
+                "fishermanbt.com:1744",
+                "fishermanbt.com:1833",
+                "fishermanbt.com:1848",
+                "fishermanbt.com:2259",
+                "fishermanbt.com:2323",
+                "fishermanbt.com:2324",
+                "fishermanbt.com:2360",
+                "fishermanbt.com:2361",
+                "fishermanbt.com:2365"
+              ],
+              "cycleStartedAt": "2026-10-08T16:52:45.181Z",
+              "cyclesCompleted": 0,
+              "lastCycle": null,
+              "visitedPageUrls": [
+                "https://fishermanbt.com/product/list.html?cate_no=42",
+                "https://fishermanbt.com/product/list.html?cate_no=42&page=2"
+              ],
+              "headProbePending": false,
+              "expectedProductCount": 1142,
+              "lastAttempt": "2026-10-08T16:52:45.181Z"
+            }
+          }
+        },
+        "categories": [
+          {
+            "url": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "label": "구피·열대어",
+            "visitedPages": [
+              "https://fishermanbt.com/product/list.html?cate_no=42",
+              "https://fishermanbt.com/product/list.html?cate_no=42&page=2"
+            ],
+            "expectedProductCount": 1142,
+            "terminalPageReached": false,
+            "coverageComplete": false,
+            "errors": [
+              "product_budget_reached",
+              "page_budget_reached"
+            ],
+            "headProbe": false,
+            "headProbeDeferred": false,
+            "nextPage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
+            "cycleSeenProductCount": 30
+          }
+        ],
+        "pendingCandidates": [
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1366&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=71&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=3009&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=4795&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=296&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1738&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=64&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=102&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=103&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=319&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1060&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1061&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1733&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:36:54.767Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1737&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1744&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1833&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=1848&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=2259&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=2323&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=2324&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=2360&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=2361&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://fishermanbt.com/product/detail.html?product_no=2365&cate_no=42&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://fishermanbt.com/product/list.html?cate_no=42",
+            "discoveredAt": "2026-10-08T16:52:45.712Z",
+            "requiresProductClassification": true
+          }
+        ],
+        "reviewQueue": [],
+        "excludedCandidates": [],
+        "requiresManualReview": false,
+        "blockedUntil": null
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": null,
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-50",
+      "domain": "healingaqua.co.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T16:53:56.494Z",
+      "collectorLastSuccess": "2026-10-08T16:55:06.885Z",
+      "count": 8,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 1,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "detailBudget": 8,
+        "newCandidates": 30,
+        "verifiedItems": 8,
+        "pendingCandidates": 22,
+        "pendingByGroup": {
+          "fish": 22
+        },
+        "reviewRequired": 0,
+        "reviewReasons": {},
+        "reviewQueue": [],
+        "excludedCandidates": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T16:53:56.496Z",
+        "errors": [
+          "expected_total_unverified:https://healingaqua.co.kr/product/list.html?cate_no=238",
+          "product_budget_reached:https://healingaqua.co.kr/product/list.html?cate_no=238"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "nextUrl": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://healingaqua.co.kr/product/list.html?cate_no=238"
+            ],
+            "headProbePending": false
+          }
+        ]
+      },
+      "discoveryProgress": {
+        "schemaVersion": 1,
+        "cursor": {
+          "schemaVersion": 1,
+          "nextCategoryIndex": 0,
+          "categories": {
+            "healingaqua.co.kr:238": {
+              "entryUrl": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+              "nextUrl": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+              "seenKeys": [
+                "healingaqua.co.kr:4747",
+                "healingaqua.co.kr:4746",
+                "healingaqua.co.kr:4742",
+                "healingaqua.co.kr:4740",
+                "healingaqua.co.kr:4739",
+                "healingaqua.co.kr:4738",
+                "healingaqua.co.kr:4737",
+                "healingaqua.co.kr:4736",
+                "healingaqua.co.kr:4735",
+                "healingaqua.co.kr:4733",
+                "healingaqua.co.kr:4732",
+                "healingaqua.co.kr:4731",
+                "healingaqua.co.kr:4729",
+                "healingaqua.co.kr:4727",
+                "healingaqua.co.kr:4724",
+                "healingaqua.co.kr:4723",
+                "healingaqua.co.kr:4722",
+                "healingaqua.co.kr:4721",
+                "healingaqua.co.kr:4720",
+                "healingaqua.co.kr:4719",
+                "healingaqua.co.kr:4718",
+                "healingaqua.co.kr:4717",
+                "healingaqua.co.kr:4716",
+                "healingaqua.co.kr:4715",
+                "healingaqua.co.kr:4710",
+                "healingaqua.co.kr:4708",
+                "healingaqua.co.kr:4707",
+                "healingaqua.co.kr:4706",
+                "healingaqua.co.kr:4705",
+                "healingaqua.co.kr:4704"
+              ],
+              "cycleStartedAt": "2026-10-08T16:53:56.496Z",
+              "cyclesCompleted": 0,
+              "lastCycle": null,
+              "visitedPageUrls": [
+                "https://healingaqua.co.kr/product/list.html?cate_no=238"
+              ],
+              "headProbePending": false,
+              "lastAttempt": "2026-10-08T16:53:56.496Z"
+            }
+          }
+        },
+        "categories": [
+          {
+            "url": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "label": "열대어",
+            "visitedPages": [
+              "https://healingaqua.co.kr/product/list.html?cate_no=238"
+            ],
+            "expectedProductCount": null,
+            "terminalPageReached": false,
+            "coverageComplete": false,
+            "errors": [
+              "expected_total_unverified",
+              "product_budget_reached"
+            ],
+            "headProbe": false,
+            "headProbeDeferred": false,
+            "nextPage": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "cycleSeenProductCount": 30
+          }
+        ],
+        "pendingCandidates": [
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4735&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4733&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4732&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4731&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4729&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4727&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4724&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4723&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4722&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4721&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4720&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4719&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4718&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4717&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4716&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4715&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4710&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4708&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4707&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4706&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4705&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://healingaqua.co.kr/product/detail.html?product_no=4704&cate_no=238&display_group=1",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+            "discoveredAt": "2026-10-08T16:37:05.331Z",
+            "requiresProductClassification": true
+          }
+        ],
+        "reviewQueue": [],
+        "excludedCandidates": [],
+        "requiresManualReview": false,
+        "blockedUntil": null
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": null,
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-51",
+      "domain": "jdaqua.co.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T16:55:07.873Z",
+      "collectorLastSuccess": "2026-10-08T16:55:22.667Z",
+      "count": 8,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 2,
+        "adapter": "imweb_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "detailBudget": 8,
+        "newCandidates": 27,
+        "verifiedItems": 8,
+        "pendingCandidates": 19,
+        "pendingByGroup": {
+          "fish": 19
+        },
+        "reviewRequired": 0,
+        "reviewReasons": {},
+        "reviewQueue": [],
+        "excludedCandidates": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T16:55:07.882Z",
+        "errors": [
+          "pagination_terminal_unverified:https://www.jdaqua.co.kr/171",
+          "expected_total_unverified:https://www.jdaqua.co.kr/171",
+          "pagination_terminal_unverified:https://www.jdaqua.co.kr/1001468813",
+          "expected_total_unverified:https://www.jdaqua.co.kr/1001468813",
+          "page_budget_reached:https://www.jdaqua.co.kr/1001468813"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.jdaqua.co.kr/171",
+            "nextUrl": "https://www.jdaqua.co.kr/171",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 15,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.jdaqua.co.kr/171"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.jdaqua.co.kr/1001468813",
+            "nextUrl": "https://www.jdaqua.co.kr/1001468813",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 12,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.jdaqua.co.kr/1001468813"
+            ],
+            "headProbePending": false
+          }
+        ]
+      },
+      "discoveryProgress": {
+        "schemaVersion": 1,
+        "cursor": {
+          "schemaVersion": 1,
+          "nextCategoryIndex": 0,
+          "categories": {
+            "jdaqua.co.kr:imweb:171": {
+              "entryUrl": "https://www.jdaqua.co.kr/171",
+              "nextUrl": "https://www.jdaqua.co.kr/171",
+              "seenKeys": [
+                "jdaqua.co.kr:419",
+                "jdaqua.co.kr:1046",
+                "jdaqua.co.kr:310",
+                "jdaqua.co.kr:60",
+                "jdaqua.co.kr:1060",
+                "jdaqua.co.kr:36",
+                "jdaqua.co.kr:1061",
+                "jdaqua.co.kr:1062",
+                "jdaqua.co.kr:1063",
+                "jdaqua.co.kr:94",
+                "jdaqua.co.kr:304",
+                "jdaqua.co.kr:320",
+                "jdaqua.co.kr:565",
+                "jdaqua.co.kr:1064",
+                "jdaqua.co.kr:1083"
+              ],
+              "cycleStartedAt": "2026-10-08T16:55:07.883Z",
+              "cyclesCompleted": 0,
+              "lastCycle": null,
+              "visitedPageUrls": [
+                "https://www.jdaqua.co.kr/171"
+              ],
+              "headProbePending": false,
+              "lastAttempt": "2026-10-08T16:55:07.882Z"
+            },
+            "jdaqua.co.kr:imweb:1001468813": {
+              "entryUrl": "https://www.jdaqua.co.kr/1001468813",
+              "nextUrl": "https://www.jdaqua.co.kr/1001468813",
+              "seenKeys": [
+                "jdaqua.co.kr:1097",
+                "jdaqua.co.kr:351",
+                "jdaqua.co.kr:747",
+                "jdaqua.co.kr:987",
+                "jdaqua.co.kr:980",
+                "jdaqua.co.kr:746",
+                "jdaqua.co.kr:728",
+                "jdaqua.co.kr:757",
+                "jdaqua.co.kr:748",
+                "jdaqua.co.kr:702",
+                "jdaqua.co.kr:1191",
+                "jdaqua.co.kr:1084"
+              ],
+              "cycleStartedAt": "2026-10-08T16:55:07.892Z",
+              "cyclesCompleted": 0,
+              "lastCycle": null,
+              "visitedPageUrls": [
+                "https://www.jdaqua.co.kr/1001468813"
+              ],
+              "headProbePending": false,
+              "lastAttempt": "2026-10-08T16:55:07.882Z"
+            }
+          }
+        },
+        "categories": [
+          {
+            "url": "https://www.jdaqua.co.kr/171",
+            "label": "코리도라스",
+            "visitedPages": [
+              "https://www.jdaqua.co.kr/171"
+            ],
+            "expectedProductCount": null,
+            "terminalPageReached": false,
+            "coverageComplete": false,
+            "errors": [
+              "pagination_terminal_unverified",
+              "expected_total_unverified"
+            ],
+            "headProbe": false,
+            "headProbeDeferred": false,
+            "nextPage": "https://www.jdaqua.co.kr/171",
+            "cycleSeenProductCount": 15
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813",
+            "label": "플래티·몰리",
+            "visitedPages": [
+              "https://www.jdaqua.co.kr/1001468813"
+            ],
+            "expectedProductCount": null,
+            "terminalPageReached": false,
+            "coverageComplete": false,
+            "errors": [
+              "pagination_terminal_unverified",
+              "expected_total_unverified",
+              "page_budget_reached"
+            ],
+            "headProbe": false,
+            "headProbeDeferred": false,
+            "nextPage": "https://www.jdaqua.co.kr/1001468813",
+            "cycleSeenProductCount": 12
+          }
+        ],
+        "pendingCandidates": [
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=1063",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=94",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=304",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=320",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=565",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=1064",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/171/?idx=1083",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/171",
+            "discoveredAt": "2026-10-08T16:37:15.667Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=1097",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=351",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=747",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=987",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=980",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=746",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=728",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=757",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=748",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=702",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=1191",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          },
+          {
+            "url": "https://www.jdaqua.co.kr/1001468813/?idx=1084",
+            "type": "live",
+            "subtype": "fish",
+            "mixedCategories": false,
+            "classificationBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+            "discoveredInCategory": "https://www.jdaqua.co.kr/1001468813",
+            "discoveredAt": "2026-10-08T16:37:17.587Z",
+            "requiresProductClassification": true
+          }
+        ],
+        "reviewQueue": [],
+        "excludedCandidates": [],
+        "requiresManualReview": false,
+        "blockedUntil": null
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": null,
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-52",
+      "domain": "medifish.store",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T16:55:23.771Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "discoveryProgress": {
+        "schemaVersion": 1,
+        "cursor": null,
+        "categories": [],
+        "pendingCandidates": [],
+        "reviewQueue": [],
+        "excludedCandidates": [],
+        "requiresManualReview": true,
+        "blockedUntil": null
+      },
+      "errors": [
+        "Parent-reported HTTP403; manual review required, no requests or alternate route"
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": null,
+      "automatedExecutionVerified": false
     }
   ],
-  "executionDeadlineReached": true,
-  "executionBudgetLimited": true,
-  "finishedAt": "2026-10-08T16:28:17.505Z",
+  "executionBudgetLimited": false,
+  "finishedAt": "2026-10-08T16:55:25.692Z",
   "attemptedSourceIds": [
-    "retailer-38",
-    "retailer-22",
-    "retailer-02",
-    "retailer-13",
-    "retailer-14",
-    "retailer-17",
-    "retailer-32",
-    "retailer-06",
-    "retailer-24",
-    "retailer-01",
-    "retailer-15",
-    "retailer-05",
-    "retailer-23"
+    "retailer-47",
+    "retailer-48",
+    "retailer-49",
+    "retailer-50",
+    "retailer-51",
+    "retailer-52"
   ],
   "executionEnvironment": "local",
-  "productChanges": 85,
-  "photoVerification": {
-    "verifiedHttpsImages": 16,
-    "browserVisualVerification": false,
-    "evidenceMethod": "Actual same-host HTTPS GET 200 with image MIME; System.Drawing JPEG decoder confirmed dimensions; no URL-only substitution"
-  }
+  "productChanges": 37
 }

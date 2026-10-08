@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "experimental": false,
   "connectedToSchedule": true,
-  "observedSourceCount": 32,
-  "observedCategoryCount": 139,
+  "observedSourceCount": 36,
+  "observedCategoryCount": 145,
   "observationsAreRepresentative": true,
   "sources": [
     {
@@ -2140,6 +2140,134 @@
       "blockers": [
         "Public category HTML contains shopProductWrapper skeletons without product hrefs or pagination; isolated editorial links do not establish the list. Client-generated listing remains unsupported; no hidden API or robots-denied route requested.",
         "Reviewed seeds are aquarium supplies; no reviewed live organism category."
+      ]
+    },
+    {
+      "id": "retailer-48",
+      "sourceDomain": "chunjane.com",
+      "platform": "Cafe24",
+      "adapter": "cafe24_category_links",
+      "maxPages": 2,
+      "maxPagesPerCategory": 1,
+      "maxProducts": 30,
+      "maxProductVerifications": 3,
+      "allSourceCategoriesReviewed": false,
+      "completeness": "unknown_representative_categories_only",
+      "categories": [
+        {
+          "label": "열대어",
+          "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+          "observedHref": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+          "type": "live",
+          "subtype": "fish",
+          "mixedCategories": false,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+          "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        },
+        {
+          "label": "코리도라스",
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedHref": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "type": "live",
+          "subtype": "fish",
+          "mixedCategories": false,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+          "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        }
+      ]
+    },
+    {
+      "id": "retailer-49",
+      "sourceDomain": "fishermanbt.com",
+      "platform": "Cafe24",
+      "adapter": "cafe24_category_links",
+      "maxPages": 2,
+      "maxPagesPerCategory": 1,
+      "maxProducts": 30,
+      "maxProductVerifications": 3,
+      "allSourceCategoriesReviewed": false,
+      "completeness": "unknown_representative_categories_only",
+      "categories": [
+        {
+          "label": "구피·열대어",
+          "url": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "observedHref": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "type": "live",
+          "subtype": "fish",
+          "mixedCategories": false,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+          "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        }
+      ]
+    },
+    {
+      "id": "retailer-50",
+      "sourceDomain": "healingaqua.co.kr",
+      "platform": "Cafe24",
+      "adapter": "cafe24_category_links",
+      "maxPages": 2,
+      "maxPagesPerCategory": 1,
+      "maxProducts": 30,
+      "maxProductVerifications": 3,
+      "allSourceCategoriesReviewed": false,
+      "completeness": "unknown_representative_categories_only",
+      "categories": [
+        {
+          "label": "열대어",
+          "url": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+          "observedHref": "https://healingaqua.co.kr/product/list.html?cate_no=238",
+          "type": "live",
+          "subtype": "fish",
+          "mixedCategories": false,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+          "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        }
+      ]
+    },
+    {
+      "id": "retailer-51",
+      "sourceDomain": "jdaqua.co.kr",
+      "platform": "Imweb",
+      "adapter": "imweb_category_links",
+      "maxPages": 2,
+      "maxPagesPerCategory": 1,
+      "maxProducts": 30,
+      "maxProductVerifications": 3,
+      "allSourceCategoriesReviewed": false,
+      "completeness": "unknown_representative_categories_only",
+      "categories": [
+        {
+          "label": "코리도라스",
+          "url": "https://www.jdaqua.co.kr/171",
+          "observedHref": "https://www.jdaqua.co.kr/171",
+          "type": "live",
+          "subtype": "fish",
+          "mixedCategories": false,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+          "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        },
+        {
+          "label": "플래티·몰리",
+          "url": "https://www.jdaqua.co.kr/1001468813",
+          "observedHref": "https://www.jdaqua.co.kr/1001468813",
+          "type": "live",
+          "subtype": "fish",
+          "mixedCategories": false,
+          "excluded": false,
+          "requiresProductClassification": true,
+          "reviewBasis": "Explicit user-provided category; actual public category links and product detail reviewed",
+          "caution": "Exclude feed, artificial products, supplies and mixed unsupported details"
+        }
       ]
     }
   ]

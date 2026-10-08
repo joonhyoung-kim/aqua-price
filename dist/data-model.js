@@ -52,14 +52,25 @@
     }
     return catalog;
   }
+  const fishGroups = {"all":"전체","guppy":"구피","platy":"플래티","molly":"몰리","cory":"코리도라스","tetra":"테트라","medaka":"메다카","betta":"베타","cichlid":"시클리드","other":"기타"};
+  const searchText = value => String(value).toLowerCase().replace(/플레티/g, '플래티');
+  function fishGroup(product) {
+    if (product.verified !== true || product.type !== 'live' || product.subtype !== 'fish') return null;
+    const title = [product.name, product.originalTitle || ''].join(' ');
+    if (/사료|먹이|모형|인조|장식|치료제|제거제|약품/.test(title)) return 'other';
+    const rules = { guppy:/구피|guppy/i, platy:/플래티|플레티|platy/i, molly:/몰리|molly/i, cory:/코리도라스|corydoras/i, tetra:/테트라|tetra/i, medaka:/메다카|medaka/i, betta:/베타|betta/i, cichlid:/시클리드|cichlid/i };
+    const matches = Object.keys(rules).filter(key => rules[key].test(title));
+    return matches.length === 1 ? matches[0] : 'other';
+  }
   function selectProducts(catalog, filters) {
     validateCatalog(catalog);
     requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
+    requireValue(filters.fishGroup === undefined || Object.hasOwn(fishGroups, filters.fishGroup), '잘못된 어종 조건');
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
     const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
     const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
-    const needle = filters.query.trim().toLowerCase();
-    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || p.subtype === filters.subtype) && [p.name, p.originalTitle || '', p.spec].some(value => value.toLowerCase().includes(needle)));
+    const needle = searchText(filters.query.trim());
+    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || !filters.fishGroup || filters.fishGroup === 'all' || fishGroup(p) === filters.fishGroup) && [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle)));
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
     const includeUnknown = (filters.days === 'all' || filters.includeUnknownRegistration === true) && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
@@ -79,5 +90,5 @@
     return { rows, reason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl };
+  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups };
 });

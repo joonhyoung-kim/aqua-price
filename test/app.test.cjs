@@ -2,6 +2,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const AquaCatalog = require('../dist/data-model.js');
 const { validateCatalog, selectProducts, usablePhoto } = require('../dist/data-model.js');
 const { buildCatalog } = require('../scripts/build-catalog.cjs');
 // Synthetic test fixtures only; never copied into the published catalog.
@@ -145,4 +146,11 @@ test('direct retailer evidence is separate from API and six livestock photos use
 
 test('all period includes old and unknown registration without fabricating dates or all-time sales',()=>{
  const data=catalog([product('old',{registeredAt:'2020-01-01T00:00:00.000Z'}),product('unknown',{registeredAt:null})]);const result=select(data,{days:'all',includeUnknownRegistration:false});assert.equal(result.rows.length,2);assert.equal(result.startAt,null);assert.equal(result.rows.find(p=>p.id==='unknown').registeredAt,null);assert.equal(select(data,{days:'all',sort:'new'}).rows.length,1);assert.equal(select(data,{days:'all',sort:'sales'}).rows.length,0);
+});
+
+test('fish family classification never promotes feed or unknown product types',()=>{
+ const p={verified:true,type:'live',subtype:'fish',name:'옐로우 구피',originalTitle:''};assert.equal(AquaCatalog.fishGroup(p),'guppy');
+ assert.equal(AquaCatalog.fishGroup({...p,name:'플레티'}),'platy');assert.equal(AquaCatalog.fishGroup({...p,name:'블랙 몰리'}),'molly');
+ assert.equal(AquaCatalog.fishGroup({...p,name:'구피 사료',type:'gear'}),null);assert.equal(AquaCatalog.fishGroup({...p,name:'구피 사료'}),'other');
+ assert.equal(AquaCatalog.fishGroup({...p,subtype:undefined}),null);assert.equal(AquaCatalog.fishGroup({...p,name:'미분류 물고기'}),'other');
 });

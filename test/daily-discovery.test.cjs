@@ -1,5 +1,25 @@
 'use strict';const {test}=require('node:test'),assert=require('node:assert/strict');const {discoverDaily}=require('../scripts/collector/daily-discovery.cjs');const {classifyProduct}=require('../scripts/collector/classification.cjs');const {verifyDiscovered}=require('../scripts/collector/verify-discovered.cjs');
 const host='https://example.invalid',url=host+'/category/plants/7/';const source={id:'synthetic',sourceDomain:'example.invalid',name:'fixture',officialURL:host+'/',enabled:true,maxRequests:10,delayMs:0,cacheTtlMs:0,timeoutMs:1000,maxBytes:10000,photosAllowed:false};const seed={adapter:'cafe24_category_links',maxPages:1,maxProducts:2,maxProductVerifications:2,categories:[{url,label:'수초',type:'live',subtype:'aquatic_plant',reviewBasis:'Synthetic verified category'}]};
+test('fair detail queue shares turns across all four livestock types and resumes',()=>{
+ const {takeFairCandidates}=require('../scripts/collector/queue-policy.cjs');const candidates=['fish','fish','shrimp','aquatic_plant','snail'].map((subtype,i)=>({subtype,url:'https://example.invalid/'+i}));
+ const first=takeFairCandidates(candidates,2);assert.deepEqual(first.candidates.map(c=>c.subtype),['fish','shrimp']);
+ const second=takeFairCandidates(candidates.filter(c=>!first.candidates.includes(c)),2,first.cursor);assert.deepEqual(second.candidates.map(c=>c.subtype),['aquatic_plant','snail']);
+});
+test('mixed shrimp categories require a real breadcrumb and ornamental identity, and never accept feed',()=>{
+ const mixed={...seed,categories:[{...seed.categories[0],label:'새우/가재',mixedCategories:true,type:null,subtype:null}]},candidate={url:host+'/product/p1/1/',mixedCategories:true};
+ const html='<script type="application/ld+json">'+JSON.stringify({'@type':'BreadcrumbList',itemListElement:[{name:'새우/가재',item:url}]})+'</script>';
+ assert.equal(classifyProduct(html,{title:'체리새우 10마리'},candidate,mixed).subtype,'shrimp');
+ assert.equal(classifyProduct(html,{title:'체리새우 사료'},candidate,mixed).status,'needs_review');
+ assert.equal(classifyProduct('<nav><a href="'+url+'">새우/가재</a></nav>',{title:'체리새우'},candidate,mixed).status,'needs_review');
+});
+test('cold cache restores only this seller and keeps durable candidates and reviews',()=>{
+ const {restoreCheckpoint,progress}=require('../scripts/collector/queue-policy.cjs');const snapshot={items:[{id:'ours',seller_domain:'example.invalid',product_url:host+'/product/p1/1/'},{id:'other',seller_domain:'other.invalid'}]};
+ const report={discoveryProgress:{cursor:{schemaVersion:1,nextCategoryIndex:1,categories:{}},pendingCandidates:[{url:host+'/product/p2/2/'}],reviewQueue:[{key:'3',reason:'mixed'}]}};
+ const state=restoreCheckpoint({},snapshot,source,report);assert.deepEqual(state.products.map(p=>p.id),['ours']);assert.equal(progress(state).pendingCandidates.length,1);assert.equal(progress(state).reviewQueue[0].reason,'mixed');
+});
+test('known verified products do not consume the new-candidate budget on later category cycles',async()=>{
+ const result=await discoverDaily(source,{...seed,maxProducts:1},{},{...transport({[url]:page([1,2,3])}),knownProductKeys:[1,2].map(i=>require('../scripts/collector/discovery.cjs').productKey(host+'/product/p'+i+'/'+i+'/'))});assert.equal(result.products.length,1);assert.match(result.products[0].url,/\/3\/$/);assert.equal(result.categories[0].cycleSeenProductCount,3);
+});
 function page(ids,next){return '<div class="prdCount">4개</div><ul class="prdList">'+ids.map(i=>`<a href="/product/p${i}/${i}/">p${i}</a>`).join('')+'</ul><div class="xans-product-normalpaging">'+(next?`<a href="?page=${next}">next</a>`:'')+'</div>';}
 function transport(pages){const calls=[];return {calls,fetch:async u=>{calls.push(u);return new Response(u.endsWith('/robots.txt')?'User-agent: *\nAllow: /':pages[u]||'not found',{status:u.endsWith('/robots.txt')||pages[u]?200:404});},sleep:async()=>{}};}
 test('saved actual next-page cursor resumes, probing first page does not erase pending tail',async()=>{
@@ -10,6 +30,29 @@ test('product-budget interruption resumes the same observed page without losing 
  const a=await discoverDaily(source,{...seed,maxProducts:1},{},transport({[url]:page([1,2],2)}));assert.equal(Object.values(a.cursor.categories)[0].nextUrl,url);const b=await discoverDaily(source,{...seed,maxProducts:1},a,transport({[url]:page([1,2],2)}));assert.equal(b.products[0].url,host+'/product/p2/2/');assert.equal(Object.values(b.cursor.categories)[0].nextUrl,url+'?page=2');
 });
 test('round-robin category index prevents one large category monopolizing every daily budget',async()=>{const second=host+'/category/fish/8/',two={...seed,categories:[...seed.categories,{...seed.categories[0],url:second}]};const a=await discoverDaily(source,two,{},transport({[url]:page([1,2],2)}));assert.equal(a.cursor.nextCategoryIndex,1);const b=await discoverDaily(source,two,a,transport({[second]:page([5,6],2)}));assert.equal(b.categories[0].url,second);});
+test('one remaining page slot advances a saved tail across two categories and repeated runs',async()=>{
+ const a=host+'/category/a/11/',b=host+'/category/b/12/',config={...seed,maxPages:2,maxProducts:10,categories:[{...seed.categories[0],url:a},{...seed.categories[0],url:b}]};let state={},visited=[];
+ for(let i=0;i<6;i++){const t=transport({[a]:page([11]),[b]:page([21],2),[b+'?page=2']:page([22])});state=await discoverDaily(source,config,state,t);visited.push(...t.calls);assert.ok(state.coverage.pagesVisited<=2);}
+ assert.ok(visited.includes(b+'?page=2'));assert.ok(Object.values(state.cursor.categories).some(c=>c.entryUrl===b&&c.cyclesCompleted>0));
+});
+test('new head candidates cannot indefinitely consume the saved tail candidate budget',async()=>{
+ const config={...seed,maxPages:2,maxProducts:1};let state={cursor:{schemaVersion:1,nextCategoryIndex:0,categories:{}}};const key=require('../scripts/collector/discovery.cjs').categoryKey(url);state.cursor.categories[key]={entryUrl:url,nextUrl:url+'?page=2',seenKeys:[],cyclesCompleted:0};const visits=[];
+ for(let i=0;i<3;i++){const t=transport({[url]:page([100+i],2),[url+'?page=2']:page([200])});state=await discoverDaily(source,config,state,t);visits.push(...t.calls);}
+ assert.ok(visits.includes(url+'?page=2'));
+});
+test('one recoverable detail failure keeps successful products and defers only the failed URL',async()=>{
+ const {integrateDiscovery}=require('../scripts/collector/integrate-discovery.cjs'),make=id=>'<h1>수초 '+id+'</h1><p>1,000원</p><script type="application/ld+json">'+JSON.stringify({'@type':'Product',name:'수초 '+id,sku:'p'+id,offers:{'@type':'Offer',price:1000,priceCurrency:'KRW'}})+'</script>';
+ const candidates=[1,2,3,4].map(id=>({url:host+'/product/p'+id+'/'+id+'/',type:'live',subtype:'aquatic_plant',mixedCategories:false,discoveredInCategory:url}));let state={status:'success',products:[],updatedKeys:[],requests:0,discoveryPending:candidates},calls=[];
+ for(let run=0;run<3;run++){state.requests=0;const t={sleep:async()=>{},fetch:async u=>{calls.push(u);if(u.endsWith('/robots.txt'))return new Response('User-agent: *\nAllow: /');if(u===url)return new Response(page([1,2,3,4]));const id=Number(u.match(/\/(\d+)\/$/)?.[1]);return new Response(id===2?'error':make(id),{status:id===2?500:200});}};state=await integrateDiscovery({...source,maxRequests:20,cacheTtlMs:10800000},{...seed,maxProducts:10,maxProductVerifications:3},state,{items:[]},t);}
+ assert.equal(state.products.length,3);assert.equal(calls.filter(u=>u===candidates[1].url).length,1);assert.equal(state.discoveryPending.length,1);assert.ok(state.discoveryPending[0].retryAfter);assert.ok(state.products.some(p=>p.retailer_product_id==='p1'));assert.ok(state.products.some(p=>p.retailer_product_id==='p4'));
+});
+test('a later HTTP403 preserves earlier verified detail but quarantines the source immediately',async()=>{
+ const candidates=[1,2,3].map(id=>({url:host+'/product/p'+id+'/'+id+'/',type:'live',subtype:'aquatic_plant',mixedCategories:false,discoveredInCategory:url})),calls=[];
+ const html='<h1>수초 1</h1><p>1,000원</p><script type="application/ld+json">'+JSON.stringify({'@type':'Product',name:'수초 1',sku:'p1',offers:{'@type':'Offer',price:1000,priceCurrency:'KRW'}})+'</script>';
+ const t={sleep:async()=>{},fetch:async u=>{calls.push(u);return new Response(u.endsWith('/robots.txt')?'User-agent: *\nAllow: /':html,{status:u===candidates[1].url?403:200});}};
+ const out=await verifyDiscovered({...source,maxRequests:10},{...seed,maxProductVerifications:3},candidates,{},t);assert.equal(out.status,'access_stopped');assert.equal(out.products.length,1);assert.equal(out.requiresManualReview,true);assert.ok(!calls.includes(candidates[2].url));
+ const again=await verifyDiscovered(source,seed,candidates,out,{fetch:()=>{throw Error('must not retry')}});assert.equal(again.status,'quarantined');
+});
 test('unsupported adapters and denied sources are explicit and make no discovery requests',async()=>{const t={fetch:()=>{throw Error('must not fetch')}};assert.equal((await discoverDaily(source,{...seed,adapter:'not_implemented'},{},t)).status,'adapter_not_implemented');assert.equal((await discoverDaily({...source,enabled:false},seed,{},t)).status,'disabled');});
 test('live-food shrimp, supplies, artificial plants and terrestrial animals cannot become ornamental livestock',()=>{
  const mixed={url:host+'/product/x/1/',type:null,subtype:null,mixedCategories:true};const bread='<div class="ec-base-path"><a href="/category/food/9/">사료/먹이</a><a href="/category/livefeed/10/">생먹이</a></div>';assert.equal(classifyProduct(bread,{title:'생이새우 (생먹이)'},mixed,seed).type,'gear');

@@ -1,6 +1,6 @@
 'use strict';
 const $ = selector => document.querySelector(selector);
-let filters = { type: 'gear', subtype: 'aquatic_plant', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true };
+let filters = { type: 'gear', subtype: 'aquatic_plant', fishGroup: 'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true };
 let catalog = { schemaVersion: 1, status: 'pending', reason: '검증된 판매처 데이터를 불러오는 중입니다.', asOf: null, sellers: [], products: [] };
 const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const formatTime = value => value === null ? '미확인' : new Date(value).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ' KST';
@@ -9,6 +9,16 @@ const PAGE_SIZE = 24;
 let visibleLimit = PAGE_SIZE;
 const subtypeNames = { fish: '물고기', shrimp: '새우', aquatic_plant: '수초', snail: '달팽이' };
 function syncSubtypeControls() {
+  $('#fishFilters').hidden = filters.type !== 'live' || filters.subtype !== 'fish';
+  const counts = Object.fromEntries(Object.keys(AquaCatalog.fishGroups).map(key => [key, 0]));
+  const base = AquaCatalog.selectProducts(catalog, { ...filters, type: 'live', subtype: 'fish', fishGroup: 'all' });
+  for (const product of base.rows) { counts.all++; counts[AquaCatalog.fishGroup(product)]++; }
+  document.querySelectorAll('[data-fish-group]').forEach(button => {
+    const key = button.dataset.fishGroup;
+    button.hidden = !['all','guppy','platy','molly','other'].includes(key) && counts[key] === 0 && key !== filters.fishGroup;
+    button.textContent = AquaCatalog.fishGroups[key] + ' ' + counts[key];
+    const active = key === filters.fishGroup; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active);
+  });
   $('#livestockFilters').hidden = filters.type !== 'live';
   document.querySelectorAll('[data-subtype]').forEach(button => { const active = button.dataset.subtype === filters.subtype; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
 }
@@ -57,6 +67,7 @@ document.querySelectorAll('[data-sort]').forEach(button => button.addEventListen
   render();
 }));
 document.querySelectorAll('[data-subtype]').forEach(button => button.addEventListener('click', () => { filters.subtype = button.dataset.subtype; render(); }));
+document.querySelectorAll('[data-fish-group]').forEach(button => button.addEventListener('click', () => { filters.fishGroup = button.dataset.fishGroup; render(); }));
 $('#period').addEventListener('change', () => { filters.days = $('#period').value === 'all' ? 'all' : Number($('#period').value); render(); });
 $('#includeUnknown').addEventListener('change', () => { filters.includeUnknownRegistration = $('#includeUnknown').checked; render(); });
 $('#moreResults').addEventListener('click', () => { visibleLimit += PAGE_SIZE; render(false); });
@@ -73,10 +84,10 @@ fetch('catalog.json', { cache: 'no-store' }).then(response => {
 if (document.modelContext?.registerTool) {
   try { Promise.resolve(document.modelContext.registerTool({
     name: 'set_product_filters', description: '검증된 관찰 상품의 종류·정렬·실제 등록 기간·검색어를 변경합니다. 데이터가 없거나 미확인이면 결과가 비어 있습니다.',
-    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, subtype: { enum: ['fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
+    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, fishGroup: { enum: Object.keys(AquaCatalog.fishGroups) }, subtype: { enum: ['fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
     annotations: { readOnlyHint: false },
     execute(value) {
-      const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
+      const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, fishGroup: value?.fishGroup ?? filters.fishGroup, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
       AquaCatalog.selectProducts(catalog, next);
       $(`[data-type="${next.type}"]`).click(); $(`[data-sort="${next.sort}"]`).click();
       $('#period').value = String(next.days); $('#query').value = next.query; $('#includeUnknown').checked = next.includeUnknownRegistration; filters = next; render();

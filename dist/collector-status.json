@@ -1,8 +1,8 @@
 {
   "executionBudgetMs": 1080000,
   "deferredSourceIds": [],
-  "startedAt": "2026-10-08T12:59:09.503Z",
-  "mode": "all",
+  "startedAt": "2026-10-08T14:01:27.296Z",
+  "mode": "reconcile",
   "runTrigger": "local",
   "githubRunId": null,
   "autoRefreshDeployed": false,
@@ -118,7 +118,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T12:59:09.516Z",
       "collectorLastSuccess": "2026-10-08T12:56:57.829Z",
-      "count": 14,
+      "count": 17,
       "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
@@ -308,7 +308,7 @@
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -318,7 +318,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:46:10.887Z",
       "collectorLastSuccess": "2026-10-08T09:46:21.308Z",
-      "count": 1,
+      "count": 4,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -352,7 +352,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:46:21.325Z",
       "collectorLastSuccess": "2026-10-08T09:46:32.443Z",
-      "count": 1,
+      "count": 6,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -452,24 +452,25 @@
       "id": "retailer-09",
       "domain": "alphafish.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:48:37.660Z",
-      "collectorLastSuccess": "2026-10-08T10:49:18.000Z",
-      "count": 6,
-      "requests": 5,
+      "collectorLastAttempt": "2026-10-08T14:01:27.314Z",
+      "collectorLastSuccess": "2026-10-08T14:03:17.942Z",
+      "count": 47,
+      "requests": 12,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
         "terminalPageReached": false,
-        "visitedPages": 3,
-        "expectedPages": 3,
+        "visitedPages": 0,
+        "expectedPages": 0,
         "parseFailures": 0,
         "requestFailures": 0
       },
       "refreshScope": {
-        "verifiedUrlCount": 3,
-        "selectedUrlCount": 3,
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 37,
+        "selectedUrlCount": 10,
         "productBudget": 10,
-        "allVerifiedUrlsSelected": true,
+        "allVerifiedUrlsSelected": false,
         "fullRetailerCatalogCoverage": false
       },
       "discovery": {
@@ -479,24 +480,76 @@
         "pagesVisited": 2,
         "pageBudget": 2,
         "productBudget": 30,
-        "newCandidates": 30,
-        "verifiedItems": 3,
-        "pendingCandidates": 27,
-        "reviewRequired": 0,
+        "detailBudget": 18,
+        "newCandidates": 10,
+        "verifiedItems": 10,
+        "pendingCandidates": 0,
+        "pendingByGroup": {},
+        "reviewRequired": 2,
+        "reviewReasons": {
+          "Feed/artificial plant/supply conflict blocks livestock classification": 2
+        },
+        "reviewQueue": [
+          {
+            "key": "alphafish.co.kr:2708",
+            "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-15cm-%EB%82%B4%EC%99%B8/2708/category/44/display/1/",
+            "title": "나나 활착 유목 (15cm 내외)",
+            "candidate": {
+              "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-15cm-%EB%82%B4%EC%99%B8/2708/category/44/display/1/",
+              "type": "live",
+              "subtype": "aquatic_plant",
+              "mixedCategories": false,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+              "discoveredAt": "2026-10-08T10:48:37.972Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T13:58:48.215Z"
+          },
+          {
+            "key": "alphafish.co.kr:2709",
+            "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-20cm-%EC%9D%B4%EC%83%81/2709/category/44/display/1/",
+            "title": "나나 활착 유목 (20cm 이상)",
+            "candidate": {
+              "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-20cm-%EC%9D%B4%EC%83%81/2709/category/44/display/1/",
+              "type": "live",
+              "subtype": "aquatic_plant",
+              "mixedCategories": false,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+              "discoveredAt": "2026-10-08T10:48:37.972Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T13:58:48.215Z"
+          }
+        ],
+        "excludedCandidates": 0,
         "coverageComplete": false,
         "deletionEnabled": false,
         "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T10:48:37.677Z",
+        "lastAttempt": "2026-10-08T14:01:27.328Z",
         "errors": [
-          "product_budget_reached:https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
           "page_budget_reached:https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/"
         ],
         "cursorCategories": [
           {
             "entryUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "nextUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2",
-            "cycleSeenProductCount": 30,
-            "cyclesCompleted": 0
+            "nextUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=3",
+            "expectedProductCount": 170,
+            "cycleSeenProductCount": 40,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+              "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2"
+            ],
+            "headProbePending": false
           }
         ]
       },
@@ -508,7 +561,7 @@
           "categories": {
             "alphafish.co.kr:44": {
               "entryUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-              "nextUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2",
+              "nextUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=3",
               "seenKeys": [
                 "alphafish.co.kr:3140",
                 "alphafish.co.kr:3224",
@@ -539,12 +592,27 @@
                 "alphafish.co.kr:2715",
                 "alphafish.co.kr:2615",
                 "alphafish.co.kr:3774",
-                "alphafish.co.kr:2593"
+                "alphafish.co.kr:2593",
+                "alphafish.co.kr:2733",
+                "alphafish.co.kr:3534",
+                "alphafish.co.kr:89",
+                "alphafish.co.kr:3088",
+                "alphafish.co.kr:2616",
+                "alphafish.co.kr:2686",
+                "alphafish.co.kr:634",
+                "alphafish.co.kr:2677",
+                "alphafish.co.kr:3826",
+                "alphafish.co.kr:40"
               ],
               "cycleStartedAt": "2026-10-08T10:48:37.677Z",
               "cyclesCompleted": 0,
               "expectedProductCount": 170,
-              "lastAttempt": "2026-10-08T10:48:37.677Z"
+              "lastAttempt": "2026-10-08T14:01:27.328Z",
+              "headProbePending": false,
+              "visitedPageUrls": [
+                "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+                "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2"
+              ]
             }
           }
         },
@@ -560,293 +628,61 @@
             "terminalPageReached": false,
             "coverageComplete": false,
             "errors": [
-              "product_budget_reached",
               "page_budget_reached"
             ],
-            "headProbe": false,
-            "nextPage": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2",
-            "cycleSeenProductCount": 30
+            "headProbe": true,
+            "headProbeDeferred": false,
+            "nextPage": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=3",
+            "cycleSeenProductCount": 40
           }
         ],
-        "pendingCandidates": [
+        "pendingCandidates": [],
+        "reviewQueue": [
           {
-            "url": "https://alphafish.co.kr/product/%EA%B8%80%EB%A1%9C%EC%86%8C%EC%8A%A4-%ED%8B%B0%EA%B7%B8%EB%A7%88-%EC%86%8C%EC%8A%A4%EC%BB%B5-2%EC%BB%B5/2632/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
+            "key": "alphafish.co.kr:2708",
             "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-15cm-%EB%82%B4%EC%99%B8/2708/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
+            "title": "나나 활착 유목 (15cm 내외)",
+            "candidate": {
+              "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-15cm-%EB%82%B4%EC%99%B8/2708/category/44/display/1/",
+              "type": "live",
+              "subtype": "aquatic_plant",
+              "mixedCategories": false,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+              "discoveredAt": "2026-10-08T10:48:37.972Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T13:58:48.215Z"
           },
           {
+            "key": "alphafish.co.kr:2709",
             "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-20cm-%EC%9D%B4%EC%83%81/2709/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%82%98%EC%9E%90%EC%8A%A4%EB%A7%90-%EC%A2%85%EC%9D%B4%EC%BB%B5-1%EC%BB%B5/2011/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%85%B8%EC%B9%98%EB%8F%84%EB%A9%94-20-%EC%B4%89/2306/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%88%88%EC%97%AC%EB%80%8C%EB%B0%94%EB%8A%98-5-%EC%B4%89-%ED%86%A0%EC%A2%85-%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84%EC%88%98%EC%A4%91%EC%97%BD/2721/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%8B%A4%ED%81%AC%EB%A0%88%EB%93%9C%EB%AA%A8%EC%8A%A4-%EC%86%8C%EC%8A%A4%EC%BB%B51%EC%BB%B5/2526/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%8C%80%EC%99%95-%EB%B0%9C%EB%A6%AC%EC%8A%A4%EB%84%A4%EB%A6%AC%EC%95%84-2%EC%B4%89-30cm%EC%9D%B4%EC%83%81/2722/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%93%9C%EC%9B%8C%ED%94%84-%EB%A0%88%EB%93%9C-%EB%B0%94%EC%BD%94%EB%B0%94-5%EC%B4%89-%EC%BF%A0%ED%8E%98%EC%95%84-%EC%95%84%EB%82%98%EA%B0%88%EB%A1%9C%EC%9D%B4%EB%8D%B0%EC%95%84/2617/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%9E%9C%EB%8D%A4%EB%AA%A8%EB%93%AC%EC%88%98%EC%B4%88-1%ED%8F%AC%ED%8A%B8/2520/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A0%88%EB%93%9C%EB%AF%B8%EB%A6%AC%EC%98%A4%ED%95%84%EB%A6%84-5-%EC%B4%89/2673/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A0%88%EB%93%9C%EC%83%A4%ED%94%84%EB%A6%AC%ED%94%84-%ED%95%98%EC%9D%B4%EA%B7%B8%EB%A1%9C%ED%95%84%EB%9D%BC-5-%EC%B4%89/2629/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A0%88%EB%93%9C%ED%81%AC%EB%A1%9C%EC%8A%A4%ED%94%8C%EB%9E%9C%ED%8A%B8-5%EC%B4%89/3215/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%EB%A1%9C%EB%AA%A8%EC%8B%9C%EC%98%A4%EB%A5%B4-%ED%94%8C%EB%A1%9C%EB%A6%AC%EB%8B%A4-3-%EC%B4%89/2988/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%EB%B0%A9%EA%B8%80%EB%9D%BC%EB%8D%B0%EC%8B%9C-10-%EC%B4%89/3092/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%EB%B2%A0%ED%8A%B8%EB%82%A8-5%EC%B4%89/2663/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%EB%B8%94%EB%9F%AC%EB%93%9C%EB%A0%88%EB%93%9C-10-%EC%B4%89/2660/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:37.972Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%EC%84%B8%EC%9D%B4%EB%A1%B1-5-%EC%B4%89-%EB%A1%9C%ED%83%88%EB%9D%BC%EC%8B%A4%EB%A1%A0/2836/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%EC%99%88%EB%A6%AC%ED%82%A4-5%EC%B4%89/2665/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%ED%88%B4%EB%A3%A8%EB%82%98%EB%8D%B4%EC%8B%9C%EC%8A%A4-1-%EC%B4%89/3511/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%ED%95%98%EB%9D%BC-10%EC%B4%89/2655/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC-%ED%99%8D%EC%BD%A9-10%EC%B4%89/2760/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A1%9C%ED%83%88%EB%9D%BC%EA%B7%B8%EB%A6%B0-10%EC%B4%89/3650/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-5-%EC%B4%89/2715/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EC%8A%88%ED%8D%BC%EB%A0%88%EB%93%9C-10%EC%B4%89/2615/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%A1%9C%EC%B9%B4%EB%A5%B4%ED%8C%8C-2-%EC%B4%89/3774/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
-          },
-          {
-            "url": "https://alphafish.co.kr/product/%EB%A3%A8%EB%93%9C%EC%9C%84%EC%A7%80%EC%95%84-%EC%95%84%EC%BF%A0%EC%95%84%ED%83%80-10-%EC%B4%89/2593/category/44/display/1/",
-            "type": "live",
-            "subtype": "aquatic_plant",
-            "mixedCategories": false,
-            "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-            "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "discoveredAt": "2026-10-08T10:48:48.003Z",
-            "requiresProductClassification": true
+            "title": "나나 활착 유목 (20cm 이상)",
+            "candidate": {
+              "url": "https://alphafish.co.kr/product/%EB%82%98%EB%82%98-%ED%99%9C%EC%B0%A9-%EC%9C%A0%EB%AA%A9-20cm-%EC%9D%B4%EC%83%81/2709/category/44/display/1/",
+              "type": "live",
+              "subtype": "aquatic_plant",
+              "mixedCategories": false,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveredInCategory": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
+              "discoveredAt": "2026-10-08T10:48:37.972Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "classificationVersion": 3,
+            "reviewedAt": "2026-10-08T13:58:48.215Z"
           }
         ],
-        "reviewQueue": [],
         "excludedCandidates": [],
         "requiresManualReview": false,
         "blockedUntil": null
       },
       "errors": [],
-      "attemptedThisExecution": false,
+      "attemptedThisExecution": true,
       "executionRunId": null,
       "automatedExecutionVerified": false
     },
@@ -890,7 +726,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:47:44.069Z",
       "collectorLastSuccess": "2026-10-08T09:47:54.584Z",
-      "count": 1,
+      "count": 7,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -958,7 +794,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T12:54:28.437Z",
       "collectorLastSuccess": "2026-10-08T12:55:28.743Z",
-      "count": 6,
+      "count": 12,
       "requests": 7,
       "coverage": {
         "kind": "known_product_urls",
@@ -1091,7 +927,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:48:15.409Z",
       "collectorLastSuccess": "2026-10-08T09:48:25.984Z",
-      "count": 2,
+      "count": 8,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1159,7 +995,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:56:18.676Z",
       "collectorLastSuccess": "2026-10-08T09:48:38.765Z",
-      "count": 4,
+      "count": 8,
       "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
@@ -1193,7 +1029,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:48:38.830Z",
       "collectorLastSuccess": "2026-10-08T09:48:49.315Z",
-      "count": 1,
+      "count": 7,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1401,7 +1237,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:49:12.628Z",
       "collectorLastSuccess": "2026-10-08T09:49:22.912Z",
-      "count": 1,
+      "count": 6,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1435,7 +1271,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:49:22.981Z",
       "collectorLastSuccess": "2026-10-08T09:49:33.906Z",
-      "count": 1,
+      "count": 7,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1469,7 +1305,7 @@
       "status": "disabled",
       "collectorLastAttempt": "2026-10-08T09:49:33.956Z",
       "collectorLastSuccess": null,
-      "count": 0,
+      "count": 7,
       "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
@@ -1717,7 +1553,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T10:52:07.694Z",
       "collectorLastSuccess": "2026-10-08T10:52:18.123Z",
-      "count": 3,
+      "count": 6,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1884,7 +1720,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:50:10.501Z",
       "collectorLastSuccess": "2026-10-08T09:50:20.784Z",
-      "count": 1,
+      "count": 7,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1952,7 +1788,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:52:31.319Z",
       "collectorLastSuccess": "2026-10-08T09:52:41.974Z",
-      "count": 1,
+      "count": 4,
       "requests": 2,
       "coverage": {
         "kind": "known_product_urls",
@@ -1986,7 +1822,7 @@
       "status": "success",
       "collectorLastAttempt": "2026-10-08T09:52:42.059Z",
       "collectorLastSuccess": "2026-10-08T09:53:02.601Z",
-      "count": 2,
+      "count": 5,
       "requests": 3,
       "coverage": {
         "kind": "known_product_urls",
@@ -2262,10 +2098,10 @@
     }
   ],
   "executionBudgetLimited": false,
-  "finishedAt": "2026-10-08T12:59:09.706Z",
+  "finishedAt": "2026-10-08T14:03:18.088Z",
   "attemptedSourceIds": [
-    "retailer-04"
+    "retailer-09"
   ],
   "executionEnvironment": "local",
-  "productChanges": 6
+  "productChanges": 10
 }

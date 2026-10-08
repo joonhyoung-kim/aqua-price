@@ -1,0 +1,46 @@
+{
+  "source_name": "Cafe24 Global Catalog MCP",
+  "source_documentation_url": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
+  "source_api_endpoint": "https://mcp-catalog.cafe24.com/api/ucp/mcp",
+  "ucp_profile_url": "https://aqua-price-preview.onrender.com/ucp-profile.json",
+  "collection_mode": "two narrow read-only searches (limit 3 each) and one item detail lookup",
+  "snapshot_notice_ko": "카페24 공식 카탈로그에서 2026년 10월 8일 16:59(KST)에 확인한 상품정보입니다. 실시간 최저가 또는 전체 판매점 비교가 아니며, 배송비와 최종 재고·가격은 판매처에서 확인하세요.",
+  "queries": [
+    { "query": "열대어 구피 생물", "returned_products": 0, "warning_code": "no_category_match", "conclusion": "No livestock coverage confirmed by this narrow query; not proof of catalog-wide absence" },
+    { "query": "수족관 여과기", "returned_products": 3, "has_next_page": true, "additional_pages_requested": false }
+  ],
+  "items": [
+    {
+      "id": "cafe24_auroom260404_1_24799", "title": "LED 어항 수도 여과기 시계 달력 온도계 탁상어항 인테리어수족관 수족관세트 미니어항 가정", "description": "LED 어항 수도 여과기 시계 달력 온도계 탁상어항 인테리어수족관 수족관세트 미니어항 가정",
+      "product_url": "https://auroommobile.com/product/detail.html?product_no=24799", "seller_name": null, "seller_domain": "auroommobile.com", "price_amount": 62200, "currency": "KRW",
+      "price_range": { "min": { "amount": 62200, "currency": "KRW" }, "max": { "amount": 62200, "currency": "KRW" } },
+      "variant_id": "cafe24_auroom260404_1_24799_P000BKRV000A", "variant_title": "기본", "variant_options": [{ "name": "Option", "label": "기본" }],
+      "available": true, "availability_basis": "Cafe24 catalog variant availability, not independently confirmed checkout stock",
+      "shipping_amount": null, "shipping_basis": "Not returned by search_catalog or checked get_product; item price excludes unverified delivery fees",
+      "snapshot_at_utc": "2026-10-08T07:59:03Z", "snapshot_at_kst": "2026-10-08T16:59:03+09:00", "detail_lookup_verified": false,
+      "photo": { "api_original_url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg3052b67433606047/auroom260404/web/product/big/20260825/20a8424a970ea557616b8b5e0091ab5b.jpg", "verified_https_url": "https://cafe24img.poxo.com/ecimg.cafe24img.com/pg3052b67433606047/auroom260404/web/product/big/20260825/20a8424a970ea557616b8b5e0091ab5b.jpg", "original_was_http": false, "checked_at_utc": "2026-10-08T08:00:09Z", "downloaded_or_rehosted": false, "http_status": 200, "content_type": "image/jpeg", "content_length": 26298, "third_party_cdn": false }
+    },
+    {
+      "id": "cafe24_honeystore033_1_172379", "title": "아크릴 미니 3구 버블 측면 저면 수족관 스폰지 상면 여과기 수조 A2WFGUI2Z", "description": "아크릴 미니 상면 여과기 3구 수조 스펀지 어항 버블",
+      "product_url": "https://honeystore033.cafe24.com/product/detail.html?product_no=172379", "seller_name": null, "seller_domain": "honeystore033.cafe24.com", "price_amount": 33340, "currency": "KRW",
+      "price_range": { "min": { "amount": 33340, "currency": "KRW" }, "max": { "amount": 33340, "currency": "KRW" } },
+      "variant_id": "cafe24_honeystore033_1_172379_P000JUZZ000A", "variant_title": "상면여과기3구세트", "variant_options": [{ "name": "색상", "label": "상면여과기3구세트" }],
+      "available": true, "availability_basis": "Cafe24 catalog variant availability, not independently confirmed checkout stock",
+      "shipping_amount": null, "shipping_basis": "Not returned by search_catalog or checked get_product; item price excludes unverified delivery fees",
+      "snapshot_at_utc": "2026-10-08T07:59:03Z", "snapshot_at_kst": "2026-10-08T16:59:03+09:00", "detail_lookup_verified": true,
+      "photo": { "api_original_url": "https://cdn.ownerclan.com/zjwhkKCGzEihFldUiwfODE6SFJeLfmdcfXLICknCQ60/marketize/auto/as/v1.jpg", "verified_https_url": "https://cdn.ownerclan.com/zjwhkKCGzEihFldUiwfODE6SFJeLfmdcfXLICknCQ60/marketize/auto/as/v1.jpg", "original_was_http": false, "checked_at_utc": "2026-10-08T08:00:09Z", "downloaded_or_rehosted": false, "http_status": 200, "content_type": "image/jpeg", "content_length": 41777, "third_party_cdn": true }
+    },
+    {
+      "id": "cafe24_honeystore081_1_28988", "title": "온도계 어항 LED 미니어항 미니 수도 미니수족관 달력 시계 아름다운 여과기 수족관 4AWA02396", "description": "LED 미니 수족관 어항 수도 여과기 시계 달력 온도계",
+      "product_url": "https://honeystore081.cafe24.com/product/detail.html?product_no=28988", "seller_name": null, "seller_domain": "honeystore081.cafe24.com", "price_amount": 59060, "currency": "KRW",
+      "price_range": { "min": { "amount": 59060, "currency": "KRW" }, "max": { "amount": 59060, "currency": "KRW" } },
+      "variant_id": "cafe24_honeystore081_1_28988_P000BQWY000A", "variant_title": "기본", "variant_options": [{ "name": "Option", "label": "기본" }],
+      "available": true, "availability_basis": "Cafe24 catalog variant availability, not independently confirmed checkout stock",
+      "shipping_amount": null, "shipping_basis": "Not returned by search_catalog or checked get_product; item price excludes unverified delivery fees",
+      "snapshot_at_utc": "2026-10-08T07:59:03Z", "snapshot_at_kst": "2026-10-08T16:59:03+09:00", "detail_lookup_verified": false,
+      "photo": { "api_original_url": "http://gi.esmplus.com/seedone12/SHOPP16/WA02396.jpg", "verified_https_url": "https://gi.esmplus.com/seedone12/SHOPP16/WA02396.jpg", "original_was_http": true, "checked_at_utc": "2026-10-08T08:00:09Z", "downloaded_or_rehosted": false, "http_status": 200, "content_type": "image/jpeg", "content_length": 173990, "third_party_cdn": true }
+    }
+  ],
+  "photo_notes_ko": "세 이미지 모두 HEAD 200 image/jpeg 확인. 세 번째 원본 HTTP URL은 HTTPS로 정상 리다이렉트됨. API가 반환한 media 이미지이며 다운로드·재호스팅하지 않았음. 카탈로그의 상품 UI/비교 목적은 공식 문서와 제공 UI 리소스로 확인. 일반 공개 사이트 정적 재배포의 포괄적 사진 라이선스는 별도 확인되지 않음.",
+  "profile_cache_note": "Profile returned Cache-Control: public, max-age=0, s-maxage=300; API accepted it, but UCP hosting spec says max-age at least 60."
+}

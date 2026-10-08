@@ -2,142 +2,103 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
-const { createHash } = require('node:crypto');
-const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
-
-function setup(withTool = false) {
-  const element = (dataset = {}) => ({
-    dataset, value: '', textContent: '', innerHTML: '', listeners: {}, attributes: {},
-    classList: { toggle() {} },
-    setAttribute(key, value) { this.attributes[key] = String(value); },
-    addEventListener(event, callback) { this.listeners[event] = callback; },
-    click() { this.listeners.click?.(); },
-    querySelector() { return this.check; },
-    check: { textContent: '' },
-  });
-  const elements = Object.fromEntries(['period', 'query', 'search', 'resultTitle', 'resultNote', 'grid'].map(id => [id, element()]));
-  elements.period.value = '30';
-  const types = ['live', 'gear'].map(type => element({ type }));
-  const sorts = ['low', 'high', 'sales', 'new'].map(sort => element({ sort }));
-  let tool;
-  const document = {
-    querySelector(selector) {
-      if (selector.startsWith('#')) return elements[selector.slice(1)];
-      const match = selector.match(/^\[data-(type|sort)="(.+)"\]$/);
-      return (match[1] === 'type' ? types : sorts).find(e => e.dataset[match[1]] === match[2]);
-    },
-    querySelectorAll(selector) {
-      if (selector === '[data-type]') return types;
-      if (selector === '[data-sort]') return sorts;
-      if (selector === '.card') return Array.from({ length: names().length });
-      throw Error(`Unexpected selector ${selector}`);
-    },
-  };
-  if (withTool) document.modelContext = { registerTool(value) { tool = value; } };
-  function names() { return [...elements.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => m[1]); }
-  const context = vm.createContext({ document });
-  vm.runInContext(source, context, { filename: 'dist/app.js' });
-  return {
-    elements, types, sorts, names, context, get tool() { return tool; },
-    type(value) { types.find(e => e.dataset.type === value).click(); },
-    sort(value) { sorts.find(e => e.dataset.sort === value).click(); },
-    period(value) { elements.period.value = String(value); elements.period.listeners.change(); },
-    search(value) { elements.query.value = value; elements.query.listeners.input({ target: elements.query }); },
-  };
+const { validateCatalog, selectProducts, usablePhoto } = require('../dist/data-model.js');
+// Synthetic test fixtures only; never copied into the published catalog.
+const AS_OF = '2026-10-08T00:00:00.000Z';
+function product(id, overrides = {}) {
+  return { id, verified: true, sellerId: 'test-seller', sourceUrl: 'https://example.invalid/products/' + id, name: '테스트 ' + id, spec: '테스트 전용', type: 'live', observedAt: AS_OF, registeredAt: '2026-10-06T00:00:00.000Z', price: { amount: 1000, currency: 'KRW' }, shipping: null, cumulativeSales: null, periodSales: null, photo: { url: null, usePermission: 'unknown', permissionEvidenceUrl: null }, ...overrides };
 }
+function catalog(products = []) { return { schemaVersion: 1, status: 'ready', reason: '', asOf: AS_OF, sellers: [{ id: 'test-seller', name: '테스트 전용 판매처', officialUrl: 'https://example.invalid/' }], products }; }
+function select(data, overrides = {}) { return selectProducts(data, { type: 'live', sort: 'low', days: 7, query: '', ...overrides }); }
 
-test('default live products: 30-day registration window and ascending prices', () => {
-  const app = setup();
-  assert.deepEqual(app.names(), ['네온테트라', '체리새우', '옐로우 구피', '피그미 코리도라스']);
-  assert.equal(app.elements.resultTitle.textContent, '생물 4개');
-});
-
-test('7/30/90-day windows for both categories and inclusive boundary', () => {
-  const app = setup();
-  for (const type of ['live', 'gear']) {
-    app.type(type);
-    for (const [days, count] of [[7, 2], [30, 4], [90, 6]]) {
-      app.period(days);
-      assert.equal(app.names().length, count);
-    }
+test('published catalog preserves the supplied three actual items and unknown facts', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
+  validateCatalog(data);
+  assert.equal(data.status, 'ready'); assert.equal(data.products.length, 3); assert.equal(data.sellers.length, 3);
+  assert.equal(data.asOf, '2026-10-08T07:59:03Z');
+  const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
+  for (const [index, p] of data.products.entries()) {
+    assert.equal(p.id, snapshot.items[index].id); assert.equal(p.originalTitle, snapshot.items[index].title);
+    assert.equal(p.sourceUrl, snapshot.items[index].product_url); assert.equal(p.price.amount, snapshot.items[index].price_amount);
+    assert.equal(p.photo.url, snapshot.items[index].photo.verified_https_url);
+    assert.equal(p.registeredAt, null); assert.equal(p.shipping, null); assert.equal(p.periodSales, null); assert.equal(p.cumulativeSales, null);
+    assert.equal(new URL(p.sourceUrl).hostname, p.sellerId); assert.equal(p.photo.permissionScope, 'api-catalog-comparison');
+    assert.equal(p.photo.generalRepublicationLicenseVerified, false);
   }
-  app.type('live');
-  app.period(12);
-  assert.ok(app.names().includes('체리새우'));
-  app.period(11);
-  assert.ok(!app.names().includes('체리새우'));
+  assert.deepEqual(select(data).rows, []);
+  const displayed = select(data, { type: 'gear', includeUnknownRegistration: true });
+  assert.deepEqual(displayed.rows.map(p => p.price.amount), [33340, 59060, 62200]);
 });
-
-test('descending price and newest registration order', () => {
-  const app = setup();
-  app.sort('high');
-  assert.deepEqual(app.names(), ['피그미 코리도라스', '옐로우 구피', '체리새우', '네온테트라']);
-  app.sort('new');
-  assert.deepEqual(app.names(), ['네온테트라', '옐로우 구피', '체리새우', '피그미 코리도라스']);
-  app.type('gear');
-  app.sort('low');
-  assert.deepEqual(app.names(), ['스펀지 여과기', '열대어 사료', '세라믹 여과재', '수조용 히터']);
+test('pending state contains no products and explains unavailable data', () => {
+  const pending = { schemaVersion: 1, status: 'pending', reason: '아직 제공되지 않음', asOf: null, sellers: [], products: [] };
+  assert.deepEqual(select(pending).rows, []); assert.match(select(pending).reason, /아직 제공되지/);
 });
-
-test('trimmed search, form submission, case-insensitive matching and empty results', () => {
-  const app = setup();
-  app.search('  구피  ');
-  assert.deepEqual(app.names(), ['옐로우 구피']);
-  app.type('gear');
-  app.period(90);
-  app.search('led');
-  assert.deepEqual(app.names(), ['수초용 LED 조명']);
-  app.elements.query.value = '  히터  ';
-  let prevented = false;
-  app.elements.search.listeners.submit({ preventDefault() { prevented = true; } });
-  assert.equal(prevented, true);
-  assert.deepEqual(app.names(), ['수조용 히터']);
-  app.search('없는상품');
-  assert.deepEqual(app.names(), []);
-  assert.match(app.elements.grid.innerHTML, /조건에 맞는 샘플이 없어요/);
+test('observation never substitutes for missing or old registration date', () => {
+  const result = select(catalog([product('unknown', { registeredAt: null }), product('old', { registeredAt: '2025-01-01T00:00:00.000Z' }), product('known')]));
+  assert.deepEqual(result.rows.map(p => p.id), ['known']); assert.equal(result.excludedRegistration, 1);
 });
-
-test('sales displays unavailable notice and no fabricated ranking', () => {
-  const app = setup();
-  app.sort('sales');
-  assert.deepEqual(app.names(), []);
-  assert.match(app.elements.grid.innerHTML, /판매량 데이터가 필요해요/);
-  assert.match(app.elements.grid.innerHTML, /임의 순위를 만들지 않습니다/);
-  app.sort('low');
-  assert.equal(app.names().length, 4);
+test('unknown registration opt-in keeps items visible without declaring them recent', () => {
+  const data = catalog([product('unknown', { registeredAt: null }), product('old', { registeredAt: '2025-01-01T00:00:00.000Z' })]);
+  const result = select(data, { includeUnknownRegistration: true });
+  assert.deepEqual(result.rows.map(p => p.id), ['unknown']); assert.equal(result.includedUnknownRegistration, 1);
+  assert.deepEqual(select(data, { includeUnknownRegistration: false }).rows, []);
+  assert.deepEqual(select(data, { includeUnknownRegistration: true, sort: 'new' }).rows, []);
+  assert.match(select(data, { includeUnknownRegistration: true, sort: 'new' }).reason, /登録|등록일/);
 });
-
-test('registered filter tool updates UI and rejects invalid inputs', () => {
-  const app = setup(true);
-  const result = app.tool.execute({ type: 'gear', sort: 'high', days: 90, query: '수조' });
-  assert.deepEqual(app.names(), ['유리 수조', '수조용 히터']);
-  assert.equal(result.count, 2);
-  assert.equal(result.sample, true);
-  assert.equal(result.salesDataAvailable, false);
-  assert.equal(app.types[1].attributes['aria-pressed'], 'true');
-  assert.equal(app.sorts[1].attributes['aria-pressed'], 'true');
-  for (const input of [null, {}, { type: 'live', sort: 'low', days: 8 }, { type: 'bad', sort: 'low', days: 7 }, { type: 'live', sort: 'bad', days: 7 }, { type: 'live', sort: 'low', days: 7, query: 1 }]) {
-    assert.throws(() => app.tool.execute(input), /잘못된 조회 조건/);
+test('7/30/90 registration windows include boundary and keep category exclusive', () => {
+  const data = catalog([product('day7', { registeredAt: '2026-10-01T00:00:00.000Z' }), product('day30', { registeredAt: '2026-09-08T00:00:00.000Z' }), product('day90', { registeredAt: '2026-07-10T00:00:00.000Z' }), product('gear', { type: 'gear' })]);
+  assert.deepEqual(select(data).rows.map(p => p.id), ['day7']);
+  assert.equal(select(data, { days: 30 }).rows.length, 2);
+  assert.equal(select(data, { days: 90 }).rows.length, 3);
+  assert.deepEqual(select(data, { type: 'gear' }).rows.map(p => p.id), ['gear']);
+});
+test('price sorting, newest sorting and case-insensitive trimmed search', () => {
+  const data = catalog([product('a', { name: 'LED A', price: { amount: 5000, currency: 'KRW' } }), product('b', { name: 'LED B', price: { amount: 1000, currency: 'KRW' }, registeredAt: '2026-10-07T00:00:00.000Z' })]);
+  assert.deepEqual(select(data).rows.map(p => p.id), ['b', 'a']);
+  assert.deepEqual(select(data, { sort: 'high' }).rows.map(p => p.id), ['a', 'b']);
+  assert.deepEqual(select(data, { sort: 'new' }).rows.map(p => p.id), ['b', 'a']);
+  assert.equal(select(data, { query: '  led  ' }).rows.length, 2);
+  assert.equal(select(data, { query: '없음' }).rows.length, 0);
+});
+test('unknown price is excluded from price ranking, zero price and free shipping remain known', () => {
+  const data = catalog([product('unknown', { price: null }), product('free', { price: { amount: 0, currency: 'KRW' }, shipping: { amount: 0, currency: 'KRW' } })]);
+  assert.deepEqual(select(data).rows.map(p => p.id), ['free']); assert.equal(select(data).excludedPrice, 1);
+  assert.equal(select(data, { sort: 'new' }).rows.length, 2);
+  assert.equal(data.products[0].shipping, null); assert.equal(data.products[1].shipping.amount, 0);
+});
+test('cumulative sales and other sales windows cannot rank selected-period sales', () => {
+  const data = catalog([product('cumulative', { cumulativeSales: 9999 }), product('different', { periodSales: { count: 999, startAt: '2026-09-08T00:00:00.000Z', endAt: AS_OF } }), product('matching', { periodSales: { count: 2, startAt: '2026-10-01T00:00:00.000Z', endAt: AS_OF } })]);
+  const result = select(data, { sort: 'sales' });
+  assert.deepEqual(result.rows.map(p => p.id), ['matching']); assert.equal(result.excludedSales, 2);
+  assert.deepEqual(select(catalog([data.products[0]]), { sort: 'sales' }).rows, []);
+});
+test('period-sales ranking uses only the exact interval including zero count', () => {
+  const sales = count => ({ count, startAt: '2026-10-01T00:00:00.000Z', endAt: AS_OF });
+  const data = catalog([product('zero', { periodSales: sales(0) }), product('five', { periodSales: sales(5) })]);
+  assert.deepEqual(select(data, { sort: 'sales' }).rows.map(p => p.id), ['five', 'zero']);
+});
+test('photos require explicit permission and evidence; unknown is never loaded', () => {
+  const p = product('photo', { photo: { url: 'https://example.invalid/image.jpg', usePermission: 'unknown', permissionEvidenceUrl: null } });
+  validateCatalog(catalog([p])); assert.equal(usablePhoto(p), null);
+  p.photo.usePermission = 'not_allowed'; assert.equal(usablePhoto(p), null);
+  p.photo.usePermission = 'allowed'; assert.throws(() => validateCatalog(catalog([p])), /근거/);
+  p.photo.permissionEvidenceUrl = 'https://example.invalid/license'; validateCatalog(catalog([p])); assert.equal(usablePhoto(p), p.photo.url);
+});
+test('missing provenance, unsafe URLs, invalid dates and unverified products fail validation', () => {
+  for (const overrides of [{ sourceUrl: 'javascript:alert(1)' }, { sourceUrl: 'https://user:secret@example.invalid/x' }, { verified: false }, { sellerId: 'missing' }, { observedAt: '2026-10-09T00:00:00.000Z' }, { registeredAt: '2026-02-30T00:00:00.000Z' }, { price: { amount: -1, currency: 'KRW' } }, { cumulativeSales: -1 }]) assert.throws(() => validateCatalog(catalog([product('bad', overrides)])));
+  assert.throws(() => validateCatalog(catalog([product('same'), product('same')])));
+});
+test('all required unknown fields must be explicit, pending data cannot contain products', () => {
+  for (const field of ['registeredAt', 'price', 'shipping', 'cumulativeSales', 'periodSales', 'photo']) {
+    const p = product('missing'); delete p[field]; assert.throws(() => validateCatalog(catalog([p])));
   }
-  assert.equal(app.tool.execute({ type: 'live', sort: 'sales', days: 7 }).count, 0);
+  const data = catalog([product('pending')]); data.status = 'pending'; assert.throws(() => validateCatalog(data));
 });
-
-test('HTML references the preserved local script and declares sample limitations', () => {
+test('UI controls, data script order and honest status exist in HTML', () => {
   const html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
-  assert.match(html, /<script src="app\.js"><\/script>/);
-  assert.match(html, /lang="ko"/);
-  assert.match(html, /2026\.10\.08/);
-  assert.match(html, /가상 데이터/);
-  assert.ok(!html.includes('&lt;!doctype'));
-});
-
-test('source bytes match the supplied UTF-8 SHA256 hashes', () => {
-  for (const [file, expected] of [
-    ['index.html', '8f22d1999ea6639db4fd8d9a4730c5a001116216cbd29d54d7d6e0b5b9bdb28d'],
-    ['app.js', 'e622de0f9c036d88508fd130d0426cf1c18a1062ff3fa99a462a9a3e197c985f'],
-  ]) {
-    const bytes = fs.readFileSync(path.join(__dirname, '../dist', file));
-    assert.equal(createHash('sha256').update(bytes).digest('hex'), expected);
-  }
+  for (const value of ['live', 'gear']) assert.ok(html.includes(`data-type="${value}"`));
+  for (const value of ['low', 'high', 'sales', 'new']) assert.ok(html.includes(`data-sort="${value}"`));
+  for (const value of [7, 30, 90]) assert.ok(html.includes(`value="${value}"`));
+  assert.ok(html.indexOf('src="data-model.js"') < html.indexOf('src="app.js"'));
+  assert.ok(html.includes('id="dataStatus"')); assert.ok(html.includes('id="sellerLinks"'));
 });

@@ -5,6 +5,10 @@ const routes = {
   '/': ['index.html', 'text/html; charset=utf-8'],
   '/index.html': ['index.html', 'text/html; charset=utf-8'],
   '/app.js': ['app.js', 'text/javascript; charset=utf-8'],
+  '/data-model.js': ['data-model.js', 'text/javascript; charset=utf-8'],
+  '/catalog.json': ['catalog.json', 'application/json; charset=utf-8'],
+  '/source-snapshot.json': ['source-snapshot.json', 'application/json; charset=utf-8'],
+  '/ucp-profile.json': ['ucp-profile.json', 'application/json; charset=utf-8'],
 };
 http.createServer((req, res) => {
   const route = routes[new URL(req.url, 'http://localhost').pathname];

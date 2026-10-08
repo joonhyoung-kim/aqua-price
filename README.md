@@ -1,6 +1,6 @@
 # 아쿠아픽 (aqua-price)
 
-생물과 수조 용품을 검색하고 종류·가격·등록 기간으로 살펴보는 순수 정적 HTML/JavaScript 샘플입니다. 제공된 `dist/index.html`과 `dist/app.js` 소스를 보존했습니다.
+카페24 공식 카탈로그에서 2026년 10월 8일 16:59(KST)에 확인한 용품 3개를 살펴보는 정적 HTML/JavaScript 화면입니다. 전체 판매처 실시간 검색·전체 최저가 비교가 아닙니다. 이번 제한된 검색에서 확인된 생물은 0개입니다. 기존 샘플 소스는 운영 `main`에 보존되어 있습니다. 상세 입력 계약은 [DATA-CONTRACT.md](DATA-CONTRACT.md)를 참고하세요.
 
 ## 로컬 실행
 
@@ -16,27 +16,31 @@ npm start
 npm test
 ```
 
-JavaScript 구문 검사와 Node 기본 테스트로 종류·기간·검색·가격순·신상품순·판매순 미연동·도구 입력 검증을 확인합니다. 테스트는 DOM 대역에서 실제 `dist/app.js`를 실행하며 브라우저 시각 검사는 포함하지 않습니다.
+JavaScript 구문 검사와 Node 기본 테스트로 실제 데이터 계약, 종류·기간·검색·가격순·신상품순·기간 판매량·사진 사용 근거를 확인합니다. 브라우저 시각 검사는 포함하지 않습니다.
 
 ## 브랜치와 배포
 
 - GitHub 저장소는 <https://github.com/joonhyoung-kim/aqua-price>이며 공개(PUBLIC) 저장소입니다.
-- `main`: 운영용 기준 브랜치이자 기본 브랜치로 사용할 구성입니다.
+- `main`: 운영용 기준 브랜치이자 GitHub 기본 브랜치입니다.
 - `preview`: 검토용 브랜치이며 최초에는 `main`과 같은 커밋에서 시작합니다.
-- 두 브랜치는 Sites 자동 배포와 연결되지 않았습니다. push만으로 공개 사이트가 갱신되지 않습니다.
+- 운영 <https://aqua-price.onrender.com>은 `main`, 검토 <https://aqua-price-preview.onrender.com>는 `preview`에 연결되어 있습니다. Render는 두 브랜치의 push에 자동 배포하며 빌드는 `npm test`, 공개 디렉터리는 `dist`입니다. 서버·DB는 생성하지 않았습니다.
+- 두 브랜치는 Sites 자동 배포와 연결되지 않았습니다. GitHub push는 위 Render 사이트에 반영되며 Sites 사이트는 별도로 관리합니다.
 - 공개 사이트 <https://aqua-price-jk.frostycorgi.chatgpt.site>는 Sites에서 별도 관리합니다.
-- Render 설정 및 기존 Sites 배포는 이 저장소 작업에서 변경하지 않습니다. 배포 워크플로는 포함하지 않습니다.
+- 이번 실제 상품 화면은 `preview`에만 반영합니다. 운영 `main`과 Render 설정 및 기존 Sites 배포는 변경하지 않습니다. GitHub Actions 배포 워크플로는 포함하지 않습니다.
 - Sites의 `.openai/hosting.json` 및 원본 저장소 토큰은 포함하지 않습니다.
 
-## 샘플 데이터의 의미
+## 실제 데이터의 의미
 
-- 상품·가격·판매처·이미지·날짜는 기능 확인용 가상 데이터입니다. 실제 판매처·가격·재고·판매량 연동은 없습니다.
-- 조회 기간은 샘플 기준일 `2026-10-08`에서 상품이 등록된 지 며칠 되었는지(`age`)를 기준으로 합니다. 기간 내 매출이나 가격 변동을 뜻하지 않습니다.
-- 최근 1주일/1개월/3개월은 각각 등록 후 7일/30일/90일 이내이며 경계값을 포함합니다.
-- 가격은 배송비를 제외한 샘플 표시가격입니다.
-- 판매순은 미연동 상태 안내를 표시하며 임의 판매량이나 순위를 만들지 않습니다.
-- 신상품순은 등록 경과일이 작은 상품부터 표시합니다.
+- `dist/source-snapshot.json`은 전달받은 공식 API 확인본이고, `dist/catalog.json`은 화면용 데이터입니다. 프런트는 이 정적 파일만 검색하며 판매처 전체를 실시간 조회하지 않습니다. 추가 페이지나 대량 수집을 수행하지 않았습니다.
+- 조회 기간은 데이터 기준 UTC 시각 `asOf`에서 7/30/90일 이내의 실제 상품 등록일을 기준으로 하며 경계값을 포함합니다. 관찰 시각과 등록일은 다릅니다.
+- 현재 3개 모두 등록일 미확인입니다. 기본 체크된 `등록일 미확인 상품 포함`은 이를 기간 판단 없이 표시합니다. 해제하면 기간 조건을 적용할 수 없어 제외합니다. 신상품순은 이 선택과 무관하게 실제 등록일이 없는 상품을 정렬하지 않습니다.
+- 가격은 배송비 제외 관찰된 표시가격입니다. 배송비 미확인은 무료배송을 뜻하지 않습니다.
+- 판매순은 선택 기간의 실제 판매량이 확인된 경우에만 표시합니다. 누적 판매수·다른 구간 판매수로 순위를 만들지 않습니다.
+- 신상품순은 실제 등록일을 기준으로 합니다. 판매처명은 미확인이므로 판매처 도메인을 표시하고 원래 상품명을 펼쳐 볼 수 있습니다. 카탈로그 판매 가능 표시는 최종 재고 보장이 아닙니다.
+- 사진은 API가 제공한 검증된 HTTPS URL만 소규모 상품 비교 카드에 원격 연결합니다. 다운로드·재호스팅하지 않습니다. 원상품 판매처 바로가기를 제공하고 이미지 오류 시 대체 안내를 표시합니다. 포괄적인 정적 이미지 재배포 라이선스가 확인됐다고 주장하지 않습니다.
+- `scripts/build-catalog.cjs`는 확인본을 화면용 계약으로 변환하는 로컬 도구이며 API를 호출하지 않습니다. `node scripts/build-catalog.cjs`로 재생성할 수 있습니다.
+- `/ucp-profile.json`은 검색·조회 협상을 위한 플랫폼 프로필입니다. 상품 API 서버나 결제 기능을 제공하지 않습니다. 배포 당시 캐시는 `public, max-age=0, s-maxage=300`으로 관찰되어 UCP `max-age ≥ 60` 요구를 충족하려면 별도 경로 헤더 조정이 필요합니다.
 
 ## 파일
 
-`dist/index.html`, `dist/app.js`: 제공 소스. `scripts/serve.cjs`: 로컬 서버. `test/app.test.cjs`: 검증. `package.json`: 실행 명령. `.gitignore`: 임시 파일·환경 변수·Sites 설정 제외.
+`dist/index.html`, `dist/app.js`: 화면·연결. `dist/data-model.js`: 입력 검증·필터. `dist/catalog.json`: 실제 확인 상품. `dist/source-snapshot.json`: 전달된 출처 확인본. `dist/ucp-profile.json`: 공개 협상 프로필. `DATA-CONTRACT.md`: 의미·제약. `scripts/build-catalog.cjs`: 로컬 변환. `scripts/serve.cjs`: 로컬 서버. `test/app.test.cjs`, `test/ui.test.cjs`: 계약·화면 로직 검증. `package.json`: 실행 명령. `.gitignore`: 임시 파일·환경 변수·Sites 설정 제외.

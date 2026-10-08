@@ -5,7 +5,7 @@
   "description": "아쿠아픽 정적 샘플 프로토타입",
   "scripts": {
     "start": "node scripts/serve.cjs",
-    "test": "node --check dist/app.js && node test/app.test.cjs"
+    "test": "node --check dist/app.js && node --check dist/data-model.js && node --check scripts/build-catalog.cjs && node test/app.test.cjs && node test/ui.test.cjs"
   },
   "engines": { "node": ">=18" }
 }

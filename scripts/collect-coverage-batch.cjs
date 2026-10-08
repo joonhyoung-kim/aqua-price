@@ -21,7 +21,8 @@ function selectPlan(registry,seeds,state,audit,session,now=Date.now()){
   return {source,seed,eligible:eligibleCandidates.length,ready,readySize:ready.length?Math.min(...ready.map(c=>c.unresolvedObservedKeys.length)):Infinity,unvisited:a?.tree?.unvisited||0,ratio:a?.tree?.allowed?1-a.tree.unvisited/a.tree.allowed:1,used:session.sourceVisits[source.id]||0,last:Date.parse(a?.access?.latestAttempt||'1970-01-01'),st};
  }).filter(c=>ADAPTERS.has(c.seed?.adapter)&&!c.st.requiresManualReview&&!(c.st.blockedUntil&&Date.parse(c.st.blockedUntil)>now)&&(c.eligible>0||c.unvisited>0));
  const selected=[],compare=(a,b)=>a.used-b.used||a.ratio-b.ratio||a.last-b.last||a.source.id.localeCompare(b.source.id);
- for(const mode of ['explore','drain','explore','drain','explore']){
+ const modes=session.planPolicy==='details_first'?['drain','explore','drain','explore','drain']:['explore','drain','explore','drain','explore'];
+ for(const mode of modes){
   const pool=candidates.filter(c=>!selected.some(p=>p.id===c.source.id)&&(mode==='explore'?c.unvisited>0:c.eligible>0));
   pool.sort(mode==='explore'?compare:(a,b)=>a.used-b.used||a.readySize-b.readySize||a.last-b.last||b.eligible-a.eligible);
   const pick=pool[0];if(pick)selected.push({id:pick.source.id,name:pick.source.name,mode,maxRequests:Math.min(12,pick.source.maxRequests),eligiblePending:pick.eligible,unvisited:pick.unvisited,completionReadyCategoryUrls:pick.ready.map(c=>c.url)});
@@ -34,6 +35,7 @@ async function run(args=[]){
  const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),registry=read('sources/registry.json'),seeds=read('sources/discovery-seeds.json'),state=read('.collector/state.json');let snapshot=read('dist/source-snapshot.json'),catalog=read('dist/catalog.json'),audit=auditCoverage(registry,state,catalog),session;
  if(args.includes('--resume')){session=read(SESSION);if(session.finishedAt)throw Error('Batch already finished; no implicit new budget');assertOwnerExited(session);session.resumptions=[...(session.resumptions||[]),{resumedAt:new Date().toISOString(),requestsAlreadySpent:session.transactions.length,lastCompletedCheckpoint:session.lastCheckpointAt,deadlinePreserved:session.deadline}];}
  else {const old=fs.existsSync(SESSION)?read(SESSION):null;if(old&&!old.finishedAt)throw Error('Unfinished batch exists; use --resume');if(old){fs.mkdirSync('.collector/coverage-batch-history',{recursive:true});atomicJson('.collector/coverage-batch-history/'+Date.parse(old.startedAt)+'.json',old);}const priorBatches=old?[...(old.priorBatches||[]),{batchId:old.batchId,startedAt:old.startedAt,finishedAt:old.finishedAt,before:old.before,after:old.after,requests:old.transactions.length,stopReason:old.stopReason}]:[];const cap=limits(args);session={schemaVersion:1,batchId:'coverage-batch-'+Date.now(),activePid:process.pid,startedAt:new Date().toISOString(),deadline:new Date(Date.now()+cap.minutes*60000).toISOString(),limits:cap,baselineIds:snapshot.items.map(p=>p.id),before:totals(audit,catalog),priorBatches,sourceVisits:{},rounds:[],transactions:[],finishedAt:null,stopReason:null,fullCatalogCoverage:false};atomicJson(SESSION,session);}
+ if(!args.includes('--resume'))session.planPolicy=args.includes('--details-first')?'details_first':'balanced';
  session.activePid=process.pid;atomicJson(SESSION,session);
  const deadline=Date.parse(session.deadline);const saveSession=()=>{atomicJson(SESSION,session);const {baselineIds,...publicSession}=session;atomicJson('dist/coverage-batch-report.json',publicSession);};
  for(let index=0;index<session.limits.rounds;index++){

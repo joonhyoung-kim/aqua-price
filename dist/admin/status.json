@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T19:21:50.979Z",
+  "generatedAt": "2026-10-08T19:24:26.573Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -87,9 +87,9 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T17:52:39.842Z",
-      "collectorLastSuccess": "2026-10-08T17:54:00.296Z",
+      "collectorStatus": "no_confirmed_products",
+      "collectorLastAttempt": "2026-10-08T18:50:09.724Z",
+      "collectorLastSuccess": "2026-10-08T11:02:21.924Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -771,15 +771,15 @@
       "collectorProductCount": 26,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 18,
-        "selectedUrlCount": 10,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
         "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T17:54:10.924Z",
-      "collectorLastSuccess": "2026-10-08T17:54:29.110Z",
+      "collectorStatus": "no_confirmed_products",
+      "collectorLastAttempt": "2026-10-08T18:53:21.762Z",
+      "collectorLastSuccess": "2026-10-08T11:03:05.473Z",
       "collectorLastError": null,
       "blockers": [
         "Scheduled run, data commit and Render deployment not yet verified.",
@@ -1033,9 +1033,16 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:45:40.305Z",
+      "collectorLastAttempt": "2026-10-08T18:53:29.094Z",
       "collectorLastSuccess": null,
       "collectorLastError": "Official homepage announces temporary closure.",
       "blockers": [
@@ -1067,15 +1074,15 @@
       "collectorProductCount": 60,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 42,
-        "selectedUrlCount": 10,
-        "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T17:54:29.963Z",
-      "collectorLastSuccess": "2026-10-08T17:56:00.472Z",
+      "collectorLastAttempt": "2026-10-08T19:08:10.211Z",
+      "collectorLastSuccess": "2026-10-08T19:08:11.997Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -1327,7 +1334,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -1347,9 +1354,9 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T17:56:01.075Z",
-      "collectorLastSuccess": "2026-10-08T09:46:21.308Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T18:54:11.377Z",
+      "collectorLastSuccess": "2026-10-08T18:57:22.892Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -1917,15 +1924,15 @@
       "collectorProductCount": 28,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 21,
-        "selectedUrlCount": 10,
+        "verifiedUrlCount": 6,
+        "selectedUrlCount": 6,
         "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T17:57:32.053Z",
-      "collectorLastSuccess": "2026-10-08T17:59:02.596Z",
+      "collectorLastAttempt": "2026-10-08T18:57:23.321Z",
+      "collectorLastSuccess": "2026-10-08T18:58:04.556Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -2051,8 +2058,8 @@
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T17:59:03.162Z",
-      "collectorLastSuccess": "2026-10-08T18:00:33.504Z",
+      "collectorLastAttempt": "2026-10-08T18:58:04.985Z",
+      "collectorLastSuccess": "2026-10-08T19:01:16.342Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -2593,15 +2600,15 @@
       "collectorProductCount": 33,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 18,
-        "selectedUrlCount": 10,
-        "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T18:00:34.145Z",
-      "collectorLastSuccess": "2026-10-08T18:02:04.487Z",
+      "collectorLastAttempt": "2026-10-08T19:08:12.581Z",
+      "collectorLastSuccess": "2026-10-08T19:08:14.612Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -2974,7 +2981,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -2984,19 +2991,19 @@
       "officialUrl": "https://alphafish.co.kr/",
       "technicalReadiness": "adapter_sample_tested",
       "enabled": true,
-      "snapshotProductCount": 53,
-      "collectorProductCount": 53,
+      "snapshotProductCount": 54,
+      "collectorProductCount": 54,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 47,
-        "selectedUrlCount": 10,
-        "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T18:02:05.141Z",
-      "collectorLastSuccess": "2026-10-08T18:03:35.666Z",
+      "collectorLastAttempt": "2026-10-08T19:08:15.125Z",
+      "collectorLastSuccess": "2026-10-08T19:08:16.900Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -3299,7 +3306,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -3319,9 +3326,9 @@
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T18:03:36.312Z",
-      "collectorLastSuccess": "2026-10-08T18:04:56.792Z",
+      "collectorStatus": "no_confirmed_products",
+      "collectorLastAttempt": "2026-10-08T19:07:40.821Z",
+      "collectorLastSuccess": "2026-10-08T11:10:03.775Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -3809,15 +3816,15 @@
       "collectorProductCount": 2,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 2,
-        "selectedUrlCount": 2,
-        "productBudget": 10,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:40:40.250Z",
-      "collectorLastSuccess": "2026-10-08T14:53:38.964Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:08:17.403Z",
+      "collectorLastSuccess": "2026-10-08T19:08:29.049Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -4153,7 +4160,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -5926,9 +5933,15 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:48:59.747Z",
+      "collectorLastAttempt": "2026-10-08T11:44:10.008Z",
       "collectorLastSuccess": null,
       "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
       "blockers": [
@@ -6056,11 +6069,18 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
-      "collectorStatus": "failed",
-      "collectorLastAttempt": "2026-10-08T09:49:10.394Z",
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "collectorStatus": "disabled",
+      "collectorLastAttempt": "2026-10-08T19:08:29.565Z",
       "collectorLastSuccess": null,
-      "collectorLastError": "fetch failed",
+      "collectorLastError": "GitHub Actions attempt 2: public fetch failed; source held pending review. No alternate route, authentication or TLS bypass.; Previous verified snapshot is retained.",
       "blockers": [
         "GitHub Actions attempt 2: public fetch failed; source held pending review. No alternate route, authentication or TLS bypass.",
         "Previous verified snapshot is retained."
@@ -6708,15 +6728,15 @@
       "collectorProductCount": 32,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 7,
-        "selectedUrlCount": 7,
-        "productBudget": 10,
+        "verifiedUrlCount": 6,
+        "selectedUrlCount": 6,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T19:01:01.414Z",
-      "collectorLastSuccess": "2026-10-08T19:04:11.953Z",
+      "collectorLastAttempt": "2026-10-08T19:08:30.066Z",
+      "collectorLastSuccess": "2026-10-08T19:09:32.139Z",
       "collectorLastError": null,
       "blockers": [
         "Prior HTTP/tunnel 403 cause remains unknown; fresh standard same-official-host robots and listing returned HTTP 200 at 2026-10-08T19:01Z. Full allowed menu traversal and detail coverage remain incomplete."
@@ -7015,7 +7035,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -7027,9 +7047,15 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:34.002Z",
+      "collectorLastAttempt": "2026-10-08T11:46:15.308Z",
       "collectorLastSuccess": null,
       "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
       "blockers": [
@@ -7059,9 +7085,15 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:34.064Z",
+      "collectorLastAttempt": "2026-10-08T11:46:15.632Z",
       "collectorLastSuccess": null,
       "collectorLastError": "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route.",
       "blockers": [
@@ -7095,13 +7127,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
         "selectedUrlCount": 1,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T16:01:20.826Z",
-      "collectorLastSuccess": "2026-10-08T09:56:27.273Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:09:32.669Z",
+      "collectorLastSuccess": "2026-10-08T19:09:36.533Z",
       "collectorLastError": null,
       "blockers": [
         "Scheduled run, data commit and Render deployment not yet verified.",
@@ -7353,7 +7385,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -7365,9 +7397,15 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:36.379Z",
+      "collectorLastAttempt": "2026-10-08T11:46:16.290Z",
       "collectorLastSuccess": null,
       "collectorLastError": "Ordinary homepage HTTP503; no product sample recovered.",
       "blockers": [
@@ -7397,9 +7435,15 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:36.445Z",
+      "collectorLastAttempt": "2026-10-08T11:46:16.615Z",
       "collectorLastSuccess": null,
       "collectorLastError": "Consumer/reference price only; actual guest sale price unavailable.",
       "blockers": [
@@ -7431,15 +7475,15 @@
       "collectorProductCount": 14,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 9,
-        "selectedUrlCount": 9,
-        "productBudget": 10,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T16:19:10.108Z",
-      "collectorLastSuccess": "2026-10-08T16:19:50.470Z",
+      "collectorLastAttempt": "2026-10-08T19:09:37.060Z",
+      "collectorLastSuccess": "2026-10-08T19:09:48.992Z",
       "collectorLastError": null,
       "blockers": [
         "Scheduled run, data commit and Render deployment not yet verified.",
@@ -7642,7 +7686,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -7658,13 +7702,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 5,
         "selectedUrlCount": 5,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:27:51.425Z",
-      "collectorLastSuccess": "2026-10-08T10:52:18.123Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:09:49.521Z",
+      "collectorLastSuccess": "2026-10-08T19:10:41.208Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -7766,7 +7810,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -7782,13 +7826,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
         "selectedUrlCount": 1,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:28:12.322Z",
-      "collectorLastSuccess": "2026-10-08T09:50:10.377Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:10:41.740Z",
+      "collectorLastSuccess": "2026-10-08T19:10:53.429Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -7966,7 +8010,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -7978,9 +8022,15 @@
       "enabled": false,
       "snapshotProductCount": 0,
       "collectorProductCount": 0,
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "collectorStatus": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:50:10.438Z",
+      "collectorLastAttempt": "2026-10-08T11:47:40.120Z",
       "collectorLastSuccess": null,
       "collectorLastError": "No collector source execution or deployed automatic refresh verified.; Guest prices show wholesale-member restriction; do not login.",
       "blockers": [
@@ -8013,15 +8063,15 @@
       "collectorProductCount": 19,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 12,
-        "selectedUrlCount": 10,
-        "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T15:37:06.704Z",
-      "collectorLastSuccess": "2026-10-08T15:38:17.058Z",
+      "collectorLastAttempt": "2026-10-08T19:10:53.969Z",
+      "collectorLastSuccess": "2026-10-08T19:11:05.285Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -8592,7 +8642,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -8606,15 +8656,15 @@
       "collectorProductCount": 17,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 13,
+        "verifiedUrlCount": 10,
         "selectedUrlCount": 10,
-        "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T15:26:38.080Z",
-      "collectorLastSuccess": "2026-10-08T15:27:48.407Z",
+      "collectorLastAttempt": "2026-10-08T19:11:05.827Z",
+      "collectorLastSuccess": "2026-10-08T19:12:48.239Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -8855,7 +8905,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -8869,15 +8919,15 @@
       "collectorProductCount": 21,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 11,
-        "selectedUrlCount": 10,
-        "productBudget": 10,
-        "allVerifiedUrlsSelected": false,
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 15,
+        "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-08T16:13:27.113Z",
-      "collectorLastSuccess": "2026-10-08T16:14:57.803Z",
+      "collectorLastAttempt": "2026-10-08T19:12:48.772Z",
+      "collectorLastSuccess": "2026-10-08T19:13:00.676Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9043,7 +9093,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -9059,13 +9109,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 5,
         "selectedUrlCount": 5,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:29:23.423Z",
-      "collectorLastSuccess": "2026-10-08T09:53:02.601Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:13:01.225Z",
+      "collectorLastSuccess": "2026-10-08T19:13:52.525Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9163,7 +9213,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -9179,13 +9229,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
         "selectedUrlCount": 1,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:29:44.506Z",
-      "collectorLastSuccess": "2026-10-08T10:01:37.621Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:13:53.059Z",
+      "collectorLastSuccess": "2026-10-08T19:14:06.776Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9365,7 +9415,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -9413,13 +9463,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
         "selectedUrlCount": 1,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T15:30:55.536Z",
-      "collectorLastSuccess": "2026-10-08T09:53:23.986Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:14:07.327Z",
+      "collectorLastSuccess": "2026-10-08T19:14:19.086Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9601,7 +9651,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {
@@ -9681,13 +9731,13 @@
         "reviewHeldProductCount": 0,
         "verifiedUrlCount": 1,
         "selectedUrlCount": 1,
-        "productBudget": 10,
+        "productBudget": 15,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-08T16:00:30.000Z",
-      "collectorLastSuccess": "2026-10-08T09:53:26.801Z",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-08T19:14:19.642Z",
+      "collectorLastSuccess": "2026-10-08T19:14:22.446Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9750,7 +9800,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 3시간 / 용품 6시간 / 목록 대조 하루 1회 (UTC)"
     },
     {

@@ -1204,10 +1204,10 @@
       "totalRequestsAcrossRounds": 6
     }
   ],
-  "products": 761,
+  "products": 762,
   "lastCheckpointAt": "2026-10-08T19:11:47.952Z",
   "requestBudgetVerified": true,
-  "addedProducts": 55,
+  "addedProducts": 56,
   "followupRounds": [
     {
       "id": "retailer-48",
@@ -1230,5 +1230,13 @@
     "dist/data-model.js",
     "dist/admin/index.html",
     "dist/admin/app.js"
-  ]
+  ],
+  "concurrentPreviewRefresh": {
+    "commit": "15e120b4dd9b541828db71a7c8842c2f2252bdcd",
+    "remoteProducts": 707,
+    "preservedNewProducts": 1,
+    "preservedMoreRecentRows": 38,
+    "localAuditAddedProducts": 55,
+    "noProductRemoved": true
+  }
 }

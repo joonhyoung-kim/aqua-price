@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-08T19:21:51.494Z",
+  "checkedAt": "2026-10-08T19:24:26.417Z",
   "fullRetailerTotals": "unknown",
   "categoryTotalsMustNotBeAdded": true,
   "fullCatalogCoverage": false,
@@ -4029,7 +4029,7 @@
         "blockedUntil": null,
         "currentSameOriginReview": null
       },
-      "verifiedProducts": 53,
+      "verifiedProducts": 54,
       "verifiedFish": 12,
       "fullRetailerCount": "unknown",
       "fullCoverage": false,
@@ -4621,7 +4621,7 @@
         "checkoutInventoryVerified": false
       },
       "options": {
-        "missingSeparateOptionLabel": 50,
+        "missingSeparateOptionLabel": 51,
         "inferredOptionsAdded": false
       },
       "missingReasons": [
@@ -15182,5 +15182,14 @@
         "Parent-reported HTTP403; manual review required, no requests or alternate route"
       ]
     }
-  ]
+  ],
+  "collectorStateScope": "Local checkpoint tree and pending queues; concurrent automated refresh preserved in catalog and collector-status; remote pending queues not imported",
+  "concurrentPreviewRefresh": {
+    "commit": "15e120b4dd9b541828db71a7c8842c2f2252bdcd",
+    "remoteProducts": 707,
+    "preservedNewProducts": 1,
+    "preservedMoreRecentRows": 38,
+    "localAuditAddedProducts": 55,
+    "noProductRemoved": true
+  }
 }

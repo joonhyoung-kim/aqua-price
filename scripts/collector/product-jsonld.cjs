@@ -76,7 +76,11 @@ function parseProductPage(html, context) {
       const available = availability === 'InStock' ? true : ['OutOfStock','Discontinued','SoldOut'].includes(availability) ? false : null;
       const image = Array.isArray(product.image) ? product.image[0] : product.image;
       const imageUrl = typeof image === 'string' ? image : image?.url || image?.contentUrl;
-      const photoUrl = httpsUrl(imageUrl) && context.photosAllowed === true ? imageUrl : null;
+      let photoUrl = httpsUrl(imageUrl) && context.photosAllowed === true ? imageUrl : null;
+      const approved=context.verifiedPhotoUrls?.[imageUrl];
+      if(!photoUrl&&context.photosAllowed===true&&typeof imageUrl==='string'&&approved&&httpsUrl(approved.httpsUrl)&&Number.isFinite(Date.parse(approved.checkedAt))&&/^image\//.test(approved.contentType||'')&&/^[a-f0-9]{64}$/.test(approved.sha256||'')){
+        try{const original=new URL(imageUrl),target=new URL(approved.httpsUrl);if(original.protocol==='http:'&&host(imageUrl)===context.domain.replace(/^www\./,'')&&original.hostname===target.hostname){original.protocol='https:';if(original.href===target.href)photoUrl=target.href;}}catch{}
+      }
       if (!['live','gear'].includes(context.type) || (context.type === 'live' && !['fish','shrimp','aquatic_plant','snail'].includes(context.subtype))) { issues.push('verified_category_required'); continue; }
       const countProperty=properties.find(p=>p.name==='마릿수'&&typeof p.value==='string'&&/^\d+마리$/.test(p.value));
       const quantity = context.quantityPerPack ?? (product.quantitativeValue?.unitCode === 'C62' ? product.quantitativeValue.value : countProperty ? Number.parseInt(countProperty.value,10) : null);

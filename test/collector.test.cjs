@@ -6,6 +6,27 @@ const NOW=Date.parse('2026-10-08T12:00:00Z');
 const ctx={url:'https://example.invalid/product/test/12/',domain:'example.invalid',sourceId:'test',name:'TEST',type:'live',subtype:'fish',photosAllowed:true,observedAt:new Date(NOW).toISOString()};
 function page(price=1000,availability='InStock',extra={}) { const product={'@type':'Product',name:'TEST FISH',sku:'SKU-12',image:'https://example.invalid/fish.jpg',offers:{'@type':'Offer',price:String(price),priceCurrency:'KRW',availability:'https://schema.org/'+availability},...extra};return '<h1>TEST FISH</h1><p>'+Number(price).toLocaleString('en-US')+'원</p><script type="application/ld+json">'+JSON.stringify({'@graph':[product]})+'</script>'; }
 const source={id:'test',name:'TEST',sourceDomain:'example.invalid',officialURL:'https://example.invalid/',technicalReadiness:'adapter_sample_tested',enabled:true,photosAllowed:true,delayMs:10,cacheTtlMs:1000,maxRequests:4,maxBytes:100000,timeoutMs:1000,products:[{url:ctx.url,type:'live',subtype:'fish'}]};
+const httpImage='http://example.invalid/fish.jpg',verifiedImage={httpsUrl:'https://example.invalid/fish.jpg',checkedAt:'2026-10-08T13:00:00Z',contentType:'image/jpeg',sha256:'a'.repeat(64)};
+test('HTTP photos require an exact recorded same-host HTTPS image verification',()=>{
+ const html=page(1000,'InStock',{image:httpImage});assert.equal(parseProductPage(html,ctx).items[0].photo,null);
+ const checked={...ctx,verifiedPhotoUrls:{[httpImage]:verifiedImage}};assert.equal(parseProductPage(html,checked).items[0].photo.verified_https_url,verifiedImage.httpsUrl);
+ for(const record of [{...verifiedImage,httpsUrl:'https://other.invalid/fish.jpg'},{...verifiedImage,httpsUrl:'https://example.invalid/another.jpg'},{...verifiedImage,sha256:''},{...verifiedImage,checkedAt:'unknown'},{...verifiedImage,contentType:'text/html'}])assert.equal(parseProductPage(html,{...checked,verifiedPhotoUrls:{[httpImage]:record}}).items[0].photo,null);
+ assert.equal(parseProductPage(html,{...checked,photosAllowed:false}).items[0].photo,null);
+});
+test('a verified image mapping never advances cached product or source success timestamps',async()=>{
+ const old=new Date(NOW-100).toISOString(),prior={collectorLastSuccess:old,cache:{[ctx.url]:{text:page(1000,'InStock',{image:httpImage}),fetchedAt:old}}};
+ const out=await collectSource({...source,verifiedPhotoUrls:{[httpImage]:verifiedImage}},prior,{now:()=>NOW,sleep:async()=>{},fetch:async u=>{assert.ok(u.endsWith('/robots.txt'));return new Response('User-agent: *\nAllow: /');}});
+ assert.equal(out.products[0].photo.verified_https_url,verifiedImage.httpsUrl);assert.equal(out.products[0].observed_at_utc,old);assert.equal(out.collectorLastSuccess,old);
+});
+test('discovered products use only the source recorded photo mapping',async()=>{
+ const {verifyDiscovered}=require('../scripts/collector/verify-discovered.cjs');const out=await verifyDiscovered({...source,verifiedPhotoUrls:{[httpImage]:verifiedImage}},{maxProductVerifications:1,categories:[]},[{url:ctx.url,type:'live',subtype:'fish',mixedCategories:false}],{}, {now:()=>NOW,sleep:async()=>{},fetch:async u=>new Response(u.endsWith('/robots.txt')?'User-agent: *\nAllow: /':page(1000,'InStock',{image:httpImage}))});assert.equal(out.products[0].photo.verified_https_url,verifiedImage.httpsUrl);assert.equal(out.products[0].subtype,'fish');
+});
+test('identical names and retailer-local IDs stay distinct across different sellers when published',()=>{
+ const a=parseProductPage(page(),{...ctx,sourceId:'seller-A'}).items[0],b=parseProductPage(page(),{...ctx,sourceId:'seller-B',domain:'second.invalid',url:'https://second.invalid/product/test/12/'}).items[0];
+ assert.equal(a.title,b.title);assert.equal(a.retailer_product_id,b.retailer_product_id);assert.notEqual(a.id,b.id);
+ const {applyUpdates}=require('../scripts/collector/publish.cjs'),snapshot=require('../dist/source-snapshot.json'),out=applyUpdates(snapshot,{a:{status:'success',cacheOnly:false,products:[a],updatedKeys:[a.collector_key]},b:{status:'success',cacheOnly:false,products:[b],updatedKeys:[b.collector_key]}});
+ assert.equal(out.catalog.products.filter(p=>[a.id,b.id].includes(p.id)).length,2);assert.equal(new Set(out.catalog.products.filter(p=>[a.id,b.id].includes(p.id)).map(p=>p.sellerId)).size,2);
+});
 function namedPage(visibleName,declaredName) {
  const product={'@type':'Product',name:declaredName,sku:'SKU-WS-12',offers:{'@type':'Offer',price:1000,priceCurrency:'KRW'}};
  return '<h1>'+visibleName+'</h1><p>1,000원</p><script type="application/ld+json">'+JSON.stringify(product)+'</script>';

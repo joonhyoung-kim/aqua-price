@@ -71,7 +71,7 @@ async function collectSource(source, previous={}, options={}) {
       if([404,410].includes(page.status)){state.errors.push('product_'+page.status+'_preserved:'+product.url);state.coverage.requestFailures++;continue;}
       state.coverage.visitedPages++;
       const observedAt=page.cacheHit?(page.fetchedAt || prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
-      const context={...product,url:product.url,sourceId:source.id,domain:source.sourceDomain,name:source.name,photosAllowed:source.photosAllowed===true,observedAt};
+      const context={...product,url:product.url,sourceId:source.id,domain:source.sourceDomain,name:source.name,photosAllowed:source.photosAllowed===true,verifiedPhotoUrls:source.verifiedPhotoUrls,observedAt};
       const parsed=limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
       if(parsed.status!=='success'){state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;continue;}
       if(parsed.issues.some(x=>x!=='duplicate_offer')){state.errors.push(...parsed.issues.filter(x=>x!=='duplicate_offer').map(x=>x+':'+product.url));state.coverage.parseFailures++;}

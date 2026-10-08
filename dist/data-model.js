@@ -58,8 +58,14 @@
     if (product.verified !== true || product.type !== 'live' || product.subtype !== 'fish') return null;
     const title = [product.name, product.originalTitle || ''].join(' ');
     if (/사료|먹이|모형|인조|장식|치료제|제거제|약품/.test(title)) return 'other';
-    const rules = { guppy:/구피|guppy/i, platy:/플래티|플레티|platy/i, molly:/몰리|molly/i, cory:/코리도라스|corydoras/i, tetra:/테트라|tetra/i, medaka:/메다카|medaka/i, betta:/베타|betta/i, cichlid:/시클리드|cichlid/i };
-    const matches = Object.keys(rules).filter(key => rules[key].test(title));
+    const rules = { guppy:/구피|guppy/i, platy:/플래티(?!넘|늄)|플레티(?!넘|늄)|platy/i, molly:/몰리|molly/i, cory:/코리도라스|corydoras/i, tetra:/테트라|tetra/i, medaka:/메다카|medaka/i, betta:/베타|betta/i, cichlid:/시클리드|cichlid/i };
+    // Verified detail identity plus the actual category where its public link was observed.
+    // Many guppy variety titles omit the word "guppy".
+    const titleMatches = Object.keys(rules).filter(key => rules[key].test(title));
+    if (titleMatches.length) return titleMatches.length === 1 ? titleMatches[0] : 'other';
+    let category = product.discoveryCategoryUrl || '';
+    try { category = decodeURIComponent(new URL(category).pathname); } catch { category = ''; }
+    const matches = Object.keys(rules).filter(key => rules[key].test(category));
     return matches.length === 1 ? matches[0] : 'other';
   }
   function selectProducts(catalog, filters) {

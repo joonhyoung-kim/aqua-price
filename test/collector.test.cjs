@@ -6,6 +6,47 @@ const NOW=Date.parse('2026-10-08T12:00:00Z');
 const ctx={url:'https://example.invalid/product/test/12/',domain:'example.invalid',sourceId:'test',name:'TEST',type:'live',subtype:'fish',photosAllowed:true,observedAt:new Date(NOW).toISOString()};
 function page(price=1000,availability='InStock',extra={}) { const product={'@type':'Product',name:'TEST FISH',sku:'SKU-12',image:'https://example.invalid/fish.jpg',offers:{'@type':'Offer',price:String(price),priceCurrency:'KRW',availability:'https://schema.org/'+availability},...extra};return '<h1>TEST FISH</h1><p>'+Number(price).toLocaleString('en-US')+'원</p><script type="application/ld+json">'+JSON.stringify({'@graph':[product]})+'</script>'; }
 const source={id:'test',name:'TEST',sourceDomain:'example.invalid',officialURL:'https://example.invalid/',technicalReadiness:'adapter_sample_tested',enabled:true,photosAllowed:true,delayMs:10,cacheTtlMs:1000,maxRequests:4,maxBytes:100000,timeoutMs:1000,products:[{url:ctx.url,type:'live',subtype:'fish'}]};
+function namedPage(visibleName,declaredName) {
+ const product={'@type':'Product',name:declaredName,sku:'SKU-WS-12',offers:{'@type':'Offer',price:1000,priceCurrency:'KRW'}};
+ return '<h1>'+visibleName+'</h1><p>1,000원</p><script type="application/ld+json">'+JSON.stringify(product)+'</script>';
+}
+test('Unicode whitespace differences corroborate identity without changing source names or SKU facts',()=>{
+ const declared=' \t블랙\u00a0 \u2003스윗\u0085쉬림프 \u3000(1~1.5cm)\uFEFF ';
+ const out=parseProductPage(namedPage('블랙 스윗 쉬림프 (1~1.5cm)',declared),ctx);
+ assert.equal(out.status,'success');assert.deepEqual(out.issues,[]);
+ assert.equal(out.items[0].title,declared.trim());assert.equal(out.items[0].retailer_product_id,'SKU-WS-12');
+ assert.equal(out.items[0].price_amount,1000);assert.equal(out.items[0].registered_at,null);
+ const entity=parseProductPage(namedPage('블랙&nbsp;&nbsp;스윗 쉬림프','블랙 스윗 쉬림프'),ctx);
+ assert.equal(entity.status,'success');
+});
+test('identity whitespace matching never erases size, quantity, variety or Unicode digit differences',()=>{
+ for(const [declared,visible]of [
+  ['블랙 스윗 쉬림프 (1~1.5cm)','블랙 스윗 쉬림프 (1~2.5cm)'],
+  ['스노우볼 새우 10마리 (선별불가)','스노우볼 새우 1마리 (선별불가)'],
+  ['블루 벨벳 새우 10마리','레드 벨벳 새우 10마리'],
+  ['네온테트라 10마리','네온테트라 １０마리'],
+  ['네 온테트라','네온 테트라']
+ ]){const out=parseProductPage(namedPage(visible,declared),ctx);assert.equal(out.items.length,0);assert.ok(out.issues.includes('identity_not_corroborated'));}
+});
+test('identity substring edges cannot match different numeric suffixes or attached variety names',()=>{
+ for(const [declared,visible]of [['구피 1','구피 10'],['네온테트라','블랙네온테트라'],['테\u200b트라','테트라']]){
+  const out=parseProductPage(namedPage(visible,declared),ctx);assert.equal(out.items.length,0);assert.ok(out.issues.includes('identity_not_corroborated'));
+ }
+});
+test('group and variant property whitespace can corroborate a pack while quantity mismatches stay rejected',()=>{
+ const group={'@type':'ProductGroup',name:'TEST\u2003FISH',productGroupID:'group-12',hasVariant:[{'@type':'Product',name:'TEST FISH variant',sku:'pack-10',quantitativeValue:{unitCode:'C62',value:10},additionalProperty:[{name:'수량',value:'10\u00a0마리'}],offers:{'@type':'Offer',price:1000,priceCurrency:'KRW'}}]};
+ const html='<h1>TEST FISH</h1><select><option>10 마리</option></select><p>1,000원</p><script type="application/ld+json">'+JSON.stringify(group)+'</script>';
+ const out=parseProductPage(html,ctx);assert.equal(out.items.length,1);assert.equal(out.items[0].quantity_per_pack,10);assert.equal(out.items[0].variant_id,'pack-10');
+ const wrong=parseProductPage(html.replace('<option>10 마리</option>','<option>1 마리</option>'),ctx);assert.equal(wrong.items.length,0);assert.ok(wrong.issues.includes('identity_not_corroborated'));
+});
+test('one uncorroborated variant price remains an issue and cannot be supplied by normalization',async()=>{
+ const group={'@type':'ProductGroup',name:'야마토 새우 10마리',productGroupID:'716',hasVariant:[10,1].map(q=>({'@type':'Product',name:'야마토 새우 10마리 '+q+'마리',sku:'716-'+q,additionalProperty:[{name:'수량',value:q+'마리'}],offers:{'@type':'Offer',price:q===10?6900:1000,priceCurrency:'KRW'}}))};
+ const html='<h1>야마토 새우 10마리</h1><select><option>10마리</option><option>1마리</option></select><p>6,900원</p><script type="application/ld+json">'+JSON.stringify(group)+'</script>';
+ const out=parseProductPage(html,ctx);assert.deepEqual(out.items.map(p=>p.price_amount),[6900]);assert.ok(out.issues.includes('visible_price_unverified'));
+ const {verifyDiscovered}=require('../scripts/collector/verify-discovered.cjs');
+ const verified=await verifyDiscovered({...source,delayMs:0},{maxProductVerifications:1},[{url:ctx.url,type:'live',subtype:'shrimp'}],{},runtime(response(200,html)));
+ assert.equal(verified.products.length,0);assert.equal(verified.status,'partial_failure');assert.equal(verified.deferredCandidateKeys.length,1);
+});
 test('deadline defers a long robots wait without bypassing it or making a request',async()=>{
  const {request}=require('../scripts/collector/engine.cjs');let fetched=0,slept=0;
  await assert.rejects(request(ctx.url,{...source,delayMs:10000},{now:()=>NOW,deadline:NOW+5000,lastRequest:NOW,requests:0,sleep:async()=>{slept++},fetch:async()=>{fetched++}},{cache:{}}),/execution_deadline/);

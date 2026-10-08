@@ -2,7 +2,19 @@
 const { httpsUrl, sourceUrl } = require('../../dist/data-model.js');
 function host(url) { return new URL(url).hostname.replace(/^www\./, ''); }
 function decode(text) { return String(text).replace(/&(?:amp|quot|apos|lt|gt|nbsp);|&#(\d+);|&#x([a-f\d]+);/gi, (entity, dec, hex) => dec || hex ? String.fromCodePoint(Number.parseInt(dec || hex, dec ? 10 : 16)) : ({'&amp;':'&','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>','&nbsp;':' '})[entity.toLowerCase()]); }
-function visibleText(html) { return decode(html.replace(/<script\b[\s\S]*?<\/script\s*>|<style\b[\s\S]*?<\/style\s*>|<!--[\s\S]*?-->/gi, '').replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim(); }
+function normalizeIdentityText(text) { return String(text).replace(/[\p{White_Space}\uFEFF]+/gu, ' ').trim(); }
+function visibleText(html) { return normalizeIdentityText(decode(html.replace(/<script\b[\s\S]*?<\/script\s*>|<style\b[\s\S]*?<\/style\s*>|<!--[\s\S]*?-->/gi, '').replace(/<[^>]*>/g, ' '))); }
+function identityIsVisible(text, value) {
+  const name = normalizeIdentityText(value);
+  if (!name) return false;
+  for (let start = text.indexOf(name); start !== -1; start = text.indexOf(name, start + 1)) {
+    const left = text.slice(0, start), right = text.slice(start + name.length);
+    if (/^[\p{L}\p{N}]/u.test(name) && /[\p{L}\p{N}]$/u.test(left)) continue;
+    if (/[\p{L}\p{N}]$/u.test(name) && /^[\p{L}\p{N}]/u.test(right)) continue;
+    return true;
+  }
+  return false;
+}
 function walk(value, found) {
   if (Array.isArray(value)) return value.forEach(x => walk(x, found));
   if (!value || typeof value !== 'object') return;
@@ -40,8 +52,8 @@ function parseProductPage(html, context) {
     const title = typeof product.name === 'string' ? decode(product.name).trim() : '';
     const retailerProductId = product._groupId || productIdentity(product, context.url);
     const properties=Array.isArray(product.additionalProperty)?product.additionalProperty:product.additionalProperty?[product.additionalProperty]:[];
-    const groupCorroborated=product._groupName && text.includes(decode(product._groupName)) && ((properties.length && properties.every(p=>typeof p.value==='string'&&text.includes(decode(p.value)))) || typeof product.color==='string'&&text.includes(decode(product.color)));
-    if (!title || (!text.includes(title)&&!groupCorroborated) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
+    const groupCorroborated=product._groupName && identityIsVisible(text,decode(product._groupName)) && ((properties.length && properties.every(p=>typeof p.value==='string'&&identityIsVisible(text,decode(p.value)))) || typeof product.color==='string'&&identityIsVisible(text,decode(product.color)));
+    if (!title || (!identityIsVisible(text,title)&&!groupCorroborated) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
     const offers = Array.isArray(product.offers) ? product.offers : product.offers ? [product.offers] : [];
     for (const offer of offers) {
       if (!offer || typeof offer !== 'object' || offer['@type'] === 'AggregateOffer') { issues.push('no_concrete_offer'); continue; }

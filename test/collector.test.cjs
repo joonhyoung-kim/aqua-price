@@ -6,6 +6,16 @@ const NOW=Date.parse('2026-10-08T12:00:00Z');
 const ctx={url:'https://example.invalid/product/test/12/',domain:'example.invalid',sourceId:'test',name:'TEST',type:'live',subtype:'fish',photosAllowed:true,observedAt:new Date(NOW).toISOString()};
 function page(price=1000,availability='InStock',extra={}) { const product={'@type':'Product',name:'TEST FISH',sku:'SKU-12',image:'https://example.invalid/fish.jpg',offers:{'@type':'Offer',price:String(price),priceCurrency:'KRW',availability:'https://schema.org/'+availability},...extra};return '<h1>TEST FISH</h1><p>'+Number(price).toLocaleString('en-US')+'원</p><script type="application/ld+json">'+JSON.stringify({'@graph':[product]})+'</script>'; }
 const source={id:'test',name:'TEST',sourceDomain:'example.invalid',officialURL:'https://example.invalid/',technicalReadiness:'adapter_sample_tested',enabled:true,photosAllowed:true,delayMs:10,cacheTtlMs:1000,maxRequests:4,maxBytes:100000,timeoutMs:1000,products:[{url:ctx.url,type:'live',subtype:'fish'}]};
+test('deadline defers a long robots wait without bypassing it or making a request',async()=>{
+ const {request}=require('../scripts/collector/engine.cjs');let fetched=0,slept=0;
+ await assert.rejects(request(ctx.url,{...source,delayMs:10000},{now:()=>NOW,deadline:NOW+5000,lastRequest:NOW,requests:0,sleep:async()=>{slept++},fetch:async()=>{fetched++}},{cache:{}}),/execution_deadline/);
+ assert.equal(fetched,0);assert.equal(slept,0);
+});
+test('deadline retains fresh verified products and lastgood while stopping the remaining URLs',async()=>{
+ let calls=0;const r={now:()=>NOW+calls*100,deadline:NOW+1150,sleep:async()=>{},fetch:async url=>{calls++;return response(200,url.endsWith('/robots.txt')?'User-agent: *\nAllow: /':page())}};
+ const s=await collectSource({...source,products:[...source.products,{...source.products[0],url:'https://example.invalid/product/other/13/'}]},{products:[{id:'old',collector_key:'old'}]},r);
+ assert.equal(s.status,'budget_limited');assert.equal(calls,2);assert.equal(s.products.length,2);assert.equal(s.updatedKeys.length,1);assert.equal(s.deletionAllowed,false);assert.ok(s.errors.includes('execution_deadline'));
+});
 function response(status,text=''){return {status,ok:status>=200&&status<300,headers:{get:()=>null},text:async()=>text};}
 function runtime(productResponse=response(200,page()),robots='User-agent: *\nAllow: /') {const calls=[];return {calls,now:()=>NOW,sleep:async()=>{},fetch:async(url,options)=>{calls.push({url,options});return response(200,robots) && url.endsWith('/robots.txt')?response(200,robots):productResponse;}};}
 test('JSON-LD graph parser preserves identity, visible KRW price, unknown dates/shipping and separate provenance',()=>{const result=parseProductPage(page(),ctx);assert.equal(result.status,'success');const p=result.items[0];assert.equal(p.price_amount,1000);assert.equal(p.retailer_product_id,'SKU-12');assert.equal(p.variant_id,null);assert.equal(p.source_kind,'direct_retailer_product_page');assert.equal(p.registered_at,null);assert.equal(p.shipping_amount,null);assert.equal(p.available,true);assert.equal(p.photo.verified_https_url,'https://example.invalid/fish.jpg');});

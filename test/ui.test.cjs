@@ -9,6 +9,8 @@ const gear = actual.products.filter(p => p.type === 'gear').sort((a,b) => a.pric
 const plants = actual.products.filter(p=>p.subtype==='aquatic_plant').sort((a,b)=>a.price.amount-b.price.amount);
 const fish = actual.products.filter(p=>p.subtype==='fish').sort((a,b)=>a.price.amount-b.price.amount);
 const live = actual.products.filter(p => p.type === 'live');
+const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 async function setup(data = actual, fail = false) {
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
@@ -36,7 +38,7 @@ async function setup(data = actual, fail = false) {
   const context = vm.createContext({ document, AquaCatalog, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
-  return { nodes, types, sorts, subtypes, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => m[1]); }, sort(v) { sorts.find(e => e.dataset.sort === v).click(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { nodes, types, sorts, subtypes, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { sorts.find(e => e.dataset.sort === v).click(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('gear default shows observed items with unknown delivery and catalog-stock caveat', async () => {
   const app = await setup();
@@ -44,7 +46,7 @@ test('gear default shows observed items with unknown delivery and catalog-stock 
   assert.match(app.nodes.dataStatus.textContent, /항목별 확인 시각/); assert.match(app.nodes.dataStatus.textContent, /실시간 최저가/);
   assert.ok(app.nodes.hint.textContent.includes(`미확인 ${gear.length}개 포함`)); assert.match(app.nodes.hint.textContent, /기간 해당 여부를 판단할 수 없습니다/);
   assert.match(app.nodes.grid.innerHTML, /배송비 미확인/); assert.match(app.nodes.grid.innerHTML, /최종 재고 보장 아님/);
-  for (const product of gear.slice(0,24)) { assert.ok(app.nodes.grid.innerHTML.includes(product.sourceUrl)); assert.ok(app.nodes.grid.innerHTML.includes(product.originalTitle)); }
+  for (const product of gear.slice(0,24)) { assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.sourceUrl))); assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.originalTitle))); }
   assert.equal(app.images.length, gear.slice(0,24).filter(p=>p.photo.url).length); assert.ok(app.images.every(img => img.src.startsWith('https://')));
 });
 test('sorts stay exclusive, unknown dates never become newest or sales ranking', async () => {
@@ -135,14 +137,14 @@ test('livestock subfilters default to plants, show honest empty categories and s
   app.type('live'); assert.equal(app.nodes.livestockFilters.hidden, false); assert.equal(app.names().length, Math.min(24,plants.length));
   assert.match(app.nodes.resultTitle.textContent, /수초/);
   for (const subtype of ['fish','shrimp','snail']) {
-    app.subtype(subtype); assert.equal(app.names().length, actual.products.filter(p=>p.subtype===subtype).length); assert.match(app.nodes.grid.innerHTML, /판매처 페이지 직접 확인/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype&&p.photo.url).length);
+    app.subtype(subtype); assert.equal(app.names().length, Math.min(24, actual.products.filter(p=>p.subtype===subtype).length)); assert.match(app.nodes.grid.innerHTML, /판매처 페이지 직접 확인/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).filter(p=>p.photo.url).length);
     assert.equal(app.subtypes.filter(b=>b.attributes['aria-pressed']==='true').length, 1);
   }
   app.type('gear'); assert.equal(app.nodes.livestockFilters.hidden, true); assert.equal(app.names().length, 24);
-  app.type('live'); assert.match(app.nodes.resultTitle.textContent, /달팽이/); assert.equal(app.names().length,actual.products.filter(p=>p.subtype==='snail').length);
+  app.type('live'); assert.match(app.nodes.resultTitle.textContent, /달팽이/); assert.equal(app.names().length,Math.min(24,actual.products.filter(p=>p.subtype==='snail').length));
   app.subtype('aquatic_plant'); assert.equal(app.names().length, Math.min(24,plants.length));
-  app.nodes.query.value='2구'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.equal(app.names().length, 2);
-  app.subtype('fish'); assert.deepEqual(app.names(), []); app.subtype('aquatic_plant'); assert.equal(app.names().length, 2);
+  app.nodes.query.value='2구'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
+  app.subtype('fish'); assert.deepEqual(app.names(), []); app.subtype('aquatic_plant'); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
   app.nodes.query.value='찾을수없는상품'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /검색어/);
 });
 test('livestock controls wrap into four mobile columns with clear pressed state and keyboard focus', () => {
@@ -158,12 +160,12 @@ test('missing verified subtype still explains only connected information; direct
 });
 
 test('direct livestock original photos have descriptive escaped alt text and retain seller fallback',async()=>{
- const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+p.name+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(p.photo.url));}assert.ok(app.nodes.grid.innerHTML.includes(p.sourceUrl));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
+ const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+escaped(p.name)+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.photo.url)));}assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
 });
 
 test('all period defaults without a registration bound and tool preserves category/query/sort',async()=>{
  const app=await setup();assert.equal(app.nodes.period.value,'all');assert.equal(app.nodes.includeUnknown.disabled,true);assert.match(app.nodes.hint.textContent,/전체 기간/);
  assert.equal(app.tool.execute({type:'live',subtype:'fish',sort:'low',days:'all',query:'',includeUnknownRegistration:false}).count,fish.length);assert.match(app.nodes.resultTitle.textContent,/물고기/);
- app.nodes.period.value='7';app.nodes.period.listeners.change();assert.equal(app.nodes.includeUnknown.disabled,false);app.nodes.period.value='all';app.nodes.period.listeners.change();assert.equal(app.names().length,fish.length);
+ app.nodes.period.value='7';app.nodes.period.listeners.change();assert.equal(app.nodes.includeUnknown.disabled,false);app.nodes.period.value='all';app.nodes.period.listeners.change();assert.equal(app.names().length,Math.min(24,fish.length));
  app.sort('sales');assert.deepEqual(app.names(),[]);app.sort('new');assert.deepEqual(app.names(),[]);
 });

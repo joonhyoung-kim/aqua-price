@@ -30,7 +30,9 @@ async function request(url, source, runtime, prior, redirectDepth=0) {
   const clock=runtime.now(), cached=prior.cache?.[url];
   if(cached && clock-Date.parse(cached.fetchedAt)<source.cacheTtlMs)return {status:200,text:cached.text,cacheHit:true,fetchedAt:cached.fetchedAt};
   if(runtime.requests>=source.maxRequests)throw Error('request_limit');
-  if(runtime.lastRequest!==null)await runtime.sleep(Math.max(0,source.delayMs-Math.max(0,clock-runtime.lastRequest)));
+  const wait=runtime.lastRequest===null?0:Math.max(0,source.delayMs-Math.max(0,clock-runtime.lastRequest));
+  if(Number.isFinite(runtime.deadline)&&clock+wait+source.timeoutMs>=runtime.deadline)throw Error('execution_deadline');
+  if(wait)await runtime.sleep(wait);
   runtime.requests++;runtime.lastRequest=runtime.now();
   const response=await runtime.fetch(url,{headers:{'User-Agent':AGENT,Accept:'text/html,text/plain'},redirect:'manual',signal:AbortSignal.timeout(source.timeoutMs)});
   if([403,429].includes(response.status)){const error=Error('access_stopped');error.status=response.status;error.retryAfter=response.headers.get('retry-after');throw error;}
@@ -50,7 +52,7 @@ async function request(url, source, runtime, prior, redirectDepth=0) {
 }
 async function collectSource(source, previous={}, options={}) {
   const prior=structuredClone(previous), now=options.now||Date.now;
-  const run={now,fetch:options.fetch||fetch,sleep:options.sleep||((ms)=>new Promise(resolve=>setTimeout(resolve,ms))),requests:0,lastRequest:options.lastRequestAt??prior.lastRequestAt??null};
+  const run={now,deadline:options.deadline,fetch:options.fetch||fetch,sleep:options.sleep||((ms)=>new Promise(resolve=>setTimeout(resolve,ms))),requests:0,lastRequest:options.lastRequestAt??prior.lastRequestAt??null};
   const state={...prior,products:prior.products||[],collectorLastAttempt:new Date(now()).toISOString(),status:'pending',coverage:{kind:'known_product_urls',paginationComplete:false,terminalPageReached:false,visitedPages:0,expectedPages:source.products?.length||0,parseFailures:0,requestFailures:0},errors:[]};
   const fail=(status,error)=>({...state,cache:prior.cache||{},status,errors:[...state.errors,error],requests:run.requests,lastRequestAt:run.lastRequest});
   if(source.technicalReadiness==='blocked'||source.enabled!==true)return fail('disabled',source.blockers?.join('; ')||'Not enabled');
@@ -80,6 +82,6 @@ async function collectSource(source, previous={}, options={}) {
     if(incoming.length && !state.errors.length && (fresh>0||!prior.collectorLastSuccess))state.collectorLastSuccess=new Date(now()).toISOString();
     state.cacheOnly=fresh===0&&incoming.length>0&&updatedKeys.length===0;
     return state;
-  }catch(error){state.coverage.requestFailures++;if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
+  }catch(error){if(error.message==='execution_deadline'){state.products=reconcile(state.products,incoming,state.coverage).products;state.updatedKeys=updatedKeys;state.cacheOnly=fresh===0&&updatedKeys.length===0;state.deletionAllowed=false;return fail('budget_limited','execution_deadline');}state.coverage.requestFailures++;if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
 }
 module.exports={collectSource,reconcile,robotsAllows,request};

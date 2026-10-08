@@ -3,7 +3,7 @@ const {buildCatalog}=require('../build-catalog.cjs');
 function applyUpdates(snapshot, states, mode='all'){
  const next=structuredClone(snapshot);if(next.photo_validation && !next.photo_validation.verified_item_ids)next.photo_validation.verified_item_ids=next.items.filter(p=>!p.source_kind&&p.photo?.verified_https_url).map(p=>p.id);const rows=new Map(next.items.map(p=>[p.id,p]));let changes=0;
  for(const state of Object.values(states)){
-   if(!['success','partial_failure'].includes(state.status)||state.cacheOnly)continue;
+   if(!['success','partial_failure','budget_limited'].includes(state.status)||state.cacheOnly)continue;
    for(const update of state.products){
      if(mode==='live'&&update.type!=='live'||mode==='gear'&&update.type!=='gear')continue;
      if(!update.collector_key || !update.observed_at_utc || !['live','gear'].includes(update.type) || !state.updatedKeys?.includes(update.collector_key))continue;

@@ -50,3 +50,7 @@ main의 초기 화면은 가상 상품·가격 샘플이며, 기간은 샘플 �
 - test/: 합성 테스트는 게시 데이터에 넣지 않음
 
 Sites .openai/hosting.json과 원본 저장소 토큰은 포함하지 않습니다. UCP 프로필은 읽기 전용이며 결제·배송 API를 제공하지 않습니다. 기존 Render 캐시 헤더는 UCP max-age 60초 요구와 별도 점검이 필요한 상태입니다.
+
+### Execution deadline and resume
+
+The collector stops starting network requests after an 18-minute wall-clock budget, before the 25-minute Actions job timeout. It preserves verified partial results, lastgood, refusal quarantine and actual category cursors. Unattempted sources are reported explicitly; a per-mode source cursor resumes them in the next run. Robots delays are respected rather than shortened. A successful partial run does not mean complete source coverage.

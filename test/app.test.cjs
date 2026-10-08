@@ -105,7 +105,7 @@ test('UI controls, data script order and honest status exist in HTML', () => {
   for (const value of ['low', 'high', 'sales', 'new']) assert.ok(html.includes(`data-sort="${value}"`));
   for (const value of [7, 30, 90]) assert.ok(html.includes(`value="${value}"`));
   assert.ok(html.indexOf('src="data-model.js"') < html.indexOf('src="app.js"'));
-  assert.ok(html.includes('id="dataStatus"')); assert.ok(html.includes('id="sellerLinks"'));
+  assert.ok(html.includes('id="dataStatus"')); assert.ok(html.includes('id="moreResults"'));
 });
 test('expanded snapshot deduplicates sellers and requires explicit category for new items', () => {
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));

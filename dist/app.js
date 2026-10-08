@@ -20,19 +20,13 @@ function render(resetPage = true) {
   const result = AquaCatalog.selectProducts(catalog, filters);
   const visibleRows = result.rows.slice(0, visibleLimit);
   const sellerById = new Map(catalog.sellers.map(seller => [seller.id, seller]));
-  const referencedSellers = new Set(catalog.products.map(product => product.sellerId));
-  const connectedSellers = catalog.sellers.filter(seller => referencedSellers.has(seller.id));
-  $('#catalogScope').textContent = `이번 확인본: 상품 ${catalog.products.length}개 · 상품이 확인된 판매처 ${connectedSellers.length}곳. 사전 조사한 사이트 수와 연동 판매처 수는 다릅니다. 검색은 이 목록 안에서만 동작하며 전체 판매처 실시간 검색이 아닙니다.`;
-  $('#coverageNotice').textContent = filters.type === 'live' ? catalog.livestockNotice || '이번 확인본의 생물 범위만 표시합니다.' : '공식 카탈로그에서 이번에 확인된 용품 목록입니다. 상품별 확인 시각을 확인하세요.';
   $('#paginationStatus').textContent = result.rows.length ? `조회 ${result.rows.length}개 중 ${visibleRows.length}개 표시` : '';
   $('#moreResults').hidden = visibleRows.length >= result.rows.length;
   $('#moreResults').textContent = `상품 ${Math.min(PAGE_SIZE, result.rows.length - visibleRows.length)}개 더 보기`;
   $('#resultTitle').textContent = `${filters.type === 'live' ? '생물 · ' + subtypeNames[filters.subtype] : '용품'} ${result.rows.length}개`;
-  $('#resultNote').textContent = '표시가격 기준 · 배송비 별도 · 규격 확인';
-  $('#dataStatus').textContent = catalog.status === 'ready' ? catalog.notice || `확인된 관찰 데이터 · 기준 ${formatTime(catalog.asOf)} · 현재 가격·재고는 판매처에서 확인하세요.` : catalog.reason;
+  $('#dataStatus').textContent = catalog.status === 'ready' ? '확인한 판매처 상품 목록입니다. 실시간 가격·재고·전체 판매처 비교가 아닙니다.' : catalog.reason;
   const exclusions = [result.excludedRegistration ? `등록일 미확인 ${result.excludedRegistration}개 제외` : '', (filters.sort === 'low' || filters.sort === 'high') && result.excludedPrice ? `가격 미확인 ${result.excludedPrice}개 제외` : '', result.excludedSales ? `선택 기간 판매량 미확인 ${result.excludedSales}개 제외` : ''].filter(Boolean);
   $('#hint').textContent = (filters.days === 'all' ? '전체 기간 · 등록일 미확인 상품도 포함합니다. 신상품순은 확인된 등록일이 필요합니다.' : '기간은 실제 상품 등록일 기준') + ' · 관찰 시각은 등록일이 아닙니다.' + (result.includedUnknownRegistration ? ` · 등록일 미확인 ${result.includedUnknownRegistration}개 포함: 선택 기간 해당 여부를 판단할 수 없습니다.` : '') + (exclusions.length ? ' · ' + exclusions.join(' · ') : '');
-  $('#sellerLinks').innerHTML = connectedSellers.length ? '<span>이번 확인본에 상품이 있는 판매처: </span>' + connectedSellers.map(s => `<a href="${escapeHtml(s.officialUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)} ↗</a>`).join(' · ') : '이번 확인본에 상품이 있는 판매처가 없습니다.';
   if (!result.rows.length) {
     $('#grid').innerHTML = `<div class="empty"><strong>확인 가능한 상품이 없어요</strong>${escapeHtml(result.reason)}<br>낮은·높은 가격순에서 등록일 미확인 상품을 포함하거나 판매처에서 직접 확인할 수 있습니다.</div>`;
     return;
@@ -40,7 +34,7 @@ function render(resetPage = true) {
   $('#grid').innerHTML = visibleRows.map(product => {
     const seller = sellerById.get(product.sellerId);
     const photo = AquaCatalog.usablePhoto(product);
-    return `<article class="card"><div class="art${photo ? '' : ' no-photo'}">${photo ? `<img src="${escapeHtml(photo)}" alt="${escapeHtml(product.name)} 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden>사진을 불러오지 못했습니다.<br>아래 판매처 링크에서 확인하세요.</span>` : `<a class="photo-link" href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener noreferrer">사진은 판매처에서 확인 ↗</a>`}</div><div class="body"><div class="category">${escapeHtml(seller.name)}${seller.sellerNameConfirmed ? '' : ' · 판매처명 미확인'}</div><div class="spec provenance">출처: ${product.sourceKind === 'direct_retailer_product_page' ? '판매처 페이지 직접 확인' : '카페24 공식 API'}</div><h3>${escapeHtml(product.name)}</h3>${product.originalTitle ? `<details class="original"><summary>원래 상품명 보기</summary><p>${escapeHtml(product.originalTitle)}</p></details>` : ''}<div class="spec">${escapeHtml(product.spec)}</div><div class="price">${priceText(product.price)}</div><div class="spec">배송비 ${priceText(product.shipping)} · 표시가격 기준</div><div class="spec">${product.sourceKind === 'direct_retailer_product_page' ? '판매처 InStock 표시' : '카탈로그 판매 가능'}: ${product.available === true ? '표시됨 · 최종 재고 보장 아님' : product.available === false ? '불가로 표시됨' : '미확인'}</div><div class="meta"><span>상품 등록일 ${formatTime(product.registeredAt)}</span><span>확인 시각 ${formatTime(product.observedAt)}</span></div><p class="spec">누적 판매수: ${product.cumulativeSales === null ? '미확인' : product.cumulativeSales.toLocaleString('ko-KR')} · 선택 기간 판매량: ${product.periodSales && Date.parse(product.periodSales.startAt) === Date.parse(result.startAt) && Date.parse(product.periodSales.endAt) === Date.parse(result.endAt) ? product.periodSales.count.toLocaleString('ko-KR') : '미확인'}</p><a class="source" href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener noreferrer">판매처 상품 원문 확인 ↗</a></div></article>`;
+    return `<article class="card"><div class="art${photo ? '' : ' no-photo'}"${photo ? '' : ' role="img" aria-label="상품 사진 없음"'}>${photo ? `<img src="${escapeHtml(photo)}" alt="${escapeHtml(product.name)} 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden role="img" aria-label="상품 사진 없음"></span>` : ''}</div><div class="body"><div class="category">${escapeHtml(seller.name)}</div><h3>${escapeHtml(product.name)}</h3><div class="price">${priceText(product.price)}</div><a class="source" href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener noreferrer">판매처 이동 ↗</a></div></article>`;
   }).join('');
   $('#grid').querySelectorAll('img').forEach(img => {
     const showFallback = () => { img.hidden = true; img.parentElement.querySelector('.photo-fallback').hidden = false; };

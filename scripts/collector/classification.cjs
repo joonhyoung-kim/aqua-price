@@ -9,6 +9,8 @@ function breadcrumbs(html){
  if(container)for(const a of scanHtml(container).links)nodesInList.push({name:a.text.replace(/\s+/g,' ').trim(),url:a.href});return nodesInList;
 }
 function classifyProduct(html,item,candidate,seed){
+ if(/포장비|배송비|핫팩|아이스팩|스티로폼|생물\s*포장/.test(item.title||''))return {status:'classified',type:'gear',subtype:null,basis:'Explicit packaging/shipping supply identity overrides livestock navigation'};
+ if(/물벼룩|실지렁이|장구벌레|밀웜|냉동\s*(?:짱구|장구)|브라인\s*쉬림프|알테미아/.test(item.title||''))return {status:'classified',type:'gear',subtype:null,basis:'Explicit live/frozen feed identity is not ornamental livestock'};
  const title=item.title||'',crumbs=breadcrumbs(html);if(item.seller_domain==='wpet.co.kr'){const primary=html.match(/<div\b[^>]*class=["'][^"']*\bsub_page_navi\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/i)?.[1],text=require('./product-jsonld.cjs').visibleText(primary||'');for(const name of text.split('>').map(x=>x.trim()).filter(x=>['열대어','새우','수초'].includes(x)))crumbs.push({name,url:''});}const names=crumbs.map(c=>c.name).filter(n=>n&&n!==title),context=names.join(' > ');
  if(/육상|육지달팽이|관엽|공기정화|테라리움|파충류|양서류|도마뱀|게코|거북|햄스터|토끼|앵무/.test(title+' '+context))return {status:'excluded_scope',reason:'Terrestrial, reptile, amphibian or horticultural scope is not supported'};
  const feedPath=names.some(n=>/^(?:사료(?:\/먹이)?|먹이|생먹이|냉동사료|동결건조사료|사료\/용품)$/.test(n.trim()));

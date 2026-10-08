@@ -20,7 +20,7 @@ async function discoverDaily(source,seed,previous={},options={}){
    const seen=new Set(saved.seenKeys),record={url:first,label:entry.label,visitedPages:[],expectedProductCount:saved.expectedProductCount??null,terminalPageReached:false,coverageComplete:false,errors:[],headProbe:false};out.categories.push(record);
    let next=saved.nextUrl;const remainingPages=seed.maxPages-out.coverage.pagesVisited;
    const head=next!==first&&seed.probeFirstPage!==false&&remainingPages>=2&&saved.headProbePending!==true;let headDone=!head;const visited=new Set();record.headProbeDeferred=next!==first&&!head;
-   while(next&&out.coverage.pagesVisited<seed.maxPages&&found.size<seed.maxProducts){
+   while(next&&out.coverage.pagesVisited<seed.maxPages&&record.visitedPages.length<(seed.maxPagesPerCategory||seed.maxPages)&&found.size<seed.maxProducts){
     const url=headDone?next:first;if(visited.has(url)){record.errors.push('pagination_cycle');break;}if(!robotsAllows(robots.text,url)){record.errors.push('robots_denied_category');break;}
     if(headDone)saved.nextUrl=url;const page=await request(url,limits,run,prior);if(page.status!==200){record.errors.push('category_http_'+page.status);break;}if(!headDone)saved.headProbePending=true;else saved.headProbePending=false;visited.add(url);out.coverage.pagesVisited++;record.visitedPages.push(url);saved.visitedPageUrls=[...new Set([...(saved.visitedPageUrls||[]),url])];const parsed=parseCategoryPage(page.text,url,source.officialURL);record.errors.push(...parsed.issues);
     if(parsed.expectedTotal!==null){if(saved.expectedProductCount!==undefined&&saved.expectedProductCount!==parsed.expectedTotal){saved.countChanged=true;}saved.expectedProductCount=parsed.expectedTotal;record.expectedProductCount=parsed.expectedTotal;}

@@ -27,7 +27,7 @@ function scanHtml(html,profile={}){
 }
 function categoryCandidates(html,base,official){const map=new Map();for(const a of scanHtml(html).links){const url=categoryUrl(a.href,base,official);if(url&&!map.has(url))map.set(url,{url,label:a.text.replace(/\s+/g,' ').trim()});}return [...map.values()];}
 function parseCategoryPage(html,pageUrl,official){
- const scan=scanHtml(html),current=Number(new URL(pageUrl).searchParams.get('page')||1),key=categoryKey(pageUrl),products=new Map(),pages=new Map(),issues=[];
+ const scan=scanHtml(html,{blockClasses:['xans-product-listrecommend','xans-product-listnew','xans-product-listmain','xans-product-relation']}),current=Number(new URL(pageUrl).searchParams.get('page')||1),key=categoryKey(pageUrl),products=new Map(),pages=new Map(),issues=[];
  for(const a of scan.links){if(a.inList){const url=productUrl(a.href,pageUrl,official);if(url&&!products.has(productKey(url)))products.set(productKey(url),url);}if(a.inPager||/\bnext\b/i.test(a.rel)){const url=nextCategoryUrl(a.href,pageUrl,official);if(url&&categoryKey(url)===key){const n=Number(new URL(url).searchParams.get('page')||1);if(Number.isSafeInteger(n)&&n>current)pages.set(n,url);}else if(/\bnext\b/i.test(a.rel))issues.push('next_anchor_unusable');}}
  const values=scan.counts.map(text=>text.match(/(?:총\s*)?([\d,]+)\s*(?:개|items?|products?)/i)?.[1]).filter(Boolean).map(n=>Number(n.replaceAll(',','')));const expectedTotal=values.length&&values.every(n=>n===values[0])?values[0]:null;
  if(!scan.listFound)issues.push('product_list_not_found');if(values.length&&expectedTotal===null)issues.push('conflicting_product_counts');

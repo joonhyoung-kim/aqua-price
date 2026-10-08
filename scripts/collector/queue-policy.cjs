@@ -4,6 +4,7 @@ const GROUPS=['fish','shrimp','aquatic_plant','snail','mixed'];
 const CLASSIFICATION_VERSION=5;
 function candidateGroup(candidate){return GROUPS.includes(candidate.subtype)?candidate.subtype:'mixed';}
 function takeFairCandidates(candidates,limit,cursor=0,now=Date.now(),options={}){
+ if(options.priorityKeys?.size){const priority=candidates.filter(c=>options.priorityKeys.has(productKey(c.url))),remaining=candidates.filter(c=>!options.priorityKeys.has(productKey(c.url))),base={...options,priorityKeys:null},first=takeFairCandidates(priority,limit,cursor,now,base),second=takeFairCandidates(remaining,limit-first.candidates.length,first.cursor,now,base);return {candidates:[...first.candidates,...second.candidates],cursor:second.cursor};}
  const schedule=options.prioritizeFish?['fish','fish','fish','shrimp','snail','mixed','aquatic_plant']:GROUPS;
  const buckets=new Map(GROUPS.map(group=>[group,candidates.filter(c=>candidateGroup(c)===group&&(!c.retryAfter||now>=Date.parse(c.retryAfter)))]));
  if(options.prioritizeFish){const categories=new Map();for(const c of buckets.get('fish')){const key=c.discoveredInCategory||'unknown';if(!categories.has(key))categories.set(key,[]);categories.get(key).push(c);}const fair=[];while([...categories.values()].some(a=>a.length))for(const a of categories.values())if(a.length)fair.push(a.shift());buckets.set('fish',fair);}

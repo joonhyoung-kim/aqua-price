@@ -127,3 +127,11 @@ test('2,000-item filtering and price sorting meet a one-second local processing 
   assert.ok(elapsed < 1000, `processing ${elapsed.toFixed(1)} ms`);
   console.log(`2,000-item filtering/sorting: ${elapsed.toFixed(1)} ms (Node only; browser painting not measured)`);
 });
+
+test('livestock filters use verified subtype, never infer category from title, and reject invalid filters',()=>{
+ const data=catalog([product('plant',{subtype:'aquatic_plant'}),product('fish',{subtype:'fish'}),product('shrimp',{subtype:'shrimp'}),product('snail',{subtype:'snail'}),product('unknown',{name:'물고기 새우 달팽이 수초',subtype:null})]);
+ for(const subtype of ['fish','shrimp','aquatic_plant','snail']) assert.deepEqual(select(data,{subtype}).rows.map(p=>p.id),[subtype==='aquatic_plant'?'plant':subtype]);
+ assert.equal(select(data).rows.length,5);
+ assert.throws(()=>select(data,{subtype:'unknown'}),/잘못된 조회 조건/);
+ const absent=select(catalog([product('plant',{subtype:'aquatic_plant'})]),{subtype:'fish'}); assert.deepEqual(absent.rows,[]); assert.match(absent.reason,/현재 연결된 상품정보/);
+});

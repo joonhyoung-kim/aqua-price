@@ -50,12 +50,12 @@
   }
   function selectProducts(catalog, filters) {
     validateCatalog(catalog);
-    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales'].includes(filters.sort) && [7, 30, 90].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean'), '잘못된 조회 조건');
+    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales'].includes(filters.sort) && [7, 30, 90].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
     const end = Date.parse(catalog.asOf), start = end - filters.days * DAY;
     const startAt = new Date(start).toISOString(), endAt = new Date(end).toISOString();
     const needle = filters.query.trim().toLowerCase();
-    let rows = catalog.products.filter(p => p.type === filters.type && [p.name, p.originalTitle || '', p.spec].some(value => value.toLowerCase().includes(needle)));
+    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || p.subtype === filters.subtype) && [p.name, p.originalTitle || '', p.spec].some(value => value.toLowerCase().includes(needle)));
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
     const includeUnknown = filters.includeUnknownRegistration === true && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
@@ -70,7 +70,8 @@
       rows = rows.filter(matches).sort((a, b) => b.periodSales.count - a.periodSales.count);
     } else if (filters.sort === 'new') rows.sort((a, b) => Date.parse(b.registeredAt) - Date.parse(a.registeredAt));
     else rows.sort((a, b) => filters.sort === 'high' ? b.price.amount - a.price.amount : a.price.amount - b.price.amount);
-    const reason = !catalog.products.some(p => p.type === filters.type) && filters.type === 'live' ? catalog.livestockNotice || '이번 연동에서 확인된 생물 상품이 없습니다.' : filters.sort === 'sales' && !rows.length ? '선택한 기간과 정확히 일치하는 실제 판매량이 없습니다. 누적 판매수로 기간 순위를 만들지 않습니다.' : filters.sort === 'new' && !rows.length && unknownCount ? '실제 상품 등록일이 확인되지 않아 신상품순으로 정렬할 수 없습니다. 관찰 시각으로 임의 정렬하지 않습니다.' : !rows.length ? '등록일·검색어·정렬 조건을 충족하는 확인 상품이 없습니다.' : '';
+    const missingSubtype = filters.type === 'live' && filters.subtype !== undefined && !catalog.products.some(p => p.type === 'live' && p.subtype === filters.subtype);
+    const reason = missingSubtype ? '현재 연결된 상품정보에 해당 생물이 없습니다. 모든 판매처의 품절·미판매를 뜻하지 않습니다.' : !catalog.products.some(p => p.type === filters.type) && filters.type === 'live' ? catalog.livestockNotice || '이번 연동에서 확인된 생물 상품이 없습니다.' : filters.sort === 'sales' && !rows.length ? '선택한 기간과 정확히 일치하는 실제 판매량이 없습니다. 누적 판매수로 기간 순위를 만들지 않습니다.' : filters.sort === 'new' && !rows.length && unknownCount ? '실제 상품 등록일이 확인되지 않아 신상품순으로 정렬할 수 없습니다. 관찰 시각으로 임의 정렬하지 않습니다.' : !rows.length ? '등록일·검색어·정렬 조건을 충족하는 확인 상품이 없습니다.' : '';
     return { rows, reason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }

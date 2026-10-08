@@ -1,15 +1,21 @@
 'use strict';
 const $ = selector => document.querySelector(selector);
-let filters = { type: 'gear', sort: 'low', days: 30, query: '', includeUnknownRegistration: true };
+let filters = { type: 'gear', subtype: 'aquatic_plant', sort: 'low', days: 30, query: '', includeUnknownRegistration: true };
 let catalog = { schemaVersion: 1, status: 'pending', reason: '검증된 판매처 데이터를 불러오는 중입니다.', asOf: null, sellers: [], products: [] };
 const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const formatTime = value => value === null ? '미확인' : new Date(value).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ' KST';
 const priceText = value => value === null ? '미확인' : value.amount.toLocaleString('ko-KR') + ' 원';
 const PAGE_SIZE = 24;
 let visibleLimit = PAGE_SIZE;
+const subtypeNames = { fish: '물고기', shrimp: '새우', aquatic_plant: '수초', snail: '달팽이' };
+function syncSubtypeControls() {
+  $('#livestockFilters').hidden = filters.type !== 'live';
+  document.querySelectorAll('[data-subtype]').forEach(button => { const active = button.dataset.subtype === filters.subtype; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
+}
 
 function render(resetPage = true) {
   if (resetPage) visibleLimit = PAGE_SIZE;
+  syncSubtypeControls();
   const result = AquaCatalog.selectProducts(catalog, filters);
   const visibleRows = result.rows.slice(0, visibleLimit);
   const sellerById = new Map(catalog.sellers.map(seller => [seller.id, seller]));
@@ -20,7 +26,7 @@ function render(resetPage = true) {
   $('#paginationStatus').textContent = result.rows.length ? `조회 ${result.rows.length}개 중 ${visibleRows.length}개 표시` : '';
   $('#moreResults').hidden = visibleRows.length >= result.rows.length;
   $('#moreResults').textContent = `상품 ${Math.min(PAGE_SIZE, result.rows.length - visibleRows.length)}개 더 보기`;
-  $('#resultTitle').textContent = `${filters.type === 'live' ? '생물' : '용품'} ${result.rows.length}개`;
+  $('#resultTitle').textContent = `${filters.type === 'live' ? '생물 · ' + subtypeNames[filters.subtype] : '용품'} ${result.rows.length}개`;
   $('#resultNote').textContent = '표시가격 기준 · 배송비 별도 · 규격 확인';
   $('#dataStatus').textContent = catalog.status === 'ready' ? catalog.notice || `확인된 관찰 데이터 · 기준 ${formatTime(catalog.asOf)} · 현재 가격·재고는 판매처에서 확인하세요.` : catalog.reason;
   const exclusions = [result.excludedRegistration ? `등록일 미확인 ${result.excludedRegistration}개 제외` : '', (filters.sort === 'low' || filters.sort === 'high') && result.excludedPrice ? `가격 미확인 ${result.excludedPrice}개 제외` : '', result.excludedSales ? `선택 기간 판매량 미확인 ${result.excludedSales}개 제외` : ''].filter(Boolean);
@@ -55,6 +61,7 @@ document.querySelectorAll('[data-sort]').forEach(button => button.addEventListen
   document.querySelectorAll('[data-sort]').forEach(other => { other.classList.toggle('active', other === button); other.setAttribute('aria-pressed', other === button); });
   render();
 }));
+document.querySelectorAll('[data-subtype]').forEach(button => button.addEventListener('click', () => { filters.subtype = button.dataset.subtype; render(); }));
 $('#period').addEventListener('change', () => { filters.days = Number($('#period').value); render(); });
 $('#includeUnknown').addEventListener('change', () => { filters.includeUnknownRegistration = $('#includeUnknown').checked; render(); });
 $('#moreResults').addEventListener('click', () => { visibleLimit += PAGE_SIZE; render(false); });
@@ -71,10 +78,10 @@ fetch('catalog.json', { cache: 'no-store' }).then(response => {
 if (document.modelContext?.registerTool) {
   try { Promise.resolve(document.modelContext.registerTool({
     name: 'set_product_filters', description: '검증된 관찰 상품의 종류·정렬·실제 등록 기간·검색어를 변경합니다. 데이터가 없거나 미확인이면 결과가 비어 있습니다.',
-    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, sort: { enum: ['low', 'high', 'sales', 'new'] }, days: { enum: [7, 30, 90] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
+    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, subtype: { enum: ['fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new'] }, days: { enum: [7, 30, 90] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
     annotations: { readOnlyHint: false },
     execute(value) {
-      const next = { type: value?.type, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
+      const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
       AquaCatalog.selectProducts(catalog, next);
       $(`[data-type="${next.type}"]`).click(); $(`[data-sort="${next.sort}"]`).click();
       $('#period').value = String(next.days); $('#query').value = next.query; $('#includeUnknown').checked = next.includeUnknownRegistration; filters = next; render();

@@ -10,9 +10,10 @@ const live = actual.products.filter(p => p.type === 'live');
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 async function setup(data = actual, fail = false) {
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'period', 'query', 'search', 'includeUnknown'].map(id => [id, element()]));
+  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters'].map(id => [id, element()]));
   nodes.period.value = '30'; nodes.includeUnknown.checked = true;
   const types = ['live', 'gear'].map(type => element({ type }));
+  const subtypes = ['fish', 'shrimp', 'aquatic_plant', 'snail'].map(subtype => element({ subtype }));
   const sorts = ['low', 'high', 'sales', 'new'].map(sort => element({ sort }));
   let images = [], tool;
   nodes.grid.querySelectorAll = () => {
@@ -24,16 +25,16 @@ async function setup(data = actual, fail = false) {
   const document = {
     querySelector(selector) {
       if (selector.startsWith('#')) return nodes[selector.slice(1)];
-      const match = selector.match(/^\[data-(type|sort)="(.+)"\]$/);
-      return (match[1] === 'type' ? types : sorts).find(e => e.dataset[match[1]] === match[2]);
+      const match = selector.match(/^\[data-(type|sort|subtype)="(.+)"\]$/);
+      return (match[1] === 'type' ? types : match[1] === 'subtype' ? subtypes : sorts).find(e => e.dataset[match[1]] === match[2]);
     },
-    querySelectorAll(selector) { return selector === '[data-type]' ? types : sorts; },
+    querySelectorAll(selector) { return selector === '[data-type]' ? types : selector === '[data-subtype]' ? subtypes : sorts; },
     modelContext: { registerTool(value) { tool = value; } },
   };
   const context = vm.createContext({ document, AquaCatalog, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
-  return { nodes, types, sorts, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => m[1]); }, sort(v) { sorts.find(e => e.dataset.sort === v).click(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { nodes, types, sorts, subtypes, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => m[1]); }, sort(v) { sorts.find(e => e.dataset.sort === v).click(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('gear default shows observed items with unknown delivery and catalog-stock caveat', async () => {
   const app = await setup();
@@ -125,4 +126,25 @@ test('seller list counts only sellers with actual products, excluding research-o
   assert.ok(app.nodes.catalogScope.textContent.includes(`판매처 ${actual.sellers.length}곳`));
   assert.match(app.nodes.catalogScope.textContent, /사전 조사한 사이트 수와 연동 판매처 수는 다릅니다/);
   assert.ok(!app.nodes.sellerLinks.innerHTML.includes('INVESTIGATED ONLY'));
+});
+
+test('livestock subfilters default to plants, show honest empty categories and survive gear round trips', async () => {
+  const app = await setup(); assert.equal(app.nodes.livestockFilters.hidden, true);
+  app.type('live'); assert.equal(app.nodes.livestockFilters.hidden, false); assert.equal(app.names().length, 7);
+  assert.match(app.nodes.resultTitle.textContent, /수초/);
+  for (const subtype of ['fish','shrimp','snail']) {
+    app.subtype(subtype); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /현재 연결된 상품정보에 해당 생물이 없습니다/); assert.match(app.nodes.grid.innerHTML, /모든 판매처의 품절·미판매를 뜻하지 않습니다/);
+    assert.equal(app.subtypes.filter(b=>b.attributes['aria-pressed']==='true').length, 1);
+  }
+  app.type('gear'); assert.equal(app.nodes.livestockFilters.hidden, true); assert.equal(app.names().length, 24);
+  app.type('live'); assert.match(app.nodes.resultTitle.textContent, /달팽이/); assert.deepEqual(app.names(), []);
+  app.subtype('aquatic_plant'); assert.equal(app.names().length, 7);
+  app.nodes.query.value='2구'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.equal(app.names().length, 2);
+  app.subtype('fish'); assert.deepEqual(app.names(), []); app.subtype('aquatic_plant'); assert.equal(app.names().length, 2);
+  app.nodes.query.value='찾을수없는상품'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /검색어/);
+});
+test('livestock controls wrap into four mobile columns with clear pressed state and keyboard focus', () => {
+ const html=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
+ for(const value of ['fish','shrimp','aquatic_plant','snail']) assert.ok(html.includes('data-subtype="'+value+'"'));
+ assert.match(html,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/); assert.match(html, /min-height:44px/); assert.match(html,/focus-visible/); assert.match(html,/\[hidden\]\{display:none!important\}/);
 });

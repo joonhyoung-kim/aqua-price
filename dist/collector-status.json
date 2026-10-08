@@ -1,6 +1,20 @@
 {
-  "startedAt": "2026-10-08T10:52:07.692Z",
-  "mode": "explicit_local_run",
+  "executionBudgetMs": 1080000,
+  "deferredSourceIds": [
+    "retailer-38",
+    "retailer-39",
+    "retailer-40",
+    "retailer-41",
+    "retailer-42",
+    "retailer-43",
+    "retailer-44",
+    "retailer-45",
+    "retailer-46"
+  ],
+  "startedAt": "2026-10-08T11:31:12.702Z",
+  "mode": "all",
+  "runTrigger": "workflow_dispatch",
+  "githubRunId": "37767325227",
   "autoRefreshDeployed": false,
   "fullCatalogCoverage": false,
   "sources": [
@@ -8,9 +22,10 @@
       "id": "retailer-01",
       "domain": "animallo.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:45:38.210Z",
-      "collectorLastSuccess": "2026-10-08T09:44:43.721Z",
+      "collectorLastAttempt": "2026-10-08T11:31:12.712Z",
+      "collectorLastSuccess": "2026-10-08T11:02:21.924Z",
       "count": 4,
+      "requests": 3,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -20,19 +35,53 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 1,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 0,
+        "pendingCandidates": 54,
+        "reviewRequired": 6,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:31:12.741Z",
+        "errors": [
+          "product_budget_reached:https://animallo.kr/product/list.html?cate_no=25"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://animallo.kr/product/list.html?cate_no=25",
+            "nextUrl": "https://animallo.kr/product/list.html?cate_no=25",
+            "cycleSeenProductCount": 60,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-02",
       "domain": "greenfish.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:01:32.321Z",
-      "collectorLastSuccess": "2026-10-08T10:01:34.451Z",
+      "collectorLastAttempt": "2026-10-08T11:31:34.488Z",
+      "collectorLastSuccess": "2026-10-08T11:03:05.473Z",
       "count": 1,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -42,19 +91,44 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "adapter_not_implemented",
+        "representativeSeedCount": 5,
+        "adapter": "not_implemented",
+        "pagesVisited": 0,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 0,
+        "verifiedItems": 0,
+        "pendingCandidates": 0,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:31:34.491Z",
+        "errors": [],
+        "cursorCategories": []
+      },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-03",
       "domain": "hobbyworld7.com",
       "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:45:40.305Z",
+      "collectorLastAttempt": "2026-10-08T11:31:34.689Z",
       "collectorLastSuccess": null,
       "count": 0,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -64,73 +138,97 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "discovery": null,
       "errors": [
         "Official homepage announces temporary closure."
       ],
-      "attemptedThisExecution": false,
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-04",
       "domain": "raraaqua.com",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:51:36.823Z",
-      "collectorLastSuccess": "2026-10-08T10:52:07.340Z",
-      "count": 6,
+      "collectorLastAttempt": "2026-10-08T11:31:34.889Z",
+      "collectorLastSuccess": "2026-10-08T11:32:36.231Z",
+      "count": 9,
+      "requests": 7,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
         "terminalPageReached": false,
-        "visitedPages": 3,
-        "expectedPages": 3,
+        "visitedPages": 6,
+        "expectedPages": 6,
         "parseFailures": 0,
         "requestFailures": 0
       },
       "refreshScope": {
-        "verifiedUrlCount": 3,
-        "selectedUrlCount": 3,
+        "verifiedUrlCount": 6,
+        "selectedUrlCount": 6,
         "productBudget": 10,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "discovery": {
-        "status": "success",
-        "representativeSeedCount": 1,
+        "status": "budget_limited",
+        "representativeSeedCount": 5,
         "adapter": "cafe24_category_links",
         "pagesVisited": 1,
         "pageBudget": 2,
         "productBudget": 30,
-        "newCandidates": 8,
+        "newCandidates": 30,
         "verifiedItems": 3,
-        "pendingCandidates": 5,
+        "pendingCandidates": 38,
         "reviewRequired": 0,
         "coverageComplete": false,
         "deletionEnabled": false,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T10:51:36.840Z",
-        "errors": [],
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:31:56.274Z",
+        "errors": [
+          "product_budget_reached:https://raraaqua.com/category/%EC%88%98%EC%B4%88-N/594/"
+        ],
         "cursorCategories": [
           {
             "entryUrl": "https://raraaqua.com/category/%EA%B5%AC%ED%94%BC/580/",
             "nextUrl": null,
             "cycleSeenProductCount": 8,
             "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://raraaqua.com/category/%EC%83%88%EC%9A%B0%EA%B0%80%EC%9E%AC%EC%8A%A4%EB%84%A4%EC%9D%BC/579/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 6,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://raraaqua.com/category/%EC%88%98%EC%B4%88-N/594/",
+            "nextUrl": "https://raraaqua.com/category/%EC%88%98%EC%B4%88-N/594/",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
           }
         ]
       },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-05",
       "domain": "medakagallery.com",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:46:10.887Z",
-      "collectorLastSuccess": "2026-10-08T09:46:21.308Z",
-      "count": 1,
+      "collectorLastAttempt": "2026-10-08T11:32:36.478Z",
+      "collectorLastSuccess": "2026-10-08T11:33:17.669Z",
+      "count": 4,
+      "requests": 5,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -140,41 +238,129 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 27,
+        "reviewRequired": 3,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:32:36.482Z",
+        "errors": [
+          "product_budget_reached:https://medakagallery.com/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/49/",
+          "page_budget_reached:https://medakagallery.com/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/49/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/",
+            "nextUrl": "https://medakagallery.com/category/%EC%83%9D%EB%AC%BC/24/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://medakagallery.com/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/49/",
+            "nextUrl": "https://medakagallery.com/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/49/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-06",
       "domain": "liviaqua.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:46:21.325Z",
-      "collectorLastSuccess": "2026-10-08T09:46:32.443Z",
-      "count": 1,
+      "collectorLastAttempt": "2026-10-08T11:33:17.913Z",
+      "collectorLastSuccess": "2026-10-08T11:34:29.492Z",
+      "count": 6,
+      "requests": 8,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
         "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
+        "visitedPages": 4,
+        "expectedPages": 4,
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 21,
+        "verifiedItems": 3,
+        "pendingCandidates": 45,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:33:39.376Z",
+        "errors": [
+          "product_list_not_found:https://liviaqua.co.kr/product/list.html?cate_no=63",
+          "page_budget_reached:https://liviaqua.co.kr/product/list.html?cate_no=42"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://liviaqua.co.kr/product/list.html?cate_no=24",
+            "nextUrl": "https://liviaqua.co.kr/product/list.html?cate_no=24&page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://liviaqua.co.kr/product/list.html?cate_no=63",
+            "nextUrl": "https://liviaqua.co.kr/product/list.html?cate_no=63",
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+            "nextUrl": "https://liviaqua.co.kr/product/list.html?cate_no=42&page=2",
+            "cycleSeenProductCount": 21,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-07",
       "domain": "aquapro.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:46:32.460Z",
-      "collectorLastSuccess": "2026-10-08T09:46:42.783Z",
+      "collectorLastAttempt": "2026-10-08T11:34:29.760Z",
+      "collectorLastSuccess": "2026-10-08T11:06:40.096Z",
       "count": 1,
+      "requests": 5,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -184,19 +370,68 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 0,
+        "pendingCandidates": 54,
+        "reviewRequired": 6,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:34:29.765Z",
+        "errors": [
+          "expected_total_unverified:https://aquapro.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/932/",
+          "expected_total_unverified:https://aquapro.kr/product/list.html?cate_no=689",
+          "product_budget_reached:https://aquapro.kr/product/list.html?cate_no=689",
+          "page_budget_reached:https://aquapro.kr/product/list.html?cate_no=689"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://aquapro.kr/product/list.html?cate_no=892",
+            "nextUrl": "https://aquapro.kr/product/list.html?cate_no=892",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://aquapro.kr/category/%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC/932/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://aquapro.kr/product/list.html?cate_no=689",
+            "nextUrl": "https://aquapro.kr/product/list.html?cate_no=689",
+            "cycleSeenProductCount": 10,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-08",
       "domain": "zoonimal.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:46:42.826Z",
-      "collectorLastSuccess": "2026-10-08T09:47:03.108Z",
+      "collectorLastAttempt": "2026-10-08T11:35:10.857Z",
+      "collectorLastSuccess": "2026-10-08T11:07:41.377Z",
       "count": 2,
+      "requests": 5,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -206,572 +441,119 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-09",
-      "domain": "alphafish.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:48:37.660Z",
-      "collectorLastSuccess": "2026-10-08T10:49:18.000Z",
-      "count": 6,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 3,
-        "expectedPages": 3,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
       "refreshScope": {
-        "verifiedUrlCount": 3,
-        "selectedUrlCount": 3,
+        "verifiedUrlCount": 2,
+        "selectedUrlCount": 2,
         "productBudget": 10,
         "allVerifiedUrlsSelected": true,
         "fullRetailerCatalogCoverage": false
       },
       "discovery": {
-        "status": "budget_limited",
-        "representativeSeedCount": 1,
+        "status": "partial_discovery",
+        "representativeSeedCount": 5,
         "adapter": "cafe24_category_links",
         "pagesVisited": 2,
         "pageBudget": 2,
         "productBudget": 30,
-        "newCandidates": 30,
-        "verifiedItems": 3,
-        "pendingCandidates": 27,
-        "reviewRequired": 0,
+        "newCandidates": 26,
+        "verifiedItems": 0,
+        "pendingCandidates": 51,
+        "reviewRequired": 6,
         "coverageComplete": false,
         "deletionEnabled": false,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T10:48:37.677Z",
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:35:10.864Z",
         "errors": [
-          "product_budget_reached:https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-          "page_budget_reached:https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/"
+          "detail_parse_failed:https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC-%EC%95%94%EC%88%98%EC%84%9E%EC%96%B4-%EB%9E%9C%EB%8D%A4-10%EB%A7%88%EB%A6%AC/8188/category/326/display/1/"
         ],
         "cursorCategories": [
           {
-            "entryUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/",
-            "nextUrl": "https://alphafish.co.kr/category/%EC%88%98%EC%B4%88/44/?page=2",
+            "entryUrl": "https://zoonimal.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4%EB%AC%BC%EA%B3%A0%EA%B8%B0/322/",
+            "nextUrl": "https://zoonimal.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4%EB%AC%BC%EA%B3%A0%EA%B8%B0/322/?page=2",
             "cycleSeenProductCount": 30,
             "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://zoonimal.co.kr/category/%EA%B5%AC%ED%94%BC/326/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 26,
+            "cyclesCompleted": 1
           }
         ]
       },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-09",
+      "domain": "alphafish.co.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:35:51.964Z",
+      "collectorLastSuccess": "2026-10-08T11:37:03.122Z",
+      "count": 9,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 6,
+        "expectedPages": 6,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 6,
+        "selectedUrlCount": 6,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "success",
+        "representativeSeedCount": 5,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 21,
+        "verifiedItems": 3,
+        "pendingCandidates": 45,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:36:13.132Z",
+        "errors": [],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://alphafish.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/82/",
+            "nextUrl": "https://alphafish.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/82/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://alphafish.co.kr/category/%EC%83%88%EC%9A%B0%EA%B0%80%EC%9E%AC/43/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 21,
+            "cyclesCompleted": 1
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
       "id": "retailer-10",
       "domain": "rooaqua.com",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:47:33.482Z",
-      "collectorLastSuccess": "2026-10-08T09:47:44.035Z",
+      "collectorLastAttempt": "2026-10-08T11:37:03.391Z",
+      "collectorLastSuccess": "2026-10-08T11:10:03.775Z",
       "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-11",
-      "domain": "hanaaqua.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:47:44.069Z",
-      "collectorLastSuccess": "2026-10-08T09:47:54.584Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-12",
-      "domain": "bizidduk.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:47:54.642Z",
-      "collectorLastSuccess": "2026-10-08T09:48:04.993Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-13",
-      "domain": "riaqua.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:48:05.041Z",
-      "collectorLastSuccess": "2026-10-08T09:48:15.373Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-14",
-      "domain": "xn--2e0bb8861auda.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:48:15.409Z",
-      "collectorLastSuccess": "2026-10-08T09:48:25.984Z",
-      "count": 2,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-15",
-      "domain": "liveaqua.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:48:26.018Z",
-      "collectorLastSuccess": "2026-10-08T09:48:36.293Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-16",
-      "domain": "aquavillage.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:56:18.676Z",
-      "collectorLastSuccess": "2026-10-08T09:48:38.765Z",
-      "count": 4,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-17",
-      "domain": "magicaqua.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:48:38.830Z",
-      "collectorLastSuccess": "2026-10-08T09:48:49.315Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-18",
-      "domain": "oqua.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:48:49.341Z",
-      "collectorLastSuccess": "2026-10-08T09:48:59.691Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-19",
-      "domain": "wwaqua.imweb.me",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:48:59.747Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-20",
-      "domain": "seijin.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:48:59.803Z",
-      "collectorLastSuccess": "2026-10-08T09:49:10.337Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-21",
-      "domain": "prfish.com",
-      "status": "failed",
-      "collectorLastAttempt": "2026-10-08T09:49:10.394Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 1
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "fetch failed"
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-22",
-      "domain": "aquapet.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:01:34.585Z",
-      "collectorLastSuccess": "2026-10-08T10:01:36.713Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-23",
-      "domain": "a2be.net",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:49:12.628Z",
-      "collectorLastSuccess": "2026-10-08T09:49:22.912Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-24",
-      "domain": "myungaqua.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:49:22.981Z",
-      "collectorLastSuccess": "2026-10-08T09:49:33.906Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-25",
-      "domain": "sangaqua.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:33.956Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 7,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-27",
-      "domain": "aquarismo.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:34.002Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-28",
-      "domain": "waveaqua.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:34.064Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-29",
-      "domain": "trofish.net",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:56:26.996Z",
-      "collectorLastSuccess": "2026-10-08T09:56:27.273Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-30",
-      "domain": "sanma.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:36.379Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "Ordinary homepage HTTP503; no product sample recovered."
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-31",
-      "domain": "withuspet.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:49:36.445Z",
-      "collectorLastSuccess": null,
-      "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [
-        "Consumer/reference price only; actual guest sale price unavailable."
-      ],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-32",
-      "domain": "suaqua.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:49:36.503Z",
-      "collectorLastSuccess": "2026-10-08T09:49:46.925Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
-      "refreshScope": null,
-      "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
-    },
-    {
-      "id": "retailer-33",
-      "domain": "selvas.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:52:07.694Z",
-      "collectorLastSuccess": "2026-10-08T10:52:18.123Z",
-      "count": 3,
+      "requests": 5,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -790,40 +572,123 @@
       },
       "discovery": {
         "status": "success",
-        "representativeSeedCount": 1,
+        "representativeSeedCount": 5,
         "adapter": "cafe24_category_links",
-        "pagesVisited": 1,
+        "pagesVisited": 2,
         "pageBudget": 2,
         "productBudget": 30,
-        "newCandidates": 1,
-        "verifiedItems": 1,
-        "pendingCandidates": 0,
-        "reviewRequired": 0,
+        "newCandidates": 24,
+        "verifiedItems": 0,
+        "pendingCandidates": 44,
+        "reviewRequired": 6,
         "coverageComplete": false,
         "deletionEnabled": false,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-08T10:52:07.707Z",
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:37:03.395Z",
         "errors": [],
         "cursorCategories": [
           {
-            "entryUrl": "https://selvas.co.kr/category/Glass-Tank-(%EC%88%98%EC%A1%B0)/4/",
+            "entryUrl": "https://rooaqua.com/product/list.html?cate_no=45",
+            "nextUrl": "https://rooaqua.com/product/list.html?cate_no=45",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://rooaqua.com/product/list.html?cate_no=70",
             "nextUrl": null,
-            "cycleSeenProductCount": 1,
+            "cycleSeenProductCount": 2,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://rooaqua.com/category/%EC%83%88%EC%9A%B0-%EA%B0%80%EC%9E%AC/54/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 22,
             "cyclesCompleted": 1
           }
         ]
       },
       "errors": [],
       "attemptedThisExecution": true,
-      "automatedExecutionVerified": false
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
-      "id": "retailer-34",
-      "domain": "bluedragonaqua.com",
+      "id": "retailer-11",
+      "domain": "hanaaqua.com",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:49:59.936Z",
-      "collectorLastSuccess": "2026-10-08T09:50:10.377Z",
+      "collectorLastAttempt": "2026-10-08T11:37:45.029Z",
+      "collectorLastSuccess": "2026-10-08T11:38:56.041Z",
+      "count": 7,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 54,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:38:06.473Z",
+        "errors": [
+          "product_budget_reached:https://hanaaqua.com/category/25%EB%85%84-%EC%88%98%EC%B4%88/997/",
+          "page_budget_reached:https://hanaaqua.com/category/25%EB%85%84-%EC%88%98%EC%B4%88/997/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://hanaaqua.com/category/%EA%B5%AC%ED%94%BC%EC%96%B4%EC%A2%85/1023/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 13,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://hanaaqua.com/category/%EA%B4%80%EC%83%81%EC%83%88%EC%9A%B0/1024/",
+            "nextUrl": "https://hanaaqua.com/category/%EA%B4%80%EC%83%81%EC%83%88%EC%9A%B0/1024/",
+            "cycleSeenProductCount": 17,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://hanaaqua.com/category/25%EB%85%84-%EC%88%98%EC%B4%88/997/",
+            "nextUrl": "https://hanaaqua.com/category/25%EB%85%84-%EC%88%98%EC%B4%88/997/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-12",
+      "domain": "bizidduk.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:38:56.340Z",
+      "collectorLastSuccess": "2026-10-08T11:11:55.500Z",
       "count": 1,
+      "requests": 4,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -833,19 +698,460 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 3,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 0,
+        "pendingCandidates": 54,
+        "reviewRequired": 6,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:38:56.344Z",
+        "errors": [
+          "expected_total_unverified:https://bizidduk.com/product/list.html?cate_no=36",
+          "product_budget_reached:https://bizidduk.com/product/list.html?cate_no=36"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://bizidduk.com/product/list.html?cate_no=27",
+            "nextUrl": "https://bizidduk.com/product/list.html?cate_no=27",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://bizidduk.com/product/list.html?cate_no=36",
+            "nextUrl": "https://bizidduk.com/product/list.html?cate_no=36",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
-      "attemptedThisExecution": false,
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-13",
+      "domain": "riaqua.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:39:27.779Z",
+      "collectorLastSuccess": "2026-10-08T11:40:38.589Z",
+      "count": 7,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "success",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 21,
+        "verifiedItems": 3,
+        "pendingCandidates": 39,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:39:49.133Z",
+        "errors": [],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/",
+            "nextUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%83%88%EC%9A%B0/58/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 16,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%88%98%EC%B4%88/64/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 5,
+            "cyclesCompleted": 1
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-14",
+      "domain": "xn--2e0bb8861auda.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:40:38.888Z",
+      "collectorLastSuccess": "2026-10-08T11:41:40.218Z",
+      "count": 8,
+      "requests": 7,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 51,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:41:00.365Z",
+        "errors": [
+          "expected_total_unverified:https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/",
+          "product_budget_reached:https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=29",
+            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=29",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/",
+            "nextUrl": "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-15",
+      "domain": "liveaqua.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:41:40.518Z",
+      "collectorLastSuccess": "2026-10-08T11:14:38.899Z",
+      "count": 1,
+      "requests": 5,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 1,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 2,
+        "verifiedItems": 0,
+        "pendingCandidates": 29,
+        "reviewRequired": 2,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:41:40.524Z",
+        "errors": [
+          "expected_total_unverified:https://www.liveaqua.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/97/",
+          "product_list_not_found:https://www.liveaqua.kr/product/list.html?cate_no=102",
+          "pagination_terminal_unverified:https://www.liveaqua.kr/product/list.html?cate_no=102",
+          "expected_total_unverified:https://www.liveaqua.kr/product/list.html?cate_no=102",
+          "page_budget_reached:https://www.liveaqua.kr/product/list.html?cate_no=102",
+          "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1577&cate_no=24&display_group=1"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/97/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 2,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=102",
+            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=102",
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-16",
+      "domain": "aquavillage.co.kr",
+      "status": "partial_failure",
+      "collectorLastAttempt": "2026-10-08T11:42:22.214Z",
+      "collectorLastSuccess": "2026-10-08T11:42:36.835Z",
+      "count": 12,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 2,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 55,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:42:27.610Z",
+        "errors": [
+          "product_budget_reached:https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+          "page_budget_reached:https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+          "detail_parse_failed:https://www.aquavillage.co.kr/product/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%C2%A0-%EC%8B%A4%EB%B2%84%EB%9D%BC%EB%8F%84-hb-%EC%98%90%EB%A1%9C%EC%9A%B0-%EA%B5%AC%ED%94%BC/2426/category/48/display/1/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [
+        "identity_not_corroborated:https://www.aquavillage.co.kr/product/고정구피-알비노-실버라도-레드테일구피/2461/?item_code=P0000DQR000A",
+        "identity_not_corroborated:https://www.aquavillage.co.kr/product/플레임-구피/2458/?item_code=P0000DQO000A"
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
-      "id": "retailer-35",
-      "domain": "mobydickmall.com",
+      "id": "retailer-17",
+      "domain": "magicaqua.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:42:37.161Z",
+      "collectorLastSuccess": "2026-10-08T11:43:38.178Z",
+      "count": 7,
+      "requests": 7,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 5,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 54,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:42:59.153Z",
+        "errors": [
+          "expected_total_unverified:https://magicaqua.kr/product/list2_1.html?cate_no=473",
+          "product_budget_reached:https://magicaqua.kr/product/list2_1.html?cate_no=473"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=276",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=276",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://magicaqua.kr/product/list2_1.html?cate_no=473",
+            "nextUrl": "https://magicaqua.kr/product/list2_1.html?cate_no=473",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-18",
+      "domain": "oqua.co.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:43:38.501Z",
+      "collectorLastSuccess": "2026-10-08T11:16:34.733Z",
+      "count": 1,
+      "requests": 4,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 1,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 0,
+        "pendingCandidates": 49,
+        "reviewRequired": 6,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:43:38.505Z",
+        "errors": [
+          "product_budget_reached:https://oqua.co.kr/product/list.html?cate_no=119"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=518",
+            "nextUrl": null,
+            "cycleSeenProductCount": 8,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
+            "cycleSeenProductCount": 22,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=119",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=119",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-19",
+      "domain": "wwaqua.imweb.me",
       "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:50:10.438Z",
+      "collectorLastAttempt": "2026-10-08T11:44:10.008Z",
       "collectorLastSuccess": null,
       "count": 0,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -855,21 +1161,29 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "discovery": null,
       "errors": [
-        "No collector source execution or deployed automatic refresh verified.; Guest prices show wholesale-member restriction; do not login."
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
       ],
-      "attemptedThisExecution": false,
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
-      "id": "retailer-36",
-      "domain": "samaqua.com",
+      "id": "retailer-20",
+      "domain": "seijin.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:50:10.501Z",
-      "collectorLastSuccess": "2026-10-08T09:50:20.784Z",
+      "collectorLastAttempt": "2026-10-08T11:44:10.322Z",
+      "collectorLastSuccess": "2026-10-08T11:17:36.424Z",
       "count": 1,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -879,41 +1193,76 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "adapter_not_implemented",
+        "representativeSeedCount": 5,
+        "adapter": "not_implemented",
+        "pagesVisited": 0,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 0,
+        "verifiedItems": 0,
+        "pendingCandidates": 0,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:44:10.325Z",
+        "errors": [],
+        "cursorCategories": []
+      },
       "errors": [],
-      "attemptedThisExecution": false,
-      "automatedExecutionVerified": false
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
     },
     {
-      "id": "retailer-37",
-      "domain": "mimineaqua.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:50:20.845Z",
-      "collectorLastSuccess": "2026-10-08T09:52:31.228Z",
-      "count": 13,
+      "id": "retailer-21",
+      "domain": "prfish.com",
+      "status": "failed",
+      "collectorLastAttempt": "2026-10-08T11:44:10.638Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 1,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
         "terminalPageReached": false,
-        "visitedPages": 13,
-        "expectedPages": 13,
+        "visitedPages": 0,
+        "expectedPages": 1,
         "parseFailures": 0,
-        "requestFailures": 0
+        "requestFailures": 1
       },
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "discovery": null,
-      "errors": [],
-      "attemptedThisExecution": false,
+      "errors": [
+        "fetch failed"
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
-      "id": "retailer-38",
-      "domain": "aquauju.com",
+      "id": "retailer-22",
+      "domain": "aquapet.co.kr",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:52:31.319Z",
-      "collectorLastSuccess": "2026-10-08T09:52:41.974Z",
+      "collectorLastAttempt": "2026-10-08T11:44:11.687Z",
+      "collectorLastSuccess": "2026-10-08T11:17:39.813Z",
       "count": 1,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -923,19 +1272,432 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
-      "discovery": null,
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "adapter_not_implemented",
+        "representativeSeedCount": 5,
+        "adapter": "not_implemented",
+        "pagesVisited": 0,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 0,
+        "verifiedItems": 0,
+        "pendingCandidates": 0,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:44:11.689Z",
+        "errors": [],
+        "cursorCategories": []
+      },
       "errors": [],
-      "attemptedThisExecution": false,
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-23",
+      "domain": "a2be.net",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:44:12.007Z",
+      "collectorLastSuccess": "2026-10-08T11:45:03.010Z",
+      "count": 6,
+      "requests": 6,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 3,
+        "expectedPages": 3,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 3,
+        "selectedUrlCount": 3,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 5,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 50,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:44:22.863Z",
+        "errors": [
+          "expected_total_unverified:https://a2be.net/product/list.html?cate_no=589",
+          "product_budget_reached:https://a2be.net/product/list.html?cate_no=589"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://a2be.net/product/list.html?cate_no=748",
+            "nextUrl": "https://a2be.net/product/list.html?cate_no=748",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://a2be.net/product/list.html?cate_no=589",
+            "nextUrl": "https://a2be.net/product/list.html?cate_no=589",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-24",
+      "domain": "myungaqua.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:45:03.346Z",
+      "collectorLastSuccess": "2026-10-08T11:46:14.647Z",
+      "count": 7,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 5,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 54,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:45:25.027Z",
+        "errors": [
+          "expected_total_unverified:https://www.myungaqua.com/category/%EC%83%88%EC%9A%B0/146/",
+          "expected_total_unverified:https://www.myungaqua.com/category/%EC%88%98%EC%B4%88/57/",
+          "product_budget_reached:https://www.myungaqua.com/category/%EC%88%98%EC%B4%88/57/",
+          "page_budget_reached:https://www.myungaqua.com/category/%EC%88%98%EC%B4%88/57/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.myungaqua.com/category/%EA%B5%AC%ED%94%BC/147/",
+            "nextUrl": "https://www.myungaqua.com/category/%EA%B5%AC%ED%94%BC/147/",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://www.myungaqua.com/category/%EC%83%88%EC%9A%B0/146/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 16,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://www.myungaqua.com/category/%EC%88%98%EC%B4%88/57/",
+            "nextUrl": "https://www.myungaqua.com/category/%EC%88%98%EC%B4%88/57/",
+            "cycleSeenProductCount": 14,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-25",
+      "domain": "sangaqua.co.kr",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T11:46:14.978Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 7,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 7,
+        "selectedUrlCount": 7,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "errors": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
-      "id": "retailer-39",
-      "domain": "dpaqua.com",
+      "id": "retailer-27",
+      "domain": "aquarismo.co.kr",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T11:46:15.308Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "errors": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-28",
+      "domain": "waveaqua.co.kr",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T11:46:15.632Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "errors": [
+        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-29",
+      "domain": "trofish.net",
       "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:52:42.059Z",
-      "collectorLastSuccess": "2026-10-08T09:53:02.601Z",
-      "count": 2,
+      "collectorLastAttempt": "2026-10-08T11:46:15.963Z",
+      "collectorLastSuccess": "2026-10-08T11:19:25.696Z",
+      "count": 1,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 1,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "adapter_not_implemented",
+        "representativeSeedCount": 4,
+        "adapter": "not_implemented",
+        "pagesVisited": 0,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 0,
+        "verifiedItems": 0,
+        "pendingCandidates": 0,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:46:15.964Z",
+        "errors": [],
+        "cursorCategories": []
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-30",
+      "domain": "sanma.co.kr",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T11:46:16.290Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "errors": [
+        "Ordinary homepage HTTP503; no product sample recovered."
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-31",
+      "domain": "withuspet.co.kr",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T11:46:16.615Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": null,
+      "errors": [
+        "Consumer/reference price only; actual guest sale price unavailable."
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-32",
+      "domain": "suaqua.co.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:46:16.939Z",
+      "collectorLastSuccess": "2026-10-08T11:19:37.372Z",
+      "count": 1,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 1,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "adapter_not_implemented",
+        "representativeSeedCount": 5,
+        "adapter": "not_implemented",
+        "pagesVisited": 0,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 0,
+        "verifiedItems": 0,
+        "pendingCandidates": 0,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:46:16.941Z",
+        "errors": [],
+        "cursorCategories": []
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-33",
+      "domain": "selvas.co.kr",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:46:17.272Z",
+      "collectorLastSuccess": "2026-10-08T11:47:08.316Z",
+      "count": 6,
+      "requests": 6,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -945,179 +1707,559 @@
         "parseFailures": 0,
         "requestFailures": 0
       },
-      "refreshScope": null,
+      "refreshScope": {
+        "verifiedUrlCount": 2,
+        "selectedUrlCount": 2,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "success",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 5,
+        "verifiedItems": 3,
+        "pendingCandidates": 2,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 0,
+        "lastAttempt": "2026-10-08T11:46:19.220Z",
+        "errors": [],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://selvas.co.kr/category/Glass-Tank-(%EC%88%98%EC%A1%B0)/4/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://selvas.co.kr/category/Freshwater-filter-(%EC%97%AC%EA%B3%BC%EA%B8%B0)/475/",
+            "nextUrl": "https://selvas.co.kr/category/Freshwater-filter-(%EC%97%AC%EA%B3%BC%EA%B8%B0)/475/",
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://selvas.co.kr/category/Light-(%EC%A1%B0%EB%AA%85)/532/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 4,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://selvas.co.kr/category/%EC%82%AC%EB%A3%8C/124/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 1
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-34",
+      "domain": "bluedragonaqua.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:47:08.657Z",
+      "collectorLastSuccess": "2026-10-08T11:20:30.017Z",
+      "count": 1,
+      "requests": 4,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 1,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 0,
+        "pendingCandidates": 54,
+        "reviewRequired": 5,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:47:08.660Z",
+        "errors": [
+          "product_budget_reached:https://bluedragonaqua.com/product/list.html?cate_no=223"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://bluedragonaqua.com/product/list.html?cate_no=197",
+            "nextUrl": "https://bluedragonaqua.com/product/list.html?cate_no=197",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+            "nextUrl": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-35",
+      "domain": "mobydickmall.com",
+      "status": "disabled",
+      "collectorLastAttempt": "2026-10-08T11:47:40.120Z",
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 0,
+        "expectedPages": 0,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 0,
+        "selectedUrlCount": 0,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
       "discovery": null,
+      "errors": [
+        "No collector source execution or deployed automatic refresh verified.; Guest prices show wholesale-member restriction; do not login."
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-36",
+      "domain": "samaqua.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:47:40.459Z",
+      "collectorLastSuccess": "2026-10-08T11:48:51.349Z",
+      "count": 7,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 4,
+        "expectedPages": 4,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 4,
+        "selectedUrlCount": 4,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "success",
+        "representativeSeedCount": 5,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 18,
+        "verifiedItems": 3,
+        "pendingCandidates": 42,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 3,
+        "lastAttempt": "2026-10-08T11:48:01.519Z",
+        "errors": [],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://www.samaqua.com/category/%EA%B5%AC%ED%94%BC%EB%82%9C%ED%83%9C%EC%83%9D%EA%B3%BC%EC%86%A1%EC%82%AC%EB%A6%AC/470/",
+            "nextUrl": "https://www.samaqua.com/category/%EA%B5%AC%ED%94%BC%EB%82%9C%ED%83%9C%EC%83%9D%EA%B3%BC%EC%86%A1%EC%82%AC%EB%A6%AC/470/?page=2",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://www.samaqua.com/category/%EC%83%88%EC%9A%B0%EA%B0%80%EC%9E%AC/476/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 17,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://www.samaqua.com/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/699/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 1
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": true
+    },
+    {
+      "id": "retailer-37",
+      "domain": "mimineaqua.co.kr",
+      "status": "budget_limited",
+      "collectorLastAttempt": "2026-10-08T11:48:51.705Z",
+      "collectorLastSuccess": "2026-10-08T11:24:41.983Z",
+      "count": 13,
+      "requests": 1,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 10,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 15,
+        "selectedUrlCount": 10,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": false,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 21,
+        "verifiedItems": 2,
+        "pendingCandidates": 18,
+        "reviewRequired": 1,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:23:51.895Z",
+        "errors": [
+          "page_budget_reached:https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/217/"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://mimineaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/481/",
+            "nextUrl": null,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 1
+          },
+          {
+            "entryUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/217/",
+            "nextUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%B4%88/217/?page=2",
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [
+        "execution_deadline"
+      ],
+      "attemptedThisExecution": true,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-38",
+      "domain": "aquauju.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:24:42.158Z",
+      "collectorLastSuccess": "2026-10-08T11:25:33.447Z",
+      "count": 4,
+      "requests": 6,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 1,
+        "expectedPages": 1,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 1,
+        "selectedUrlCount": 1,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "budget_limited",
+        "representativeSeedCount": 5,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 1,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 27,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 1,
+        "lastAttempt": "2026-10-08T11:24:53.408Z",
+        "errors": [
+          "product_budget_reached:https://aquauju.com/product/list.html?cate_no=448"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://aquauju.com/product/list.html?cate_no=448",
+            "nextUrl": "https://aquauju.com/product/list.html?cate_no=448",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
       "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
+      "automatedExecutionVerified": false
+    },
+    {
+      "id": "retailer-39",
+      "domain": "dpaqua.com",
+      "status": "success",
+      "collectorLastAttempt": "2026-10-08T11:25:33.623Z",
+      "collectorLastSuccess": "2026-10-08T11:26:44.639Z",
+      "count": 5,
+      "requests": 8,
+      "coverage": {
+        "kind": "known_product_urls",
+        "paginationComplete": false,
+        "terminalPageReached": false,
+        "visitedPages": 2,
+        "expectedPages": 2,
+        "parseFailures": 0,
+        "requestFailures": 0
+      },
+      "refreshScope": {
+        "verifiedUrlCount": 2,
+        "selectedUrlCount": 2,
+        "productBudget": 10,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false
+      },
+      "discovery": {
+        "status": "partial_discovery",
+        "representativeSeedCount": 4,
+        "adapter": "cafe24_category_links",
+        "pagesVisited": 2,
+        "pageBudget": 2,
+        "productBudget": 30,
+        "newCandidates": 30,
+        "verifiedItems": 3,
+        "pendingCandidates": 27,
+        "reviewRequired": 0,
+        "coverageComplete": false,
+        "deletionEnabled": false,
+        "nextCategoryIndex": 2,
+        "lastAttempt": "2026-10-08T11:25:54.741Z",
+        "errors": [
+          "product_list_not_found:https://dpaqua.com/product/list.html?cate_no=24",
+          "product_budget_reached:https://dpaqua.com/product/list.html?cate_no=341",
+          "page_budget_reached:https://dpaqua.com/product/list.html?cate_no=341"
+        ],
+        "cursorCategories": [
+          {
+            "entryUrl": "https://dpaqua.com/product/list.html?cate_no=24",
+            "nextUrl": "https://dpaqua.com/product/list.html?cate_no=24",
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0
+          },
+          {
+            "entryUrl": "https://dpaqua.com/product/list.html?cate_no=341",
+            "nextUrl": "https://dpaqua.com/product/list.html?cate_no=341",
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0
+          }
+        ]
+      },
+      "errors": [],
+      "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-40",
       "domain": "ampet.co.kr",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T10:01:36.859Z",
-      "collectorLastSuccess": "2026-10-08T10:01:37.621Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "status": "not_run",
+      "collectorLastAttempt": null,
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
       "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-41",
       "domain": "dingdongaqua.co.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:53:13.467Z",
+      "status": "not_run",
+      "collectorLastAttempt": null,
       "collectorLastSuccess": null,
       "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
-      "errors": [
-        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
-      ],
+      "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-42",
       "domain": "aquagardenshop.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:53:13.563Z",
-      "collectorLastSuccess": "2026-10-08T09:53:23.986Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "status": "not_run",
+      "collectorLastAttempt": null,
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
       "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-43",
       "domain": "ledstore.kr",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:53:24.102Z",
+      "status": "not_run",
+      "collectorLastAttempt": null,
       "collectorLastSuccess": null,
       "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
-      "errors": [
-        "Explicit HTTP/tunnel 403 previously observed; do not request or use alternate route."
-      ],
+      "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-44",
       "domain": "peytokorea.cafe24.com",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:53:24.186Z",
+      "status": "not_run",
+      "collectorLastAttempt": null,
       "collectorLastSuccess": null,
       "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
-      "errors": [
-        "Wholesale-member prices, missing JSON-LD price; no login or script-zero inference."
-      ],
+      "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-45",
       "domain": "ssadagun.com",
-      "status": "success",
-      "collectorLastAttempt": "2026-10-08T09:53:24.272Z",
-      "collectorLastSuccess": "2026-10-08T09:53:26.801Z",
-      "count": 1,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 1,
-        "expectedPages": 1,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "status": "not_run",
+      "collectorLastAttempt": null,
+      "collectorLastSuccess": null,
+      "count": 0,
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
       "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     },
     {
       "id": "retailer-46",
       "domain": "aquamajorlab.com",
-      "status": "disabled",
-      "collectorLastAttempt": "2026-10-08T09:53:26.906Z",
+      "status": "not_run",
+      "collectorLastAttempt": null,
       "collectorLastSuccess": null,
       "count": 0,
-      "coverage": {
-        "kind": "known_product_urls",
-        "paginationComplete": false,
-        "terminalPageReached": false,
-        "visitedPages": 0,
-        "expectedPages": 0,
-        "parseFailures": 0,
-        "requestFailures": 0
-      },
+      "requests": 0,
+      "coverage": null,
       "refreshScope": null,
       "discovery": null,
-      "errors": [
-        "Product fetch HTTP502, not proof of impossible integration."
-      ],
+      "errors": [],
       "attemptedThisExecution": false,
+      "executionRunId": "37767325227",
       "automatedExecutionVerified": false
     }
   ],
-  "finishedAt": "2026-10-08T10:52:18.270Z",
+  "executionDeadlineReached": true,
+  "executionBudgetLimited": true,
+  "finishedAt": "2026-10-08T11:48:54.467Z",
   "attemptedSourceIds": [
-    "retailer-33"
+    "retailer-01",
+    "retailer-02",
+    "retailer-03",
+    "retailer-04",
+    "retailer-05",
+    "retailer-06",
+    "retailer-07",
+    "retailer-08",
+    "retailer-09",
+    "retailer-10",
+    "retailer-11",
+    "retailer-12",
+    "retailer-13",
+    "retailer-14",
+    "retailer-15",
+    "retailer-16",
+    "retailer-17",
+    "retailer-18",
+    "retailer-19",
+    "retailer-20",
+    "retailer-21",
+    "retailer-22",
+    "retailer-23",
+    "retailer-24",
+    "retailer-25",
+    "retailer-27",
+    "retailer-28",
+    "retailer-29",
+    "retailer-30",
+    "retailer-31",
+    "retailer-32",
+    "retailer-33",
+    "retailer-34",
+    "retailer-35",
+    "retailer-36",
+    "retailer-37"
   ],
-  "executionEnvironment": "local",
-  "productChanges": 1
+  "executionEnvironment": "github_actions",
+  "productChanges": 80
 }

@@ -103,7 +103,9 @@ test('all required unknown fields must be explicit, pending data cannot contain 
 test('UI controls, data script order and honest status exist in HTML', () => {
   const html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
   for (const value of ['live', 'gear']) assert.ok(html.includes(`data-type="${value}"`));
-  for (const value of ['low', 'high', 'sales', 'new']) assert.ok(html.includes(`data-sort="${value}"`));
+  const sortSelect=html.match(/<select id="sort">([\s\S]*?)<\/select>/)?.[1];assert.ok(sortSelect);
+  for (const value of ['low', 'high', 'sales', 'new']) assert.ok(sortSelect.includes(`value="${value}"`));
+  assert.ok(html.includes('<label for="sort" class="label">'));assert.ok(html.indexOf('id="sort"')<html.indexOf('id="period"'));assert.ok(!html.includes('data-sort='));
   for (const value of [7, 30, 90]) assert.ok(html.includes(`value="${value}"`));
   assert.ok(html.indexOf('src="data-model.js"') < html.indexOf('src="app.js"'));
   assert.ok(html.includes('id="dataStatus"')); assert.ok(html.includes('id="moreResults"'));

@@ -14,12 +14,11 @@ const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 async function setup(data = actual, fail = false) {
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters'].map(id => [id, element()]));
-  nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
+  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters'].map(id => [id, element()]));
+  nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
   const types = ['live', 'gear'].map(type => element({ type }));
   const subtypes = ['fish', 'shrimp', 'aquatic_plant', 'snail'].map(subtype => element({ subtype }));
   const fishGroups = Object.keys(AquaCatalog.fishGroups).map(fishGroup => element({ fishGroup }));
-  const sorts = ['low', 'high', 'sales', 'new'].map(sort => element({ sort }));
   let images = [], tool;
   nodes.grid.querySelectorAll = () => {
     images = [...nodes.grid.innerHTML.matchAll(/<img src="([^"]+)"/g)].map(match => {
@@ -30,16 +29,16 @@ async function setup(data = actual, fail = false) {
   const document = {
     querySelector(selector) {
       if (selector.startsWith('#')) return nodes[selector.slice(1)];
-      const match = selector.match(/^\[data-(type|sort|subtype)="(.+)"\]$/);
-      return (match[1] === 'type' ? types : match[1] === 'subtype' ? subtypes : sorts).find(e => e.dataset[match[1]] === match[2]);
+      const match = selector.match(/^\[data-(type|subtype)="(.+)"\]$/);
+      return (match[1] === 'type' ? types : subtypes).find(e => e.dataset[match[1]] === match[2]);
     },
-    querySelectorAll(selector) { if(selector === '[data-fish-group]') return fishGroups; return selector === '[data-type]' ? types : selector === '[data-subtype]' ? subtypes : sorts; },
+    querySelectorAll(selector) { if(selector === '[data-fish-group]') return fishGroups; return selector === '[data-type]' ? types : selector === '[data-subtype]' ? subtypes : []; },
     modelContext: { registerTool(value) { tool = value; } },
   };
   const context = vm.createContext({ document, AquaCatalog, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
-  return { nodes, types, sorts, subtypes, fishGroups, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { sorts.find(e => e.dataset.sort === v).click(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { nodes, types, subtypes, fishGroups, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('cards show only photo, seller, full product name, price and one seller link', async () => {
  const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
@@ -58,7 +57,7 @@ test('sorts stay exclusive, unknown dates never become newest or sales ranking',
   const app = await setup();
   app.sort('high'); assert.deepEqual(app.names(), [...gear].sort((a,b)=>b.price.amount-a.price.amount).slice(0,24).map(p=>p.name));
   app.sort('sales'); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /실제 판매량이 없습니다/);
-  assert.equal(app.sorts.filter(b => b.attributes['aria-pressed'] === 'true').length, 1);
+  assert.equal(app.nodes.sort.value,'sales');
   app.sort('new'); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /신상품순으로 정렬할 수 없습니다/);
   app.sort('low'); app.type('live'); assert.equal(app.names().length, Math.min(24,plants.length));  
   assert.equal(app.types.filter(b => b.attributes['aria-pressed'] === 'true').length, 1);

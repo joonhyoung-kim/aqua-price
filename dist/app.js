@@ -25,6 +25,7 @@ function syncSubtypeControls() {
 
 function render(resetPage = true) {
   if (resetPage) visibleLimit = PAGE_SIZE;
+  $('#sort').value = filters.sort;
   syncSubtypeControls();
   $('#includeUnknown').disabled = filters.days === 'all';
   const result = AquaCatalog.selectProducts(catalog, filters);
@@ -61,11 +62,10 @@ document.querySelectorAll('[data-type]').forEach(button => button.addEventListen
   });
   render();
 }));
-document.querySelectorAll('[data-sort]').forEach(button => button.addEventListener('click', () => {
-  filters.sort = button.dataset.sort;
-  document.querySelectorAll('[data-sort]').forEach(other => { other.classList.toggle('active', other === button); other.setAttribute('aria-pressed', other === button); });
+$('#sort').addEventListener('change', () => {
+  filters.sort = $('#sort').value;
   render();
-}));
+});
 document.querySelectorAll('[data-subtype]').forEach(button => button.addEventListener('click', () => { filters.subtype = button.dataset.subtype; render(); }));
 document.querySelectorAll('[data-fish-group]').forEach(button => button.addEventListener('click', () => { filters.fishGroup = button.dataset.fishGroup; render(); }));
 $('#period').addEventListener('change', () => { filters.days = $('#period').value === 'all' ? 'all' : Number($('#period').value); render(); });
@@ -89,7 +89,7 @@ if (document.modelContext?.registerTool) {
     execute(value) {
       const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, fishGroup: value?.fishGroup ?? filters.fishGroup, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
       AquaCatalog.selectProducts(catalog, next);
-      $(`[data-type="${next.type}"]`).click(); $(`[data-sort="${next.sort}"]`).click();
+      $(`[data-type="${next.type}"]`).click();
       $('#period').value = String(next.days); $('#query').value = next.query; $('#includeUnknown').checked = next.includeUnknownRegistration; filters = next; render();
       return { dataStatus: catalog.status, asOf: catalog.asOf, count: AquaCatalog.selectProducts(catalog, filters).rows.length, ...filters };
     },

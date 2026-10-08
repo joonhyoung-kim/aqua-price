@@ -1,576 +1,64 @@
 {
   "schemaVersion": 1,
-  "startedAt": "2026-10-08T19:01:01.412Z",
-  "finishedAt": "2026-10-08T19:11:47.952Z",
-  "scope": "All connected-merchant checklist with three targeted merchants; original bounded rounds and one six-detail Chunjane follow-up",
+  "roundId": "coverage-round-2",
+  "startedAt": "2026-10-08T19:29:59.530Z",
+  "finishedAt": "2026-10-08T19:37:02.192Z",
+  "scope": "Five merchants, Sangaqua first; actual menu/category tails and fair pending detail groups",
   "fullCatalogCoverage": false,
-  "baselineProducts": 706,
+  "baselineProducts": 762,
+  "totalRequestLimit": 60,
   "sourceRequestLimit": 20,
-  "transactions": [
+  "plan": [
     {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/robots.txt",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:01:01.496Z",
-      "method": "standard_same_official_host_https"
+      "id": "retailer-25",
+      "maxRequests": 20,
+      "maxPages": 4
     },
     {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/category/%EC%83%9D%EB%AC%BC/24/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:01:11.814Z",
-      "method": "standard_same_official_host_https"
+      "id": "retailer-48",
+      "maxRequests": 12,
+      "maxPages": 2
     },
     {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/56/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:01:21.815Z",
-      "method": "standard_same_official_host_https"
+      "id": "retailer-47",
+      "maxRequests": 12,
+      "maxPages": 2
     },
     {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/category/%EA%B5%AC%ED%94%BC/70/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:01:31.893Z",
-      "method": "standard_same_official_host_https"
+      "id": "retailer-16",
+      "maxRequests": 8,
+      "maxPages": 2
     },
     {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%8D%94%EB%B8%94%ED%85%8C%EC%9D%BC-%EB%B2%A0%ED%83%80-%EC%88%AB%EC%BB%B7%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4/10237/category/75/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:01:41.858Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%B3%B4%EC%97%90%EC%84%B8%EB%A7%88%EB%8B%88-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-2cm%EC%A0%84%ED%9B%84-1%EB%A7%88%EB%A6%AC/19739/category/76/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:01:51.850Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%B9%84%EB%84%88%EC%8A%A4%ED%88%AC%EC%8A%A4-%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C-1%EB%A7%88%EB%A6%AC-23cm/20567/category/56/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:02:01.892Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%ED%81%90%ED%8B%B0%EB%A1%9C%EC%A6%88-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC/20546/category/70/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:02:11.833Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%A0%88%EB%93%9C-%EB%B2%A0%EC%9D%BC%ED%85%8C%EC%9D%BC-%EB%B2%A0%ED%83%80-%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4%EB%B0%9C%EC%86%A1/8808/category/75/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:02:21.856Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EC%8A%88%ED%8D%BC%EC%97%90%EC%BF%A0%EC%8A%A4-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-2cm%EC%A0%84%ED%9B%84-%EA%B5%AD%EB%82%B4-%EB%B8%8C%EB%A6%AC%EB%94%A9-1%EB%A7%88%EB%A6%AC/19737/category/76/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:02:31.851Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%A9%94%ED%8B%B0%EB%8B%88%EC%8A%A4-%ED%8C%8C%EC%8B%9C%EC%95%84%ED%88%AC%EC%8A%A4-8cm-%EC%A0%84%ED%9B%84/20527/category/56/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:02:42.356Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EC%B9%98%EC%96%B4%EB%A6%AC%EB%8D%94-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC/20537/category/70/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:02:51.879Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%95%98%ED%94%84%EB%AC%B8%EB%B2%A0%ED%83%80%EC%88%98%EC%BB%B7/5947/category/75/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:03:02.085Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EC%8A%88%ED%8D%BC%EC%97%90%EC%BF%A0%EC%8A%A4-%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-2cm%EC%A0%84%ED%9B%84-%EA%B5%AD%EB%82%B4-%EB%B8%8C%EB%A6%AC%EB%94%A9-3%EB%A7%88%EB%A6%AC/19649/category/76/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:03:11.881Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%ED%8B%B4%ED%8F%AC%EC%9D%BC-%EB%B0%94%EB%B8%8C-%EC%88%8F%EB%B0%94%EB%94%94-6cm-%EC%A0%84%ED%9B%84/20524/category/56/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:03:21.878Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%B8%94%EB%A3%A8-%EB%93%9C%EB%9E%98%EA%B3%A4-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC/20536/category/70/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:03:31.944Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%ED%81%AC%EB%9D%BC%EC%9A%B4%EB%B2%A0%ED%83%80-%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4/5919/category/75/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:03:42.617Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%ED%95%98%EC%8A%A4%ED%83%80%ED%88%AC%EC%8A%A45%EB%A7%88%EB%A6%AC%EB%AC%B6%EC%9D%8C-%EC%84%B1%EC%96%B4%EA%B8%89/14098/category/76/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:03:51.938Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EB%A9%94%ED%8B%B0%EB%8B%88%EC%8A%A4-%EB%B8%94%EB%9E%99%EB%B2%A0%EB%A6%AC-1%EB%A7%88%EB%A6%AC-6m-%EC%A0%84%ED%9B%84/20514/category/56/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:02.230Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-25",
-      "url": "https://sangaqua.co.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%92%80%EB%A0%88%EB%93%9C-%EB%A6%AC%EB%B3%B8-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC-%EC%88%AB%EC%BB%B7/20522/category/70/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:11.941Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC/480/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:14.412Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0%EB%B3%BC-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A6%882%EB%A7%88%EB%A6%AC/520/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:24.262Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%B0%B1%EC%84%A4%EA%B3%B5%EC%A3%BC3cm%EA%B8%89-5%EB%A7%88%EB%A6%AC/701/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:34.286Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/011-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC5%EB%A7%88%EB%A6%AC/2821/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:44.288Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EC%95%84%EC%97%90%EB%84%A4%EC%9A%B0%EC%8A%A4-%EB%B8%8C%EB%A1%A0%EC%A6%883cm%EA%B8%89/3438/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:04:54.274Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC-%ED%95%A0%EB%A6%AC%ED%80%B8-5%EB%A7%88%EB%A6%AC/4547/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:05:04.472Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%B8%94%EB%A3%A8%EC%BD%94%EB%B0%9C%ED%8A%B8-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/4653/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:05:14.384Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0%EB%B3%BC-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A6%88%EB%A1%B1%ED%95%80-1%EB%A7%88%EB%A6%AC/797/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:05:25.099Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%82%98%EB%B9%84%EB%B9%84%ED%8C%8C-4cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/956/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:05:34.318Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%ED%8E%98%ED%8D%BC%EB%93%9C-%ED%95%98%EC%9D%B4%ED%95%80-3cm-%EA%B8%89-1%EB%A7%88%EB%A6%AC/3031/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:05:44.376Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0-%EC%95%8C%EC%A7%80%EC%9D%B4%ED%84%B01%EB%A7%88%EB%A6%AC/3340/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:05:54.331Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%AC%BC%ED%8B%B03cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/3859/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:06:04.350Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%ED%94%BC%EA%B7%B8%EB%AF%B8%EC%9A%B0%EC%8A%A4-%EC%A4%80%EC%84%B1%EC%96%B4-10%EB%A7%88%EB%A6%AC/2326/category/435/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:06:14.361Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%9D%BC%EC%8A%A4%EB%B3%B4%EB%9D%BC-%ED%95%A0%EB%A6%AC%ED%80%B8-10%EB%A7%88%EB%A6%AC/4548/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:06:24.351Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EC%8A%A4%ED%84%B0%EB%B0%94%EC%9D%B4-4cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/816/category/435/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:06:34.386Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%ED%94%BC%EA%B7%B8%EB%AF%B8%EC%9A%B0%EC%8A%A4-%EC%A4%80%EC%84%B1%EC%96%B4-2%EB%A7%88%EB%A6%AC/811/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:06:44.603Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EC%8A%A4%ED%84%B0%EB%B0%94%EC%9D%B4-4cm%EA%B8%89-2%EB%A7%88%EB%A6%AC/486/category/435/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:06:54.389Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0-%EC%95%8C%EC%A7%80%EC%9D%B4%ED%84%B03%EB%A7%88%EB%A6%AC/895/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:04.380Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%ED%8C%AC%EB%8D%9425cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/940/category/435/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:14.459Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/011-%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC5%EB%A7%88%EB%A6%AC/2822/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:24.414Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-47",
-      "url": "https://www.wpet.co.kr/robots.txt",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:25.399Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-47",
-      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1851&GC=GD00",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:27.464Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-47",
-      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1841&GC=GD00",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:29.472Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-47",
-      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1833&GC=GD00",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:31.484Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-47",
-      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1816&GC=GD00",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:33.497Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-47",
-      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:07:35.573Z",
-      "method": "standard_same_official_host_https"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%ED%95%98%ED%94%84%EB%B9%85-%EB%8D%B8%EB%AA%A8%EA%B2%8C%EB%8B%88-1%EB%A7%88%EB%A6%AC/4380/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:10:54.517Z",
-      "method": "standard_same_official_host_https_followup_round"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%ED%94%BC%EA%B7%B8%EB%AF%B8%EC%9A%B0%EC%8A%A4-%EC%A4%80%EC%84%B1%EC%96%B4-5%EB%A7%88%EB%A6%AC/2220/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:11:04.412Z",
-      "method": "standard_same_official_host_https_followup_round"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EC%98%A4%ED%86%A0%EC%8B%B1%ED%81%AC%EB%A1%9C%EC%8A%A4-1%EB%A7%88%EB%A6%AC/2534/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:11:14.536Z",
-      "method": "standard_same_official_host_https_followup_round"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EA%B7%B8%EB%A6%B0%EB%84%A4%EC%98%A8%ED%85%8C%ED%8A%B8%EB%9D%BC5%EB%A7%88%EB%A6%AC/2926/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:11:24.439Z",
-      "method": "standard_same_official_host_https_followup_round"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EB%89%B4%EA%B8%B0%EB%8B%88%EC%95%84-%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B05%EB%A7%88%EB%A6%AC/3094/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:11:34.432Z",
-      "method": "standard_same_official_host_https_followup_round"
-    },
-    {
-      "sourceId": "retailer-48",
-      "url": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144-%EC%95%94%EC%BB%B7-%EC%84%B1%EC%96%B4/3527/category/432/display/1/",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-08T19:11:44.451Z",
-      "method": "standard_same_official_host_https_followup_round"
+      "id": "retailer-18",
+      "maxRequests": 8,
+      "maxPages": 2
     }
   ],
   "sources": [
     {
       "id": "retailer-25",
-      "startedAt": "2026-10-08T19:01:01.414Z",
-      "finishedAt": "2026-10-08T19:04:11.959Z",
+      "name": "상아쿠아",
+      "startedAt": "2026-10-08T19:29:59.532Z",
+      "finishedAt": "2026-10-08T19:33:11.732Z",
+      "requestLimit": 20,
       "requests": 20,
-      "actualNetworkRequests": 20,
-      "before": 15,
-      "after": 32,
-      "pendingBefore": 35,
-      "pendingAfter": 64,
-      "originalChunjanePendingRemaining": null,
-      "discoveryStatus": "budget_limited",
+      "networkRequests": 20,
+      "before": 32,
+      "after": 49,
+      "pendingBefore": 64,
+      "pendingAfter": 106,
+      "detailBudget": 17,
+      "verifiedOffersThisRound": 17,
+      "newCandidates": 60,
+      "status": "budget_limited",
+      "pagesVisitedThisRound": 3,
       "tree": {
-        "discoveredCategoryCount": 711,
-        "allowedCategoryCount": 42,
-        "excludedCategoryCount": 364,
-        "reviewCategoryCount": 305,
-        "pagesVisited": 6,
-        "pendingCategoryCount": 40,
-        "pendingPageUrls": [
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/56/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%97%B4%EB%8C%80%EC%96%B4/56/?page=2"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EA%B5%AC%ED%94%BC/70/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EA%B5%AC%ED%94%BC/70/?page=2"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EC%83%9D%EB%82%9C%ED%83%9C%EC%83%9D/71/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EC%83%9D%EB%82%9C%ED%83%9C%EC%83%9D/71/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0/72/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0/72/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/73/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/73/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%95%84%EB%82%98%EB%B0%94%EC%8A%A4/74/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%95%84%EB%82%98%EB%B0%94%EC%8A%A4/74/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94/77/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94/77/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%A9%94%EA%B8%B0%EA%B3%BC/78/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%A9%94%EA%B8%B0%EA%B3%BC/78/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%9E%89%EC%96%B4%EA%B3%BC/79/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%9E%89%EC%96%B4%EA%B3%BC/79/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EB%91%90%EC%8A%A4%EA%B8%B0%EC%88%98%EC%96%B4%EA%B3%BC/80/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EB%91%90%EC%8A%A4%EA%B8%B0%EC%88%98%EC%96%B4%EA%B3%BC/80/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%A7%9D%EB%91%91%EC%96%B4/81/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%A7%9D%EB%91%91%EC%96%B4/81/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4/82/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4/82/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/83/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/83/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%BD%94%EB%81%BC%EB%A6%AC/84/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%BD%94%EB%81%BC%EB%A6%AC/84/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%ED%95%B4%EC%88%98%EC%96%B4/85/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%ED%95%B4%EC%88%98%EC%96%B4/85/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EA%B8%B0%ED%83%80/86/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EA%B8%B0%ED%83%80/86/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4/60/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4/60/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/61/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%B9%84%EB%8B%A8%EC%9E%89%EC%96%B4/61/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%AF%BC%EB%AC%BC%EA%B3%A0%EA%B8%B0/64/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%AF%BC%EB%AC%BC%EA%B3%A0%EA%B8%B0/64/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%B2%A0%EA%B0%91%EC%83%81%EC%96%B4/65/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%B2%A0%EA%B0%91%EC%83%81%EC%96%B4/65/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4%EC%86%A1%EC%82%AC%EB%A6%AC/797/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4%EC%86%A1%EC%82%AC%EB%A6%AC/797/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%83%88%EC%9A%B0/57/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%83%88%EC%9A%B0/57/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%83%9D%EC%9D%B4%EA%B3%BC/87/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%83%9D%EC%9D%B4%EA%B3%BC/87/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%B9%84%EC%89%AC%EB%A6%BC%ED%94%84/88/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%B9%84%EC%89%AC%EB%A6%BC%ED%94%84/88/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EA%B8%B0%ED%83%80/89/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EA%B8%B0%ED%83%80/89/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%8A%A4%EB%84%A4%EC%9D%BC/58/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%8A%A4%EB%84%A4%EC%9D%BC/58/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/294/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/294/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%88%98%EC%B4%88/25/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%88%98%EC%B4%88/25/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%A0%84%EA%B2%BD/94/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%A0%84%EA%B2%BD/94/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%A4%91%ED%9B%84%EA%B2%BD/95/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%A4%91%ED%9B%84%EA%B2%BD/95/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%95%84%EB%88%84%EB%B9%84%EC%95%84%EC%8A%A4/96/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%95%84%EB%88%84%EB%B9%84%EC%95%84%EC%8A%A4/96/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%AA%A8%EC%8A%A4/97/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%AA%A8%EC%8A%A4/97/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%A7%88%EB%A6%AC%EB%AA%A8%EB%AA%A8%EC%8A%A4%EB%B3%BC/98/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%A7%88%EB%A6%AC%EB%AA%A8%EB%AA%A8%EC%8A%A4%EB%B3%BC/98/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%B6%80%EC%84%B8/99/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%B6%80%EC%84%B8/99/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%9D%8C%EC%84%B1/100/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%9D%8C%EC%84%B1/100/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EB%B6%80%EC%83%81/101/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%B6%80%EC%83%81/101/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EA%B5%AC%EA%B7%BC/102/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EA%B5%AC%EA%B7%BC/102/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%88%98%EC%83%9D%EC%8B%9D%EB%AC%BC/104/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%88%98%EC%83%9D%EC%8B%9D%EB%AC%BC/104/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EA%B8%B0%ED%83%80/105/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EA%B8%B0%ED%83%80/105/"
-          },
-          {
-            "categoryUrl": "https://sangaqua.co.kr/category/%EC%83%9D%EB%AC%BC/24/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%83%9D%EB%AC%BC/24/?page=3"
-          }
-        ],
-        "terminalCategoryCount": 2,
-        "verifiedProductCount": 32,
-        "pendingProductCount": 64,
-        "reviewProductCount": 0,
-        "menuCoverage": "unknown",
-        "terminalCoverage": "incomplete",
-        "fullRetailerCoverage": false
-      },
-      "fullCoverage": false,
-      "finalVerifiedProducts": 32,
-      "finalPendingDetails": 64,
-      "finalCategoryTree": {
         "discoveredCategoryCount": 711,
         "allowedCategoryCount": 43,
         "excludedCategoryCount": 364,
         "reviewCategoryCount": 304,
-        "pagesVisited": 6,
+        "pagesVisited": 9,
         "pendingCategoryCount": 41,
         "pendingPageUrls": [
           {
@@ -583,11 +71,11 @@
           },
           {
             "categoryUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EC%83%9D%EB%82%9C%ED%83%9C%EC%83%9D/71/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EC%83%9D%EB%82%9C%ED%83%9C%EC%83%9D/71/"
+            "nextPageUrl": "https://sangaqua.co.kr/category/%EB%82%9C%EC%83%9D%EB%82%9C%ED%83%9C%EC%83%9D/71/?page=2"
           },
           {
             "categoryUrl": "https://sangaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0/72/",
-            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0/72/"
+            "nextPageUrl": "https://sangaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0/72/?page=2"
           },
           {
             "categoryUrl": "https://sangaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/73/",
@@ -739,182 +227,41 @@
           }
         ],
         "terminalCategoryCount": 2,
-        "verifiedProductCount": 32,
-        "pendingProductCount": 64,
+        "verifiedProductCount": 49,
+        "pendingProductCount": 106,
         "reviewProductCount": 0,
         "menuCoverage": "unknown",
         "terminalCoverage": "incomplete",
         "fullRetailerCoverage": false
       },
-      "totalRequestsAcrossRounds": 20
+      "errors": [
+        "product_budget_reached:https://sangaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/73/"
+      ]
     },
     {
       "id": "retailer-48",
-      "startedAt": "2026-10-08T19:04:13.819Z",
-      "finishedAt": "2026-10-08T19:07:24.425Z",
-      "requests": 20,
-      "actualNetworkRequests": 20,
-      "before": 82,
-      "after": 102,
-      "pendingBefore": 22,
-      "pendingAfter": 30,
-      "originalChunjanePendingRemaining": 6,
-      "discoveryStatus": "budget_limited",
+      "name": "춘자네수족관",
+      "startedAt": "2026-10-08T19:33:13.496Z",
+      "finishedAt": "2026-10-08T19:35:05.163Z",
+      "requestLimit": 12,
+      "requests": 12,
+      "networkRequests": 12,
+      "before": 108,
+      "after": 117,
+      "pendingBefore": 24,
+      "pendingAfter": 31,
+      "detailBudget": 9,
+      "verifiedOffersThisRound": 9,
+      "newCandidates": 17,
+      "status": "success",
+      "pagesVisitedThisRound": 2,
       "tree": {
-        "discoveredCategoryCount": 68,
-        "allowedCategoryCount": 33,
-        "excludedCategoryCount": 8,
-        "reviewCategoryCount": 27,
-        "pagesVisited": 4,
-        "pendingCategoryCount": 32,
-        "pendingPageUrls": [
-          {
-            "categoryUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
-            "nextPageUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/?page=2"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-            "nextPageUrl": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=461",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=461"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=436",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=436"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=438",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=438"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=445",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=445"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=440",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=440"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=439"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=441",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=441"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=434",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=434"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=443",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=443"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=462",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=462"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=466",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=466"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=463",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=463"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=449",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=449"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=450",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=450"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=452",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=452"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=453",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=453"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=457",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=457"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=458",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=458"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=442",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=442"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/category/%EC%83%88%EC%9A%B0/116/",
-            "nextPageUrl": "https://chunjane.com/category/%EC%83%88%EC%9A%B0/116/"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88/271/",
-            "nextPageUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88/271/"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8/58/",
-            "nextPageUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8/58/"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=444",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=444"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=467",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=467"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=468",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=468"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=469",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=469"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=470",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=470"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=471",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=471"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=437",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=437"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=456",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=456"
-          }
-        ],
-        "terminalCategoryCount": 1,
-        "verifiedProductCount": 102,
-        "pendingProductCount": 30,
-        "reviewProductCount": 0,
-        "menuCoverage": "unknown",
-        "terminalCoverage": "incomplete",
-        "fullRetailerCoverage": false
-      },
-      "fullCoverage": false,
-      "finalVerifiedProducts": 108,
-      "finalPendingDetails": 24,
-      "finalCategoryTree": {
         "discoveredCategoryCount": 68,
         "allowedCategoryCount": 54,
         "excludedCategoryCount": 8,
         "reviewCategoryCount": 6,
-        "pagesVisited": 4,
-        "pendingCategoryCount": 53,
+        "pagesVisited": 6,
+        "pendingCategoryCount": 51,
         "pendingPageUrls": [
           {
             "categoryUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
@@ -923,14 +270,6 @@
           {
             "categoryUrl": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
             "nextPageUrl": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=461",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=461"
-          },
-          {
-            "categoryUrl": "https://chunjane.com/product/list.html?cate_no=436",
-            "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=436"
           },
           {
             "categoryUrl": "https://chunjane.com/product/list.html?cate_no=438",
@@ -1129,52 +468,44 @@
             "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=285"
           }
         ],
-        "terminalCategoryCount": 1,
-        "verifiedProductCount": 108,
-        "pendingProductCount": 24,
+        "terminalCategoryCount": 3,
+        "verifiedProductCount": 117,
+        "pendingProductCount": 31,
         "reviewProductCount": 0,
         "menuCoverage": "unknown",
         "terminalCoverage": "incomplete",
         "fullRetailerCoverage": false
       },
-      "totalRequestsAcrossRounds": 26,
-      "finalOriginalPendingRemaining": 0
+      "errors": []
     },
     {
       "id": "retailer-47",
-      "startedAt": "2026-10-08T19:07:25.348Z",
-      "finishedAt": "2026-10-08T19:07:35.582Z",
-      "requests": 6,
-      "before": 3,
-      "after": 15,
-      "pendingBefore": 22,
-      "pendingAfter": 17,
-      "reverifiedFailureDetails": [
-        "https://www.wpet.co.kr/?act=shop.goods_view&CM=1851&GC=GD00",
-        "https://www.wpet.co.kr/?act=shop.goods_view&CM=1841&GC=GD00",
-        "https://www.wpet.co.kr/?act=shop.goods_view&CM=1833&GC=GD00",
-        "https://www.wpet.co.kr/?act=shop.goods_view&CM=1816&GC=GD00",
-        "https://www.wpet.co.kr/?act=shop.goods_view&CM=1814&GC=GD00"
-      ],
-      "issues": [],
-      "fullCoverage": false,
-      "finalVerifiedProducts": 15,
-      "finalPendingDetails": 17,
-      "finalCategoryTree": {
+      "name": "신세계수족관",
+      "startedAt": "2026-10-08T19:35:06.568Z",
+      "finishedAt": "2026-10-08T19:35:28.832Z",
+      "requestLimit": 12,
+      "requests": 12,
+      "networkRequests": 12,
+      "before": 15,
+      "after": 28,
+      "pendingBefore": 17,
+      "pendingAfter": 28,
+      "detailBudget": 10,
+      "verifiedOffersThisRound": 13,
+      "newCandidates": 30,
+      "status": "partial_discovery",
+      "pagesVisitedThisRound": 2,
+      "tree": {
         "discoveredCategoryCount": 14,
         "allowedCategoryCount": 6,
         "excludedCategoryCount": 5,
         "reviewCategoryCount": 3,
-        "pagesVisited": 1,
-        "pendingCategoryCount": 6,
+        "pagesVisited": 3,
+        "pendingCategoryCount": 5,
         "pendingPageUrls": [
           {
             "categoryUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
             "nextPageUrl": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list&page=2"
-          },
-          {
-            "categoryUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0008",
-            "nextPageUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0008"
           },
           {
             "categoryUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0007",
@@ -1193,43 +524,768 @@
             "nextPageUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD03"
           }
         ],
-        "terminalCategoryCount": 0,
-        "verifiedProductCount": 15,
-        "pendingProductCount": 17,
-        "reviewProductCount": 0,
+        "terminalCategoryCount": 1,
+        "verifiedProductCount": 28,
+        "pendingProductCount": 28,
+        "reviewProductCount": 1,
         "menuCoverage": "unknown",
         "terminalCoverage": "incomplete",
         "fullRetailerCoverage": false
       },
-      "totalRequestsAcrossRounds": 6
-    }
-  ],
-  "products": 762,
-  "lastCheckpointAt": "2026-10-08T19:11:47.952Z",
-  "requestBudgetVerified": true,
-  "addedProducts": 56,
-  "followupRounds": [
+      "errors": [
+        "expected_total_unverified:https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0008",
+        "expected_total_unverified:https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0007",
+        "product_budget_reached:https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0007",
+        "page_budget_reached:https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0007"
+      ]
+    },
     {
-      "id": "retailer-48",
-      "startedAt": "2026-10-08T19:10:53.996Z",
-      "finishedAt": "2026-10-08T19:11:44.461Z",
-      "purpose": "Finish only the original six Chunjane pending details after the first bounded round",
-      "requests": 6,
-      "verified": 6,
-      "issues": []
+      "id": "retailer-16",
+      "name": "아쿠아빌리지",
+      "startedAt": "2026-10-08T19:35:30.147Z",
+      "finishedAt": "2026-10-08T19:35:44.702Z",
+      "requestLimit": 8,
+      "requests": 8,
+      "networkRequests": 8,
+      "before": 14,
+      "after": 18,
+      "pendingBefore": 9,
+      "pendingAfter": 49,
+      "detailBudget": 5,
+      "verifiedOffersThisRound": 4,
+      "newCandidates": 30,
+      "status": "budget_limited",
+      "pagesVisitedThisRound": 2,
+      "tree": {
+        "discoveredCategoryCount": 29,
+        "allowedCategoryCount": 27,
+        "excludedCategoryCount": 0,
+        "reviewCategoryCount": 2,
+        "pagesVisited": 4,
+        "pendingCategoryCount": 27,
+        "pendingPageUrls": [
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/?page=2"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/?page=2"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%97%94%EC%A0%A4/55/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%97%94%EC%A0%A4/55/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/50/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/50/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/80/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/80/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%95%84%EB%A1%9C%EC%99%80%EB%82%98%EA%B0%80%EC%98%A4%EB%A6%AC/45/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%95%84%EB%A1%9C%EC%99%80%EB%82%98%EA%B0%80%EC%98%A4%EB%A6%AC/45/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%B3%B5%EC%96%B4%EA%B8%B0%ED%83%80/53/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%B3%B5%EC%96%B4%EA%B8%B0%ED%83%80/53/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%A1%9C%EC%B9%98%EB%B0%94%EB%B8%8C/56/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%A1%9C%EC%B9%98%EB%B0%94%EB%B8%8C/56/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/57/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/57/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/58/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/58/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC/78/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC/78/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/81/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/81/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%8A%A4%EB%84%A4%EC%9D%B4%ED%81%AC%ED%97%A4%EB%93%9C/29/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%8A%A4%EB%84%A4%EC%9D%B4%ED%81%AC%ED%97%A4%EB%93%9C/29/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%80%EC%95%84%ED%94%BC%EC%89%AC/30/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EA%B0%80%EC%95%84%ED%94%BC%EC%89%AC/30/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%ED%8F%B4%EB%A6%BD%ED%85%8C%EB%A3%A8%EC%8A%A4/31/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%ED%8F%B4%EB%A6%BD%ED%85%8C%EB%A3%A8%EC%8A%A4/31/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%8C%9F/42/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%8C%9F/42/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%ED%8F%90%EC%96%B4%EC%9E%A5%EC%96%B4/43/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%ED%8F%90%EC%96%B4%EC%9E%A5%EC%96%B4/43/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%ED%8A%B9%EC%88%98%EA%B0%9C%EC%B2%B4rare/46/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%ED%8A%B9%EC%88%98%EA%B0%9C%EC%B2%B4rare/46/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%BA%A3%ED%94%BC%EC%89%AC/44/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%BA%A3%ED%94%BC%EC%89%AC/44/"
+          },
+          {
+            "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%ED%98%95%EC%96%B4%EC%A4%91%ED%98%95%EC%96%B4/47/",
+            "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%ED%98%95%EC%96%B4%EC%A4%91%ED%98%95%EC%96%B4/47/"
+          }
+        ],
+        "terminalCategoryCount": 0,
+        "verifiedProductCount": 18,
+        "pendingProductCount": 49,
+        "reviewProductCount": 16,
+        "menuCoverage": "unknown",
+        "terminalCoverage": "incomplete",
+        "fullRetailerCoverage": false
+      },
+      "errors": [
+        "product_budget_reached:https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/",
+        "page_budget_reached:https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/"
+      ]
+    },
+    {
+      "id": "retailer-18",
+      "name": "오쿠아",
+      "startedAt": "2026-10-08T19:35:50.350Z",
+      "finishedAt": "2026-10-08T19:37:00.859Z",
+      "requestLimit": 8,
+      "requests": 8,
+      "networkRequests": 8,
+      "before": 9,
+      "after": 12,
+      "pendingBefore": 17,
+      "pendingAfter": 40,
+      "detailBudget": 5,
+      "verifiedOffersThisRound": 3,
+      "newCandidates": 30,
+      "status": "budget_limited",
+      "pagesVisitedThisRound": 2,
+      "tree": {
+        "discoveredCategoryCount": 28,
+        "allowedCategoryCount": 15,
+        "excludedCategoryCount": 6,
+        "reviewCategoryCount": 7,
+        "pagesVisited": 4,
+        "pendingCategoryCount": 13,
+        "pendingPageUrls": [
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=73"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=119",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=119"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=110",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=110"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=109",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=109"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=311",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=311"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=111",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=111"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=316",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=316"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=270",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=270"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=437",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=437"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=432",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=432"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=126",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=126"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=125",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=125"
+          },
+          {
+            "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=99",
+            "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=99"
+          }
+        ],
+        "terminalCategoryCount": 2,
+        "verifiedProductCount": 12,
+        "pendingProductCount": 40,
+        "reviewProductCount": 6,
+        "menuCoverage": "unknown",
+        "terminalCoverage": "incomplete",
+        "fullRetailerCoverage": false
+      },
+      "errors": [
+        "product_budget_reached:https://oqua.co.kr/product/list.html?cate_no=110",
+        "page_budget_reached:https://oqua.co.kr/product/list.html?cate_no=110"
+      ]
     }
   ],
-  "originalChunjanePendingRemaining": 0,
-  "baselineProductsRemoved": 0,
-  "roundLimit": 20,
-  "totalNetworkRequests": 52,
-  "uiFilesUnchanged": [
-    "dist/index.html",
-    "dist/app.js",
-    "dist/styles.css",
-    "dist/data-model.js",
-    "dist/admin/index.html",
-    "dist/admin/app.js"
+  "transactions": [
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/category/%EB%82%9C%EC%83%9D%EB%82%9C%ED%83%9C%EC%83%9D/71/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:30:00.017Z",
+      "checkedAt": "2026-10-08T19:30:00.500Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0/72/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:30:10.025Z",
+      "checkedAt": "2026-10-08T19:30:10.447Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/73/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:30:20.028Z",
+      "checkedAt": "2026-10-08T19:30:20.478Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%ED%95%98%ED%94%84%EB%AC%B8%EB%B2%A0%ED%83%80-%EC%88%AB%EC%BB%B7%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4/1108/category/75/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:30:30.038Z",
+      "checkedAt": "2026-10-08T19:30:30.487Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%9C%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%84/12855/category/76/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:30:40.046Z",
+      "checkedAt": "2026-10-08T19:30:40.473Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%95%8C%EB%B9%84%EB%85%B8-%ED%92%80%EB%A0%88%EB%93%9C-%EB%A6%AC%EB%B3%B8-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC-%EC%95%94%EC%BB%B7/20521/category/70/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:30:50.060Z",
+      "checkedAt": "2026-10-08T19:30:50.439Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EA%B3%A8%EB%93%A0%EB%B0%94%EB%B8%8C-1%EB%A7%88%EB%A6%AC/20501/category/56/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:31:00.073Z",
+      "checkedAt": "2026-10-08T19:31:00.441Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EB%9E%9C%EB%8D%A4%EB%AF%B9%EC%8A%A4-%EB%A9%94%EB%8B%A4%EC%B9%B4-5%EB%A7%88%EB%A6%AC/20382/category/71/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:31:10.085Z",
+      "checkedAt": "2026-10-08T19:31:10.501Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%B9%B4%EB%94%94%EB%82%A0-%ED%85%8C%ED%8A%B8%EB%9D%BC-10%EB%A7%88%EB%A6%AC%EB%AC%B6%EC%9D%8C/20006/category/72/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:31:20.093Z",
+      "checkedAt": "2026-10-08T19:31:20.483Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EB%B8%94%EB%A3%A8%EC%95%84%EC%B9%B4%EB%9D%BC-1%EB%A7%88%EB%A6%AC-23cm/20342/category/73/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:31:30.104Z",
+      "checkedAt": "2026-10-08T19:31:30.487Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EB%B9%85%EC%9D%B4%EC%96%B4%EB%8D%A4%EB%B3%B4-%ED%95%98%ED%94%84%EB%AC%B8-%EB%B2%A0%ED%83%80-%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4/17348/category/75/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:31:40.114Z",
+      "checkedAt": "2026-10-08T19:31:40.543Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%ED%95%98%EC%8A%A4%ED%83%80%ED%88%AC%EC%8A%A4-5%EB%A7%88%EB%A6%AC%EB%AC%B6%EC%9D%8C/11154/category/76/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:31:50.126Z",
+      "checkedAt": "2026-10-08T19:31:50.571Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%99%80%EC%9D%BC%EB%93%9C-%EC%BD%94%EC%9D%B4-%EC%88%8F-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC/20502/category/70/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:32:00.127Z",
+      "checkedAt": "2026-10-08T19:32:00.508Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%8C%9F-%EC%A7%95%EA%B5%AC-8cm-%EC%A0%84%ED%9B%84/20498/category/56/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:32:10.131Z",
+      "checkedAt": "2026-10-08T19:32:10.510Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%ED%85%8C%ED%8A%B8%EB%9D%BC-1%EB%A7%88%EB%A6%AC/20121/category/71/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:32:20.145Z",
+      "checkedAt": "2026-10-08T19:32:20.528Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%95%80-%ED%85%8C%ED%8A%B8%EB%9D%BC-1%EB%A7%88%EB%A6%AC/17450/category/72/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:32:30.156Z",
+      "checkedAt": "2026-10-08T19:32:30.563Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%9E%AD-%EB%8C%90%ED%94%84%EC%8B%9C-1%EB%A7%88%EB%A6%AC/19427/category/73/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:32:40.171Z",
+      "checkedAt": "2026-10-08T19:32:40.588Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%BA%94%EB%94%94-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%83%89%EC%83%81%EB%9E%9C%EB%8D%A4-%EC%88%98%EC%BB%B7/12390/category/75/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:32:50.173Z",
+      "checkedAt": "2026-10-08T19:32:50.602Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4-%EB%B2%A0%EB%84%A4%EC%A5%AC%EC%97%98%EB%9D%BC-%EC%98%A4%EB%A0%8C%EC%A7%80-1%EB%A7%88%EB%A6%AC-%EC%9C%A0%EC%96%B4/11137/category/76/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:00.181Z",
+      "checkedAt": "2026-10-08T19:33:04.219Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-25",
+      "url": "https://sangaqua.co.kr/product/%EB%AF%B8%EB%8B%88-%ED%8C%AC%EB%8D%94-%EA%B5%AC%ED%94%BC-1%EB%A7%88%EB%A6%AC/20494/category/70/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:10.193Z",
+      "checkedAt": "2026-10-08T19:33:10.588Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/robots.txt",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:13.771Z",
+      "checkedAt": "2026-10-08T19:33:13.835Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/list.html?cate_no=461",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:23.779Z",
+      "checkedAt": "2026-10-08T19:33:24.331Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/list.html?cate_no=436",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:33.786Z",
+      "checkedAt": "2026-10-08T19:33:34.185Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%ED%94%8C%EB%9E%98%ED%8B%B0%EB%84%98-%EB%A9%94%EB%8B%A4%EC%B9%B4%EB%AF%B8%EC%9C%A0%ED%82%A4-1%EB%A7%88%EB%A6%AC/4392/category/432/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:43.798Z",
+      "checkedAt": "2026-10-08T19:33:44.232Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%ED%95%98%EC%8A%A4%ED%83%80%ED%88%AC%EC%8A%A4-5%EB%A7%88%EB%A6%AC/2605/category/435/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:33:53.805Z",
+      "checkedAt": "2026-10-08T19:33:54.173Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/011-%EB%B8%94%EB%9E%99-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC2%EB%A7%88%EB%A6%AC/1818/category/461/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:34:03.817Z",
+      "checkedAt": "2026-10-08T19:34:04.197Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%EA%B3%A8%EB%93%A0%EB%B3%BC-%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A6%881%EB%A7%88%EB%A6%AC/521/category/436/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:34:13.827Z",
+      "checkedAt": "2026-10-08T19:34:14.223Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%EC%84%A0%EC%85%8B-%EA%B5%AC%EB%9D%BC%EB%AF%B8-1%EB%A7%88%EB%A6%AC/4654/category/432/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:34:23.839Z",
+      "checkedAt": "2026-10-08T19:34:24.439Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%ED%95%98%EC%8A%A4%ED%83%80%ED%88%AC%EC%8A%A42%EB%A7%88%EB%A6%AC/2604/category/435/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:34:33.852Z",
+      "checkedAt": "2026-10-08T19:34:34.223Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/011-%EC%97%98%EB%A1%9C%EC%9A%B0-%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC2%EB%A7%88%EB%A6%AC/1821/category/461/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:34:43.852Z",
+      "checkedAt": "2026-10-08T19:34:44.272Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%EB%8B%A4%EB%9E%8C%EC%A5%903cm%EA%B8%89-5%EB%A7%88%EB%A6%AC/729/category/436/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:34:53.855Z",
+      "checkedAt": "2026-10-08T19:34:54.227Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-48",
+      "url": "https://chunjane.com/product/01-%EB%B8%94%EB%9E%99%EC%95%88%EC%8B%9C-5cm%EA%B8%89-1-%EB%A7%88%EB%A6%AC/482/category/432/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:03.858Z",
+      "checkedAt": "2026-10-08T19:35:04.851Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0008",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:06.580Z",
+      "checkedAt": "2026-10-08T19:35:07.215Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0007",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:08.588Z",
+      "checkedAt": "2026-10-08T19:35:08.787Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1772&GC=GD0008",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:10.601Z",
+      "checkedAt": "2026-10-08T19:35:10.901Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1520&GC=GD0007",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:12.612Z",
+      "checkedAt": "2026-10-08T19:35:12.836Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1751&GC=GD0008",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:14.613Z",
+      "checkedAt": "2026-10-08T19:35:14.863Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1773&GC=GD00",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:16.624Z",
+      "checkedAt": "2026-10-08T19:35:17.051Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1486&GC=GD0007",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:18.635Z",
+      "checkedAt": "2026-10-08T19:35:18.937Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1688&GC=GD0008",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:20.642Z",
+      "checkedAt": "2026-10-08T19:35:20.800Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1484&GC=GD0007",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:22.650Z",
+      "checkedAt": "2026-10-08T19:35:22.772Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1754&GC=GD00",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:24.663Z",
+      "checkedAt": "2026-10-08T19:35:24.772Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1687&GC=GD0008",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:26.670Z",
+      "checkedAt": "2026-10-08T19:35:26.828Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-47",
+      "url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1470&GC=GD0007",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:28.677Z",
+      "checkedAt": "2026-10-08T19:35:28.774Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://aquavillage.co.kr/robots.txt",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:30.236Z",
+      "checkedAt": "2026-10-08T19:35:30.279Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:32.240Z",
+      "checkedAt": "2026-10-08T19:35:32.788Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/59/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:34.245Z",
+      "checkedAt": "2026-10-08T19:35:34.503Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/product/%EC%98%90%EB%A1%9C%EC%9A%B0-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7-%EB%9E%9C%EB%8D%A4%EC%B6%9C%EA%B3%A0/2462/category/49/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:36.257Z",
+      "checkedAt": "2026-10-08T19:35:36.795Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/product/%EC%97%85%EC%82%AC%EC%9D%B4%EB%93%9C-%EC%BA%A3%ED%94%BC%EC%89%AC-2cm-%EC%A0%84%ED%9B%84/2460/category/59/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:38.264Z",
+      "checkedAt": "2026-10-08T19:35:38.609Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/product/%EB%B0%94%EB%A1%B1%EC%82%AC%EC%9D%B4-%ED%94%8C%EB%9D%BC%EC%BA%87-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7-%EB%9E%9C%EB%8D%A4%EC%B6%9C%EA%B3%A0/2441/category/49/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:40.275Z",
+      "checkedAt": "2026-10-08T19:35:40.592Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/product/%EB%B8%94%EB%9E%99%EB%A6%B4%EB%A6%AC-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/724/category/61/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:42.281Z",
+      "checkedAt": "2026-10-08T19:35:42.620Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-16",
+      "url": "https://www.aquavillage.co.kr/product/%EC%8B%9C%EB%85%B8%EB%8F%88%ED%8B%B0%EC%8A%A4-%ED%8E%98%ED%8A%B8%EB%A6%AC%EC%BD%9C%EB%9D%BC-2cm-%EC%A0%84%ED%9B%84/2451/category/59/display/1/",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:44.289Z",
+      "checkedAt": "2026-10-08T19:35:44.568Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/robots.txt",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:35:50.369Z",
+      "checkedAt": "2026-10-08T19:35:50.454Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/list.html?cate_no=72",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:36:00.383Z",
+      "checkedAt": "2026-10-08T19:36:00.597Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/list.html?cate_no=110",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:36:10.397Z",
+      "checkedAt": "2026-10-08T19:36:10.660Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/detail.html?product_no=4013&cate_no=518&display_group=1",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:36:20.406Z",
+      "checkedAt": "2026-10-08T19:36:20.684Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/detail.html?product_no=3993&cate_no=73&display_group=1",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:36:30.420Z",
+      "checkedAt": "2026-10-08T19:36:30.757Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/detail.html?product_no=2065&cate_no=72&display_group=1",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:36:40.428Z",
+      "checkedAt": "2026-10-08T19:36:40.684Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/detail.html?product_no=1677&cate_no=72&display_group=1",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:36:50.433Z",
+      "checkedAt": "2026-10-08T19:36:50.706Z",
+      "method": "standard_same_official_host_https"
+    },
+    {
+      "sourceId": "retailer-18",
+      "url": "https://oqua.co.kr/product/detail.html?product_no=3279&cate_no=518&display_group=1",
+      "httpStatus": 200,
+      "requestedAt": "2026-10-08T19:37:00.439Z",
+      "checkedAt": "2026-10-08T19:37:00.814Z",
+      "method": "standard_same_official_host_https"
+    }
+  ],
+  "priorRounds": [
+    {
+      "roundId": "coverage-round-1",
+      "startedAt": "2026-10-08T19:01:01.412Z",
+      "finishedAt": "2026-10-08T19:11:47.952Z",
+      "products": 762,
+      "addedProducts": 56,
+      "transactions": 52,
+      "sources": [
+        {
+          "id": "retailer-25",
+          "products": 32,
+          "pending": 64
+        },
+        {
+          "id": "retailer-48",
+          "products": 108,
+          "pending": 24
+        },
+        {
+          "id": "retailer-47",
+          "products": 15,
+          "pending": 17
+        }
+      ]
+    }
   ],
   "concurrentPreviewRefresh": {
     "commit": "15e120b4dd9b541828db71a7c8842c2f2252bdcd",
@@ -1238,5 +1294,49 @@
     "preservedMoreRecentRows": 38,
     "localAuditAddedProducts": 55,
     "noProductRemoved": true
+  },
+  "lastNetworkCheckpointAt": "2026-10-08T19:37:00.814Z",
+  "products": 808,
+  "addedProducts": 46,
+  "lastCheckpointAt": "2026-10-08T19:37:02.192Z",
+  "requestBudgetVerified": true,
+  "baselineProductsRemoved": 0,
+  "totalNetworkRequests": 60,
+  "requestTiming": [
+    {
+      "id": "retailer-25",
+      "configuredDelayMs": 2000,
+      "minObservedGapMs": 10001
+    },
+    {
+      "id": "retailer-48",
+      "configuredDelayMs": 2000,
+      "minObservedGapMs": 10000
+    },
+    {
+      "id": "retailer-47",
+      "configuredDelayMs": 2000,
+      "minObservedGapMs": 2001
+    },
+    {
+      "id": "retailer-16",
+      "configuredDelayMs": 2000,
+      "minObservedGapMs": 2004
+    },
+    {
+      "id": "retailer-18",
+      "configuredDelayMs": 2000,
+      "minObservedGapMs": 10005
+    }
+  ],
+  "delayVerified": true,
+  "automationRunEvidencePath": "automation-run-evidence.json",
+  "smallSeedDetailCapBypassedWithinRequestBudget": true,
+  "automationRun": {
+    "id": 37828093605,
+    "event": "schedule",
+    "conclusion": "success",
+    "producingCommit": "15e120b4dd9b541828db71a7c8842c2f2252bdcd",
+    "addedProductId": "retailer-09:cafe24_alphafish_1_2081:default"
   }
 }

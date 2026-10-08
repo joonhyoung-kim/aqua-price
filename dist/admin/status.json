@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T10:07:07.705Z",
+  "generatedAt": "2026-10-08T10:15:20.618Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -9,7 +9,7 @@
     "hyunjeen043.cafe24.com"
   ],
   "automation": {
-    "configured": false,
+    "configured": true,
     "verifiedRun": false,
     "workflowUrl": "https://github.com/joonhyoung-kim/aqua-price/actions/workflows/catalog-refresh.yml",
     "dispatchMode": "all",
@@ -19,7 +19,8 @@
       "reconcile": "43 2 * * *"
     },
     "newProductDiscovery": false,
-    "deletionEnabled": false
+    "deletionEnabled": false,
+    "mainWorkflowCommit": "7b63ad3c19b813c3b4879b40b28f67ab142a9561"
   },
   "sources": [
     {

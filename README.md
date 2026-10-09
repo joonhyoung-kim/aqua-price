@@ -66,7 +66,7 @@ Manual workflow run 37767325227, attempt 2, published bot data commit 2d4967239b
 
 ### Bounded coverage batches
 
-Livestock browsing starts at all livestock. Each subtype has a compact subgroup select with counts for the current query and registration window. Only nonempty groups are shown, except an explicitly selected empty group remains available. Existing `fishGroup` URLs continue to work; `liveGroup` selects shrimp, plant and snail groups. UI selections update the URL and survive reloads. Uncertain or conflicting names remain in 기타·미분류.
+Livestock browsing starts at all livestock. Each subtype has a hierarchy of navigation collections and existing subgroup buttons, with counts for the current query and registration window. These collections help browsing; they are not biological ranks and do not change product classification. One collection expands at a time, with accessible buttons, visible selection paths, collection-wide selection and subtype-wide selection. Only nonempty leaves are shown, except an explicitly selected empty leaf or collection remains available. Existing `fishGroup` and `liveGroup` URLs continue to work and reopen the selected leaf's collection; `browseGroup` selects a whole navigation collection. UI selections update the URL and survive reloads. Uncertain or conflicting names remain in 기타·미분류.
 
 Subgroups use explicit product names first, then observed retailer category evidence. `publish.cjs` preserves menu labels only when the same retailer's saved category cursor contains that exact product key; `build-catalog.cjs` exposes this as `observedCategoryLabels`. This evidence supports numeric category URLs without guessing from IDs. Original prices, offer identities, photos and registration/sales unknowns remain intact.
 

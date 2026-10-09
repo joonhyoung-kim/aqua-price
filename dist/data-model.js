@@ -106,6 +106,31 @@
     const categoryMatches=Object.keys(rules).filter(key=>rules[key].test(category));
     return classified(categoryMatches.length===1?categoryMatches[0]:'other',categoryMatches.length===1?'observed_retailer_category':'insufficient_or_conflicting_evidence');
   }
+  // Navigation collections, not biological ranks. Every existing leaf stays in one collection.
+  const livestockNavigation = {
+    fish: [
+      {key:'popular',label:'구피·메다카·베타',children:['guppy','platy','molly','swordtail','medaka','betta']},
+      {key:'schooling',label:'테트라·라스보라 등',children:['tetra','rasbora','danio','barb','rainbow','killifish']},
+      {key:'bottom',label:'코리·플레코·로치',children:['cory','pleco','loach','catfish']},
+      {key:'cichlid_gourami',label:'시클리드·구라미',children:['cichlid','gourami']},
+      {key:'large_native',label:'아로와나·찬나·토종어',children:['arowana','channa','native']},
+      {key:'other_named',label:'금붕어·복어·고비',children:['goldfish','puffer','goby']},
+    ],
+    shrimp: [
+      {key:'color',label:'색상으로 찾기',children:['shrimp_red','shrimp_yellow','shrimp_blue','shrimp_orange','shrimp_snow']},
+      {key:'pattern_set',label:'릴리·비쉬림프·혼합',children:['shrimp_rili','shrimp_bee','shrimp_mix']},
+      {key:'yamato_wild',label:'야마토·생이',children:['shrimp_yamato','shrimp_wild']},
+    ],
+    aquatic_plant: [
+      {key:'rotala_ludwigia',label:'로탈라·루드위지아 등',children:['plant_rotala','plant_ludwigia','plant_hygro','plant_ambulia','plant_myrio','plant_didiplis']},
+      {key:'anubias_buce_fern',label:'나나·부세·양치류',children:['plant_anubias','plant_buce','plant_fern']},
+      {key:'moss_small_float',label:'모스·작은수초·부상',children:['plant_moss','plant_small','plant_float']},
+      {key:'other_plant_names',label:'그밖의 수초 이름',children:['plant_bacopa','plant_crypto','plant_val','plant_echino','plant_marimo','plant_lobelia','plant_pogostemon','plant_alternanthera','plant_anacharis','plant_bamboo']},
+      {key:'form_set',label:'형태·세트로 찾기',children:['plant_set','plant_attached','plant_pot']},
+    ],
+    snail: [{key:'snail_names',label:'달팽이 이름으로 찾기',children:['snail_apple','snail_trumpet','snail_nerite','snail_ramshorn','snail_pond']}],
+  };
+  function navigationParent(subtype,leaf){return livestockNavigation[subtype]?.find(group=>group.children.includes(leaf))||null;}
   function livestockGroup(product){return livestockClassification(product)?.key??null;}
   function fishGroup(product){return product.subtype==='fish'?livestockGroup(product):null;}
   function selectProducts(catalog, filters) {
@@ -113,6 +138,7 @@
     requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     requireValue(filters.fishGroup === undefined || Object.hasOwn(fishGroups, filters.fishGroup), '잘못된 어종 조건');
     requireValue(filters.liveGroup === undefined || filters.liveGroup === 'all' || livestockGroups[filters.subtype] && Object.hasOwn(livestockGroups[filters.subtype], filters.liveGroup), '잘못된 생물 세부 분류');
+    requireValue(filters.browseGroup === undefined || filters.browseGroup === 'all' || livestockNavigation[filters.subtype]?.some(group=>group.key===filters.browseGroup), '잘못된 탐색 그룹');
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
     const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
     const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
@@ -120,6 +146,11 @@
     const effectiveFishGroup=filters.fishGroup&&filters.fishGroup!=='all'?filters.fishGroup:filters.liveGroup||'all';
     let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || fishGroup(p) === effectiveFishGroup) && [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle)));
     if(filters.type==='live'&&filters.subtype!=='fish'&&filters.subtype!=='all'&&filters.liveGroup&&filters.liveGroup!=='all')rows=rows.filter(p=>livestockGroup(p)===filters.liveGroup);
+    const leaf=filters.subtype==='fish'?effectiveFishGroup:filters.liveGroup||'all';
+    if(filters.type==='live'&&leaf==='all'&&filters.browseGroup&&filters.browseGroup!=='all'){
+      const navigation=livestockNavigation[filters.subtype].find(group=>group.key===filters.browseGroup);
+      rows=rows.filter(p=>navigation.children.includes(livestockGroup(p)));
+    }
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
     const includeUnknown = (filters.days === 'all' || filters.includeUnknownRegistration === true) && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
@@ -141,7 +172,7 @@
     return { rows, reason: outputReason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
+  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
   function filtersFromSearch(search = '') {
     const params = new URLSearchParams(search), filters = { ...defaultFilters };
     for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), sort: ['low','high','sales','new','observed'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
@@ -149,6 +180,8 @@
     const group=params.get('liveGroup');if(group&&livestockGroups[filters.subtype]&&Object.hasOwn(livestockGroups[filters.subtype],group))filters.liveGroup=group;
     if(!params.has('subtype')&&params.has('fishGroup')&&filters.fishGroup!=='all')filters.subtype='fish';
     if(filters.subtype==='fish'&&filters.liveGroup!=='all'){if(!params.has('fishGroup'))filters.fishGroup=filters.liveGroup;filters.liveGroup='all';}
+    const browse=params.get('browseGroup');if(livestockNavigation[filters.subtype]?.some(group=>group.key===browse))filters.browseGroup=browse;
+    const leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup;if(leaf!=='all')filters.browseGroup='all';
     filters.query = params.get('query') ?? params.get('q') ?? '';
     const unknown = params.get('includeUnknownRegistration') ?? params.get('includeUnknown'); if (unknown === 'true' || unknown === 'false') filters.includeUnknownRegistration = unknown === 'true';
     return filters;
@@ -157,9 +190,9 @@
     return Object.fromEntries(['sales','new'].map(sort => { const result = selectProducts(catalog, { ...filters, sort }); return [sort, { available: catalog.status === 'ready' && result.rows.length > 0, count: result.rows.length, reason: result.reason }]; }));
   }
   function filtersToSearch(filters,search=''){
-    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown'])params.delete(key);
+    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','browseGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown'])params.delete(key);
     for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==defaultFilters[key])params.set(key,String(value));
     const text=params.toString();return text?'?'+text:'';
   }
-  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
+  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

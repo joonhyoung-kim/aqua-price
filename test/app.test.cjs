@@ -81,6 +81,35 @@ test('actual catalog subgroup partition conserves every livestock row and repres
   const sample=data.products.find(p=>p.name.includes(title));assert.ok(sample,title);assert.equal(AquaCatalog.livestockGroup(sample),key,sample.name);
  }
 });
+test('navigation collections partition every existing named leaf exactly once without reclassifying products',()=>{
+ const data=require('../dist/catalog.json');
+ for(const [subtype,groups]of Object.entries(AquaCatalog.livestockGroups)){
+  const leaves=AquaCatalog.livestockNavigation[subtype].flatMap(group=>group.children);
+  assert.equal(new Set(leaves).size,leaves.length);
+  assert.deepEqual([...leaves].sort(),Object.keys(groups).filter(key=>!['all','other'].includes(key)).sort());
+  const base={...AquaCatalog.defaultFilters,subtype},all=selectProducts(data,base).rows;
+  const selected=AquaCatalog.livestockNavigation[subtype].flatMap(group=>selectProducts(data,{...base,browseGroup:group.key}).rows);
+  assert.equal(selected.length,all.filter(p=>AquaCatalog.livestockGroup(p)!=='other').length);
+  assert.equal(new Set(selected.map(p=>p.id)).size,selected.length);
+  for(const group of AquaCatalog.livestockNavigation[subtype])assert.ok(selectProducts(data,{...base,browseGroup:group.key}).rows.every(p=>group.children.includes(AquaCatalog.livestockGroup(p))));
+ }
+});
+test('collection URLs round trip and legacy leaf URLs take precedence over mismatched collections',()=>{
+ const filters={...AquaCatalog.defaultFilters,subtype:'fish',browseGroup:'bottom',sort:'high',days:7};
+ assert.deepEqual(AquaCatalog.filtersFromSearch(AquaCatalog.filtersToSearch(filters)),filters);
+ const leaf=AquaCatalog.filtersFromSearch('?subtype=fish&fishGroup=guppy&browseGroup=bottom');
+ assert.equal(leaf.fishGroup,'guppy');assert.equal(leaf.browseGroup,'all');assert.equal(AquaCatalog.navigationParent('fish','guppy').key,'popular');
+ assert.equal(AquaCatalog.filtersFromSearch('?subtype=shrimp&browseGroup=bottom').browseGroup,'all');
+ assert.throws(()=>selectProducts(catalog(),{...filters,subtype:'shrimp'}),/탐색 그룹/);
+});
+test('collection selection intersects registration windows and query while keeping unknown dates explicit',()=>{
+ const rows=[product('new',{subtype:'fish',name:'코리도라스 A'}),product('old',{subtype:'fish',name:'코리도라스 B',registeredAt:'2025-01-01T00:00:00.000Z'}),product('unknown',{subtype:'fish',name:'안시 A',registeredAt:null}),product('guppy',{subtype:'fish',name:'구피 A'})];
+ const data=catalog(rows),filters={...AquaCatalog.defaultFilters,subtype:'fish',browseGroup:'bottom',days:7,query:'A'};
+ assert.deepEqual(selectProducts(data,filters).rows.map(p=>p.id),['new','unknown']);
+ assert.deepEqual(selectProducts(data,{...filters,includeUnknownRegistration:false}).rows.map(p=>p.id),['new']);
+ assert.deepEqual(selectProducts(data,{...filters,sort:'new'}).rows.map(p=>p.id),['new']);
+});
+
 test('all-time sales ranks actual cumulative counts including zero and excludes unknowns', () => {
   const data=catalog([product('unknown'),product('zero',{cumulativeSales:0}),product('five',{cumulativeSales:5}),product('periodOnly',{periodSales:{count:99,startAt:'2026-10-01T00:00:00.000Z',endAt:AS_OF}})]);
   const result=select(data,{sort:'sales',days:'all'});

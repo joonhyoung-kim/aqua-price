@@ -31,7 +31,7 @@ main의 초기 화면은 가상 상품·가격 샘플이며, 기간은 샘플 �
 
 `npm run collect -- --mode all`은 로컬 상태만 수집합니다. `--publish`를 추가하면 검증된 정적 JSON을 갱신합니다. mode는 all/live/gear/reconcile입니다. 수집 후 `node scripts/build-admin-status.cjs`와 `npm test`를 실행합니다. .collector 원문 캐시·lastgood는 gitignore로 제외합니다. 등록 호스트, robots, 요청 간격, 요청 수, 타임아웃, 응답 크기를 제한하며 403/429는 즉시 중단합니다.
 
-예약 워크플로 원본은 sources/catalog-refresh.workflow.yml 입니다. main에는 .github/workflows/catalog-refresh.yml만 추가하고, 실행 시 preview를 체크아웃합니다. UTC 생물 매 3시간 17분, 용품 매 6시간 29분, 누락 검토 매일 02:43입니다. GitHub Actions는 지연될 수 있습니다. 누락 검토도 전체 수집 증거가 없어 상품 삭제를 수행하지 않습니다. GITHUB_TOKEN contents:write는 이 저장소의 preview 데이터 커밋에만 사용하며 외부 토큰을 저장하지 않습니다. 자동 커밋 허용 경로는 dist/catalog.json, dist/source-snapshot.json, dist/collector-status.json, dist/admin/status.json입니다. main 사이트 콘텐츠는 변경하지 않습니다.
+예약 워크플로 원본은 sources/catalog-refresh.workflow.yml 입니다. main에는 .github/workflows/catalog-refresh.yml만 추가하고, 실행 시 preview를 체크아웃합니다. UTC 생물 매 6시간 17분(하루 4회), 용품 매 12시간 29분(하루 2회), 누락 검토 매일 02:43(하루 1회)로 하루 7개 예약 슬롯입니다. GitHub Actions는 지연될 수 있으며, 수동 실행과 재시도는 이 예약 횟수에 포함되지 않습니다. 실행이 지연되어 날짜를 넘길 수 있으므로 실제 시작 횟수의 엄격한 일일 상한은 아닙니다. 누락 검토도 전체 수집 증거가 없어 상품 삭제를 수행하지 않습니다. GITHUB_TOKEN contents:write는 이 저장소의 preview 데이터 커밋에만 사용하며 외부 토큰을 저장하지 않습니다. 자동 커밋 허용 경로는 dist/catalog.json, dist/source-snapshot.json, dist/collector-status.json, dist/admin/status.json입니다. main 사이트 콘텐츠는 변경하지 않습니다.
 
 워크플로 등록 여부와 실제 실행·데이터 커밋·Render 반영 검증은 별개입니다. sources/automation-status.json과 /admin/에 확인 여부를 표시합니다. 첫 실제 실행의 최종 배포 검증 전에는 자동 갱신 성공으로 표시하지 않습니다. 직접 실행은 https://github.com/joonhyoung-kim/aqua-price/actions/workflows/catalog-refresh.yml 에서 Run workflow, main, mode=all 을 선택합니다.
 
@@ -83,3 +83,11 @@ Category menus are discovery hints. Classification version 6 evaluates the prima
 The discovery ledger records actual same-retailer listing, detail, related-product and sitemap hrefs with included/pending/review/excluded decisions, reasons, observation times, evidence hashes and decision history. Content changes and classifier versions can reopen an old exclusion; access, robots and identity holds remain enforced. Cached recovery candidates require a fresh detail request before publication.
 
 Run `node scripts/audit-cached-products.cjs` for a read-only offline projection. It does not request pages, change state/catalog or add products; historical offer observations are not promoted to current prices. An explicitly requested `--output <path>` saves the detailed audit separately.
+
+### Scheduled runtime and cadence
+
+The seven-slot schedule reduces the former 13 scheduled slots per UTC day by about 46%. It deliberately reduces revisit opportunities: live runs change from every 3 hours to every 6 hours, and gear runs from every 6 hours to every 12 hours. It does not claim that every product is refreshed at that interval. Existing `live` discovery priority and `--refresh-known` behavior are unchanged. The known-live-price refresh budget remains a separate design decision.
+
+The 18-minute collector deadline, 25-minute job timeout, source request limits, robots crawl delays, refusal quarantine, lastgood preservation and resume cursors are unchanged. Long live runs are dominated by source pacing; this change reduces daily scheduled work rather than claiming a faster equivalent crawl. `--quiet` avoids writing the full checkpoint ledger into Actions logs; complete reports still remain in `.collector/report.json` and `dist/collector-status.json`. Both pre-collection and post-collection tests remain mandatory.
+
+Apply the matching schedule to `sources/catalog-refresh.workflow.yml` on preview and the active `.github/workflows/catalog-refresh.yml` on main. A preview-only template edit does not alter GitHub scheduling. The active workflow continues to check out preview and to push only the four existing preview data paths; it does not publish catalog updates to main. Historical execution evidence in automation-status.json remains historical and does not verify the new cadence.

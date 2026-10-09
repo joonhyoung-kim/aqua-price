@@ -8,9 +8,11 @@ on:
         type: choice
         options: [all, live, gear, reconcile]
         default: all
+  # Seven scheduled slots per UTC day: live 4, gear 2, reconcile 1.
+  # GitHub may delay delivery; manual dispatches and retries are additional.
   schedule:
-    - cron: '17 */3 * * *'
-    - cron: '29 */6 * * *'
+    - cron: '17 */6 * * *'
+    - cron: '29 */12 * * *'
     - cron: '43 2 * * *'
 
 permissions:
@@ -52,8 +54,8 @@ jobs:
         run: |
           mode=all
           case "$EVENT_SCHEDULE" in
-            '17 */3 * * *') mode=live ;;
-            '29 */6 * * *') mode=gear ;;
+            '17 */6 * * *') mode=live ;;
+            '29 */12 * * *') mode=gear ;;
             '43 2 * * *') mode=reconcile ;;
           esac
           case "$REQUESTED_MODE" in
@@ -61,7 +63,7 @@ jobs:
             '') ;;
             *) exit 1 ;;
           esac
-          npm run collect -- --mode "$mode" --publish
+          npm run collect -- --mode "$mode" --publish --quiet
       - name: Validate resulting static data
         run: |
           node scripts/build-admin-status.cjs

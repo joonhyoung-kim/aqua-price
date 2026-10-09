@@ -39,12 +39,13 @@ async function setup(data = actual, fail = false, search = '?type=gear&subtype=a
     querySelectorAll(selector) { if(selector === '[data-fish-group]') return fishGroups; return selector === '[data-type]' ? types : selector === '[data-subtype]' ? subtypes : []; },
     modelContext: { registerTool(value) { tool = value; } },
   };
-  const location={search,href:'https://example.invalid/'+search},history={replaceState(_a,_b,value){location.href=new URL(value,location.href).href;location.search=new URL(location.href).search;}};
-  const context = vm.createContext({ document, AquaCatalog, location, history, URL, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
+  let renderCalls=0,fetchCalls=0;
+  const location={search,href:'https://example.invalid/'+search},history={replaceState(_a,_b,value){renderCalls++;location.href=new URL(value,location.href).href;location.search=new URL(location.href).search;}};
+  const context = vm.createContext({ document, AquaCatalog, location, history, URL, fetch: () => {fetchCalls++;return fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) });} });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
   const choose=(leaf,browse='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-live-group]'?{dataset:{liveGroup:leaf,browseFilter:browse}}:null;}}});
-  return { nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { renderCount:()=>renderCalls,fetchCount:()=>fetchCalls, nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('default entry selects all livestock, while explicit URL re-entry preserves controls', async () => {
  const app=await setup(actual,false,'');
@@ -191,7 +192,7 @@ test('unknown-registration checkbox and all three period choices are honest', as
 });
 test('search is local and includes original product title, not only short title', async () => {
   const app = await setup();
-  app.nodes.query.value = '  HJ-952  '; app.nodes.query.listeners.input({ target: app.nodes.query });
+  app.nodes.query.value = '  HJ-952  '; app.nodes.query.listeners.input({ target: app.nodes.query }); app.nodes.search.listeners.submit({preventDefault(){}});
   assert.ok(app.names().length > 0); assert.ok(app.names().every(name => name.includes('HJ-952')));
   app.nodes.query.value = 'no match'; let prevented = false; app.nodes.search.listeners.submit({ preventDefault() { prevented = true; } });
   assert.equal(prevented, true); assert.deepEqual(app.names(), []);
@@ -267,9 +268,9 @@ test('livestock subfilters default to plants, show honest empty categories and s
   app.type('gear'); assert.equal(app.nodes.livestockFilters.hidden, true); assert.equal(app.names().length, 24);
   app.type('live'); assert.match(app.nodes.resultTitle.textContent, /달팽이/); assert.equal(app.names().length,Math.min(24,actual.products.filter(p=>p.subtype==='snail').length));
   app.subtype('aquatic_plant'); assert.equal(app.names().length, Math.min(24,plants.length));
-  app.nodes.query.value='2구'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
+  app.nodes.query.value='2구'; app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}}); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
   app.subtype('fish'); assert.deepEqual(app.names(), []); app.subtype('aquatic_plant'); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
-  app.nodes.query.value='찾을수없는상품'; app.nodes.query.listeners.input({target:app.nodes.query}); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /검색어/);
+  app.nodes.query.value='찾을수없는상품'; app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}}); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /검색어/);
 });
 test('livestock controls wrap into four mobile columns with clear pressed state and keyboard focus', () => {
  const html=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
@@ -297,7 +298,101 @@ test('all period defaults without a registration bound and tool preserves catego
 test('fish families combine with existing filters and remain separate from gear', async()=>{
  const app=await setup();app.type('live');app.subtype('fish');assert.equal(app.nodes.fishFilters.hidden,false);
  for(const group of ['guppy','platy','molly','other']){app.fishGroup(group);const expected=AquaCatalog.selectProducts(actual,{type:'live',subtype:'fish',fishGroup:group,sort:'low',days:'all',query:''}).rows;assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));}
- app.fishGroup('all');app.nodes.query.value='플레티';app.nodes.query.listeners.input({target:app.nodes.query});assert.ok(app.names().every(name=>/플래티|플레티/.test(name)));
+ app.fishGroup('all');app.nodes.query.value='플레티';app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}});assert.ok(app.names().every(name=>/플래티|플레티/.test(name)));
  app.type('gear');assert.equal(app.nodes.fishFilters.hidden,true);app.subtype('shrimp');assert.equal(app.nodes.fishFilters.hidden,true);
  assert.throws(()=>app.tool.execute({type:'live',sort:'low',days:'all',fishGroup:'invented'}));
+});
+
+test('draft input does not render, update URL, fetch, or apply through another filter',async()=>{
+ const app=await setup();
+ const beforeNames=app.names(),beforeURL=app.search(),beforeRender=app.renderCount();
+ app.nodes.query.value='HJ-952';
+ app.nodes.query.listeners.input({target:app.nodes.query});
+ assert.deepEqual(app.names(),beforeNames);
+ assert.equal(app.search(),beforeURL);
+ assert.equal(app.renderCount(),beforeRender);
+ assert.equal(app.fetchCount(),1);
+ app.sort('high');
+ assert.equal(app.nodes.query.value,'HJ-952');
+ assert.equal(new URLSearchParams(app.search()).get('query'),null);
+ const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search()));
+ assert.deepEqual(app.names(),expected.rows.slice(0,24).map(p=>p.name));
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(new URLSearchParams(app.search()).get('query'),'HJ-952');
+ assert(app.names().length>0);
+ assert(app.names().every(name=>name.includes('HJ-952')));
+ assert.equal(app.fetchCount(),1);
+ const submittedRender=app.renderCount();
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),submittedRender);
+});
+
+test('IME Enter never applies draft; the next normal Enter submits once',async()=>{
+ const app=await setup();
+ const before=app.renderCount();
+ app.nodes.query.listeners.compositionstart();
+ app.nodes.query.value='구피';
+ app.nodes.query.listeners.input({target:app.nodes.query});
+ let prevented=false;
+ app.nodes.query.listeners.keydown({
+  key:'Enter',isComposing:true,keyCode:229,
+  preventDefault(){prevented=true;}
+ });
+ assert(prevented);
+ app.nodes.query.listeners.compositionend();
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before);
+ app.nodes.query.listeners.keyup({key:'Enter'});
+ app.nodes.query.listeners.keydown({
+  key:'Enter',isComposing:false,keyCode:13,preventDefault(){}
+ });
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before+1);
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before+1);
+});
+
+test('lost IME keyup does not block a later search button submission',async()=>{
+ const app=await setup();
+ const before=app.renderCount();
+ app.nodes.query.listeners.compositionstart();
+ app.nodes.query.value='HJ-952';
+ app.nodes.query.listeners.keydown({
+  key:'Enter',isComposing:true,keyCode:229,preventDefault(){}
+ });
+ app.nodes.query.listeners.compositionend();
+ // Clicking the button takes focus away even when keyup was lost.
+ app.nodes.query.listeners.blur();
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before+1);
+ assert.equal(new URLSearchParams(app.search()).get('query'),'HJ-952');
+});
+
+test('unchanged cards still update sort, period, URL and pagination state',async()=>{
+ const data=structuredClone(actual);
+ data.products=[data.products.find(p=>p.type==='gear'&&p.price!==null)];
+ data.products[0].registeredAt=null;
+ const app=await setup(data);
+ const html=app.nodes.grid.innerHTML;
+ app.sort('high');
+ assert.equal(app.nodes.grid.innerHTML,html);
+ assert.equal(app.nodes.sort.value,'high');
+ assert.equal(new URLSearchParams(app.search()).get('sort'),'high');
+ app.nodes.period.value='7';app.nodes.period.listeners.change();
+ assert.equal(app.nodes.grid.innerHTML,html);
+ assert.equal(app.nodes.includeUnknown.disabled,false);
+ assert.equal(new URLSearchParams(app.search()).get('days'),'7');
+ assert.equal(app.nodes.moreResults.hidden,true);
+ assert.match(app.nodes.paginationStatus.textContent,/1개 중 1개/);
+});
+
+test('clearing a draft changes results only when submitted',async()=>{
+ const app=await setup(actual,false,'?type=gear&query=HJ-952');
+ const before=app.names();
+ app.nodes.query.value='';app.nodes.query.listeners.input({target:app.nodes.query});
+ assert.deepEqual(app.names(),before);
+ assert.equal(new URLSearchParams(app.search()).get('query'),'HJ-952');
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(new URLSearchParams(app.search()).get('query'),null);
+ assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
 });

@@ -9,47 +9,57 @@ const PAGE_SIZE = 24;
 let visibleLimit = PAGE_SIZE;
 const subtypeNames = { all: '전체', fish: '물고기', shrimp: '새우', aquatic_plant: '수초', snail: '달팽이' };
 let expandedBrowse = null;
-function renderGroupNavigation() {
+let catalogQuery=AquaCatalog.createCatalogQuery(catalog);
+catalog=catalogQuery.catalog;
+let draftQuery=filters.query;
+let composing=false,compositionEnter=false;
+let lastGridHTML=null,lastTreeHTML=null;
+function setGridHTML(html){
+  if(html===lastGridHTML)return false;
+  $('#grid').innerHTML=html;
+  lastGridHTML=html;
+  return true;
+}
+function renderGroupNavigation(view=catalogQuery.view(filters)) {
   const groups=AquaCatalog.livestockGroups[filters.subtype]||{all:'전체'},leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup;
-  const counts=Object.fromEntries(Object.keys(groups).map(key=>[key,0]));
-  const base=AquaCatalog.selectProducts(catalog,{...filters,fishGroup:'all',liveGroup:'all',browseGroup:'all',sort:['sales','new'].includes(filters.sort)?'low':filters.sort});
-  for(const product of base.rows){counts.all++;const key=AquaCatalog.livestockGroup(product);if(Object.hasOwn(counts,key))counts[key]++;}
+  const counts=view.groupCounts;
   const navigation=AquaCatalog.livestockNavigation[filters.subtype]||[],parent=AquaCatalog.navigationParent(filters.subtype,leaf);
   if(expandedBrowse===null||expandedBrowse&&!navigation.some(group=>group.key===expandedBrowse))expandedBrowse=parent?.key||(filters.browseGroup!=='all'?filters.browseGroup:'');
   const selectedBrowse=navigation.find(group=>group.key===filters.browseGroup);
   $('#groupPath').textContent='생물 › '+subtypeNames[filters.subtype]+(leaf&&leaf!=='all'?(parent?' › '+parent.label:'')+' › '+groups[leaf]:selectedBrowse?' › '+selectedBrowse.label+' › 그룹 전체':' › 전체');
   const choice=(key,label,count,browse='all')=>`<button type="button" class="group-choice" data-live-group="${key}" data-browse-filter="${browse}" aria-pressed="${leaf===key&&(filters.browseGroup||'all')===browse}"><span>${escapeHtml(label)}</span><span class="group-count">${count}개</span></button>`;
-  $('#groupTree').innerHTML=choice('all',subtypeNames[filters.subtype]+' 전체',counts.all)+navigation.map(group=>{
+  const treeHTML=choice('all',subtypeNames[filters.subtype]+' 전체',counts.all)+navigation.map(group=>{
     const keys=group.children.filter(key=>counts[key]>0||key===leaf),count=group.children.reduce((sum,key)=>sum+(counts[key]||0),0);
     if(!keys.length&&filters.browseGroup!==group.key)return '';
     const open=expandedBrowse===group.key,id='group-panel-'+group.key;
     return `<div class="browse-node"><button type="button" class="browse-toggle" id="group-toggle-${group.key}" data-browse-group="${group.key}" aria-expanded="${open}" aria-controls="${id}"><span>${escapeHtml(group.label)}</span><span class="group-count">${count}개 <span aria-hidden="true">${open?'−':'+'}</span></span></button><div class="group-children" id="${id}" role="group" aria-labelledby="group-toggle-${group.key}"${open?'':' hidden'}>${choice('all','이 그룹 전체',count,group.key)}${keys.map(key=>choice(key,groups[key],counts[key]||0)).join('')}</div></div>`;
   }).join('')+(counts.other>0||leaf==='other'?choice('other',groups.other,counts.other||0):'');
+  if(treeHTML!==lastTreeHTML){$('#groupTree').innerHTML=treeHTML;lastTreeHTML=treeHTML;}
 }
-function syncSubtypeControls() {
+function syncSubtypeControls(view) {
   document.querySelectorAll('[data-type]').forEach(button => { const active = button.dataset.type === filters.type; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); button.querySelector('.check').textContent = active ? '✓' : ''; });
   $('#fishFilters').hidden = filters.type !== 'live' || filters.subtype === 'all';
-  renderGroupNavigation();
+  renderGroupNavigation(view);
   $('#livestockFilters').hidden = filters.type !== 'live';
   document.querySelectorAll('[data-subtype]').forEach(button => { const active = button.dataset.subtype === filters.subtype; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
 }
 
 function render(resetPage = true) {
+  const view=catalogQuery.view(filters);
   if (resetPage) visibleLimit = PAGE_SIZE;
   if(catalog.status==='ready'&&typeof history==='object'&&typeof location==='object'){
     const url=new URL(location.href);url.search=AquaCatalog.filtersToSearch(filters,url.search);history.replaceState(null,'',url.pathname+url.search+url.hash);
   }
   $('#sort').value = filters.sort;
   $('#period').value = String(filters.days);
-  syncSubtypeControls();
-  const availability = AquaCatalog.sortAvailability(catalog, filters);
+  syncSubtypeControls(view);
+  const availability = view.availability;
   for (const [value, label] of [['sales', '판매순'], ['new', '신상품순']]) { const option = $('#sort').querySelector(`option[value="${value}"]`); option.disabled = !availability[value].available; option.textContent = label + (option.disabled ? ' (미확인)' : ''); }
   $('#sortStatus').hidden = catalog.status !== 'ready' || availability.sales.available && availability.new.available && filters.sort !== 'observed';
   $('#sortStatus').textContent = [!availability.sales.available ? '현재 조회 조건에 확인된 판매량이 없어 판매순을 사용할 수 없습니다.' : '', !availability.new.available ? '현재 조회 조건에 확인된 판매처 등록일이 없어 신상품순을 사용할 수 없습니다.' : '', '최근 확인순은 가격 확인 시각 기준이며, 판매처 등록일·최초 수집일이 아닙니다.'].filter(Boolean).join(' ');
   $('#includeUnknown').disabled = filters.days === 'all';
-  const result = AquaCatalog.selectProducts(catalog, filters);
+  const result = view.result;
   const visibleRows = result.rows.slice(0, visibleLimit);
-  const sellerById = new Map(catalog.sellers.map(seller => [seller.id, seller]));
   $('#paginationStatus').textContent = result.rows.length ? `조회 ${result.rows.length}개 중 ${visibleRows.length}개 표시` : '';
   $('#moreResults').hidden = visibleRows.length >= result.rows.length;
   $('#moreResults').textContent = `상품 ${Math.min(PAGE_SIZE, result.rows.length - visibleRows.length)}개 더 보기`;
@@ -59,14 +69,15 @@ function render(resetPage = true) {
   const exclusions = [result.excludedRegistration ? `등록일 미확인 ${result.excludedRegistration}개 제외` : '', (filters.sort === 'low' || filters.sort === 'high') && result.excludedPrice ? `가격 미확인 ${result.excludedPrice}개 제외` : '', result.excludedSales ? `${filters.days === 'all' ? '누적' : '선택 기간'} 판매량 미확인 ${result.excludedSales}개 제외` : ''].filter(Boolean);
   $('#hint').textContent = (filters.days === 'all' ? '전체 기간 · 등록일 미확인 상품도 포함합니다. 신상품순은 확인된 등록일이 필요합니다.' : '기간은 실제 상품 등록일 기준') + ' · 관찰 시각은 등록일이 아닙니다.' + (result.includedUnknownRegistration ? ` · 등록일 미확인 ${result.includedUnknownRegistration}개 포함: 선택 기간 해당 여부를 판단할 수 없습니다.` : '') + (exclusions.length ? ' · ' + exclusions.join(' · ') : '');
   if (!result.rows.length) {
-    $('#grid').innerHTML = `<div class="empty"><strong>확인 가능한 상품이 없어요</strong>${escapeHtml(result.reason)}<br>낮은·높은 가격순에서 등록일 미확인 상품을 포함하거나 판매처에서 직접 확인할 수 있습니다.</div>`;
+    setGridHTML(`<div class="empty"><strong>확인 가능한 상품이 없어요</strong>${escapeHtml(result.reason)}<br>낮은·높은 가격순에서 등록일 미확인 상품을 포함하거나 판매처에서 직접 확인할 수 있습니다.</div>`);
     return;
   }
-  $('#grid').innerHTML = visibleRows.map(product => {
-    const seller = sellerById.get(product.sellerId);
+  const gridHTML = visibleRows.map(product => {
+    const seller = catalogQuery.seller(product.sellerId);
     const photo = AquaCatalog.usablePhoto(product);
     return `<article class="card"><div class="art${photo ? '' : ' no-photo'}"${photo ? '' : ' role="img" aria-label="상품 사진 없음"'}>${photo ? `<img src="${escapeHtml(photo)}" alt="${escapeHtml(product.name)} 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden role="img" aria-label="상품 사진 없음"></span>` : ''}</div><div class="body"><div class="category">${escapeHtml(seller.name)}</div><h3 title="${escapeHtml(product.name)}">${escapeHtml(product.name)}</h3><div class="price">${priceText(product.price)}</div><a class="source" href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener noreferrer">판매처 이동 ↗</a></div></article>`;
   }).join('');
+  if(!setGridHTML(gridHTML))return;
   $('#grid').querySelectorAll('img').forEach(img => {
     const showFallback = () => { img.hidden = true; img.parentElement.querySelector('.photo-fallback').hidden = false; };
     img.addEventListener('error', showFallback);
@@ -94,16 +105,51 @@ $('#groupTree').addEventListener('click',event=>{
 $('#period').addEventListener('change', () => { filters.days = $('#period').value === 'all' ? 'all' : Number($('#period').value); render(); });
 $('#includeUnknown').addEventListener('change', () => { filters.includeUnknownRegistration = $('#includeUnknown').checked; render(); });
 $('#moreResults').addEventListener('click', () => { visibleLimit += PAGE_SIZE; render(false); });
-$('#search').addEventListener('submit', event => { event.preventDefault(); filters.query = $('#query').value.trim(); render(); });
-$('#query').addEventListener('input', event => { filters.query = event.target.value.trim(); render(); });
-$('#query').value = filters.query;
+$('#query').addEventListener('input',event=>{
+  draftQuery=event.target.value;
+});
+$('#query').addEventListener('compositionstart',()=>{
+  composing=true;
+  compositionEnter=false;
+});
+$('#query').addEventListener('compositionend',()=>{
+  composing=false;
+  draftQuery=$('#query').value;
+});
+$('#query').addEventListener('keydown',event=>{
+  if(event.key==='Enter'||event.keyCode===229){
+    compositionEnter=composing||event.isComposing===true||event.keyCode===229;
+    if(compositionEnter&&event.key==='Enter')event.preventDefault();
+  }else if(!composing&&event.isComposing!==true){
+    compositionEnter=false;
+  }
+});
+$('#query').addEventListener('keyup',event=>{
+  if(event.key==='Enter'||event.keyCode===229)compositionEnter=false;
+});
+// A lost keyup must not suppress a later button click after focus leaves input.
+$('#query').addEventListener('blur',()=>{
+  composing=false;
+  compositionEnter=false;
+});
+$('#search').addEventListener('submit',event=>{
+  event.preventDefault();
+  if(composing||compositionEnter||event.isComposing===true)return;
+  draftQuery=$('#query').value;
+  const nextQuery=draftQuery.trim();
+  if(nextQuery===filters.query)return;
+  filters.query=nextQuery;
+  render();
+});
+$('#query').value = draftQuery;
 $('#includeUnknown').checked = filters.includeUnknownRegistration;
 render();
 fetch('catalog.json?view='+Date.now(), { cache: 'no-store' }).then(response => {
   if (!response.ok) throw Error('data response ' + response.status);
   return response.json();
-}).then(value => { catalog = AquaCatalog.validateCatalog(value); render(); }).catch(() => {
-  catalog = { schemaVersion: 1, status: 'error', reason: '판매처 데이터 파일을 불러오거나 검증하지 못했습니다. 확인되지 않은 상품은 표시하지 않습니다.', asOf: null, sellers: [], products: [] };
+}).then(value => { catalogQuery=AquaCatalog.createCatalogQuery(value); catalog=catalogQuery.catalog; render(); }).catch(() => {
+  catalogQuery=AquaCatalog.createCatalogQuery({ schemaVersion: 1, status: 'error', reason: '판매처 데이터 파일을 불러오거나 검증하지 못했습니다. 확인되지 않은 상품은 표시하지 않습니다.', asOf: null, sellers: [], products: [] });
+  catalog=catalogQuery.catalog;
   render();
 });
 if (document.modelContext?.registerTool) {
@@ -115,10 +161,9 @@ if (document.modelContext?.registerTool) {
       const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, fishGroup: value?.fishGroup ?? filters.fishGroup, liveGroup:value?.liveGroup??(value?.subtype&&value.subtype!==filters.subtype?'all':filters.liveGroup), sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
       if(next.subtype==='fish'&&value?.liveGroup!==undefined&&value?.fishGroup===undefined){next.fishGroup=next.liveGroup;next.liveGroup='all';}
       next.browseGroup=value?.browseGroup??(value?.subtype&&value.subtype!==filters.subtype?'all':filters.browseGroup);if((next.subtype==='fish'?next.fishGroup:next.liveGroup)!=='all')next.browseGroup='all';
-      AquaCatalog.selectProducts(catalog, next);
-      $(`[data-type="${next.type}"]`).click();
-      $('#period').value = String(next.days); $('#query').value = next.query; $('#includeUnknown').checked = next.includeUnknownRegistration; filters = next; expandedBrowse=null; render();
-      return { dataStatus: catalog.status, asOf: catalog.asOf, count: AquaCatalog.selectProducts(catalog, filters).rows.length, ...filters };
+      catalogQuery.select(next);
+      $('#period').value = String(next.days); $('#query').value = next.query; $('#includeUnknown').checked = next.includeUnknownRegistration; filters = next; draftQuery=next.query; composing=false; compositionEnter=false; expandedBrowse=null; render();
+      return { dataStatus: catalog.status, asOf: catalog.asOf, count: catalogQuery.view(filters).result.rows.length, ...filters };
     },
   })).catch(() => {}); } catch {}
 }

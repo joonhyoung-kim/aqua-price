@@ -133,24 +133,34 @@
   function navigationParent(subtype,leaf){return livestockNavigation[subtype]?.find(group=>group.children.includes(leaf))||null;}
   function livestockGroup(product){return livestockClassification(product)?.key??null;}
   function fishGroup(product){return product.subtype==='fish'?livestockGroup(product):null;}
-  function selectProducts(catalog, filters) {
-    validateCatalog(catalog);
+  function validateSelectionFilters(filters) {
     requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     requireValue(filters.fishGroup === undefined || Object.hasOwn(fishGroups, filters.fishGroup), '잘못된 어종 조건');
     requireValue(filters.liveGroup === undefined || filters.liveGroup === 'all' || livestockGroups[filters.subtype] && Object.hasOwn(livestockGroups[filters.subtype], filters.liveGroup), '잘못된 생물 세부 분류');
     requireValue(filters.browseGroup === undefined || filters.browseGroup === 'all' || livestockNavigation[filters.subtype]?.some(group=>group.key===filters.browseGroup), '잘못된 탐색 그룹');
-    if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
-    const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
-    const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
+  }
+  function selectionCandidates(catalog, filters, index) {
     const needle = searchText(filters.query.trim());
     const effectiveFishGroup=filters.fishGroup&&filters.fishGroup!=='all'?filters.fishGroup:filters.liveGroup||'all';
-    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || fishGroup(p) === effectiveFishGroup) && [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle)));
-    if(filters.type==='live'&&filters.subtype!=='fish'&&filters.subtype!=='all'&&filters.liveGroup&&filters.liveGroup!=='all')rows=rows.filter(p=>livestockGroup(p)===filters.liveGroup);
+    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || (index ? index.get(p).group : fishGroup(p)) === effectiveFishGroup) && (index ? index.get(p).search.some(value => value.includes(needle)) : [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle))));
+    if(filters.type==='live'&&filters.subtype!=='fish'&&filters.subtype!=='all'&&filters.liveGroup&&filters.liveGroup!=='all')rows=rows.filter(p=>(index ? index.get(p).group : livestockGroup(p))===filters.liveGroup);
     const leaf=filters.subtype==='fish'?effectiveFishGroup:filters.liveGroup||'all';
     if(filters.type==='live'&&leaf==='all'&&filters.browseGroup&&filters.browseGroup!=='all'){
       const navigation=livestockNavigation[filters.subtype].find(group=>group.key===filters.browseGroup);
-      rows=rows.filter(p=>navigation.children.includes(livestockGroup(p)));
+      rows=rows.filter(p=>navigation.children.includes((index ? index.get(p).group : livestockGroup(p))));
     }
+    return rows;
+  }
+  function selectProducts(catalog, filters) {
+    validateCatalog(catalog);
+    return selectValidated(catalog, filters);
+  }
+  function selectValidated(catalog, filters, index, candidates) {
+    validateSelectionFilters(filters);
+    if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
+    const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
+    const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
+    let rows = candidates ?? selectionCandidates(catalog, filters, index);
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
     const includeUnknown = (filters.days === 'all' || filters.includeUnknownRegistration === true) && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
@@ -171,6 +181,81 @@
     const outputReason = filters.sort === 'sales' && !rows.length && start === null ? '판매처에서 확인된 실제 판매량이 없습니다. 클릭수·조회수로 판매순을 대신하지 않습니다.' : reason;
     return { rows, reason: outputReason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
+
+  function createCatalogQuery(input) {
+    // Own a private immutable snapshot. Validation is never cached on input.
+    const snapshot=structuredClone(input);
+    validateCatalog(snapshot);
+    const seen=new WeakSet();
+    function freeze(value){
+      if(value&&typeof value==='object'&&!seen.has(value)){
+        seen.add(value);
+        for(const child of Object.values(value))freeze(child);
+        Object.freeze(value);
+      }
+      return value;
+    }
+    freeze(snapshot);
+    const index=new Map(snapshot.products.map(p=>[p,{
+      search:[p.name,p.originalTitle||'',p.spec].map(searchText),
+      group:livestockGroup(p)
+    }]));
+    const sellers=new Map(snapshot.sellers.map(s=>[s.id,s]));
+    const views=new Map();
+
+    function view(filters){
+      validateSelectionFilters(filters);
+      // Key only the values actually read by selection, including inherited ones.
+      // Unrelated properties must not change or break a valid query.
+      filters={
+        type:filters.type,subtype:filters.subtype,fishGroup:filters.fishGroup,
+        liveGroup:filters.liveGroup,browseGroup:filters.browseGroup,
+        sort:filters.sort,days:filters.days,query:filters.query,
+        includeUnknownRegistration:filters.includeUnknownRegistration
+      };
+      const key=JSON.stringify(Object.values(filters));
+      if(views.has(key))return views.get(key);
+
+      const candidates=selectionCandidates(snapshot,filters,index);
+      const result=selectValidated(snapshot,filters,index,candidates);
+      const availability=Object.fromEntries(['sales','new'].map(sort=>{
+        const selected=selectValidated(snapshot,{...filters,sort},index,candidates);
+        return [sort,{
+          available:snapshot.status==='ready'&&selected.rows.length>0,
+          count:selected.rows.length,reason:selected.reason
+        }];
+      }));
+      const baseFilters={
+        ...filters,fishGroup:'all',liveGroup:'all',browseGroup:'all',
+        sort:['sales','new'].includes(filters.sort)?'low':filters.sort
+      };
+      const sameScope=[filters.fishGroup,filters.liveGroup,filters.browseGroup]
+        .every(value=>value===undefined||value==='all');
+      const baseCandidates=sameScope?candidates:
+        selectionCandidates(snapshot,baseFilters,index);
+      const base=sameScope&&baseFilters.sort===filters.sort?result:
+        selectValidated(snapshot,baseFilters,index,baseCandidates);
+      const groups=livestockGroups[filters.subtype]||{all:'전체'};
+      const groupCounts=Object.fromEntries(Object.keys(groups).map(k=>[k,0]));
+      for(const p of base.rows){
+        groupCounts.all++;
+        const group=index.get(p).group;
+        if(Object.hasOwn(groupCounts,group))groupCounts[group]++;
+      }
+      const value=freeze({result,availability,base,groupCounts});
+      if(views.size>=32)views.delete(views.keys().next().value);
+      views.set(key,value);
+      return value;
+    }
+    return Object.freeze({
+      catalog:snapshot,
+      view,
+      select:filters=>selectValidated(snapshot,filters,index),
+      group:product=>index.get(product)?.group??null,
+      seller:id=>sellers.get(id)
+    });
+  }
+
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
   const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
   function filtersFromSearch(search = '') {
@@ -194,5 +279,5 @@
     for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==defaultFilters[key])params.set(key,String(value));
     const text=params.toString();return text?'?'+text:'';
   }
-  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
+  return { validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

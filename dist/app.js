@@ -10,22 +10,22 @@ let visibleLimit = PAGE_SIZE;
 const subtypeNames = { all: '전체', fish: '물고기', shrimp: '새우', aquatic_plant: '수초', snail: '달팽이' };
 function syncSubtypeControls() {
   document.querySelectorAll('[data-type]').forEach(button => { const active = button.dataset.type === filters.type; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); button.querySelector('.check').textContent = active ? '✓' : ''; });
-  $('#fishFilters').hidden = filters.type !== 'live' || filters.subtype !== 'fish';
-  const counts = Object.fromEntries(Object.keys(AquaCatalog.fishGroups).map(key => [key, 0]));
-  const base = AquaCatalog.selectProducts(catalog, { ...filters, type: 'live', subtype: 'fish', fishGroup: 'all', sort: 'low' });
-  for (const product of base.rows) { counts.all++; counts[AquaCatalog.fishGroup(product)]++; }
-  document.querySelectorAll('[data-fish-group]').forEach(button => {
-    const key = button.dataset.fishGroup;
-    button.hidden = !['all','guppy','platy','molly','other'].includes(key) && counts[key] === 0 && key !== filters.fishGroup;
-    button.textContent = AquaCatalog.fishGroups[key] + ' ' + counts[key];
-    const active = key === filters.fishGroup; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active);
-  });
+  $('#fishFilters').hidden = filters.type !== 'live' || filters.subtype === 'all';
+  const groups=AquaCatalog.livestockGroups[filters.subtype]||{all:'전체'},selected=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup;
+  const counts=Object.fromEntries(Object.keys(groups).map(key=>[key,0]));
+  const base=AquaCatalog.selectProducts(catalog,{...filters,fishGroup:'all',liveGroup:'all',sort:['sales','new'].includes(filters.sort)?'low':filters.sort});
+  for(const product of base.rows){counts.all++;const key=AquaCatalog.livestockGroup(product);if(Object.hasOwn(counts,key))counts[key]++;}
+  $('#liveGroup').innerHTML=Object.entries(groups).filter(([key])=>key==='all'||counts[key]>0||key===selected).sort(([a],[b])=>a==='all'?-1:b==='all'?1:a==='other'?1:b==='other'?-1:0).map(([key,label])=>`<option value="${key}">${escapeHtml(label)} ${counts[key]||0}개</option>`).join('');
+  $('#liveGroup').value=selected||'all';
   $('#livestockFilters').hidden = filters.type !== 'live';
   document.querySelectorAll('[data-subtype]').forEach(button => { const active = button.dataset.subtype === filters.subtype; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
 }
 
 function render(resetPage = true) {
   if (resetPage) visibleLimit = PAGE_SIZE;
+  if(catalog.status==='ready'&&typeof history==='object'&&typeof location==='object'){
+    const url=new URL(location.href);url.search=AquaCatalog.filtersToSearch(filters,url.search);history.replaceState(null,'',url.pathname+url.search+url.hash);
+  }
   $('#sort').value = filters.sort;
   $('#period').value = String(filters.days);
   syncSubtypeControls();
@@ -40,7 +40,8 @@ function render(resetPage = true) {
   $('#paginationStatus').textContent = result.rows.length ? `조회 ${result.rows.length}개 중 ${visibleRows.length}개 표시` : '';
   $('#moreResults').hidden = visibleRows.length >= result.rows.length;
   $('#moreResults').textContent = `상품 ${Math.min(PAGE_SIZE, result.rows.length - visibleRows.length)}개 더 보기`;
-  $('#resultTitle').textContent = `${filters.type === 'live' ? '생물 · ' + subtypeNames[filters.subtype] : '용품'} ${result.rows.length}개`;
+  const selectedGroup=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup,groupLabel=AquaCatalog.livestockGroups[filters.subtype]?.[selectedGroup];
+  $('#resultTitle').textContent = `${filters.type === 'live' ? '생물 · ' + subtypeNames[filters.subtype]+(selectedGroup&&selectedGroup!=='all'&&groupLabel?' · '+groupLabel:'') : '용품'} ${result.rows.length}개`;
   $('#dataStatus').textContent = catalog.status === 'ready' ? '확인한 판매처 상품 목록입니다. 실시간 가격·재고·전체 판매처 비교가 아닙니다.' : catalog.reason;
   const exclusions = [result.excludedRegistration ? `등록일 미확인 ${result.excludedRegistration}개 제외` : '', (filters.sort === 'low' || filters.sort === 'high') && result.excludedPrice ? `가격 미확인 ${result.excludedPrice}개 제외` : '', result.excludedSales ? `${filters.days === 'all' ? '누적' : '선택 기간'} 판매량 미확인 ${result.excludedSales}개 제외` : ''].filter(Boolean);
   $('#hint').textContent = (filters.days === 'all' ? '전체 기간 · 등록일 미확인 상품도 포함합니다. 신상품순은 확인된 등록일이 필요합니다.' : '기간은 실제 상품 등록일 기준') + ' · 관찰 시각은 등록일이 아닙니다.' + (result.includedUnknownRegistration ? ` · 등록일 미확인 ${result.includedUnknownRegistration}개 포함: 선택 기간 해당 여부를 판단할 수 없습니다.` : '') + (exclusions.length ? ' · ' + exclusions.join(' · ') : '');
@@ -67,8 +68,8 @@ $('#sort').addEventListener('change', () => {
   filters.sort = $('#sort').value;
   render();
 });
-document.querySelectorAll('[data-subtype]').forEach(button => button.addEventListener('click', () => { filters.subtype = button.dataset.subtype; render(); }));
-document.querySelectorAll('[data-fish-group]').forEach(button => button.addEventListener('click', () => { filters.fishGroup = button.dataset.fishGroup; render(); }));
+document.querySelectorAll('[data-subtype]').forEach(button => button.addEventListener('click', () => { filters.subtype = button.dataset.subtype; filters.liveGroup='all'; filters.fishGroup='all'; render(); }));
+$('#liveGroup').addEventListener('change',()=>{if(filters.subtype==='fish')filters.fishGroup=$('#liveGroup').value;else filters.liveGroup=$('#liveGroup').value;render();});
 $('#period').addEventListener('change', () => { filters.days = $('#period').value === 'all' ? 'all' : Number($('#period').value); render(); });
 $('#includeUnknown').addEventListener('change', () => { filters.includeUnknownRegistration = $('#includeUnknown').checked; render(); });
 $('#moreResults').addEventListener('click', () => { visibleLimit += PAGE_SIZE; render(false); });
@@ -87,10 +88,11 @@ fetch('catalog.json?view='+Date.now(), { cache: 'no-store' }).then(response => {
 if (document.modelContext?.registerTool) {
   try { Promise.resolve(document.modelContext.registerTool({
     name: 'set_product_filters', description: '검증된 관찰 상품의 종류·정렬·실제 등록 기간·검색어를 변경합니다. 데이터가 없거나 미확인이면 결과가 비어 있습니다.',
-    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, fishGroup: { enum: Object.keys(AquaCatalog.fishGroups) }, subtype: { enum: ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new', 'observed'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
+    inputSchema: { type: 'object', properties: { type: { enum: ['live', 'gear'] }, fishGroup: { enum: Object.keys(AquaCatalog.fishGroups) }, liveGroup: { enum: [...new Set(Object.values(AquaCatalog.livestockGroups).flatMap(groups=>Object.keys(groups)))] }, subtype: { enum: ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new', 'observed'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
     annotations: { readOnlyHint: false },
     execute(value) {
-      const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, fishGroup: value?.fishGroup ?? filters.fishGroup, sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
+      const next = { type: value?.type, subtype: value?.subtype ?? filters.subtype, fishGroup: value?.fishGroup ?? filters.fishGroup, liveGroup:value?.liveGroup??(value?.subtype&&value.subtype!==filters.subtype?'all':filters.liveGroup), sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };
+      if(next.subtype==='fish'&&value?.liveGroup!==undefined&&value?.fishGroup===undefined){next.fishGroup=next.liveGroup;next.liveGroup='all';}
       AquaCatalog.selectProducts(catalog, next);
       $(`[data-type="${next.type}"]`).click();
       $('#period').value = String(next.days); $('#query').value = next.query; $('#includeUnknown').checked = next.includeUnknownRegistration; filters = next; render();

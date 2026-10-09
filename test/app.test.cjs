@@ -22,6 +22,65 @@ test('first entry includes every livestock subtype and valid URL overrides persi
   assert.deepEqual(explicit,{...defaults,type:'gear',subtype:'shrimp',sort:'high',days:30,query:'abc',includeUnknownRegistration:false});
   assert.deepEqual(AquaCatalog.filtersFromSearch('?type=bad&subtype=bad&sort=bad&days=1'),defaults);
 });
+test('detailed livestock groups reject substring traps and contradictory composite names',()=>{
+ const group=(name,subtype='fish',extra={})=>AquaCatalog.livestockGroup(product(name,{name,originalTitle:name,subtype,...extra}));
+ assert.equal(group('플래티넘 화이트 몰리'),'molly');assert.equal(group('Platinum White'),'other');
+ assert.equal(group('브로치 코리도라스 3cm'),'cory');assert.equal(group('리코리스구라미'),'gourami');
+ assert.equal(group('Carinotetraodon 인디언 복어'),'puffer');assert.equal(group('구피 테트라 혼합 세트'),'other');
+ assert.equal(group('타비아 캣피쉬밥(코리) 65g'),'other');
+ assert.equal(group('[비쉬림프] 야마토 새우','shrimp'),'shrimp_yamato');
+ assert.equal(group('[생이새우] 블루벨벳 쉬림프','shrimp'),'shrimp_blue');
+ assert.equal(group('노랑 빨강 파랑 생이새우 3종세트','shrimp'),'shrimp_mix');
+ assert.equal(group('로탈라 루드위지아 혼합','aquatic_plant'),'other');
+ assert.equal(group('어항청소 우렁이 애플스네일','snail'),'snail_apple');
+ assert.equal(group('모르는 이름','fish',{type:'gear'}),null);
+});
+test('numeric retailer categories use identity-linked labels and conflicts remain unclassified',()=>{
+ const evidence=label=>({label,url:'https://example.invalid/product/list.html?cate_no=1',evidencePage:'https://example.invalid/',observedAt:AS_OF});
+ const p=product('mystery',{name:'알비노 풀레드',subtype:'fish',discoveryCategoryUrl:evidence('구피').url,observedCategoryLabels:[evidence('구피')]});
+ validateCatalog(catalog([p]));assert.equal(AquaCatalog.fishGroup(p),'guppy');
+ p.observedCategoryLabels.push(evidence('베타'));assert.equal(AquaCatalog.fishGroup(p),'other');
+ p.observedCategoryLabels[0].url='https://unrelated.invalid/';assert.throws(()=>validateCatalog(catalog([p])),/카테고리 근거/);
+});
+test('live group URLs and sorting/windows intersect without excluding other groups from all view',()=>{
+ const defaults=AquaCatalog.filtersFromSearch('?subtype=shrimp&liveGroup=shrimp_blue&sort=high&days=7');
+ assert.equal(defaults.liveGroup,'shrimp_blue');
+ const data=catalog([product('blue',{subtype:'shrimp',name:'블루벨벳 새우'}),product('red',{subtype:'shrimp',name:'체리새우'}),product('old',{subtype:'shrimp',name:'블루벨벳 새우',registeredAt:'2025-01-01T00:00:00.000Z'})]);
+ assert.deepEqual(selectProducts(data,defaults).rows.map(p=>p.id),['blue']);
+ assert.equal(selectProducts(data,{...defaults,days:'all'}).rows.length,2);
+ assert.equal(selectProducts(data,{...defaults,subtype:'all',liveGroup:'all',days:'all'}).rows.length,3);
+ assert.equal(AquaCatalog.filtersFromSearch('?subtype=snail&liveGroup=shrimp_blue').liveGroup,'all');
+  assert.equal(AquaCatalog.filtersFromSearch('?fishGroup=guppy').subtype,'fish');
+  assert.equal(AquaCatalog.filtersFromSearch('?subtype=fish&liveGroup=guppy').fishGroup,'guppy');
+ assert.throws(()=>selectProducts(data,{...defaults,liveGroup:'plant_rotala'}),/세부 분류/);
+});
+test('URL serialization preserves unrelated parameters and reloads every selected filter',()=>{
+ const filters={...AquaCatalog.defaultFilters,subtype:'aquatic_plant',liveGroup:'plant_rotala',sort:'observed',days:30,query:'로타라',includeUnknownRegistration:false};
+ const search=AquaCatalog.filtersToSearch(filters,'?campaign=demo&fishGroup=guppy&q=old');
+ assert.equal(new URLSearchParams(search).get('campaign'),'demo');assert.equal(new URLSearchParams(search).has('q'),false);
+ assert.deepEqual(AquaCatalog.filtersFromSearch(search),filters);
+ assert.equal(AquaCatalog.filtersToSearch({...AquaCatalog.defaultFilters},search),'?campaign=demo');
+});
+test('retailer category enrichment requires observed product membership and keeps original facts',()=>{
+ const {enrichCategoryEvidence}=require('../scripts/collector/publish.cjs');
+ const item={id:'fixture',type:'live',source_id:'fixture',seller_domain:'example.invalid',product_url:'https://example.invalid/product/fish/1/',price_amount:1234};
+ const node={key:'example.invalid:10',url:'https://example.invalid/category/fish/10/',label:'베타',scope:'live',evidencePage:'https://example.invalid/',evidenceObservedAt:AS_OF};
+ const state={fixture:{categoryTree:{nodes:[node]},dailyDiscovery:{cursor:{categories:{[node.key]:{seenKeys:[]}}}}}};
+ enrichCategoryEvidence([item],state);assert.equal(item.observed_category_evidence,undefined);
+ state.fixture.dailyDiscovery.cursor.categories[node.key].seenKeys=['example.invalid:1'];enrichCategoryEvidence([item],state);
+ assert.equal(item.observed_category_evidence[0].label,'베타');assert.equal(item.price_amount,1234);
+});
+test('actual catalog subgroup partition conserves every livestock row and representative identities',()=>{
+ const data=require('../dist/catalog.json');
+ for(const [subtype,groups]of Object.entries(AquaCatalog.livestockGroups)){
+  const rows=data.products.filter(p=>p.subtype===subtype),counts=Object.fromEntries(Object.keys(groups).filter(k=>k!=='all').map(k=>[k,0]));
+  for(const p of rows){const key=AquaCatalog.livestockGroup(p);assert.ok(Object.hasOwn(counts,key));counts[key]++;}
+  assert.equal(Object.values(counts).reduce((a,b)=>a+b,0),rows.length);
+ }
+ for(const [title,key]of [['플래티넘 화이트 마블 라이어테일','molly'],['리코리스구라미','gourami'],['브로치 코리도라스','cory'],['블루벨벳 새우','shrimp_blue'],['부세 파란드라','plant_buce'],['애플스네일','snail_apple']]){
+  const sample=data.products.find(p=>p.name.includes(title));assert.ok(sample,title);assert.equal(AquaCatalog.livestockGroup(sample),key,sample.name);
+ }
+});
 test('all-time sales ranks actual cumulative counts including zero and excludes unknowns', () => {
   const data=catalog([product('unknown'),product('zero',{cumulativeSales:0}),product('five',{cumulativeSales:5}),product('periodOnly',{periodSales:{count:99,startAt:'2026-10-01T00:00:00.000Z',endAt:AS_OF}})]);
   const result=select(data,{sort:'sales',days:'all'});

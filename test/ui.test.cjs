@@ -15,7 +15,7 @@ const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 // Existing card/gear scenarios use an explicit URL; default-entry behavior has its own regression.
 async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant') {
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus'].map(id => [id, element()]));
+  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'liveGroup'].map(id => [id, element()]));
   nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
   const sortOptions = Object.fromEntries(['low','high','sales','new','observed'].map(value=>[value,element()]));
   nodes.sort.querySelector = selector => sortOptions[selector.match(/value="([^"]+)"/)[1]];
@@ -41,7 +41,7 @@ async function setup(data = actual, fail = false, search = '?type=gear&subtype=a
   const context = vm.createContext({ document, AquaCatalog, location: { search }, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
-  return { nodes, types, subtypes, fishGroups, sortOptions, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { nodes, types, subtypes, fishGroups, sortOptions, fishGroup(v) { nodes.liveGroup.value=v;nodes.liveGroup.listeners.change(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('default entry selects all livestock, while explicit URL re-entry preserves controls', async () => {
  const app=await setup(actual,false,'');
@@ -59,6 +59,22 @@ test('published missing metrics disable unavailable sorts without inventing rank
  assert.match(app.nodes.sortStatus.textContent,/현재 조회 조건/);assert.match(app.nodes.sortStatus.textContent,/판매처 등록일·최초 수집일이 아닙니다/);
  app.sort('observed');assert.deepEqual(app.names(),[...live].sort((a,b)=>Date.parse(b.observedAt)-Date.parse(a.observedAt)).slice(0,24).map(p=>p.name));
  const explicit=await setup(actual,false,'?sort=new');assert.equal(explicit.nodes.sort.value,'new');assert.deepEqual(explicit.names(),[]);assert.match(explicit.nodes.grid.innerHTML,/실제 상품 등록일/);
+});
+test('compact subgroup select shows counts, hides empty groups and combines URL/sort/period',async()=>{
+ const search='?type=live&subtype=shrimp&liveGroup=shrimp_blue&sort=high&days=7',app=await setup(actual,false,search);
+ assert.equal(app.nodes.liveGroup.value,'shrimp_blue');assert.equal(app.nodes.fishFilters.hidden,false);
+ assert.match(app.nodes.liveGroup.innerHTML,/블루벨벳·블루드림 11개/);assert.doesNotMatch(app.nodes.liveGroup.innerHTML,/value="other"/);
+ const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(search)).rows;
+ assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));
+ app.nodes.liveGroup.value='shrimp_yamato';app.nodes.liveGroup.listeners.change();assert.ok(app.names().every(n=>/야마토/.test(n)));
+ app.subtype('aquatic_plant');assert.equal(app.nodes.liveGroup.value,'all');assert.doesNotMatch(app.nodes.liveGroup.innerHTML,/value="plant_fern"/);
+ app.nodes.liveGroup.value='plant_rotala';app.nodes.liveGroup.listeners.change();assert.ok(app.names().every(n=>/로탈라|로타라/.test(n)));
+ app.subtype('all');assert.equal(app.nodes.fishFilters.hidden,true);assert.equal(app.names().length,24);
+});
+test('legacy fish group URL survives reentry and an explicit empty other group remains selectable',async()=>{
+ const app=await setup(actual,false,'?subtype=fish&fishGroup=guppy&sort=high&days=all');
+ assert.equal(app.nodes.liveGroup.value,'guppy');assert.deepEqual(app.names(),AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch('?subtype=fish&fishGroup=guppy&sort=high&days=all')).rows.slice(0,24).map(p=>p.name));
+ const empty=await setup(actual,false,'?subtype=shrimp&liveGroup=other');assert.equal(empty.nodes.liveGroup.value,'other');assert.match(empty.nodes.liveGroup.innerHTML,/기타·미분류 0개/);assert.deepEqual(empty.names(),[]);
 });
 test('known metrics enable sorts, count unknown exclusions and respect exact selected sales windows',async()=>{
  const data=structuredClone(actual),p=data.products.find(p=>p.type==='gear');

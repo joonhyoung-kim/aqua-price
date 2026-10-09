@@ -1,5 +1,14 @@
 'use strict';
 const {buildCatalog}=require('../build-catalog.cjs');
+const {productKey,categoryKey}=require('./discovery.cjs');
+function enrichCategoryEvidence(items,states){
+ for(const item of items){const state=states[item.source_id];if(item.type!=='live'||!state?.categoryTree?.nodes)continue;
+  let key;try{key=productKey(item.product_url);}catch{continue;}
+  const evidence=state.categoryTree.nodes.filter(n=>['live','mixed'].includes(n.scope)&&typeof n.label==='string'&&n.label.trim()&&n.evidencePage&&state.dailyDiscovery?.cursor?.categories?.[n.key]?.seenKeys?.includes(key)).filter(n=>{try{return new URL(n.url).hostname.replace(/^www\./,'')===item.seller_domain.replace(/^www\./,'')&&new URL(n.evidencePage).hostname.replace(/^www\./,'')===item.seller_domain.replace(/^www\./,'');}catch{return false;}}).map(n=>({label:n.label,url:n.url,evidencePage:n.evidencePage,observedAt:n.evidenceObservedAt||null}));
+  if(evidence.length)item.observed_category_evidence=evidence;
+ }
+ return items;
+}
 function applyUpdates(snapshot, states, mode='all'){
  const next=structuredClone(snapshot);if(next.photo_validation && !next.photo_validation.verified_item_ids)next.photo_validation.verified_item_ids=next.items.filter(p=>!p.source_kind&&p.photo?.verified_https_url).map(p=>p.id);const rows=new Map(next.items.map(p=>[p.id,p]));let changes=0;
  for(const state of Object.values(states)){
@@ -23,6 +32,7 @@ function applyUpdates(snapshot, states, mode='all'){
  }
  next.items=[...rows.values()];next.summary={...next.summary,fish_or_shrimp_count:next.items.filter(p=>["fish","shrimp"].includes(p.subtype)).length,direct_retailer_products:next.items.filter(p=>p.source_kind==="direct_retailer_product_page").length,verified_https_photos:next.items.filter(p=>p.photo?.verified_https_url).length,offer_count:next.items.length,merchant_count:new Set(next.items.map(p=>p.seller_domain)).size,live_plant_count:next.items.filter(p=>p.subtype==='aquatic_plant').length,fish_count:next.items.filter(p=>p.subtype==='fish').length,shrimp_count:next.items.filter(p=>p.subtype==='shrimp').length,snail_count:next.items.filter(p=>p.subtype==='snail').length,gear_count:next.items.filter(p=>p.type==='gear').length};
  next.snapshot_notice_ko='상품정보 확인본입니다. 가격은 항목별 확인 시각 기준이며 실시간 최저가·전체 판매처 비교가 아닙니다. 갱신 실패 시 마지막 확인 정보를 보존합니다. 배송비와 현재 재고는 판매처에서 확인하세요.';
+ enrichCategoryEvidence(next.items,states);
  const catalog=buildCatalog(next);return {snapshot:next,catalog,changes};
 }
-module.exports={applyUpdates};
+module.exports={applyUpdates,enrichCategoryEvidence};

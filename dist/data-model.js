@@ -45,6 +45,7 @@
       requireValue(product.originalTitle === undefined || typeof product.originalTitle === 'string', '원래 상품명 오류');
       requireValue(product.periodSales === null || (product.periodSales && Number.isSafeInteger(product.periodSales.count) && product.periodSales.count >= 0 && validDate(product.periodSales.startAt) && validDate(product.periodSales.endAt) && Date.parse(product.periodSales.startAt) < Date.parse(product.periodSales.endAt) && Date.parse(product.periodSales.endAt) <= Date.parse(product.observedAt)), '기간 판매량 오류');
       const photo = product.photo;
+      requireValue(product.observedCategoryLabels===undefined||Array.isArray(product.observedCategoryLabels)&&product.observedCategoryLabels.every(e=>e&&typeof e.label==='string'&&sourceUrl(e.url)&&sourceUrl(e.evidencePage)&&new URL(e.url).hostname.replace(/^www\./,'')===new URL(product.sourceUrl).hostname.replace(/^www\./,'')&&new URL(e.evidencePage).hostname.replace(/^www\./,'')===new URL(product.sourceUrl).hostname.replace(/^www\./,'')&&(e.observedAt===null||validDate(e.observedAt))), '판매처 카테고리 근거 오류');
       requireValue(photo && ['allowed', 'not_allowed', 'unknown'].includes(photo.usePermission), '사진 사용 가능 여부 필요');
       requireValue(photo.url === null || httpsUrl(photo.url), '사진 URL 오류');
       requireValue(photo.permissionEvidenceUrl === null || sourceUrl(photo.permissionEvidenceUrl), '사진 사용 근거 URL 오류');
@@ -52,31 +53,73 @@
     }
     return catalog;
   }
-  const fishGroups = {"all":"전체","guppy":"구피","platy":"플래티","molly":"몰리","cory":"코리도라스","tetra":"테트라","medaka":"메다카","betta":"베타","cichlid":"시클리드","other":"기타"};
+  const fishGroups = {all:'전체',guppy:'구피',platy:'플래티',molly:'몰리',cory:'코리도라스',tetra:'테트라',medaka:'메다카',betta:'베타',cichlid:'시클리드',rasbora:'라스보라',danio:'다니오',barb:'바브',goldfish:'금붕어·비단잉어',pleco:'안시·플레코·오토싱',loach:'로치·미꾸리',gourami:'구라미',rainbow:'레인보우',killifish:'킬리피쉬',other:'기타·미분류'};
+  const livestockGroups = {
+    fish:fishGroups,
+    shrimp:{all:'전체',shrimp_red:'체리·레드·블러드메리',shrimp_yellow:'노랭이·골든백',shrimp_blue:'블루벨벳·블루드림',shrimp_orange:'오렌지·썬키스트',shrimp_rili:'릴리',shrimp_bee:'CRS·CBS·비쉬림프',shrimp_yamato:'야마토',shrimp_snow:'스노우볼',shrimp_mix:'믹스·혼합 세트',shrimp_wild:'생이',other:'기타·미분류'},
+    aquatic_plant:{all:'전체',plant_moss:'모스·리시아',plant_anubias:'나나·아누비아스',plant_buce:'부세파란드라',plant_fern:'미크로소리움·볼비티스',plant_rotala:'로탈라',plant_ludwigia:'루드위지아',plant_hygro:'하이그로필라',plant_crypto:'크립토코리네',plant_small:'펄·글로소·헤어글라스',plant_float:'부상·수생식물',plant_set:'모듬·세트',other:'기타·미분류'},
+    snail:{all:'전체',snail_apple:'애플스네일',snail_trumpet:'트럼펫·뾰족달팽이',snail_nerite:'네리트',snail_ramshorn:'램즈혼',snail_pond:'우렁이',other:'기타·미분류'},
+  };
+  const groupRules = {
+    fish:{guppy:/구피|\bguppy\b/i,platy:/플래티(?!넘|늄)|플레티(?!넘|늄)|\bplaty\b/i,molly:/몰리|\bmolly\b/i,cory:/코리(?!안)|\bcorydoras\b/i,tetra:/테트라|\btetra\b/i,medaka:/메다카|\bmedaka\b/i,betta:/베타|\bbetta\b/i,cichlid:/시클리드|씨클리드|아피스토|디스커스|엔젤피쉬|엔젤피시|프론토사|탕어|\bcichlid\b|\bapistogramma\b|\bdiscus\b/i,rasbora:/라스보라|\brasbora\b/i,danio:/다니오|\bdanio\b/i,barb:/바브|\bbarb\b/i,goldfish:/금붕어|난주|오란다|수포안|비단잉어|\bgoldfish\b/i,pleco:/안시|플레코|비파|오토싱|\bpleco\b|\botocinclus\b/i,loach:/로치|미꾸리|미꾸라지|\bloach\b/i,gourami:/구라미|\bgourami\b/i,rainbow:/레인보우|\brainbowfish\b/i,killifish:/킬리피쉬|킬리피시|\bkillifish\b/i},
+    shrimp:{shrimp_red:/체리|사쿠라|블러드메리|빨간|\bcherry\b/i,shrimp_yellow:/노랭이|골든백|노랑|옐로우|\byellow\b/i,shrimp_blue:/블루벨벳|블루드림|블루새우|\bblue\b/i,shrimp_orange:/오렌지|썬키스트|\borange\b/i,shrimp_rili:/릴리|\brili\b/i,shrimp_bee:/\bCRS\b|\bCBS\b|레드비|블랙비|비쉬림프/i,shrimp_yamato:/야마토|아마노|\bamano\b/i,shrimp_snow:/스노우볼|\bsnowball\b/i,shrimp_wild:/생이/},
+    aquatic_plant:{plant_moss:/모스|리시아|\bmoss\b/i,plant_anubias:/나나(?!스말)|아누비아스|\banubias\b/i,plant_buce:/부세\s*파란드라|\bbucephalandra\b/i,plant_fern:/미크로소리움|볼비티스|자바펀|\bmicrosorum\b|\bbolbitis\b/i,plant_rotala:/로탈라|\brotala\b/i,plant_ludwigia:/루드위지아|\bludwigia\b/i,plant_hygro:/하이그로필라|\bhygrophila\b/i,plant_crypto:/크립토코리네|\bcryptocoryne\b/i,plant_small:/쿠바펄|진주펄|몬테카를로|글로소|헤어글라스/i,plant_float:/부상|부레옥잠|개구리밥|물배추|살비니아|가가부타|연꽃|수련/i},
+    snail:{snail_apple:/애플\s*(?:스네일|달팽이)|\bapple\s+snail\b/i,snail_trumpet:/트럼펫|뾰족달팽이|\btrumpet\b/i,snail_nerite:/네리트|네리티나|\bnerite\b/i,snail_ramshorn:/램즈혼|램스혼|\bramshorn\b/i,snail_pond:/우렁이/},
+  };
   const searchText = value => String(value).toLowerCase().replace(/플레티/g, '플래티');
-  function fishGroup(product) {
-    if (product.verified !== true || product.type !== 'live' || product.subtype !== 'fish') return null;
+  Object.assign(fishGroups,{swordtail:'소드테일',puffer:'복어',goby:'고비',catfish:'캣피쉬·메기',channa:'찬나',arowana:'아로와나',native:'강준치·갈겨니·납자루'});
+  fishGroups.killifish='킬리피쉬·램프아이';
+  Object.assign(livestockGroups.aquatic_plant,{plant_ambulia:'암브리아·림노필라',plant_bacopa:'바코바·쿠페아',plant_myrio:'미리오필름·밀리오필룸',plant_val:'발리스네리아',plant_didiplis:'디디플리스',plant_echino:'에키노도루스',plant_marimo:'마리모',plant_lobelia:'로베리아·카디날리스',plant_pogostemon:'포고스테몬',plant_alternanthera:'알테란테라',plant_anacharis:'아나카리스·검정말',plant_bamboo:'개운죽',plant_attached:'활착·부착 수초',plant_pot:'포트·조직배양 수초'});
+  Object.assign(groupRules.fish,{swordtail:/소드테일|스워드|\bswordtail\b/i,puffer:/복어|\bpufferfish\b/i,goby:/고비|\bgoby\b/i,catfish:/캣피쉬|캣피시|메기|캣(?:\s|$)|\bcatfish\b/i,channa:/찬나|\bchanna\b/i,arowana:/아로와나|\barowana\b/i,native:/강준치|갈겨니|납자루|모래무지|버들치|피라미/});
+  groupRules.fish.killifish=/킬리피쉬|킬리피시|램프아이|\bkillifish\b/i;
+  groupRules.fish.cory=/코리(?:도라스|(?=$|[\s()[\]0-9]))|\bcorydoras\b/i;
+  groupRules.fish.loach=/(?<!브)로치|미꾸리|미꾸라지|\bloach\b/i;
+  groupRules.fish.cichlid=/시클리드|씨클리드|아피스토|디스커스|엔젤피쉬|엔젤피시|프론토사|탕어|라미네지|라미레지|세베럼|아카라|오스카|\bcichlid\b|\bapistogramma\b|\bdiscus\b/i;
+  Object.assign(groupRules.aquatic_plant,{plant_ambulia:/암브리아|림노필라/i,plant_bacopa:/바코바|바코파|쿠페아/i,plant_myrio:/미리오필름|밀리오필룸|미디오\s*필름/i,plant_val:/발리스네리아/i,plant_didiplis:/디디플리스/i,plant_echino:/에키노도루스/i,plant_marimo:/마리모/i,plant_lobelia:/로베리아|카디날리스|카디널리스/i,plant_pogostemon:/포고스테몬/i,plant_alternanthera:/알테란테라/i,plant_anacharis:/아나카리스|검정말/i,plant_bamboo:/개운죽/i});
+  groupRules.aquatic_plant.plant_rotala=/로탈라|로타라|\brotala\b/i;
+  groupRules.aquatic_plant.plant_ludwigia=/루드위지아|루드지아|\bludwigia\b/i;
+  groupRules.aquatic_plant.plant_hygro=/하이그로필라|하이글로빌라|하이그로|위스테리아|\bhygrophila\b/i;
+  groupRules.aquatic_plant.plant_small=/쿠바펄|진주펄|펄그라스|몬테카를로|글로소|글롯소|헤어글라스/i;
+  function livestockClassification(product) {
+    if (product.verified !== true || product.type !== 'live' || !groupRules[product.subtype]) return null;
     const title = [product.name, product.originalTitle || ''].join(' ');
-    if (/사료|먹이|모형|인조|장식|치료제|제거제|약품/.test(title)) return 'other';
-    const rules = { guppy:/구피|guppy/i, platy:/플래티(?!넘|늄)|플레티(?!넘|늄)|platy/i, molly:/몰리|molly/i, cory:/코리도라스|corydoras/i, tetra:/테트라|tetra/i, medaka:/메다카|medaka/i, betta:/베타|betta/i, cichlid:/시클리드|cichlid/i };
-    // Verified detail identity plus the actual category where its public link was observed.
-    // Many guppy variety titles omit the word "guppy".
+    const classified=(key,basis)=>({key,basis});
+    if (/사료|먹이|모형|인조|장식|치료제|제거제|약품|캣피쉬밥|구피밥|코리밥/.test(title)) return classified('other','ambiguous_or_non_livestock_title');
+    if(product.subtype==='aquatic_plant'&&/모듬|모둠|수초\s*세트|[2-9]\d?\s*종\s*세트/.test(title))return classified('plant_set','explicit_title');
+    if(product.subtype==='shrimp'){
+      if(groupRules.shrimp.shrimp_yamato.test(title))return classified('shrimp_yamato','explicit_title');
+      if(groupRules.shrimp.shrimp_rili.test(title))return classified('shrimp_rili','explicit_title');
+      if(/믹스|[2-9]\s*종\s*세트/.test(title))return classified('shrimp_mix','explicit_title');
+    }
+    if(product.subtype==='snail'&&groupRules.snail.snail_apple.test(title))return classified('snail_apple','explicit_title');
+    const rules=groupRules[product.subtype];
     const titleMatches = Object.keys(rules).filter(key => rules[key].test(title));
-    if (titleMatches.length) return titleMatches.length === 1 ? titleMatches[0] : 'other';
+    const matches=product.subtype==='shrimp'&&titleMatches.length>1?titleMatches.filter(k=>k!=='shrimp_wild'):titleMatches;
+    if(matches.length)return classified(matches.length===1?matches[0]:'other',matches.length===1?'explicit_title':'conflicting_title_groups');
+    if(product.subtype==='aquatic_plant'){
+      if(/활착|부착형/.test(title))return classified('plant_attached','explicit_title_form');
+      if(/포트|조직\s*배양|화분/.test(title))return classified('plant_pot','explicit_title_form');
+    }
     let category = product.discoveryCategoryUrl || '';
     try { category = decodeURIComponent(new URL(category).pathname); } catch { category = ''; }
-    const matches = Object.keys(rules).filter(key => rules[key].test(category));
-    return matches.length === 1 ? matches[0] : 'other';
+    if(Array.isArray(product.observedCategoryLabels))category+=' '+product.observedCategoryLabels.map(e=>e.label).join(' ');
+    const categoryMatches=Object.keys(rules).filter(key=>rules[key].test(category));
+    return classified(categoryMatches.length===1?categoryMatches[0]:'other',categoryMatches.length===1?'observed_retailer_category':'insufficient_or_conflicting_evidence');
   }
+  function livestockGroup(product){return livestockClassification(product)?.key??null;}
+  function fishGroup(product){return product.subtype==='fish'?livestockGroup(product):null;}
   function selectProducts(catalog, filters) {
     validateCatalog(catalog);
     requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     requireValue(filters.fishGroup === undefined || Object.hasOwn(fishGroups, filters.fishGroup), '잘못된 어종 조건');
+    requireValue(filters.liveGroup === undefined || filters.liveGroup === 'all' || livestockGroups[filters.subtype] && Object.hasOwn(livestockGroups[filters.subtype], filters.liveGroup), '잘못된 생물 세부 분류');
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
     const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
     const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
     const needle = searchText(filters.query.trim());
-    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || !filters.fishGroup || filters.fishGroup === 'all' || fishGroup(p) === filters.fishGroup) && [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle)));
+    const effectiveFishGroup=filters.fishGroup&&filters.fishGroup!=='all'?filters.fishGroup:filters.liveGroup||'all';
+    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || fishGroup(p) === effectiveFishGroup) && [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle)));
+    if(filters.type==='live'&&filters.subtype!=='fish'&&filters.subtype!=='all'&&filters.liveGroup&&filters.liveGroup!=='all')rows=rows.filter(p=>livestockGroup(p)===filters.liveGroup);
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
     const includeUnknown = (filters.days === 'all' || filters.includeUnknownRegistration === true) && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
@@ -98,11 +141,14 @@
     return { rows, reason: outputReason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
+  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
   function filtersFromSearch(search = '') {
     const params = new URLSearchParams(search), filters = { ...defaultFilters };
     for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), sort: ['low','high','sales','new','observed'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
     const days = params.get('days'); if (days === 'all') filters.days = 'all'; else if (['7','30','90'].includes(days)) filters.days = Number(days);
+    const group=params.get('liveGroup');if(group&&livestockGroups[filters.subtype]&&Object.hasOwn(livestockGroups[filters.subtype],group))filters.liveGroup=group;
+    if(!params.has('subtype')&&params.has('fishGroup')&&filters.fishGroup!=='all')filters.subtype='fish';
+    if(filters.subtype==='fish'&&filters.liveGroup!=='all'){if(!params.has('fishGroup'))filters.fishGroup=filters.liveGroup;filters.liveGroup='all';}
     filters.query = params.get('query') ?? params.get('q') ?? '';
     const unknown = params.get('includeUnknownRegistration') ?? params.get('includeUnknown'); if (unknown === 'true' || unknown === 'false') filters.includeUnknownRegistration = unknown === 'true';
     return filters;
@@ -110,5 +156,10 @@
   function sortAvailability(catalog, filters) {
     return Object.fromEntries(['sales','new'].map(sort => { const result = selectProducts(catalog, { ...filters, sort }); return [sort, { available: catalog.status === 'ready' && result.rows.length > 0, count: result.rows.length, reason: result.reason }]; }));
   }
-  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, defaultFilters, filtersFromSearch, sortAvailability };
+  function filtersToSearch(filters,search=''){
+    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown'])params.delete(key);
+    for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==defaultFilters[key])params.set(key,String(value));
+    const text=params.toString();return text?'?'+text:'';
+  }
+  return { validateCatalog, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

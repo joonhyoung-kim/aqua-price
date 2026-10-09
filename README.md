@@ -66,6 +66,10 @@ Manual workflow run 37767325227, attempt 2, published bot data commit 2d4967239b
 
 ### Bounded coverage batches
 
+Livestock browsing starts at all livestock. Each subtype has a compact subgroup select with counts for the current query and registration window. Only nonempty groups are shown, except an explicitly selected empty group remains available. Existing `fishGroup` URLs continue to work; `liveGroup` selects shrimp, plant and snail groups. UI selections update the URL and survive reloads. Uncertain or conflicting names remain in 기타·미분류.
+
+Subgroups use explicit product names first, then observed retailer category evidence. `publish.cjs` preserves menu labels only when the same retailer's saved category cursor contains that exact product key; `build-catalog.cjs` exposes this as `observedCategoryLabels`. This evidence supports numeric category URLs without guessing from IDs. Original prices, offer identities, photos and registration/sales unknowns remain intact.
+
 Resuming rejects a prior recorded process that is still running or whose status cannot be verified.
 
 Run `node scripts/collect-coverage-batch.cjs --rounds 3 --minutes 32` to alternate observed category discovery and pending-detail draining across merchants. The batch has at most three 60-request rounds, five merchants per round, and at most 12 requests per merchant slot; stricter registered limits, robots delays, denial quarantine and candidate retry holds remain active. Merchant selection rotates untouched merchants and considers observed coverage and last attempt. Category totals remain separate and do not establish whole-retailer totals.

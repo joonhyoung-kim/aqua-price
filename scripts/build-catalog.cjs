@@ -35,6 +35,7 @@ function buildCatalog(snapshot) {
     variantId: item.variant_id ?? null, type, subtype: item.subtype ?? null, observedAt: item.observed_at_utc || item.snapshot_at_utc, registeredAt: item.registered_at_utc ?? item.registered_at ?? null,
     price: item.price_amount === null ? null : { amount: item.price_amount, currency: item.currency }, shipping: item.shipping_amount == null ? null : { amount: item.shipping_amount, currency: item.currency },
     cumulativeSales: null, periodSales: null, available: item.available, availabilityBasis: item.availability_basis,
+    observedCategoryLabels:item.observed_category_evidence??[],
     detailLookupVerified: item.detail_lookup_verified,
     sourceKind: item.source_kind || "cafe24_global_catalog_api", verificationMethod: item.verification_method ?? null, classificationBasis:item.classification_basis??null,discoveryCategoryUrl:item.discovery_category_url??null, quantityPerPack: item.quantity_per_pack ?? null, pairsPerPack: item.pairs_per_pack ?? null,
     photo: { url: photoAvailable ? item.photo.verified_https_url : null, usePermission: photoAvailable ? 'allowed' : 'unknown', permissionEvidenceUrl: photoAvailable ? (item.source_kind === 'direct_retailer_product_page' ? item.product_url : snapshot.source_documentation_url) : null,

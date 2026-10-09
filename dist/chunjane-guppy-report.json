@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-08T18:49:37.474Z",
+  "startedAt": "2026-10-08T18:34:52.229Z",
+  "finishedAt": "2026-10-08T18:48:04.114Z",
+  "sourceId": "retailer-48",
+  "source": "춘자네수족관",
+  "missingReasons": [
+    "Guppy category was unvisited: only 8 tropical-fish samples had been verified",
+    "Title-only guppy filter missed verified varieties whose merchant title omits the word guppy"
+  ],
+  "target": {
+    "id": "retailer-48:cafe24_ksy8705_1_2111:default",
+    "title": "01 스칼렛풀레드 빅하이도살[한쌍]",
+    "price": 20000,
+    "url": "https://chunjane.com/product/01-스칼렛풀레드-빅하이도살한쌍/2111/",
+    "type": "live",
+    "subtype": "fish",
+    "observedAt": "2026-10-08T18:35:12.302Z",
+    "originalProductCode": "P0000DDF",
+    "originalCodeFoundOnDetail": true,
+    "packUnit": "한쌍",
+    "packUnitEvidence": "Original verified product title [한쌍]",
+    "additionalSelectableOptions": "unverified",
+    "uiFishGroup": "guppy"
+  },
+  "category": {
+    "url": "https://chunjane.com/category/%EA%B5%AC%ED%94%BC/279/",
+    "displayedCount": 74,
+    "observedUniqueLinks": 74,
+    "actualPageUrls": [
+      "https://chunjane.com/category/%EA%B5%AC%ED%94%BC/279/",
+      "https://chunjane.com/category/%EA%B5%AC%ED%94%BC/279/?page=2"
+    ],
+    "terminalPageReached": true,
+    "categoryLinkCountMatched": true,
+    "verifiedProducts": 74,
+    "pendingDetails": 0,
+    "detailCoverageComplete": true,
+    "reviewRequired": 0
+  },
+  "network": {
+    "requests": 76,
+    "requestRounds": 5,
+    "maxRequestsPerRound": 20,
+    "robotsDelayMs": 10000,
+    "requestsPerRound": [
+      20,
+      20,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      9
+    ],
+    "distinctListPages": 2
+  },
+  "seller": {
+    "verifiedProducts": 82,
+    "pendingDetails": 22,
+    "fullRetailerCount": "unknown",
+    "fullExplorationComplete": false,
+    "tree": {
+      "discoveredCategoryCount": 68,
+      "allowedCategoryCount": 33,
+      "excludedCategoryCount": 8,
+      "reviewCategoryCount": 27,
+      "pagesVisited": 3,
+      "pendingCategoryCount": 32,
+      "pendingPageUrls": [
+        {
+          "categoryUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
+          "nextPageUrl": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "nextPageUrl": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=461",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=461"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=436",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=436"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=438",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=438"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=445",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=445"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=440",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=440"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=439",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=439"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=441",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=441"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=434",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=434"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=443",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=443"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=462",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=462"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=466",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=466"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=463",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=463"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=449",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=449"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=450",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=450"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=452",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=452"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=453",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=453"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=457",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=457"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=458",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=458"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=442",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=442"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/category/%EC%83%88%EC%9A%B0/116/",
+          "nextPageUrl": "https://chunjane.com/category/%EC%83%88%EC%9A%B0/116/"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88/271/",
+          "nextPageUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88/271/"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8/58/",
+          "nextPageUrl": "https://chunjane.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8/58/"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=444",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=444"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=467",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=467"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=468",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=468"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=469",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=469"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=470",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=470"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=471",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=471"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=437",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=437"
+        },
+        {
+          "categoryUrl": "https://chunjane.com/product/list.html?cate_no=456",
+          "nextPageUrl": "https://chunjane.com/product/list.html?cate_no=456"
+        }
+      ],
+      "terminalCategoryCount": 1,
+      "verifiedProductCount": 82,
+      "pendingProductCount": 22,
+      "reviewProductCount": 0,
+      "menuCoverage": "unknown",
+      "terminalCoverage": "incomplete",
+      "fullRetailerCoverage": false
+    }
+  },
+  "currentCatalog": {
+    "products": 706,
+    "types": {
+      "aquatic_plant": 126,
+      "gear": 45,
+      "fish": 461,
+      "shrimp": 68,
+      "snail": 6
+    },
+    "fishGroups": {
+      "tetra": 18,
+      "guppy": 173,
+      "other": 131,
+      "medaka": 32,
+      "platy": 20,
+      "molly": 10,
+      "cichlid": 13,
+      "betta": 27,
+      "cory": 37
+    }
+  },
+  "naturalScheduledExecutionVerified": false
+}

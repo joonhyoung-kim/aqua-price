@@ -1,0 +1,20 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),{classifyProduct}=require('../scripts/collector/classification.cjs'),{selectProducts}=require('../dist/data-model.js'),catalog=require('../dist/catalog.json');
+const candidate={url:'https://example.invalid/product/detail.html?product_no=1',type:'live',subtype:'fish',mixedCategories:false},seed={categories:[]};
+test('verified guppy category evidence identifies variety titles without rewriting the merchant title',()=>{
+ const {fishGroup}=require('../dist/data-model.js');
+ const product={verified:true,type:'live',subtype:'fish',name:'01 스칼렛풀레드 빅하이도살[한쌍]',discoveryCategoryUrl:'https://chunjane.com/category/%EA%B5%AC%ED%94%BC/279/'};
+ assert.equal(fishGroup(product),'guppy');
+ assert.equal(fishGroup({...product,discoveryCategoryUrl:null}),'other');
+ assert.equal(fishGroup({...product,name:'구피 사료'}),'other');
+ assert.equal(fishGroup({...product,subtype:'shrimp'}),null);
+ assert.equal(fishGroup({...product,verified:false}),null);
+ assert.equal(fishGroup({...product,name:'코리도라스'}),'cory');
+ assert.equal(fishGroup({...product,name:'화이트 몰리'}),'molly');
+ assert.equal(fishGroup({...product,name:'01 알비노 풀 플래티넘 [한쌍]'}),'guppy');
+ assert.equal(fishGroup({...product,name:'플레티넘 구피'}),'guppy');
+ assert.equal(fishGroup({...product,discoveryCategoryUrl:'https://example.invalid/category/구피몰리/1/'}),'other');
+});
+test('broad reviewed fish categories cannot turn verified ornamental shrimp or aquatic snails into fish',()=>{for(const title of ['체리새우','A급 체리새우 12마리','A급 블루벨벳 새우 5마리','A급 노랭이 새우 12마리','CBS 새우 1마리 (A~S급)']){const r=classifyProduct('',{title},candidate,seed);assert.equal(r.status,'classified');assert.equal(r.subtype,'shrimp');}assert.equal(classifyProduct('',{title:'우렁이'},candidate,seed).subtype,'snail');assert.equal(classifyProduct('',{title:'생새우'},candidate,seed).status,'needs_review');assert.equal(classifyProduct('',{title:'체리새우 사료'},candidate,seed).status,'needs_review');});
+test('published fish filter excludes all nine corrected products and keeps them in their verified subtypes',()=>{const f={type:'live',sort:'low',days:'all',query:'',fishGroup:'all'},fish=selectProducts(catalog,{...f,subtype:'fish'}).rows;assert.ok(fish.length>0);assert.ok(fish.every(p=>!/새우|우렁|달팽/.test(p.name)));const shrimp=selectProducts(catalog,{...f,subtype:'shrimp'}).rows,snail=selectProducts(catalog,{...f,subtype:'snail'}).rows;for(const id of ['retailer-13:cafe24_spaquari_1_271:default','retailer-49:cafe24_week22_1_4961:default'])assert.ok(shrimp.some(p=>p.id===id));assert.ok(snail.some(p=>p.id==='retailer-49:cafe24_week22_1_3657:default'));});
+test('known URL refresh cannot restore an ornamental shrimp to its old broad fish classification',async()=>{const {collectSource}=require('../scripts/collector/engine.cjs'),url='https://example.invalid/product/detail.html?product_no=1',p={'@type':'Product',name:'체리새우',sku:'shrimp-1',offers:{'@type':'Offer',price:1000,priceCurrency:'KRW',url}},html='<h1>체리새우</h1><div>1,000원</div><script type="application/ld+json">'+JSON.stringify(p)+'</script>',source={id:'test',name:'fixture',sourceDomain:'example.invalid',officialURL:'https://example.invalid/',enabled:true,adapter:'product_jsonld',photosAllowed:false,maxRequests:3,delayMs:0,cacheTtlMs:0,timeoutMs:1000,maxBytes:10000,products:[{url,type:'live',subtype:'fish'}]},r=await collectSource(source,{}, {fetch:async u=>new Response(u.endsWith('/robots.txt')?'User-agent: *\nAllow: /':html),sleep:async()=>{}});assert.equal(r.products.length,1);assert.equal(r.products[0].subtype,'shrimp');});

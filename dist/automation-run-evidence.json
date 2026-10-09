@@ -1,0 +1,96 @@
+{
+  "checkedAt": "2026-10-08T19:30:28.796Z",
+  "apiStatus": 200,
+  "requestedRunId": "37828093605",
+  "id": 37828093605,
+  "event": "schedule",
+  "status": "completed",
+  "conclusion": "success",
+  "htmlUrl": "https://github.com/joonhyoung-kim/aqua-price/actions/runs/37828093605",
+  "headSha": "7b63ad3c19b813c3b4879b40b28f67ab142a9561",
+  "headBranch": "main",
+  "createdAt": "2026-10-08T18:56:02Z",
+  "updatedAt": "2026-10-08T19:14:33Z",
+  "name": "Refresh preview catalog",
+  "jobsApiStatus": 200,
+  "jobs": [
+    {
+      "id": 113491316226,
+      "name": "refresh",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-08T19:08:02Z",
+      "completedAt": "2026-10-08T19:14:32Z",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Checkout trusted preview collector",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Set up Node",
+          "conclusion": "success"
+        },
+        {
+          "number": 4,
+          "name": "Restore bounded collector cache and lastgood",
+          "conclusion": "success"
+        },
+        {
+          "number": 5,
+          "name": "Verify collector and catalog contracts",
+          "conclusion": "success"
+        },
+        {
+          "number": 6,
+          "name": "Refresh registered sources",
+          "conclusion": "success"
+        },
+        {
+          "number": 7,
+          "name": "Validate resulting static data",
+          "conclusion": "success"
+        },
+        {
+          "number": 8,
+          "name": "Commit only preview data paths",
+          "conclusion": "success"
+        },
+        {
+          "number": 9,
+          "name": "Preserve lastgood and refusal quarantine",
+          "conclusion": "success"
+        },
+        {
+          "number": 10,
+          "name": "Report source failures without retrying",
+          "conclusion": "skipped"
+        },
+        {
+          "number": 19,
+          "name": "Post Set up Node",
+          "conclusion": "success"
+        },
+        {
+          "number": 20,
+          "name": "Post Checkout trusted preview collector",
+          "conclusion": "success"
+        },
+        {
+          "number": 21,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "producingCommit": "15e120b4dd9b541828db71a7c8842c2f2252bdcd",
+  "addedProductId": "retailer-09:cafe24_alphafish_1_2081:default",
+  "linkage": "The producing commit contains collector-status.githubRunId=37828093605 and runTrigger=schedule"
+}

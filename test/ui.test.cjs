@@ -1,0 +1,398 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const AquaCatalog = require('../dist/data-model.js');
+const actual = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
+const gear = actual.products.filter(p => p.type === 'gear').sort((a,b) => a.price.amount - b.price.amount);
+const plants = actual.products.filter(p=>p.subtype==='aquatic_plant').sort((a,b)=>a.price.amount-b.price.amount);
+const fish = actual.products.filter(p=>p.subtype==='fish').sort((a,b)=>a.price.amount-b.price.amount);
+const live = actual.products.filter(p => p.type === 'live');
+const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
+const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
+// Existing card/gear scenarios use an explicit URL; default-entry behavior has its own regression.
+async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant') {
+  const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
+  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
+  nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
+  const sortOptions = Object.fromEntries(['low','high','sales','new','observed'].map(value=>[value,element()]));
+  nodes.sort.querySelector = selector => sortOptions[selector.match(/value="([^"]+)"/)[1]];
+  const types = ['live', 'gear'].map(type => element({ type }));
+  const subtypes = ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].map(subtype => element({ subtype }));
+  const fishGroups = Object.keys(AquaCatalog.fishGroups).map(fishGroup => element({ fishGroup }));
+  let images = [], tool;
+  nodes.grid.querySelectorAll = () => {
+    images = [...nodes.grid.innerHTML.matchAll(/<img src="([^"]+)"/g)].map(match => {
+      const fallback = { hidden: true };
+      return { src: match[1], hidden: false, complete: false, naturalWidth: 1, listeners: {}, fallback, addEventListener(e, cb) { this.listeners[e] = cb; }, parentElement: { querySelector() { return fallback; } } };
+    }); return images;
+  };
+  const document = {
+    querySelector(selector) {
+      if (selector.startsWith('#')) return nodes[selector.slice(1)];
+      const match = selector.match(/^\[data-(type|subtype)="(.+)"\]$/);
+      if(!match)return null;
+      return (match[1] === 'type' ? types : subtypes).find(e => e.dataset[match[1]] === match[2]);
+    },
+    querySelectorAll(selector) { if(selector === '[data-fish-group]') return fishGroups; return selector === '[data-type]' ? types : selector === '[data-subtype]' ? subtypes : []; },
+    modelContext: { registerTool(value) { tool = value; } },
+  };
+  let renderCalls=0,fetchCalls=0;
+  const location={search,href:'https://example.invalid/'+search},history={replaceState(_a,_b,value){renderCalls++;location.href=new URL(value,location.href).href;location.search=new URL(location.href).search;}};
+  const context = vm.createContext({ document, AquaCatalog, location, history, URL, fetch: () => {fetchCalls++;return fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) });} });
+  vm.runInContext(source, context, { filename: 'dist/app.js' });
+  await new Promise(resolve => setImmediate(resolve));
+  const choose=(leaf,browse='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-live-group]'?{dataset:{liveGroup:leaf,browseFilter:browse}}:null;}}});
+  return { renderCount:()=>renderCalls,fetchCount:()=>fetchCalls, nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+}
+test('default entry selects all livestock, while explicit URL re-entry preserves controls', async () => {
+ const app=await setup(actual,false,'');
+ assert.equal(app.types.find(b=>b.dataset.type==='live').attributes['aria-pressed'],'true');
+ assert.equal(app.subtypes.find(b=>b.dataset.subtype==='all').attributes['aria-pressed'],'true');
+ assert.equal(app.nodes.period.value,'all');assert.equal(app.nodes.fishFilters.hidden,true);
+ assert.deepEqual(app.names(),[...live].sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).map(p=>p.name));
+ for(const s of ['fish','shrimp','aquatic_plant','snail']){app.subtype(s);assert.match(app.nodes.resultTitle.textContent,new RegExp(s==='fish'?'물고기':s==='shrimp'?'새우':s==='snail'?'달팽이':'수초'));}
+ const explicit=await setup(actual,false,'?type=gear&sort=high&days=30&includeUnknown=false');
+ assert.equal(explicit.nodes.sort.value,'high');assert.equal(explicit.nodes.period.value,'30');assert.equal(explicit.nodes.includeUnknown.checked,false);assert.deepEqual(explicit.names(),[]);
+});
+test('published missing metrics disable unavailable sorts without inventing ranking',async()=>{
+ assert.equal(actual.products.filter(p=>p.registeredAt!==null||p.cumulativeSales!==null||p.periodSales!==null).length,0);
+ const app=await setup(actual,false,'');assert.equal(app.sortOptions.sales.disabled,true);assert.equal(app.sortOptions.new.disabled,true);
+ assert.match(app.nodes.sortStatus.textContent,/현재 조회 조건/);assert.match(app.nodes.sortStatus.textContent,/판매처 등록일·최초 수집일이 아닙니다/);
+ app.sort('observed');assert.deepEqual(app.names(),[...live].sort((a,b)=>Date.parse(b.observedAt)-Date.parse(a.observedAt)).slice(0,24).map(p=>p.name));
+ const explicit=await setup(actual,false,'?sort=new');assert.equal(explicit.nodes.sort.value,'new');assert.deepEqual(explicit.names(),[]);assert.match(explicit.nodes.grid.innerHTML,/실제 상품 등록일/);
+});
+test('hierarchy leaf buttons show counts, hide empty leaves and combine URL/sort/period',async()=>{
+ const search='?type=live&subtype=shrimp&liveGroup=shrimp_blue&sort=high&days=7',app=await setup(actual,false,search);
+ assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_blue"[^>]*aria-pressed="true"/);assert.equal(app.nodes.fishFilters.hidden,false);
+ const filters=AquaCatalog.filtersFromSearch(search);
+const blueRows=AquaCatalog.selectProducts(actual,filters).rows;
+assert.match(
+ app.nodes.groupTree.innerHTML,
+ new RegExp('블루벨벳·블루드림</span><span class="group-count">'+blueRows.length+'개')
+);
+const baseRows=AquaCatalog.selectProducts(actual,{
+ ...filters,fishGroup:'all',liveGroup:'all',browseGroup:'all'
+}).rows;
+const otherCount=baseRows.filter(p=>AquaCatalog.livestockGroup(p)==='other').length;
+if(otherCount){
+ assert.match(
+  app.nodes.groupTree.innerHTML,
+  new RegExp('기타·미분류</span><span class="group-count">'+otherCount+'개')
+ );
+}else{
+ assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="other"/);
+}
+ const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(search)).rows;
+ assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));
+ app.choose('shrimp_yamato');assert.ok(app.names().every(n=>/야마토/.test(n)));
+ app.subtype('aquatic_plant');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="all" data-browse-filter="all" aria-pressed="true"/);assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="plant_fern"/);
+ app.choose('plant_rotala');assert.ok(app.names().every(n=>/로탈라|로타라/.test(n)));
+ app.subtype('all');assert.equal(app.nodes.fishFilters.hidden,true);assert.equal(app.names().length,24);
+});
+test('legacy URLs preserve selection and actual other products remain visible',async()=>{
+ const search='?subtype=fish&fishGroup=guppy&sort=high&days=all';
+ const app=await setup(actual,false,search);
+ assert.match(app.nodes.groupTree.innerHTML,/data-live-group="guppy"[^>]*aria-pressed="true"/);
+ assert.deepEqual(
+  app.names(),
+  AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(search))
+   .rows.slice(0,24).map(p=>p.name)
+ );
+
+ const otherSearch='?subtype=shrimp&liveGroup=other';
+ const expected=AquaCatalog.selectProducts(
+  actual,AquaCatalog.filtersFromSearch(otherSearch)
+ ).rows;
+ const other=await setup(actual,false,otherSearch);
+ assert.match(other.nodes.groupTree.innerHTML,/data-live-group="other"[^>]*aria-pressed="true"/);
+ assert.match(
+  other.nodes.groupTree.innerHTML,
+  new RegExp('기타·미분류</span><span class="group-count">'+expected.length+'개')
+ );
+ assert.deepEqual(other.names(),expected.slice(0,24).map(p=>p.name));
+ assert.ok(expected.every(p=>p.type==='live'&&p.subtype==='shrimp'&&AquaCatalog.livestockGroup(p)==='other'));
+});
+
+test('an explicitly selected empty other group remains selectable',async()=>{
+ // Test-only fixture; published data is unchanged.
+ const fixture=structuredClone(actual);
+ fixture.products=[];
+ const empty=await setup(fixture,false,'?subtype=shrimp&liveGroup=other');
+ assert.match(empty.nodes.groupTree.innerHTML,/data-live-group="other"[^>]*aria-pressed="true"/);
+ assert.match(empty.nodes.groupTree.innerHTML,/기타·미분류<\/span><span class="group-count">0개/);
+ assert.deepEqual(empty.names(),[]);
+});
+
+test('accordion expands one collection, preserves results and exposes accessible relationships',async()=>{
+ const app=await setup(actual,false,'?subtype=fish');const before=app.names();
+ assert.equal((app.nodes.groupTree.innerHTML.match(/aria-expanded="true"/g)||[]).length,0);
+ app.open('popular');assert.match(app.nodes.groupTree.innerHTML,/data-browse-group="popular" aria-expanded="true" aria-controls="group-panel-popular"/);
+ app.open('bottom');assert.equal((app.nodes.groupTree.innerHTML.match(/aria-expanded="true"/g)||[]).length,1);
+ assert.match(app.nodes.groupTree.innerHTML,/id="group-panel-bottom" role="group" aria-labelledby="group-toggle-bottom">/);
+ assert.deepEqual(app.names(),before);app.open('bottom');assert.equal((app.nodes.groupTree.innerHTML.match(/aria-expanded="true"/g)||[]).length,0);
+});
+test('collection all and leaf selections preserve counts, paths, URL reload and overall reset',async()=>{
+ const app=await setup(actual,false,'?subtype=fish&sort=high&days=7');app.open('bottom');app.choose('all','bottom');
+ const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search()));
+ assert.match(app.nodes.groupPath.textContent,/물고기 › 코리·플레코·로치 › 그룹 전체/);assert.ok(app.search().includes('browseGroup=bottom'));
+ assert.deepEqual(app.names(),expected.rows.slice(0,24).map(p=>p.name));
+ const reentry=await setup(actual,false,app.search());assert.equal(reentry.nodes.groupPath.textContent,app.nodes.groupPath.textContent);assert.deepEqual(reentry.names(),app.names());
+ app.choose('cory');assert.match(app.nodes.groupPath.textContent,/물고기 › 코리·플레코·로치 › 코리도라스/);
+ assert.ok(app.search().includes('fishGroup=cory'));assert.ok(!app.search().includes('browseGroup='));
+ app.choose('all');assert.match(app.nodes.groupPath.textContent,/물고기 › 전체$/);assert.equal(new URLSearchParams(app.search()).has('fishGroup'),false);
+ app.subtype('shrimp');assert.equal(new URLSearchParams(app.search()).has('browseGroup'),false);
+});
+test('hierarchy keeps a selected empty collection and leaf available without showing unrelated empties',async()=>{
+ const app=await setup(actual,false,'?subtype=shrimp&browseGroup=color&days=7&includeUnknown=false');
+ assert.match(app.nodes.groupTree.innerHTML,/data-browse-filter="color" aria-pressed="true"/);assert.match(app.nodes.groupTree.innerHTML,/색상으로 찾기<\/span><span class="group-count">0개/);
+ assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_bee"/);assert.deepEqual(app.names(),[]);
+ app.choose('shrimp_blue');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_blue"[^>]*aria-pressed="true"/);assert.match(app.nodes.groupTree.innerHTML,/블루벨벳·블루드림<\/span><span class="group-count">0개/);
+});
+test('known metrics enable sorts, count unknown exclusions and respect exact selected sales windows',async()=>{
+ const data=structuredClone(actual),p=data.products.find(p=>p.type==='gear');
+ p.observedAt=data.asOf;p.registeredAt=new Date(Date.parse(data.asOf)-86400000).toISOString();p.cumulativeSales=0;
+ p.periodSales={count:2,startAt:new Date(Date.parse(data.asOf)-7*86400000).toISOString(),endAt:data.asOf};
+ const app=await setup(data,false,'?type=gear&sort=sales');
+ assert.equal(app.sortOptions.sales.disabled,false);assert.equal(app.sortOptions.new.disabled,false);assert.deepEqual(app.names(),[p.name]);assert.match(app.nodes.hint.textContent,/누적 판매량 미확인 .*개 제외/);
+ app.nodes.period.value='7';app.nodes.period.listeners.change();assert.equal(app.sortOptions.sales.disabled,false);assert.deepEqual(app.names(),[p.name]);
+ app.nodes.period.value='30';app.nodes.period.listeners.change();assert.equal(app.sortOptions.sales.disabled,true);assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/정확히 일치/);
+ app.sort('new');assert.deepEqual(app.names(),[p.name]);
+});
+test('cards show only photo, seller, full product name, price and one seller link', async () => {
+ const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
+ assert.match(app.nodes.dataStatus.textContent,/실시간 가격·재고·전체 판매처 비교가 아닙니다/);
+ const cards=[...app.nodes.grid.innerHTML.matchAll(/<article class="card">([\s\S]*?)<\/article>/g)];assert.equal(cards.length,Math.min(24,gear.length));
+ for(const card of cards){assert.doesNotMatch(card[1],/<details|class="(?:spec|meta|badge|provenance|original)"/);assert.match(card[1],/<div class="body"><div class="category">[^<]*<\/div><h3 title="[^"]*">[^<]*<\/h3><div class="price">[^<]*<\/div><a class="source"[^>]*>판매처 이동 ↗<\/a><\/div>$/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
+ for(const product of gear.slice(0,24))assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.sourceUrl)));
+ assert.equal(app.images.length,gear.slice(0,24).filter(p=>p.photo.url).length);
+});
+
+test('product quantity and original full title remain intact without extra option text',async()=>{
+ const data=structuredClone(actual),product=data.products.find(p=>p.type==='gear');product.name='원문 상품 3cm · 5마리 구성';product.originalTitle=product.name;product.price.amount=1;const app=await setup(data);assert.ok(app.names().includes(product.name));assert.doesNotMatch(app.nodes.grid.innerHTML,/<details|class="spec"/);
+});
+
+test('sorts stay exclusive, unknown dates never become newest or sales ranking', async () => {
+  const app = await setup();
+  app.sort('high'); assert.deepEqual(app.names(), [...gear].sort((a,b)=>b.price.amount-a.price.amount).slice(0,24).map(p=>p.name));
+  app.sort('sales'); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /실제 판매량이 없습니다/);
+  assert.equal(app.nodes.sort.value,'sales');
+  app.sort('new'); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /신상품순으로 정렬할 수 없습니다/);
+  app.sort('low'); app.type('live'); assert.equal(app.names().length, Math.min(24,plants.length));  
+  assert.equal(app.types.filter(b => b.attributes['aria-pressed'] === 'true').length, 1);
+});
+test('unknown-registration checkbox and all three period choices are honest', async () => {
+  const app = await setup();
+  for (const days of [7, 30, 90]) { app.nodes.period.value = String(days); app.nodes.period.listeners.change(); assert.equal(app.names().length, Math.min(24,gear.length)); }
+  app.nodes.includeUnknown.checked = false; app.nodes.includeUnknown.listeners.change(); assert.deepEqual(app.names(), []);
+  assert.ok(app.nodes.hint.textContent.includes(`미확인 ${gear.length}개 제외`));
+  app.nodes.includeUnknown.checked = true; app.nodes.includeUnknown.listeners.change(); assert.equal(app.names().length, Math.min(24,gear.length));
+});
+test('search is local and includes original product title, not only short title', async () => {
+  const app = await setup();
+  app.nodes.query.value = '  HJ-952  '; app.nodes.query.listeners.input({ target: app.nodes.query }); app.nodes.search.listeners.submit({preventDefault(){}});
+  assert.ok(app.names().length > 0); assert.ok(app.names().every(name => name.includes('HJ-952')));
+  app.nodes.query.value = 'no match'; let prevented = false; app.nodes.search.listeners.submit({ preventDefault() { prevented = true; } });
+  assert.equal(prevented, true); assert.deepEqual(app.names(), []);
+});
+test('product text and attribute strings are escaped; source links remain safe', async () => {
+  const data = structuredClone(actual);
+  const product = data.products.find(p=>p.type==='gear');
+  product.name = '<img src=x onerror=alert(1)> <script>alert(1)</script> &';
+  product.originalTitle = '" <script>alert(1)</script> &';
+  product.sourceUrl += '&x="unsafe"';
+  const app = await setup(data);
+  assert.ok(!app.nodes.grid.innerHTML.includes('<script>alert'));
+  assert.ok(!app.nodes.grid.innerHTML.includes('<img src=x'));
+  assert.ok(app.nodes.grid.innerHTML.includes('&lt;script&gt;'));
+  assert.ok(app.nodes.grid.innerHTML.includes('&amp;x=&quot;unsafe&quot;'));
+  assert.match(app.nodes.grid.innerHTML, /rel="noopener noreferrer"/);
+});
+test('failed photo keeps accessible fallback and seller link without extra card text', async () => {
+  const app = await setup();
+  const image = app.images[0]; image.listeners.error();
+  assert.equal(image.hidden, true); assert.equal(image.fallback.hidden, false);
+  assert.doesNotMatch(app.nodes.grid.innerHTML,/사진을 불러오지 못했습니다/); assert.match(app.nodes.grid.innerHTML, /판매처 이동/);
+});
+test('failed or invalid catalog never falls back to fictitious sample products', async () => {
+  for (const app of [await setup(actual, true), await setup({ bad: true })]) {
+    assert.deepEqual(app.names(), []); assert.match(app.nodes.dataStatus.textContent, /불러오거나 검증하지 못했습니다/);
+    assert.ok(!app.nodes.grid.innerHTML.includes('네온테트라'));
+  }
+});
+test('tool updates all controls including registration opt-in and rejects malformed filters', async () => {
+  const app = await setup();
+  assert.equal(app.tool.execute({ type: 'gear', sort: 'low', days: 7, includeUnknownRegistration: false }).count, 0);
+  assert.equal(app.nodes.includeUnknown.checked, false);
+  assert.equal(app.tool.execute({ type: 'gear', sort: 'low', days: 30, includeUnknownRegistration: true }).count, gear.length);
+  assert.throws(() => app.tool.execute({ type: 'bad', sort: 'low', days: 7 }), /잘못된 조회 조건/);
+  assert.throws(() => app.tool.execute({ type: 'gear', sort: 'low', days: 7, query: 5 }), /잘못된 조회 조건/);
+});
+test('markup declares live default and responsive rules for narrow and wide screens', () => {
+  const html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
+  assert.match(html, /data-type="live" class="active" aria-pressed="true"/);
+  assert.match(html, /data-type="gear" aria-pressed="false"/);
+  assert.match(html, /id="includeUnknown" type="checkbox" checked/);
+  assert.doesNotMatch(html, /id="catalogScope"|id="sellerLinks"|id="coverageNotice"|id="resultNote"/);
+  assert.match(html, /@media\(max-width:760px\)/); assert.match(html, /repeat\(2,minmax\(0,1fr\)\)/); assert.match(html, /repeat\(3,minmax\(0,1fr\)\)/);
+  assert.match(html, /overflow-wrap:anywhere/);
+});
+test('larger confirmed lists render 24 cards at a time and reset pages after filters', async () => {
+  const data = structuredClone(actual);
+  data.products = Array.from({ length: 2000 }, (_, i) => ({ ...structuredClone(gear[i % gear.length]), id: 'synthetic-test-' + i, name: 'TEST ' + i, price: { amount: i + 1, currency: 'KRW' } }));
+  const app = await setup(data);
+  assert.equal(app.names().length, 24); assert.equal(app.nodes.moreResults.hidden, false);
+  assert.match(app.nodes.paginationStatus.textContent, /2000개 중 24개/);
+  app.nodes.moreResults.listeners.click(); assert.equal(app.names().length, 48);
+  app.sort('high'); assert.equal(app.names().length, 24); assert.equal(app.names()[0], 'TEST 1999');
+});
+test('cards exclude sellers without products', async () => {
+  const data = structuredClone(actual);
+  data.sellers.push({ id: 'research-only', name: 'INVESTIGATED ONLY', officialUrl: 'https://example.invalid/' });
+  const app = await setup(data);
+  
+  
+  assert.ok(!app.nodes.grid.innerHTML.includes('INVESTIGATED ONLY'));
+});
+
+test('livestock subfilters default to plants, show honest empty categories and survive gear round trips', async () => {
+  const app = await setup(); assert.equal(app.nodes.livestockFilters.hidden, true);
+  app.type('live'); assert.equal(app.nodes.livestockFilters.hidden, false); assert.equal(app.names().length, Math.min(24,plants.length));
+  assert.match(app.nodes.resultTitle.textContent, /수초/);
+  for (const subtype of ['fish','shrimp','snail']) {
+    app.subtype(subtype); assert.equal(app.names().length, Math.min(24, actual.products.filter(p=>p.subtype===subtype).length)); assert.match(app.nodes.grid.innerHTML, /판매처 이동/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).filter(p=>p.photo.url).length);
+    assert.equal(app.subtypes.filter(b=>b.attributes['aria-pressed']==='true').length, 1);
+  }
+  app.type('gear'); assert.equal(app.nodes.livestockFilters.hidden, true); assert.equal(app.names().length, 24);
+  app.type('live'); assert.match(app.nodes.resultTitle.textContent, /달팽이/); assert.equal(app.names().length,Math.min(24,actual.products.filter(p=>p.subtype==='snail').length));
+  app.subtype('aquatic_plant'); assert.equal(app.names().length, Math.min(24,plants.length));
+  app.nodes.query.value='2구'; app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}}); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
+  app.subtype('fish'); assert.deepEqual(app.names(), []); app.subtype('aquatic_plant'); assert.equal(app.names().length, Math.min(24,AquaCatalog.selectProducts(actual,{type:'live',subtype:'aquatic_plant',sort:'low',days:'all',query:app.nodes.query.value,includeUnknownRegistration:true}).rows.length));
+  app.nodes.query.value='찾을수없는상품'; app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}}); assert.deepEqual(app.names(), []); assert.match(app.nodes.grid.innerHTML, /검색어/);
+});
+test('livestock controls wrap into four mobile columns with clear pressed state and keyboard focus', () => {
+ const html=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
+ for(const value of ['fish','shrimp','aquatic_plant','snail']) assert.ok(html.includes('data-subtype="'+value+'"'));
+ assert.match(html,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/); assert.match(html, /min-height:44px/); assert.match(html,/focus-visible/); assert.match(html,/\[hidden\]\{display:none!important\}/);
+});
+
+test('missing verified subtype still explains only connected information; direct photos never become placeholders',async()=>{
+ const data=structuredClone(actual); data.products=data.products.filter(p=>p.subtype!=='fish'); const app=await setup(data);app.type('live');app.subtype('fish');assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/현재 연결된 상품정보에 해당 생물이 없습니다/);assert.match(app.nodes.grid.innerHTML,/모든 판매처의 품절·미판매를 뜻하지 않습니다/);
+ const actualApp=await setup();actualApp.type('live');actualApp.subtype('fish');assert.equal(actualApp.names().length,Math.min(24,fish.length));assert.equal(actualApp.images.length,fish.slice(0,24).filter(p=>p.photo.url).length); for (const img of actualApp.images) {assert.ok(img.src.startsWith('https://')); img.listeners.error(); assert.equal(img.hidden,true); assert.equal(img.fallback.hidden,false);}assert.match(actualApp.nodes.grid.innerHTML,/판매처 이동/);assert.ok(!actualApp.nodes.grid.innerHTML.includes('카페24 공식 API'));
+ actualApp.subtype('aquatic_plant');assert.equal(actualApp.images.length,plants.slice(0,24).filter(p=>p.photo.url).length);assert.doesNotMatch(actualApp.nodes.grid.innerHTML,/class="provenance"/);
+});
+
+test('direct livestock original photos have descriptive escaped alt text and retain seller fallback',async()=>{
+ const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+escaped(p.name)+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.photo.url)));}assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
+});
+
+test('all period defaults without a registration bound and tool preserves category/query/sort',async()=>{
+ const app=await setup();assert.equal(app.nodes.period.value,'all');assert.equal(app.nodes.includeUnknown.disabled,true);assert.match(app.nodes.hint.textContent,/전체 기간/);
+ assert.equal(app.tool.execute({type:'live',subtype:'fish',sort:'low',days:'all',query:'',includeUnknownRegistration:false}).count,fish.length);assert.match(app.nodes.resultTitle.textContent,/물고기/);
+ app.nodes.period.value='7';app.nodes.period.listeners.change();assert.equal(app.nodes.includeUnknown.disabled,false);app.nodes.period.value='all';app.nodes.period.listeners.change();assert.equal(app.names().length,Math.min(24,fish.length));
+ app.sort('sales');assert.deepEqual(app.names(),[]);app.sort('new');assert.deepEqual(app.names(),[]);
+});
+
+test('fish families combine with existing filters and remain separate from gear', async()=>{
+ const app=await setup();app.type('live');app.subtype('fish');assert.equal(app.nodes.fishFilters.hidden,false);
+ for(const group of ['guppy','platy','molly','other']){app.fishGroup(group);const expected=AquaCatalog.selectProducts(actual,{type:'live',subtype:'fish',fishGroup:group,sort:'low',days:'all',query:''}).rows;assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));}
+ app.fishGroup('all');app.nodes.query.value='플레티';app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}});assert.ok(app.names().every(name=>/플래티|플레티/.test(name)));
+ app.type('gear');assert.equal(app.nodes.fishFilters.hidden,true);app.subtype('shrimp');assert.equal(app.nodes.fishFilters.hidden,true);
+ assert.throws(()=>app.tool.execute({type:'live',sort:'low',days:'all',fishGroup:'invented'}));
+});
+
+test('draft input does not render, update URL, fetch, or apply through another filter',async()=>{
+ const app=await setup();
+ const beforeNames=app.names(),beforeURL=app.search(),beforeRender=app.renderCount();
+ app.nodes.query.value='HJ-952';
+ app.nodes.query.listeners.input({target:app.nodes.query});
+ assert.deepEqual(app.names(),beforeNames);
+ assert.equal(app.search(),beforeURL);
+ assert.equal(app.renderCount(),beforeRender);
+ assert.equal(app.fetchCount(),1);
+ app.sort('high');
+ assert.equal(app.nodes.query.value,'HJ-952');
+ assert.equal(new URLSearchParams(app.search()).get('query'),null);
+ const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search()));
+ assert.deepEqual(app.names(),expected.rows.slice(0,24).map(p=>p.name));
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(new URLSearchParams(app.search()).get('query'),'HJ-952');
+ assert(app.names().length>0);
+ assert(app.names().every(name=>name.includes('HJ-952')));
+ assert.equal(app.fetchCount(),1);
+ const submittedRender=app.renderCount();
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),submittedRender);
+});
+
+test('IME Enter never applies draft; the next normal Enter submits once',async()=>{
+ const app=await setup();
+ const before=app.renderCount();
+ app.nodes.query.listeners.compositionstart();
+ app.nodes.query.value='구피';
+ app.nodes.query.listeners.input({target:app.nodes.query});
+ let prevented=false;
+ app.nodes.query.listeners.keydown({
+  key:'Enter',isComposing:true,keyCode:229,
+  preventDefault(){prevented=true;}
+ });
+ assert(prevented);
+ app.nodes.query.listeners.compositionend();
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before);
+ app.nodes.query.listeners.keyup({key:'Enter'});
+ app.nodes.query.listeners.keydown({
+  key:'Enter',isComposing:false,keyCode:13,preventDefault(){}
+ });
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before+1);
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before+1);
+});
+
+test('lost IME keyup does not block a later search button submission',async()=>{
+ const app=await setup();
+ const before=app.renderCount();
+ app.nodes.query.listeners.compositionstart();
+ app.nodes.query.value='HJ-952';
+ app.nodes.query.listeners.keydown({
+  key:'Enter',isComposing:true,keyCode:229,preventDefault(){}
+ });
+ app.nodes.query.listeners.compositionend();
+ // Clicking the button takes focus away even when keyup was lost.
+ app.nodes.query.listeners.blur();
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(app.renderCount(),before+1);
+ assert.equal(new URLSearchParams(app.search()).get('query'),'HJ-952');
+});
+
+test('unchanged cards still update sort, period, URL and pagination state',async()=>{
+ const data=structuredClone(actual);
+ data.products=[data.products.find(p=>p.type==='gear'&&p.price!==null)];
+ data.products[0].registeredAt=null;
+ const app=await setup(data);
+ const html=app.nodes.grid.innerHTML;
+ app.sort('high');
+ assert.equal(app.nodes.grid.innerHTML,html);
+ assert.equal(app.nodes.sort.value,'high');
+ assert.equal(new URLSearchParams(app.search()).get('sort'),'high');
+ app.nodes.period.value='7';app.nodes.period.listeners.change();
+ assert.equal(app.nodes.grid.innerHTML,html);
+ assert.equal(app.nodes.includeUnknown.disabled,false);
+ assert.equal(new URLSearchParams(app.search()).get('days'),'7');
+ assert.equal(app.nodes.moreResults.hidden,true);
+ assert.match(app.nodes.paginationStatus.textContent,/1개 중 1개/);
+});
+
+test('clearing a draft changes results only when submitted',async()=>{
+ const app=await setup(actual,false,'?type=gear&query=HJ-952');
+ const before=app.names();
+ app.nodes.query.value='';app.nodes.query.listeners.input({target:app.nodes.query});
+ assert.deepEqual(app.names(),before);
+ assert.equal(new URLSearchParams(app.search()).get('query'),'HJ-952');
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ assert.equal(new URLSearchParams(app.search()).get('query'),null);
+ assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
+});

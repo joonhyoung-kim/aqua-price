@@ -13,6 +13,29 @@ function product(id, overrides = {}) {
 function catalog(products = []) { return { schemaVersion: 1, status: 'ready', reason: '', asOf: AS_OF, sellers: [{ id: 'test-seller', name: '테스트 전용 판매처', officialUrl: 'https://example.invalid/' }], products }; }
 function select(data, overrides = {}) { return selectProducts(data, { type: 'live', sort: 'low', days: 7, query: '', ...overrides }); }
 
+test('first entry includes every livestock subtype and valid URL overrides persist', () => {
+  const defaults=AquaCatalog.filtersFromSearch('');
+  assert.equal(defaults.type,'live');assert.equal(defaults.subtype,'all');assert.equal(defaults.days,'all');
+  const data=catalog(['fish','shrimp','aquatic_plant','snail'].map(s=>product(s,{subtype:s})));
+  assert.equal(selectProducts(data,defaults).rows.length,4);
+  const explicit=AquaCatalog.filtersFromSearch('?type=gear&subtype=shrimp&sort=high&days=30&q=abc&includeUnknown=false');
+  assert.deepEqual(explicit,{...defaults,type:'gear',subtype:'shrimp',sort:'high',days:30,query:'abc',includeUnknownRegistration:false});
+  assert.deepEqual(AquaCatalog.filtersFromSearch('?type=bad&subtype=bad&sort=bad&days=1'),defaults);
+});
+test('all-time sales ranks actual cumulative counts including zero and excludes unknowns', () => {
+  const data=catalog([product('unknown'),product('zero',{cumulativeSales:0}),product('five',{cumulativeSales:5}),product('periodOnly',{periodSales:{count:99,startAt:'2026-10-01T00:00:00.000Z',endAt:AS_OF}})]);
+  const result=select(data,{sort:'sales',days:'all'});
+  assert.deepEqual(result.rows.map(p=>p.id),['five','zero']);assert.equal(result.excludedSales,2);
+  assert.deepEqual(select(data,{sort:'sales',days:7}).rows.map(p=>p.id),['periodOnly']);
+  assert.equal(AquaCatalog.sortAvailability(data,{...AquaCatalog.defaultFilters}).sales.available,true);
+});
+test('recent observation sorting is distinct from registration and obeys registration windows', () => {
+  const data=catalog([product('observedLatest',{registeredAt:null}),product('registeredLatest',{registeredAt:'2026-10-07T00:00:00.000Z',observedAt:'2026-10-07T12:00:00.000Z'})]);
+  assert.deepEqual(select(data,{sort:'observed',days:'all'}).rows.map(p=>p.id),['observedLatest','registeredLatest']);
+  assert.deepEqual(select(data,{sort:'new',days:'all'}).rows.map(p=>p.id),['registeredLatest']);
+  assert.deepEqual(select(data,{sort:'observed',days:7,includeUnknownRegistration:false}).rows.map(p=>p.id),['registeredLatest']);
+});
+
 test('published catalog preserves the supplied verified items, categories and unknown facts', () => {
   const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
   validateCatalog(data);
@@ -103,8 +126,8 @@ test('all required unknown fields must be explicit, pending data cannot contain 
 test('UI controls, data script order and honest status exist in HTML', () => {
   const html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
   for (const value of ['live', 'gear']) assert.ok(html.includes(`data-type="${value}"`));
-  const sortSelect=html.match(/<select id="sort">([\s\S]*?)<\/select>/)?.[1];assert.ok(sortSelect);
-  for (const value of ['low', 'high', 'sales', 'new']) assert.ok(sortSelect.includes(`value="${value}"`));
+  const sortSelect=html.match(/<select id="sort"[^>]*>([\s\S]*?)<\/select>/)?.[1];assert.ok(sortSelect);
+  for (const value of ['low', 'high', 'sales', 'new', 'observed']) assert.ok(sortSelect.includes(`value="${value}"`));
   assert.ok(html.includes('<label for="sort" class="label">'));assert.ok(html.indexOf('id="sort"')<html.indexOf('id="period"'));assert.ok(!html.includes('data-sort='));
   for (const value of [7, 30, 90]) assert.ok(html.includes(`value="${value}"`));
   assert.ok(html.indexOf('src="data-model.js"') < html.indexOf('src="app.js"'));

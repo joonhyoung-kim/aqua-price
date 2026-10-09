@@ -12,12 +12,15 @@ const live = actual.products.filter(p => p.type === 'live');
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
-async function setup(data = actual, fail = false) {
+// Existing card/gear scenarios use an explicit URL; default-entry behavior has its own regression.
+async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant') {
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters'].map(id => [id, element()]));
+  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus'].map(id => [id, element()]));
   nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
+  const sortOptions = Object.fromEntries(['low','high','sales','new','observed'].map(value=>[value,element()]));
+  nodes.sort.querySelector = selector => sortOptions[selector.match(/value="([^"]+)"/)[1]];
   const types = ['live', 'gear'].map(type => element({ type }));
-  const subtypes = ['fish', 'shrimp', 'aquatic_plant', 'snail'].map(subtype => element({ subtype }));
+  const subtypes = ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].map(subtype => element({ subtype }));
   const fishGroups = Object.keys(AquaCatalog.fishGroups).map(fishGroup => element({ fishGroup }));
   let images = [], tool;
   nodes.grid.querySelectorAll = () => {
@@ -35,11 +38,38 @@ async function setup(data = actual, fail = false) {
     querySelectorAll(selector) { if(selector === '[data-fish-group]') return fishGroups; return selector === '[data-type]' ? types : selector === '[data-subtype]' ? subtypes : []; },
     modelContext: { registerTool(value) { tool = value; } },
   };
-  const context = vm.createContext({ document, AquaCatalog, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
+  const context = vm.createContext({ document, AquaCatalog, location: { search }, fetch: () => fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) }) });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
-  return { nodes, types, subtypes, fishGroups, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { nodes, types, subtypes, fishGroups, sortOptions, fishGroup(v) { fishGroups.find(e=>e.dataset.fishGroup===v).click(); }, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
+test('default entry selects all livestock, while explicit URL re-entry preserves controls', async () => {
+ const app=await setup(actual,false,'');
+ assert.equal(app.types.find(b=>b.dataset.type==='live').attributes['aria-pressed'],'true');
+ assert.equal(app.subtypes.find(b=>b.dataset.subtype==='all').attributes['aria-pressed'],'true');
+ assert.equal(app.nodes.period.value,'all');assert.equal(app.nodes.fishFilters.hidden,true);
+ assert.deepEqual(app.names(),[...live].sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).map(p=>p.name));
+ for(const s of ['fish','shrimp','aquatic_plant','snail']){app.subtype(s);assert.match(app.nodes.resultTitle.textContent,new RegExp(s==='fish'?'물고기':s==='shrimp'?'새우':s==='snail'?'달팽이':'수초'));}
+ const explicit=await setup(actual,false,'?type=gear&sort=high&days=30&includeUnknown=false');
+ assert.equal(explicit.nodes.sort.value,'high');assert.equal(explicit.nodes.period.value,'30');assert.equal(explicit.nodes.includeUnknown.checked,false);assert.deepEqual(explicit.names(),[]);
+});
+test('published missing metrics disable unavailable sorts without inventing ranking',async()=>{
+ assert.equal(actual.products.filter(p=>p.registeredAt!==null||p.cumulativeSales!==null||p.periodSales!==null).length,0);
+ const app=await setup(actual,false,'');assert.equal(app.sortOptions.sales.disabled,true);assert.equal(app.sortOptions.new.disabled,true);
+ assert.match(app.nodes.sortStatus.textContent,/현재 조회 조건/);assert.match(app.nodes.sortStatus.textContent,/판매처 등록일·최초 수집일이 아닙니다/);
+ app.sort('observed');assert.deepEqual(app.names(),[...live].sort((a,b)=>Date.parse(b.observedAt)-Date.parse(a.observedAt)).slice(0,24).map(p=>p.name));
+ const explicit=await setup(actual,false,'?sort=new');assert.equal(explicit.nodes.sort.value,'new');assert.deepEqual(explicit.names(),[]);assert.match(explicit.nodes.grid.innerHTML,/실제 상품 등록일/);
+});
+test('known metrics enable sorts, count unknown exclusions and respect exact selected sales windows',async()=>{
+ const data=structuredClone(actual),p=data.products.find(p=>p.type==='gear');
+ p.observedAt=data.asOf;p.registeredAt=new Date(Date.parse(data.asOf)-86400000).toISOString();p.cumulativeSales=0;
+ p.periodSales={count:2,startAt:new Date(Date.parse(data.asOf)-7*86400000).toISOString(),endAt:data.asOf};
+ const app=await setup(data,false,'?type=gear&sort=sales');
+ assert.equal(app.sortOptions.sales.disabled,false);assert.equal(app.sortOptions.new.disabled,false);assert.deepEqual(app.names(),[p.name]);assert.match(app.nodes.hint.textContent,/누적 판매량 미확인 .*개 제외/);
+ app.nodes.period.value='7';app.nodes.period.listeners.change();assert.equal(app.sortOptions.sales.disabled,false);assert.deepEqual(app.names(),[p.name]);
+ app.nodes.period.value='30';app.nodes.period.listeners.change();assert.equal(app.sortOptions.sales.disabled,true);assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/정확히 일치/);
+ app.sort('new');assert.deepEqual(app.names(),[p.name]);
+});
 test('cards show only photo, seller, full product name, price and one seller link', async () => {
  const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
  assert.match(app.nodes.dataStatus.textContent,/실시간 가격·재고·전체 판매처 비교가 아닙니다/);
@@ -109,10 +139,10 @@ test('tool updates all controls including registration opt-in and rejects malfor
   assert.throws(() => app.tool.execute({ type: 'bad', sort: 'low', days: 7 }), /잘못된 조회 조건/);
   assert.throws(() => app.tool.execute({ type: 'gear', sort: 'low', days: 7, query: 5 }), /잘못된 조회 조건/);
 });
-test('markup declares gear default and responsive rules for narrow and wide screens', () => {
+test('markup declares live default and responsive rules for narrow and wide screens', () => {
   const html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
-  assert.match(html, /data-type="gear" class="active" aria-pressed="true"/);
-  assert.match(html, /data-type="live" aria-pressed="false"/);
+  assert.match(html, /data-type="live" class="active" aria-pressed="true"/);
+  assert.match(html, /data-type="gear" aria-pressed="false"/);
   assert.match(html, /id="includeUnknown" type="checkbox" checked/);
   assert.doesNotMatch(html, /id="catalogScope"|id="sellerLinks"|id="coverageNotice"|id="resultNote"/);
   assert.match(html, /@media\(max-width:760px\)/); assert.match(html, /repeat\(2,minmax\(0,1fr\)\)/); assert.match(html, /repeat\(3,minmax\(0,1fr\)\)/);

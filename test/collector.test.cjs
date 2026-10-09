@@ -1,4 +1,5 @@
 'use strict';
+const {publicationItems}=require('./publication-fixture.cjs');
 const {test}=require('node:test');const assert=require('node:assert/strict');
 const {parseProductPage}=require('../scripts/collector/product-jsonld.cjs');const {collectSource,reconcile,robotsAllows}=require('../scripts/collector/engine.cjs');
 // Synthetic fixture facts only; no network calls and no publication.
@@ -124,9 +125,9 @@ test('ProductGroup variants preserve four SKU packs and offer prices without an 
 });
 test('publish applies only fresh successful product keys and preserves 41-product lastgood on failure',async()=>{
  const {applyUpdates}=require('../scripts/collector/publish.cjs'),snapshot=require('../dist/source-snapshot.json');
- const unchanged=applyUpdates(snapshot,{x:{status:'failed',products:[]}});assert.equal(unchanged.changes,0);assert.equal(unchanged.catalog.products.length,snapshot.items.length);
+ const unchanged=applyUpdates(snapshot,{x:{status:'failed',products:[]}});assert.equal(unchanged.changes,0);assert.deepEqual(unchanged.snapshot.items,snapshot.items);const publishedItems=publicationItems(snapshot,unchanged.catalog);assert.equal(unchanged.catalog.products.length,publishedItems.length);
  const old=snapshot.items.find(p=>p.id==='direct_animallo_799');const update={...old,collector_key:'test:799:default',source_id:'test',price_amount:15000,observed_at_utc:'2026-10-08T12:00:00Z'};
- const result=applyUpdates(snapshot,{x:{status:'success',updatedKeys:[update.collector_key],products:[update]}},'live');assert.equal(result.changes,1);assert.equal(result.catalog.products.find(p=>p.id===old.id).price.amount,15000);assert.equal(result.catalog.products.filter(p=>p.photo.url).length,snapshot.items.filter(p=>p.photo?.verified_https_url).length);
+ const result=applyUpdates(snapshot,{x:{status:'success',updatedKeys:[update.collector_key],products:[update]}},'live');assert.equal(result.changes,1);assert.equal(result.catalog.products.find(p=>p.id===old.id).price.amount,15000);const resultItems=publicationItems(result.snapshot,result.catalog);assert.equal(result.catalog.products.filter(p=>p.photo.url).length,resultItems.filter(p=>p.photo?.verified_https_url).length);
  assert.equal(applyUpdates(snapshot,{x:{status:'success',updatedKeys:[],products:[update]}}).changes,0);assert.equal(applyUpdates(snapshot,{x:{status:'success',updatedKeys:[update.collector_key],products:[{...update,observed_at_utc:'2025-01-01T00:00:00Z'}]}}).changes,0);
  assert.equal(applyUpdates(snapshot,{x:{status:'success',updatedKeys:[update.collector_key],products:[update]}},'gear').changes,0);
 });

@@ -7,8 +7,29 @@ const knownTitles = {
   cafe24_honeystore033_1_172379: '3구 상면 여과기 세트',
   cafe24_honeystore081_1_28988: 'LED 미니 수족관',
 };
+const confirmedServiceFees = [
+  {
+    "id": "retailer-25:cafe24_sangaquamall_1_19497:default",
+    "title": "생물 포장비 [핫팩+스티로폼]",
+    "product_url": "https://sangaqua.co.kr/product/생물-포장비-핫팩스티로폼/19497/"
+  },
+  {
+    "id": "retailer-18:cafe24_weegal_1_2513:default",
+    "title": "[생물구매시 필수]생물안전포장비",
+    "product_url": "https://oqua.co.kr/product/생물구매시-필수생물안전포장비/2513/"
+  }
+];
+function isConfirmedServiceFee(item) {
+  return confirmedServiceFees.some(e => e.id === item.id && e.title === item.title && e.product_url === item.product_url);
+}
 function buildCatalog(snapshot) {
   if (!snapshot || !Array.isArray(snapshot.items)) throw Error('확인 상품 배열 필요');
+  const publicationExclusions = snapshot.items.filter(isConfirmedServiceFee).map(item => ({
+    id:item.id, title:item.title, sourceUrl:item.product_url, code:'service_fee',
+    reason:'Verified standalone packaging service fee is not a comparison product',
+    originalObservedAt:item.observed_at_utc || item.snapshot_at_utc
+  }));
+  snapshot = {...snapshot, items:snapshot.items.filter(item => !isConfirmedServiceFee(item))};
   const dates = snapshot.items.map(item => item.observed_at_utc || item.snapshot_at_utc);
   if (dates.some(date => !Number.isFinite(Date.parse(date)))) throw Error('관찰 시각 오류');
   const asOf = snapshot.snapshot_at_utc || (dates.length ? dates.reduce((latest, date) => Date.parse(date) > Date.parse(latest) ? date : latest) : null);
@@ -24,6 +45,7 @@ function buildCatalog(snapshot) {
   schemaVersion: 1, status: 'ready', reason: '', asOf,
   notice: snapshot.snapshot_notice_ko || '카페24 공식 카탈로그에서 확인한 한정된 상품 목록입니다. 가격은 항목별 확인 시각 기준이며 실시간 최저가·전체 판매처 비교가 아닙니다. 배송비·최종 가격·재고는 판매처에서 확인하세요.', sourceName: snapshot.source_name, sourceDocumentationUrl: snapshot.source_documentation_url,
   livestockNotice,
+  publicationExclusions,
   sellers: [...sellers.values()],
   products: snapshot.items.map(item => {
     const type = item.type || (knownTitles[item.id] ? 'gear' : null);

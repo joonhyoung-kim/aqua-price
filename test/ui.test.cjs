@@ -66,7 +66,24 @@ test('published missing metrics disable unavailable sorts without inventing rank
 test('hierarchy leaf buttons show counts, hide empty leaves and combine URL/sort/period',async()=>{
  const search='?type=live&subtype=shrimp&liveGroup=shrimp_blue&sort=high&days=7',app=await setup(actual,false,search);
  assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_blue"[^>]*aria-pressed="true"/);assert.equal(app.nodes.fishFilters.hidden,false);
- assert.match(app.nodes.groupTree.innerHTML,/블루벨벳·블루드림<\/span><span class="group-count">11개/);assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="other"/);
+ const filters=AquaCatalog.filtersFromSearch(search);
+const blueRows=AquaCatalog.selectProducts(actual,filters).rows;
+assert.match(
+ app.nodes.groupTree.innerHTML,
+ new RegExp('블루벨벳·블루드림</span><span class="group-count">'+blueRows.length+'개')
+);
+const baseRows=AquaCatalog.selectProducts(actual,{
+ ...filters,fishGroup:'all',liveGroup:'all',browseGroup:'all'
+}).rows;
+const otherCount=baseRows.filter(p=>AquaCatalog.livestockGroup(p)==='other').length;
+if(otherCount){
+ assert.match(
+  app.nodes.groupTree.innerHTML,
+  new RegExp('기타·미분류</span><span class="group-count">'+otherCount+'개')
+ );
+}else{
+ assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="other"/);
+}
  const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(search)).rows;
  assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));
  app.choose('shrimp_yamato');assert.ok(app.names().every(n=>/야마토/.test(n)));
@@ -74,10 +91,38 @@ test('hierarchy leaf buttons show counts, hide empty leaves and combine URL/sort
  app.choose('plant_rotala');assert.ok(app.names().every(n=>/로탈라|로타라/.test(n)));
  app.subtype('all');assert.equal(app.nodes.fishFilters.hidden,true);assert.equal(app.names().length,24);
 });
-test('legacy fish group URL survives reentry and an explicit empty other group remains selectable',async()=>{
- const app=await setup(actual,false,'?subtype=fish&fishGroup=guppy&sort=high&days=all');
- assert.match(app.nodes.groupTree.innerHTML,/data-live-group="guppy"[^>]*aria-pressed="true"/);assert.deepEqual(app.names(),AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch('?subtype=fish&fishGroup=guppy&sort=high&days=all')).rows.slice(0,24).map(p=>p.name));
- const empty=await setup(actual,false,'?subtype=shrimp&liveGroup=other');assert.match(empty.nodes.groupTree.innerHTML,/data-live-group="other"[^>]*aria-pressed="true"/);assert.match(empty.nodes.groupTree.innerHTML,/기타·미분류<\/span><span class="group-count">0개/);assert.deepEqual(empty.names(),[]);
+test('legacy URLs preserve selection and actual other products remain visible',async()=>{
+ const search='?subtype=fish&fishGroup=guppy&sort=high&days=all';
+ const app=await setup(actual,false,search);
+ assert.match(app.nodes.groupTree.innerHTML,/data-live-group="guppy"[^>]*aria-pressed="true"/);
+ assert.deepEqual(
+  app.names(),
+  AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(search))
+   .rows.slice(0,24).map(p=>p.name)
+ );
+
+ const otherSearch='?subtype=shrimp&liveGroup=other';
+ const expected=AquaCatalog.selectProducts(
+  actual,AquaCatalog.filtersFromSearch(otherSearch)
+ ).rows;
+ const other=await setup(actual,false,otherSearch);
+ assert.match(other.nodes.groupTree.innerHTML,/data-live-group="other"[^>]*aria-pressed="true"/);
+ assert.match(
+  other.nodes.groupTree.innerHTML,
+  new RegExp('기타·미분류</span><span class="group-count">'+expected.length+'개')
+ );
+ assert.deepEqual(other.names(),expected.slice(0,24).map(p=>p.name));
+ assert.ok(expected.every(p=>p.type==='live'&&p.subtype==='shrimp'&&AquaCatalog.livestockGroup(p)==='other'));
+});
+
+test('an explicitly selected empty other group remains selectable',async()=>{
+ // Test-only fixture; published data is unchanged.
+ const fixture=structuredClone(actual);
+ fixture.products=[];
+ const empty=await setup(fixture,false,'?subtype=shrimp&liveGroup=other');
+ assert.match(empty.nodes.groupTree.innerHTML,/data-live-group="other"[^>]*aria-pressed="true"/);
+ assert.match(empty.nodes.groupTree.innerHTML,/기타·미분류<\/span><span class="group-count">0개/);
+ assert.deepEqual(empty.names(),[]);
 });
 
 test('accordion expands one collection, preserves results and exposes accessible relationships',async()=>{

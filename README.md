@@ -75,3 +75,11 @@ Resuming rejects a prior recorded process that is still running or whose status 
 Run `node scripts/collect-coverage-batch.cjs --rounds 3 --minutes 32` to alternate observed category discovery and pending-detail draining across merchants. The batch has at most three 60-request rounds, five merchants per round, and at most 12 requests per merchant slot; stricter registered limits, robots delays, denial quarantine and candidate retry holds remain active. Merchant selection rotates untouched merchants and considers observed coverage and last attempt. Category totals remain separate and do not establish whole-retailer totals.
 
 Each completed merchant saves catalog data, state and queue/page tails. The request journal is saved before each network attempt. An interrupted batch can use `--resume` with its original remaining request budget and deadline; completed batches cannot be resumed into a fresh budget. Public progress is in `dist/coverage-batch-report.json`. Stop reasons distinguish finite round limits, elapsed collection time, no eligible sources and no collection progress. The operator reviews and validates output before publishing preview data.
+
+## Product-content classification and offline audit
+
+Category menus are discovery hints. Classification version 6 evaluates the primary product title, its own breadcrumb, matching Product description, variant options and sales specification. Navigation/recommended-product descriptions cannot supply identity. Explicit feed and supply contexts remain guarded; mixed parents do not exclude supported leaves.
+
+The discovery ledger records actual same-retailer listing, detail, related-product and sitemap hrefs with included/pending/review/excluded decisions, reasons, observation times, evidence hashes and decision history. Content changes and classifier versions can reopen an old exclusion; access, robots and identity holds remain enforced. Cached recovery candidates require a fresh detail request before publication.
+
+Run `node scripts/audit-cached-products.cjs` for a read-only offline projection. It does not request pages, change state/catalog or add products; historical offer observations are not promoted to current prices. An explicitly requested `--output <path>` saves the detailed audit separately.

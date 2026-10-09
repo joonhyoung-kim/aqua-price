@@ -5,6 +5,7 @@ const path = require('node:path');
 const AquaCatalog = require('../dist/data-model.js');
 const { validateCatalog, selectProducts, usablePhoto } = require('../dist/data-model.js');
 const { buildCatalog } = require('../scripts/build-catalog.cjs');
+const { publicationItems } = require('./publication-fixture.cjs');
 // Synthetic test fixtures only; never copied into the published catalog.
 const AS_OF = '2026-10-08T00:00:00.000Z';
 function product(id, overrides = {}) {
@@ -128,23 +129,24 @@ test('published catalog preserves the supplied verified items, categories and un
   const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
   validateCatalog(data);
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
-  assert.equal(data.status, 'ready'); assert.equal(data.products.length, snapshot.summary.offer_count); assert.equal(data.sellers.length, snapshot.summary.merchant_count);
+  const publishedItems = publicationItems(snapshot, data);
+  assert.equal(data.status, 'ready'); assert.equal(data.products.length, publishedItems.length); assert.equal(data.sellers.length, snapshot.summary.merchant_count);
   assert.equal(data.products.filter(p => p.subtype === 'aquatic_plant').length, snapshot.summary.live_plant_count);
-  assert.equal(data.products.filter(p => p.type === 'gear').length, snapshot.summary.gear_count);
+  assert.equal(data.products.filter(p => p.type === 'gear').length, publishedItems.filter(p => p.type === 'gear').length);
   assert.equal(data.products.filter(p => p.subtype === 'fish').length, snapshot.summary.fish_count); assert.equal(data.products.filter(p => p.subtype === 'shrimp').length, snapshot.summary.shrimp_count); assert.equal(data.products.filter(p => p.subtype === 'snail').length, snapshot.summary.snail_count);
   for (const [index, p] of data.products.entries()) {
-    assert.equal(p.id, snapshot.items[index].id); assert.equal(p.originalTitle, snapshot.items[index].title);
-    assert.equal(p.sourceUrl, snapshot.items[index].product_url); assert.equal(p.price.amount, snapshot.items[index].price_amount);
-    assert.equal(p.photo.url, snapshot.items[index].photo?.verified_https_url ?? null);
-    assert.equal(p.observedAt, snapshot.items[index].observed_at_utc);
+    assert.equal(p.id, publishedItems[index].id); assert.equal(p.originalTitle, publishedItems[index].title);
+    assert.equal(p.sourceUrl, publishedItems[index].product_url); assert.equal(p.price.amount, publishedItems[index].price_amount);
+    assert.equal(p.photo.url, publishedItems[index].photo?.verified_https_url ?? null);
+    assert.equal(p.observedAt, publishedItems[index].observed_at_utc);
     assert.equal(p.registeredAt, null); assert.equal(p.shipping, null); assert.equal(p.periodSales, null); assert.equal(p.cumulativeSales, null);
     assert.equal(new URL(p.sourceUrl).hostname.replace(/^www\./,''), p.sellerId); assert.equal(p.photo.permissionScope, p.photo.url ? (p.sourceKind === 'direct_retailer_product_page' ? 'product-comparison' : 'api-catalog-comparison') : null);
     assert.equal(p.photo.generalRepublicationLicenseVerified, false);
   }
   assert.deepEqual(select(data).rows, []);
   const displayed = select(data, { type: 'gear', includeUnknownRegistration: true });
-  assert.equal(displayed.rows.length, snapshot.summary.gear_count);
-  assert.deepEqual(displayed.rows.map(p => p.price.amount), snapshot.items.filter(p => p.type === 'gear').map(p => p.price_amount).sort((a,b) => a-b));
+  assert.equal(displayed.rows.length, publishedItems.filter(p => p.type === 'gear').length);
+  assert.deepEqual(displayed.rows.map(p => p.price.amount), publishedItems.filter(p => p.type === 'gear').map(p => p.price_amount).sort((a,b) => a-b));
 });
 test('pending state contains no products and explains unavailable data', () => {
   const pending = { schemaVersion: 1, status: 'pending', reason: '아직 제공되지 않음', asOf: null, sellers: [], products: [] };
@@ -223,10 +225,12 @@ test('UI controls, data script order and honest status exist in HTML', () => {
 });
 test('expanded snapshot deduplicates sellers and requires explicit category for new items', () => {
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
+  const baseline = publicationItems(snapshot, JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8')));
   const next = structuredClone(snapshot.items[1]); next.id = 'SYNTHETIC-TEST-ONLY'; next.type = 'live'; next.title = 'TEST LIVESTOCK'; next.photo = null;
   snapshot.items.push(next);
   const result = buildCatalog(snapshot);
-  assert.equal(result.sellers.length, snapshot.summary.merchant_count); assert.equal(result.products.length, snapshot.summary.offer_count + 1);
+  assert.equal(result.sellers.length, snapshot.summary.merchant_count); assert.equal(result.products.length, baseline.length + 1);
+  assert.deepEqual(result.products.map(p=>p.id), [...baseline.map(p=>p.id), next.id]);
   assert.equal(result.products.at(-1).type, 'live'); assert.equal(result.products.at(-1).name, 'TEST LIVESTOCK');
   assert.equal(result.products.at(-1).photo.url, null); assert.equal(result.products.at(-1).registeredAt, null);
   delete next.type; assert.throws(() => buildCatalog(snapshot), /검증된 live\/gear/);
@@ -252,8 +256,8 @@ test('livestock filters use verified subtype, never infer category from title, a
 
 test('direct retailer evidence is separate from API and six livestock photos use verified original URLs',()=>{
  const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/catalog.json'),'utf8'));
- const direct=data.products.filter(p=>p.sourceKind==='direct_retailer_product_page'); const snapshot=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/source-snapshot.json'),'utf8')); assert.equal(direct.length,snapshot.items.filter(p=>p.source_kind==='direct_retailer_product_page').length); assert.equal(data.products.length,snapshot.items.length); assert.equal(data.sellers.length,new Set(snapshot.items.map(p=>p.seller_domain)).size);
- assert.equal(data.products.filter(p=>p.sourceKind==='cafe24_global_catalog_api').length,snapshot.items.filter(p=>!p.source_kind).length); assert.equal(data.products.filter(p=>p.photo.url).length,snapshot.items.filter(p=>p.photo?.verified_https_url).length);
+ const direct=data.products.filter(p=>p.sourceKind==='direct_retailer_product_page'); const snapshot=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/source-snapshot.json'),'utf8')); const publishedItems=publicationItems(snapshot,data); assert.equal(direct.length,publishedItems.filter(p=>p.source_kind==='direct_retailer_product_page').length); assert.equal(data.products.length,publishedItems.length); assert.equal(data.sellers.length,new Set(publishedItems.map(p=>p.seller_domain)).size);
+ assert.equal(data.products.filter(p=>p.sourceKind==='cafe24_global_catalog_api').length,publishedItems.filter(p=>!p.source_kind).length); assert.equal(data.products.filter(p=>p.photo.url).length,publishedItems.filter(p=>p.photo?.verified_https_url).length);
  for(const p of direct){if(p.photo.url){assert.ok(p.photo.url.startsWith('https://'));assert.equal(p.photo.usePermission,'allowed');assert.equal(p.photo.permissionEvidenceUrl,p.sourceUrl);assert.equal(p.photo.permissionBasis,'explicit_user_instruction');}else assert.equal(p.photo.usePermission,'unknown');assert.equal(p.registeredAt,null);assert.equal(p.shipping,null);assert.equal(p.periodSales,null);assert.match(p.availabilityBasis,/checkout|not supplied|not verified/);assert.equal(typeof p.verificationMethod,'string');}
 });
 

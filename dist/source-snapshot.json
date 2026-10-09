@@ -6,16 +6,16 @@
   "collection_scope": "19 limited searches, maximum 8 results per query, first page only; no additional pages or bulk crawling; not full-market coverage",
   "created_at_utc": "2026-10-08T08:29:06.935413+00:00",
   "summary": {
-    "offer_count": 1869,
+    "offer_count": 1902,
     "merchant_count": 42,
-    "live_plant_count": 192,
-    "fish_count": 1540,
-    "shrimp_count": 76,
+    "live_plant_count": 198,
+    "fish_count": 1565,
+    "shrimp_count": 77,
     "snail_count": 6,
-    "fish_or_shrimp_count": 1616,
-    "gear_count": 55,
-    "verified_https_photos": 1764,
-    "direct_retailer_products": 1860
+    "fish_or_shrimp_count": 1642,
+    "gear_count": 56,
+    "verified_https_photos": 1797,
+    "direct_retailer_products": 1893
   },
   "photo_validation": {
     "basis": "HTTPS HEAD verification supplied by the collecting task; no image download or rehosting",
@@ -94024,6 +94024,12 @@
           "url": "https://aquapro.kr/product/list.html?cate_no=1167",
           "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
           "observedAt": "2026-10-08T14:47:54.795Z"
+        },
+        {
+          "label": "탕카니카 시클리드",
+          "url": "https://aquapro.kr/product/list.html?cate_no=1165",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
         }
       ]
     },
@@ -94948,6 +94954,2147 @@
       },
       "classification_basis": "Explicit packaging/shipping supply identity overrides livestock navigation",
       "discovery_category_url": "https://bizidduk.com/product/list.html?cate_no=27"
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_2029:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_2029:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_2029",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "title": "수초 활착 모스볼 2개/마리모",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/수초-활착-모스볼-2개마리모/2029/",
+      "declared_product_url": "https://oqua.co.kr/product/수초-활착-모스볼-2개마리모/2029/",
+      "observed_at_utc": "2026-10-09T09:32:41.735Z",
+      "registered_at": null,
+      "price_amount": 5000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/201805/2029_shop1_15276074428091.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=2029&cate_no=73&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "수초 활착 모스볼 2개/마리모",
+        "description": "활착모스볼마리모,음성수초키우기",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "aquatic_plant"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": null
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_157:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_157:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_157",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "title": "수초 모스볼1+1",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/수초-모스볼11/157/",
+      "declared_product_url": "https://oqua.co.kr/product/수초-모스볼11/157/",
+      "observed_at_utc": "2026-10-09T09:32:51.796Z",
+      "registered_at": null,
+      "price_amount": 3900,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "3900",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "3900",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/201803/157_shop1_492507.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=157&cate_no=110&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "수초 모스볼1+1",
+        "description": "키우기 쉬운 애완식물 모스볼 마리모",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "aquatic_plant"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://oqua.co.kr/product/list.html?cate_no=110",
+      "observed_category_evidence": [
+        {
+          "label": "전경수초 (38)",
+          "url": "https://oqua.co.kr/product/list.html?cate_no=110",
+          "evidencePage": "https://oqua.co.kr/product/list.html?cate_no=110",
+          "observedAt": "2026-10-08T19:36:10.668Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_2341:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_2341:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_2341",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "title": "킹모스 1주/음성수초/활착수초",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/킹모스-1주음성수초활착수초/2341/",
+      "declared_product_url": "https://oqua.co.kr/product/킹모스-1주음성수초활착수초/2341/",
+      "observed_at_utc": "2026-10-09T09:33:01.861Z",
+      "registered_at": null,
+      "price_amount": 2300,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "2300",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "2300",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/201808/0e20bcaea6ddceb4cb41f353dd9b97bb.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=2341&cate_no=73&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "킹모스 1주/음성수초/활착수초",
+        "description": "킹모스키우기,음성수초",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "aquatic_plant"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": null
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_2040:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_2040:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_2040",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "title": "칼라 포트 수초 5개세트 (랜덤발송) - 키우기 쉬운 초보 수초 키우기",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/칼라-포트-수초-5개세트-랜덤발송-키우기-쉬운-초보-수초-키우기/2040/",
+      "declared_product_url": "https://oqua.co.kr/product/칼라-포트-수초-5개세트-랜덤발송-키우기-쉬운-초보-수초-키우기/2040/",
+      "observed_at_utc": "2026-10-09T09:33:11.779Z",
+      "registered_at": null,
+      "price_amount": 14000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "14000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "14000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/201806/2040_shop1_15283858400449.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=2040&cate_no=110&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "칼라 포트 수초 5개세트 (랜덤발송) - 키우기 쉬운 초보 수초 키우기",
+        "description": "포트수초,키우기쉬운수초",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "aquatic_plant"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://oqua.co.kr/product/list.html?cate_no=110",
+      "observed_category_evidence": [
+        {
+          "label": "전경수초 (38)",
+          "url": "https://oqua.co.kr/product/list.html?cate_no=110",
+          "evidencePage": "https://oqua.co.kr/product/list.html?cate_no=110",
+          "observedAt": "2026-10-08T19:36:10.668Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_3512:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_3512:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_3512",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "title": "수초 모스볼 활착판(5x5cm)/모스볼마리모키우기",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/수초-모스볼-활착판5x5cm모스볼마리모키우기/3512/",
+      "declared_product_url": "https://oqua.co.kr/product/수초-모스볼-활착판5x5cm모스볼마리모키우기/3512/",
+      "observed_at_utc": "2026-10-09T09:33:21.737Z",
+      "registered_at": null,
+      "price_amount": 5000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/202103/5eeb3184d92ca6a6ebc7f5f5480d2f10.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=3512&cate_no=73&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "수초 모스볼 활착판(5x5cm)/모스볼마리모키우기",
+        "description": "오쿠아 | 자연을 담아낸 수초 모스볼 활착판. 작은 어항에 생동감을 더하는 자연수초로, 초보자도 쉽게 키울 수 있습니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "aquatic_plant"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": null
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_2513:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_2513:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_2513",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "[생물구매시 필수]생물안전포장비",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/생물구매시-필수생물안전포장비/2513/",
+      "declared_product_url": "https://oqua.co.kr/product/생물구매시-필수생물안전포장비/2513/",
+      "observed_at_utc": "2026-10-09T09:33:41.839Z",
+      "registered_at": null,
+      "price_amount": 2000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "2000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "2000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/201811/9dffdf2a8e4b11a6d22ddacc3c548afd.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=2513",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "classification_evidence": null,
+      "classification_version": 6,
+      "discovery_category_url": null
+    },
+    {
+      "id": "retailer-18:cafe24_weegal_1_86:default",
+      "collector_key": "retailer-18:cafe24_weegal_1_86:default",
+      "source_id": "retailer-18",
+      "retailer_product_id": "cafe24_weegal_1_86",
+      "variant_id": null,
+      "retailer": "오쿠아",
+      "seller_domain": "oqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "aquatic_plant",
+      "title": "수초 워터 머슈룸 3뿌리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://oqua.co.kr/product/수초-워터-머슈룸-3뿌리/86/",
+      "declared_product_url": "https://oqua.co.kr/product/수초-워터-머슈룸-3뿌리/86/",
+      "observed_at_utc": "2026-10-09T09:34:11.963Z",
+      "registered_at": null,
+      "price_amount": 2000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "2000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "2000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://oqua.co.kr/web/product/big/201607/86_shop1_818300.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://oqua.co.kr/product/detail.html?product_no=86&cate_no=110&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "수초 워터 머슈룸 3뿌리",
+        "description": "초보전경수초 워터 머슈룸",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "aquatic_plant"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://oqua.co.kr/product/list.html?cate_no=110",
+      "observed_category_evidence": [
+        {
+          "label": "전경수초 (38)",
+          "url": "https://oqua.co.kr/product/list.html?cate_no=110",
+          "evidencePage": "https://oqua.co.kr/product/list.html?cate_no=110",
+          "observedAt": "2026-10-08T19:36:10.668Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_5986:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_5986:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_5986",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "코리도라스 알비노 골든 스트라이프 (3~4cm)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/코리도라스-알비노-골든-스트라이프-34cm/5986/",
+      "declared_product_url": "https://aquapro.kr/product/코리도라스-알비노-골든-스트라이프-34cm/5986/",
+      "observed_at_utc": "2026-10-09T09:34:48.918Z",
+      "registered_at": null,
+      "price_amount": 8000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202402/bfec38ab0e837f8c41e809402d949cc6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=5986&cate_no=912&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "코리도라스 알비노 골든 스트라이프 (3~4cm)",
+        "description": "Corydoras aeneus var. gold stripe Albino",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=912",
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "url": "https://aquapro.kr/product/list.html?cate_no=912",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_10284:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_10284:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_10284",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "글라스 캣피쉬 (4~5cm)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/글라스-캣피쉬-45cm/10284/",
+      "declared_product_url": "https://aquapro.kr/product/글라스-캣피쉬-45cm/10284/",
+      "observed_at_utc": "2026-10-09T09:34:58.911Z",
+      "registered_at": null,
+      "price_amount": 5000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202507/c82c95084ae9ef874ce0829d5b15e060.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=10284&cate_no=892&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "글라스 캣피쉬 (4~5cm)",
+        "description": "보르네오 , 수마트라 , 말레이 반도 , 차오프라야 및 메콩 유역 에서 발견되며 몸이 투명해서 유리메기라고도 불립니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=892",
+      "observed_category_evidence": [
+        {
+          "label": "생물&수초",
+          "url": "https://aquapro.kr/product/list.html?cate_no=892",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_9770:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_9770:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_9770",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "[구라미] Parasphaerichthys ocellatus 아이스팟 구라미",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/구라미-parasphaerichthys-ocellatus-아이스팟-구라미/9770/",
+      "declared_product_url": "https://aquapro.kr/product/구라미-parasphaerichthys-ocellatus-아이스팟-구라미/9770/",
+      "observed_at_utc": "2026-10-09T09:35:08.939Z",
+      "registered_at": null,
+      "price_amount": 13000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "13000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "13000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202303/995d830df1e7a604d20775afc134a6d4.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=9770&cate_no=925&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[구라미] Parasphaerichthys ocellatus 아이스팟 구라미",
+        "description": "",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=925",
+      "observed_category_evidence": [
+        {
+          "label": "구라미/리코리스",
+          "url": "https://aquapro.kr/product/list.html?cate_no=925",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_10541:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_10541:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_10541",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "디스커스 헤켈 느하문다 블루문 (15-18cm)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/디스커스-헤켈-느하문다-블루문-15-18cm/10541/",
+      "declared_product_url": "https://aquapro.kr/product/디스커스-헤켈-느하문다-블루문-15-18cm/10541/",
+      "observed_at_utc": "2026-10-09T09:35:18.949Z",
+      "registered_at": null,
+      "price_amount": 650000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "650000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "650000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202402/57dc7124423a14a1f71df1b10a45733a.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=10541&cate_no=893&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "디스커스 헤켈 느하문다 블루문 (15-18cm)",
+        "description": "Symphysodon discus \"HECKEL BLUE-MOON\"",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=893",
+      "observed_category_evidence": [
+        {
+          "label": "디스커스",
+          "url": "https://aquapro.kr/product/list.html?cate_no=893",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        },
+        {
+          "label": "야생 디스커스",
+          "url": "https://aquapro.kr/product/list.html?cate_no=894",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_7244:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_7244:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_7244",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "[야생디스커스]DISCUS URARIA 우라리아 S SIZE",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/야생디스커스discus-uraria-우라리아-s-size/7244/",
+      "declared_product_url": "https://aquapro.kr/product/야생디스커스discus-uraria-우라리아-s-size/7244/",
+      "observed_at_utc": "2026-10-09T09:35:28.981Z",
+      "registered_at": null,
+      "price_amount": 70000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "70000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "70000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/20191113/12c5f9ee637eb0f3365a6865a52a67d6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=7244&cate_no=894&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[야생디스커스]DISCUS URARIA 우라리아 S SIZE",
+        "description": "",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=894",
+      "observed_category_evidence": [
+        {
+          "label": "야생 디스커스",
+          "url": "https://aquapro.kr/product/list.html?cate_no=894",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_3018:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_3018:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_3018",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "로얄 모르프 f1(김영미씨브리딩)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/로얄-모르프-f1김영미씨브리딩/3018/",
+      "declared_product_url": "https://aquapro.kr/product/로얄-모르프-f1김영미씨브리딩/3018/",
+      "observed_at_utc": "2026-10-09T09:35:49.025Z",
+      "registered_at": null,
+      "price_amount": 100000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "100000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "100000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/201709/3018_shop1_743982.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=3018&cate_no=896&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "로얄 모르프 f1(김영미씨브리딩)",
+        "description": "로얄 모르프",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=896",
+      "observed_category_evidence": [
+        {
+          "label": "개량 디스커스",
+          "url": "https://aquapro.kr/product/list.html?cate_no=896",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_10684:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_10684:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_10684",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "아피스토그라마 에리스루라 (3-4cm)한쌍10% 할인",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/아피스토그라마-에리스루라-3-4cm한쌍10-할인/10684/",
+      "declared_product_url": "https://aquapro.kr/product/아피스토그라마-에리스루라-3-4cm한쌍10-할인/10684/",
+      "observed_at_utc": "2026-10-09T09:35:59.037Z",
+      "registered_at": null,
+      "price_amount": 54000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "54000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "54000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202405/9886e788b74777209e71a18c29fcf916.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=10684&cate_no=1155&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "아피스토그라마 에리스루라 (3-4cm)한쌍10% 할인",
+        "description": "수컷은 성숙할수록 꼬리 지느러미에 선명한 붉은색과 푸른 광택이 어우러져 매우 아름답습니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=1155",
+      "observed_category_evidence": [
+        {
+          "label": "아피스토그라마",
+          "url": "https://aquapro.kr/product/list.html?cate_no=1155",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_11185:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_11185:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_11185",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "시에볼디 시클리드 (6~7cm)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/시에볼디-시클리드-67cm/11185/",
+      "declared_product_url": "https://aquapro.kr/product/시에볼디-시클리드-67cm/11185/",
+      "observed_at_utc": "2026-10-09T09:36:09.033Z",
+      "registered_at": null,
+      "price_amount": 15000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "15000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "15000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202504/d3d7b240c40f4fbd0d0dac387aae3c77.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=11185&cate_no=906&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "시에볼디 시클리드 (6~7cm)",
+        "description": "Tomocichla sieboldii는 시클리드과(Cichlidae)에 속하는 담수어로, 중앙아메리카, 특히 코스타리카와 파나마의 강 유역에 주로 서식합니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=906",
+      "observed_category_evidence": [
+        {
+          "label": "아메리칸/남미 시클리드",
+          "url": "https://aquapro.kr/product/list.html?cate_no=906",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        },
+        {
+          "label": "기타 아메리칸 시클리드",
+          "url": "https://aquapro.kr/product/list.html?cate_no=1164",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": "2026-10-08T14:47:54.795Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-07:cafe24_pucu32_1_10227:default",
+      "collector_key": "retailer-07:cafe24_pucu32_1_10227:default",
+      "source_id": "retailer-07",
+      "retailer_product_id": "cafe24_pucu32_1_10227",
+      "variant_id": null,
+      "retailer": "아쿠아프로 트레이딩",
+      "seller_domain": "aquapro.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "쿨리 로치 (6-8cm)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquapro.kr/product/쿨리-로치-6-8cm/10227/",
+      "declared_product_url": "https://aquapro.kr/product/쿨리-로치-6-8cm/10227/",
+      "observed_at_utc": "2026-10-09T09:36:19.077Z",
+      "registered_at": null,
+      "price_amount": 2500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "2500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "2500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquapro.kr/web/product/big/202507/e199050d3ef6a142fa91a1243354b442.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquapro.kr/product/detail.html?product_no=10227&cate_no=892&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "쿨리 로치 (6-8cm)",
+        "description": "인도네시아 자바 섬 태생으로 최고의 합사어입니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://aquapro.kr/product/list.html?cate_no=892",
+      "observed_category_evidence": [
+        {
+          "label": "생물&수초",
+          "url": "https://aquapro.kr/product/list.html?cate_no=892",
+          "evidencePage": "https://aquapro.kr/product/list.html?cate_no=892",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1466:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1466:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1466",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "옐로우턱시도구피(1쌍)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/옐로우턱시도구피1쌍/1466/",
+      "declared_product_url": "https://www.liveaqua.kr/product/옐로우턱시도구피1쌍/1466/",
+      "observed_at_utc": "2026-10-09T09:36:37.156Z",
+      "registered_at": null,
+      "price_amount": 3000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "3000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "3000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/6ffc230277d631dfac3ef2d5225a938e.webp",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1466&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "옐로우턱시도구피(1쌍)",
+        "description": "라이브아쿠아 | 선별된 건강한 수입 옐로우턱시도구피. 화사한 노란 꼬리와 안정적인 발색으로 어항 속 분위기를 밝혀줍니다. 초보자도 안심하고 키울 수 있는 신뢰의 라이브아쿠아 구피를 만나보세요.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1465:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1465:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1465",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "네온블루구피(1쌍)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/네온블루구피1쌍/1465/",
+      "declared_product_url": "https://www.liveaqua.kr/product/네온블루구피1쌍/1465/",
+      "observed_at_utc": "2026-10-09T09:36:47.028Z",
+      "registered_at": null,
+      "price_amount": 3000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "3000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "3000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/94073ac31383e35f2e2c10d19e7a7efe.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1465&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "네온블루구피(1쌍)",
+        "description": "라이브아쿠아 네온블루구피 | 신비로운 푸른 광택이 돋보이는 네온블루구피입니다. 건강한 컨디션과 수질 안정을 최우선으로 선별하여 안전하게 배송해 드립니다. 초보자도 안심하고 시작하는 아름다운 물생활, 라이브아쿠아와 함께하세요.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1464:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1464:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1464",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "레드턱시도구피(1쌍)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/레드턱시도구피1쌍/1464/",
+      "declared_product_url": "https://www.liveaqua.kr/product/레드턱시도구피1쌍/1464/",
+      "observed_at_utc": "2026-10-09T09:36:57.062Z",
+      "registered_at": null,
+      "price_amount": 2000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "2000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "2000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/5a2755c45c385ef7cfccec25616a671d.webp",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1464&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "레드턱시도구피(1쌍)",
+        "description": "라이브아쿠아 | 레드턱시도구피(1쌍). 건강한 수질에서 관리된 선별 수입 구피입니다. 선명한 레드 컬러와 턱시도 패턴이 매력적인 개체로, 초보자도 안심하고 기를 수 있도록 최상의 컨디션으로 큐레이션하여 보내드립니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1462:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1462:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1462",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "선셋 플래티(1마리)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/선셋-플래티1마리/1462/",
+      "declared_product_url": "https://www.liveaqua.kr/product/선셋-플래티1마리/1462/",
+      "observed_at_utc": "2026-10-09T09:37:07.043Z",
+      "registered_at": null,
+      "price_amount": 1500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "1500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/bc4cd8f2980e1cc6ff811923660a53a7.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1462&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "선셋 플래티(1마리)",
+        "description": "라이브아쿠아 | 선셋 플래티. 노을처럼 붉고 아름다운 발색을 가진 생명력 강한 관상어입니다. 초보자도 쉽게 키울 수 있도록 꼼꼼히 선별한 개체를 안전하게 전해드립니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1461:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1461:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1461",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "화이트발룬몰리(2마리)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/화이트발룬몰리2마리/1461/",
+      "declared_product_url": "https://www.liveaqua.kr/product/화이트발룬몰리2마리/1461/",
+      "observed_at_utc": "2026-10-09T09:37:17.053Z",
+      "registered_at": null,
+      "price_amount": 4000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "4000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "4000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/3dbcb24dc3e4a52a778c82acb06212f4.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1461&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "화이트발룬몰리(2마리)",
+        "description": "라이브아쿠아 | 화이트발룬몰리(2마리). 동글동글한 체형과 깨끗한 화이트 컬러가 매력적인 발룬몰리입니다. 초보자도 기르기 쉬운 건강한 개체만을 선별하여 제안하며, 수질 안정성을 최우선으로 하는 라이브아쿠아의 꼼꼼한 검수를 거쳐 안전하게 보내드립니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1460:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1460:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1460",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "블랙발룬몰리(2마리)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/블랙발룬몰리2마리/1460/",
+      "declared_product_url": "https://www.liveaqua.kr/product/블랙발룬몰리2마리/1460/",
+      "observed_at_utc": "2026-10-09T09:37:27.098Z",
+      "registered_at": null,
+      "price_amount": 4000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "4000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "4000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/21e2cb974cbc1e17ed1cf47a9e3d4378.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1460&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "블랙발룬몰리(2마리)",
+        "description": "라이브아쿠아 | 블랙발룬몰리(2마리). 동글동글한 풍선 같은 체형과 시크한 블랙 컬러가 매력적인 열대어입니다. 환경 적응력이 뛰어나 초보자도 안심하고 키울 수 있도록 건강하게 선별했습니다. 생명의 가치를 소중히 여기는 라이브아쿠아의 큐레이션을 경험해 보세요.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1459:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1459:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1459",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "골든발룬몰리(2마리)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/골든발룬몰리2마리/1459/",
+      "declared_product_url": "https://www.liveaqua.kr/product/골든발룬몰리2마리/1459/",
+      "observed_at_utc": "2026-10-09T09:37:37.106Z",
+      "registered_at": null,
+      "price_amount": 4000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "4000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "4000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/4485757fe769c24e47e39d6fd0fe1c20.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1459&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "골든발룬몰리(2마리)",
+        "description": "라이브아쿠아 | 골든발룬몰리(2마리). 화사한 황금빛과 귀여운 체형이 돋보이는 열대어입니다. 초보자도 기르기 쉬우며, 철저한 컨디션 관리와 수질 안정성을 최우선으로 선별된 개체만을 안전하게 보내드립니다. 믿고 사는 라이브아쿠아에서 일상의 여유를 찾는 물멍을 시작해 보세요.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-15:cafe24_haedongguppy_1_1454:default",
+      "collector_key": "retailer-15:cafe24_haedongguppy_1_1454:default",
+      "source_id": "retailer-15",
+      "retailer_product_id": "cafe24_haedongguppy_1_1454",
+      "variant_id": null,
+      "retailer": "라이브아쿠아",
+      "seller_domain": "liveaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "인디언복어(미니복어)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.liveaqua.kr/product/인디언복어미니복어/1454/",
+      "declared_product_url": "https://www.liveaqua.kr/product/인디언복어미니복어/1454/",
+      "observed_at_utc": "2026-10-09T09:37:47.129Z",
+      "registered_at": null,
+      "price_amount": 3000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "3000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "3000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.liveaqua.kr/web/product/big/202502/9caf447519ce49e1ae9caa015b618261.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.liveaqua.kr/product/detail.html?product_no=1454&cate_no=24&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "인디언복어(미니복어)",
+        "description": "라이브아쿠아 | 인디언복어(미니복어). 작고 소중한 사이즈로 많은 사랑을 받는 소형 민물복어입니다. 철저한 수질 관리와 개체 선별을 통해 건강한 상태로 안전하게 전달해 드립니다. 귀여운 인디언복어와 함께하는 즐거운 물생활을 라이브아쿠아에서 시작해 보세요.",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+      "observed_category_evidence": [
+        {
+          "label": "생물",
+          "url": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.liveaqua.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_7325:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_7325:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_7325",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "[온라인전용] 베타 수컷 전 종류 랜덤 발송",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/온라인전용-베타-수컷-전-종류-랜덤-발송/7325/",
+      "declared_product_url": "https://zoonimal.co.kr/product/온라인전용-베타-수컷-전-종류-랜덤-발송/7325/",
+      "observed_at_utc": "2026-10-09T09:39:01.616Z",
+      "registered_at": null,
+      "price_amount": 9900,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "9900",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "9900",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202306/9ba6bef08b566fabb50ac3a7b1b60d22.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%A0%84%EC%9A%A9-%EB%B2%A0%ED%83%80-%EC%88%98%EC%BB%B7-%EC%A0%84-%EC%A2%85%EB%A5%98-%EB%9E%9C%EB%8D%A4-%EB%B0%9C%EC%86%A1/7325/category/324/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[온라인전용] 베타 수컷 전 종류 랜덤 발송",
+        "description": "행사 상품으로 하프문 베타부터 빅이어 하프문,플라캇 베타, 코이 플라캇, 코이 하프문까지 랜덤 발송 입니다.",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
+      "observed_category_evidence": [
+        {
+          "label": "베타/구라미",
+          "url": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_7830:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_7830:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_7830",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "청소물고기 알비노 나비비파 [7~9cm전후] /알나비",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/청소물고기-알비노-나비비파-79cm전후-알나비/7830/",
+      "declared_product_url": "https://zoonimal.co.kr/product/청소물고기-알비노-나비비파-79cm전후-알나비/7830/",
+      "observed_at_utc": "2026-10-09T09:39:11.490Z",
+      "registered_at": null,
+      "price_amount": 12000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "12000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "12000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202303/b09a27b98f87f2052536945b2e80f589.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EC%B2%AD%EC%86%8C%EB%AC%BC%EA%B3%A0%EA%B8%B0-%EC%95%8C%EB%B9%84%EB%85%B8-%EB%82%98%EB%B9%84%EB%B9%84%ED%8C%8C-79cm%EC%A0%84%ED%9B%84-%EC%95%8C%EB%82%98%EB%B9%84/7830/category/422/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "청소물고기 알비노 나비비파 [7~9cm전후] /알나비",
+        "description": "노란색/금빛 바디와 붉은 눈의 관상 가치가 높은 청소물고기로 중형/준성어입니다",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/",
+      "observed_category_evidence": [
+        {
+          "label": "플레코/코리/캣피쉬",
+          "url": "https://zoonimal.co.kr/category/%ED%94%8C%EB%A0%88%EC%BD%94%EC%BD%94%EB%A6%AC%EC%BA%A3%ED%94%BC%EC%89%AC/422/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_4884:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_4884:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_4884",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "[난태생] 레드코랄플래티 3마리 (코랄삼각플래티)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/난태생-레드코랄플래티-3마리-코랄삼각플래티/4884/",
+      "declared_product_url": "https://zoonimal.co.kr/product/난태생-레드코랄플래티-3마리-코랄삼각플래티/4884/",
+      "observed_at_utc": "2026-10-09T09:39:31.568Z",
+      "registered_at": null,
+      "price_amount": 5000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202306/e6edb1ab23752b709c11858b836fca4b.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EB%82%9C%ED%83%9C%EC%83%9D-%EB%A0%88%EB%93%9C%EC%BD%94%EB%9E%84%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC-%EC%BD%94%EB%9E%84%EC%82%BC%EA%B0%81%ED%94%8C%EB%9E%98%ED%8B%B0/4884/category/359/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[난태생] 레드코랄플래티 3마리 (코랄삼각플래티)",
+        "description": "키우기 쉬운 열대어인 귀여운 레드코랄 플래티 입니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+      "observed_category_evidence": [
+        {
+          "label": "몰리/플래티/소드",
+          "url": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_7986:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_7986:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_7986",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "레드 팬더 디스커스 8cm내외",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/레드-팬더-디스커스-8cm내외/7986/",
+      "declared_product_url": "https://zoonimal.co.kr/product/레드-팬더-디스커스-8cm내외/7986/",
+      "observed_at_utc": "2026-10-09T09:39:41.621Z",
+      "registered_at": null,
+      "price_amount": 32000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "32000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "32000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202512/b02de12117c3deb0c545f8a06f97c5ae.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EB%A0%88%EB%93%9C-%ED%8C%AC%EB%8D%94-%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4-8cm%EB%82%B4%EC%99%B8/7986/category/391/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "레드 팬더 디스커스 8cm내외",
+        "description": "화려하고 아름다운 무늬를 가진 붉은 계열의 레드 체커보드 디스커스 준성어 이상급 입니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+      "observed_category_evidence": [
+        {
+          "label": "디스커스 전문관",
+          "url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_6957:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_6957:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_6957",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "[뽀뽀하는 열대어] 키싱구라미 2마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/뽀뽀하는-열대어-키싱구라미-2마리/6957/",
+      "declared_product_url": "https://zoonimal.co.kr/product/뽀뽀하는-열대어-키싱구라미-2마리/6957/",
+      "observed_at_utc": "2026-10-09T09:39:51.555Z",
+      "registered_at": null,
+      "price_amount": 5900,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5900",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5900",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202310/99806846e6728b64c6bc2d731eb7a001.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EB%BD%80%EB%BD%80%ED%95%98%EB%8A%94-%EC%97%B4%EB%8C%80%EC%96%B4-%ED%82%A4%EC%8B%B1%EA%B5%AC%EB%9D%BC%EB%AF%B8-2%EB%A7%88%EB%A6%AC/6957/category/324/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[뽀뽀하는 열대어] 키싱구라미 2마리",
+        "description": "연분홍색의 키우기도 쉽고 뽀뽀하는 귀여운 열대어 키싱구라미 입니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": true,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
+      "observed_category_evidence": [
+        {
+          "label": "베타/구라미",
+          "url": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_7449:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_7449:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_7449",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "새끼낳는[난태생] 골든몰리 3마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/새끼낳는난태생-골든몰리-3마리/7449/",
+      "declared_product_url": "https://zoonimal.co.kr/product/새끼낳는난태생-골든몰리-3마리/7449/",
+      "observed_at_utc": "2026-10-09T09:40:11.616Z",
+      "registered_at": null,
+      "price_amount": 6000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "6000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "6000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202308/45e33fee111b77def9dd4e10cef08859.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EC%83%88%EB%81%BC%EB%82%B3%EB%8A%94%EB%82%9C%ED%83%9C%EC%83%9D-%EA%B3%A8%EB%93%A0%EB%AA%B0%EB%A6%AC-3%EB%A7%88%EB%A6%AC/7449/category/359/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "새끼낳는[난태생] 골든몰리 3마리",
+        "description": "색이 화려하고 이쁜 키우기 쉬운 골든몰리 입니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+      "observed_category_evidence": [
+        {
+          "label": "몰리/플래티/소드",
+          "url": "https://zoonimal.co.kr/category/%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C/359/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_8520:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_8520:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_8520",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "디스커스유어 5cm전후 랜덤 5마리 혼합세트 /건강개체 선별",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/디스커스유어-5cm전후-랜덤-5마리-혼합세트-건강개체-선별/8520/",
+      "declared_product_url": "https://zoonimal.co.kr/product/디스커스유어-5cm전후-랜덤-5마리-혼합세트-건강개체-선별/8520/",
+      "observed_at_utc": "2026-10-09T09:40:21.670Z",
+      "registered_at": null,
+      "price_amount": 99000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "99000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "99000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202607/fdbc672c2cce7683d30914bef1c48449.png",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%9C%A0%EC%96%B4-5cm%EC%A0%84%ED%9B%84-%EB%9E%9C%EB%8D%A4-5%EB%A7%88%EB%A6%AC-%ED%98%BC%ED%95%A9%EC%84%B8%ED%8A%B8-%EA%B1%B4%EA%B0%95%EA%B0%9C%EC%B2%B4-%EC%84%A0%EB%B3%84/8520/category/391/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "디스커스유어 5cm전후 랜덤 5마리 혼합세트 /건강개체 선별",
+        "description": "건강 개체로 디스커스 입문자를 위한 디스커스유어세트",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+      "observed_category_evidence": [
+        {
+          "label": "디스커스 전문관",
+          "url": "https://zoonimal.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/391/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_8407:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_8407:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_8407",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "[구라미] 오팔라인 구라미 4cm 내외",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/구라미-오팔라인-구라미-4cm-내외/8407/",
+      "declared_product_url": "https://zoonimal.co.kr/product/구라미-오팔라인-구라미-4cm-내외/8407/",
+      "observed_at_utc": "2026-10-09T09:40:31.685Z",
+      "registered_at": null,
+      "price_amount": 3800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "3800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "3800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202512/fdf5d80eb2924a0be91360c55ea11e25.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EA%B5%AC%EB%9D%BC%EB%AF%B8-%EC%98%A4%ED%8C%94%EB%9D%BC%EC%9D%B8-%EA%B5%AC%EB%9D%BC%EB%AF%B8-4cm-%EB%82%B4%EC%99%B8/8407/category/324/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[구라미] 오팔라인 구라미 4cm 내외",
+        "description": "구라미 중에서 가장 크게 자라는 자이언트 구라미입니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
+      "observed_category_evidence": [
+        {
+          "label": "베타/구라미",
+          "url": "https://zoonimal.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/324/",
+          "evidencePage": "https://zoonimal.co.kr/product/%ED%81%AC%EB%9E%A9%ED%83%9D%EB%B0%B0%EB%B6%88%EA%B0%80%EB%A7%B9%EA%B7%B8%EB%A1%9C%EB%B8%8C-%ED%88%AC%EA%B5%AC%EA%B2%8C-15cm%EB%82%B4%EC%99%B8/7867/category/410/display/1/",
+          "observedAt": "2026-10-08T15:40:39.401Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-08:cafe24_zoonimal_1_8369:default",
+      "collector_key": "retailer-08:cafe24_zoonimal_1_8369:default",
+      "source_id": "retailer-08",
+      "retailer_product_id": "cafe24_zoonimal_1_8369",
+      "variant_id": null,
+      "retailer": "주니멀",
+      "seller_domain": "zoonimal.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[새우] 우드쉬림프 4-6cm내외 (랜덤출고)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://zoonimal.co.kr/product/새우-우드쉬림프-4-6cm내외-랜덤출고/8369/",
+      "declared_product_url": "https://zoonimal.co.kr/product/새우-우드쉬림프-4-6cm내외-랜덤출고/8369/",
+      "observed_at_utc": "2026-10-09T09:40:41.681Z",
+      "registered_at": null,
+      "price_amount": 5000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://zoonimal.co.kr/web/product/big/202512/719ecb713a73a87ad36a3b449cc91c24.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://zoonimal.co.kr/product/%EC%83%88%EC%9A%B0-%EC%9A%B0%EB%93%9C%EC%89%AC%EB%A6%BC%ED%94%84-4-6cm%EB%82%B4%EC%99%B8-%EB%9E%9C%EB%8D%A4%EC%B6%9C%EA%B3%A0/8369/category/410/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[새우] 우드쉬림프 4-6cm내외 (랜덤출고)",
+        "description": "주니멀에서 체계적으로 관리한 우드 쉬림프 6cm 랜덤출고. 자연 속의 건강함을 느낄 수 있는 특별한 수족관 경험을 제공합니다.",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 6,
+      "discovery_category_url": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
+      "observed_category_evidence": [
+        {
+          "label": "새우/갑각류/달팽이",
+          "url": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
+          "evidencePage": "https://zoonimal.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/410/",
+          "observedAt": null
+        }
+      ]
     }
   ],
   "direct_photo_validation": {

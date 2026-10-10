@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T12:56:30.674Z",
+  "generatedAt": "2026-10-10T17:25:23.841Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -260,10 +260,10 @@
           "lastAutomatedFailureAt": "2026-10-10T12:56:29.866Z"
         },
         "gear": {
-          "intervalHours": 12,
-          "lastEvaluatedAt": "2026-10-10T06:17:34.058Z",
-          "lastDecision": "attempted",
-          "evaluatedConfigRevision": "3688ee373781246f38f38fa548c568383854877b83a81822ea2380ee2d71692b",
+          "intervalHours": 24,
+          "lastEvaluatedAt": "2026-10-10T17:25:23.254Z",
+          "lastDecision": "already_attempted_window",
+          "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
           "lastAttemptAt": "2026-10-10T06:17:34.072Z",
           "lastManualAttemptAt": "2026-10-10T04:17:40.348Z",
           "lastAttemptConfigRevision": "3688ee373781246f38f38fa548c568383854877b83a81822ea2380ee2d71692b",
@@ -1641,7 +1641,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -2047,7 +2047,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -2325,7 +2325,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -25453,7 +25453,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {

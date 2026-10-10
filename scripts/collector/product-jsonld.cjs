@@ -1,5 +1,8 @@
 'use strict';
 const { httpsUrl, sourceUrl } = require('../../dist/data-model.js');
+const { isDeepStrictEqual } = require('node:util');
+// This provenance cannot be supplied by a JSON-LD property on a standalone Product.
+const GROUP_MEMBER = Symbol('parsed ProductGroup member');
 function host(url) { return new URL(url).hostname.replace(/^www\./, ''); }
 function decode(text) { return String(text).replace(/&(?:amp|quot|apos|lt|gt|nbsp);|&#(\d+);|&#x([a-f\d]+);/gi, (entity, dec, hex) => dec || hex ? String.fromCodePoint(Number.parseInt(dec || hex, dec ? 10 : 16)) : ({'&amp;':'&','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>','&nbsp;':' '})[entity.toLowerCase()]); }
 function normalizeIdentityText(text) { return String(text).replace(/[\p{White_Space}\uFEFF]+/gu, ' ').trim(); }
@@ -21,7 +24,10 @@ function walk(value, found) {
   const types = Array.isArray(value['@type']) ? value['@type'] : [value['@type']];
   if (types.some(x => typeof x === 'string' && /(?:^|[\/#])ProductGroup$/.test(x))) {
     for (const child of Array.isArray(value.hasVariant) ? value.hasVariant : value.hasVariant ? [value.hasVariant] : []) {
-      walk({ name: value.name, image: value.image, url: value.url, ...child, _groupName: value.name, _groupId: value.productGroupID || value.sku || value.productID, _groupLowPrice:value.offers?.lowPrice, '@type': child['@type'] || 'Product' }, found);
+      if (!child || typeof child !== 'object' || Array.isArray(child)) continue;
+      const member = { name: value.name, image: value.image, url: value.url, ...child, _groupName: value.name, _groupId: value.productGroupID || value.sku || value.productID, _groupLowPrice:value.offers?.lowPrice, '@type': child['@type'] || 'Product' };
+      member[GROUP_MEMBER] = { group: value, variant: child };
+      walk(member, found);
     }
   } else if (types.some(x => typeof x === 'string' && /(?:^|[\/#])Product$/.test(x))) found.push(value);
   if (value['@graph']) walk(value['@graph'], found);
@@ -42,6 +48,87 @@ function priceIsVisible(text, amount) {
   const options = [...new Set([String(amount), amount.toLocaleString('en-US')])].map(value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
   return options.some(value => new RegExp(`(?:^|[^\\d,])${value}\\s*(?:원|won|KRW)(?:\\s|$|[^\\d])|[₩\\u20a9]\\s*${value}(?:$|[^\\d,])`, 'i').test(text));
 }
+// Only the observed packaging selector can be separated from a ProductGroup's
+// primary identity. This is deliberately not a general paid-title normalizer.
+function packagingOption(properties) {
+  if (!Array.isArray(properties) || properties.length !== 1) return null;
+  const property = properties[0];
+  if (!property || typeof property !== 'object' || typeof property.name !== 'string' || typeof property.value !== 'string') return null;
+  const name = normalizeIdentityText(decode(property.name)), value = normalizeIdentityText(decode(property.value));
+  if (!/^생물\s*포장비\s*선택$/.test(name)) return null;
+  if (!/^(?:생물\s*포장비\s*\(전체\s*생물\s*금액\s*\d+(?:,\d{3})*(?:만)?원\s*이하\)|생물\s*포장비는\s*1회만\s*결제해주시면\s*됩니다\.?|고속버스택배비\s*\(고택\)|\d+(?:,\d{3})*(?:만)?원\s*이상\s*\(미선택\))$/.test(value)) return null;
+  return { name, value };
+}
+function sameProductPage(value, pageUrl) {
+  if (typeof value !== 'string' || !sourceUrl(value)) return false;
+  try {
+    const url = new URL(value), page = new URL(pageUrl);
+    if (host(value) !== host(pageUrl) || url.port !== page.port) return false;
+    const id = u => u.pathname === '/product/detail.html' && /^\d+$/.test(u.searchParams.get('product_no') || '') ? u.searchParams.get('product_no') : u.pathname.match(/^\/product\/[^/]+\/(\d+)(?:\/|$)/)?.[1];
+    const a = id(url), b = id(page);
+    return Boolean(a && b && a === b);
+  } catch { return false; }
+}
+function primaryProductEvidence(product, offer, item, text, context, html) {
+  const member = product[GROUP_MEMBER];
+  if (!member) return null;
+  const { group, variant } = member;
+  const groupId = group.productGroupID || group.sku || group.productID;
+  if (typeof group.name !== 'string' || typeof groupId !== 'string' || !groupId.trim() || groupId !== item.retailer_product_id) return null;
+  if (typeof variant.name !== 'string' || typeof variant.sku !== 'string' || !variant.sku.trim() || variant.sku !== item.variant_id) return null;
+  // Ambiguous membership, conflicting SKU declarations and references fail closed.
+  const members = Array.isArray(group.hasVariant) ? group.hasVariant : [group.hasVariant];
+  if (!members.every(v => v && typeof v === 'object' && !Array.isArray(v) && typeof v.name === 'string' && typeof v.sku === 'string' && v.sku.trim() && v.offers && typeof v.offers === 'object' && [].concat(v['@type'] || 'Product').some(t => typeof t === 'string' && /(?:^|[\/#])Product$/.test(t)))) return null;
+  if (members.filter(v => v && typeof v === 'object' && v.sku === variant.sku).length !== 1 || offer.sku && offer.sku !== variant.sku) return null;
+  const types = [].concat(variant['@type'] || 'Product');
+  if (!types.some(t => typeof t === 'string' && /(?:^|[\/#])Product$/.test(t))) return null;
+  const properties = Array.isArray(variant.additionalProperty) ? variant.additionalProperty : variant.additionalProperty ? [variant.additionalProperty] : [];
+  const option = packagingOption(properties), name = normalizeIdentityText(decode(group.name));
+  if (!option || !name || normalizeIdentityText(decode(variant.name)) !== name + ' ' + option.value) return null;
+  if (!identityIsVisible(text, name) || !identityIsVisible(text, option.value)) return null;
+  const visibleHtml = html.replace(/<script\b[\s\S]*?<\/script\s*>|<style\b[\s\S]*?<\/style\s*>|<!--[\s\S]*?-->/gi, '');
+  if (![...visibleHtml.matchAll(/<h([12])\b[^>]*>([\s\S]*?)<\/h\1\s*>/gi)].some(m => visibleText(m[2]) === name)) return null;
+  if (item.variant_title != null && normalizeIdentityText(item.variant_title) !== option.value) return null;
+  if (!sameProductPage(group.url, context.url) || !sameProductPage(variant.url, context.url) || !sameProductPage(item.product_url, context.url)) return null;
+  if (offer.url && new URL(offer.url).href !== new URL(variant.url).href) return null;
+  const code = new URL(variant.url).searchParams.get('item_code');
+  if (code && variant.sku !== code && !variant.sku.endsWith('_' + code)) return null;
+  if (variant.isVariantOf) {
+    const relation = variant.isVariantOf;
+    if (typeof relation === 'string') { if (relation !== group['@id'] && relation !== group.url) return null; }
+    else {
+      if (!relation || typeof relation !== 'object') return null;
+      const refs = ['productGroupID', 'sku', 'productID', '@id', 'url'].filter(key => relation[key] != null);
+      if (!refs.length || refs.some(key => ![groupId, group['@id'], group.url].filter(Boolean).includes(relation[key]))) return null;
+    }
+  }
+  return {
+    version: 1, kind: 'visible_product_group_packaging_option',
+    parent_name: name, parent_product_id: groupId, parent_product_url: group.url,
+    parent_description: typeof group.description === 'string' ? visibleText(group.description).slice(0, 12000) : '',
+    variant_id: variant.sku, variant_name: item.title, variant_product_url: item.product_url,
+    variant_description: typeof variant.description === 'string' ? visibleText(variant.description).slice(0, 12000) : '',
+    option, source_page_url: context.url, observed_at_utc: context.observedAt,
+    basis: 'Exact inline ProductGroup member, visible parent identity and packaging-only selector; concrete variant identity and price are unchanged'
+  };
+}
+// Metadata is provenance, not authority: validate it against this exact parsed
+// page again, including the item facts. A copied snapshot record cannot authorize
+// a different member, product page, title, option or offer.
+function validatedPrimaryProductEvidence(html, item, pageUrl) {
+  if (!item || item.primary_product_evidence?.kind !== 'visible_product_group_packaging_option' || !sourceUrl(pageUrl)) return null;
+  try {
+    const result = parseProductPage(html, { url: pageUrl, domain: host(pageUrl), sourceId: item.source_id, name: item.retailer, type: 'gear', observedAt: item.observed_at_utc });
+    if (result.status !== 'success' || result.issues.length) return null;
+    const matches = result.items.filter(p => p.collector_key === item.collector_key);
+    if (matches.length !== 1) return null;
+    const fresh = matches[0];
+    for (const key of ['source_id', 'seller_domain', 'retailer_product_id', 'variant_id', 'title', 'variant_title', 'product_url', 'declared_product_url', 'price_amount', 'currency', 'variant_attributes', 'primary_product_evidence']) {
+      if (!isDeepStrictEqual(fresh[key], item[key])) return null;
+    }
+    return fresh.primary_product_evidence || null;
+  } catch { return null; }
+}
 function parseProductPage(html, context) {
   if (typeof html !== 'string' || !context || !sourceUrl(context.url) || host(context.url) !== context.domain.replace(/^www\./, '')) throw Error('Invalid public product-page context');
   const products = [], issues = [];
@@ -56,7 +143,7 @@ function parseProductPage(html, context) {
     const title = typeof product.name === 'string' ? decode(product.name).trim() : '';
     const retailerProductId = product._groupId || productIdentity(product, context.url);
     const properties=Array.isArray(product.additionalProperty)?product.additionalProperty:product.additionalProperty?[product.additionalProperty]:[];
-    const groupCorroborated=product._groupName && identityIsVisible(text,decode(product._groupName)) && ((properties.length && properties.every(p=>typeof p.value==='string'&&identityIsVisible(text,decode(p.value)))) || typeof product.color==='string'&&identityIsVisible(text,decode(product.color)));
+    const groupCorroborated=product._groupName && identityIsVisible(text,decode(product._groupName)) && ((properties.length && properties.every(p=>p&&typeof p.value==='string'&&identityIsVisible(text,decode(p.value)))) || typeof product.color==='string'&&identityIsVisible(text,decode(product.color)));
     if (!title || (!identityIsVisible(text,title)&&!groupCorroborated) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
     const offers = Array.isArray(product.offers) ? product.offers : product.offers ? [product.offers] : [];
     for (const offer of offers) {
@@ -86,18 +173,21 @@ function parseProductPage(html, context) {
         try{const original=new URL(imageUrl),target=new URL(approved.httpsUrl);if(original.protocol==='http:'&&host(imageUrl)===context.domain.replace(/^www\./,'')&&original.hostname===target.hostname){original.protocol='https:';if(original.href===target.href)photoUrl=target.href;}}catch{}
       }
       if (!['live','gear'].includes(context.type) || (context.type === 'live' && !['fish','shrimp','aquatic_plant','snail'].includes(context.subtype))) { issues.push('verified_category_required'); continue; }
-      const countProperty=properties.find(p=>p.name==='마릿수'&&typeof p.value==='string'&&/^\d+마리$/.test(p.value));
+      const countProperty=properties.find(p=>p&&p.name==='마릿수'&&typeof p.value==='string'&&/^\d+마리$/.test(p.value));
       const quantity = context.quantityPerPack ?? (product.quantitativeValue?.unitCode === 'C62' ? product.quantitativeValue.value : countProperty ? Number.parseInt(countProperty.value,10) : null);
       const quantityPerPack = Number.isSafeInteger(quantity) && quantity > 0 ? quantity : null;
-      items.push({ id: products.length === 1 && offers.length === 1 && context.existingId ? context.existingId : key, collector_key: key, source_id: context.sourceId, retailer_product_id: retailerProductId, variant_id: variantId,
+      const item = { id: products.length === 1 && offers.length === 1 && context.existingId ? context.existingId : key, collector_key: key, source_id: context.sourceId, retailer_product_id: retailerProductId, variant_id: variantId,
         retailer: context.name, seller_domain: host(context.url), source_kind: 'direct_retailer_product_page', verification_method: visiblePrice ? 'Product JSON-LD identity and KRW price corroborated against visible page text' : groupBaseCorroborated ? 'ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked' : 'Visible product identity and JSON-LD Offer corroborated against matching public product price metadata; rendered purchase price not independently checked',
         type: context.type, subtype: context.subtype ?? null, title, variant_title: typeof offer.name === 'string' ? decode(offer.name) : typeof product.color==='string' ? '색상: '+product.color : context.variant ?? (quantityPerPack ? quantityPerPack+'마리 묶음' : null), quantity_per_pack: quantityPerPack, unit_price_amount: quantityPerPack ? amount / quantityPerPack : null,
         product_url: productUrl, declared_product_url:declaredUrl, observed_at_utc: context.observedAt, registered_at: null, price_amount: amount, currency: 'KRW', shipping_amount: null, variant_attributes: properties, price_metadata:meta, price_basis:'Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified',
         available, availability_basis: availability ? `Retailer JSON-LD ${availability}; not checkout-confirmed inventory` : 'Availability not supplied', stock_quantity: null,
-        photo: photoUrl ? { verified_https_url: photoUrl, permission_basis: 'explicit_user_instruction', source_page_url: context.url, downloaded_or_rehosted: false } : null });
+        photo: photoUrl ? { verified_https_url: photoUrl, permission_basis: 'explicit_user_instruction', source_page_url: context.url, downloaded_or_rehosted: false } : null };
+      const primary = primaryProductEvidence(product, offer, item, text, context, html);
+      if (primary) item.primary_product_evidence = primary;
+      items.push(item);
     }
   }
   if(context.existingId && products.length>1 && items.length>1 && issues.length===0)for(const item of items)item.replaces_snapshot_id=context.existingId;
   return { status: items.length ? 'success' : 'parse_failed', items, issues };
 }
-module.exports = { parseProductPage, visibleText, priceIsVisible };
+module.exports = { parseProductPage, visibleText, priceIsVisible, validatedPrimaryProductEvidence };

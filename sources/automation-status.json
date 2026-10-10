@@ -4,8 +4,8 @@
   "workflowUrl": "https://github.com/joonhyoung-kim/aqua-price/actions/workflows/catalog-refresh.yml",
   "dispatchMode": "all",
   "scheduleUTC": {
-    "live": "17 */3 * * *",
-    "gear": "29 */6 * * *",
+    "live": "17 */6 * * *",
+    "gear": "29 */12 * * *",
     "reconcile": "43 2 * * *"
   },
   "newProductDiscovery": true,

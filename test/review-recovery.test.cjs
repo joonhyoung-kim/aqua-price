@@ -11,7 +11,7 @@ function fixture(title='테트라'){
  return {host,url,category,source,seed,state,now,listing};
 }
 test('review recovery requires parsed membership in an actual pure category and retains original evidence',()=>{
- const f=fixture(),r=reassessReviews(f.source,f.seed,f.state,new Set(),f.now);assert.equal(r.recovered.length,1);assert.equal(r.networkRequests,0);assert.equal(r.recovered[0].candidate.subtype,'fish');assert.equal(r.recovered[0].candidate.reviewRecovery.originalCategoryUrl,f.host+'/category/all/9/');assert.equal(r.recovered[0].candidate.reviewRecovery.evidencePageUrl,f.category);assert.equal(f.state.products.length,0);assert.equal(f.state.discoveryReviewQueue.length,1);
+ const f=fixture(),r=reassessReviews(f.source,f.seed,f.state,new Set(),f.now);assert.equal(r.recovered.length,1);assert.equal(r.networkRequests,0);assert.equal(r.recovered[0].candidate.subtype,'fish');assert.equal(r.recovered[0].candidate.requiresFreshVerification,true);assert.equal(r.recovered[0].candidate.reviewRecovery.originalCategoryUrl,f.host+'/category/all/9/');assert.equal(r.recovered[0].candidate.reviewRecovery.evidencePageUrl,f.category);assert.equal(f.state.products.length,0);assert.equal(f.state.discoveryReviewQueue.length,1);
  delete f.state.cache[f.category];assert.equal(reassessReviews(f.source,f.seed,f.state).recovered.length,0);
 });
 test('conflicting subtype membership and feed conflicts remain under review',()=>{
@@ -25,7 +25,7 @@ test('holds, robots denial, source denial and missing price never recover a revi
  const bad=fixture();bad.state.cache[bad.url].text='<h1>테트라</h1>';assert.equal(reassessReviews(bad.source,bad.seed,bad.state).recovered.length,0);
 });
 test('recovered cached detail is verified before leaving review and historical issues cannot resurrect it',async()=>{
- const f=fixture(),{integrateDiscovery}=require('../scripts/collector/integrate-discovery.cjs'),options={recoverReviews:true,coverageLive:true,pendingFirst:true,fetch:()=>{throw Error('No network expected')}};
- const first=await integrateDiscovery(f.source,f.seed,f.state,{items:[]},options);assert.equal(first.products.length,1);assert.equal(first.discoveryReviewQueue.length,0);assert.equal(first.reviewRecoverySummary.eligible,1);assert.equal(first.products[0].subtype,'fish');
- const next=await integrateDiscovery(f.source,f.seed,{...first,requests:0},{items:first.products},options);assert.equal(next.products.length,1);assert.equal(next.discoveryReviewQueue.length,0);
+ const f=fixture(),{integrateDiscovery}=require('../scripts/collector/integrate-discovery.cjs'),calls=[],options={recoverReviews:true,coverageLive:true,pendingFirst:true,fetch:async url=>{calls.push(url);assert.equal(url,f.url);return new Response(f.state.cache[f.url].text);}};
+ const first=await integrateDiscovery(f.source,f.seed,f.state,{items:[]},options);assert.equal(first.products.length,1);assert.equal(first.discoveryReviewQueue.length,0);assert.equal(first.reviewRecoverySummary.eligible,1);assert.equal(first.products[0].subtype,'fish');assert.deepEqual(calls,[f.url]);
+ const next=await integrateDiscovery(f.source,f.seed,{...first,requests:0},{items:first.products},options);assert.equal(next.products.length,1);assert.equal(next.discoveryReviewQueue.length,0);assert.deepEqual(calls,[f.url]);
 });

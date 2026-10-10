@@ -90,12 +90,13 @@ function runChecks(buildCatalog, snapshot, priorCatalog, applyUpdates) {
  }
  return result;
 }
-const fs=require('node:fs'),path=require('node:path');
 const {buildCatalog}=require('../scripts/build-catalog.cjs');
 const {applyUpdates}=require('../scripts/collector/publish.cjs');
-const folder=path.join(__dirname,'../dist');
+// Exact historical fee cases and independently preserved catalog projections.
+// Current inventory/exclusion identity reconciliation remains in app/publication tests.
+const evidence=require('./fixtures/gear-discovery-baseline.json');
 runChecks(buildCatalog,
- JSON.parse(fs.readFileSync(path.join(folder,'source-snapshot.json'),'utf8')),
- JSON.parse(fs.readFileSync(path.join(folder,'catalog.json'),'utf8')),
+ {items:evidence.revalidationItems.map(e=>e.item)},
+ {products:evidence.revalidationCatalogProducts.map(e=>e.item)},
  applyUpdates);
 console.log('Service fee checks passed, including old gear republishing.');

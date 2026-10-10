@@ -45,7 +45,8 @@ async function setup(data = actual, fail = false, search = '?type=gear&subtype=a
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
   const choose=(leaf,browse='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-live-group]'?{dataset:{liveGroup:leaf,browseFilter:browse}}:null;}}});
-  return { renderCount:()=>renderCalls,fetchCount:()=>fetchCalls, nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  const chooseGear=(leaf,category='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-gear-group]'?{dataset:{gearGroup:leaf,gearCategory:category}}:null;}}});
+  return { chooseGear, openGear(category){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-gear-browse]'?{dataset:{gearBrowse:category}}:null;}}});}, renderCount:()=>renderCalls,fetchCount:()=>fetchCalls, nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('default entry selects all livestock, while explicit URL re-entry preserves controls', async () => {
  const app=await setup(actual,false,'');
@@ -87,9 +88,11 @@ if(otherCount){
 }
  const expected=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(search)).rows;
  assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));
- app.choose('shrimp_yamato');assert.ok(app.names().every(n=>/야마토/.test(n)));
- app.subtype('aquatic_plant');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="all" data-browse-filter="all" aria-pressed="true"/);assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="plant_fern"/);
- app.choose('plant_rotala');assert.ok(app.names().every(n=>/로탈라|로타라/.test(n)));
+ app.choose('shrimp_yamato');assert.deepEqual(app.names(),AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search())).rows.slice(0,24).map(p=>p.name));
+ app.subtype('aquatic_plant');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="all" data-browse-filter="all" aria-pressed="true"/);
+ const plantBase=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search())).rows;
+ assert.equal(app.nodes.groupTree.innerHTML.includes('data-live-group="plant_fern"'),plantBase.some(p=>AquaCatalog.livestockGroup(p)==='plant_fern'));
+ app.choose('plant_rotala');assert.deepEqual(app.names(),AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search())).rows.slice(0,24).map(p=>p.name));
  app.subtype('all');assert.equal(app.nodes.fishFilters.hidden,true);assert.equal(app.names().length,24);
 });
 test('legacy URLs preserve selection and actual other products remain visible',async()=>{
@@ -197,21 +200,62 @@ test('search is local and includes original product title, not only short title'
   app.nodes.query.value = 'no match'; let prevented = false; app.nodes.search.listeners.submit({ preventDefault() { prevented = true; } });
   assert.equal(prevented, true); assert.deepEqual(app.names(), []);
 });
+function isolatedSecurityCatalog() {
+  // Security assertions use one isolated, deliberately rendered item. Never select
+  // an arbitrary production row that new prices or pagination can push off-page.
+  const product = {
+    id: 'security-fixture', verified: true, sellerId: 'security-fixture.invalid',
+    sourceUrl: 'https://security-fixture.invalid/product?sku=fixture&x="unsafe"&single=\'quote\'',
+    name: 'Security fixture "quoted" <img src=x onerror=alert(1)> <script>alert(1)</script> & \'single\'',
+    originalTitle: 'Security fixture "quoted" <script>alert(1)</script> &',
+    spec: 'fixture only', type: 'gear', subtype: 'filter',
+    observedAt: '2026-01-01T00:00:00Z', registeredAt: null,
+    price: { amount: 14000, currency: 'KRW' }, shipping: null,
+    cumulativeSales: null, periodSales: null, available: true,
+    photo: { url: 'https://security-fixture.invalid/photo.jpg?x=\"photo\"&single=\'quote\'', usePermission: 'allowed', permissionEvidenceUrl: 'https://security-fixture.invalid/product?sku=fixture' },
+  };
+  const data = {
+    schemaVersion: 1, status: 'ready', reason: 'Isolated security test fixture',
+    asOf: product.observedAt,
+    sellers: [{ id: product.sellerId, name: 'Security fixture seller', officialUrl: 'https://security-fixture.invalid/' }],
+    products: [product],
+  };
+  return data;
+}
 test('product text and attribute strings are escaped; source links remain safe', async () => {
-  const data = structuredClone(actual);
-  const product = data.products.find(p=>p.type==='gear');
-  product.name = '<img src=x onerror=alert(1)> <script>alert(1)</script> &';
-  product.originalTitle = '" <script>alert(1)</script> &';
-  product.sourceUrl += '&x="unsafe"';
-  const app = await setup(data);
-  assert.ok(!app.nodes.grid.innerHTML.includes('<script>alert'));
-  assert.ok(!app.nodes.grid.innerHTML.includes('<img src=x'));
-  assert.ok(app.nodes.grid.innerHTML.includes('&lt;script&gt;'));
-  assert.ok(app.nodes.grid.innerHTML.includes('&amp;x=&quot;unsafe&quot;'));
-  assert.match(app.nodes.grid.innerHTML, /rel="noopener noreferrer"/);
+  const data = isolatedSecurityCatalog(), product = data.products[0];
+  AquaCatalog.validateCatalog(data);
+  const app = await setup(data, false, '?type=gear&sort=low&days=all&includeUnknown=true');
+  assert.deepEqual(app.names(), [product.name], 'the exact malicious fixture must actually be rendered');
+  const cards = [...app.nodes.grid.innerHTML.matchAll(/<article class="card">([\s\S]*?)<\/article>/g)];
+  assert.equal(cards.length, 1);
+  const card = cards[0][1];
+  assert.ok(!card.includes('<script>alert'));
+  assert.ok(!card.includes('<img src=x'));
+  assert.ok(card.includes('&lt;script&gt;'));
+  assert.ok(card.includes('&amp;x=&quot;unsafe&quot;'));
+  assert.ok(card.includes(`<h3 title="${escaped(product.name)}">${escaped(product.name)}</h3>`));
+  assert.ok(card.includes(`<img src="${escaped(product.photo.url)}" alt="${escaped(product.name)} 상품 사진"`));
+  assert.equal((card.match(/<img /g) || []).length, 1, 'the fixture photo is the only image element');
+  const link = card.match(/<a class="source" href="([^"]+)" target="_blank" rel="noopener noreferrer">판매처 이동 ↗<\/a>/);
+  assert.ok(link, 'one escaped HTTPS source link with safe new-tab attributes must remain');
+  assert.equal(decoded(link[1]), product.sourceUrl);
+  assert.equal(new URL(decoded(link[1])).protocol, 'https:');
+  assert.equal(new URL(decoded(link[1])).hostname, product.sellerId);
+  assert.equal((card.match(/<a /g) || []).length, 1);
+  for (const unsafe of ['javascript:alert(1)', 'data:text/html,<script>alert(1)</script>', 'https://user@security-fixture.invalid/']) {
+    const invalid = structuredClone(data); invalid.products[0].sourceUrl = unsafe;
+    assert.throws(() => AquaCatalog.validateCatalog(invalid), /검증된 판매처·출처 필요/);
+    const rejected = await setup(invalid, false, '?type=gear');
+    assert.deepEqual(rejected.names(), []);
+    assert.doesNotMatch(rejected.nodes.grid.innerHTML, /class="source"/);
+  }
 });
 test('failed photo keeps accessible fallback and seller link without extra card text', async () => {
-  const app = await setup();
+  const data = isolatedSecurityCatalog();
+  const app = await setup(data, false, '?type=gear');
+  assert.deepEqual(app.names(), [data.products[0].name]);
+  assert.equal(app.images.length, 1, 'the isolated photo fixture must actually render');
   const image = app.images[0]; image.listeners.error();
   assert.equal(image.hidden, true); assert.equal(image.fallback.hidden, false);
   assert.doesNotMatch(app.nodes.grid.innerHTML,/사진을 불러오지 못했습니다/); assert.match(app.nodes.grid.innerHTML, /판매처 이동/);
@@ -299,7 +343,7 @@ test('fish families combine with existing filters and remain separate from gear'
  const app=await setup();app.type('live');app.subtype('fish');assert.equal(app.nodes.fishFilters.hidden,false);
  for(const group of ['guppy','platy','molly','other']){app.fishGroup(group);const expected=AquaCatalog.selectProducts(actual,{type:'live',subtype:'fish',fishGroup:group,sort:'low',days:'all',query:''}).rows;assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));}
  app.fishGroup('all');app.nodes.query.value='플레티';app.nodes.query.listeners.input({target:app.nodes.query}); app.nodes.search.listeners.submit({preventDefault(){}});assert.ok(app.names().every(name=>/플래티|플레티/.test(name)));
- app.type('gear');assert.equal(app.nodes.fishFilters.hidden,true);app.subtype('shrimp');assert.equal(app.nodes.fishFilters.hidden,true);
+ app.type('gear');assert.equal(app.nodes.fishFilters.hidden,false);assert.match(app.nodes.groupTree.innerHTML,/data-gear-group/);app.subtype('shrimp');assert.equal(app.nodes.fishFilters.hidden,false);
  assert.throws(()=>app.tool.execute({type:'live',sort:'low',days:'all',fishGroup:'invented'}));
 });
 
@@ -395,4 +439,62 @@ test('clearing a draft changes results only when submitted',async()=>{
  app.nodes.search.listeners.submit({preventDefault(){}});
  assert.equal(new URLSearchParams(app.search()).get('query'),null);
  assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
+});
+
+
+test('gear hierarchy counts and breadcrumbs filter by parent and leaf; parent changes reset leaf',async()=>{
+ const app=await setup(actual,false,'?type=gear');
+ const filters=AquaCatalog.filtersFromSearch('?type=gear'),view=AquaCatalog.createCatalogQuery(actual).view(filters);
+ assert.equal(app.nodes.fishFilters.hidden,false);
+ assert.equal(app.nodes.groupTree.attributes['aria-label'],'용품 세부 종류 탐색');
+ assert.match(app.nodes.groupTree.innerHTML,new RegExp('용품 전체</span><span class="group-count">'+gear.length+'개'));
+ for(const group of AquaCatalog.gearNavigation){
+  assert.equal(app.nodes.groupTree.innerHTML.includes('data-gear-browse="'+group.key+'"'),view.gearCounts.categories[group.key]>0);
+ }
+ const before=app.names(),url=app.search();app.openGear('filtration');
+ assert.deepEqual(app.names(),before);assert.equal(app.search(),url);
+ assert.match(app.nodes.groupTree.innerHTML,/data-gear-browse="filtration" aria-expanded="true"/);
+ app.chooseGear('filter_internal','filtration');
+ const expected=AquaCatalog.selectProducts(actual,{...filters,gearCategory:'filtration',gearGroup:'filter_internal'}).rows;
+ assert.deepEqual(app.names(),expected.slice(0,24).map(p=>p.name));
+ for(let loaded=24;loaded<expected.length;loaded+=24){
+  assert.equal(app.nodes.moreResults.hidden,false,'remaining matching gear must be available on the next page');
+  app.nodes.moreResults.listeners.click();
+  assert.deepEqual(app.names(),expected.slice(0,loaded+24).map(p=>p.name));
+ }
+ assert.deepEqual(app.names(),expected.map(p=>p.name));
+ assert.equal(app.nodes.moreResults.hidden,true);
+ assert.match(app.nodes.groupPath.textContent,/용품 › 여과기·여과재 › 측면·내부 여과기/);
+ assert.match(app.nodes.resultTitle.textContent,/측면·내부 여과기/);
+ app.chooseGear('all','lighting');assert.ok(app.names().length);assert.ok(!app.search().includes('gearGroup='));
+ assert.equal(AquaCatalog.filtersFromSearch(app.search()).gearCategory,'lighting');
+ const lighting=AquaCatalog.selectProducts(actual,{...filters,gearCategory:'lighting',gearGroup:'all'}).rows;
+ assert.deepEqual(app.names(),lighting.slice(0,24).map(p=>p.name));
+ assert.ok(lighting.every(p=>AquaCatalog.gearParent(AquaCatalog.gearGroup(p))?.key==='lighting'));
+ app.chooseGear('all','all');assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
+});
+
+test('gear selection cannot apply a draft query and survives URL reload and livestock switches',async()=>{
+ const app=await setup(actual,false,'?type=gear');
+ app.nodes.query.value='HJ-952';app.nodes.query.listeners.input({target:app.nodes.query});
+ app.chooseGear('filter_internal','filtration');assert.ok(app.names().length>1);assert.ok(!app.search().includes('query='));
+ app.nodes.search.listeners.submit({preventDefault(){}});
+ const matches=AquaCatalog.selectProducts(actual,AquaCatalog.filtersFromSearch(app.search())).rows;
+ assert.ok(matches.length>0);assert.ok(matches.every(p=>p.name.includes('HJ-952')));assert.deepEqual(app.names(),matches.slice(0,24).map(p=>p.name));
+ const reloaded=await setup(actual,false,app.search());assert.deepEqual(reloaded.names(),app.names());
+ assert.equal(reloaded.nodes.query.value,'HJ-952');assert.match(reloaded.nodes.groupPath.textContent,/측면·내부/);
+ app.type('live');app.subtype('shrimp');app.type('gear');assert.deepEqual(app.names(),reloaded.names());
+ app.tool.execute({type:'gear',sort:'low',days:'all',gearCategory:'lighting',query:''});
+ assert.equal(AquaCatalog.filtersFromSearch(app.search()).gearGroup,'all');assert.match(app.nodes.resultTitle.textContent,/조명/);
+ assert.throws(()=>app.tool.execute({type:'gear',sort:'low',days:'all',gearCategory:'lighting',gearGroup:'heater'}));
+});
+
+test('unknown gear stays visible and selected zero-result categories remain navigable',async()=>{
+ const app=await setup(actual,false,'?type=gear&gearCategory=other');
+ const unknown=gear.filter(p=>AquaCatalog.gearGroup(p)==='other');assert.deepEqual(app.names(),unknown.slice(0,24).map(p=>p.name));
+ assert.match(app.nodes.groupTree.innerHTML,/data-gear-group="other"[^>]*aria-pressed="true"/);
+ const withoutHeaters={...actual,products:actual.products.filter(p=>AquaCatalog.gearGroup(p)!=='heater')};
+ const empty=await setup(withoutHeaters,false,'?type=gear&gearCategory=temperature&gearGroup=heater');
+ assert.deepEqual(empty.names(),[]);assert.match(empty.nodes.groupTree.innerHTML,/data-gear-group="heater"[^>]*aria-pressed="true"/);
+ empty.chooseGear('all','all');assert.deepEqual(empty.names(),AquaCatalog.selectProducts(withoutHeaters,AquaCatalog.filtersFromSearch(empty.search())).rows.slice(0,24).map(p=>p.name));
 });

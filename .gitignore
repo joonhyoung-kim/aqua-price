@@ -9,3 +9,8 @@ coverage/
 Thumbs.db
 .collector/
 *.tmp
+
+# Local rollback copies created by the admin overlay installer.
+.aqua-admin-backup-*/
+
+.aqua-reclassification-backup-*/

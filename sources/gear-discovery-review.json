@@ -1,0 +1,407 @@
+{
+  "baselineCommit": "e44719334b3423c7cc1d3781097211f087a2249d",
+  "preparedAt": "2026-10-09T22:52:59.515Z",
+  "networkRequests": 0,
+  "importedProducts": 0,
+  "addedObservedGearMenus": 1212,
+  "supportedSourcesWithGear": 34,
+  "method": "Reclassified already-observed same-retailer navigation hrefs using complete ancestor labels. No URL enumeration, price import, or claim of full coverage.",
+  "unimplementedAdapters": [
+    {
+      "sourceId": "retailer-20",
+      "adapter": "not_implemented",
+      "gearSeedCount": 1,
+      "status": "adapter_not_implemented"
+    },
+    {
+      "sourceId": "retailer-45",
+      "adapter": "not_implemented",
+      "gearSeedCount": 5,
+      "status": "adapter_not_implemented"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "retailer-01",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 0,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-02",
+      "adapter": "makeshop_category_links",
+      "addedObservedGearMenus": 51,
+      "gearSeedCount": 52,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-04",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 178,
+      "gearSeedCount": 179,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-05",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 0,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-06",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 13,
+      "gearSeedCount": 15,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-07",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 8,
+      "gearSeedCount": 9,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-08",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 6,
+      "gearSeedCount": 7,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-09",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 47,
+      "gearSeedCount": 48,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-10",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 12,
+      "gearSeedCount": 13,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-11",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 1,
+      "gearSeedCount": 2,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-12",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 7,
+      "gearSeedCount": 8,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-13",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 30,
+      "gearSeedCount": 31,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-14",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 5,
+      "gearSeedCount": 6,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-15",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 7,
+      "gearSeedCount": 8,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-16",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 1,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-17",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 3,
+      "gearSeedCount": 4,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-18",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 3,
+      "gearSeedCount": 4,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-22",
+      "adapter": "makeshop_category_links",
+      "addedObservedGearMenus": 71,
+      "gearSeedCount": 73,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-23",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 16,
+      "gearSeedCount": 17,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-24",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 62,
+      "gearSeedCount": 64,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-29",
+      "adapter": "makeshop_category_links",
+      "addedObservedGearMenus": 55,
+      "gearSeedCount": 58,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-32",
+      "adapter": "godo_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 1,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-33",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 4,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-34",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 3,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-36",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 1,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-37",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 2,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-38",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 1,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-39",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 0,
+      "gearSeedCount": 2,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-40",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 34,
+      "gearSeedCount": 37,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-42",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 6,
+      "gearSeedCount": 10,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-48",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 9,
+      "gearSeedCount": 9,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-49",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 3,
+      "gearSeedCount": 3,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-50",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 1,
+      "gearSeedCount": 1,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-51",
+      "adapter": "imweb_category_links",
+      "addedObservedGearMenus": 27,
+      "gearSeedCount": 27,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-47",
+      "adapter": "wpet_category_links",
+      "addedObservedGearMenus": 5,
+      "gearSeedCount": 5,
+      "allSourceCategoriesReviewed": false
+    },
+    {
+      "sourceId": "retailer-25",
+      "adapter": "cafe24_category_links",
+      "addedObservedGearMenus": 552,
+      "gearSeedCount": 552,
+      "allSourceCategoriesReviewed": false
+    }
+  ],
+  "revalidationCandidates": [
+    {
+      "key": "aquapro.kr:6687",
+      "id": "retailer-07:cafe24_pucu32_1_6687:cafe24_pucu32_1_6687_P0000JXF000A",
+      "collectorKey": "retailer-07:cafe24_pucu32_1_6687:cafe24_pucu32_1_6687_P0000JXF000A",
+      "url": "https://aquapro.kr/product/야생베타-betta-simplex-베타-심플렉스/6687/?item_code=P0000JXF000A",
+      "title": "[야생베타] Betta simplex 베타 심플렉스 생물포장비 (전체생물금액 3만원 이하)",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-08T22:16:16.527Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "aquapro.kr:6687",
+      "id": "retailer-07:cafe24_pucu32_1_6687:cafe24_pucu32_1_6687_P0000JXF000D",
+      "collectorKey": "retailer-07:cafe24_pucu32_1_6687:cafe24_pucu32_1_6687_P0000JXF000D",
+      "url": "https://aquapro.kr/product/야생베타-betta-simplex-베타-심플렉스/6687/?item_code=P0000JXF000D",
+      "title": "[야생베타] Betta simplex 베타 심플렉스 생물 포장비는 1회만 결제해주시면 됩니다.",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-08T22:16:16.527Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "alphafish.co.kr:2081",
+      "id": "retailer-09:cafe24_alphafish_1_2081:default",
+      "collectorKey": "retailer-09:cafe24_alphafish_1_2081:default",
+      "url": "https://alphafish.co.kr/product/믹스칼라-생이새우-20-마리-체리새우-생물-포장비-무료/2081/",
+      "title": "믹스칼라 생이새우 20 마리 / 체리새우  (생물 포장비 무료)",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": null,
+      "previousObservedAt": "2026-10-09T13:34:37.411Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "bizidduk.com:5426",
+      "id": "retailer-12:cafe24_bizidduk83_1_5426:default",
+      "collectorKey": "retailer-12:cafe24_bizidduk83_1_5426:default",
+      "url": "https://bizidduk.com/product/생이새우-100-마리-전용사료증정-생물포장비없음/5426/",
+      "title": "생이새우 100 마리 + 전용사료증정 생물포장비없음",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-08T20:11:20.453Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "bizidduk.com:5441",
+      "id": "retailer-12:cafe24_bizidduk83_1_5441:default",
+      "collectorKey": "retailer-12:cafe24_bizidduk83_1_5441:default",
+      "url": "https://bizidduk.com/product/생이새우-100마리-전용사료증정-생물포장비-없음/5441/",
+      "title": "생이새우 100마리 전용사료증정 생물포장비 없음",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-08T22:26:11.378Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "bizidduk.com:5163",
+      "id": "retailer-12:cafe24_bizidduk83_1_5163:default",
+      "collectorKey": "retailer-12:cafe24_bizidduk83_1_5163:default",
+      "url": "https://bizidduk.com/product/생이새우-100-마리-전용사료증정-생물포장비없음/5163/",
+      "title": "생이새우 100 마리 + 전용사료증정 생물포장비없음",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-08T22:26:21.371Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "bizidduk.com:984",
+      "id": "retailer-12:cafe24_bizidduk83_1_984:default",
+      "collectorKey": "retailer-12:cafe24_bizidduk83_1_984:default",
+      "url": "https://bizidduk.com/product/생이새우-100마리-전용사료증정-생물포장비-없음/984/",
+      "title": "생이새우 100마리 전용사료증정 생물포장비 없음",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-08T22:26:51.433Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    },
+    {
+      "key": "bizidduk.com:5271",
+      "id": "retailer-12:cafe24_bizidduk83_1_5271:default",
+      "collectorKey": "retailer-12:cafe24_bizidduk83_1_5271:default",
+      "url": "https://bizidduk.com/product/생이새우-100마리-전용사료증정-생물포장비없음/5271/",
+      "title": "생이새우 100마리 + 전용사료증정 생물포장비없음",
+      "previousType": "gear",
+      "previousSubtype": null,
+      "previousClassificationBasis": "Explicit packaging/shipping supply identity overrides livestock navigation",
+      "previousObservedAt": "2026-10-09T00:40:02.549Z",
+      "status": "fresh_primary_detail_required",
+      "reason": "Livestock identity and packaging/free-gift wording coexist; previous gear classification may reflect the ancillary service, not the product",
+      "preserveIdentityAndVariants": true,
+      "requiresFreshVerification": true,
+      "autoPublish": false
+    }
+  ]
+}

@@ -8,6 +8,35 @@ const { spawnSync } = require('node:child_process');
 const NOW = '2026-10-09T06:20:00.000Z';
 const THEN = '2026-10-08T00:20:00.000Z';
 const IDS = ['retailer-01', 'retailer-02', 'retailer-03'];
+test('report projection preserves singleton classification evidence from retailer-32 review history', () => {
+  const { reportProgress } = require('../scripts/collect-catalog.cjs');
+  const evidence = { title: 'ambiguous product', identityTitle: 'variant', description: 'historic description', options: ['a'], salesSpecification: 'one unit', aquaticDescription: '', ownContext: 'product', subtypes: [], conflicts: ['scope'], sufficient: false, basis: 'visible product classification' };
+  const entry = { key: 'fixture:review', candidate: { url: 'https://fixture.invalid/product/1', type: 'gear' }, evidence };
+  const state = { discoveryReviewQueue: [entry] }, before = structuredClone(state);
+  const result = reportProgress(state, {}, { priceModes: [], discoveryLanes: ['gear'], fetchedPages: [] });
+  assert.deepEqual(result.reviewQueue[0].evidence, evidence);
+  assert.deepEqual(state, before, 'projection must not rewrite private evidence');
+});
+test('singleton page evidence resolves only the exact freshly observed historical identity', () => {
+  const { reportProgress } = require('../scripts/collect-catalog.cjs');
+  const at = '2026-10-10T02:00:00.000Z', page = 'https://fixture.invalid/category/1';
+  const old = { reviewQueue: [] };
+  const next = { key: 'fixture:old', candidate: {}, evidence: { page, observedAt: at, kind: 'product_href' } };
+  const evaluate = fetchedPages => reportProgress({ discoveryReviewQueue: [next] }, old, { priceModes: [], discoveryLanes: ['gear'], fetchedPages });
+  assert.deepEqual(evaluate([{ url: page, requestedAt: at }]).reviewQueue[0].evidence, next.evidence);
+  assert.deepEqual(evaluate([{ url: page, requestedAt: '2026-10-10T03:00:00.000Z' }]).reviewQueue, []);
+  assert.deepEqual(evaluate([{ url: page + '/other', requestedAt: at }]).reviewQueue, []);
+});
+test('array, scalar and absent evidence remain unchanged without inventing page observations', () => {
+  const { reportProgress } = require('../scripts/collect-catalog.cjs');
+  for (const evidence of [[null, { basis: 'array evidence' }], 'legacy textual evidence', 0, false, null, undefined]) {
+    const entry = { key: 'fixture:scalar', candidate: { type: 'gear' }, evidence };
+    const state = { discoveryReviewQueue: [entry] }, before = structuredClone(state);
+    const report = reportProgress(state, {}, { priceModes: [], discoveryLanes: ['gear'], fetchedPages: [{ url: 'https://fixture.invalid/', requestedAt: '2026-10-10T02:00:00.000Z' }] });
+    assert.deepEqual(report.reviewQueue[0].evidence, evidence);
+    assert.deepEqual(state, before);
+  }
+});
 function source(id, index) {
   const host = 'https://fixture-' + index + '.invalid';
   return { id, name: 'Isolated history fixture ' + index, sourceDomain: new URL(host).hostname, officialURL: host, enabled: true, adapter: 'product_jsonld', products: [{ url: host + '/product/fish/1/', type: 'live', subtype: 'fish' }], maxRequests: 5, delayMs: 0, cacheTtlMs: 10800000, timeoutMs: 1000, maxBytes: 30000 };
@@ -114,7 +143,9 @@ test('an interrupted public attempt timestamp never replaces genuinely newer war
     const result = f.run(); assert.equal(result.status, 0, result.stderr);
     for (const report of f.captures()) assertUntouched(report.sources[1], f.history[1], { manualReview: true, blockedUntil: '2026-10-14T00:00:00Z' });
     const saved = f.read('.collector/state.json').sources[IDS[1]];
-    assert.deepEqual(saved.dailyDiscovery, warm[IDS[1]].dailyDiscovery); assert.deepEqual(saved.gearDailyDiscovery, warm[IDS[1]].gearDailyDiscovery); assert.deepEqual(saved.categoryTree, warm[IDS[1]].categoryTree); assert.deepEqual(saved.discoveryPending, warm[IDS[1]].discoveryPending);
+    assert.deepEqual(saved.dailyDiscovery, warm[IDS[1]].dailyDiscovery); assert.deepEqual(saved.gearDailyDiscovery, warm[IDS[1]].gearDailyDiscovery); assert.deepEqual(saved.categoryTree, warm[IDS[1]].categoryTree);
+    // No exact resolution exists for public pending99; retain it beside warm888.
+    assert.deepEqual(saved.discoveryPending, [...warm[IDS[1]].discoveryPending, ...f.history[1].discoveryProgress.pendingCandidates]);
   } finally { f.cleanup(); }
 });
 test('cache-only evaluation publishes real cursor progress without claiming a new actual attempt or success', () => {

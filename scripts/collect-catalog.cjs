@@ -92,8 +92,14 @@ function reportProgress(state, old = {}, evaluation = { priceModes: [], discover
   const observedKeys = new Set();
   const entries = [...(next.pendingCandidates || []), ...(next.reviewQueue || []), ...(next.excludedCandidates || []), ...(next.discoveryLedger?.entries || [])];
   for (const entry of entries) {
-    const candidate = entry.candidate || entry, evidence = [...(entry.evidence || []), { page: candidate.discoveredInCategory || candidate.url, observedAt: entry.reviewedAt || candidate.discoveredAt }];
-    if (evidence.some(item => (evaluation.fetchedPages || []).some(page => page.url === item.page && Number.isFinite(Date.parse(item.observedAt)) && Date.parse(item.observedAt) >= Date.parse(page.requestedAt)))) observedKeys.add(entryIdentity(entry));
+    // Review/classification evidence may be a single object, whereas discovery
+    // ledger evidence is an array. Normalize only this read boundary: preserve
+    // every original value and do not rewrite queues or infer page observations
+    // from classification/text evidence.
+    const candidate = entry.candidate || entry;
+    const originalEvidence = entry.evidence == null ? [] : Array.isArray(entry.evidence) ? entry.evidence : [entry.evidence];
+    const evidence = [...originalEvidence, { page: candidate.discoveredInCategory || candidate.url, observedAt: entry.reviewedAt || candidate.discoveredAt }];
+    if (evidence.some(item => item && typeof item === 'object' && typeof item.page === 'string' && (evaluation.fetchedPages || []).some(page => page.url === item.page && Number.isFinite(Date.parse(item.observedAt)) && Date.parse(item.observedAt) >= Date.parse(page.requestedAt)))) observedKeys.add(entryIdentity(entry));
   }
   for (const key of ['pendingCandidates', 'reviewQueue', 'excludedCandidates']) merged[key] = mergeLaneEntries(old[key] || [], next[key] || [], lanes, resolvedKeys, observedKeys);
   merged.classificationRevalidation = !lanes.length && Object.hasOwn(old, 'classificationRevalidation') ? structuredClone(old.classificationRevalidation) : mergeRevalidation(old.classificationRevalidation || [], next.classificationRevalidation || [], state, evaluation.generatedRevalidationIds || []);

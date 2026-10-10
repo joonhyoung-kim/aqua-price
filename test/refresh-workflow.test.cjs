@@ -57,7 +57,7 @@ test('schedule metadata and admin display match the cadence without claiming exe
  const {adminStatus}=require('../scripts/build-admin-status.cjs');
  const enabled={id:'fixture',sourceDomain:'example.invalid',enabled:true};
  const out=adminStatus({sources:[enabled,{...enabled,id:'disabled',enabled:false}]},{sources:[]},{items:[]},automation);
- assert.equal(out.sources[0].schedule,'생물 6시간 / 용품 12시간 / 목록 대조 하루 1회 (UTC)');
+ assert.equal(out.sources[0].schedule,'생물 6시간마다 / 용품 12시간마다 / 목록 대조 매일 02:43 (UTC · 설정 기준)');
  assert.equal(out.sources[1].schedule,null);assert.equal(out.sources[0].autoRefreshVerified,false);
 });
 test('preview-only publication, pacing, recovery and both validation gates remain intact',()=>{
@@ -68,9 +68,9 @@ test('preview-only publication, pacing, recovery and both validation gates remai
  assert.match(workflow,/Report source failures without retrying/);
  assert.doesNotMatch(workflow,/--refresh-known|--discover|HEAD:main|cancel-in-progress: true/);
  assert.match(workflow,/git add -- dist\/catalog\.json dist\/source-snapshot\.json dist\/collector-status\.json dist\/admin\/status\.json/);
- assert.match(read('scripts/collect-catalog.cjs'),/executionBudgetMs=18\*60\*1000/);
- assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\(reportPath,report\)/);
- assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\('dist\/collector-status\.json',report\)/);
+ assert.match(read('scripts/collect-catalog.cjs'),/executionBudgetMs\s*=\s*18\s*\*\s*60\s*\*\s*1000/);
+ assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\(reportPath,\s*current\)/);
+ assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\('dist\/collector-status\.json',\s*current\)/);
  const active=path.join(root,'.github/workflows/catalog-refresh.yml');
  if(fs.existsSync(active))assert.equal(fs.readFileSync(active,'utf8'),workflow,'active main workflow must match its preview template');
 });

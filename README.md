@@ -7,11 +7,11 @@
 Node.js 24 권장. 의존성 설치가 필요 없습니다.
 `npm start` 후 http://127.0.0.1:8080 를 열고, `npm test`로 구문·데이터 계약·필터·화면·수집 실패 보존·관리자 상태 검사를 실행합니다.
 
-main의 초기 화면은 가상 상품·가격 샘플이며, 기간은 샘플 상품 등록일 기준입니다. preview는 확인된 실제 상품의 시점별 공개 가격을 보여 줍니다. 실제 상품 등록일·배송비·선택 기간 판매량은 확인되지 않았습니다. 기본 기간은 전체이며, 1주·1개월·3개월은 확인된 실제 등록일 기준입니다. 등록일 미확인 항목을 포함해도 해당 기간의 신상품으로 주장하지 않습니다. 판매순은 미연동이며 순위를 만들지 않습니다.
+이 preview 검토본은 확인된 실제 상품의 시점별 공개 가격을 보여 줍니다. 실제 상품 등록일·배송비·선택 기간 판매량은 확인되지 않았습니다. 기본 기간은 전체이며, 1주·1개월·3개월은 확인된 실제 등록일 기준입니다. 등록일 미확인 항목을 포함해도 해당 기간의 신상품으로 주장하지 않습니다. 판매순은 미연동이며 순위를 만들지 않습니다.
 
 ## 현재 수집 범위
 
-2026-10-08 로컬 검증: 원래 45개 판매처 중 33곳 수집 활성화, 32곳 고정 상품 URL/옵션 58개 성공, PRFish 1곳 요청 실패. 나머지 12곳은 접근 중단·휴업·로그인 가격·유효 판매가 부재·503/502 등으로 비활성입니다. 차단된 판매처를 다른 경로로 우회하지 않습니다. 기존 확인본을 보존해 preview는 79개 상품, 37개 판매처 도메인입니다. 추가 4개 도메인은 원래 45곳 성공률 분모에 넣지 않습니다.
+이 패치의 기준은 preview `e44719334b3423c7cc1d3781097211f087a2249d`입니다. 기준 카탈로그는 2026-10-09T13:34:37.411Z 관찰본의 1,900개 상품(생물 1,846개·용품 54개), 42개 판매처 도메인입니다. 이 패치를 준비하면서 상품을 새로 수집하거나 가격·사진·등록일·판매량을 바꾸지 않았습니다. 판매처 설정은 51개 항목 중 38개 활성화 상태이며 설정 켜짐은 전체 수집 성공을 뜻하지 않습니다. 차단된 판매처를 다른 경로로 우회하지 않습니다.
 
 가격 갱신은 검증된 상품 URL을 사용하며, 별도 대표 카테고리 발견 기능을 아래 범위에서 수행합니다. 전체 판매처 카테고리 지도와 완전 수집은 미확인입니다. coverageComplete=false이며 실제 삭제는 비활성입니다. 404·품절·파싱 실패·요청 실패를 구분하고, 실패한 상품은 마지막 정상 확인본을 보존합니다. ProductGroup 옵션은 SKU별로 구분하며 묶음 수량이 명시된 경우만 단가를 계산합니다. 할인 메타데이터는 기본 Offer 가격과 따로 보존합니다. 재고 표시는 결제 단계에서 확인한 재고가 아닙니다.
 
@@ -19,9 +19,11 @@ main의 초기 화면은 가상 상품·가격 샘플이며, 기간은 샘플 �
 
 ## 대표 카테고리 발견과 이어 읽기
 
-관찰한 32곳·139개 대표 링크를 sources/discovery-seeds.json에 보존합니다. Cafe24 26곳의 목록 파서가 구성되어 있고, MakeShop/Godo/Sixshop 6곳은 목록 파서 미지원으로 명시합니다. 전체 카테고리 지도나 전체 판매처 완전 수집을 뜻하지 않습니다. all 및 reconcile 실행에서 제한된 발견을 수행하고, live/gear는 확인된 상품 URL의 가격을 갱신합니다.
+관찰한 카테고리 지도는 sources/discovery-seeds.json에 보존합니다. 현재 지도는 38곳·1,739개 카테고리이며 용품 탐색 힌트는 1,263개입니다. 이 가운데 이미 관찰된 동일 판매처 메뉴 링크 1,212개를 용품 범위로 추가했으며, 지원되는 목록 파서와 용품 링크가 있는 판매처는 34곳입니다. 전체 카테고리 지도나 판매처 전체 완전 수집을 뜻하지 않습니다. Seijin·싸다군의 목록 파서는 아직 미지원입니다. Animallo·MedakaGallery에는 검증된 용품 시작 링크가 없으며 이후 제한된 캐시 메뉴 탐색에서 실제 링크가 발견되는 경우에만 추가할 수 있습니다.
 
-판매처당 발견 최대 2페이지·신규 URL 30개·상세 검증 3개이며 전체 요청은 기존 source.maxRequests 한도 안에서 공유합니다. 확인된 가격 URL도 실행당 live/gear 최대 15개, 발견과 함께 실행할 때 최대 10개를 순환 갱신해 발견 예산을 남깁니다. 따라서 각 상품의 모든 가격을 매 실행마다 확인하지 않으며 관측 시각을 개별 표시합니다. raw HTML 캐시는 판매처당 24시간·60개·12MB 안으로 정리합니다.
+live/gear/all/reconcile 모두 명시된 범위에서 발견을 수행합니다. `--mode gear`는 용품, live는 생물, all/reconcile은 두 경로를 순환합니다. `--discovery-scope live|gear|all`로 범위를 지정할 수 있습니다. `--refresh-known`은 발견을 끄고 알려진 URL만 갱신하며, `--discover`를 함께 명시하면 발견을 다시 켭니다.
+
+용품 발견은 판매처당 최대 4개 관찰 목록 페이지·신규 URL 60개·상세 검증 8개이며, 확인된 가격 URL 최대 3개를 함께 순환 갱신합니다. 가격 조회·목록 탐색·상세 확인은 판매처당 전체 요청 20회와 18분 실행 한도를 공유합니다. 더 엄격한 판매처별 maxRequests 및 robots 대기가 우선합니다. `--refresh-known`만 실행하면 알려진 URL 최대 15개를 선택합니다. 따라서 각 상품의 모든 가격을 매 실행마다 확인하지 않으며 관찰 시각을 개별 표시합니다. raw HTML 캐시는 판매처당 24시간·60개·12MB 안으로 정리합니다.
 
 카테고리별 실제 다음 링크와 방문한 상품 번호, 검증 대기 URL을 .collector/state.json에 저장해 한도 도달 후 이어 읽습니다. 카테고리도 순환하며 진행 중인 카테고리 첫 페이지를 점검합니다. mixed 목록은 상세 breadcrumb·분류와 충돌 검사를 통과해야 게시하고 사료/생먹이·인조수초·육상동물은 관상생물로 넣지 않습니다. 불명확한 항목은 검토 기록으로 남깁니다.
 
@@ -37,11 +39,11 @@ main의 초기 화면은 가상 상품·가격 샘플이며, 기간은 샘플 �
 
 ## 관리자
 
-/admin/은 45개 판매처의 수집 상태·상품 수·마지막 성공·오류·스케줄·전체 카탈로그 미지원 여부를 보여 주는 읽기 전용 화면입니다. 웹에서 수집 설정을 쓰지 않습니다. 설정 변경 링크는 GitHub 인증과 저장소 쓰기 권한을 요구하는 preview/sources/registry.json 편집 화면으로 연결됩니다.
+/admin/은 공개 조회 화면입니다. 발견 후보 상품명을 짧게 나열하며 이름을 확인하지 못한 후보는 개수만 표시합니다. 방문·검증 수와 탐색 범위는 판매처별 발견 현황에서 볼 수 있습니다. 주기와 판매처별 ON/OFF는 화면에서 초안을 만든 뒤, GitHub에 로그인하고 저장소 쓰기 권한으로 preview/sources/collector-controls.json을 최종 저장해야 적용됩니다. 비밀번호나 PIN을 흉내 내는 프런트엔드 잠금은 사용하지 않습니다.
 
 ## 주요 파일
 
-- dist/index.html, app.js, data-model.js: 화면과 필터
+- dist/index.html, app.js, data-model.js, gear-taxonomy.js: 화면과 필터
 - dist/catalog.json, source-snapshot.json: 확인 상품과 출처
 - dist/collector-status.json, dist/admin/: 수집 상태와 관리자 화면
 - scripts/collector/, scripts/collect-catalog.cjs: 제한된 공개 수집
@@ -61,7 +63,7 @@ Manual workflow run 37767325227, attempt 2, published bot data commit 2d4967239b
 
 
 ### 생물 후보 확인과 어종 필터
-전체/대조 수집은 알려진 가격 재조회보다 미확인 생물 후보 확인을 우선합니다. 가격 갱신은 기존 live/gear 실행에서 진행하며 `--refresh-known`으로 전체 알려진 URL 재조회도 가능합니다. 요청 상한(판매처당 20회), robots 대기, 18분 실행 한도와 차단 정책은 유지합니다. 확인된 생물·물고기 상품만 어종을 구분하며 플레티 검색은 플래티와 함께 검색합니다. 품종 구분이 모호한 물고기는 기타로 표시합니다. 판매처별 상세 후보와 검토 사유는 공개 읽기 전용 collector-status.json에 보존하며 카테고리 끝 페이지 확인은 전체 상품 상세 확인 완료를 뜻하지 않습니다.
+생물·용품 발견과 알려진 가격 갱신은 명시된 요청 배분 안에서 함께 순환합니다. 생물의 dailyDiscovery와 용품의 gearDailyDiscovery는 목록 커서·상세 대기열을 각각 보존하며, 두 범위 실행 시 라운드로빈으로 기회를 나눕니다. 공개 체크포인트로 두 경로를 모두 복구할 수 있습니다. 요청 상한, robots 대기, 18분 실행 한도와 차단 정책은 유지합니다. 확인된 생물·물고기 상품만 어종을 구분하며 플레티 검색은 플래티와 함께 검색합니다. 품종 구분이 모호한 물고기는 기타로 표시합니다. 카테고리 마지막 페이지 확인은 전체 상품 상세 확인 완료를 뜻하지 않습니다.
 
 
 ### Bounded coverage batches
@@ -78,7 +80,7 @@ Each completed merchant saves catalog data, state and queue/page tails. The requ
 
 ## Product-content classification and offline audit
 
-Category menus are discovery hints. Classification version 6 evaluates the primary product title, its own breadcrumb, matching Product description, variant options and sales specification. Navigation/recommended-product descriptions cannot supply identity. Explicit feed and supply contexts remain guarded; mixed parents do not exclude supported leaves.
+Category menus are discovery hints. Classification version 7 evaluates the primary product title, its own breadcrumb, matching Product description, variant options and sales specification. Navigation/recommended-product descriptions cannot supply identity. Explicit feed and supply contexts remain guarded; mixed parents do not exclude supported leaves.
 
 The discovery ledger records actual same-retailer listing, detail, related-product and sitemap hrefs with included/pending/review/excluded decisions, reasons, observation times, evidence hashes and decision history. Content changes and classifier versions can reopen an old exclusion; access, robots and identity holds remain enforced. Cached recovery candidates require a fresh detail request before publication.
 
@@ -86,8 +88,59 @@ Run `node scripts/audit-cached-products.cjs` for a read-only offline projection.
 
 ### Scheduled runtime and cadence
 
-The seven-slot schedule reduces the former 13 scheduled slots per UTC day by about 46%. It deliberately reduces revisit opportunities: live runs change from every 3 hours to every 6 hours, and gear runs from every 6 hours to every 12 hours. It does not claim that every product is refreshed at that interval. Existing `live` discovery priority and `--refresh-known` behavior are unchanged. The known-live-price refresh budget remains a separate design decision.
+The seven-slot schedule reduces the former 13 scheduled slots per UTC day by about 46%. It deliberately reduces revisit opportunities: live runs change from every 3 hours to every 6 hours, and gear runs from every 6 hours to every 12 hours. It does not claim that every product is refreshed at that interval. Known-price refresh and live/gear discovery now share the explicit per-source allocation described above; `--refresh-known` disables discovery unless `--discover` is also requested.
 
 The 18-minute collector deadline, 25-minute job timeout, source request limits, robots crawl delays, refusal quarantine, lastgood preservation and resume cursors are unchanged. Long live runs are dominated by source pacing; this change reduces daily scheduled work rather than claiming a faster equivalent crawl. `--quiet` avoids writing the full checkpoint ledger into Actions logs; complete reports still remain in `.collector/report.json` and `dist/collector-status.json`. Both pre-collection and post-collection tests remain mandatory.
 
 Apply the matching schedule to `sources/catalog-refresh.workflow.yml` on preview and the active `.github/workflows/catalog-refresh.yml` on main. A preview-only template edit does not alter GitHub scheduling. The active workflow continues to check out preview and to push only the four existing preview data paths; it does not publish catalog updates to main. Historical execution evidence in automation-status.json remains historical and does not verify the new cadence.
+
+
+## Detailed gear navigation
+
+The gear tab uses the same compact accordion as livestock: major category → detailed product type. `dist/gear-taxonomy.js` defines 12 major groups and 58 named types plus an explicit unknown group. Only categories present in the current query/date scope are shown; a selected zero-result category remains visible so the user can reset it. Selecting a parent resets the child. Counts represent observed catalog rows, not stock or a whole-market total.
+
+Classification is computed without changing catalog rows. Product names and verified retailer menu ancestry provide evidence; seller identity and numeric category IDs do not. Replacement media, refills, filter parts, food containers, medication and complete filters have separate rules. Identical category leaf names are disambiguated by `observedCategoryLabels[].ancestorLabels`. Unclear and conflicting evidence stays in 기타·미분류. Potential livestock rows already incorrectly typed as gear are flagged as unknown in this derived view; this UI layer does not silently retype them.
+
+`gearCategory` and `gearGroup` persist in the URL. Search input is still a draft until 조회 or Enter submits it; category, period and sort changes use only the last submitted query. Missing dates/sales remain unknown. The compact cards and livestock grouping are unchanged.
+
+Administrator schedule labels are derived from `automation.scheduleUTC`, including the existing 6-hour livestock / 12-hour gear / daily reconciliation metadata. The display never treats a configured cadence as verified execution. Run timestamps and scheduled-run verification are not advanced by the UI patch.
+
+Regression checks: `test/gear-hierarchy.test.cjs`, the gear cases in `test/ui.test.cjs`, and `test/gear-discovery.test.cjs` are included in `npm test`. Live browser layout checks should be run on the resulting preview deployment before production promotion; cloud command execution cannot render Chromium in the restricted environment used to prepare this patch.
+
+
+## Gear discovery review and remaining verification
+
+The additional seed links come from already-observed same-retailer menu evidence; there was no live retailer collection during patch preparation. Full observed ancestor labels survive discovery and publication. Category labels remain discovery hints and cannot substitute for a fresh primary-product detail verification or authorize URL guessing. Access denial, robots decisions, refusal quarantine, request ceilings and the existing exact two standalone-service-fee exclusions remain enforced.
+
+`sources/gear-discovery-review.json` records the observed-menu expansion and eight suspicious packaging/livestock offers. Those offers retain their IDs and option variants and require fresh primary-detail review with `autoPublish:false`; the patch does not silently correct their published type or treat archived prices as new observations. Current catalog, source snapshot and collector status remain unchanged. In the served admin snapshot, only the configured live/gear cron strings are corrected to match current schedule metadata; generation, collection, deployment and run timestamps and verification flags remain historical.
+
+A bounded actual gear collection, its newly verified item count, a preview deployment and rendered desktop/mobile checks remain outstanding. Passing offline fixture tests does not demonstrate live retailer success or an increase in published catalog products.
+
+
+## 관리자 설정 저장 및 실제 수집 반영
+
+- 관리자 화면에서 주기와 사이트 ON/OFF를 바꾸면 아직 저장되지 않은 초안입니다. 브라우저를 새로고침하면 미저장 초안은 사라집니다.
+- `1. 설정 JSON 복사`를 누른 뒤 `2. GitHub에서 최종 저장`을 엽니다. GitHub 편집기의 **파일 전체**를 복사한 JSON으로 교체하고 GitHub의 변경 내역을 검토한 뒤 `preview`에 Commit changes를 완료합니다. 복사 이후 다른 사람이 저장할 수 있으므로 마지막 변경 내역을 다시 확인하세요. 권한이 없으면 저장할 수 없습니다.
+- `3. GitHub 저장 확인`은 GitHub에서 다시 읽은 파일이 초안과 정확히 일치할 때만 저장 확인을 표시합니다. 복사·링크 열기만으로 저장/적용 완료를 표시하지 않습니다. 다른 수정이 먼저 저장되면 기존 초안을 덮어쓰지 않고 새 저장본을 다시 불러오도록 안내합니다.
+- GitHub 읽기가 차단되거나 요청 한도를 넘으면 저장 상태는 미확인으로 유지됩니다. 토큰 입력이나 공개 쓰기 API를 요구하지 않습니다.
+- 실제 설정 파일은 `sources/collector-controls.json` 하나입니다. `schemaVersion: 1`, `intervalsHours: { live, gear, reconcile }`, `sources: { 판매처ID: { enabled: true/false } }`를 검증합니다. 빠진 판매처는 OFF이며 알 수 없는 키·판매처·허용되지 않은 주기는 수집 시작 전에 거부됩니다.
+- 생물은 6·12·24·48·72시간, 용품은 12·24·48·72시간, 목록 대조는 24·48·72시간만 선택할 수 있습니다. 기존 UTC 예약 슬롯(생물 하루 4개, 용품 2개, 목록 대조 1개)은 바꾸지 않습니다. 주기는 고정 UTC 예약 구간을 기준으로 평가합니다. 실제 요청 시각과 사용한 예약 구간을 따로 기록하므로 보통의 시작 지연 때문에 다음 구간을 불필요하게 건너뛰지 않습니다. 같은 구간에서 이미 실제 요청을 보냈다면 중복 예약 재시도는 건너뜁니다. 시계가 뒤로 움직여도 지난 구간을 다시 수집하지 않습니다. GitHub가 이전 작업을 다음 구간까지 지연시킨 경우 두 실행의 실제 간격은 설정 시간보다 짧거나 길 수 있습니다. 정각·실시간 실행이나 엄격한 경과시간 간격은 보장하지 않습니다.
+- 자동 실행의 모드별 마지막 실제 요청 시도·성공·실패 기록은 기존 공개 파일 `dist/collector-status.json`에 남습니다. 다른 모드 기록을 보존합니다. 현재 워크플로가 이 파일을 커밋해야 다음 실행에 남으며, 커밋 전에 실행기가 강제 종료되면 가장 최근 로컬 기록을 잃을 수 있습니다.
+- 수동 실행은 자동 주기의 대기를 건너뛰며 다음 자동 예약을 늦추지 않습니다. 수동 수집도 사이트 OFF와 원래 접근 제한을 지킵니다. OFF·아직 주기가 안 됨·캐시만 사용한 실행은 새 실제 요청으로 기록하지 않습니다.
+- OFF는 새 요청만 중지하고 기존 상품을 지우지 않습니다. ON은 원래 registry 비활성, 기술 차단, robots, 403 수동 검토, 재시도 대기를 해제하지 않습니다. 이미 실행 중인 작업은 시작 시 읽은 설정을 사용하므로 변경은 다음 해당 수집부터 반영됩니다.
+- `collect-catalog`, 실험용 `discover-catalog`, `collect-coverage-batch` 모두 동일한 사이트 ON/OFF를 읽습니다. 자동 예약은 영속 상태를 발행하는 `collect-catalog --mode live|gear|reconcile --publish`만 사용합니다. 독립 fixture 테스트는 별도 controls 파일을 주입합니다.
+
+이 변경은 관리자 비밀번호 보호나 비공개 상태 데이터 저장을 제공하지 않습니다. 현재 공개 GitHub 저장소 및 공개 상태 화면이라는 접근 범위를 유지합니다. 실제 비밀번호 보호가 필요해지면 별도 서버 인증과 저장소 공개 범위를 함께 설계해야 합니다.
+
+
+### Existing gear classification revalidation
+
+Gear discovery (and the gear lane of all/reconcile) now has a separate, durable reclassification queue for existing offers whose livestock name conflicts with packaging/free-gift wording. Known-product deduplication cannot discard this queue. It uses the existing per-source detail allocation, request ceiling and 18-minute execution deadline; it does not add a collection schedule or increase a budget. Live-only discovery does not consume the gear queue. Source OFF, identity holds, robots rules, 403 quarantine and 429 backoff remain authoritative.
+
+Every correction requires a fresh primary-detail request, corroborated product/price evidence, exact collector/product/variant identity and a supported classification. Future-dated cache entries are rejected, and mandatory-fresh requests never use cached detail. Free packaging/gift text alone only creates a review candidate. Feed breadcrumbs retain feed as gear. Paid-packaging options require corroborated ProductGroup parent evidence; unresolved or missing variants retain their previous rows for review. No SKU is merged or deleted.
+
+Every publication mode requires a freshly verified update receipt before an existing gear offer becomes live. Changed IDs, replacement markers and reused collector keys cannot bypass this gate. Gear mode additionally excludes unrelated or new live rows. Receipts are not serialized into collector state or public checkpoints. Normal known-price refresh preserves each existing variant's classification, preventing a URL's first option from relabeling its siblings. Standalone packaging-fee publication exclusions are unchanged.
+
+The durable checkpoint retains per-offer queue status, identity, reason, attempts and evidence. Temporary request/parse/missing-detail failures wait at least 24 hours before another automatic revalidation attempt; ambiguous classifications, identity mismatches and robots denials remain explicit review records until the classifier changes or they are deliberately reviewed. Successful checks are not repeatedly queued solely because the name still contains packaging wording. Ordinary --refresh-known runs remain price-refresh only; use the normal discovery-enabled gear/all/reconcile run to process the queue.
+
+This is an offline-tested code repair. Applying its overlay does not collect or reclassify the current published data; changes require a later authorized discovery-enabled run with fresh merchant evidence.

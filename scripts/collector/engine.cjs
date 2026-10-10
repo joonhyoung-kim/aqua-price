@@ -28,7 +28,7 @@ function reconcile(previous, incoming, coverage) {
 async function request(url, source, runtime, prior, redirectDepth=0) {
   if(!sourceUrl(url)||!sameHost(url,source.officialURL)||new URL(url).protocol==='http:'&&source.publicHttpApproved!==true)throw Error('URL outside registered public source');
   const clock=runtime.now(), cached=prior.cache?.[url];
-  if(cached && clock-Date.parse(cached.fetchedAt)<source.cacheTtlMs)return {status:200,text:cached.text,cacheHit:true,fetchedAt:cached.fetchedAt};
+  if(cached && source.cacheTtlMs>0 && Number.isFinite(Date.parse(cached.fetchedAt)) && clock-Date.parse(cached.fetchedAt)>=0 && clock-Date.parse(cached.fetchedAt)<source.cacheTtlMs)return {status:200,text:cached.text,cacheHit:true,fetchedAt:cached.fetchedAt};
   if(runtime.requests>=source.maxRequests)throw Error('request_limit');
   // Check both clocks after every wake: timers may return early, and wall time can jump.
   const monotonic=runtime.monotonicNow||(runtime.now===Date.now?()=>performance.now():runtime.now);
@@ -65,7 +65,7 @@ async function request(url, source, runtime, prior, redirectDepth=0) {
 async function collectSource(source, previous={}, options={}) {
   const prior=structuredClone(previous), now=options.now||Date.now;
   const run={now,deadline:options.deadline,fetch:options.fetch||fetch,sleep:options.sleep||((ms)=>new Promise(resolve=>setTimeout(resolve,ms))),requests:0,lastRequest:options.lastRequestAt??prior.lastRequestAt??null};
-  const state={...prior,products:prior.products||[],collectorLastAttempt:new Date(now()).toISOString(),status:'pending',coverage:{kind:'known_product_urls',paginationComplete:false,terminalPageReached:false,visitedPages:0,expectedPages:source.products?.length||0,parseFailures:0,requestFailures:0},errors:[]};
+  const state={...prior,products:prior.products||[],collectorLastAttempt:new Date(now()).toISOString(),status:'pending',classificationRevalidationUpdates:[],priceRefreshCompletedCount:0,coverage:{kind:'known_product_urls',paginationComplete:false,terminalPageReached:false,visitedPages:0,expectedPages:source.products?.length||0,parseFailures:0,requestFailures:0},errors:[]};
   const fail=(status,error)=>({...state,cache:prior.cache||{},status,errors:[...state.errors,error],requests:run.requests,lastRequestAt:run.lastRequest});
   if(source.technicalReadiness==='blocked'||source.enabled!==true)return fail('disabled',source.blockers?.join('; ')||'Not enabled');
   if(prior.requiresManualReview)return fail('quarantined','Prior HTTP403 requires review; no retry or alternate route');
@@ -77,9 +77,9 @@ async function collectSource(source, previous={}, options={}) {
     if(robots.status!==200)return fail('robots_unverified','robots.txt not available; no product request made');
     const crawlDelays=[...robots.text.matchAll(/^\s*Crawl-delay:\s*(\d+(?:\.\d+)?)\s*$/gmi)].map(m=>Number(m[1])*1000);
     if(crawlDelays.length)limits.delayMs=Math.max(limits.delayMs,...crawlDelays);
-    for(const product of limits.products||[]) {
-      if(!robotsAllows(robots.text,product.url)){state.errors.push('robots_denied:'+product.url);state.coverage.requestFailures++;continue;}
-      const page=await request(product.url,limits,run,prior);
+    for(const [productIndex,product] of (limits.products||[]).entries()) {
+      if(!robotsAllows(robots.text,product.url)){state.priceRefreshCompletedCount=productIndex+1;state.errors.push('robots_denied:'+product.url);state.coverage.requestFailures++;continue;}
+      const page=await request(product.url,limits,run,prior);state.priceRefreshCompletedCount=productIndex+1;
       if([404,410].includes(page.status)){state.errors.push('product_'+page.status+'_preserved:'+product.url);state.coverage.requestFailures++;continue;}
       state.coverage.visitedPages++;
       const observedAt=page.cacheHit?(page.fetchedAt || prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
@@ -87,6 +87,14 @@ async function collectSource(source, previous={}, options={}) {
       const parsed=limits.adapter==='wpet_public_price'?require('./wpet-public.cjs').parseWpetPage(page.text,context):limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
       if(parsed.status!=='success'){state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;continue;}
       if(parsed.issues.some(x=>x!=='duplicate_offer')){state.errors.push(...parsed.issues.filter(x=>x!=='duplicate_offer').map(x=>x+':'+product.url));state.coverage.parseFailures++;}
+      // A product URL may contain several options with different confirmed classifications.
+      // A URL-level refresh hint must never relabel every existing variant as its first sibling.
+      for(const item of parsed.items){
+        const old=state.products.find(p=>p.collector_key===item.collector_key&&p.source_id===item.source_id&&p.retailer_product_id===item.retailer_product_id&&(p.variant_id||null)===(item.variant_id||null));
+        if(!old)continue;
+        item.id=old.id;item.type=old.type;item.subtype=old.subtype??null;delete item.replaces_snapshot_id;
+        for(const field of ['classification_basis','classification_evidence','classification_version','product_breadcrumb_evidence','discovery_category_url'])if(old[field]!==undefined)item[field]=structuredClone(old[field]);
+      }
       parsed.items=parsed.items.filter(item=>{
         if(item.type!=='live'||item.subtype!=='fish'||!/새우|우렁|달팽/.test(item.title))return true;
         const classified=require('./classification.cjs').classifyProduct(page.text,item,{url:product.url,type:product.type,subtype:product.subtype,mixedCategories:false},{categories:[]});
@@ -100,6 +108,6 @@ async function collectSource(source, previous={}, options={}) {
     if(incoming.length && !state.errors.length && (fresh>0||!prior.collectorLastSuccess))state.collectorLastSuccess=new Date(now()).toISOString();
     state.cacheOnly=fresh===0&&incoming.length>0&&updatedKeys.length===0;
     return state;
-  }catch(error){if(error.message==='execution_deadline'){state.products=reconcile(state.products,incoming,state.coverage).products;state.updatedKeys=updatedKeys;state.cacheOnly=fresh===0&&updatedKeys.length===0;state.deletionAllowed=false;return fail('budget_limited','execution_deadline');}state.coverage.requestFailures++;if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
+  }catch(error){if(['execution_deadline','request_limit'].includes(error.message)){state.products=reconcile(state.products,incoming,state.coverage).products;state.updatedKeys=updatedKeys;state.cacheOnly=fresh===0&&updatedKeys.length===0;state.deletionAllowed=false;return fail('budget_limited',error.message);}state.coverage.requestFailures++;if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
 }
 module.exports={collectSource,reconcile,robotsAllows,request};

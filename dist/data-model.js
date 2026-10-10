@@ -1,8 +1,8 @@
 (function (root, factory) {
-  const api = factory();
+  const api = factory(typeof module === 'object' && module.exports ? require('./gear-taxonomy.js') : root.AquaGear);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.AquaCatalog = api;
-})(typeof globalThis === 'object' ? globalThis : this, function () {
+})(typeof globalThis === 'object' ? globalThis : this, function (gearTaxonomy) {
   'use strict';
   const DAY = 86400000;
   const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|\+00:00)$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 19) === value.slice(0, 19);
@@ -45,7 +45,7 @@
       requireValue(product.originalTitle === undefined || typeof product.originalTitle === 'string', '원래 상품명 오류');
       requireValue(product.periodSales === null || (product.periodSales && Number.isSafeInteger(product.periodSales.count) && product.periodSales.count >= 0 && validDate(product.periodSales.startAt) && validDate(product.periodSales.endAt) && Date.parse(product.periodSales.startAt) < Date.parse(product.periodSales.endAt) && Date.parse(product.periodSales.endAt) <= Date.parse(product.observedAt)), '기간 판매량 오류');
       const photo = product.photo;
-      requireValue(product.observedCategoryLabels===undefined||Array.isArray(product.observedCategoryLabels)&&product.observedCategoryLabels.every(e=>e&&typeof e.label==='string'&&sourceUrl(e.url)&&sourceUrl(e.evidencePage)&&new URL(e.url).hostname.replace(/^www\./,'')===new URL(product.sourceUrl).hostname.replace(/^www\./,'')&&new URL(e.evidencePage).hostname.replace(/^www\./,'')===new URL(product.sourceUrl).hostname.replace(/^www\./,'')&&(e.observedAt===null||validDate(e.observedAt))), '판매처 카테고리 근거 오류');
+      requireValue(product.observedCategoryLabels===undefined||Array.isArray(product.observedCategoryLabels)&&product.observedCategoryLabels.every(e=>e&&typeof e.label==='string'&&(e.ancestorLabels===undefined||Array.isArray(e.ancestorLabels)&&e.ancestorLabels.every(label=>typeof label==='string'))&&sourceUrl(e.url)&&sourceUrl(e.evidencePage)&&new URL(e.url).hostname.replace(/^www\./,'')===new URL(product.sourceUrl).hostname.replace(/^www\./,'')&&new URL(e.evidencePage).hostname.replace(/^www\./,'')===new URL(product.sourceUrl).hostname.replace(/^www\./,'')&&(e.observedAt===null||validDate(e.observedAt))), '판매처 카테고리 근거 오류');
       requireValue(photo && ['allowed', 'not_allowed', 'unknown'].includes(photo.usePermission), '사진 사용 가능 여부 필요');
       requireValue(photo.url === null || httpsUrl(photo.url), '사진 URL 오류');
       requireValue(photo.permissionEvidenceUrl === null || sourceUrl(photo.permissionEvidenceUrl), '사진 사용 근거 URL 오류');
@@ -133,11 +133,17 @@
   function navigationParent(subtype,leaf){return livestockNavigation[subtype]?.find(group=>group.children.includes(leaf))||null;}
   function livestockGroup(product){return livestockClassification(product)?.key??null;}
   function fishGroup(product){return product.subtype==='fish'?livestockGroup(product):null;}
+  const gearNavigation=gearTaxonomy.navigation,gearCategories=gearTaxonomy.categories,gearGroups=gearTaxonomy.groups;
+  const gearClassification=gearTaxonomy.classification,gearParent=gearTaxonomy.parent;
+  const gearGroup=product=>gearClassification(product)?.key??null;
   function validateSelectionFilters(filters) {
     requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     requireValue(filters.fishGroup === undefined || Object.hasOwn(fishGroups, filters.fishGroup), '잘못된 어종 조건');
     requireValue(filters.liveGroup === undefined || filters.liveGroup === 'all' || livestockGroups[filters.subtype] && Object.hasOwn(livestockGroups[filters.subtype], filters.liveGroup), '잘못된 생물 세부 분류');
     requireValue(filters.browseGroup === undefined || filters.browseGroup === 'all' || livestockNavigation[filters.subtype]?.some(group=>group.key===filters.browseGroup), '잘못된 탐색 그룹');
+    requireValue(filters.gearCategory === undefined || Object.hasOwn(gearCategories,filters.gearCategory), '잘못된 용품 대분류');
+    requireValue(filters.gearGroup === undefined || Object.hasOwn(gearGroups,filters.gearGroup), '잘못된 용품 세부 분류');
+    requireValue(!filters.gearGroup || filters.gearGroup==='all' || !filters.gearCategory || filters.gearCategory==='all' || (gearParent(filters.gearGroup)?.key||'other')===filters.gearCategory, '용품 상위·하위 분류 불일치');
   }
   function selectionCandidates(catalog, filters, index) {
     const needle = searchText(filters.query.trim());
@@ -148,6 +154,12 @@
     if(filters.type==='live'&&leaf==='all'&&filters.browseGroup&&filters.browseGroup!=='all'){
       const navigation=livestockNavigation[filters.subtype].find(group=>group.key===filters.browseGroup);
       rows=rows.filter(p=>navigation.children.includes((index ? index.get(p).group : livestockGroup(p))));
+    }
+    if(filters.type==='gear'){
+      rows=rows.filter(p=>{
+        const key=index?index.get(p).gearGroup:gearGroup(p),category=gearParent(key)?.key||'other';
+        return (!filters.gearCategory||filters.gearCategory==='all'||category===filters.gearCategory)&&(!filters.gearGroup||filters.gearGroup==='all'||key===filters.gearGroup);
+      });
     }
     return rows;
   }
@@ -198,7 +210,7 @@
     freeze(snapshot);
     const index=new Map(snapshot.products.map(p=>[p,{
       search:[p.name,p.originalTitle||'',p.spec].map(searchText),
-      group:livestockGroup(p)
+      group:livestockGroup(p),gearGroup:gearGroup(p)
     }]));
     const sellers=new Map(snapshot.sellers.map(s=>[s.id,s]));
     const views=new Map();
@@ -210,6 +222,7 @@
       filters={
         type:filters.type,subtype:filters.subtype,fishGroup:filters.fishGroup,
         liveGroup:filters.liveGroup,browseGroup:filters.browseGroup,
+        gearCategory:filters.gearCategory,gearGroup:filters.gearGroup,
         sort:filters.sort,days:filters.days,query:filters.query,
         includeUnknownRegistration:filters.includeUnknownRegistration
       };
@@ -226,10 +239,10 @@
         }];
       }));
       const baseFilters={
-        ...filters,fishGroup:'all',liveGroup:'all',browseGroup:'all',
+        ...filters,fishGroup:'all',liveGroup:'all',browseGroup:'all',gearCategory:'all',gearGroup:'all',
         sort:['sales','new'].includes(filters.sort)?'low':filters.sort
       };
-      const sameScope=[filters.fishGroup,filters.liveGroup,filters.browseGroup]
+      const sameScope=[filters.fishGroup,filters.liveGroup,filters.browseGroup,filters.gearCategory,filters.gearGroup]
         .every(value=>value===undefined||value==='all');
       const baseCandidates=sameScope?candidates:
         selectionCandidates(snapshot,baseFilters,index);
@@ -242,7 +255,13 @@
         const group=index.get(p).group;
         if(Object.hasOwn(groupCounts,group))groupCounts[group]++;
       }
-      const value=freeze({result,availability,base,groupCounts});
+      const gearCounts={all:0,categories:Object.fromEntries(Object.keys(gearCategories).filter(k=>k!=='all').map(k=>[k,0])),groups:Object.fromEntries(Object.keys(gearGroups).filter(k=>k!=='all').map(k=>[k,0]))};
+      for(const p of base.rows){
+        if(p.type!=='gear')continue;
+        const key=index.get(p).gearGroup,category=gearParent(key)?.key||'other';
+        gearCounts.all++;gearCounts.categories[category]++;gearCounts.groups[key]++;
+      }
+      const value=freeze({result,availability,base,groupCounts,gearCounts});
       if(views.size>=32)views.delete(views.keys().next().value);
       views.set(key,value);
       return value;
@@ -252,12 +271,13 @@
       view,
       select:filters=>selectValidated(snapshot,filters,index),
       group:product=>index.get(product)?.group??null,
+      gearGroup:product=>index.get(product)?.gearGroup??null,
       seller:id=>sellers.get(id)
     });
   }
 
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
+  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', gearCategory:'all', gearGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
   function filtersFromSearch(search = '') {
     const params = new URLSearchParams(search), filters = { ...defaultFilters };
     for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), sort: ['low','high','sales','new','observed'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
@@ -267,6 +287,12 @@
     if(filters.subtype==='fish'&&filters.liveGroup!=='all'){if(!params.has('fishGroup'))filters.fishGroup=filters.liveGroup;filters.liveGroup='all';}
     const browse=params.get('browseGroup');if(livestockNavigation[filters.subtype]?.some(group=>group.key===browse))filters.browseGroup=browse;
     const leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup;if(leaf!=='all')filters.browseGroup='all';
+    const category=params.get('gearCategory'),gear=params.get('gearGroup');
+    if(Object.hasOwn(gearCategories,category))filters.gearCategory=category;
+    if(Object.hasOwn(gearGroups,gear)){
+      const parent=gearParent(gear)?.key||'other';
+      if(gear==='all'||filters.gearCategory==='all'||filters.gearCategory===parent){filters.gearGroup=gear;if(gear!=='all')filters.gearCategory=parent;}
+    }
     filters.query = params.get('query') ?? params.get('q') ?? '';
     const unknown = params.get('includeUnknownRegistration') ?? params.get('includeUnknown'); if (unknown === 'true' || unknown === 'false') filters.includeUnknownRegistration = unknown === 'true';
     return filters;
@@ -275,9 +301,9 @@
     return Object.fromEntries(['sales','new'].map(sort => { const result = selectProducts(catalog, { ...filters, sort }); return [sort, { available: catalog.status === 'ready' && result.rows.length > 0, count: result.rows.length, reason: result.reason }]; }));
   }
   function filtersToSearch(filters,search=''){
-    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','browseGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown'])params.delete(key);
+    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','browseGroup','gearCategory','gearGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown'])params.delete(key);
     for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==defaultFilters[key])params.set(key,String(value));
     const text=params.toString();return text?'?'+text:'';
   }
-  return { validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
+  return { validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

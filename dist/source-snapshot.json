@@ -6,16 +6,16 @@
   "collection_scope": "19 limited searches, maximum 8 results per query, first page only; no additional pages or bulk crawling; not full-market coverage",
   "created_at_utc": "2026-10-08T08:29:06.935413+00:00",
   "summary": {
-    "offer_count": 2328,
+    "offer_count": 2348,
     "merchant_count": 42,
     "live_plant_count": 246,
-    "fish_count": 1720,
-    "shrimp_count": 100,
+    "fish_count": 1734,
+    "shrimp_count": 106,
     "snail_count": 6,
-    "fish_or_shrimp_count": 1820,
+    "fish_or_shrimp_count": 1840,
     "gear_count": 256,
-    "verified_https_photos": 2204,
-    "direct_retailer_products": 2319
+    "verified_https_photos": 2224,
+    "direct_retailer_products": 2339
   },
   "photo_validation": {
     "basis": "HTTPS HEAD verification supplied by the collecting task; no image download or rehosting",
@@ -1181,7 +1181,16 @@
       },
       "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
       "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
-      "stock_quantity": null
+      "stock_quantity": null,
+      "observed_category_evidence": [
+        {
+          "label": "수족관 용품",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/product/list.html?cate_no=218",
+          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218",
+          "observedAt": null
+        }
+      ]
     },
     {
       "id": "cafe24_sul06_1_37",
@@ -1240,7 +1249,16 @@
       },
       "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
       "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
-      "stock_quantity": null
+      "stock_quantity": null,
+      "observed_category_evidence": [
+        {
+          "label": "수족관 용품",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/product/list.html?cate_no=218",
+          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218",
+          "observedAt": null
+        }
+      ]
     },
     {
       "id": "cafe24_sul06_1_28",
@@ -6820,7 +6838,7 @@
       "unit_price_amount": null,
       "product_url": "https://aquauju.com/product/m-골든-코이-구피-2쌍/14199/",
       "declared_product_url": "https://aquauju.com/product/m-골든-코이-구피-2쌍/14199/",
-      "observed_at_utc": "2026-10-08T11:25:13.404Z",
+      "observed_at_utc": "2026-10-10T05:58:25.961Z",
       "registered_at": null,
       "price_amount": 12000,
       "currency": "KRW",
@@ -6847,6 +6865,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -6871,7 +6890,7 @@
       "unit_price_amount": null,
       "product_url": "https://aquauju.com/product/m-골든-코이-구피-1쌍/14198/",
       "declared_product_url": "https://aquauju.com/product/m-골든-코이-구피-1쌍/14198/",
-      "observed_at_utc": "2026-10-08T11:25:23.462Z",
+      "observed_at_utc": "2026-10-10T05:58:36.442Z",
       "registered_at": null,
       "price_amount": 7500,
       "currency": "KRW",
@@ -6898,6 +6917,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -6922,7 +6942,7 @@
       "unit_price_amount": null,
       "product_url": "https://aquauju.com/product/m-레드-플래티넘-덤보이어-구피-2쌍/14197/",
       "declared_product_url": "https://aquauju.com/product/m-레드-플래티넘-덤보이어-구피-2쌍/14197/",
-      "observed_at_utc": "2026-10-08T11:25:33.447Z",
+      "observed_at_utc": "2026-10-10T05:58:46.373Z",
       "registered_at": null,
       "price_amount": 15000,
       "currency": "KRW",
@@ -6949,6 +6969,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -16400,6 +16421,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -16451,6 +16473,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -16502,6 +16525,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -16553,6 +16577,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -16604,6 +16629,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -16655,6 +16681,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -20348,6 +20375,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25231,6 +25259,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25282,6 +25311,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25384,6 +25414,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25435,6 +25466,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25486,6 +25518,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25537,6 +25570,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25588,6 +25622,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25639,6 +25674,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25690,6 +25726,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -25709,12 +25746,12 @@
       "type": "live",
       "subtype": "fish",
       "title": "01 아트로퍼소나투스 요정코리 [4cm급, 1마리]",
-      "variant_title": null,
+      "variant_title": "Retailer concrete offer",
       "quantity_per_pack": null,
       "unit_price_amount": null,
       "product_url": "https://chunjane.com/product/01-아트로퍼소나투스-요정코리-4cm급-1마리/1231/",
       "declared_product_url": "https://chunjane.com/product/01-아트로퍼소나투스-요정코리-4cm급-1마리/1231/",
-      "observed_at_utc": "2026-10-08T16:36:54.286Z",
+      "observed_at_utc": "2026-10-10T06:12:01.863Z",
       "registered_at": null,
       "price_amount": 9500,
       "currency": "KRW",
@@ -25741,12 +25778,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -25771,7 +25810,7 @@
       "unit_price_amount": null,
       "product_url": "https://chunjane.com/product/011-화이트-풍선몰리2마리/1816/",
       "declared_product_url": "https://chunjane.com/product/011-화이트-풍선몰리2마리/1816/",
-      "observed_at_utc": "2026-10-08T16:51:44.710Z",
+      "observed_at_utc": "2026-10-10T06:12:12.000Z",
       "registered_at": null,
       "price_amount": 5000,
       "currency": "KRW",
@@ -25798,21 +25837,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "몰리",
-          "url": "https://chunjane.com/product/list.html?cate_no=461",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
-        },
-        {
-          "label": "난태생",
-          "url": "https://chunjane.com/product/list.html?cate_no=439",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -25834,7 +25862,7 @@
       "unit_price_amount": null,
       "product_url": "https://chunjane.com/product/01-뽀뽄데타-레인보우2마리/2742/",
       "declared_product_url": "https://chunjane.com/product/01-뽀뽄데타-레인보우2마리/2742/",
-      "observed_at_utc": "2026-10-08T16:51:54.614Z",
+      "observed_at_utc": "2026-10-10T06:12:22.093Z",
       "registered_at": null,
       "price_amount": 4000,
       "currency": "KRW",
@@ -25861,6 +25889,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -25912,6 +25941,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -25963,12 +25993,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -26020,15 +26052,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "카라신",
-          "url": "https://chunjane.com/product/list.html?cate_no=445",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -26077,6 +26104,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -26128,15 +26156,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "144안시",
-          "url": "https://chunjane.com/product/list.html?cate_no=434",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -26158,7 +26181,7 @@
       "unit_price_amount": null,
       "product_url": "https://fishermanbt.com/product/체리새우/4961/",
       "declared_product_url": "https://fishermanbt.com/product/체리새우/4961/",
-      "observed_at_utc": "2026-10-08T16:52:55.746Z",
+      "observed_at_utc": "2026-10-10T06:15:25.132Z",
       "registered_at": null,
       "price_amount": 300,
       "currency": "KRW",
@@ -26185,6 +26208,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26209,7 +26233,7 @@
       "unit_price_amount": null,
       "product_url": "https://fishermanbt.com/product/우렁이/3657/",
       "declared_product_url": "https://fishermanbt.com/product/우렁이/3657/",
-      "observed_at_utc": "2026-10-08T16:53:05.699Z",
+      "observed_at_utc": "2026-10-10T06:15:35.404Z",
       "registered_at": null,
       "price_amount": 700,
       "currency": "KRW",
@@ -26236,6 +26260,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26293,6 +26318,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26350,6 +26376,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26407,6 +26434,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26464,6 +26492,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26521,6 +26550,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26578,6 +26608,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26635,6 +26666,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26686,6 +26718,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26743,6 +26776,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26800,6 +26834,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -26857,6 +26892,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -27683,7 +27719,7 @@
       "subtype": "fish",
       "title": "믹스 디스커스 5cm",
       "product_url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1918&GC=GD00",
-      "observed_at_utc": "2026-10-08T16:49:09.054Z",
+      "observed_at_utc": "2026-10-10T06:11:12.659Z",
       "registered_at": null,
       "price_amount": 20000,
       "currency": "KRW",
@@ -27709,7 +27745,8 @@
           "evidencePage": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
           "observedAt": null
         }
-      ]
+      ],
+      "unit_price_amount": null
     },
     {
       "id": "retailer-47:1837:default",
@@ -27725,7 +27762,7 @@
       "subtype": "fish",
       "title": "레드스팟 세베럼 7~8cm",
       "product_url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1860&GC=GD00",
-      "observed_at_utc": "2026-10-08T17:18:50.360Z",
+      "observed_at_utc": "2026-10-10T06:11:14.668Z",
       "registered_at": null,
       "price_amount": 30000,
       "currency": "KRW",
@@ -27751,7 +27788,8 @@
           "evidencePage": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
           "observedAt": null
         }
-      ]
+      ],
+      "unit_price_amount": null
     },
     {
       "id": "retailer-47:1762:default",
@@ -27767,7 +27805,7 @@
       "subtype": "fish",
       "title": "캔디 코이 플라캇 베타 암컷",
       "product_url": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1776&GC=GD00",
-      "observed_at_utc": "2026-10-08T17:19:02.321Z",
+      "observed_at_utc": "2026-10-10T06:11:16.656Z",
       "registered_at": null,
       "price_amount": 9000,
       "currency": "KRW",
@@ -27793,7 +27831,8 @@
           "evidencePage": "https://www.wpet.co.kr/?GC=GD00&act=shop.goods_list",
           "observedAt": null
         }
-      ]
+      ],
+      "unit_price_amount": null
     },
     {
       "id": "retailer-09:cafe24_alphafish_1_1304:default",
@@ -37020,15 +37059,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "카라신",
-          "url": "https://chunjane.com/product/list.html?cate_no=445",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -37077,15 +37111,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "시클리드",
-          "url": "https://chunjane.com/product/list.html?cate_no=436",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -37134,15 +37163,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "시클리드",
-          "url": "https://chunjane.com/product/list.html?cate_no=436",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -37191,21 +37215,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "몰리",
-          "url": "https://chunjane.com/product/list.html?cate_no=461",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
-        },
-        {
-          "label": "난태생",
-          "url": "https://chunjane.com/product/list.html?cate_no=439",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -37254,12 +37267,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -37311,6 +37326,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -37362,6 +37378,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -37413,15 +37430,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "시클리드",
-          "url": "https://chunjane.com/product/list.html?cate_no=436",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -37470,6 +37482,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -37521,12 +37534,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -37578,6 +37593,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -37629,15 +37645,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "시클리드",
-          "url": "https://chunjane.com/product/list.html?cate_no=436",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -37686,12 +37697,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -37743,6 +37756,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -37794,6 +37808,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -37845,12 +37860,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -37902,6 +37919,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -37953,6 +37971,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -38004,6 +38023,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -38055,21 +38075,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "몰리",
-          "url": "https://chunjane.com/product/list.html?cate_no=461",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
-        },
-        {
-          "label": "난태생",
-          "url": "https://chunjane.com/product/list.html?cate_no=439",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -38634,6 +38643,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -38685,12 +38695,14 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
         },
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -38742,6 +38754,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -38793,15 +38806,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "카라신",
-          "url": "https://chunjane.com/product/list.html?cate_no=445",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -38850,6 +38858,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -38901,15 +38910,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "144안시",
-          "url": "https://chunjane.com/product/list.html?cate_no=434",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -39938,6 +39942,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -39989,6 +39994,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -40148,6 +40154,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -40199,6 +40206,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -40358,6 +40366,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -45041,6 +45050,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -45194,6 +45204,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -45347,6 +45358,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -45449,6 +45461,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -45683,6 +45696,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -45740,6 +45754,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -45797,6 +45812,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -45848,6 +45864,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -46031,6 +46048,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -46088,6 +46106,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -46145,6 +46164,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -46196,6 +46216,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -46379,6 +46400,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -46436,6 +46458,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -46493,6 +46516,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -46544,6 +46568,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -47357,6 +47382,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -47408,6 +47434,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -47510,6 +47537,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -47561,6 +47589,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -47663,6 +47692,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -47714,6 +47744,7 @@
       "observed_category_evidence": [
         {
           "label": "코리도라스",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
           "observedAt": null
@@ -47816,15 +47847,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "카라신",
-          "url": "https://chunjane.com/product/list.html?cate_no=445",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -50782,6 +50808,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -50833,6 +50860,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -50884,6 +50912,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -50935,6 +50964,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -50986,6 +51016,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -51037,6 +51068,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -51088,6 +51120,7 @@
       "observed_category_evidence": [
         {
           "label": "구피",
+          "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=448",
           "evidencePage": "https://aquauju.com/product/list.html?cate_no=448",
           "observedAt": null
@@ -54743,15 +54776,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "시클리드",
-          "url": "https://chunjane.com/product/list.html?cate_no=436",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -55055,6 +55083,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -55106,6 +55135,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -55157,6 +55187,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -60799,15 +60830,10 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
-        },
-        {
-          "label": "카라신",
-          "url": "https://chunjane.com/product/list.html?cate_no=445",
-          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
-          "observedAt": "2026-10-08T16:36:44.284Z"
         }
       ]
     },
@@ -60907,6 +60933,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -61111,6 +61138,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -64864,6 +64892,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -65206,6 +65235,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -65263,6 +65293,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -65314,6 +65345,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -68639,6 +68671,7 @@
       "observed_category_evidence": [
         {
           "label": "열대어",
+          "ancestorLabels": [],
           "url": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "evidencePage": "https://chunjane.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/432/",
           "observedAt": null
@@ -70127,6 +70160,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70184,6 +70218,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70241,6 +70276,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70298,6 +70334,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70355,6 +70392,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70412,6 +70450,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70469,6 +70508,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70526,6 +70566,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70583,6 +70624,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70640,6 +70682,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70697,6 +70740,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70754,6 +70798,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70811,6 +70856,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70868,6 +70914,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70925,6 +70972,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -70982,6 +71030,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -71039,6 +71088,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -71096,6 +71146,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -71153,6 +71204,7 @@
       "observed_category_evidence": [
         {
           "label": "베타",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=154",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42&page=2",
           "observedAt": "2026-10-08T16:52:45.712Z"
@@ -71210,6 +71262,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -71267,6 +71320,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -71324,6 +71378,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -92686,6 +92741,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -92743,6 +92799,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -92800,6 +92857,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -93148,6 +93206,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -93205,6 +93264,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -93262,6 +93322,7 @@
       "observed_category_evidence": [
         {
           "label": "구피·열대어",
+          "ancestorLabels": [],
           "url": "https://fishermanbt.com/product/list.html?cate_no=42",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
@@ -135201,6 +135262,1626 @@
           "ancestorLabels": [],
           "url": "https://a2be.net/product/list.html?cate_no=589",
           "evidencePage": "https://a2be.net/product/list.html?cate_no=589",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_9393:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_9393:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_9393",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "오렌지 메다카(5마리)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/오렌지-메다카5마리/9393/",
+      "declared_product_url": "https://aquauju.com/product/오렌지-메다카5마리/9393/",
+      "observed_at_utc": "2026-10-10T05:59:06.606Z",
+      "registered_at": null,
+      "price_amount": 14500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "14500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "14500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.com/web/product/big/202210/b328c86b53425fac6bc7313f766ce928.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/%EC%98%A4%EB%A0%8C%EC%A7%80-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9393/category/466/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "오렌지 메다카(5마리)",
+        "identityTitle": "오렌지 메다카(5마리)",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=466",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/%EC%98%A4%EB%A0%8C%EC%A7%80-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9393/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:06.606Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/%EC%98%A4%EB%A0%8C%EC%A7%80-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9393/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:06.606Z"
+        },
+        {
+          "label": "메다카",
+          "url": "/category/메다카/466/",
+          "evidencePage": "https://aquauju.com/product/%EC%98%A4%EB%A0%8C%EC%A7%80-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9393/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:06.606Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "메다카",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=466",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=466",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_9391:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_9391:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_9391",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "블루 스타더스트 메다카 5마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/블루-스타더스트-메다카-5마리/9391/",
+      "declared_product_url": "https://aquauju.com/product/블루-스타더스트-메다카-5마리/9391/",
+      "observed_at_utc": "2026-10-10T05:59:16.491Z",
+      "registered_at": null,
+      "price_amount": 14500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "14500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "14500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.com/web/product/big/202210/5222b3c69506726191fef96c1633085e.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/%EB%B8%94%EB%A3%A8-%EC%8A%A4%ED%83%80%EB%8D%94%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%8B%A4%EC%B9%B4-5%EB%A7%88%EB%A6%AC/9391/category/466/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "블루 스타더스트 메다카 5마리",
+        "identityTitle": "블루 스타더스트 메다카 5마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=466",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/%EB%B8%94%EB%A3%A8-%EC%8A%A4%ED%83%80%EB%8D%94%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%8B%A4%EC%B9%B4-5%EB%A7%88%EB%A6%AC/9391/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:16.491Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/%EB%B8%94%EB%A3%A8-%EC%8A%A4%ED%83%80%EB%8D%94%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%8B%A4%EC%B9%B4-5%EB%A7%88%EB%A6%AC/9391/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:16.491Z"
+        },
+        {
+          "label": "메다카",
+          "url": "/category/메다카/466/",
+          "evidencePage": "https://aquauju.com/product/%EB%B8%94%EB%A3%A8-%EC%8A%A4%ED%83%80%EB%8D%94%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%8B%A4%EC%B9%B4-5%EB%A7%88%EB%A6%AC/9391/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:16.491Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "메다카",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=466",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=466",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_9390:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_9390:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_9390",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "블랙 메다카(5마리)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/블랙-메다카5마리/9390/",
+      "declared_product_url": "https://aquauju.com/product/블랙-메다카5마리/9390/",
+      "observed_at_utc": "2026-10-10T05:59:26.005Z",
+      "registered_at": null,
+      "price_amount": 14500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "14500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "14500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": false,
+      "availability_basis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.com/web/product/big/202210/3e7ba769865f20aec1810f0846d3c338.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/%EB%B8%94%EB%9E%99-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9390/category/466/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "블랙 메다카(5마리)",
+        "identityTitle": "블랙 메다카(5마리)",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=466",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/%EB%B8%94%EB%9E%99-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9390/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:26.005Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/%EB%B8%94%EB%9E%99-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9390/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:26.005Z"
+        },
+        {
+          "label": "메다카",
+          "url": "/category/메다카/466/",
+          "evidencePage": "https://aquauju.com/product/%EB%B8%94%EB%9E%99-%EB%A9%94%EB%8B%A4%EC%B9%B45%EB%A7%88%EB%A6%AC/9390/category/466/display/1/",
+          "observedAt": "2026-10-10T05:59:26.005Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "메다카",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=466",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=466",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_13864:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_13864:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_13864",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[M] 체리새우 10마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/m-체리새우-10마리/13864/",
+      "declared_product_url": "https://aquauju.com/product/m-체리새우-10마리/13864/",
+      "observed_at_utc": "2026-10-10T05:59:36.395Z",
+      "registered_at": null,
+      "price_amount": 8000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.diskn.com/2SMl04eSx4",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13864/category/463/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[M] 체리새우 10마리",
+        "identityTitle": "[M] 체리새우 10마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=463",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13864/category/463/display/1/",
+          "observedAt": "2026-10-10T05:59:36.395Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13864/category/463/display/1/",
+          "observedAt": "2026-10-10T05:59:36.395Z"
+        },
+        {
+          "label": "새우",
+          "url": "/category/새우/463/",
+          "evidencePage": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13864/category/463/display/1/",
+          "observedAt": "2026-10-10T05:59:36.395Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "새우",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=463",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=463",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_13863:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_13863:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_13863",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[M] 체리새우 5마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/m-체리새우-5마리/13863/",
+      "declared_product_url": "https://aquauju.com/product/m-체리새우-5마리/13863/",
+      "observed_at_utc": "2026-10-10T05:59:56.081Z",
+      "registered_at": null,
+      "price_amount": 5000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "5000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "5000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.diskn.com/2SMl04eSx4",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13863/category/463/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[M] 체리새우 5마리",
+        "identityTitle": "[M] 체리새우 5마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=463",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13863/category/463/display/1/",
+          "observedAt": "2026-10-10T05:59:56.081Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13863/category/463/display/1/",
+          "observedAt": "2026-10-10T05:59:56.081Z"
+        },
+        {
+          "label": "새우",
+          "url": "/category/새우/463/",
+          "evidencePage": "https://aquauju.com/product/m-%EC%B2%B4%EB%A6%AC%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13863/category/463/display/1/",
+          "observedAt": "2026-10-10T05:59:56.081Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "새우",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=463",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=463",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_13862:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_13862:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_13862",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[M] 메탈오렌지 새우 10마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/m-메탈오렌지-새우-10마리/13862/",
+      "declared_product_url": "https://aquauju.com/product/m-메탈오렌지-새우-10마리/13862/",
+      "observed_at_utc": "2026-10-10T06:00:16.205Z",
+      "registered_at": null,
+      "price_amount": 18000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "18000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "18000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.diskn.com/1n74CZB5mW",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13862/category/463/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[M] 메탈오렌지 새우 10마리",
+        "identityTitle": "[M] 메탈오렌지 새우 10마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=463",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13862/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:16.205Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13862/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:16.205Z"
+        },
+        {
+          "label": "새우",
+          "url": "/category/새우/463/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13862/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:16.205Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "새우",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=463",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=463",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_13861:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_13861:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_13861",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[M] 메탈오렌지 새우 5마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/m-메탈오렌지-새우-5마리/13861/",
+      "declared_product_url": "https://aquauju.com/product/m-메탈오렌지-새우-5마리/13861/",
+      "observed_at_utc": "2026-10-10T06:00:36.484Z",
+      "registered_at": null,
+      "price_amount": 10500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "10500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "10500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.diskn.com/1n74CZB5mW",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13861/category/463/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[M] 메탈오렌지 새우 5마리",
+        "identityTitle": "[M] 메탈오렌지 새우 5마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=463",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13861/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:36.484Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13861/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:36.484Z"
+        },
+        {
+          "label": "새우",
+          "url": "/category/새우/463/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%A9%94%ED%83%88%EC%98%A4%EB%A0%8C%EC%A7%80-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13861/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:36.484Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "새우",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=463",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=463",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_13860:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_13860:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_13860",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[M] 블루벨벳 새우 10마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/m-블루벨벳-새우-10마리/13860/",
+      "declared_product_url": "https://aquauju.com/product/m-블루벨벳-새우-10마리/13860/",
+      "observed_at_utc": "2026-10-10T06:00:56.207Z",
+      "registered_at": null,
+      "price_amount": 21000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "21000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "21000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.diskn.com/0nEX0nxCYW",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13860/category/463/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[M] 블루벨벳 새우 10마리",
+        "identityTitle": "[M] 블루벨벳 새우 10마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=463",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13860/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:56.207Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13860/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:56.207Z"
+        },
+        {
+          "label": "새우",
+          "url": "/category/새우/463/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/13860/category/463/display/1/",
+          "observedAt": "2026-10-10T06:00:56.207Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "새우",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=463",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=463",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_13859:default",
+      "collector_key": "retailer-38:cafe24_aquauju_1_13859:default",
+      "source_id": "retailer-38",
+      "retailer_product_id": "cafe24_aquauju_1_13859",
+      "variant_id": null,
+      "retailer": "아쿠아유쥬",
+      "seller_domain": "aquauju.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "[M] 블루벨벳 새우 5마리",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquauju.com/product/m-블루벨벳-새우-5마리/13859/",
+      "declared_product_url": "https://aquauju.com/product/m-블루벨벳-새우-5마리/13859/",
+      "observed_at_utc": "2026-10-10T06:01:16.742Z",
+      "registered_at": null,
+      "price_amount": 12000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "12000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "12000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://aquauju.diskn.com/0nEX0nxCYW",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13859/category/463/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "[M] 블루벨벳 새우 5마리",
+        "identityTitle": "[M] 블루벨벳 새우 5마리",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "shrimp"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://aquauju.com/product/list.html?cate_no=463",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13859/category/463/display/1/",
+          "observedAt": "2026-10-10T06:01:16.742Z"
+        },
+        {
+          "label": "생물",
+          "url": "/category/생물/447/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13859/category/463/display/1/",
+          "observedAt": "2026-10-10T06:01:16.742Z"
+        },
+        {
+          "label": "새우",
+          "url": "/category/새우/463/",
+          "evidencePage": "https://aquauju.com/product/m-%EB%B8%94%EB%A3%A8%EB%B2%A8%EB%B2%B3-%EC%83%88%EC%9A%B0-5%EB%A7%88%EB%A6%AC/13859/category/463/display/1/",
+          "observedAt": "2026-10-10T06:01:16.742Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "새우",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=463",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=463",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_2248:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_2248:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_2248",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 팬더 롱핀[ 성어 ]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-팬더-롱핀-성어/2248/",
+      "declared_product_url": "https://chunjane.com/product/01-팬더-롱핀-성어/2248/",
+      "observed_at_utc": "2026-10-10T06:13:01.621Z",
+      "registered_at": null,
+      "price_amount": 6000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "6000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "6000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/ksy8705_2248.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%84%B1%EC%96%B4/2248/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "01 팬더 롱핀[ 성어 ]",
+        "identityTitle": "01 팬더 롱핀[ 성어 ]",
+        "description": "",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%84%B1%EC%96%B4/2248/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:01.621Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%84%B1%EC%96%B4/2248/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:01.621Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-%EC%84%B1%EC%96%B4/2248/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:01.621Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_2988:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_2988:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_2988",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 화이트 팬더 [ 3센티급, 2마리 ]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-화이트-팬더-3센티급-2마리/2988/",
+      "declared_product_url": "https://chunjane.com/product/01-화이트-팬더-3센티급-2마리/2988/",
+      "observed_at_utc": "2026-10-10T06:13:31.880Z",
+      "registered_at": null,
+      "price_amount": 9500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "9500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "9500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/202405/a06224f2ed10b466bf3e9fcaba9693c0.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-3%EC%84%BC%ED%8B%B0%EA%B8%89-2%EB%A7%88%EB%A6%AC/2988/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "01 화이트 팬더 [ 3센티급, 2마리 ]",
+        "identityTitle": "01 화이트 팬더 [ 3센티급, 2마리 ]",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-3%EC%84%BC%ED%8B%B0%EA%B8%89-2%EB%A7%88%EB%A6%AC/2988/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:31.880Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-3%EC%84%BC%ED%8B%B0%EA%B8%89-2%EB%A7%88%EB%A6%AC/2988/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:31.880Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-3%EC%84%BC%ED%8B%B0%EA%B8%89-2%EB%A7%88%EB%A6%AC/2988/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:31.880Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_4611:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_4611:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_4611",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 화이트 팬더 롱핀 [4센티급, 1마리]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-화이트-팬더-롱핀-4센티급-1마리/4611/",
+      "declared_product_url": "https://chunjane.com/product/01-화이트-팬더-롱핀-4센티급-1마리/4611/",
+      "observed_at_utc": "2026-10-10T06:13:52.011Z",
+      "registered_at": null,
+      "price_amount": 8000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/202405/bb43ef2514a6c1f59f5f297af8f4dff4.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-4%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4611/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "01 화이트 팬더 롱핀 [4센티급, 1마리]",
+        "identityTitle": "01 화이트 팬더 롱핀 [4센티급, 1마리]",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-4%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4611/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:52.011Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-4%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4611/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:52.011Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-4%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4611/category/435/display/1/",
+          "observedAt": "2026-10-10T06:13:52.011Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_4648:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_4648:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_4648",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 화이트 팬더 롱핀 [5센티급, 1마리]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-화이트-팬더-롱핀-5센티급-1마리/4648/",
+      "declared_product_url": "https://chunjane.com/product/01-화이트-팬더-롱핀-5센티급-1마리/4648/",
+      "observed_at_utc": "2026-10-10T06:14:21.637Z",
+      "registered_at": null,
+      "price_amount": 9000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "9000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "9000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/202504/f9e589e79a840a3982cd5052e048bf05.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-5%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4648/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "01 화이트 팬더 롱핀 [5센티급, 1마리]",
+        "identityTitle": "01 화이트 팬더 롱핀 [5센티급, 1마리]",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-5%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4648/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:21.637Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-5%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4648/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:21.637Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%8C%AC%EB%8D%94-%EB%A1%B1%ED%95%80-5%EC%84%BC%ED%8B%B0%EA%B8%89-1%EB%A7%88%EB%A6%AC/4648/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:21.637Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_636:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_636:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_636",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 아트로퍼소나투스 요정코리  [2마리]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-아트로퍼소나투스-요정코리-2마리/636/",
+      "declared_product_url": "https://chunjane.com/product/01-아트로퍼소나투스-요정코리-2마리/636/",
+      "observed_at_utc": "2026-10-10T06:14:31.654Z",
+      "registered_at": null,
+      "price_amount": 18000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "18000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "18000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/ksy8705_636.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%EC%95%84%ED%8A%B8%EB%A1%9C%ED%8D%BC%EC%86%8C%EB%82%98%ED%88%AC%EC%8A%A4-%EC%9A%94%EC%A0%95%EC%BD%94%EB%A6%AC-2%EB%A7%88%EB%A6%AC/636/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint",
+      "classification_evidence": {
+        "title": "01 아트로퍼소나투스 요정코리 [2마리]",
+        "identityTitle": "01 아트로퍼소나투스 요정코리 [2마리]",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": false,
+        "sufficient": true,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%84%ED%8A%B8%EB%A1%9C%ED%8D%BC%EC%86%8C%EB%82%98%ED%88%AC%EC%8A%A4-%EC%9A%94%EC%A0%95%EC%BD%94%EB%A6%AC-2%EB%A7%88%EB%A6%AC/636/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:31.654Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%84%ED%8A%B8%EB%A1%9C%ED%8D%BC%EC%86%8C%EB%82%98%ED%88%AC%EC%8A%A4-%EC%9A%94%EC%A0%95%EC%BD%94%EB%A6%AC-2%EB%A7%88%EB%A6%AC/636/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:31.654Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%84%ED%8A%B8%EB%A1%9C%ED%8D%BC%EC%86%8C%EB%82%98%ED%88%AC%EC%8A%A4-%EC%9A%94%EC%A0%95%EC%BD%94%EB%A6%AC-2%EB%A7%88%EB%A6%AC/636/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:31.654Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_4069:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_4069:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_4069",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 알비노 골든스트라이프[3cm급, 1마리]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-알비노-골든스트라이프3cm급-1마리/4069/",
+      "declared_product_url": "https://chunjane.com/product/01-알비노-골든스트라이프3cm급-1마리/4069/",
+      "observed_at_utc": "2026-10-10T06:14:51.652Z",
+      "registered_at": null,
+      "price_amount": 10000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "10000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "10000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/202406/e5dd7028e8461e0efcd7cf5e6e64993c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%843cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/4069/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "01 알비노 골든스트라이프[3cm급, 1마리]",
+        "identityTitle": "01 알비노 골든스트라이프[3cm급, 1마리]",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%843cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/4069/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:51.652Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%843cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/4069/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:51.652Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%843cm%EA%B8%89-1%EB%A7%88%EB%A6%AC/4069/category/435/display/1/",
+          "observedAt": "2026-10-10T06:14:51.652Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_4142:default",
+      "collector_key": "retailer-48:cafe24_ksy8705_1_4142:default",
+      "source_id": "retailer-48",
+      "retailer_product_id": "cafe24_ksy8705_1_4142",
+      "variant_id": null,
+      "retailer": "춘자네수족관",
+      "seller_domain": "chunjane.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "01 알비노 골든스트라이프 [3cm급, 2마리]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://chunjane.com/product/01-알비노-골든스트라이프-3cm급-2마리/4142/",
+      "declared_product_url": "https://chunjane.com/product/01-알비노-골든스트라이프-3cm급-2마리/4142/",
+      "observed_at_utc": "2026-10-10T06:15:01.949Z",
+      "registered_at": null,
+      "price_amount": 19000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "19000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "19000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://chunjane.com/web/product/big/202406/bdad0e80d519895689c948b65ca1f80b.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%84-3cm%EA%B8%89-2%EB%A7%88%EB%A6%AC/4142/category/435/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Verified product breadcrumb matches a reviewed retailer category",
+      "classification_evidence": {
+        "title": "01 알비노 골든스트라이프 [3cm급, 2마리]",
+        "identityTitle": "01 알비노 골든스트라이프 [3cm급, 2마리]",
+        "description": "",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": true,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 8,
+      "discovery_category_url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%84-3cm%EA%B8%89-2%EB%A7%88%EB%A6%AC/4142/category/435/display/1/",
+          "observedAt": "2026-10-10T06:15:01.949Z"
+        },
+        {
+          "label": "열대어",
+          "url": "/category/열대어/432/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%84-3cm%EA%B8%89-2%EB%A7%88%EB%A6%AC/4142/category/435/display/1/",
+          "observedAt": "2026-10-10T06:15:01.949Z"
+        },
+        {
+          "label": "코리도라스",
+          "url": "/category/코리도라스/435/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%8C%EB%B9%84%EB%85%B8-%EA%B3%A8%EB%93%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9D%B4%ED%94%84-3cm%EA%B8%89-2%EB%A7%88%EB%A6%AC/4142/category/435/display/1/",
+          "observedAt": "2026-10-10T06:15:01.949Z"
+        }
+      ],
+      "observed_category_evidence": [
+        {
+          "label": "코리도라스",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "evidencePage": "https://chunjane.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4/435/",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000B",
+      "collector_key": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000B",
+      "source_id": "retailer-49",
+      "retailer_product_id": "cafe24_week22_1_319",
+      "variant_id": "cafe24_week22_1_319_P00000MH000B",
+      "retailer": "피셔맨브라더스",
+      "seller_domain": "fishermanbt.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "live",
+      "subtype": "fish",
+      "title": "그린네온 테트라 1마리",
+      "variant_title": "Retailer concrete offer",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000B",
+      "declared_product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000B",
+      "observed_at_utc": "2026-10-10T06:15:15.457Z",
+      "registered_at": null,
+      "price_amount": 1500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "마릿수별할인",
+          "value": "1마리"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "1500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://fishermanbt.com/web/product/big/202605/4f3d80cd59784b9cd229962222ef53a7.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://fishermanbt.com/product/detail.html?product_no=319",
+        "downloaded_or_rehosted": false
+      },
+      "observed_category_evidence": [
+        {
+          "label": "구피·열대어",
+          "ancestorLabels": [],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000C",
+      "collector_key": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000C",
+      "source_id": "retailer-49",
+      "retailer_product_id": "cafe24_week22_1_319",
+      "variant_id": "cafe24_week22_1_319_P00000MH000C",
+      "retailer": "피셔맨브라더스",
+      "seller_domain": "fishermanbt.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "type": "live",
+      "subtype": "fish",
+      "title": "그린네온 테트라 10마리",
+      "variant_title": "Retailer concrete offer",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000C",
+      "declared_product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000C",
+      "observed_at_utc": "2026-10-10T06:15:15.457Z",
+      "registered_at": null,
+      "price_amount": 12000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "마릿수별할인",
+          "value": "10마리"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "1500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://fishermanbt.com/web/product/big/202605/4f3d80cd59784b9cd229962222ef53a7.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://fishermanbt.com/product/detail.html?product_no=319",
+        "downloaded_or_rehosted": false
+      },
+      "observed_category_evidence": [
+        {
+          "label": "구피·열대어",
+          "ancestorLabels": [],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000D",
+      "collector_key": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000D",
+      "source_id": "retailer-49",
+      "retailer_product_id": "cafe24_week22_1_319",
+      "variant_id": "cafe24_week22_1_319_P00000MH000D",
+      "retailer": "피셔맨브라더스",
+      "seller_domain": "fishermanbt.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "type": "live",
+      "subtype": "fish",
+      "title": "그린네온 테트라 50마리",
+      "variant_title": "Retailer concrete offer",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000D",
+      "declared_product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000D",
+      "observed_at_utc": "2026-10-10T06:15:15.457Z",
+      "registered_at": null,
+      "price_amount": 59000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "마릿수별할인",
+          "value": "50마리"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "1500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://fishermanbt.com/web/product/big/202605/4f3d80cd59784b9cd229962222ef53a7.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://fishermanbt.com/product/detail.html?product_no=319",
+        "downloaded_or_rehosted": false
+      },
+      "observed_category_evidence": [
+        {
+          "label": "구피·열대어",
+          "ancestorLabels": [],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000E",
+      "collector_key": "retailer-49:cafe24_week22_1_319:cafe24_week22_1_319_P00000MH000E",
+      "source_id": "retailer-49",
+      "retailer_product_id": "cafe24_week22_1_319",
+      "variant_id": "cafe24_week22_1_319_P00000MH000E",
+      "retailer": "피셔맨브라더스",
+      "seller_domain": "fishermanbt.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "type": "live",
+      "subtype": "fish",
+      "title": "그린네온 테트라 100마리",
+      "variant_title": "Retailer concrete offer",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000E",
+      "declared_product_url": "https://fishermanbt.com/product/그린네온-테트라/319/?item_code=P00000MH000E",
+      "observed_at_utc": "2026-10-10T06:15:15.457Z",
+      "registered_at": null,
+      "price_amount": 110000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "마릿수별할인",
+          "value": "100마리"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "1500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://fishermanbt.com/web/product/big/202605/4f3d80cd59784b9cd229962222ef53a7.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://fishermanbt.com/product/detail.html?product_no=319",
+        "downloaded_or_rehosted": false
+      },
+      "observed_category_evidence": [
+        {
+          "label": "구피·열대어",
+          "ancestorLabels": [],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=42",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=42",
           "observedAt": null
         }
       ]

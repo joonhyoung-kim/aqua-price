@@ -1,48 +1,11 @@
 {
   "executionBudgetMs": 1080000,
-  "deferredSourceIds": [
-    "retailer-05",
-    "retailer-06",
-    "retailer-07",
-    "retailer-08",
-    "retailer-09",
-    "retailer-10",
-    "retailer-11",
-    "retailer-12",
-    "retailer-13",
-    "retailer-14",
-    "retailer-15",
-    "retailer-16",
-    "retailer-17",
-    "retailer-18",
-    "retailer-19",
-    "retailer-20",
-    "retailer-21",
-    "retailer-22",
-    "retailer-23",
-    "retailer-24",
-    "retailer-25",
-    "retailer-27",
-    "retailer-28",
-    "retailer-29",
-    "retailer-30",
-    "retailer-31",
-    "retailer-32",
-    "retailer-33",
-    "retailer-34",
-    "retailer-35",
-    "retailer-36",
-    "retailer-37",
-    "retailer-38",
-    "retailer-39",
-    "retailer-40",
-    "retailer-41"
-  ],
-  "startedAt": "2026-10-14T08:01:15.330Z",
-  "mode": "reconcile",
-  "discoveryScope": "all",
+  "deferredSourceIds": [],
+  "startedAt": "2026-10-14T12:00:14.881Z",
+  "mode": "live",
+  "discoveryScope": "live",
   "runTrigger": "schedule",
-  "githubRunId": "38532097052",
+  "githubRunId": "38560419267",
   "autoRefreshDeployed": false,
   "fullCatalogCoverage": false,
   "sources": [
@@ -10259,7 +10222,7 @@
       "collectorLastAttempt": "2026-10-14T08:15:47.945Z",
       "collectorLastSuccess": "2026-10-14T08:16:26.950Z",
       "count": 33,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -29422,7 +29385,7 @@
         "detail_parse_failed:http://greenfish.co.kr/shop/shopdetail.html?branduid=6368&search=%25C7%25C1%25B6%25F3%25BF%25EE&sort=&xcode=006&mcode=009&scode=001&GfDT=a2d3UQ%3D%3D",
         "detail_parse_failed:http://greenfish.co.kr/shop/shopdetail.html?branduid=10010&search=u.s&sort=&xcode=006&mcode=008&scode=&GfDT=am13VA%3D%3D"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -29432,8 +29395,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-03",
@@ -29487,7 +29450,7 @@
       "collectorLastAttempt": "2026-10-14T08:16:30.311Z",
       "collectorLastSuccess": "2026-10-14T08:18:22.420Z",
       "count": 72,
-      "requests": 15,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -49747,9 +49710,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -49757,8 +49720,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-05",
@@ -557461,7 +557424,7 @@
       "collectorLastAttempt": "2026-10-14T08:01:15.343Z",
       "collectorLastSuccess": "2026-10-14T08:04:27.079Z",
       "count": 33,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -577508,9 +577471,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -577518,8 +577481,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-43",
@@ -577618,7 +577581,7 @@
       "collectorLastAttempt": "2026-10-14T08:04:30.402Z",
       "collectorLastSuccess": "2026-10-14T08:04:33.941Z",
       "count": 1,
-      "requests": 2,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -577796,9 +577759,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -577806,8 +577769,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-46",
@@ -577861,7 +577824,7 @@
       "collectorLastAttempt": "2026-10-14T08:04:36.834Z",
       "collectorLastSuccess": "2026-10-14T08:05:09.785Z",
       "count": 89,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -592702,7 +592665,7 @@
         "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&CM=1817&GC=GD06",
         "detail_parse_failed:https://www.wpet.co.kr/?act=shop.goods_view&GS=1861"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -592712,8 +592675,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-48",
@@ -592722,7 +592685,7 @@
       "collectorLastAttempt": "2026-10-14T08:05:19.102Z",
       "collectorLastSuccess": "2026-10-14T08:08:31.115Z",
       "count": 222,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -615112,7 +615075,7 @@
       "errors": [
         "detail_request_failed:https://chunjane.com/product/01-%EB%A6%AC%EC%98%A4%EB%84%A4%EA%B7%B8%EB%A1%9C-%EC%98%A4%ED%86%A0%EC%94%BD-3%EB%A7%88%EB%A6%AC/4675/category/432/display/1/:response_too_large"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -615122,8 +615085,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-49",
@@ -615132,7 +615095,7 @@
       "collectorLastAttempt": "2026-10-14T08:08:34.311Z",
       "collectorLastSuccess": "2026-10-14T08:11:46.429Z",
       "count": 153,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -631677,7 +631640,7 @@
         "detail_parse_failed:https://fishermanbt.com/product/detail.html?product_no=4286&cate_no=154&display_group=1",
         "detail_parse_failed:https://fishermanbt.com/product/detail.html?product_no=3501&cate_no=241&display_group=1"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -631687,8 +631650,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-50",
@@ -631697,7 +631660,7 @@
       "collectorLastAttempt": "2026-10-14T08:11:49.747Z",
       "collectorLastSuccess": "2026-10-14T08:15:02.107Z",
       "count": 116,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -645653,9 +645616,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -645663,8 +645626,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-51",
@@ -645673,7 +645636,7 @@
       "collectorLastAttempt": "2026-10-14T08:15:05.421Z",
       "collectorLastSuccess": "2026-10-14T08:15:44.730Z",
       "count": 67,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -657516,7 +657479,7 @@
       "errors": [
         "request_limit"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "38532097052",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -657526,8 +657489,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-52",
@@ -657575,24 +657538,14 @@
       "evaluatedThisExecution": false
     }
   ],
-  "executionDeadlineReached": true,
-  "executionBudgetLimited": true,
-  "finishedAt": "2026-10-14T08:19:00.595Z",
-  "nextSourceId": "retailer-04",
-  "attemptedSourceIds": [
-    "retailer-42",
-    "retailer-45",
-    "retailer-47",
-    "retailer-48",
-    "retailer-49",
-    "retailer-50",
-    "retailer-51",
-    "retailer-02",
-    "retailer-04"
-  ],
+  "executionDeadlineReached": false,
+  "executionBudgetLimited": false,
+  "finishedAt": "2026-10-14T12:00:14.881Z",
+  "nextSourceId": "retailer-16",
+  "attemptedSourceIds": [],
   "executionEnvironment": "github_actions",
-  "productChanges": 96,
-  "executionSkippedReason": null,
+  "productChanges": 0,
+  "executionSkippedReason": "not_due",
   "executionError": null,
   "checkpointOnly": false,
   "collectorControls": {
@@ -657611,34 +657564,34 @@
   },
   "scheduleDecision": {
     "automatic": true,
-    "due": true,
-    "reason": "due",
-    "intervalHours": 24,
-    "lastAttemptAt": "2026-10-13T09:45:19.148Z",
+    "due": false,
+    "reason": "already_attempted_window",
+    "intervalHours": 12,
+    "lastAttemptAt": "2026-10-14T04:59:21.039Z",
     "gate": "utc_slot_window",
     "window": {
-      "id": "reconcile:24:2026-10-14T02:43:00.000Z",
-      "startAt": "2026-10-14T02:43:00.000Z",
-      "endAt": "2026-10-15T02:43:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T02:43:00.000Z"
+      "id": "live:12:2026-10-14T00:17:00.000Z",
+      "startAt": "2026-10-14T00:17:00.000Z",
+      "endAt": "2026-10-14T12:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
     "previousWindow": {
-      "id": "reconcile:24:2026-10-13T02:43:00.000Z",
-      "startAt": "2026-10-13T02:43:00.000Z",
-      "endAt": "2026-10-14T02:43:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T02:43:00.000Z"
+      "id": "live:12:2026-10-14T00:17:00.000Z",
+      "startAt": "2026-10-14T00:17:00.000Z",
+      "endAt": "2026-10-14T12:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
-    "nextDueAt": "2026-10-15T02:43:00.000Z"
+    "nextDueAt": "2026-10-14T12:17:00.000Z"
   },
   "schedule": {
     "schemaVersion": 1,
     "modes": {
       "live": {
         "intervalHours": 12,
-        "lastEvaluatedAt": "2026-10-14T04:59:21.032Z",
-        "lastDecision": "attempted",
+        "lastEvaluatedAt": "2026-10-14T12:00:14.881Z",
+        "lastDecision": "already_attempted_window",
         "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
         "lastAttemptAt": "2026-10-14T04:59:21.039Z",
         "lastManualAttemptAt": "2026-10-10T04:36:16.718Z",
@@ -657712,123 +657665,7 @@
       }
     }
   },
-  "sourceDecisions": {
-    "retailer-42": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-43": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-44": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-45": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-46": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-47": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-48": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-49": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-50": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-51": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-52": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-01": {
-      "requestedEnabled": false,
-      "registryEligible": true,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-02": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-03": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-04": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    }
-  },
-  "evaluatedSourceIds": [
-    "retailer-42",
-    "retailer-45",
-    "retailer-47",
-    "retailer-48",
-    "retailer-49",
-    "retailer-50",
-    "retailer-51",
-    "retailer-02",
-    "retailer-04"
-  ],
+  "sourceDecisions": {},
+  "evaluatedSourceIds": [],
   "lastConfirmedCheckpointAt": "2026-10-10T02:54:24.373Z"
 }

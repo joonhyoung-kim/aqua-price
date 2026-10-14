@@ -19,6 +19,21 @@ const base=originalSuspects.items.find(p=>p.source_kind==='direct_retailer_produ
 function row(id=1,changes={}) { return {...structuredClone(base),id:'preserved-'+id,collector_key:'fixture:'+id+':default',source_id:source.id,seller_domain:source.sourceDomain,retailer:source.name,retailer_product_id:String(id),variant_id:null,title:'체리새우 10마리 생물 포장비 무료',type:'gear',subtype:null,product_url:product(id),declared_product_url:product(id),observed_at_utc:before,price_amount:1000,photo:null,variant_title:null,variant_attributes:[],quantity_per_pack:null,classification_basis:'Old packaging classification',...changes}; }
 const snapshot=items=>({...structuredClone(snapshotEnvelope),items:structuredClone(items)});
 const state=items=>({status:'success',products:structuredClone(items),updatedKeys:[],requests:0,cacheOnly:true,cache:{},errors:[]});
+test('bare animal sales units in gear require fresh review; animal-named supplies remain unflagged',()=>{
+ const animal=row(1167,{title:'생이새우 10 마리'}),original=structuredClone(animal);
+ const flags=revalidationCandidates(source,snapshot([animal]));assert.equal(flags.length,1);assert.equal(flags[0].autoPublish,false);assert.equal(flags[0].requiresFreshVerification,true);assert.deepEqual(animal,original);
+ for(const title of ['생이새우 사료 10마리용','구피 모형 2마리','체리새우 먹이','베타 침대'])assert.equal(revalidationCandidates(source,snapshot([row(1,{title})])).length,0);
+});
+test('fresh content distinguishes feed shrimp from ornamental shrimp without overwriting preserved product identity',async()=>{
+ for(const crumb of ['생먹이','관상새우']){
+  const animal=row(1167,{title:'생이새우 10 마리'}),snap=snapshot([animal]),io=transport({[animal.product_url]:detail(animal,{crumb})});
+  const out=await revalidateExisting(source,seed,state([animal]),snap,{...io,detailLimit:1});
+  assert.equal(out.products[0].id,animal.id);assert.ok(sameIdentity(animal,out.products[0]));
+  if(crumb==='생먹이'){assert.equal(out.products[0].type,'gear');assert.equal(out.classificationRevalidationQueue[0].status,'verified_gear');assert.equal(out.classificationRevalidationUpdates.length,0);}
+  else{assert.equal(out.products[0].type,'live');assert.equal(out.products[0].subtype,'shrimp');assert.ok(canPublishCorrection(animal,out.products[0],out));}
+  assert.equal(snap.items[0].type,'gear');
+ }
+});
 function detail(item,options={}) {
  const url=options.url||item.product_url,title=options.title||item.title,price=options.price??item.price_amount;
  const data={'@type':'Product',name:title,sku:options.sku||item.retailer_product_id,url,offers:{'@type':'Offer',price,priceCurrency:'KRW',url,availability:'https://schema.org/InStock'}};

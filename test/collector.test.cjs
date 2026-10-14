@@ -5,6 +5,57 @@ const {parseProductPage}=require('../scripts/collector/product-jsonld.cjs');cons
 // Synthetic fixture facts only; no network calls and no publication.
 const NOW=Date.parse('2026-10-08T12:00:00Z');
 const ctx={url:'https://example.invalid/product/test/12/',domain:'example.invalid',sourceId:'test',name:'TEST',type:'live',subtype:'fish',photosAllowed:true,observedAt:new Date(NOW).toISOString()};
+// Reduced facts observed on retailer-14 product 204: a displayed 20,000 KRW
+// base and exact SKU selectors with -12,000 / -15,000 KRW adjustments.
+function selectorPage(change={}) {
+ const url='https://example.invalid/product/fish/204/',name='턱시도코이구피 리본 1마리';
+ const variants=[['A','노멀숫컷',8000],['C','리본숫컷',5000],['B','리본암컷',20000]].map(([id,label,price])=>({'@type':'Product',name:name+' '+label,sku:'fixture204_P00000HW000'+id,additionalProperty:[{name:'암수',value:label}],offers:{'@type':'Offer',url:url+'?item_code=P00000HW000'+id,priceCurrency:'KRW',price}}));
+ const group={'@type':'ProductGroup','@id':url,name,productGroupID:'fixture204',variesBy:['암수'],hasVariant:variants,offers:{'@type':'AggregateOffer',url,priceCurrency:'KRW',lowPrice:5000,highPrice:20000}};
+ if(change.group)change.group(group);
+ const selector='<select option_product_no="204" product_type="product_option" option_type="T" option_title="암수"><option value="P00000HW000A">노멀숫컷 (-12,000원)</option><option value="P00000HW000C">리본숫컷 (-15,000원)</option><option value="P00000HW000B">리본암컷</option></select>';
+ let html='<h2>'+name+'</h2><strong id="span_product_price_text">20,000원</strong>'+selector;
+ if(change.html)html=change.html(html);
+ return html+'<script type="application/ld+json">'+JSON.stringify(change.standalone?variants[0]:group)+'</script>';
+}
+const selectorContext={...ctx,url:'https://example.invalid/product/detail.html?product_no=204',type:'gear',subtype:null};
+test('visible base plus exact ProductGroup SKU selector delta verifies each concrete option without changing identity',()=>{
+ const parsed=parseProductPage(selectorPage(),selectorContext);
+ assert.deepEqual(parsed.issues,[]);assert.deepEqual(parsed.items.map(x=>x.price_amount),[8000,5000,20000]);
+ assert.deepEqual(parsed.items.map(x=>x.variant_id),['fixture204_P00000HW000A','fixture204_P00000HW000C','fixture204_P00000HW000B']);
+ assert.ok(parsed.items[0].verification_method.includes('SKU-bound visible selector delta'));
+ assert.ok(parsed.items.every(x=>x.retailer_product_id==='fixture204'));
+});
+test('selector adjustment corroborates the concrete Offer once and never adds the delta to its stored price again',()=>{
+ const change={group:g=>{g.hasVariant[0].offers.price=23000;},html:h=>h.replace('(-12,000원)','(+3,000원)')};
+ const parsed=parseProductPage(selectorPage(change),selectorContext),option=parsed.items.find(x=>x.variant_id==='fixture204_P00000HW000A');
+ assert.equal(option.price_amount,23000);assert.equal(option.collector_key,'test:fixture204:fixture204_P00000HW000A');assert.equal(option.id,option.collector_key);
+ const doubled=parseProductPage(selectorPage({...change,group:g=>{g.hasVariant[0].offers.price=26000;}}),selectorContext);
+ assert.ok(!doubled.items.some(x=>x.variant_id==='fixture204_P00000HW000A'));assert.ok(doubled.issues.includes('visible_price_unverified'));
+});
+test('option corroboration rejects wrong product, SKU, label, price, duplicated selector, hidden base and standalone claims',()=>{
+ const cases=[
+  {html:h=>h.replace('option_product_no="204"','option_product_no="205"')},
+  {html:h=>h.replace('(-12,000원)','(-11,000원)')},
+  {html:h=>h.replace('20,000원','21,000원')},
+  {html:h=>h.replace('노멀숫컷 (-12,000원)','다른옵션 (-12,000원)')},
+  {html:h=>h.replace('</select>','<option value="P00000HW000A">노멀숫컷 (-12,000원)</option></select>')},
+  {html:h=>h.replace('id="span_product_price_text"','id="span_product_price_text" hidden')},
+  {group:g=>{g.hasVariant[0].offers.url=g.hasVariant[0].offers.url.replace('000A','000Z');}},
+  {group:g=>{g.hasVariant[0].sku='unrelated_P00000HW000A';}},
+  {html:h=>h.replace('option_product_no="204"','data-option_product_no="204"')},
+  {html:h=>h.replace('id="span_product_price_text"','data-id="span_product_price_text"')},
+  {group:g=>{g['@id']=g['@id'].replace('/204/','/205/');g.offers.url=g['@id'];}},
+  {group:g=>{g.hasVariant.push(structuredClone(g.hasVariant[0]));}},
+  {group:g=>{g.hasVariant[0].additionalProperty.push({name:'크기',value:'대'});}},
+  {group:g=>{g.hasVariant[0].offers.url=g.hasVariant[0].offers.url.replace('example.invalid','foreign.invalid');}},
+  {standalone:true},
+ ];
+ for(const change of cases){const parsed=parseProductPage(selectorPage(change),selectorContext);assert.ok(!parsed.items.some(x=>x.variant_id==='fixture204_P00000HW000A'||x.price_amount===8000));assert.ok(parsed.issues.length);}
+});
+test('non-numeric merchant offers and script-only access denial remain unpublished; title amounts are never a price fallback',()=>{
+ for(const raw of ['봄에 만나요','문의요망','전화 문의']){const html='<h1>구피 선주문가 35만원</h1><p>350,000원</p><script type="application/ld+json">'+JSON.stringify({'@type':'Product',name:'구피 선주문가 35만원',sku:'fixture',offers:{'@type':'Offer',price:raw,priceCurrency:'KRW'}})+'</script>';const parsed=parseProductPage(html,ctx);assert.equal(parsed.items.length,0);assert.deepEqual(parsed.issues,['missing_or_invalid_krw_price']);}
+ const denied=parseProductPage('<script>historyBack("해당 상품에 접근이 불가능 합니다")</script>',ctx);assert.equal(denied.items.length,0);assert.deepEqual(denied.issues,['no_product_jsonld']);
+});
 function page(price=1000,availability='InStock',extra={}) { const product={'@type':'Product',name:'TEST FISH',sku:'SKU-12',image:'https://example.invalid/fish.jpg',offers:{'@type':'Offer',price:String(price),priceCurrency:'KRW',availability:'https://schema.org/'+availability},...extra};return '<h1>TEST FISH</h1><p>'+Number(price).toLocaleString('en-US')+'원</p><script type="application/ld+json">'+JSON.stringify({'@graph':[product]})+'</script>'; }
 const source={id:'test',name:'TEST',sourceDomain:'example.invalid',officialURL:'https://example.invalid/',technicalReadiness:'adapter_sample_tested',enabled:true,photosAllowed:true,delayMs:10,cacheTtlMs:1000,maxRequests:4,maxBytes:100000,timeoutMs:1000,products:[{url:ctx.url,type:'live',subtype:'fish'}]};
 const httpImage='http://example.invalid/fish.jpg',verifiedImage={httpsUrl:'https://example.invalid/fish.jpg',checkedAt:'2026-10-08T13:00:00Z',contentType:'image/jpeg',sha256:'a'.repeat(64)};

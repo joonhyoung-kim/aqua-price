@@ -69,6 +69,41 @@ function sameProductPage(value, pageUrl) {
     return Boolean(a && b && a === b);
   } catch { return false; }
 }
+// A concrete inline member can use the displayed base price plus its exact
+// selector delta. Aggregate prices and unrelated selector labels are insufficient.
+function visibleGroupOptionPrice(product, offer, context, html, amount) {
+  const member = product[GROUP_MEMBER];
+  if (!member || !Number.isSafeInteger(amount)) return false;
+  const {group, variant} = member, properties = variant.additionalProperty;
+  if (!Array.isArray(properties) || properties.length !== 1 || !Array.isArray(group.variesBy) || group.variesBy.length !== 1) return false;
+  const property = properties[0];
+  if (typeof property?.name !== 'string' || typeof property.value !== 'string' || group.variesBy[0] !== property.name) return false;
+  const name = normalizeIdentityText(decode(group.name || '')), value = normalizeIdentityText(decode(property.value));
+  if (!name || !value || normalizeIdentityText(decode(variant.name || '')) !== name + ' ' + value) return false;
+  const members = [].concat(group.hasVariant || []);
+  if (members.filter(v => v?.sku === variant.sku).length !== 1 || typeof variant.sku !== 'string') return false;
+  if (!sameProductPage(group.url || group['@id'] || group.offers?.url, context.url) || !sameProductPage(offer.url, context.url)) return false;
+  const code = new URL(offer.url).searchParams.get('item_code');
+  const groupId = group.productGroupID || group.sku || group.productID;
+  if (typeof groupId !== 'string' || !groupId.trim() || !/^[A-Z0-9]+$/.test(code || '') || variant.sku !== groupId + '_' + code || offer.sku && offer.sku !== variant.sku) return false;
+  const page = new URL(context.url), pageId = page.searchParams.get('product_no') || page.pathname.match(/^\/product\/[^/]+\/(\d+)(?:\/|$)/)?.[1];
+  const visible = html.replace(/<script\b[\s\S]*?<\/script\s*>|<style\b[\s\S]*?<\/style\s*>|<!--[\s\S]*?-->/gi, '');
+  if (![...visible.matchAll(/<h([12])\b[^>]*>([\s\S]*?)<\/h\1\s*>/gi)].some(m => visibleText(m[2]) === name)) return false;
+  const attr = (tag, key) => decode(tag.match(new RegExp('(?:^|\\s)' + key + '\\s*=\\s*["\\\']([^"\\\']*)["\\\']', 'i'))?.[1] || '');
+  const bases = [...visible.matchAll(/<([a-z]+)\b([^>]*\sid\s*=\s*["']span_product_price_text["'][^>]*)>([\s\S]*?)<\/\1\s*>/gi)];
+  if (bases.length !== 1 || /\bhidden\b|display\s*:\s*none/i.test(bases[0][2])) return false;
+  const baseText = visibleText(bases[0][3]), baseMatch = baseText.match(/^(\d+(?:,\d{3})*)\s*원$/);
+  if (!baseMatch) return false;
+  const base = Number(baseMatch[1].replace(/,/g, ''));
+  const selects = [...visible.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select\s*>/gi)].filter(m => attr(m[1], 'option_product_no') === pageId && attr(m[1], 'product_type') === 'product_option' && attr(m[1], 'option_type') === 'T' && attr(m[1], 'option_title') === property.name && !/\bhidden\b|display\s*:\s*none/i.test(m[1]));
+  if (selects.length !== 1) return false;
+  const options = [...selects[0][2].matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option\s*>/gi)].filter(m => attr(m[1], 'value') === code);
+  if (options.length !== 1 || /\bdisabled\b|\bhidden\b/i.test(options[0][1])) return false;
+  const label = visibleText(options[0][2]), delta = label.match(/^(.*?)\s+\(([+-])(\d+(?:,\d{3})*)원\)$/);
+  if (delta ? normalizeIdentityText(delta[1]) !== value : label !== value) return false;
+  const adjustment = delta ? Number(delta[3].replace(/,/g, '')) * (delta[2] === '-' ? -1 : 1) : 0;
+  return Number.isSafeInteger(base) && Number.isSafeInteger(adjustment) && base + adjustment === amount;
+}
 function primaryProductEvidence(product, offer, item, text, context, html) {
   const member = product[GROUP_MEMBER];
   if (!member) return null;
@@ -154,7 +189,8 @@ function parseProductPage(html, context) {
       const visiblePrice=priceIsVisible(text,amount);
       const metaPrice=meta['product:price:currency']==='KRW' && /^\d+$/.test(meta['product:price:amount']||'') && Number(meta['product:price:amount'])===amount;
       const groupBaseCorroborated=product._groupName && Number.isFinite(Number(product._groupLowPrice)) && (priceIsVisible(text,Number(product._groupLowPrice)) || (meta['product:price:currency']==='KRW' && Number(meta['product:price:amount'])===Number(product._groupLowPrice)));
-      if (!Number.isSafeInteger(amount) || (!visiblePrice&&!metaPrice&&!groupBaseCorroborated)) { issues.push('visible_price_unverified'); continue; }
+      const optionPriceCorroborated=visibleGroupOptionPrice(product,offer,context,html,amount);
+      if (!Number.isSafeInteger(amount) || (!visiblePrice&&!metaPrice&&!groupBaseCorroborated&&!optionPriceCorroborated)) { issues.push('visible_price_unverified'); continue; }
       const declaredUrl=offer.url || product.url || context.url;
       const productUrl = typeof declaredUrl==='string' && declaredUrl.startsWith('http://') && host(declaredUrl)===host(context.url) ? context.url : declaredUrl;
       if (!sourceUrl(productUrl) || host(productUrl) !== host(context.url)) { issues.push('unsafe_product_url'); continue; }
@@ -177,7 +213,7 @@ function parseProductPage(html, context) {
       const quantity = context.quantityPerPack ?? (product.quantitativeValue?.unitCode === 'C62' ? product.quantitativeValue.value : countProperty ? Number.parseInt(countProperty.value,10) : null);
       const quantityPerPack = Number.isSafeInteger(quantity) && quantity > 0 ? quantity : null;
       const item = { id: products.length === 1 && offers.length === 1 && context.existingId ? context.existingId : key, collector_key: key, source_id: context.sourceId, retailer_product_id: retailerProductId, variant_id: variantId,
-        retailer: context.name, seller_domain: host(context.url), source_kind: 'direct_retailer_product_page', verification_method: visiblePrice ? 'Product JSON-LD identity and KRW price corroborated against visible page text' : groupBaseCorroborated ? 'ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked' : 'Visible product identity and JSON-LD Offer corroborated against matching public product price metadata; rendered purchase price not independently checked',
+        retailer: context.name, seller_domain: host(context.url), source_kind: 'direct_retailer_product_page', verification_method: visiblePrice ? 'Product JSON-LD identity and KRW price corroborated against visible page text' : optionPriceCorroborated ? 'Exact inline ProductGroup member and SKU-bound visible selector delta corroborate the concrete KRW Offer price; not checkout-confirmed' : groupBaseCorroborated ? 'ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked' : 'Visible product identity and JSON-LD Offer corroborated against matching public product price metadata; rendered purchase price not independently checked',
         type: context.type, subtype: context.subtype ?? null, title, variant_title: typeof offer.name === 'string' ? decode(offer.name) : typeof product.color==='string' ? '색상: '+product.color : context.variant ?? (quantityPerPack ? quantityPerPack+'마리 묶음' : null), quantity_per_pack: quantityPerPack, unit_price_amount: quantityPerPack ? amount / quantityPerPack : null,
         product_url: productUrl, declared_product_url:declaredUrl, observed_at_utc: context.observedAt, registered_at: null, price_amount: amount, currency: 'KRW', shipping_amount: null, variant_attributes: properties, price_metadata:meta, price_basis:'Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified',
         available, availability_basis: availability ? `Retailer JSON-LD ${availability}; not checkout-confirmed inventory` : 'Availability not supplied', stock_quantity: null,

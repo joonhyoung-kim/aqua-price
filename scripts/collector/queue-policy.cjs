@@ -1,9 +1,10 @@
 'use strict';
 const {productKey}=require('./discovery.cjs');
 const GROUPS=['fish','shrimp','aquatic_plant','snail','mixed'];
-const CLASSIFICATION_VERSION=8;
+const CLASSIFICATION_VERSION=9;
 function candidateGroup(candidate){return GROUPS.includes(candidate.subtype)?candidate.subtype:'mixed';}
 function takeFairCandidates(candidates,limit,cursor=0,now=Date.now(),options={}){
+ if(options.filterPriorityKeys?.size&&options.discoveryScope==='gear'&&limit>1){const base={...options,filterPriorityKeys:null},preferred=candidates.filter(c=>options.filterPriorityKeys.has(productKey(c.url))),first=takeFairCandidates(preferred,Math.max(1,Math.floor(limit/2)),cursor,now,base),selected=new Set(first.candidates.map(c=>productKey(c.url))),rest=takeFairCandidates(candidates.filter(c=>!selected.has(productKey(c.url))),limit-first.candidates.length,first.cursor,now,base);return {candidates:[...first.candidates,...rest.candidates],cursor:rest.cursor};}
  if(options.priorityKeys?.size){const priority=candidates.filter(c=>options.priorityKeys.has(productKey(c.url))),remaining=candidates.filter(c=>!options.priorityKeys.has(productKey(c.url))),base={...options,priorityKeys:null},first=takeFairCandidates(priority,limit,cursor,now,base),second=takeFairCandidates(remaining,limit-first.candidates.length,first.cursor,now,base);return {candidates:[...first.candidates,...second.candidates],cursor:second.cursor};}
  const schedule=options.prioritizeFish?['fish','fish','fish','shrimp','snail','mixed','aquatic_plant']:GROUPS;
  const buckets=new Map(GROUPS.map(group=>[group,candidates.filter(c=>candidateGroup(c)===group&&(!c.retryAfter||now>=Date.parse(c.retryAfter)))]));

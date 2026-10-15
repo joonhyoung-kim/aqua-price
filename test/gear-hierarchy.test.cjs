@@ -25,7 +25,7 @@ test('real retailer title regression cases separate refills, media, medicine, fo
   ['생물 여과재','media_bio'],
   ['MANITO 8D 폴리나젤 여과 필터 30x30cm','media_sponge'],
   ['스펀지여과기 교체용 스펀지','media_sponge'],
-  ['칸후 SF-0000 여과기 프리필터 (소)','filter_other'],
+  ['칸후 SF-0000 여과기 프리필터 (소)','filter_parts'],
   ['API No2 테스트킷','water_test'],['API 멜라픽스','medication'],
   ['MANITO 갑각류전용 포션 물갈이제 비타민 염소제거제 100ml','conditioner'],
   ['MANITO 구피 사료 20g','feed_dry'],['사료 보관통','feeding_equipment'],
@@ -102,4 +102,16 @@ test('browser script dependencies load taxonomy before model and keep native but
  assert.match(js,/data-gear-browse=.*aria-expanded/);assert.match(js,/data-gear-group=.*aria-pressed/);
  assert.match(html,/@media\(max-width:760px\)/);assert.match(html,/grid-template-columns:1fr/);
  assert.match(fs.readFileSync('scripts/serve.cjs','utf8'),/['"]\/gear-taxonomy\.js['"]:/);
+});
+
+test('complete UV canister filters stay equipment while replacement lamps, mounts, refills and prefilters stay separate',()=>{
+ const cases=[['KW 캐니스터 UV 외부여과기 (OWL-608) (UV램프 내장)','filter_external'],['KW 외부여과기용 자외선 UV 교체램프','sterilizer'],['KW 캐니스터 UV 외부여과기 프리필터','filter_parts'],['DDA 파이프 픽서(스펀지여과기 거치대)','filter_parts'],['UP 외부여과기용 프리필터 (1개)','filter_parts'],['칸후 스펀지여과기 전용 여과통 (여과재 포함)','filter_parts'],['리글라스 아파트 단지 여과기 (대) PJJ-185 리필','media_other'],['도핀 12/16 입수관 (소)','filter_parts']];
+ for(const[name,key]of cases)assert.equal(T.classification(item(name)).key,key,name);
+});
+test('whitespace-insensitive search gives identical IDs through cached and direct queries without merging SKU rows',()=>{
+ const query=A.createCatalogQuery(actual),base={...A.defaultFilters,type:'gear'};
+ const a=A.selectProducts(actual,{...base,query:'외부여과기'}).rows,b=A.selectProducts(actual,{...base,query:'외부 여과기'}).rows;
+ assert.deepEqual(a.map(x=>x.id),b.map(x=>x.id));assert.ok(a.length>0);
+ assert.deepEqual(query.select({...base,query:'외부 여과기'}).rows.map(x=>x.id),a.map(x=>x.id));
+ assert.equal(new Set(a.map(x=>x.id)).size,a.length);
 });

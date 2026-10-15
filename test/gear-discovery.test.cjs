@@ -152,3 +152,22 @@ test('known-price cursor resumes the first unattempted URL after a redirect cons
 test('an old review already in a saturated gear queue still receives the mandatory fresh-verification flag',async()=>{
  const url=product(1000),html=detail(1000).replace(/<div class="ec-base-path">[\s\S]*?<\/div>/,''),candidate={url,type:'gear',mixedCategories:false},previous={...state(),discoveryPending:[candidate,...Array.from({length:999},(_,i)=>({url:product(1001+i),type:'gear',mixedCategories:false}))],discoveryReviewQueue:[{key:productKey(url),status:'needs_review',classificationVersion:6,candidate}],cache:{[host+'/robots.txt']:{text:'User-agent: *\nAllow: /',fetchedAt:at},[url]:{text:html,fetchedAt:at}}},t=transport({[url]:html}),out=await integrateDiscovery({...source,maxRequests:1},seed,previous,{items:[]},{...t,discoveryScope:'gear',pendingFirst:true});assert.deepEqual(t.calls.map(c=>c.url),[url]);assert.equal(out.products.length,1);
 });
+
+test('filtration priority uses observed labels and titles, reserves non-filter opportunities and keeps exact URLs',()=>{
+ const {categoryOrder,preferredCandidate}=require('../scripts/collector/filter-priority.cjs');
+ const entries=['어항','조명','히터','사료','외부여과기','스펀지여과기'].map((label,i)=>({url:host+'/category/observed/'+(i+1)+'/',label,type:'gear'}));
+ const order=categoryOrder([0,1,2,3,4,5],entries,4);assert.deepEqual(order.slice(0,4),[4,5,0,1]);assert.equal(new Set(order).size,6);
+ assert.equal(preferredCandidate({url:host+'/product/외부여과기/99/'}),false);
+ assert.equal(preferredCandidate({url:product(1),key:'observed'},[{key:'observed',title:'고토부키 600 저면여과기'}]),true);
+ assert.equal(preferredCandidate({url:product(1),title:'외부여과기 교체 부품'}),false);
+ const candidates=Array.from({length:6},(_,i)=>({url:product(i+1),type:'gear',discoveredInCategory:host+'/category/c/'+i+'/'}));
+ const keys=new Set(candidates.slice(4).map(p=>productKey(p.url))),selected=takeFairCandidates(candidates,4,0,Date.now(),{discoveryScope:'gear',filterPriorityKeys:keys}).candidates;
+ assert.equal(selected.length,4);assert.equal(selected.filter(p=>keys.has(productKey(p.url))).length,2);assert.equal(selected.filter(p=>!keys.has(productKey(p.url))).length,2);
+ const delayed=candidates.map(p=>({...p,retryAfter:new Date(Date.now()+86400000).toISOString()}));assert.equal(takeFairCandidates(delayed,4,0,Date.now(),{discoveryScope:'gear',filterPriorityKeys:keys}).candidates.length,0);
+});
+
+test('cold filter review with a saved primary title is admitted for mandatory fresh verification without promoting its old price',async()=>{
+ const url=product(3767),key=productKey(url),before={...state(),discoveryLedger:{schemaVersion:1,entries:[{key,url,title:'고토부키 600 저면여과기',status:'pending',classificationVersion:8,classifications:[{status:'needs_review'}],evidence:[]}]}};
+ const calls=[];const out=await integrateDiscovery({...source,maxRequests:0},seed,before,{items:[]},{discoveryScope:'gear',fetch:async u=>{calls.push(u);throw Error('No request expected');}});
+ const pending=out.discoveryPending.find(x=>productKey(x.url)===key);assert.ok(pending);assert.equal(pending.requiresFreshVerification,true);assert.equal(pending.mixedCategories,true);assert.equal(out.products.length,0);assert.equal(calls.length,0);
+});

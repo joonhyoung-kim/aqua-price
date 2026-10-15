@@ -24,6 +24,9 @@
   const parent=key=>navigation.find(g=>Object.hasOwn(g.children,key))||null;
   const rules=[
     // Accessory/consumable phrases must win over the equipment mentioned in them.
+    ['filter_external',/^(?!.*(?:교체|램프만|부품|외부여과기용|프리\s*필터|리필|카트리지|임펠)).*(?:캐니스터\s+UV\s+외부여과기(?!용)|외부여과기(?!용).{0,30}UV\s*램프\s*내장)/i],
+    ['filter_parts',/프리\s*필터|여과기.{0,20}거치대|파이프\s*픽서|스펀지여과기\s*전용\s*여과통|^[^\s]+\s+\d+\/\d+\s+(?:입수관|출수관)/i],
+    ['media_other',/여과기.{0,40}리필\s*$/i],
     ['sterilizer',/자외선|\bUV\b|살균\s*(?:램프|등|기)/i],
     ['tank_set',/(?:일체형.{0,15}(?:어항|수조|수족관)|(?:어항|수조|수족관).{0,15}일체형|(?:어항|수조)\s*세트(?!용))|(?:수족관|어항|수조).{0,40}(?:조명|필터).{0,25}(?:포함|있는)/i],
     ['filter_parts',/(?:임펠라|임펠러|여과기.{0,15}(?:부품|연결구|흡착고무|출수구|입수구|흡입구|입수관|출수관|흡수관|호스)|여과기용.{0,12}(?:모터|헤드)|오링|O[-\s]?링)/i],

@@ -1,5 +1,22 @@
 'use strict';
 const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const {adminStatus}=require('../scripts/build-admin-status.cjs');
+function displayContext(){const vm=require('node:vm'),nodes={query:{addEventListener(){}},statusFilter:{addEventListener(){}}};const context=vm.createContext({document:{querySelector:s=>nodes[s.slice(1)]},fetch:()=>new Promise(()=>{})});vm.runInContext(fs.readFileSync('dist/admin/app.js','utf8'),context);return {context,call:(name,value)=>{context.fixture=value;return vm.runInContext(name+'(fixture)',context);}};}
+test('current automatic schedule records override stale October manual flags without claiming complete success',()=>{
+ const {call}=displayContext(),at='2026-10-15T05:08:14.606Z';const fixture={automation:{configured:true,dataPipelineVerified:true,scheduledRunVerified:false,lastRun:{id:1,trigger:'workflow_dispatch'}},controls:{schedule:{modes:{gear:{lastAutomatedAttemptAt:at,lastAttemptAt:at,lastAttemptAutomatic:true,lastAttemptRunId:'38684031376',lastAutomatedOutcome:'partial_failure'}}}},execution:{environment:'github_actions',trigger:'schedule',runId:'38684031376',publicationChanged:true}};
+ const text=call('automationSummary',fixture);assert.match(text,/자동 실행 확인 · 일부 수집 실패 · 부분 결과 반영/);assert.match(text,/38684031376/);assert.doesNotMatch(text,/예약 cron 실행은 아직|전체 성공|lastRun/);
+ fixture.execution.publicationChanged=false;assert.match(call('automationSummary',fixture),/결과 반영 여부 미확인/);
+ fixture.execution.publicationChanged=true;fixture.execution.runId='123';assert.match(call('automationSummary',fixture),/결과 반영 여부 미확인/);
+});
+test('manual, empty and running records never become successful scheduled collection',()=>{
+ const {call}=displayContext();for(const lane of [{},{lastManualAttemptAt:'2026-10-15T00:00:00Z',lastAttemptAutomatic:false,lastOutcome:'success'},{lastAutomatedAttemptAt:'invalid',lastAutomatedOutcome:'success'}])assert.doesNotMatch(call('automationSummary',{controls:{schedule:{modes:{gear:lane}}}}),/^자동 실행 확인/);
+ const text=call('automationSummary',{controls:{schedule:{modes:{live:{lastAutomatedAttemptAt:'2026-10-15T00:00:00Z',lastAutomatedOutcome:'running'}}}}});assert.match(text,/완료 미확인/);assert.doesNotMatch(text,/최근 기록 성공/);
+});
+test('automatic request evidence distinguishes a failing source from success and ignores local or untouched sources',()=>{
+ const registry={additionalSnapshotDomains:[],sources:[{id:'x',sourceDomain:'x.invalid',enabled:true}]},source={id:'x',executionRunId:'42',attemptedThisExecution:true,requests:2,status:'partial_failure'},report={executionEnvironment:'github_actions',runTrigger:'schedule',githubRunId:'42',checkpointOnly:false,productChanges:1,sources:[source]};
+ const current=adminStatus(registry,report,{items:[]},{});assert.equal(current.sources[0].execution.automaticAttemptConfirmed,true);assert.equal(current.sources[0].autoRefreshVerified,false);assert.match(displayContext().call('sourceAutomaticText',current.sources[0]),/자동 요청 확인 · 일부 수집 실패/);
+ for(const change of [{executionEnvironment:'local'},{runTrigger:'workflow_dispatch'},{sources:[{...source,attemptedThisExecution:false}]},{sources:[{...source,requests:0}]},{sources:[{...source,executionRunId:'43'}]}])assert.equal(adminStatus(registry,{...report,...change},{items:[]},{}).sources[0].execution.automaticAttemptConfirmed,false);
+ const original=JSON.stringify(report);adminStatus(registry,report,{items:[]},{});assert.equal(JSON.stringify(report),original);
+});
 test('admin reports actual results and never treats local execution as automated success',()=>{
  const registry=require('../sources/registry.json'),snapshot=require('../dist/source-snapshot.json'),report=require('../dist/collector-status.json');
  const status=adminStatus(registry,report,snapshot,{configured:true,verifiedRun:false});assert.equal(status.sources.length,registry.sources.length);assert.equal(registry.sources.filter(s=>s.original45).length,45);assert.equal(status.sources.filter(s=>s.autoRefreshVerified).length,0);assert.equal(status.sources.filter(s=>s.fullCatalogCoverage).length,0);

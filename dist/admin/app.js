@@ -11,6 +11,31 @@ function scheduleText(automation={}){
  return entries.filter(Boolean).length?entries.filter(Boolean).join(' / ')+' (UTC · 설정 기준)':'예약 주기 미확인';
 }
 let data;
+function automationSummary(status){
+ const modes=status.controls?.schedule?.modes||{},names={live:'생물',gear:'용품',reconcile:'목록 대조'};
+ const records=Object.entries(names).flatMap(([mode,label])=>{
+  const lane=modes[mode],at=lane?.lastAutomatedAttemptAt;
+  if(typeof at!=='string'||!Number.isFinite(Date.parse(at)))return [];
+  const same=lane.lastAttemptAutomatic===true&&lane.lastAttemptAt===at&&/^\d+$/.test(String(lane.lastAttemptRunId||''));
+  return [{label,at,outcome:lane.lastAutomatedOutcome,runId:same?String(lane.lastAttemptRunId):null}];
+ });
+ if(records.length){
+  const failed=records.some(r=>['failure','partial_failure','failed','access_stopped','robots_unverified'].includes(r.outcome));
+  const incomplete=records.some(r=>r.outcome!=='success');
+  const outcome=failed?'일부 수집 실패':incomplete?'부분 수집 · 완료 미확인':'최근 기록 성공 · 전체 상품 완료 아님';
+  const execution=status.execution,reflected=execution?.environment==='github_actions'&&execution.trigger==='schedule'&&/^\d+$/.test(String(execution.runId||''))&&records.some(r=>r.runId===String(execution.runId))&&execution.publicationChanged===true;
+  const detail=records.map(r=>r.label+' '+r.at+' ('+(r.outcome||'결과 미확인')+(r.runId?' · 실행 '+r.runId:' · 자동 실행 ID 미확인')+')').join(' / ');
+  return '자동 실행 확인 · '+outcome+(reflected?' · 부분 결과 반영':' · 결과 반영 여부 미확인')+'. '+detail+' · 전체 판매처·전체 상품 실시간 수집은 아닙니다.';
+ }
+ const a=status.automation||{};
+ if(a.scheduledRunVerified===true||a.verifiedRun===true)return '이전 자동 실행 확인 기록이 있습니다. 현재 모드별 예약 실행과 결과 반영은 미확인입니다.';
+ if(a.dataPipelineVerified===true)return '이전 수동 GitHub Actions 결과 반영 기록이 있습니다. 현재 예약 자동 실행은 확인되지 않았습니다.';
+ return a.configured?'예약 설정 등록 · 자동 실행 미확인':'자동 갱신 실행 미확인';
+}
+function sourceAutomaticText(source){
+ if(source.execution?.automaticAttemptConfirmed===true)return '자동 요청 확인 · '+(source.collectorStatus==='success'?'부분 수집 성공':['partial_failure','failed','access_stopped','robots_unverified'].includes(source.collectorStatus)?'일부 수집 실패':'한도·완료 상태 확인 필요');
+ return source.autoRefreshVerified?'자동 수집 성공 확인':'최근 자동 요청 미확인';
+}
 const savedEnabled=s=>s.control?.requestedEnabled??s.enabled;
 function treeCell(t){if(!t)return '';return `<strong>메뉴 트리: 발견 ${t.discoveredCategoryCount} · 허용 ${t.allowedCategoryCount} · 범위 제외 ${t.excludedCategoryCount} · 검토 ${t.reviewCategoryCount}</strong><small>페이지 방문 ${t.pagesVisited} · 미완료 카테고리 ${t.pendingCategoryCount}<br>상품 검증 ${t.verifiedProductCount} · 상세 대기 ${t.pendingProductCount} · 분류 검토 ${t.reviewProductCount}<br>마지막 페이지 확인 ${t.terminalCategoryCount}/${t.allowedCategoryCount} · 전체 메뉴 범위 ${escapeText(t.menuCoverage)}<br>순회 상태 ${escapeText(t.terminalCoverage)} · 전체 판매처 완료 아님</small>`;}
 function completedCategoryCell(g){return g ? `<strong>구피 목록 ${g.observedUniqueLinks}/${g.displayedCount} · 상세 ${g.verifiedProducts}/${g.observedUniqueLinks}</strong><small>구피 상위 카테고리 상세 검증: ${g.detailCoverageComplete ? '완료' : '부분'} · 판매처 전체 탐색: 미완료</small>` : '';}
@@ -24,12 +49,12 @@ function discoveryNames(d){
 function discoveryCell(s){const {names,unnamedCount}=discoveryNames(s.discovery||{}),list=values=>'<ul class="product-names">'+values.map(name=>'<li>'+escapeText(name)+'</li>').join('')+'</ul>';return `<td class="discovery-products">${names.length?list(names.slice(0,5)):'<small>아직 확인된 후보 상품명 없음</small>'}${names.length>5?'<details><summary>상품명 '+(names.length-5)+'개 더 보기</summary>'+list(names.slice(5))+'</details>':''}${unnamedCount?'<small>상품명 확인 대기 '+Number(unnamedCount)+'개</small>':''}</td>`;}
 function render(){if(!data)return;const q=$('#query').value.trim().toLowerCase(),filter=$('#statusFilter').value;
  const rows=data.sources.filter(s=>(s.name+' '+s.domain).toLowerCase().includes(q)&&(filter==='all'||filter==='enabled'&&savedEnabled(s)||filter==='disabled'&&!savedEnabled(s)||filter==='success'&&s.collectorStatus==='success'||filter==='blocked'&&(['access_stopped','quarantined'].includes(s.collectorStatus)||s.technicalReadiness==='blocked')));
- $('#rows').innerHTML=rows.map(s=>`<tr><td><a href="${escapeText(s.officialUrl)}" target="_blank" rel="noopener noreferrer">${escapeText(s.name)}</a><small>${escapeText(s.domain)}</small></td><td class="status">${escapeText(labels[s.collectorStatus]||s.collectorStatus)}<small>기술 샘플: ${escapeText(s.technicalReadiness)}<br>전체 탐색 완료: ${s.fullCatalogCoverage?'확인':'미검증'}</small>${discoveryDetails(s)}</td><td>화면 ${s.snapshotProductCount}개<small>수집 확인 ${s.collectorProductCount}개</small></td><td>${escapeText(s.collectorLastSuccess||'성공 실행 미검증')}<small>마지막 시도: ${escapeText(s.collectorLastAttempt||'미실행')}</small></td><td class="error">${escapeText(s.collectorLastError||'최근 수집 오류 없음')}<small>${(s.blockers||[]).map(escapeText).join('<br>')}</small></td><td>${typeof AquaAdminControls!=='undefined'?AquaAdminControls.toggleMarkup(s):''}배포 설정: ${(s.control?.requestedEnabled??s.enabled)?'켜짐':'꺼짐'}<br>자동 갱신: ${s.autoRefreshVerified?'실행 검증됨':'미검증'}<small>${escapeText(s.schedule||(s.enabled?scheduleText(data.automation):'예약 대상 아님'))}</small></td>${discoveryCell(s)}</tr>`).join('');
+ $('#rows').innerHTML=rows.map(s=>`<tr><td><a href="${escapeText(s.officialUrl)}" target="_blank" rel="noopener noreferrer">${escapeText(s.name)}</a><small>${escapeText(s.domain)}</small></td><td class="status">${escapeText(labels[s.collectorStatus]||s.collectorStatus)}<small>기술 샘플: ${escapeText(s.technicalReadiness)}<br>전체 탐색 완료: ${s.fullCatalogCoverage?'확인':'미검증'}</small>${discoveryDetails(s)}</td><td>화면 ${s.snapshotProductCount}개<small>수집 확인 ${s.collectorProductCount}개</small></td><td>${escapeText(s.collectorLastSuccess||'성공 실행 미검증')}<small>마지막 시도: ${escapeText(s.collectorLastAttempt||'미실행')}</small></td><td class="error">${escapeText(s.collectorLastError||'최근 수집 오류 없음')}<small>${(s.blockers||[]).map(escapeText).join('<br>')}</small></td><td>${typeof AquaAdminControls!=='undefined'?AquaAdminControls.toggleMarkup(s):''}배포 설정: ${(s.control?.requestedEnabled??s.enabled)?'켜짐':'꺼짐'}<br>자동 갱신: ${escapeText(sourceAutomaticText(s))}<small>${escapeText(s.schedule||(s.enabled?scheduleText(data.automation):'예약 대상 아님'))}</small></td>${discoveryCell(s)}</tr>`).join('');
 }
 fetch('status.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(value=>{
  if(value.schemaVersion!==1||!Array.isArray(value.sources))throw Error();data=value;
- $('#summary').innerHTML=[`최초 판매처 ${data.sources.length}곳`,`배포 설정 켜짐 ${data.sources.filter(savedEnabled).length}곳`,`접근 확인·부분 수집 ${data.sources.filter(s=>s.collectorStatus==='success').length}곳`,`자동 실행 검증 ${data.sources.filter(s=>s.autoRefreshVerified).length}곳`].map(escapeText).map(t=>'<span>'+t+'</span>').join('');
- $('#automation').textContent=data.automation.dataPipelineVerified?'수동 GitHub Actions 수집 결과의 데이터 저장·미리보기 배포를 확인했습니다. 일부 판매처 오류로 마지막 작업 결론은 실패입니다. 시간 예산에 따른 부분 수집이며, 예약 cron 실행은 아직 검증하지 않았습니다.':data.automation.verifiedRun?'예약 자동 갱신의 실행을 확인했습니다. 전체 상품 실시간 수집은 아닙니다.':data.automation.configured?'예약 설정은 등록되어 있지만 첫 자동 실행·배포 반영 검증은 아직 완료되지 않았습니다.':'자동 갱신은 아직 배포·실행 검증되지 않았습니다.';
+ $('#summary').innerHTML=[`최초 판매처 ${data.sources.length}곳`,`배포 설정 켜짐 ${data.sources.filter(savedEnabled).length}곳`,`접근 확인·부분 수집 ${data.sources.filter(s=>s.collectorStatus==='success').length}곳`,`자동 수집 성공 확인 ${data.sources.filter(s=>s.autoRefreshVerified).length}곳`].map(escapeText).map(t=>'<span>'+t+'</span>').join('');
+ $('#automation').textContent=automationSummary(data);
  $('#scope').textContent='관찰 지도 '+(data.discoveryScope?.mappedSources||0)+'곳 · 등록 시작 링크 '+(data.discoveryScope?.observedSeeds||0)+'개 · 목록 파서 대상 '+(data.discoveryScope?.adapterEnabledSources||0)+'곳. 실제 메뉴·하위 카테고리·다음 페이지를 한도 내에서 이어 읽습니다. 상품명은 관찰된 발견 후보 기준이며 실제 등록일 기준 신상품 목록이나 전체 상품 목록이 아닙니다. 판매처별 방문·검증 수는 연결·수집 상태의 발견 현황에서 볼 수 있습니다.';
  $('#updated').textContent='상태 생성 시각: '+data.generatedAt+' · 최초 45곳 외 확인본 도메인 '+data.additionalSnapshotDomains.length+'곳은 위 목록 분모에 포함하지 않습니다.';
  if(typeof AquaAdminControls!=='undefined')AquaAdminControls.init(data,{render});

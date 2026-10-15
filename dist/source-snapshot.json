@@ -6,16 +6,16 @@
   "collection_scope": "19 limited searches, maximum 8 results per query, first page only; no additional pages or bulk crawling; not full-market coverage",
   "created_at_utc": "2026-10-08T08:29:06.935413+00:00",
   "summary": {
-    "offer_count": 3773,
+    "offer_count": 3784,
     "merchant_count": 42,
     "live_plant_count": 372,
     "fish_count": 2445,
     "shrimp_count": 155,
     "snail_count": 8,
     "fish_or_shrimp_count": 2600,
-    "gear_count": 793,
-    "verified_https_photos": 3600,
-    "direct_retailer_products": 3766
+    "gear_count": 804,
+    "verified_https_photos": 3609,
+    "direct_retailer_products": 3777
   },
   "photo_validation": {
     "basis": "HTTPS HEAD verification supplied by the collecting task; no image download or rehosting",
@@ -262456,6 +262456,804 @@
           "observedAt": "2026-10-08T14:17:16.639Z"
         }
       ]
+    },
+    {
+      "id": "retailer-34:cafe24_kstrade08_1_7953:default",
+      "collector_key": "retailer-34:cafe24_kstrade08_1_7953:default",
+      "source_id": "retailer-34",
+      "retailer_product_id": "cafe24_kstrade08_1_7953",
+      "variant_id": null,
+      "retailer": "청룡아쿠아",
+      "seller_domain": "bluedragonaqua.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "[M] 켈란 피쉬렛 여과기 K-023 집똥기",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://bluedragonaqua.com/product/m-켈란-피쉬렛-여과기-k-023-집똥기/7953/",
+      "declared_product_url": "https://bluedragonaqua.com/product/m-켈란-피쉬렛-여과기-k-023-집똥기/7953/",
+      "observed_at_utc": "2026-10-15T10:33:19.500Z",
+      "registered_at": null,
+      "price_amount": 11700,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "11700",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "11700",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://bluedragonaqua.com/web/product/big/202509/f9f98c4e415d1a38cc206dbb39961cbf.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://bluedragonaqua.com/product/detail.html?product_no=7953&cate_no=223&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "[M] 켈란 피쉬렛 여과기 K-023 집똥기",
+        "identityTitle": "[M] 켈란 피쉬렛 여과기 K-023 집똥기",
+        "description": "",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "여과기/여과재",
+          "ancestorLabels": [],
+          "url": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+          "evidencePage": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-34:cafe24_kstrade08_1_8005:cafe24_kstrade08_1_8005_P0000LVX000A",
+      "collector_key": "retailer-34:cafe24_kstrade08_1_8005:cafe24_kstrade08_1_8005_P0000LVX000A",
+      "source_id": "retailer-34",
+      "retailer_product_id": "cafe24_kstrade08_1_8005",
+      "variant_id": "cafe24_kstrade08_1_8005_P0000LVX000A",
+      "retailer": "청룡아쿠아",
+      "seller_domain": "bluedragonaqua.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 매장방문픽업",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://bluedragonaqua.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트/8005/?item_code=P0000LVX000A",
+      "declared_product_url": "https://bluedragonaqua.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트/8005/?item_code=P0000LVX000A",
+      "observed_at_utc": "2026-10-15T10:33:49.524Z",
+      "registered_at": null,
+      "price_amount": 63500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "선택",
+          "value": "매장방문픽업"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "63500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "63500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://bluedragonaqua.com/web/product/big/202608/933e686385cc680bca2ab605763b9559.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://bluedragonaqua.com/product/detail.html?product_no=8005&cate_no=163&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 매장방문픽업",
+        "identityTitle": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 매장방문픽업",
+        "description": "",
+        "options": "매장방문픽업",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "어항/축양장/뚜껑",
+          "ancestorLabels": [],
+          "url": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "evidencePage": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-34:cafe24_kstrade08_1_8005:cafe24_kstrade08_1_8005_P0000LVX000B",
+      "collector_key": "retailer-34:cafe24_kstrade08_1_8005:cafe24_kstrade08_1_8005_P0000LVX000B",
+      "source_id": "retailer-34",
+      "retailer_product_id": "cafe24_kstrade08_1_8005",
+      "variant_id": "cafe24_kstrade08_1_8005_P0000LVX000B",
+      "retailer": "청룡아쿠아",
+      "seller_domain": "bluedragonaqua.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 화물착불(고객센터로 문의)",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://bluedragonaqua.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트/8005/?item_code=P0000LVX000B",
+      "declared_product_url": "https://bluedragonaqua.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트/8005/?item_code=P0000LVX000B",
+      "observed_at_utc": "2026-10-15T10:33:49.524Z",
+      "registered_at": null,
+      "price_amount": 63500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "선택",
+          "value": "화물착불(고객센터로 문의)"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "63500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "63500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://bluedragonaqua.com/web/product/big/202608/933e686385cc680bca2ab605763b9559.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://bluedragonaqua.com/product/detail.html?product_no=8005&cate_no=163&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 화물착불(고객센터로 문의)",
+        "identityTitle": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 화물착불(고객센터로 문의)",
+        "description": "",
+        "options": "화물착불(고객센터로 문의)",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "어항/축양장/뚜껑",
+          "ancestorLabels": [],
+          "url": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "evidencePage": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-34:cafe24_kstrade08_1_8005:cafe24_kstrade08_1_8005_P0000LVX000C",
+      "collector_key": "retailer-34:cafe24_kstrade08_1_8005:cafe24_kstrade08_1_8005_P0000LVX000C",
+      "source_id": "retailer-34",
+      "retailer_product_id": "cafe24_kstrade08_1_8005",
+      "variant_id": "cafe24_kstrade08_1_8005_P0000LVX000C",
+      "retailer": "청룡아쿠아",
+      "seller_domain": "bluedragonaqua.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "type": "gear",
+      "subtype": null,
+      "title": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 택배발송",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://bluedragonaqua.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트/8005/?item_code=P0000LVX000C",
+      "declared_product_url": "https://bluedragonaqua.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트/8005/?item_code=P0000LVX000C",
+      "observed_at_utc": "2026-10-15T10:33:49.524Z",
+      "registered_at": null,
+      "price_amount": 68500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "선택",
+          "value": "택배발송"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "63500",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "63500",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://bluedragonaqua.com/web/product/big/202608/933e686385cc680bca2ab605763b9559.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://bluedragonaqua.com/product/detail.html?product_no=8005&cate_no=163&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 택배발송",
+        "identityTitle": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 택배발송",
+        "description": "",
+        "options": "택배발송",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "어항/축양장/뚜껑",
+          "ancestorLabels": [],
+          "url": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "evidencePage": "https://bluedragonaqua.com/product/list.html?cate_no=163",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-34:cafe24_kstrade08_1_8014:default",
+      "collector_key": "retailer-34:cafe24_kstrade08_1_8014:default",
+      "source_id": "retailer-34",
+      "retailer_product_id": "cafe24_kstrade08_1_8014",
+      "variant_id": null,
+      "retailer": "청룡아쿠아",
+      "seller_domain": "bluedragonaqua.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "칸후 수족관 USB 스팟 걸이식 조명 AP-MINI 3가지 컬러모드 LED",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://bluedragonaqua.com/product/칸후-수족관-usb-스팟-걸이식-조명-ap-mini-3가지-컬러모드-led/8014/",
+      "declared_product_url": "https://bluedragonaqua.com/product/칸후-수족관-usb-스팟-걸이식-조명-ap-mini-3가지-컬러모드-led/8014/",
+      "observed_at_utc": "2026-10-15T10:34:19.639Z",
+      "registered_at": null,
+      "price_amount": 29800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "29800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "29800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://bluedragonaqua.com/web/product/big/202609/c0e224c996528187c0778073fd9fde8e.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://bluedragonaqua.com/product/detail.html?product_no=8014&cate_no=215&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "칸후 수족관 USB 스팟 걸이식 조명 AP-MINI 3가지 컬러모드 LED",
+        "identityTitle": "칸후 수족관 USB 스팟 걸이식 조명 AP-MINI 3가지 컬러모드 LED",
+        "description": "",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://bluedragonaqua.com/product/list.html?cate_no=215",
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "조명/등커버",
+          "ancestorLabels": [],
+          "url": "https://bluedragonaqua.com/product/list.html?cate_no=215",
+          "evidencePage": "https://bluedragonaqua.com/product/list.html?cate_no=215",
+          "observedAt": "2026-10-15T10:33:09.630Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-34:cafe24_kstrade08_1_7951:default",
+      "collector_key": "retailer-34:cafe24_kstrade08_1_7951:default",
+      "source_id": "retailer-34",
+      "retailer_product_id": "cafe24_kstrade08_1_7951",
+      "variant_id": null,
+      "retailer": "청룡아쿠아",
+      "seller_domain": "bluedragonaqua.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "[M] 에하임 섭스트라트 프로 여과재 5L",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://bluedragonaqua.com/product/m-에하임-섭스트라트-프로-여과재-5l/7951/",
+      "declared_product_url": "https://bluedragonaqua.com/product/m-에하임-섭스트라트-프로-여과재-5l/7951/",
+      "observed_at_utc": "2026-10-15T10:34:29.558Z",
+      "registered_at": null,
+      "price_amount": 128000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "128000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "128000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://bluedragonaqua.com/web/product/big/202508/d6d09a1eb68b293ffd91641d11345f85.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://bluedragonaqua.com/product/detail.html?product_no=7951&cate_no=223&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "[M] 에하임 섭스트라트 프로 여과재 5L",
+        "identityTitle": "[M] 에하임 섭스트라트 프로 여과재 5L",
+        "description": "",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "여과기/여과재",
+          "ancestorLabels": [],
+          "url": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+          "evidencePage": "https://bluedragonaqua.com/product/list.html?cate_no=223",
+          "observedAt": null
+        }
+      ]
+    },
+    {
+      "id": "retailer-06:cafe24_liviaqua_1_258:cafe24_liviaqua_1_258_P00000JY000A",
+      "collector_key": "retailer-06:cafe24_liviaqua_1_258:cafe24_liviaqua_1_258_P00000JY000A",
+      "source_id": "retailer-06",
+      "retailer_product_id": "cafe24_liviaqua_1_258",
+      "variant_id": "cafe24_liviaqua_1_258_P00000JY000A",
+      "retailer": "리비아쿠아",
+      "seller_domain": "liviaqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 미니",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://liviaqua.co.kr/product/수이사쿠-단지여과기-코어-미니-어항-메다카-거북이여과기/258/?item_code=P00000JY000A",
+      "declared_product_url": "https://liviaqua.co.kr/product/수이사쿠-단지여과기-코어-미니-어항-메다카-거북이여과기/258/?item_code=P00000JY000A",
+      "observed_at_utc": "2026-10-15T10:34:40.906Z",
+      "registered_at": null,
+      "price_amount": 7900,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "사이즈 선택",
+          "value": "수이사쿠 단지여과기 미니"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "7900",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "7900",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://liviaqua.co.kr/web/product/big/202404/3520815e0cb2e5e3835a57ec1dfd6cdc.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://liviaqua.co.kr/product/detail.html?product_no=258&cate_no=42&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "classification_evidence": {
+        "title": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 미니",
+        "identityTitle": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 미니",
+        "description": "리비아쿠아 | 수이사쿠 단지여과기 코어 미니. 초보자도 쉽게 사용할 수 있는 메다카 여과기. 낮은 어항이나 거북이항에 적합하며, 편리한 리필필터로 건강한 물생활을 유지합니다.",
+        "options": "수이사쿠 단지여과기 미니",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "메다카 용품",
+          "ancestorLabels": [],
+          "url": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "evidencePage": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "observedAt": null
+        },
+        {
+          "label": "여과 & 어항관리용품 (15)",
+          "ancestorLabels": [
+            "메다카 용품",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "타모 (뜰채) (3)",
+            "조명&히터 (2)",
+            "여과 & 어항관리용품 (15)",
+            "어항장식 & 기타용품 (6)"
+          ],
+          "url": "https://liviaqua.co.kr/product/list.html?cate_no=56",
+          "evidencePage": "https://liviaqua.co.kr/product/list.html?cate_no=57",
+          "observedAt": "2026-10-15T07:51:42.686Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-06:cafe24_liviaqua_1_258:cafe24_liviaqua_1_258_P00000JY000B",
+      "collector_key": "retailer-06:cafe24_liviaqua_1_258:cafe24_liviaqua_1_258_P00000JY000B",
+      "source_id": "retailer-06",
+      "retailer_product_id": "cafe24_liviaqua_1_258",
+      "variant_id": "cafe24_liviaqua_1_258_P00000JY000B",
+      "retailer": "리비아쿠아",
+      "seller_domain": "liviaqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "type": "gear",
+      "subtype": null,
+      "title": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 S",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://liviaqua.co.kr/product/수이사쿠-단지여과기-코어-미니-어항-메다카-거북이여과기/258/?item_code=P00000JY000B",
+      "declared_product_url": "https://liviaqua.co.kr/product/수이사쿠-단지여과기-코어-미니-어항-메다카-거북이여과기/258/?item_code=P00000JY000B",
+      "observed_at_utc": "2026-10-15T10:34:40.906Z",
+      "registered_at": null,
+      "price_amount": 11500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "사이즈 선택",
+          "value": "수이사쿠 단지여과기 S"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "7900",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "7900",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://liviaqua.co.kr/web/product/big/202404/3520815e0cb2e5e3835a57ec1dfd6cdc.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://liviaqua.co.kr/product/detail.html?product_no=258&cate_no=42&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "classification_evidence": {
+        "title": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 S",
+        "identityTitle": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 S",
+        "description": "리비아쿠아 | 수이사쿠 단지여과기 코어 미니. 초보자도 쉽게 사용할 수 있는 메다카 여과기. 낮은 어항이나 거북이항에 적합하며, 편리한 리필필터로 건강한 물생활을 유지합니다.",
+        "options": "수이사쿠 단지여과기 S",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "메다카 용품",
+          "ancestorLabels": [],
+          "url": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "evidencePage": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "observedAt": null
+        },
+        {
+          "label": "여과 & 어항관리용품 (15)",
+          "ancestorLabels": [
+            "메다카 용품",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "타모 (뜰채) (3)",
+            "조명&히터 (2)",
+            "여과 & 어항관리용품 (15)",
+            "어항장식 & 기타용품 (6)"
+          ],
+          "url": "https://liviaqua.co.kr/product/list.html?cate_no=56",
+          "evidencePage": "https://liviaqua.co.kr/product/list.html?cate_no=57",
+          "observedAt": "2026-10-15T07:51:42.686Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-06:cafe24_liviaqua_1_258:cafe24_liviaqua_1_258_P00000JY000C",
+      "collector_key": "retailer-06:cafe24_liviaqua_1_258:cafe24_liviaqua_1_258_P00000JY000C",
+      "source_id": "retailer-06",
+      "retailer_product_id": "cafe24_liviaqua_1_258",
+      "variant_id": "cafe24_liviaqua_1_258_P00000JY000C",
+      "retailer": "리비아쿠아",
+      "seller_domain": "liviaqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "type": "gear",
+      "subtype": null,
+      "title": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 M",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://liviaqua.co.kr/product/수이사쿠-단지여과기-코어-미니-어항-메다카-거북이여과기/258/?item_code=P00000JY000C",
+      "declared_product_url": "https://liviaqua.co.kr/product/수이사쿠-단지여과기-코어-미니-어항-메다카-거북이여과기/258/?item_code=P00000JY000C",
+      "observed_at_utc": "2026-10-15T10:34:40.906Z",
+      "registered_at": null,
+      "price_amount": 16500,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "사이즈 선택",
+          "value": "수이사쿠 단지여과기 M"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "7900",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "7900",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://liviaqua.co.kr/web/product/big/202404/3520815e0cb2e5e3835a57ec1dfd6cdc.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://liviaqua.co.kr/product/detail.html?product_no=258&cate_no=42&display_group=1",
+        "downloaded_or_rehosted": false
+      },
+      "classification_basis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "classification_evidence": {
+        "title": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 M",
+        "identityTitle": "수이사쿠 단지여과기 코어 미니 어항 메다카 거북이여과기 수이사쿠 단지여과기 M",
+        "description": "리비아쿠아 | 수이사쿠 단지여과기 코어 미니. 초보자도 쉽게 사용할 수 있는 메다카 여과기. 낮은 어항이나 거북이항에 적합하며, 편리한 리필필터로 건강한 물생활을 유지합니다.",
+        "options": "수이사쿠 단지여과기 M",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "product_breadcrumb_evidence": [],
+      "observed_category_evidence": [
+        {
+          "label": "메다카 용품",
+          "ancestorLabels": [],
+          "url": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "evidencePage": "https://liviaqua.co.kr/product/list.html?cate_no=42",
+          "observedAt": null
+        },
+        {
+          "label": "여과 & 어항관리용품 (15)",
+          "ancestorLabels": [
+            "메다카 용품",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "사료 (12)",
+            "타모 (뜰채) (3)",
+            "조명&히터 (2)",
+            "여과 & 어항관리용품 (15)",
+            "어항장식 & 기타용품 (6)"
+          ],
+          "url": "https://liviaqua.co.kr/product/list.html?cate_no=56",
+          "evidencePage": "https://liviaqua.co.kr/product/list.html?cate_no=57",
+          "observedAt": "2026-10-15T07:51:42.686Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-02:005003000040:default",
+      "collector_key": "retailer-02:005003000040:default",
+      "source_id": "retailer-02",
+      "retailer_product_id": "005003000040",
+      "variant_id": null,
+      "retailer": "그린피쉬",
+      "seller_domain": "greenfish.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "KW도핀 스펀지여과기 [SFP16, 45cm이하]",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "http://greenfish.co.kr/shop/shopdetail.html?branduid=4004&search=&xcode=005&mcode=003&scode=002&GfDT=bmx6Ww%3D%3D",
+      "declared_product_url": "http://www.greenfish.co.kr/shop/shopdetail.html?branduid=4004",
+      "observed_at_utc": "2026-10-15T10:34:43.613Z",
+      "registered_at": null,
+      "price_amount": 18000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {},
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": null,
+      "classification_basis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "classification_evidence": {
+        "title": "KW도핀 스펀지여과기 [SFP16, 45cm이하]",
+        "identityTitle": "KW도핀 스펀지여과기 [SFP16, 45cm이하]",
+        "description": "[KW도핀 스펀지여과기 [SFP16, 45cm이하]] 비생물",
+        "options": "",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "product_breadcrumb_evidence": []
+    },
+    {
+      "id": "retailer-02:005003000008:default",
+      "collector_key": "retailer-02:005003000008:default",
+      "source_id": "retailer-02",
+      "retailer_product_id": "005003000008",
+      "variant_id": null,
+      "retailer": "그린피쉬",
+      "seller_domain": "greenfish.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": null,
+      "title": "테트라 트윈브릴란트 쌍기 스펀지여과기 중",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "http://greenfish.co.kr/shop/shopdetail.html?branduid=531&xcode=005&mcode=003&scode=&type=X&sort=order&cur_code=005003&GfDT=bmp6W10%3D",
+      "declared_product_url": "http://www.greenfish.co.kr/shop/shopdetail.html?branduid=531",
+      "observed_at_utc": "2026-10-15T10:34:45.610Z",
+      "registered_at": null,
+      "price_amount": 18000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {},
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": null,
+      "classification_basis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "classification_evidence": {
+        "title": "테트라 트윈브릴란트 쌍기 스펀지여과기 중",
+        "identityTitle": "테트라 트윈브릴란트 쌍기 스펀지여과기 중",
+        "description": "[테트라 트윈브릴란트 쌍기 스펀지여과기 중] 비생물",
+        "options": "",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [
+          "fish"
+        ],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "product_breadcrumb_evidence": []
     }
   ],
   "direct_photo_validation": {

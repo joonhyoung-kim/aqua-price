@@ -66,7 +66,7 @@
     aquatic_plant:{plant_moss:/모스|리시아|\bmoss\b/i,plant_anubias:/나나(?!스말)|아누비아스|\banubias\b/i,plant_buce:/부세\s*파란드라|\bbucephalandra\b/i,plant_fern:/미크로소리움|볼비티스|자바펀|\bmicrosorum\b|\bbolbitis\b/i,plant_rotala:/로탈라|\brotala\b/i,plant_ludwigia:/루드위지아|\bludwigia\b/i,plant_hygro:/하이그로필라|\bhygrophila\b/i,plant_crypto:/크립토코리네|\bcryptocoryne\b/i,plant_small:/쿠바펄|진주펄|몬테카를로|글로소|헤어글라스/i,plant_float:/부상|부레옥잠|개구리밥|물배추|살비니아|가가부타|연꽃|수련/i},
     snail:{snail_apple:/애플\s*(?:스네일|달팽이)|\bapple\s+snail\b/i,snail_trumpet:/트럼펫|뾰족달팽이|\btrumpet\b/i,snail_nerite:/네리트|네리티나|\bnerite\b/i,snail_ramshorn:/램즈혼|램스혼|\bramshorn\b/i,snail_pond:/우렁이/},
   };
-  const searchText = value => String(value).toLowerCase().replace(/플레티/g, '플래티');
+  const searchText = value => String(value).toLowerCase().replace(/플레티/g, '플래티').replace(/\s+/g, '');
   Object.assign(fishGroups,{swordtail:'소드테일',puffer:'복어',goby:'고비',catfish:'캣피쉬·메기',channa:'찬나',arowana:'아로와나',native:'강준치·갈겨니·납자루'});
   fishGroups.killifish='킬리피쉬·램프아이';
   Object.assign(livestockGroups.aquatic_plant,{plant_ambulia:'암브리아·림노필라',plant_bacopa:'바코바·쿠페아',plant_myrio:'미리오필름·밀리오필룸',plant_val:'발리스네리아',plant_didiplis:'디디플리스',plant_echino:'에키노도루스',plant_marimo:'마리모',plant_lobelia:'로베리아·카디날리스',plant_pogostemon:'포고스테몬',plant_alternanthera:'알테란테라',plant_anacharis:'아나카리스·검정말',plant_bamboo:'개운죽',plant_attached:'활착·부착 수초',plant_pot:'포트·조직배양 수초'});

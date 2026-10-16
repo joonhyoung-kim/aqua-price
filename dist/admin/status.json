@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T17:02:36.457Z",
+  "generatedAt": "2026-10-16T17:05:47.020Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -66,10 +66,10 @@
   "execution": {
     "environment": "github_actions",
     "trigger": "schedule",
-    "runId": "38934142300",
-    "startedAt": "2026-10-16T16:44:44.300Z",
-    "finishedAt": "2026-10-16T17:02:34.960Z",
-    "publicationChanged": true
+    "runId": "38934915262",
+    "startedAt": "2026-10-16T17:05:45.922Z",
+    "finishedAt": "2026-10-16T17:05:45.922Z",
+    "publicationChanged": false
   },
   "controls": {
     "schemaVersion": 1,
@@ -269,8 +269,8 @@
         },
         "gear": {
           "intervalHours": 24,
-          "lastEvaluatedAt": "2026-10-16T04:58:49.050Z",
-          "lastDecision": "attempted",
+          "lastEvaluatedAt": "2026-10-16T17:05:45.922Z",
+          "lastDecision": "already_attempted_window",
           "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
           "lastAttemptAt": "2026-10-16T04:58:49.067Z",
           "lastManualAttemptAt": "2026-10-10T04:17:40.348Z",
@@ -3302,7 +3302,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "38934142300"
       },
       "collectorStatus": "partial_failure",
@@ -4448,7 +4448,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "38934142300"
       },
       "collectorStatus": "success",
@@ -5265,7 +5265,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -5299,7 +5299,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "38934142300"
       },
       "collectorStatus": "success",
@@ -6092,7 +6092,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -6126,7 +6126,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "38934142300"
       },
       "collectorStatus": "success",
@@ -6759,7 +6759,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -6793,7 +6793,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "38934142300"
       },
       "collectorStatus": "success",
@@ -7417,7 +7417,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -7451,7 +7451,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "38934142300"
       },
       "collectorStatus": "success",
@@ -8508,7 +8508,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {

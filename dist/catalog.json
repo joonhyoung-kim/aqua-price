@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "ready",
   "reason": "",
-  "asOf": "2026-10-16T04:55:50.092Z",
+  "asOf": "2026-10-16T05:16:02.836Z",
   "notice": "상품정보 확인본입니다. 가격은 항목별 확인 시각 기준이며 실시간 최저가·전체 판매처 비교가 아닙니다. 갱신 실패 시 마지막 확인 정보를 보존합니다. 배송비와 현재 재고는 판매처에서 확인하세요.",
   "sourceName": "Cafe24 Global Catalog MCP + directly verified retailer product pages",
   "sourceDocumentationUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
@@ -1188,7 +1188,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": "tank",
-      "observedAt": "2026-10-10T05:54:01.416Z",
+      "observedAt": "2026-10-16T04:59:01.574Z",
       "registeredAt": null,
       "price": {
         "amount": 35000,
@@ -1227,7 +1227,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": "moss_shelf",
-      "observedAt": "2026-10-10T05:54:11.441Z",
+      "observedAt": "2026-10-16T04:59:10.792Z",
       "registeredAt": null,
       "price": {
         "amount": 12000,
@@ -1266,7 +1266,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": "moss_shelf",
-      "observedAt": "2026-10-09T06:30:10.744Z",
+      "observedAt": "2026-10-16T04:59:21.367Z",
       "registeredAt": null,
       "price": {
         "amount": 15000,
@@ -3194,7 +3194,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": "container",
-      "observedAt": "2026-10-13T09:58:31.700Z",
+      "observedAt": "2026-10-16T05:06:09.540Z",
       "registeredAt": null,
       "price": {
         "amount": 23000,
@@ -3205,7 +3205,15 @@
       "periodSales": null,
       "available": true,
       "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
-      "observedCategoryLabels": [],
+      "observedCategoryLabels": [
+        {
+          "label": "수족관용품",
+          "ancestorLabels": [],
+          "url": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
+        }
+      ],
       "sourceKind": "direct_retailer_product_page",
       "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
       "classificationBasis": null,
@@ -3233,7 +3241,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": "filter",
-      "observedAt": "2026-10-13T10:01:44.650Z",
+      "observedAt": "2026-10-16T05:08:41.508Z",
       "registeredAt": null,
       "price": {
         "amount": 8700,
@@ -3272,7 +3280,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": "filter",
-      "observedAt": "2026-10-14T08:04:33.940Z",
+      "observedAt": "2026-10-16T05:11:08.179Z",
       "registeredAt": null,
       "price": {
         "amount": 14790,
@@ -7221,7 +7229,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T05:58:06.447Z",
+      "observedAt": "2026-10-16T05:03:51.481Z",
       "registeredAt": null,
       "price": {
         "amount": 78200,
@@ -7284,7 +7292,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T05:58:16.407Z",
+      "observedAt": "2026-10-16T05:04:01.746Z",
       "registeredAt": null,
       "price": {
         "amount": 67000,
@@ -24848,8 +24856,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -43873,8 +43881,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -43974,8 +43982,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -48948,8 +48956,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -49096,8 +49104,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -80332,8 +80340,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -80386,8 +80394,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -80440,8 +80448,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97127,6 +97135,16 @@
           "url": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
           "evidencePage": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
           "observedAt": null
+        },
+        {
+          "label": "스펀지여과기",
+          "ancestorLabels": [
+            "수족관 용품",
+            "여과기/여과재"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/281/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97181,8 +97199,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EB%9A%9C%EA%BB%91/444/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97230,8 +97248,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EB%8A%90%EB%82%98%EC%88%98%EC%A1%B0/221/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97279,6 +97297,16 @@
           "url": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
           "evidencePage": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
           "observedAt": null
+        },
+        {
+          "label": "스펀지여과기",
+          "ancestorLabels": [
+            "수족관 용품",
+            "여과기/여과재"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/281/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97333,8 +97361,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EB%9A%9C%EA%BB%91/444/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97436,8 +97464,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EB%9A%9C%EA%BB%91/444/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -97483,8 +97511,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -98256,6 +98284,13 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "observedAt": null
+        },
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -98303,6 +98338,13 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "observedAt": null
+        },
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -98494,7 +98536,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T03:19:55.159Z",
+      "observedAt": "2026-10-16T05:11:14.064Z",
       "registeredAt": null,
       "price": {
         "amount": 20000,
@@ -98512,6 +98554,13 @@
           "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD06",
           "evidencePage": "https://www.wpet.co.kr/?act=shop.goods_view&CM=539&GC=GD0008",
           "observedAt": "2026-10-09T00:01:21.317Z"
+        },
+        {
+          "label": "저면여과기",
+          "ancestorLabels": [],
+          "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0603",
+          "evidencePage": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD06",
+          "observedAt": "2026-10-10T03:19:41.065Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -102028,7 +102077,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T03:41:15.004Z",
+      "observedAt": "2026-10-16T05:11:57.295Z",
       "registeredAt": null,
       "price": {
         "amount": 3500,
@@ -102048,16 +102097,20 @@
           "observedAt": "2026-10-08T23:57:26.303Z"
         },
         {
-          "label": "하위 분류",
+          "label": "어종별 전용 사료",
           "ancestorLabels": [
             "사료",
             "어종별 전용 사료",
             "하위 분류",
-            "하위 분류"
+            "하위 분류",
+            "하위 분류",
+            "플레코",
+            "어종별 전용 사료",
+            "코리도라스"
           ],
           "url": "https://chunjane.com/product/list.html?cate_no=31",
-          "evidencePage": "https://chunjane.com/product/list.html?cate_no=31",
-          "observedAt": "2026-10-14T08:07:40.985Z"
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=41",
+          "observedAt": "2026-10-16T05:12:57.653Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -102087,7 +102140,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T03:41:25.183Z",
+      "observedAt": "2026-10-16T05:12:07.591Z",
       "registeredAt": null,
       "price": {
         "amount": 23000,
@@ -102134,7 +102187,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T03:41:35.035Z",
+      "observedAt": "2026-10-16T05:12:17.722Z",
       "registeredAt": null,
       "price": {
         "amount": 15000,
@@ -102334,16 +102387,20 @@
           "observedAt": "2026-10-08T23:57:26.303Z"
         },
         {
-          "label": "하위 분류",
+          "label": "어종별 전용 사료",
           "ancestorLabels": [
             "사료",
             "어종별 전용 사료",
             "하위 분류",
-            "하위 분류"
+            "하위 분류",
+            "하위 분류",
+            "플레코",
+            "어종별 전용 사료",
+            "코리도라스"
           ],
           "url": "https://chunjane.com/product/list.html?cate_no=31",
-          "evidencePage": "https://chunjane.com/product/list.html?cate_no=31",
-          "observedAt": "2026-10-14T08:07:40.985Z"
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=41",
+          "observedAt": "2026-10-16T05:12:57.653Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -102568,7 +102625,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-10T03:44:06.805Z",
+      "observedAt": "2026-10-16T05:14:22.629Z",
       "registeredAt": null,
       "price": {
         "amount": 25000,
@@ -118294,8 +118351,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EB%9A%9C%EA%BB%91/444/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -118343,8 +118400,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%B2%9C%EC%A7%80%EC%88%98%EC%A1%B0/222/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -118392,8 +118449,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -118441,8 +118498,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         },
         {
           "label": "큐브형수조",
@@ -118450,8 +118507,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%ED%81%90%EB%B8%8C%ED%98%95%EC%88%98%EC%A1%B0/224/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         },
         {
           "label": "어항세트",
@@ -118459,8 +118516,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EC%84%B8%ED%8A%B8/227/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -118508,8 +118565,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EB%A6%AC%EA%B8%80%EB%9D%BC%EC%8A%A4%EC%88%98%EC%A1%B0/225/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -118557,8 +118614,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%9A%B8%ED%8A%B8%EB%9D%BC/445/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -123168,8 +123225,8 @@
           "label": "BMP 축양장",
           "ancestorLabels": [],
           "url": "https://dpaqua.com/product/list.html?cate_no=340",
-          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218&page=2",
-          "observedAt": "2026-10-15T17:10:11.459Z"
+          "evidencePage": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "observedAt": "2026-10-16T05:04:31.358Z"
         },
         {
           "label": "수조&어항 ()",
@@ -123263,8 +123320,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -123396,8 +123453,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -123591,8 +123648,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -123971,16 +124028,20 @@
           "observedAt": "2026-10-08T23:57:26.303Z"
         },
         {
-          "label": "하위 분류",
+          "label": "어종별 전용 사료",
           "ancestorLabels": [
             "사료",
             "어종별 전용 사료",
             "하위 분류",
-            "하위 분류"
+            "하위 분류",
+            "하위 분류",
+            "플레코",
+            "어종별 전용 사료",
+            "코리도라스"
           ],
           "url": "https://chunjane.com/product/list.html?cate_no=31",
-          "evidencePage": "https://chunjane.com/product/list.html?cate_no=31",
-          "observedAt": "2026-10-14T08:07:40.985Z"
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=41",
+          "observedAt": "2026-10-16T05:12:57.653Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -124819,6 +124880,54 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=96",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
           "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        },
+        {
+          "label": "청소용품 (54)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -124886,6 +124995,54 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=96",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
           "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        },
+        {
+          "label": "청소용품 (54)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -124953,6 +125110,54 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=96",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
           "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        },
+        {
+          "label": "청소용품 (54)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -125020,6 +125225,54 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=96",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
           "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        },
+        {
+          "label": "청소용품 (54)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -125087,6 +125340,54 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=96",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
           "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        },
+        {
+          "label": "청소용품 (54)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -125154,6 +125455,54 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=96",
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
           "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        },
+        {
+          "label": "청소용품 (54)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -125947,15 +126296,15 @@
           "label": "여과재",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=458",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         },
         {
           "label": "수질관련용품",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=44",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -126001,8 +126350,8 @@
           "label": "에어관련용품",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=455",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -126050,6 +126399,13 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "observedAt": null
+        },
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -126097,6 +126453,13 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "observedAt": null
+        },
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -126269,6 +126632,16 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=140",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=140",
           "observedAt": null
+        },
+        {
+          "label": "아쿠아가든 사료 (25)",
+          "ancestorLabels": [
+            "아쿠아가든 사료",
+            "대형어사료 (0)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%82%AC%EB%A3%8C/149/",
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -126361,8 +126734,8 @@
           "label": "유목",
           "ancestorLabels": [],
           "url": "https://aquagardenshop.com/product/list.html?cate_no=25",
-          "evidencePage": "https://aquagardenshop.com/category/%EC%88%98%EC%B4%88/283/",
-          "observedAt": "2026-10-15T17:17:10.640Z"
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147236,8 +147609,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EB%9A%9C%EA%BB%91/444/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147285,8 +147658,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%B2%9C%EC%A7%80%EC%88%98%EC%A1%B0/222/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147334,8 +147707,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147383,8 +147756,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         },
         {
           "label": "큐브형수조",
@@ -147392,8 +147765,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%ED%81%90%EB%B8%8C%ED%98%95%EC%88%98%EC%A1%B0/224/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         },
         {
           "label": "어항세트",
@@ -147401,8 +147774,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EC%84%B8%ED%8A%B8/227/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147450,8 +147823,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EB%A6%AC%EA%B8%80%EB%9D%BC%EC%8A%A4%EC%88%98%EC%A1%B0/225/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147544,8 +147917,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147591,8 +147964,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147638,8 +148011,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147849,8 +148222,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -147880,7 +148253,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-12T06:31:10.963Z",
+      "observedAt": "2026-10-16T05:04:11.554Z",
       "registeredAt": null,
       "price": {
         "amount": 55800,
@@ -147966,8 +148339,8 @@
           "label": "BMP 축양장",
           "ancestorLabels": [],
           "url": "https://dpaqua.com/product/list.html?cate_no=340",
-          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218&page=2",
-          "observedAt": "2026-10-15T17:10:11.459Z"
+          "evidencePage": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "observedAt": "2026-10-16T05:04:31.358Z"
         },
         {
           "label": "수조&어항 ()",
@@ -148006,7 +148379,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-13T09:58:39.937Z",
+      "observedAt": "2026-10-16T05:06:16.489Z",
       "registeredAt": null,
       "price": {
         "amount": 38000,
@@ -148053,7 +148426,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-13T09:58:49.288Z",
+      "observedAt": "2026-10-16T05:06:26.915Z",
       "registeredAt": null,
       "price": {
         "amount": 17000,
@@ -148069,8 +148442,8 @@
           "label": "여과재",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=458",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -148116,8 +148489,8 @@
           "label": "에어관련용품",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=455",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -148147,7 +148520,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-13T10:01:54.587Z",
+      "observedAt": "2026-10-16T05:08:51.531Z",
       "registeredAt": null,
       "price": {
         "amount": 5000,
@@ -148194,7 +148567,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-13T10:02:04.476Z",
+      "observedAt": "2026-10-16T05:09:01.505Z",
       "registeredAt": null,
       "price": {
         "amount": 997500,
@@ -148259,6 +148632,16 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=140",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=140",
           "observedAt": null
+        },
+        {
+          "label": "아쿠아가든 사료 (25)",
+          "ancestorLabels": [
+            "아쿠아가든 사료",
+            "대형어사료 (0)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%82%AC%EB%A3%8C/149/",
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -148351,8 +148734,8 @@
           "label": "유목",
           "ancestorLabels": [],
           "url": "https://aquagardenshop.com/product/list.html?cate_no=25",
-          "evidencePage": "https://aquagardenshop.com/category/%EC%88%98%EC%B4%88/283/",
-          "observedAt": "2026-10-15T17:17:10.640Z"
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -148398,8 +148781,8 @@
           "label": "기포기/산소용품",
           "ancestorLabels": [],
           "url": "https://aquagardenshop.com/product/list.html?cate_no=138",
-          "evidencePage": "https://aquagardenshop.com/category/%EC%88%98%EC%B4%88/283/",
-          "observedAt": "2026-10-15T17:17:10.640Z"
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -148447,6 +148830,23 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=74",
           "observedAt": null
+        },
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
+        },
+        {
+          "label": "걸이식여과기 (6)",
+          "ancestorLabels": [
+            "여과기",
+            "걸이식여과기 (6)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -148476,7 +148876,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-12T06:37:13.740Z",
+      "observedAt": "2026-10-16T05:11:16.058Z",
       "registeredAt": null,
       "price": {
         "amount": 15000,
@@ -148530,7 +148930,7 @@
       "variantId": "10568",
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-12T06:37:21.748Z",
+      "observedAt": "2026-10-16T05:11:18.067Z",
       "registeredAt": null,
       "price": {
         "amount": 550000,
@@ -148577,7 +148977,7 @@
       "variantId": "10569",
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-12T06:37:21.748Z",
+      "observedAt": "2026-10-16T05:11:18.067Z",
       "registeredAt": null,
       "price": {
         "amount": 560000,
@@ -148691,16 +149091,20 @@
           "observedAt": "2026-10-08T23:57:26.303Z"
         },
         {
-          "label": "하위 분류",
+          "label": "어종별 전용 사료",
           "ancestorLabels": [
             "사료",
             "어종별 전용 사료",
             "하위 분류",
-            "하위 분류"
+            "하위 분류",
+            "하위 분류",
+            "플레코",
+            "어종별 전용 사료",
+            "코리도라스"
           ],
           "url": "https://chunjane.com/product/list.html?cate_no=31",
-          "evidencePage": "https://chunjane.com/product/list.html?cate_no=31",
-          "observedAt": "2026-10-14T08:07:40.985Z"
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=41",
+          "observedAt": "2026-10-16T05:12:57.653Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -149069,6 +149473,30 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=43",
           "evidencePage": "https://fishermanbt.com/product/detail.html?product_no=375&cate_no=162&display_group=1",
           "observedAt": "2026-10-09T00:07:02.338Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -149116,6 +149544,30 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=43",
           "evidencePage": "https://fishermanbt.com/product/detail.html?product_no=375&cate_no=162&display_group=1",
           "observedAt": "2026-10-09T00:07:02.338Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -149163,6 +149615,30 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=43",
           "evidencePage": "https://fishermanbt.com/product/detail.html?product_no=375&cate_no=162&display_group=1",
           "observedAt": "2026-10-09T00:07:02.338Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -149210,6 +149686,30 @@
           "url": "https://fishermanbt.com/product/list.html?cate_no=43",
           "evidencePage": "https://fishermanbt.com/product/detail.html?product_no=375&cate_no=162&display_group=1",
           "observedAt": "2026-10-09T00:07:02.338Z"
+        },
+        {
+          "label": "기타 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=98",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -149239,7 +149739,7 @@
       "variantId": null,
       "type": "gear",
       "subtype": null,
-      "observedAt": "2026-10-12T06:41:36.649Z",
+      "observedAt": "2026-10-16T05:14:42.700Z",
       "registeredAt": null,
       "price": {
         "amount": 3500,
@@ -153269,8 +153769,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -153417,8 +153917,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -153800,8 +154300,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -153844,14 +154344,11 @@
       "availabilityBasis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
       "observedCategoryLabels": [
         {
-          "label": "아쿠아가든 수초툴 (33)",
-          "ancestorLabels": [
-            "수초/수초용품",
-            "수초 (4)"
-          ],
+          "label": "아쿠아가든 수초툴",
+          "ancestorLabels": [],
           "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%88%98%EC%B4%88%ED%88%B4/100/",
-          "evidencePage": "https://aquagardenshop.com/category/%EC%88%98%EC%B4%88/283/",
-          "observedAt": "2026-10-15T17:17:10.640Z"
+          "evidencePage": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-30cm-%EA%B8%B0%EB%B3%B8-%EC%9D%BC%EC%9E%90-%ED%95%80%EC%85%8B/2735/category/100/display/1/",
+          "observedAt": "2026-10-15T17:19:20.677Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -153894,14 +154391,11 @@
       "availabilityBasis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
       "observedCategoryLabels": [
         {
-          "label": "아쿠아가든 수초툴 (33)",
-          "ancestorLabels": [
-            "수초/수초용품",
-            "수초 (4)"
-          ],
+          "label": "아쿠아가든 수초툴",
+          "ancestorLabels": [],
           "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%88%98%EC%B4%88%ED%88%B4/100/",
-          "evidencePage": "https://aquagardenshop.com/category/%EC%88%98%EC%B4%88/283/",
-          "observedAt": "2026-10-15T17:17:10.640Z"
+          "evidencePage": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-30cm-%EA%B8%B0%EB%B3%B8-%EC%9D%BC%EC%9E%90-%ED%95%80%EC%85%8B/2735/category/100/display/1/",
+          "observedAt": "2026-10-15T17:19:20.677Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -153944,14 +154438,11 @@
       "availabilityBasis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
       "observedCategoryLabels": [
         {
-          "label": "아쿠아가든 수초툴 (33)",
-          "ancestorLabels": [
-            "수초/수초용품",
-            "수초 (4)"
-          ],
+          "label": "아쿠아가든 수초툴",
+          "ancestorLabels": [],
           "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%88%98%EC%B4%88%ED%88%B4/100/",
-          "evidencePage": "https://aquagardenshop.com/category/%EC%88%98%EC%B4%88/283/",
-          "observedAt": "2026-10-15T17:17:10.640Z"
+          "evidencePage": "https://aquagardenshop.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-30cm-%EA%B8%B0%EB%B3%B8-%EC%9D%BC%EC%9E%90-%ED%95%80%EC%85%8B/2735/category/100/display/1/",
+          "observedAt": "2026-10-15T17:19:20.677Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -160673,8 +161164,20 @@
           "label": "수조/어항기타용품",
           "ancestorLabels": [],
           "url": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD%EA%B8%B0%ED%83%80%EC%9A%A9%ED%92%88/240/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        },
+        {
+          "label": "칸막이/기타용품 ()",
+          "ancestorLabels": [
+            "수조/어항",
+            "수조/어항기타용품",
+            "칸막이/기타용품",
+            "백스크린 ()"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%B9%B8%EB%A7%89%EC%9D%B4%EA%B8%B0%ED%83%80%EC%9A%A9%ED%92%88/242/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -160722,8 +161225,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%B2%9C%EC%A7%80%EC%88%98%EC%A1%B0/222/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -160771,8 +161274,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -160825,8 +161328,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -160973,8 +161476,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -161114,8 +161617,8 @@
           "label": "어항/축양장/뚜껑",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=24",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -161161,8 +161664,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -161208,8 +161711,8 @@
           "label": "조명/등커버",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=25",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -161311,8 +161814,8 @@
           "label": "BMP 축양장",
           "ancestorLabels": [],
           "url": "https://dpaqua.com/product/list.html?cate_no=340",
-          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218&page=2",
-          "observedAt": "2026-10-15T17:10:11.459Z"
+          "evidencePage": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "observedAt": "2026-10-16T05:04:31.358Z"
         },
         {
           "label": "수조&어항 ()",
@@ -161367,15 +161870,15 @@
           "label": "여과재",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=458",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         },
         {
           "label": "수질관련용품",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=44",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -161421,8 +161924,8 @@
           "label": "여과재",
           "ancestorLabels": [],
           "url": "https://www.ampet.co.kr/product/list.html?cate_no=458",
-          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=264",
-          "observedAt": "2026-10-15T17:13:26.554Z"
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -170967,6 +171470,16 @@
           "url": "https://aquagardenshop.com/product/list.html?cate_no=140",
           "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=140",
           "observedAt": null
+        },
+        {
+          "label": "아쿠아가든 사료 (25)",
+          "ancestorLabels": [
+            "아쿠아가든 사료",
+            "대형어사료 (0)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%82%AC%EB%A3%8C/149/",
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -171867,16 +172380,20 @@
           "observedAt": "2026-10-08T23:57:26.303Z"
         },
         {
-          "label": "하위 분류",
+          "label": "어종별 전용 사료",
           "ancestorLabels": [
             "사료",
             "어종별 전용 사료",
             "하위 분류",
-            "하위 분류"
+            "하위 분류",
+            "하위 분류",
+            "플레코",
+            "어종별 전용 사료",
+            "코리도라스"
           ],
           "url": "https://chunjane.com/product/list.html?cate_no=31",
-          "evidencePage": "https://chunjane.com/product/list.html?cate_no=31",
-          "observedAt": "2026-10-14T08:07:40.985Z"
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=41",
+          "observedAt": "2026-10-16T05:12:57.653Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -172065,6 +172582,31 @@
           "url": "https://chunjane.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/66/",
           "evidencePage": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144%EB%A1%B1%ED%95%80-6cm%EC%9D%B4%EC%83%81%EA%B8%89-1%EB%A7%88%EB%A6%AC/513/category/434/display/1/",
           "observedAt": "2026-10-08T23:57:26.303Z"
+        },
+        {
+          "label": "스펀지 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=67",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        },
+        {
+          "label": "단기 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기",
+            "스펀지 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=156",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -183182,8 +183724,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         },
         {
           "label": "큐브형수조",
@@ -183191,8 +183733,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%ED%81%90%EB%B8%8C%ED%98%95%EC%88%98%EC%A1%B0/224/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         },
         {
           "label": "어항세트",
@@ -183200,8 +183742,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EC%96%B4%ED%95%AD%EC%84%B8%ED%8A%B8/227/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -183249,8 +183791,8 @@
             "수조/어항"
           ],
           "url": "https://mimineaqua.co.kr/category/%EB%A6%AC%EA%B8%80%EB%9D%BC%EC%8A%A4%EC%88%98%EC%A1%B0/225/",
-          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B6%80%ED%99%94%ED%86%B5%EA%B2%A9%EB%A6%AC%ED%86%B5%EC%B9%98%EC%96%B4%EB%A7%9D/241/",
-          "observedAt": "2026-10-15T05:25:29.609Z"
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -186473,8 +187015,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -186574,8 +187116,8 @@
           "label": "생물",
           "ancestorLabels": [],
           "url": "https://aquauju.com/product/list.html?cate_no=447",
-          "evidencePage": "https://aquauju.com/product/list.html?cate_no=455",
-          "observedAt": "2026-10-15T17:07:27.107Z"
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
         }
       ],
       "sourceKind": "direct_retailer_product_page",
@@ -192132,6 +192674,2487 @@
         "url": "https://aquapro.kr/web/product/big/202307/cc5b83f1efbe31c2dbdfadfb01c824ce.jpg",
         "usePermission": "allowed",
         "permissionEvidenceUrl": "https://aquapro.kr/product/화이트-라이어테일-몰리-3cm/10200/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_20435:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/아쿠아테크-스펀지여과기-흡착고무-2p/20435/",
+      "name": "아쿠아테크 스펀지여과기 흡착고무 2P",
+      "originalTitle": "아쿠아테크 스펀지여과기 흡착고무 2P",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:00:10.976Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 1500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지여과기",
+          "ancestorLabels": [
+            "수족관 용품",
+            "여과기/여과재"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/281/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/281/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202607/c8a2b202eab120674aecc635272925de.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/아쿠아테크-스펀지여과기-흡착고무-2p/20435/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_9088:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/suisaku-수이사쿠-코어-단지여과기미니/9088/",
+      "name": "[SUISAKU] 수이사쿠 코어 단지여과기(미니)",
+      "originalTitle": "[SUISAKU] 수이사쿠 코어 단지여과기(미니)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:00:21.447Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 9000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "단지여과기",
+          "ancestorLabels": [
+            "수족관 용품",
+            "여과기/여과재"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EB%8B%A8%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/282/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EB%8B%A8%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/282/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202309/d56b9994fb79f5cf8f98b96a2ac6a818.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/suisaku-수이사쿠-코어-단지여과기미니/9088/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_20105:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/미미네아쿠아-소음방지-폴리나젤-필터-블랙-50x50x2-cm-40ppi/20105/",
+      "name": "미미네아쿠아 소음방지 폴리나젤 필터-블랙 50x50x2 cm (40ppi)",
+      "originalTitle": "미미네아쿠아 소음방지 폴리나젤 필터-블랙 50x50x2 cm (40ppi)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:00:30.840Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 6000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지여과기",
+          "ancestorLabels": [
+            "수족관 용품",
+            "여과기/여과재"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/281/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/281/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202605/b5024dac917b7f484459f7baa4af6fe6.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/미미네아쿠아-소음방지-폴리나젤-필터-블랙-50x50x2-cm-40ppi/20105/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_9086:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/suisaku-수이사쿠-코어-단지여과기m/9086/",
+      "name": "[SUISAKU] 수이사쿠 코어 단지여과기(M)",
+      "originalTitle": "[SUISAKU] 수이사쿠 코어 단지여과기(M)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:00:41.451Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 18000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "단지여과기",
+          "ancestorLabels": [
+            "수족관 용품",
+            "여과기/여과재"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EB%8B%A8%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/282/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EB%8B%A8%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/282/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202309/891054311fdc61317330ebee85097b13.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/suisaku-수이사쿠-코어-단지여과기m/9086/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_20727:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/필그린-스테인레스-입출수관-1622mm/20727/",
+      "name": "필그린 스테인레스 입출수관 (16/22mm)",
+      "originalTitle": "필그린 스테인레스 입출수관 (16/22mm)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:00:51.323Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 50000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기/여과재",
+          "ancestorLabels": [],
+          "url": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EC%97%AC%EA%B3%BC%EA%B8%B0%EC%97%AC%EA%B3%BC%EC%9E%AC/280/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202609/44b444029ed2f9bf04900969bd263676.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/필그린-스테인레스-입출수관-1622mm/20727/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_20716:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/미미네아쿠아-수조-어항받침용-미끄럼방지-5mm-엠보싱-블랙-우레탄-매트-90x45/20716/",
+      "name": "미미네아쿠아 수조 어항받침용 미끄럼방지 5mm 엠보싱 블랙 우레탄 매트 (90x45)",
+      "originalTitle": "미미네아쿠아 수조 어항받침용 미끄럼방지 5mm 엠보싱 블랙 우레탄 매트 (90x45)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:01:00.875Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 7000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "수조/어항",
+          "ancestorLabels": [],
+          "url": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD/220/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD/220/",
+          "observedAt": null
+        },
+        {
+          "label": "수조/어항기타용품",
+          "ancestorLabels": [],
+          "url": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD%EA%B8%B0%ED%83%80%EC%9A%A9%ED%92%88/240/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        },
+        {
+          "label": "칸막이/기타용품 ()",
+          "ancestorLabels": [
+            "수조/어항",
+            "수조/어항기타용품",
+            "칸막이/기타용품",
+            "백스크린 ()"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%B9%B8%EB%A7%89%EC%9D%B4%EA%B8%B0%ED%83%80%EC%9A%A9%ED%92%88/242/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD/220/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202609/3b859cf741f6a74164f9943c4420dd1c.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/미미네아쿠아-수조-어항받침용-미끄럼방지-5mm-엠보싱-블랙-우레탄-매트-90x45/20716/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_3161:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/천지-화이트-유리뚜껑-수조어항-대-450/3161/",
+      "name": "천지 화이트 유리뚜껑 수조어항 (대) 450",
+      "originalTitle": "천지 화이트 유리뚜껑 수조어항 (대) 450",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:01:10.873Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 37000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": false,
+      "availabilityBasis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "천지수조",
+          "ancestorLabels": [
+            "수조/어항"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%B2%9C%EC%A7%80%EC%88%98%EC%A1%B0/222/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EC%B2%9C%EC%A7%80%EC%88%98%EC%A1%B0/222/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202308/f127e649e4c34006e4d5e8c617045566.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/천지-화이트-유리뚜껑-수조어항-대-450/3161/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-37:cafe24_miminecorp_1_20654:default",
+      "verified": true,
+      "sellerId": "mimineaqua.co.kr",
+      "sourceUrl": "https://mimineaqua.co.kr/product/미미네아쿠아-베르가든-팔루다리움-30-슈퍼-하이-수조-6t-30x30x40cm/20654/",
+      "name": "미미네아쿠아 베르가든 팔루다리움 30 슈퍼 하이 수조 6t (30x30x40cm)",
+      "originalTitle": "미미네아쿠아 베르가든 팔루다리움 30 슈퍼 하이 수조 6t (30x30x40cm)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:01:21.705Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 45000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "오픈수조",
+          "ancestorLabels": [
+            "수조/어항"
+          ],
+          "url": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
+          "evidencePage": "https://mimineaqua.co.kr/category/%EB%B0%B1%EC%8A%A4%ED%81%AC%EB%A6%B0/243/",
+          "observedAt": "2026-10-16T05:00:01.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://mimineaqua.co.kr/category/%EC%98%A4%ED%94%88%EC%88%98%EC%A1%B0/223/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://mimineaqua.co.kr/web/product/big/202609/54c9e9748162304e15f475f6b43de1f7.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://mimineaqua.co.kr/product/미미네아쿠아-베르가든-팔루다리움-30-슈퍼-하이-수조-6t-30x30x40cm/20654/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_8248:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/아마존-막대분산기-20cm/8248/",
+      "name": "아마존 막대분산기 20cm",
+      "originalTitle": "아마존 막대분산기 20cm",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:01:36.596Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 3200,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": null,
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202012/3f813ecffa42c4bd917dcc5abda80b48.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/아마존-막대분산기-20cm/8248/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_8249:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/아마존-막대분산기-30cm/8249/",
+      "name": "아마존 막대분산기 30cm",
+      "originalTitle": "아마존 막대분산기 30cm",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:01:46.659Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 3600,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": null,
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202012/3f813ecffa42c4bd917dcc5abda80b48.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/아마존-막대분산기-30cm/8249/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_8250:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/아마존-막대분산기-45cm/8250/",
+      "name": "아마존 막대분산기 45cm",
+      "originalTitle": "아마존 막대분산기 45cm",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:01:56.582Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 4200,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": null,
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202012/3f813ecffa42c4bd917dcc5abda80b48.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/아마존-막대분산기-45cm/8250/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_8102:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/event-칸후-ch-l-바이오-클린-스펀지여과기-슈퍼쌍기-여과기/8102/",
+      "name": "[EVENT] 칸후 CH-L 바이오 클린 스펀지여과기 - 슈퍼쌍기 여과기",
+      "originalTitle": "[EVENT] 칸후 CH-L 바이오 클린 스펀지여과기 - 슈퍼쌍기 여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:02:26.911Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 4500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지여과기 ()",
+          "ancestorLabels": [
+            "여과기/여과재",
+            "스펀지여과기",
+            "걸이식여과기 ()"
+          ],
+          "url": "https://aquauju.com/product/list.html?cate_no=149",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=149",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202411/766d168afda395dd7af76a4868c4f85e.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/event-칸후-ch-l-바이오-클린-스펀지여과기-슈퍼쌍기-여과기/8102/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_8590:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/칸후-미니-걸이식-여과기-mb-400dc/8590/",
+      "name": "칸후 미니 걸이식 여과기 MB-400DC",
+      "originalTitle": "칸후 미니 걸이식 여과기 MB-400DC",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:02:36.693Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 5300,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "걸이식여과기 ()",
+          "ancestorLabels": [
+            "여과기/여과재",
+            "스펀지여과기",
+            "걸이식여과기 ()"
+          ],
+          "url": "https://aquauju.com/product/list.html?cate_no=150",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=150",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202606/1a0a5b34d4bbe31173600f54584b5bb0.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/칸후-미니-걸이식-여과기-mb-400dc/8590/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_7665:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/칸후-미니-스펀지여과기/7665/",
+      "name": "칸후 미니 스펀지여과기",
+      "originalTitle": "칸후 미니 스펀지여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:02:46.875Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 1700,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지여과기 ()",
+          "ancestorLabels": [
+            "여과기/여과재",
+            "스펀지여과기",
+            "걸이식여과기 ()"
+          ],
+          "url": "https://aquauju.com/product/list.html?cate_no=149",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=149",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202411/8e641415701df71735882f9f510382b1.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/칸후-미니-스펀지여과기/7665/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_8699:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/아마존-내부여과기-hj-011/8699/",
+      "name": "아마존 내부여과기 HJ-011",
+      "originalTitle": "아마존 내부여과기 HJ-011",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:02:56.862Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 8000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "걸이식여과기 ()",
+          "ancestorLabels": [
+            "여과기/여과재",
+            "스펀지여과기",
+            "걸이식여과기 ()"
+          ],
+          "url": "https://aquauju.com/product/list.html?cate_no=150",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=150",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202207/8873fe3833c39172f3e0f2035440896c.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/아마존-내부여과기-hj-011/8699/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_14328:default",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/칸후-스펀지-여과기-sb-2801전용-여과통-1개-여과재-포함/14328/",
+      "name": "칸후 스펀지 여과기 SB-2801+전용 여과통 1개 (여과재 포함)",
+      "originalTitle": "칸후 스펀지 여과기 SB-2801+전용 여과통 1개 (여과재 포함)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:03:27.034Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 7800,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기/여과재",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=26",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=26",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=26",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202608/730d31f9d6acaaa11b40bd03dab6412e.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/칸후-스펀지-여과기-sb-2801전용-여과통-1개-여과재-포함/14328/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_14322:cafe24_aquauju_1_14322_P0000VEW000A",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트-30x21x34cm-곡어항/14322/?item_code=P0000VEW000A",
+      "name": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 30x21x34cm 곡어항 매장방문픽업",
+      "originalTitle": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 30x21x34cm 곡어항 매장방문픽업",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": "cafe24_aquauju_1_14322_P0000VEW000A",
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:03:36.827Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 63500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "어항/축양장/뚜껑",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=24",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=24",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202607/c3148bc5d1638ea404c9d2b23992112c.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트-30x21x34cm-곡어항/14322/?item_code=P0000VEW000A",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_14322:cafe24_aquauju_1_14322_P0000VEW000B",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트-30x21x34cm-곡어항/14322/?item_code=P0000VEW000B",
+      "name": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 30x21x34cm 곡어항 화물착불(매장으로 연락주세요)",
+      "originalTitle": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 30x21x34cm 곡어항 화물착불(매장으로 연락주세요)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": "cafe24_aquauju_1_14322_P0000VEW000B",
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:03:36.827Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 63500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "어항/축양장/뚜껑",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=24",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=24",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202607/c3148bc5d1638ea404c9d2b23992112c.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트-30x21x34cm-곡어항/14322/?item_code=P0000VEW000B",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-38:cafe24_aquauju_1_14322:cafe24_aquauju_1_14322_P0000VEW000C",
+      "verified": true,
+      "sellerId": "aquauju.com",
+      "sourceUrl": "https://aquauju.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트-30x21x34cm-곡어항/14322/?item_code=P0000VEW000C",
+      "name": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 30x21x34cm 곡어항 택배발송",
+      "originalTitle": "칸후 일체형 GT-3 어항+조명+여과+펌프 세트 30x21x34cm 곡어항 택배발송",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": "cafe24_aquauju_1_14322_P0000VEW000C",
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:03:36.827Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 68500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "어항/축양장/뚜껑",
+          "ancestorLabels": [],
+          "url": "https://aquauju.com/product/list.html?cate_no=24",
+          "evidencePage": "https://aquauju.com/product/list.html?cate_no=150",
+          "observedAt": "2026-10-16T05:02:16.563Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquauju.com/product/list.html?cate_no=24",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquauju.com/web/product/big/202607/c3148bc5d1638ea404c9d2b23992112c.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquauju.com/product/칸후-일체형-gt-3-어항조명여과펌프-세트-30x21x34cm-곡어항/14322/?item_code=P0000VEW000C",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-39:cafe24_woqja0219_1_2044:default",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/테트라-트윈-빌리-필터-45cm-40l-1자-자반-수조-소형-쌍기-스펀지-여과기/2044/",
+      "name": "테트라 트윈 빌리 필터 45cm 40L 1자 ~ 자반 수조 소형 쌍기 스펀지 여과기",
+      "originalTitle": "테트라 트윈 빌리 필터 45cm 40L 1자 ~ 자반 수조 소형 쌍기 스펀지 여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:04:41.673Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 8600,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "수족관 용품",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/product/list.html?cate_no=218",
+          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218",
+          "observedAt": null
+        },
+        {
+          "label": "여과기 ()",
+          "ancestorLabels": [
+            "수족관 용품"
+          ],
+          "url": "https://dpaqua.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/271/",
+          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218&page=2",
+          "observedAt": "2026-10-15T17:10:11.459Z"
+        },
+        {
+          "label": "낚시&캠핑 용품",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "evidencePage": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "observedAt": "2026-10-16T05:04:31.358Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://dpaqua.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/271/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://dpaqua.com/web/product/big/202602/5e4f3619d4d009e142429893c24d1738.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://dpaqua.com/product/테트라-트윈-빌리-필터-45cm-40l-1자-자반-수조-소형-쌍기-스펀지-여과기/2044/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-39:cafe24_woqja0219_1_1550:default",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/아마존-hj-952-20w-안정성-간편한-설치-90cm-이상-수조-사용-다목적-측면-여과기/1550/",
+      "name": "아마존 HJ-952 20W 안정성 간편한 설치 90cm 이상 수조 사용 다목적 측면 여과기",
+      "originalTitle": "아마존 HJ-952 20W 안정성 간편한 설치 90cm 이상 수조 사용 다목적 측면 여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:04:51.916Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 12950,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "낚시&캠핑 용품",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/category/%EC%B8%A1%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/342/",
+          "evidencePage": "https://dpaqua.com/category/%EC%B8%A1%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/342/",
+          "observedAt": "2026-10-16T05:04:21.730Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://dpaqua.com/category/%EC%B8%A1%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/342/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://dpaqua.com/web/product/big/202407/7d1b3cd15206a8bcc20ede0977874069.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://dpaqua.com/product/아마존-hj-952-20w-안정성-간편한-설치-90cm-이상-수조-사용-다목적-측면-여과기/1550/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-39:cafe24_woqja0219_1_1415:default",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/칸후-ch-l-아쿠아리움-대형-프리미엄-고밀도-고탄성-바이오-클린-쌍기-스펀지-여과기/1415/",
+      "name": "칸후 CH-L 아쿠아리움 대형 프리미엄 고밀도 고탄성 바이오 클린 쌍기 스펀지 여과기",
+      "originalTitle": "칸후 CH-L 아쿠아리움 대형 프리미엄 고밀도 고탄성 바이오 클린 쌍기 스펀지 여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:05:01.978Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 5500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "낚시&캠핑 용품",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "evidencePage": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "observedAt": "2026-10-16T05:04:31.358Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://dpaqua.com/web/product/big/202506/4b39026f8bb0ff0342a86a38024b5be9.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://dpaqua.com/product/칸후-ch-l-아쿠아리움-대형-프리미엄-고밀도-고탄성-바이오-클린-쌍기-스펀지-여과기/1415/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-39:cafe24_woqja0219_1_1310:default",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/bmp-btfs-90-90cm-900mm-3자-10w-10t-모터-외장-슬림형-수조-거치식-상면-여과기/1310/",
+      "name": "BMP BTFS-90 90cm 900mm 3자 10W 10T 모터 외장 슬림형 수조 거치식 상면 여과기",
+      "originalTitle": "BMP BTFS-90 90cm 900mm 3자 10W 10T 모터 외장 슬림형 수조 거치식 상면 여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:05:11.827Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 74900,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "상면여과기",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/product/list.html?cate_no=341",
+          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=341",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://dpaqua.com/product/list.html?cate_no=341",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://dpaqua.com/web/product/big/202502/857530d9dcddc7fcab6384bf1bb129c7.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://dpaqua.com/product/bmp-btfs-90-90cm-900mm-3자-10w-10t-모터-외장-슬림형-수조-거치식-상면-여과기/1310/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-39:cafe24_woqja0219_1_1885:default",
+      "verified": true,
+      "sellerId": "dpaqua.com",
+      "sourceUrl": "https://dpaqua.com/product/bmp-bf-90w-집성목-합판-1단-3자-수조-받침대-다이-철제-축양장-900x450x800mm/1885/",
+      "name": "BMP BF-90W 집성목 합판 1단 3자 수조 받침대 다이 철제 축양장 (900x450x800mm)",
+      "originalTitle": "BMP BF-90W 집성목 합판 1단 3자 수조 받침대 다이 철제 축양장 (900x450x800mm)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:05:31.288Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 150000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "BMP 축양장",
+          "ancestorLabels": [],
+          "url": "https://dpaqua.com/product/list.html?cate_no=340",
+          "evidencePage": "https://dpaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/343/",
+          "observedAt": "2026-10-16T05:04:31.358Z"
+        },
+        {
+          "label": "수조&어항 ()",
+          "ancestorLabels": [
+            "수족관 용품"
+          ],
+          "url": "https://dpaqua.com/category/%EC%88%98%EC%A1%B0%EC%96%B4%ED%95%AD/219/",
+          "evidencePage": "https://dpaqua.com/product/list.html?cate_no=218&page=2",
+          "observedAt": "2026-10-15T17:10:11.459Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://dpaqua.com/product/list.html?cate_no=340",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://dpaqua.com/web/product/big/202411/a86b6e2c051d553108a4e3c06f45ec38.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://dpaqua.com/product/bmp-bf-90w-집성목-합판-1단-3자-수조-받침대-다이-철제-축양장-900x450x800mm/1885/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-40:cafe24_ampet2_1_3715:default",
+      "verified": true,
+      "sellerId": "ampet.co.kr",
+      "sourceUrl": "https://www.ampet.co.kr/product/유피코리아-pro-스펀지-여과기-특대형-쌍기/3715/",
+      "name": "유피코리아 Pro 스펀지 여과기 (특대형 쌍기)",
+      "originalTitle": "유피코리아 Pro 스펀지 여과기 (특대형 쌍기)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:07:27.084Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 20000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://www.ampet.co.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://www.ampet.co.kr/product/list.html?cate_no=24",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://www.ampet.co.kr/web/product/big/202404/27c584223ae6f8b519a3b38c6ebc0982.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://www.ampet.co.kr/product/유피코리아-pro-스펀지-여과기-특대형-쌍기/3715/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-40:cafe24_ampet2_1_3665:default",
+      "verified": true,
+      "sellerId": "ampet.co.kr",
+      "sourceUrl": "https://www.ampet.co.kr/product/에하임-외부여과기-헤드고무링-2222247343168/3665/",
+      "name": "에하임 외부여과기 헤드고무링 [2222/24]7343168",
+      "originalTitle": "에하임 외부여과기 헤드고무링 [2222/24]7343168",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:07:57.120Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 17000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://www.ampet.co.kr/product/list.html?cate_no=24",
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://www.ampet.co.kr/product/list.html?cate_no=24",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://www.ampet.co.kr/web/product/big/shop1_c122ca510047791168a326564aeac1f9_3665.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://www.ampet.co.kr/product/에하임-외부여과기-헤드고무링-2222247343168/3665/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-40:cafe24_ampet2_1_3770:default",
+      "verified": true,
+      "sellerId": "ampet.co.kr",
+      "sourceUrl": "https://www.ampet.co.kr/product/시켐-프리스틴-pristine-100ml-유기물-제거-여과-박테리아/3770/",
+      "name": "시켐 프리스틴 (Pristine) 100ml / 유기물 제거 여과 박테리아",
+      "originalTitle": "시켐 프리스틴 (Pristine) 100ml / 유기물 제거 여과 박테리아",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:08:26.536Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 12400,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과재",
+          "ancestorLabels": [],
+          "url": "https://www.ampet.co.kr/product/list.html?cate_no=458",
+          "evidencePage": "https://www.ampet.co.kr/product/list.html?cate_no=459",
+          "observedAt": "2026-10-16T05:07:07.071Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://www.ampet.co.kr/product/list.html?cate_no=458",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://www.ampet.co.kr/web/product/big/202410/12eebb98ea6b637ef3e2520a6396f961.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://www.ampet.co.kr/product/시켐-프리스틴-pristine-100ml-유기물-제거-여과-박테리아/3770/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_3317:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/sobo-측면여과기-35w-ds-1103f/3317/",
+      "name": "SOBO 측면여과기 3.5W (DS-1103F)",
+      "originalTitle": "SOBO 측면여과기 3.5W (DS-1103F)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:09:51.758Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 9900,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/20200413/ee99f978a5fd5e87d8b0c3f1d78b68e7.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/sobo-측면여과기-35w-ds-1103f/3317/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_1411:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/시루바-걸이식여과기-pf-360/1411/",
+      "name": "시루바 걸이식여과기 (PF-360)",
+      "originalTitle": "시루바 걸이식여과기 (PF-360)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:10:01.346Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 14500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "걸이식여과기 (6)",
+          "ancestorLabels": [
+            "여과기",
+            "걸이식여과기 (6)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/c_d3.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/시루바-걸이식여과기-pf-360/1411/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_3093:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/모비딕-스펀지-여과기-m/3093/",
+      "name": "모비딕 스펀지 여과기 M",
+      "originalTitle": "모비딕 스펀지 여과기 M",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:10:11.540Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 5000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/137/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/20200325/3b59046d2cd110f167e3aef9baffe8be.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/모비딕-스펀지-여과기-m/3093/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_1426:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/필그린-걸이식여과기-35w-at-301f/1426/",
+      "name": "필그린 걸이식여과기 3.5W (AT-301F)",
+      "originalTitle": "필그린 걸이식여과기 3.5W (AT-301F)",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:10:21.120Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 8500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": false,
+      "availabilityBasis": "Retailer JSON-LD OutOfStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "걸이식여과기 (6)",
+          "ancestorLabels": [
+            "여과기",
+            "걸이식여과기 (6)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "evidencePage": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+          "observedAt": "2026-10-16T05:09:21.226Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/125/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/c_d18.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/필그린-걸이식여과기-35w-at-301f/1426/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_3627:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/아쿠아가든-박터하우스-어항여과재-플러스형-5l/3627/",
+      "name": "아쿠아가든 박터하우스 어항여과재 플러스형 5L",
+      "originalTitle": "아쿠아가든 박터하우스 어항여과재 플러스형 5L",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:10:31.408Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 60000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기/여과재",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/product/list.html?cate_no=74",
+          "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=74",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/product/list.html?cate_no=74",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/202205/430f90466ce901b1c622b37269087121.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-박터하우스-어항여과재-플러스형-5l/3627/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_2681:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/아쿠아가든-올디아망-수조-2100x600x60019t-매트-포함/2681/",
+      "name": "아쿠아가든 올디아망 수조 2100x600x600(19T) 매트 포함",
+      "originalTitle": "아쿠아가든 올디아망 수조 2100x600x600(19T) 매트 포함",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:10:41.387Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 3255000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "어항/받침대",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/product/list.html?cate_no=24",
+          "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=24",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/product/list.html?cate_no=24",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/202011/176b06219d51d8e8e2ea801228e2e5e1.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-올디아망-수조-2100x600x60019t-매트-포함/2681/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_2761:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/아쿠아가든-시클리드-250ml-사료/2761/",
+      "name": "아쿠아가든 시클리드 250ml 사료",
+      "originalTitle": "아쿠아가든 시클리드 250ml 사료",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:10:51.226Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 8000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "사료",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/product/list.html?cate_no=140",
+          "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=140",
+          "observedAt": null
+        },
+        {
+          "label": "아쿠아가든 사료 (25)",
+          "ancestorLabels": [
+            "아쿠아가든 사료",
+            "대형어사료 (0)"
+          ],
+          "url": "https://aquagardenshop.com/category/%EC%95%84%EC%BF%A0%EC%95%84%EA%B0%80%EB%93%A0-%EC%82%AC%EB%A3%8C/149/",
+          "evidencePage": "https://aquagardenshop.com/category/%EB%8C%80%ED%98%95%EC%96%B4%EC%82%AC%EB%A3%8C/158/",
+          "observedAt": "2026-10-16T05:09:41.145Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/product/list.html?cate_no=140",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/20200521/64cc008c1675a750f64ac7dca9f7cc4b.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-시클리드-250ml-사료/2761/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_3761:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/아쿠아가든-led-cielo-ccielo-ch-rgb-900-빛가림막/3761/",
+      "name": "아쿠아가든 LED Cielo-C/Cielo-CH RGB 900 빛가림막",
+      "originalTitle": "아쿠아가든 LED Cielo-C/Cielo-CH RGB 900 빛가림막",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:11:01.979Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 25000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "조명/거치대",
+          "ancestorLabels": [],
+          "url": "https://aquagardenshop.com/product/list.html?cate_no=73",
+          "evidencePage": "https://aquagardenshop.com/product/list.html?cate_no=73",
+          "observedAt": null
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": "https://aquagardenshop.com/product/list.html?cate_no=73",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://aquagardenshop.com/web/product/big/202206/f4ef657946aa438370c265e11e45c4c6.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-led-cielo-ccielo-ch-rgb-900-빛가림막/3761/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-47:909:default",
+      "verified": true,
+      "sellerId": "wpet.co.kr",
+      "sourceUrl": "https://www.wpet.co.kr/?act=shop.goods_view&CM=909&GC=GD0604",
+      "name": "필그린 외부여과기 EF-1300",
+      "originalTitle": "필그린 외부여과기 EF-1300",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:11:30.063Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 150000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": null,
+      "availabilityBasis": "Inventory and checkout availability not independently verified",
+      "observedCategoryLabels": [
+        {
+          "label": "외부여과기",
+          "ancestorLabels": [],
+          "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0604",
+          "evidencePage": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD06",
+          "observedAt": "2026-10-10T03:19:41.065Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Public single-offer goods identity and hidden base price matched canonical detail, visible primary product name and KRW sales row",
+      "classificationBasis": "Explicit primary aquarium-filter identity; intended turtle/fish use is not an animal offer",
+      "discoveryCategoryUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD0604",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://www.wpet.co.kr/data/goods/9/909/10065_00034_1294732524_1549003077.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://www.wpet.co.kr/?act=shop.goods_view&CM=909&GC=GD0604",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-47:1746:default",
+      "verified": true,
+      "sellerId": "wpet.co.kr",
+      "sourceUrl": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1760&GC=GD06",
+      "name": "이스타 호스 3M 16/22",
+      "originalTitle": "이스타 호스 3M 16/22",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:11:36.099Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 11000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": null,
+      "availabilityBasis": "Inventory and checkout availability not independently verified",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD06",
+          "evidencePage": "https://www.wpet.co.kr/?act=shop.goods_view&CM=539&GC=GD0008",
+          "observedAt": "2026-10-09T00:01:21.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Public single-offer goods identity and hidden base price matched canonical detail, visible primary product name and KRW sales row",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD06",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://www.wpet.co.kr/data/goods/17/1746/1000000715_magnify_015.view.png",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1760&GC=GD06",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-47:1665:default",
+      "verified": true,
+      "sellerId": "wpet.co.kr",
+      "sourceUrl": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1675&GC=GD08",
+      "name": "티타늄히터 일체형 자동온도 조절기 동화전자 2kw",
+      "originalTitle": "티타늄히터 일체형 자동온도 조절기 동화전자 2kw",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:11:40.086Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 110000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": null,
+      "availabilityBasis": "Inventory and checkout availability not independently verified",
+      "observedCategoryLabels": [
+        {
+          "label": "히터/냉각",
+          "ancestorLabels": [],
+          "url": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD08",
+          "evidencePage": "https://www.wpet.co.kr/?act=shop.goods_view&CM=539&GC=GD0008",
+          "observedAt": "2026-10-09T00:01:21.317Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Public single-offer goods identity and hidden base price matched canonical detail, visible primary product name and KRW sales row",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://www.wpet.co.kr/?act=shop.goods_list&GC=GD08",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://www.wpet.co.kr/data/goods/16/1665/20210216_182740.view.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://www.wpet.co.kr/?act=shop.goods_view&CM=1675&GC=GD08",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_3630:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/아쿠아테크-스펀지-sp-l4-리필테트라-슈퍼쌍기-용/3630/",
+      "name": "아쿠아테크 스펀지 SP-L4 리필[테트라 슈퍼쌍기 용]",
+      "originalTitle": "아쿠아테크 스펀지 SP-L4 리필[테트라 슈퍼쌍기 용]",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:13:08.032Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 9000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=67",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": "https://chunjane.com/product/list.html?cate_no=67",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_3630.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/아쿠아테크-스펀지-sp-l4-리필테트라-슈퍼쌍기-용/3630/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_996:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/외부여과기용-자외선-살균램프-11w/996/",
+      "name": "외부여과기용 자외선 살균램프 11W",
+      "originalTitle": "외부여과기용 자외선 살균램프 11W",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:13:17.634Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 70000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/66/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144%EB%A1%B1%ED%95%80-6cm%EC%9D%B4%EC%83%81%EA%B8%89-1%EB%A7%88%EB%A6%AC/513/category/434/display/1/",
+          "observedAt": "2026-10-08T23:57:26.303Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://chunjane.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/66/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_996.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/외부여과기용-자외선-살균램프-11w/996/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_2344:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/05-xy-2823-단기-스펀지여과기대/2344/",
+      "name": "05 XY-2823 단기 스펀지여과기[대]",
+      "originalTitle": "05 XY-2823 단기 스펀지여과기[대]",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:13:27.685Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 6500,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=67",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        },
+        {
+          "label": "단기 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기",
+            "스펀지 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=156",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://chunjane.com/product/list.html?cate_no=156",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_2344.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/05-xy-2823-단기-스펀지여과기대/2344/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_3275:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/아쿠아테크-스펀지-여과기-sp-s1/3275/",
+      "name": "아쿠아테크 스펀지 여과기 SP-S1",
+      "originalTitle": "아쿠아테크 스펀지 여과기 SP-S1",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:13:37.635Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 8000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "스펀지 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=67",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://chunjane.com/product/list.html?cate_no=67",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_3275.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/아쿠아테크-스펀지-여과기-sp-s1/3275/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_639:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/흑사3mm/639/",
+      "name": "흑사[3mm]",
+      "originalTitle": "흑사[3mm]",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:13:47.524Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 4000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "바닥재",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EB%B0%94%EB%8B%A5%EC%9E%AC/26/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144%EB%A1%B1%ED%95%80-6cm%EC%9D%B4%EC%83%81%EA%B8%89-1%EB%A7%88%EB%A6%AC/513/category/434/display/1/",
+          "observedAt": "2026-10-08T23:57:26.303Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "discoveryCategoryUrl": "https://chunjane.com/category/%EB%B0%94%EB%8B%A5%EC%9E%AC/26/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_639.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/흑사3mm/639/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_173:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/자연-가지유목-15cm-급/173/",
+      "name": "자연 가지유목[ 15cm 급 ]",
+      "originalTitle": "자연 가지유목[ 15cm 급 ]",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:13:57.287Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 5000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "장식품",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%9E%A5%EC%8B%9D%ED%92%88/88/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144%EB%A1%B1%ED%95%80-6cm%EC%9D%B4%EC%83%81%EA%B8%89-1%EB%A7%88%EB%A6%AC/513/category/434/display/1/",
+          "observedAt": "2026-10-08T23:57:26.303Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://chunjane.com/category/%EC%9E%A5%EC%8B%9D%ED%92%88/88/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_173.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/자연-가지유목-15cm-급/173/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_765:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/05-뉴아마존-sf-2821-단기-스펀지여과기/765/",
+      "name": "05 (뉴)아마존 SF-2821 단기 스펀지여과기",
+      "originalTitle": "05 (뉴)아마존 SF-2821 단기 스펀지여과기",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:14:07.559Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 4000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기",
+          "ancestorLabels": [],
+          "url": "https://chunjane.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/66/",
+          "evidencePage": "https://chunjane.com/product/01-%EC%95%88%EC%8B%9C-l144%EB%A1%B1%ED%95%80-6cm%EC%9D%B4%EC%83%81%EA%B8%89-1%EB%A7%88%EB%A6%AC/513/category/434/display/1/",
+          "observedAt": "2026-10-08T23:57:26.303Z"
+        },
+        {
+          "label": "스펀지 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=67",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        },
+        {
+          "label": "단기 여과기",
+          "ancestorLabels": [
+            "여과기",
+            "스펀지 여과기",
+            "하위 분류",
+            "단기 여과기",
+            "스펀지 여과기"
+          ],
+          "url": "https://chunjane.com/product/list.html?cate_no=156",
+          "evidencePage": "https://chunjane.com/product/list.html?cate_no=156",
+          "observedAt": "2026-10-16T05:12:38.183Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": "https://chunjane.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/66/",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_765.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/05-뉴아마존-sf-2821-단기-스펀지여과기/765/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-48:cafe24_ksy8705_1_1078:default",
+      "verified": true,
+      "sellerId": "chunjane.com",
+      "sourceUrl": "https://chunjane.com/product/아마존-측면여과기-20w-hj-952/1078/",
+      "name": "아마존 측면여과기 20W [HJ-952]",
+      "originalTitle": "아마존 측면여과기 20W [HJ-952]",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:14:17.711Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 14000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply identity corroborated by the verified own-product supply breadcrumb",
+      "discoveryCategoryUrl": null,
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://chunjane.com/web/product/big/ksy8705_1078.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://chunjane.com/product/아마존-측면여과기-20w-hj-952/1078/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_615:default",
+      "verified": true,
+      "sellerId": "fishermanbt.com",
+      "sourceUrl": "https://fishermanbt.com/product/부화통-l/615/",
+      "name": "부화통 L",
+      "originalTitle": "부화통 L",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:15:42.686Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 6000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "부화통 (11)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "청소용품,기타 (100)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "부화통 (11)",
+            "기타 (31)",
+            "청소용품 (54)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=97",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=99",
+          "observedAt": "2026-10-16T05:15:22.739Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://fishermanbt.com/product/list.html?cate_no=97",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://fishermanbt.com/web/product/big/20200115/9367834e433b3c79a49da8926a1eb160.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://fishermanbt.com/product/부화통-l/615/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_3815:default",
+      "verified": true,
+      "sellerId": "fishermanbt.com",
+      "sourceUrl": "https://fishermanbt.com/product/manito-코코볼-여과재-05l/3815/",
+      "name": "MANITO 코코볼 여과재 0.5L",
+      "originalTitle": "MANITO 코코볼 여과재 0.5L",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:15:52.692Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 5000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기 (208)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "수초용품 (40)",
+            "수초용품 (40)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=45",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
+          "observedAt": "2026-10-14T08:10:46.213Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://fishermanbt.com/product/list.html?cate_no=45",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://fishermanbt.com/web/product/big/202403/441740977542c45f1ffed18339a39046.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://fishermanbt.com/product/manito-코코볼-여과재-05l/3815/",
+        "permissionScope": "product-comparison",
+        "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-49:cafe24_week22_1_3801:default",
+      "verified": true,
+      "sellerId": "fishermanbt.com",
+      "sourceUrl": "https://fishermanbt.com/product/실리콘호스-2m/3801/",
+      "name": "실리콘호스 2M",
+      "originalTitle": "실리콘호스 2M",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "gear",
+      "subtype": null,
+      "observedAt": "2026-10-16T05:16:02.836Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 1000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "observedCategoryLabels": [
+        {
+          "label": "여과기 (208)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "수초용품 (40)",
+            "수초용품 (40)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=45",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=206",
+          "observedAt": "2026-10-14T08:10:46.213Z"
+        },
+        {
+          "label": "스펀지여과기 (31)",
+          "ancestorLabels": [
+            "열대어사료",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "유목/돌 (37)",
+            "장식 (61)",
+            "수초용품 (40)",
+            "수초용품 (40)",
+            "수초용품 (40)",
+            "여과기 (208)",
+            "스펀지여과기 (31)"
+          ],
+          "url": "https://fishermanbt.com/product/list.html?cate_no=85",
+          "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=85",
+          "observedAt": "2026-10-16T05:15:02.350Z"
+        }
+      ],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "classificationBasis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "discoveryCategoryUrl": "https://fishermanbt.com/product/list.html?cate_no=85",
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": "https://fishermanbt.com/web/product/big/202403/8aaba8a19dca7842169d1ff940de395f.jpg",
+        "usePermission": "allowed",
+        "permissionEvidenceUrl": "https://fishermanbt.com/product/실리콘호스-2m/3801/",
         "permissionScope": "product-comparison",
         "permissionBasis": "explicit_user_instruction",
         "generalRepublicationLicenseVerified": false,

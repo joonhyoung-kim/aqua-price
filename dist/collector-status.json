@@ -1,11 +1,11 @@
 {
   "executionBudgetMs": 1080000,
   "deferredSourceIds": [],
-  "startedAt": "2026-10-17T16:02:26.106Z",
-  "mode": "gear",
-  "discoveryScope": "gear",
+  "startedAt": "2026-10-17T20:41:21.717Z",
+  "mode": "live",
+  "discoveryScope": "live",
   "runTrigger": "schedule",
-  "githubRunId": "39046502668",
+  "githubRunId": "39067652394",
   "autoRefreshDeployed": false,
   "fullCatalogCoverage": false,
   "sources": [
@@ -808006,8 +808006,8 @@
   ],
   "executionDeadlineReached": false,
   "executionBudgetLimited": false,
-  "finishedAt": "2026-10-17T16:02:26.106Z",
-  "nextSourceId": "retailer-09",
+  "finishedAt": "2026-10-17T20:41:21.717Z",
+  "nextSourceId": "retailer-32",
   "attemptedSourceIds": [],
   "executionEnvironment": "github_actions",
   "productChanges": 0,
@@ -808032,32 +808032,32 @@
     "automatic": true,
     "due": false,
     "reason": "already_attempted_window",
-    "intervalHours": 24,
-    "lastAttemptAt": "2026-10-17T04:54:52.897Z",
+    "intervalHours": 12,
+    "lastAttemptAt": "2026-10-17T15:41:17.720Z",
     "gate": "utc_slot_window",
     "window": {
-      "id": "gear:24:2026-10-17T00:29:00.000Z",
-      "startAt": "2026-10-17T00:29:00.000Z",
-      "endAt": "2026-10-18T00:29:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T00:29:00.000Z"
+      "id": "live:12:2026-10-17T12:17:00.000Z",
+      "startAt": "2026-10-17T12:17:00.000Z",
+      "endAt": "2026-10-18T00:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
     "previousWindow": {
-      "id": "gear:24:2026-10-17T00:29:00.000Z",
-      "startAt": "2026-10-17T00:29:00.000Z",
-      "endAt": "2026-10-18T00:29:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T00:29:00.000Z"
+      "id": "live:12:2026-10-17T12:17:00.000Z",
+      "startAt": "2026-10-17T12:17:00.000Z",
+      "endAt": "2026-10-18T00:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
-    "nextDueAt": "2026-10-18T00:29:00.000Z"
+    "nextDueAt": "2026-10-18T00:17:00.000Z"
   },
   "schedule": {
     "schemaVersion": 1,
     "modes": {
       "live": {
         "intervalHours": 12,
-        "lastEvaluatedAt": "2026-10-17T15:41:17.693Z",
-        "lastDecision": "attempted",
+        "lastEvaluatedAt": "2026-10-17T20:41:21.717Z",
+        "lastDecision": "already_attempted_window",
         "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
         "lastAttemptAt": "2026-10-17T15:41:17.720Z",
         "lastManualAttemptAt": "2026-10-10T04:36:16.718Z",

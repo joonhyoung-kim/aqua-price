@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T15:59:06.625Z",
+  "generatedAt": "2026-10-17T16:02:27.272Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -66,10 +66,10 @@
   "execution": {
     "environment": "github_actions",
     "trigger": "schedule",
-    "runId": "39046018582",
-    "startedAt": "2026-10-17T15:41:17.692Z",
-    "finishedAt": "2026-10-17T15:59:04.942Z",
-    "publicationChanged": true
+    "runId": "39046502668",
+    "startedAt": "2026-10-17T16:02:26.106Z",
+    "finishedAt": "2026-10-17T16:02:26.106Z",
+    "publicationChanged": false
   },
   "controls": {
     "schemaVersion": 1,
@@ -269,8 +269,8 @@
         },
         "gear": {
           "intervalHours": 24,
-          "lastEvaluatedAt": "2026-10-17T04:54:52.885Z",
-          "lastDecision": "attempted",
+          "lastEvaluatedAt": "2026-10-17T16:02:26.106Z",
+          "lastDecision": "already_attempted_window",
           "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
           "lastAttemptAt": "2026-10-17T04:54:52.897Z",
           "lastManualAttemptAt": "2026-10-10T04:17:40.348Z",
@@ -16607,7 +16607,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "success",
@@ -18018,7 +18018,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -18113,7 +18113,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "success",
@@ -18339,7 +18339,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -18435,7 +18435,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "partial_failure",
@@ -20577,7 +20577,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "partial_failure",
@@ -21464,7 +21464,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "success",
@@ -21971,7 +21971,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -22005,7 +22005,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "success",
@@ -23139,7 +23139,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -23269,7 +23269,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "success",
@@ -25779,7 +25779,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -25909,7 +25909,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "39046018582"
       },
       "collectorStatus": "no_confirmed_products",

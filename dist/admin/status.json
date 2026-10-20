@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T22:25:09.736Z",
+  "generatedAt": "2026-10-20T05:15:22.287Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -66,10 +66,10 @@
   "execution": {
     "environment": "github_actions",
     "trigger": "schedule",
-    "runId": "39334659767",
-    "startedAt": "2026-10-19T22:25:08.702Z",
-    "finishedAt": "2026-10-19T22:25:08.702Z",
-    "publicationChanged": false
+    "runId": "39372189468",
+    "startedAt": "2026-10-20T04:57:35.870Z",
+    "finishedAt": "2026-10-20T05:15:20.796Z",
+    "publicationChanged": true
   },
   "controls": {
     "schemaVersion": 1,
@@ -243,29 +243,29 @@
       "modes": {
         "live": {
           "intervalHours": 12,
-          "lastEvaluatedAt": "2026-10-19T22:25:08.702Z",
-          "lastDecision": "already_attempted_window",
+          "lastEvaluatedAt": "2026-10-20T04:57:35.870Z",
+          "lastDecision": "attempted",
           "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
-          "lastAttemptAt": "2026-10-19T13:26:18.036Z",
+          "lastAttemptAt": "2026-10-20T04:57:35.879Z",
           "lastManualAttemptAt": "2026-10-10T04:36:16.718Z",
           "lastAttemptConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
-          "lastAttemptRunId": "39259983597",
+          "lastAttemptRunId": "39372189468",
           "lastAttemptAutomatic": true,
           "lastManualOutcome": "partial_failure",
           "lastOutcome": "partial_failure",
-          "lastFinishedAt": "2026-10-19T13:44:08.449Z",
-          "lastFailureAt": "2026-10-19T13:44:08.449Z",
+          "lastFinishedAt": "2026-10-20T05:15:20.796Z",
+          "lastFailureAt": "2026-10-20T05:15:20.796Z",
           "lastManualFailureAt": "2026-10-10T04:54:03.746Z",
           "lastAutomatedWindow": {
-            "id": "live:12:2026-10-19T12:17:00.000Z",
-            "startAt": "2026-10-19T12:17:00.000Z",
-            "endAt": "2026-10-20T00:17:00.000Z",
+            "id": "live:12:2026-10-20T00:17:00.000Z",
+            "startAt": "2026-10-20T00:17:00.000Z",
+            "endAt": "2026-10-20T12:17:00.000Z",
             "intervalHours": 12,
             "anchorAt": "1970-01-01T00:17:00.000Z"
           },
-          "lastAutomatedAttemptAt": "2026-10-19T13:26:18.036Z",
+          "lastAutomatedAttemptAt": "2026-10-20T04:57:35.879Z",
           "lastAutomatedOutcome": "partial_failure",
-          "lastAutomatedFailureAt": "2026-10-19T13:44:08.449Z"
+          "lastAutomatedFailureAt": "2026-10-20T05:15:20.796Z"
         },
         "gear": {
           "intervalHours": 24,
@@ -8550,11 +8550,11 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "snapshotProductCount": 85,
-      "collectorProductCount": 76,
+      "snapshotProductCount": 96,
+      "collectorProductCount": 89,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 43,
+        "verifiedUrlCount": 45,
         "selectedUrlCount": 3,
         "productBudget": 3,
         "allVerifiedUrlsSelected": false,
@@ -8567,12 +8567,12 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39259983597"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-19T13:42:30.529Z",
-      "collectorLastSuccess": "2026-10-19T13:44:02.576Z",
+      "collectorLastAttempt": "2026-10-20T04:57:35.879Z",
+      "collectorLastSuccess": "2026-10-20T05:00:47.728Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -8584,7 +8584,7 @@
           "https://bizidduk.com/product/list.html?cate_no=36",
           "https://bizidduk.com/product/list.html?cate_no=128"
         ],
-        "status": "budget_limited",
+        "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 3,
         "pageBudget": 2,
@@ -8600,20 +8600,20 @@
         "representativeSeedCount": 7,
         "pagesVisited": 2,
         "detailBudget": 14,
-        "newCandidates": 14,
-        "verifiedItems": 2,
-        "pendingCandidates": 415,
-        "pendingCandidatesInScope": 136,
+        "newCandidates": 3,
+        "verifiedItems": 13,
+        "pendingCandidates": 401,
+        "pendingCandidatesInScope": 122,
         "pendingScopeLimit": 1000,
         "pendingByGroup": {
-          "aquatic_plant": 15,
-          "mixed": 390,
-          "shrimp": 10
+          "aquatic_plant": 10,
+          "mixed": 384,
+          "shrimp": 7
         },
-        "reviewRequired": 21,
+        "reviewRequired": 20,
         "reviewReasons": {
-          "Feed/artificial plant/supply conflict blocks livestock classification": 15,
-          "Mixed or unresolved product category requires review": 6
+          "Feed/artificial plant/supply conflict blocks livestock classification": 16,
+          "Mixed or unresolved product category requires review": 4
         },
         "reviewQueue": [
           {
@@ -8715,44 +8715,6 @@
             },
             "classificationVersion": 9,
             "reviewedAt": "2026-10-17T04:37:51.220Z"
-          },
-          {
-            "key": "bizidduk.com:4339",
-            "url": "https://bizidduk.com/product/%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-30%EB%A7%88%EB%A6%AC/4339/category/27/display/1/",
-            "title": "네온 테트라 30마리",
-            "candidate": {
-              "url": "https://bizidduk.com/product/%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-30%EB%A7%88%EB%A6%AC/4339/category/27/display/1/",
-              "type": null,
-              "subtype": null,
-              "mixedCategories": true,
-              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-              "discoveredInCategory": "https://bizidduk.com/product/list.html?cate_no=27",
-              "discoveredAt": "2026-10-08T11:12:05.450Z",
-              "requiresProductClassification": true
-            },
-            "status": "needs_review",
-            "reason": "Mixed or unresolved product category requires review",
-            "classificationVersion": 9,
-            "reviewedAt": "2026-10-09T01:22:31.872Z"
-          },
-          {
-            "key": "bizidduk.com:1531",
-            "url": "https://bizidduk.com/product/%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-4-%EB%A7%88%EB%A6%AC/1531/category/27/display/1/",
-            "title": "풍선몰리 4 마리",
-            "candidate": {
-              "url": "https://bizidduk.com/product/%ED%92%8D%EC%84%A0%EB%AA%B0%EB%A6%AC-4-%EB%A7%88%EB%A6%AC/1531/category/27/display/1/",
-              "type": null,
-              "subtype": null,
-              "mixedCategories": true,
-              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
-              "discoveredInCategory": "https://bizidduk.com/product/list.html?cate_no=27",
-              "discoveredAt": "2026-10-08T11:12:05.450Z",
-              "requiresProductClassification": true
-            },
-            "status": "needs_review",
-            "reason": "Mixed or unresolved product category requires review",
-            "classificationVersion": 9,
-            "reviewedAt": "2026-10-09T01:22:31.872Z"
           },
           {
             "key": "bizidduk.com:2368",
@@ -9295,17 +9257,52 @@
             },
             "classificationVersion": 9,
             "reviewedAt": "2026-10-16T17:02:29.551Z"
+          },
+          {
+            "key": "bizidduk.com:5661",
+            "url": "https://bizidduk.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EB%B2%84%EB%B8%94-ab-15%EC%9A%A9-%EA%B5%90%EC%B2%B4%EC%9A%A9-%EB%AA%A8%EB%93%88module/5661/category/142/display/1/",
+            "title": "아쿠아버블 AB-15용 교체용 모듈(module)",
+            "collectorKey": "retailer-12:cafe24_bizidduk83_1_5661:default",
+            "candidate": {
+              "url": "https://bizidduk.com/product/%EC%95%84%EC%BF%A0%EC%95%84%EB%B2%84%EB%B8%94-ab-15%EC%9A%A9-%EA%B5%90%EC%B2%B4%EC%9A%A9-%EB%AA%A8%EB%93%88module/5661/category/142/display/1/",
+              "type": "live",
+              "subtype": "aquatic_plant",
+              "mixedCategories": false,
+              "classificationBasis": "Observed same-retailer public navigation; discovery hint only, primary detail classification required",
+              "discoveryScope": "live",
+              "discoveredCategoryLabels": [
+                "수초관련",
+                "기타 ()"
+              ],
+              "discoveredInCategory": "https://bizidduk.com/category/%EA%B8%B0%ED%83%80/142/",
+              "discoveredAt": "2026-10-19T13:43:22.452Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
+            "evidence": {
+              "title": "아쿠아버블 AB-15용 교체용 모듈(module)",
+              "identityTitle": "아쿠아버블 AB-15용 교체용 모듈(module)",
+              "description": "bizidduk | 아쿠아버블 AB-15용 교체 모듈로 수족관의 성능을 저렴하게 유지하세요. 합리적인 가격에 신뢰할 수 있는 품질을 제공합니다.",
+              "options": "",
+              "salesSpecification": false,
+              "aquaticDescription": false,
+              "ownContext": true,
+              "subtypes": [],
+              "conflicts": true,
+              "sufficient": false,
+              "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+            },
+            "classificationVersion": 9,
+            "reviewedAt": "2026-10-20T05:00:47.731Z"
           }
         ],
         "excludedCandidates": 1,
-        "nextCategoryIndex": 4,
-        "lastAttempt": "2026-10-19T13:43:02.415Z",
+        "nextCategoryIndex": 6,
+        "lastAttempt": "2026-10-20T04:58:08.139Z",
         "errors": [
-          "expected_total_unverified:https://bizidduk.com/category/%EC%B4%88%EB%B3%B4%EC%88%98%EC%B4%88/46/",
-          "expected_total_unverified:https://bizidduk.com/category/%EA%B8%B0%ED%83%80/142/",
-          "detail_parse_failed:https://bizidduk.com/product/%ED%94%BC%EB%9D%BC%EB%A3%A8%ED%81%AC-60cm/5946/category/193/display/1/",
-          "detail_parse_failed:https://bizidduk.com/product/%EC%BF%A0%EB%B0%94-%ED%8E%84-1%ED%8F%AC%ED%8A%B8/1357/category/46/display/1/",
-          "detail_request_failed:https://bizidduk.com/product/%EB%84%A4%EC%98%A8-%ED%85%8C%ED%8A%B8%EB%9D%BC-30%EB%A7%88%EB%A6%AC/4339/category/27/display/1/:execution_deadline"
+          "expected_total_unverified:https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/",
+          "expected_total_unverified:https://bizidduk.com/category/%EC%83%88%EC%9A%B0-%EB%B0%8F-%EA%B0%80%EC%9E%AC/31/"
         ],
         "cursorCategories": [
           {
@@ -9384,9 +9381,9 @@
             "nextUrl": null,
             "expectedProductCount": null,
             "cycleSeenProductCount": 14,
-            "cyclesCompleted": 2,
+            "cyclesCompleted": 3,
             "lastCycle": {
-              "finishedAt": "2026-10-16T17:01:39.502Z",
+              "finishedAt": "2026-10-20T04:58:27.952Z",
               "reportedCount": null,
               "observedUniqueLinks": 14,
               "terminalPageReached": true,
@@ -9400,9 +9397,9 @@
           },
           {
             "entryUrl": "https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/",
-            "nextUrl": "https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/",
+            "nextUrl": "https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/?page=2",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 37,
+            "cycleSeenProductCount": 40,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
@@ -9445,21 +9442,19 @@
             },
             {
               "categoryUrl": "https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/",
-              "nextPageUrl": "https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/"
+              "nextPageUrl": "https://bizidduk.com/category/%EB%AC%BC%EA%B3%A0%EA%B8%B0/193/?page=2"
             }
           ],
           "terminalCategoryCount": 5,
-          "verifiedProductCount": 76,
-          "pendingProductCount": 415,
-          "reviewProductCount": 21,
+          "verifiedProductCount": 89,
+          "pendingProductCount": 401,
+          "reviewProductCount": 20,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
         },
         "productNames": {
           "names": [
-            "네온 테트라 30마리",
-            "풍선몰리 4 마리",
             "금붕어 10 마리 전용먹이증정 겨울철 안전포장 사착보상",
             "중형금붕어 4마리 + 전용먹이",
             "UP 전문가용 수초가위 [단형 D-616]",
@@ -9480,24 +9475,17 @@
             "JBL 프로 스케이프 N 매크로엘리먼츠 액체비료 250ml",
             "JBL 프로 스케이프 P 매크로엘리먼츠 액체비료 250ml",
             "UP 고압CO2용 유리확산기 D 522 3",
-            "Microzyme Clear 250ml 마이크로자임 클리어 250ml",
-            "비지떡 EM활성액 리필 500ml",
-            "냉동 클로렐라 500ml (물벼룩밥)",
-            "SUDO 바닥모래 - 맥반석자갈 5kg S-1082",
-            "모스트리 분재유목(S) [ M100 ] - 오른쪽용",
-            "비지떡 PSB 250ml",
-            "비지떡 John Nasse PSB+ 250ml",
+            "아쿠아버블 AB-15용 교체용 모듈(module)",
+            "엠버테트라 5마리",
+            "플래티넘 엔젤 1마리",
+            "JBL 프로 스케이프 Mg 매크로엘리먼츠 액체비료 250ml",
+            "JBL 프로 스케이프 볼케이노 파우더 250g",
+            "에하임 유막제거기 skim 350(5w)",
+            "[에이트 포인트] 프로페셔널 툴백 [TB-01]",
+            "[에이트 포인트] 모스카펫 MC-10 [모스활착판] 5cm x 10cm (5개입)",
+            "[에이트 포인트] 모스카펫 MC-05 [모스활착판] 5cm x 5cm (10개입)",
+            "UP(유피) 다기능 분재스톤 F-950-L",
             "JBL 프로플로라 스타트(ProFlora Start) 50~100L용 (수초비료세트)",
-            "SUDO 베타 글라스 샌드(오렌지 가넷) 150g [S-8751]",
-            "UPKOREA 스테인레스 입출수관 세트 16 22mm용",
-            "냉동 브라인쉬림프 유생 판형 50g 4개",
-            "비지떡 물갈이액 리필 500ml",
-            "비지떡 물갈이액 250ml",
-            "애플스네일 5 마리",
-            "체리새우 1마리",
-            "체리새우 10마리+시금치 구슬1개",
-            "노랭이새우 10마리+시금치 구슬 1개",
-            "노랭이새우 2마리",
             "사지타리아 스프라타(3뿌리)",
             "아누비아스 나나 1포트",
             "암브리아 1포트",
@@ -9514,45 +9502,64 @@
             "루드위지아레펜스 1포트",
             "로타라 1포트",
             "미리오필름 (5촉)",
-            "JBL 프로 스케이프 Mg 매크로엘리먼츠 액체비료 250ml",
-            "JBL 프로 스케이프 볼케이노 파우더 250g",
-            "에하임 유막제거기 skim 350(5w)",
-            "플래티넘 엔젤 1마리",
-            "엠버테트라 5마리",
-            "마구잡이 베타(암)",
-            "검정 툭눈 금붕어(구로데미) 5cm 1마리",
-            "토종 우렁이 5마리",
-            "단정 금붕어 5~7cm 1마리",
-            "비단잉어 15~20cm 1마리",
-            "코발트 구라미 2 마리",
-            "펄 구라미 2 마리",
-            "레드로얄 디스커스 7~8cm 1마리",
-            "비지떡 금붕어밥 90g",
-            "비지떡 금붕어밥 1kg 3500ml (대용량사료)",
-            "비단잉어 20~30cm 1마리(대)",
-            "하프문 베타 랜덤 1마리(숫놈)",
+            "노랭이새우 2마리",
+            "노랭이새우 10마리+시금치 구슬 1개",
+            "체리새우 1마리",
+            "체리새우 10마리+시금치 구슬1개",
+            "애플스네일 5 마리",
+            "구피 6 마리",
+            "캘리코 금붕어 5~7cm 1마리",
             "풀 블랙 구피 1쌍",
-            "루미노즈 테트라 10 마리",
+            "검정 툭눈 금붕어(구로데미) 5cm 1마리",
+            "비단잉어 20~30cm 1마리(대)",
+            "토종 우렁이 5마리",
+            "오란다 금붕어 5~7cm 1마리",
+            "비단잉어 15~20cm 1마리",
+            "레드로얄 디스커스 7~8cm 1마리",
+            "펄 구라미 2 마리",
+            "코발트 구라미 2 마리",
+            "단정 금붕어 5~7cm 1마리",
+            "네온 테트라 30마리",
+            "하프문 베타 랜덤 1마리(암놈)",
+            "하프문 베타 랜덤 1마리(숫놈)",
+            "블루마블구라미 3~5cm 2마리",
             "코리도라스 하스타투스 2마리",
-            "카디날 테트라 10 마리",
-            "관찰용 물벼룩 500~1000 마리",
+            "백설공주 4 마리",
+            "루미노즈 테트라 10 마리",
+            "입문용 유금 4cm~5cm 1마리",
+            "팬더 코리도라스 5 마리",
+            "다람쥐 2~3cm 4 마리",
+            "안시 L144 3~4cm 5 마리",
+            "미키마우스 플래티 5 마리",
+            "풍선몰리 4 마리",
+            "블랙네온 테트라 20 마리",
+            "블랙테트라 10 마리",
+            "삼각플래티 5 마리",
             "생이새우 10 마리",
             "생이새우 100마리 전용사료증정 생물포장비 없음",
+            "관찰용 물벼룩 500~1000 마리",
             "생이새우 100 마리 + 전용사료증정 생물포장비없음",
             "생이새우 100마리 + 전용사료증정 생물포장비없음",
             "생이새우 100마리+ 비지떡 새우잡이 90g",
-            "블랙네온 테트라 20 마리",
-            "오란다 금붕어 5~7cm 1마리",
-            "비지떡 새우잡이 500g",
-            "양어장 0호 1kg 3500ml 열대어 구피 네온 카라신 소형열대어 먹이 사료 성장촉진",
-            "캘리코 금붕어 5~7cm 1마리",
-            "팬더 코리도라스 5 마리",
-            "안시 L144 3~4cm 5 마리",
-            "미키마우스 플래티 5 마리",
-            "블랙테트라 10 마리",
-            "구피 6 마리",
-            "삼각플래티 5 마리",
             "비지떡 새우잡이 90g",
+            "비지떡 새우잡이 500g",
+            "마구잡이 베타(암)",
+            "Microzyme Clear 250ml 마이크로자임 클리어 250ml",
+            "비지떡 EM활성액 리필 500ml",
+            "냉동 클로렐라 500ml (물벼룩밥)",
+            "SUDO 바닥모래 - 맥반석자갈 5kg S-1082",
+            "모스트리 분재유목(S) [ M100 ] - 오른쪽용",
+            "비지떡 PSB 250ml",
+            "비지떡 John Nasse PSB+ 250ml",
+            "SUDO 베타 글라스 샌드(오렌지 가넷) 150g [S-8751]",
+            "UPKOREA 스테인레스 입출수관 세트 16 22mm용",
+            "냉동 브라인쉬림프 유생 판형 50g 4개",
+            "비지떡 물갈이액 리필 500ml",
+            "비지떡 물갈이액 250ml",
+            "비지떡 금붕어밥 90g",
+            "비지떡 금붕어밥 1kg 3500ml (대용량사료)",
+            "카디날 테트라 10 마리",
+            "양어장 0호 1kg 3500ml 열대어 구피 네온 카라신 소형열대어 먹이 사료 성장촉진",
             "UPKOREA 스테인레스 입출수관 세트 입수 16 22 출수 12 16mm",
             "정품 고압 CO2 알루미늄 봄베 세트 1리터 UP 유피 A 153 기본세트",
             "UP 전문가용 수초핀셋 [곡형 D-606]",
@@ -9564,12 +9571,12 @@
             "브론즈 코리도라스 4 마리",
             "오토싱 3 마리"
           ],
-          "unnamedCount": 408,
+          "unnamedCount": 398,
           "candidateCount": 515
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -9586,11 +9593,11 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "snapshotProductCount": 192,
-      "collectorProductCount": 108,
+      "snapshotProductCount": 210,
+      "collectorProductCount": 123,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 28,
+        "verifiedUrlCount": 73,
         "selectedUrlCount": 3,
         "productBudget": 3,
         "allVerifiedUrlsSelected": false,
@@ -9603,12 +9610,12 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39098466967"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-18T05:12:24.103Z",
-      "collectorLastSuccess": "2026-10-18T05:14:46.314Z",
+      "collectorLastAttempt": "2026-10-20T05:00:50.883Z",
+      "collectorLastSuccess": "2026-10-20T05:04:11.233Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -9624,8 +9631,8 @@
         "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 19,
-        "pageBudget": 4,
-        "productBudget": 60,
+        "pageBudget": 2,
+        "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
@@ -9633,38 +9640,117 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "discoveryScope": "gear",
-        "representativeSeedCount": 31,
-        "pagesVisited": 4,
-        "detailBudget": 8,
+        "discoveryScope": "live",
+        "representativeSeedCount": 22,
+        "pagesVisited": 2,
+        "detailBudget": 14,
         "newCandidates": 6,
-        "verifiedItems": 7,
-        "pendingCandidates": 34,
-        "pendingCandidatesInScope": 0,
+        "verifiedItems": 15,
+        "pendingCandidates": 26,
+        "pendingCandidatesInScope": 26,
         "pendingScopeLimit": 1000,
         "pendingByGroup": {
-          "fish": 34
+          "fish": 26
         },
         "reviewRequired": 0,
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 24,
-        "lastAttempt": "2026-10-18T05:12:56.382Z",
+        "nextCategoryIndex": 20,
+        "lastAttempt": "2026-10-20T05:01:22.532Z",
         "errors": [
-          "product_list_not_found:https://www.riaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/78/",
-          "product_list_not_found:https://www.riaqua.com/category/%EC%A1%B0%EB%AA%85/89/",
-          "page_budget_reached:https://www.riaqua.com/category/%EC%A1%B0%EB%AA%85/89/"
+          "product_list_not_found:https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/",
+          "page_budget_reached:https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/"
         ],
         "cursorCategories": [
           {
-            "entryUrl": "https://www.riaqua.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/70/",
+            "entryUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/",
+            "nextUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/?page=2",
+            "expectedProductCount": 181,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%83%88%EC%9A%B0/58/",
+            "nextUrl": null,
+            "expectedProductCount": 16,
+            "cycleSeenProductCount": 16,
+            "cyclesCompleted": 1,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%88%98%EC%B4%88/64/",
+            "nextUrl": null,
+            "expectedProductCount": 5,
+            "cycleSeenProductCount": 5,
+            "cyclesCompleted": 1,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EB%B2%A0%ED%83%80/60/",
+            "nextUrl": null,
+            "expectedProductCount": 2,
+            "cycleSeenProductCount": 2,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-09T01:22:44.679Z",
+              "reportedCount": 2,
+              "observedUniqueLinks": 2,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EB%B2%A0%ED%83%80/60/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4%ED%94%8C%EB%9E%98%EC%BD%94%EC%BA%A3%ED%94%BC%EC%89%AC%EB%A9%94%EA%B8%B0/55/",
+            "nextUrl": null,
+            "expectedProductCount": 19,
+            "cycleSeenProductCount": 19,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-09T01:22:53.987Z",
+              "reportedCount": 19,
+              "observedUniqueLinks": 19,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EC%BD%94%EB%A6%AC%EB%8F%84%EB%9D%BC%EC%8A%A4%ED%94%8C%EB%9E%98%EC%BD%94%EC%BA%A3%ED%94%BC%EC%89%AC%EB%A9%94%EA%B8%B0/55/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EB%AA%B0%EB%A6%AC/97/",
+            "nextUrl": "https://www.riaqua.com/category/%EB%AA%B0%EB%A6%AC/97/?page=2",
+            "expectedProductCount": 32,
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EB%AA%B0%EB%A6%AC/97/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/56/",
             "nextUrl": null,
             "expectedProductCount": 6,
             "cycleSeenProductCount": 6,
-            "cyclesCompleted": 3,
+            "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-18T05:13:06.011Z",
+              "finishedAt": "2026-10-10T09:13:59.969Z",
               "reportedCount": 6,
               "observedUniqueLinks": 6,
               "terminalPageReached": true,
@@ -9672,73 +9758,56 @@
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%97%AC%EA%B3%BC%EA%B8%B0/70/"
+              "https://www.riaqua.com/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4/56/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.riaqua.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8%EC%9A%A9%ED%92%88/65/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8%EC%9A%A9%ED%92%88/65/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%88%98%EC%B4%88%EA%B4%80%EB%A0%A8%EC%9A%A9%ED%92%88/65/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%88%98%EC%A1%B1%EA%B4%80%EC%9A%A9%ED%92%88/66/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%88%98%EC%A1%B1%EA%B4%80%EC%9A%A9%ED%92%88/66/?page=2",
-            "expectedProductCount": 51,
-            "cycleSeenProductCount": 20,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%88%98%EC%A1%B1%EA%B4%80%EC%9A%A9%ED%92%88/66/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%96%B4%ED%95%AD/67/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%96%B4%ED%95%AD/67/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%96%B4%ED%95%AD/67/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%82%AC%EB%A3%8C/68/",
+            "entryUrl": "https://www.riaqua.com/category/%EC%97%94%EC%A0%A4%EA%B5%AC%EB%9D%BC%EB%AF%B8/57/",
             "nextUrl": null,
-            "expectedProductCount": 20,
-            "cycleSeenProductCount": 20,
+            "expectedProductCount": 14,
+            "cycleSeenProductCount": 14,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-10T04:26:47.819Z",
-              "reportedCount": 20,
-              "observedUniqueLinks": 20,
+              "finishedAt": "2026-10-11T06:10:29.347Z",
+              "reportedCount": 14,
+              "observedUniqueLinks": 14,
               "terminalPageReached": true,
               "categoryLinkCountMatched": true,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%82%AC%EB%A3%8C/68/"
+              "https://www.riaqua.com/category/%EC%97%94%EC%A0%A4%EA%B5%AC%EB%9D%BC%EB%AF%B8/57/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.riaqua.com/category/%EC%86%8C%ED%98%95%EC%97%B4%EB%8C%80%EC%96%B4-%EC%82%AC%EB%A3%8C/71/",
+            "entryUrl": "https://www.riaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80/61/",
+            "nextUrl": null,
+            "expectedProductCount": 16,
+            "cycleSeenProductCount": 16,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-11T06:10:39.472Z",
+              "reportedCount": 16,
+              "observedUniqueLinks": 16,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80/61/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/101/",
             "nextUrl": null,
             "expectedProductCount": 10,
             "cycleSeenProductCount": 10,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-10T04:26:57.809Z",
+              "finishedAt": "2026-10-11T12:58:02.925Z",
               "reportedCount": 10,
               "observedUniqueLinks": 10,
               "terminalPageReached": true,
@@ -9746,18 +9815,130 @@
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%86%8C%ED%98%95%EC%97%B4%EB%8C%80%EC%96%B4-%EC%82%AC%EB%A3%8C/71/"
+              "https://www.riaqua.com/category/%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/101/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.riaqua.com/category/%EC%A4%91.%EB%8C%80%ED%98%95%EC%96%B4-%EC%82%AC%EB%A3%8C/74/",
+            "entryUrl": "https://www.riaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%B9%B4%EB%A6%AC%EC%8B%A0%EB%B0%94%EB%B8%8C/54/",
+            "nextUrl": null,
+            "expectedProductCount": 19,
+            "cycleSeenProductCount": 19,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-11T12:58:13.075Z",
+              "reportedCount": 19,
+              "observedUniqueLinks": 19,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%ED%85%8C%ED%8A%B8%EB%9D%BC%EC%B9%B4%EB%A6%AC%EC%8B%A0%EB%B0%94%EB%B8%8C/54/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0/98/",
+            "nextUrl": "https://www.riaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0/98/?page=2",
+            "expectedProductCount": 26,
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%ED%94%8C%EB%9E%98%ED%8B%B0/98/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4-%EB%8C%80%EB%9F%89%EA%B5%AC%EB%A7%A4-%ED%8A%B9%EA%B0%80/96/",
+            "nextUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4-%EB%8C%80%EB%9F%89%EA%B5%AC%EB%A7%A4-%ED%8A%B9%EA%B0%80/96/?page=2",
+            "expectedProductCount": 28,
+            "cycleSeenProductCount": 20,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4-%EB%8C%80%EB%9F%89%EA%B5%AC%EB%A7%A4-%ED%8A%B9%EA%B0%80/96/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/59/",
+            "nextUrl": null,
+            "expectedProductCount": 13,
+            "cycleSeenProductCount": 13,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-16T07:43:50.135Z",
+              "reportedCount": 13,
+              "observedUniqueLinks": 13,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/59/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EA%B3%A0%EA%B8%89%EA%B8%88%EB%B6%95%EC%96%B4/108/",
+            "nextUrl": null,
+            "expectedProductCount": 13,
+            "cycleSeenProductCount": 13,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-16T07:44:00.089Z",
+              "reportedCount": 13,
+              "observedUniqueLinks": 13,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EA%B3%A0%EA%B8%89%EA%B8%88%EB%B6%95%EC%96%B4/108/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4/109/",
+            "nextUrl": "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4/109/",
+            "expectedProductCount": 0,
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4/109/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EA%B5%AC%ED%94%BC/52/",
+            "nextUrl": null,
+            "expectedProductCount": 12,
+            "cycleSeenProductCount": 12,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-17T04:38:46.470Z",
+              "reportedCount": 12,
+              "observedUniqueLinks": 12,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.riaqua.com/category/%EA%B5%AC%ED%94%BC/52/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.riaqua.com/category/%EC%86%8C%EB%93%9C-%EC%99%B8/99/",
             "nextUrl": null,
             "expectedProductCount": 6,
             "cycleSeenProductCount": 6,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-10T04:27:07.787Z",
+              "finishedAt": "2026-10-20T05:01:32.982Z",
               "reportedCount": 6,
               "observedUniqueLinks": 6,
               "terminalPageReached": true,
@@ -9765,267 +9946,19 @@
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%A4%91.%EB%8C%80%ED%98%95%EC%96%B4-%EC%82%AC%EB%A3%8C/74/"
+              "https://www.riaqua.com/category/%EC%86%8C%EB%93%9C-%EC%99%B8/99/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.riaqua.com/category/%EC%B9%98%EC%96%B4-%EC%82%AC%EB%A3%8C/73/",
-            "nextUrl": null,
-            "expectedProductCount": 1,
-            "cycleSeenProductCount": 1,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T04:27:17.794Z",
-              "reportedCount": 1,
-              "observedUniqueLinks": 1,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%B9%98%EC%96%B4-%EC%82%AC%EB%A3%8C/73/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%ED%94%8C%EB%9E%98%EC%BD%94-%EC%82%AC%EB%A3%8C/72/",
-            "nextUrl": null,
-            "expectedProductCount": 1,
-            "cycleSeenProductCount": 1,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T06:25:44.161Z",
-              "reportedCount": 1,
-              "observedUniqueLinks": 1,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%ED%94%8C%EB%9E%98%EC%BD%94-%EC%82%AC%EB%A3%8C/72/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4-%EC%82%AC%EB%A3%8C/106/",
-            "nextUrl": null,
-            "expectedProductCount": 2,
-            "cycleSeenProductCount": 2,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T06:25:52.836Z",
-              "reportedCount": 2,
-              "observedUniqueLinks": 2,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4-%EC%82%AC%EB%A3%8C/106/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EB%83%89%EB%8F%99-%EC%82%AC%EB%A3%8C/76/",
-            "nextUrl": "https://www.riaqua.com/category/%EB%83%89%EB%8F%99-%EC%82%AC%EB%A3%8C/76/",
+            "entryUrl": "https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/",
+            "nextUrl": "https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/",
             "expectedProductCount": 0,
             "cycleSeenProductCount": 0,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EB%83%89%EB%8F%99-%EC%82%AC%EB%A3%8C/76/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%88%98%EC%A7%88%EA%B4%80%EB%A6%AC/69/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%88%98%EC%A7%88%EA%B4%80%EB%A6%AC/69/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%88%98%EC%A7%88%EA%B4%80%EB%A6%AC/69/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/78/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/78/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%8A%A4%ED%8E%80%EC%A7%80%EC%97%AC%EA%B3%BC%EA%B8%B0/78/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%B8%A1%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/79/",
-            "nextUrl": null,
-            "expectedProductCount": 3,
-            "cycleSeenProductCount": 3,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T09:14:49.715Z",
-              "reportedCount": 3,
-              "observedUniqueLinks": 3,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%B8%A1%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/79/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/80/",
-            "nextUrl": null,
-            "expectedProductCount": 3,
-            "cycleSeenProductCount": 3,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T09:14:59.719Z",
-              "reportedCount": 3,
-              "observedUniqueLinks": 3,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EA%B1%B8%EC%9D%B4%EC%8B%9D%EC%97%AC%EA%B3%BC%EA%B8%B0/80/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%99%B8%EB%B6%80%EC%97%AC%EA%B3%BC%EA%B8%B0/81/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%99%B8%EB%B6%80%EC%97%AC%EA%B3%BC%EA%B8%B0/81/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%99%B8%EB%B6%80%EC%97%AC%EA%B3%BC%EA%B8%B0/81/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%A0%80%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/82/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%A0%80%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/82/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%A0%80%EB%A9%B4%EC%97%AC%EA%B3%BC%EA%B8%B0/82/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EA%B8%B0%ED%83%80%EC%97%AC%EA%B3%BC%EC%9A%A9%ED%92%88/83/",
-            "nextUrl": "https://www.riaqua.com/category/%EA%B8%B0%ED%83%80%EC%97%AC%EA%B3%BC%EC%9A%A9%ED%92%88/83/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EA%B8%B0%ED%83%80%EC%97%AC%EA%B3%BC%EC%9A%A9%ED%92%88/83/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%82%B0%EC%86%8C%EB%B0%9C%EC%83%9D%EA%B8%B0%EC%88%98%EC%A4%91%EB%AA%A8%ED%84%B0/84/",
-            "nextUrl": null,
-            "expectedProductCount": 2,
-            "cycleSeenProductCount": 2,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-14T05:27:07.072Z",
-              "reportedCount": 2,
-              "observedUniqueLinks": 2,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%82%B0%EC%86%8C%EB%B0%9C%EC%83%9D%EA%B8%B0%EC%88%98%EC%A4%91%EB%AA%A8%ED%84%B0/84/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%82%B0%EC%86%8C%EB%B0%9C%EC%83%9D%EA%B8%B0/85/",
-            "nextUrl": null,
-            "expectedProductCount": 2,
-            "cycleSeenProductCount": 2,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-14T05:27:16.757Z",
-              "reportedCount": 2,
-              "observedUniqueLinks": 2,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%82%B0%EC%86%8C%EB%B0%9C%EC%83%9D%EA%B8%B0/85/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%88%98%EC%A4%91%EB%AA%A8%ED%84%B0/86/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%88%98%EC%A4%91%EB%AA%A8%ED%84%B0/86/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%88%98%EC%A4%91%EB%AA%A8%ED%84%B0/86/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%97%90%EC%96%B4%EC%9A%A9%ED%92%88(%EC%BD%A9%EB%8F%8C,%EC%97%B0%EA%B2%B0%EA%B4%80-%EB%93%B1)/87/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%97%90%EC%96%B4%EC%9A%A9%ED%92%88(%EC%BD%A9%EB%8F%8C,%EC%97%B0%EA%B2%B0%EA%B4%80-%EB%93%B1)/87/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%97%90%EC%96%B4%EC%9A%A9%ED%92%88(%EC%BD%A9%EB%8F%8C,%EC%97%B0%EA%B2%B0%EA%B4%80-%EB%93%B1)/87/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%ED%9E%88%ED%84%B0/88/",
-            "nextUrl": null,
-            "expectedProductCount": 6,
-            "cycleSeenProductCount": 6,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-18T05:13:26.196Z",
-              "reportedCount": 6,
-              "observedUniqueLinks": 6,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%ED%9E%88%ED%84%B0/88/"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.riaqua.com/category/%EC%A1%B0%EB%AA%85/89/",
-            "nextUrl": "https://www.riaqua.com/category/%EC%A1%B0%EB%AA%85/89/",
-            "expectedProductCount": 0,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.riaqua.com/category/%EC%A1%B0%EB%AA%85/89/"
+              "https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/"
             ],
             "headProbePending": false
           }
@@ -10036,8 +9969,8 @@
           "allowedCategoryCount": 22,
           "excludedCategoryCount": 1,
           "reviewCategoryCount": 2,
-          "pagesVisited": 14,
-          "pendingCategoryCount": 10,
+          "pagesVisited": 16,
+          "pendingCategoryCount": 9,
           "pendingPageUrls": [
             {
               "categoryUrl": "https://www.riaqua.com/category/%EC%97%B4%EB%8C%80%EC%96%B4/51/",
@@ -10064,10 +9997,6 @@
               "nextPageUrl": "https://www.riaqua.com/category/%EA%B8%88%EB%B6%95%EC%96%B4/109/"
             },
             {
-              "categoryUrl": "https://www.riaqua.com/category/%EC%86%8C%EB%93%9C-%EC%99%B8/99/",
-              "nextPageUrl": "https://www.riaqua.com/category/%EC%86%8C%EB%93%9C-%EC%99%B8/99/"
-            },
-            {
               "categoryUrl": "https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/",
               "nextPageUrl": "https://www.riaqua.com/category/%EC%9E%89%EC%96%B4/110/"
             },
@@ -10080,9 +10009,9 @@
               "nextPageUrl": "https://www.riaqua.com/category/%EC%88%98%EC%B4%88/63/"
             }
           ],
-          "terminalCategoryCount": 10,
-          "verifiedProductCount": 101,
-          "pendingProductCount": 38,
+          "terminalCategoryCount": 11,
+          "verifiedProductCount": 123,
+          "pendingProductCount": 26,
           "reviewProductCount": 0,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -10090,12 +10019,44 @@
         },
         "productNames": {
           "names": [
-            "네온테트라 50마리",
-            "블루턱시도 플래티 1마리",
-            "비트(0.4) 100ml",
+            "필그린 히터 PH-150",
+            "필그린 히터 미니 PHM-60",
+            "필그린 히터 PH-200",
+            "필그린 히터 PH-60",
+            "필그린 히터 PH-300",
+            "필그린 히터 PH-100",
+            "흑사 2-3mm / 3.2kg 내외",
+            "필그린 걸이식여과기(중) AT-600F",
+            "필그린 걸이식여과기(소) AT-301F",
+            "필그린 측면여과기(중) BT-F7",
+            "필그린 측면여과기(소) AT-005F",
+            "필그린 걸이식여과기(대) DT-10F",
+            "필그린 측면여과기(대) BT-F10",
             "스트립푸드 90ml",
+            "흑자갈 3-5mm / 3.2kg내외 1포",
+            "새우사료 30g",
+            "블루벨벳 새우 10마리",
+            "블루벨벳 새우 1마리",
+            "옐로우 새우 10마리",
+            "베를린 소드테일 10마리 (암수랜덤)",
+            "베를린 소드테일 1마리 (암수랜덤)",
+            "카디널 테트라 1마리",
+            "삼각 플래티 10마리",
+            "비트(0.4) 100ml",
             "시클리드 카라신 소형어 사료 100ml",
             "플레이크 사료 100ml",
+            "하이핀 페퍼드 코리도라스 20마리",
+            "A급 밀크 진주린 (7cm내외,1마리)",
+            "옐로우 구피옐 5쌍 (암5+수5) 10마리",
+            "칼라테트라 10마리 색상랜덤",
+            "삼각 플래티 1마리",
+            "롱핀 팬더 코리도라스 20마리",
+            "A급 밀크 접미 (7cm내외,1마리)",
+            "옐로우 구피 수컷",
+            "칼라테트라 1마리 색상랜덤",
+            "알록달록 풍선몰리 20마리 (암수랜덤)",
+            "네온테트라 50마리",
+            "블루턱시도 플래티 1마리",
             "카디널 테트라 10마리",
             "하프블랙 구피",
             "A급 홍백 진주린 (7cm내외,1마리)",
@@ -10126,24 +10087,9 @@
             "모래(왕사) 3-5mm / 5kg내외 1포",
             "오색사 3-5mm / 3.2kg 1포",
             "오색사 3-5mm / 16kg내외 1마대",
-            "필그린 걸이식여과기(중) AT-600F",
-            "필그린 걸이식여과기(소) AT-301F",
-            "필그린 측면여과기(중) BT-F7",
-            "필그린 측면여과기(소) AT-005F",
-            "필그린 걸이식여과기(대) DT-10F",
-            "필그린 측면여과기(대) BT-F10",
             "A급 노랭이 새우 12마리",
             "A급 블루벨벳 새우 5마리",
             "A급 블루벨벳 새우 12마리",
-            "새우사료 30g",
-            "흑자갈 3-5mm / 3.2kg내외 1포",
-            "필그린 히터 PH-300",
-            "필그린 히터 PH-200",
-            "필그린 히터 PH-150",
-            "필그린 히터 PH-100",
-            "필그린 히터 PH-60",
-            "필그린 히터 미니 PHM-60",
-            "흑사 2-3mm / 3.2kg 내외",
             "팔라딘 기포기 1구 P-100",
             "베타 고급 사료 50ml",
             "백자갈 3-5mm / 3.2kg내외 1포",
@@ -10255,12 +10201,12 @@
             "비트(0.4) 250ml",
             "탈각알테미아 30g"
           ],
-          "unnamedCount": 34,
-          "candidateCount": 198
+          "unnamedCount": 26,
+          "candidateCount": 207
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -10281,10 +10227,10 @@
       "collectorProductCount": 83,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 0,
-        "selectedUrlCount": 0,
+        "verifiedUrlCount": 42,
+        "selectedUrlCount": 3,
         "productBudget": 3,
-        "allVerifiedUrlsSelected": true,
+        "allVerifiedUrlsSelected": false,
         "fullRetailerCatalogCoverage": false,
         "requestAllocation": {
           "total": 20,
@@ -10294,13 +10240,13 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39098466967"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
-      "collectorStatus": "no_confirmed_products",
-      "collectorLastAttempt": "2026-10-18T05:14:48.975Z",
+      "collectorStatus": "partial_failure",
+      "collectorLastAttempt": "2026-10-20T05:04:14.401Z",
       "collectorLastSuccess": "2026-10-16T07:46:05.043Z",
-      "collectorLastError": null,
+      "collectorLastError": "identity_not_corroborated:https://한국구피.com/product/블루그라스구피-1마리/212/?item_code=P00000IE000A",
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
         "Scheduled run, data commit and Render deployment not yet verified."
@@ -10315,8 +10261,8 @@
         "status": "budget_limited",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 8,
-        "pageBudget": 4,
-        "productBudget": 60,
+        "pageBudget": 2,
+        "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
@@ -10324,10 +10270,10 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "discoveryScope": "gear",
-        "representativeSeedCount": 25,
-        "pagesVisited": 4,
-        "detailBudget": 8,
+        "discoveryScope": "live",
+        "representativeSeedCount": 12,
+        "pagesVisited": 2,
+        "detailBudget": 14,
         "newCandidates": 0,
         "verifiedItems": 0,
         "pendingCandidates": 0,
@@ -10338,212 +10284,153 @@
         "reviewReasons": {},
         "reviewQueue": [],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 12,
-        "lastAttempt": "2026-10-18T05:14:50.766Z",
+        "nextCategoryIndex": 7,
+        "lastAttempt": "2026-10-20T05:04:46.539Z",
         "errors": [
-          "product_list_not_found:https://xn--2e0bb8861auda.com/product/list.html?cate_no=55",
-          "pagination_terminal_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=55",
-          "expected_total_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=55",
-          "product_list_not_found:https://xn--2e0bb8861auda.com/product/list.html?cate_no=56",
-          "pagination_terminal_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=56",
-          "expected_total_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=56",
-          "product_list_not_found:https://xn--2e0bb8861auda.com/product/list.html?cate_no=71",
-          "pagination_terminal_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=71",
-          "expected_total_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=71",
-          "product_list_not_found:https://xn--2e0bb8861auda.com/product/list.html?cate_no=73",
-          "pagination_terminal_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=73",
-          "expected_total_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=73",
-          "page_budget_reached:https://xn--2e0bb8861auda.com/product/list.html?cate_no=73"
+          "expected_total_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=27",
+          "expected_total_unverified:https://xn--2e0bb8861auda.com/product/list.html?cate_no=64"
         ],
         "cursorCategories": [
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=44",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=44",
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=29",
+            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=29&page=2",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 48,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=29"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/",
+            "nextUrl": "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/?page=2",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 48,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%84%B1%EC%96%B4/24/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=65",
+            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=65",
             "expectedProductCount": null,
             "cycleSeenProductCount": 0,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=44"
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=65"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=42",
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=78",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 1,
+            "cycleSeenProductCount": 2,
             "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:19:39.667Z",
+              "finishedAt": "2026-10-17T04:41:51.553Z",
               "reportedCount": null,
-              "observedUniqueLinks": 1,
+              "observedUniqueLinks": 2,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=42"
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=78"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=43",
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=27",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 1,
-            "cyclesCompleted": 3,
+            "cycleSeenProductCount": 3,
+            "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:19:49.273Z",
+              "finishedAt": "2026-10-20T05:04:56.404Z",
               "reportedCount": null,
-              "observedUniqueLinks": 1,
+              "observedUniqueLinks": 3,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=43"
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=27"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=23",
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=64",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 5,
-            "cyclesCompleted": 3,
+            "cycleSeenProductCount": 12,
+            "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:19:59.595Z",
+              "finishedAt": "2026-10-20T05:05:06.137Z",
               "reportedCount": null,
-              "observedUniqueLinks": 5,
+              "observedUniqueLinks": 12,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=23"
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=64"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=47",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=47",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=47"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=51",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=51",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=51"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=55",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=55",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=55"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=56",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=56",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=56"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=67",
+            "entryUrl": "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%85%8B%ED%8A%B8%ED%95%A0%EC%9D%B8/66/",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 1,
+            "cycleSeenProductCount": 14,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-14T05:29:02.594Z",
+              "finishedAt": "2026-10-11T09:20:49.565Z",
               "reportedCount": null,
-              "observedUniqueLinks": 1,
+              "observedUniqueLinks": 14,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=67"
+              "https://xn--2e0bb8861auda.com/category/%EA%B3%A0%EC%A0%95%EA%B5%AC%ED%94%BC%EC%85%8B%ED%8A%B8%ED%95%A0%EC%9D%B8/66/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=68",
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=25",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 1,
+            "cycleSeenProductCount": 6,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-14T05:29:12.799Z",
+              "finishedAt": "2026-10-11T09:20:59.340Z",
               "reportedCount": null,
-              "observedUniqueLinks": 1,
+              "observedUniqueLinks": 6,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=68"
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=25"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=69",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=69",
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=72",
+            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=72",
             "expectedProductCount": null,
             "cycleSeenProductCount": 0,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=69"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=70",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=70",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=70"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=71",
-            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=71",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=71"
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=72"
             ],
             "headProbePending": false
           },
@@ -10556,6 +10443,37 @@
             "lastCycle": null,
             "visitedPageUrls": [
               "https://xn--2e0bb8861auda.com/product/list.html?cate_no=73"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=75",
+            "nextUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=75",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=75"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://xn--2e0bb8861auda.com/product/list.html?cate_no=63",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 9,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-17T04:42:01.409Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 9,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://xn--2e0bb8861auda.com/product/list.html?cate_no=63"
             ],
             "headProbePending": false
           }
@@ -10604,6 +10522,22 @@
         },
         "productNames": {
           "names": [
+            "라스보라 헤테로몰파 10마리",
+            "네온테트라 10마리",
+            "카디널테트라 10마리",
+            "램프아이(10마리)",
+            "선셋구피 5쌍",
+            "네온블루턱시도구피 5쌍",
+            "옐로우턱시도구피 5쌍",
+            "모자이크구피 5쌍",
+            "레드턱시도구피 5쌍",
+            "스워드테일 10마리",
+            "골든몰리 10마리",
+            "골드더스트몰리 10마리",
+            "삼각플래티 10마리",
+            "미키마우스 플래티 10마리",
+            "하프블랙구피 1쌍",
+            "턱시도코이구피 리본 1마리 리본암컷",
             "화이트코리도라스 5마리",
             "펫퍼드코리도라스 5마리",
             "베네수엘라블랙코리도라스 5마리",
@@ -10616,7 +10550,6 @@
             "레드허니구라미 5마리",
             "네온드워프구라미 5마리",
             "알비노네온블루턱시도 셋트(숫2 암3)",
-            "턱시도코이구피 리본 1마리 리본암컷",
             "알비노풀레드메가도살구피 1마리 암컷",
             "알비노실버라도레드테일메가도살구피 1마리 암컷",
             "HB파스텔구피 1마리 암컷",
@@ -10654,29 +10587,14 @@
             "알비노풀플레티넘화이트빅도살 셋트(숫2 암3)",
             "아쿠아마린핑크테일구피(핑크키티) 셋트(숫2 암3)",
             "알비노풀레드메가도살구피 셋트(숫2 암3)",
-            "라스보라 헤테로몰파 10마리",
-            "램프아이(10마리)",
             "저먼볼라미레지 5마리",
-            "선셋구피 5쌍",
-            "네온블루턱시도구피 5쌍",
-            "네온테트라 10마리",
-            "카디널테트라 10마리",
             "144안시숏핀 3~4cm급 3마리",
             "블랙안시숏핀 3~4cm급 3마리",
             "가오리비파 4마리",
             "블루볼라미레지 5마리",
-            "옐로우턱시도구피 5쌍",
-            "모자이크구피 5쌍",
-            "레드턱시도구피 5쌍",
-            "스워드테일 10마리",
-            "골든몰리 10마리",
-            "골드더스트몰리 10마리",
             "로얄 팔로웰라 5cm급",
             "로얄 팔로웰라 5cm급 2마리",
-            "로얄 팔로웰라 7cm급",
-            "삼각플래티 10마리",
-            "미키마우스 플래티 10마리",
-            "하프블랙구피 1쌍"
+            "로얄 팔로웰라 7cm급"
           ],
           "unnamedCount": 24,
           "candidateCount": 97
@@ -10704,7 +10622,7 @@
       "collectorProductCount": 81,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 23,
+        "verifiedUrlCount": 50,
         "selectedUrlCount": 3,
         "productBudget": 3,
         "allVerifiedUrlsSelected": false,
@@ -10717,13 +10635,13 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39098466967"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
       "collectorStatus": "partial_failure",
-      "collectorLastAttempt": "2026-10-18T05:15:33.605Z",
-      "collectorLastSuccess": "2026-10-18T05:18:05.437Z",
-      "collectorLastError": "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1580&cate_no=24&display_group=1",
+      "collectorLastAttempt": "2026-10-20T05:05:09.338Z",
+      "collectorLastSuccess": "2026-10-20T05:05:41.679Z",
+      "collectorLastError": "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1577&cate_no=24&display_group=1",
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
         "Scheduled run, data commit and Render deployment not yet verified."
@@ -10738,8 +10656,8 @@
         "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 13,
-        "pageBudget": 4,
-        "productBudget": 60,
+        "pageBudget": 2,
+        "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
@@ -10747,17 +10665,17 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "discoveryScope": "gear",
-        "representativeSeedCount": 45,
-        "pagesVisited": 4,
-        "detailBudget": 8,
-        "newCandidates": 12,
-        "verifiedItems": 7,
-        "pendingCandidates": 65,
-        "pendingCandidatesInScope": 65,
+        "discoveryScope": "live",
+        "representativeSeedCount": 16,
+        "pagesVisited": 2,
+        "detailBudget": 14,
+        "newCandidates": 0,
+        "verifiedItems": 0,
+        "pendingCandidates": 55,
+        "pendingCandidatesInScope": 4,
         "pendingScopeLimit": 1000,
         "pendingByGroup": {
-          "mixed": 65
+          "mixed": 55
         },
         "reviewRequired": 19,
         "reviewReasons": {
@@ -10827,7 +10745,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-11T13:04:39.841Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1564",
@@ -10861,7 +10779,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-11T13:04:39.841Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1552",
@@ -10895,7 +10813,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1551",
@@ -10929,7 +10847,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1550",
@@ -10963,7 +10881,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1549",
@@ -10997,7 +10915,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1547",
@@ -11031,7 +10949,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1546",
@@ -11065,7 +10983,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1545",
@@ -11099,7 +11017,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1544",
@@ -11133,7 +11051,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-14T05:16:35.769Z"
+            "reviewedAt": "2026-10-20T05:08:21.167Z"
           },
           {
             "key": "liveaqua.kr:1434",
@@ -11433,166 +11351,87 @@
           }
         ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 15,
-        "lastAttempt": "2026-10-18T05:16:05.971Z",
+        "nextCategoryIndex": 6,
+        "lastAttempt": "2026-10-20T05:05:41.848Z",
         "errors": [
-          "expected_total_unverified:https://www.liveaqua.kr/product/list.html?cate_no=56",
-          "expected_total_unverified:https://www.liveaqua.kr/product/list.html?cate_no=57",
-          "expected_total_unverified:https://www.liveaqua.kr/category/%EB%B6%80%ED%99%94%ED%86%B5/89/",
-          "product_list_not_found:https://www.liveaqua.kr/product/list.html?cate_no=90",
-          "pagination_terminal_unverified:https://www.liveaqua.kr/product/list.html?cate_no=90",
-          "expected_total_unverified:https://www.liveaqua.kr/product/list.html?cate_no=90",
-          "page_budget_reached:https://www.liveaqua.kr/product/list.html?cate_no=90",
-          "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1580&cate_no=24&display_group=1"
+          "expected_total_unverified:https://www.liveaqua.kr/product/list.html?cate_no=107",
+          "expected_total_unverified:https://www.liveaqua.kr/product/list.html?cate_no=30",
+          "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1580&cate_no=24&display_group=1",
+          "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1579&cate_no=24&display_group=1",
+          "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1578&cate_no=24&display_group=1",
+          "detail_parse_failed:https://www.liveaqua.kr/product/detail.html?product_no=1577&cate_no=24&display_group=1"
         ],
         "cursorCategories": [
           {
             "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24",
-            "nextUrl": null,
+            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=24&page=2",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 94,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T06:30:21.075Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 94,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
+            "cycleSeenProductCount": 48,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=24",
-              "https://www.liveaqua.kr/product/list.html?cate_no=24&page=2"
+              "https://www.liveaqua.kr/product/list.html?cate_no=24"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=28",
+            "entryUrl": "https://www.liveaqua.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/97/",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 24,
+            "cycleSeenProductCount": 2,
             "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:23:32.831Z",
+              "finishedAt": "2026-10-17T04:42:56.774Z",
               "reportedCount": null,
-              "observedUniqueLinks": 24,
+              "observedUniqueLinks": 2,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=28"
+              "https://www.liveaqua.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%EA%B3%BC/97/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=25",
-            "nextUrl": null,
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=102",
+            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=102",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 16,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-11T09:23:42.763Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 16,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=25"
+              "https://www.liveaqua.kr/product/list.html?cate_no=102"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=26",
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=42",
             "nextUrl": null,
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 20,
-            "cyclesCompleted": 2,
-            "lastCycle": {
-              "finishedAt": "2026-10-11T09:23:52.982Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 20,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=26"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=27",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=27",
             "expectedProductCount": null,
             "cycleSeenProductCount": 14,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-10T04:30:10.995Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 19,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=27"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=66",
-            "nextUrl": null,
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 10,
             "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-14T05:29:47.789Z",
+              "finishedAt": "2026-10-17T07:13:07.476Z",
               "reportedCount": null,
-              "observedUniqueLinks": 10,
+              "observedUniqueLinks": 14,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=66"
+              "https://www.liveaqua.kr/product/list.html?cate_no=42"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=73",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=73",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=73"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=78",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=78",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=78"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=88",
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=107",
             "nextUrl": null,
             "expectedProductCount": null,
             "cycleSeenProductCount": 1,
             "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-14T05:30:16.984Z",
+              "finishedAt": "2026-10-20T05:05:51.308Z",
               "reportedCount": null,
               "observedUniqueLinks": 1,
               "terminalPageReached": true,
@@ -11600,7 +11439,114 @@
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=88"
+              "https://www.liveaqua.kr/product/list.html?cate_no=107"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=30",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 24,
+            "cyclesCompleted": 2,
+            "lastCycle": {
+              "finishedAt": "2026-10-20T05:06:00.888Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 24,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=30"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=98",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 5,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-09T10:30:33.407Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 5,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=98"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=99",
+            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=99",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 0,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=99"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=105",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-11T09:22:22.707Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 1,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=105"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=29",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 12,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-11T13:02:10.004Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 12,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=29"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=100",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 7,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-11T13:02:20.025Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 7,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=100"
             ],
             "headProbePending": false
           },
@@ -11617,107 +11563,52 @@
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=56",
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=49",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 8,
-            "cyclesCompleted": 3,
-            "lastCycle": {
-              "finishedAt": "2026-10-18T05:16:15.806Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 8,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=56"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=57",
-            "nextUrl": null,
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 9,
-            "cyclesCompleted": 3,
-            "lastCycle": {
-              "finishedAt": "2026-10-18T05:16:25.746Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 9,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=57"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=79",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=79",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=79"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=80",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=80",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=80"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=81",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=81",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 0,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=81"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.liveaqua.kr/category/%EB%B6%80%ED%99%94%ED%86%B5/89/",
-            "nextUrl": null,
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 1,
+            "cycleSeenProductCount": 5,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-18T05:16:36.001Z",
+              "finishedAt": "2026-10-14T05:14:15.491Z",
               "reportedCount": null,
-              "observedUniqueLinks": 1,
+              "observedUniqueLinks": 5,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/category/%EB%B6%80%ED%99%94%ED%86%B5/89/"
+              "https://www.liveaqua.kr/product/list.html?cate_no=49"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=90",
-            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=90",
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=51",
+            "nextUrl": "https://www.liveaqua.kr/product/list.html?cate_no=51",
             "expectedProductCount": null,
             "cycleSeenProductCount": 0,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.liveaqua.kr/product/list.html?cate_no=90"
+              "https://www.liveaqua.kr/product/list.html?cate_no=51"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.liveaqua.kr/product/list.html?cate_no=104",
+            "nextUrl": null,
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 5,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-16T07:48:59.672Z",
+              "reportedCount": null,
+              "observedUniqueLinks": 5,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": false,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.liveaqua.kr/product/list.html?cate_no=104"
             ],
             "headProbePending": false
           }
@@ -11757,8 +11648,8 @@
             }
           ],
           "terminalCategoryCount": 10,
-          "verifiedProductCount": 74,
-          "pendingProductCount": 72,
+          "verifiedProductCount": 81,
+          "pendingProductCount": 55,
           "reviewProductCount": 19,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -11766,6 +11657,7 @@
         },
         "productNames": {
           "names": [
+            "알비노풀레드빅도살 리본 1쌍",
             "파랑새리본(블루아아보리숏)",
             "HB로즈리본",
             "와일드코이글라스밸리숏리본 1쌍",
@@ -11776,7 +11668,6 @@
             "덤보레드테일숏바디 1쌍",
             "HB블루글라스밸리숏리본 1쌍",
             "HB레드로즈하프문테일 1쌍",
-            "알비노풀레드빅도살 리본 1쌍",
             "골든볼라미레지",
             "알비노풀레드하프문테일빅도살 1쌍",
             "알비노블루토파즈드레스리본 1쌍",
@@ -11785,18 +11676,23 @@
             "블루메탈레오파드 1쌍",
             "옐로우메탈레오파드 1쌍",
             "알비노풀레드숏바디빅도살리본 1쌍",
-            "핑퐁스타(120g)",
-            "아마존 스펀지 쌍여과기(中) SF2822",
-            "네오 큐브 H-260",
-            "아마존 스펀지 단여과기 SF2821",
-            "아마존 스펀지 쌍여과기(小) SF2831",
-            "아마존 (미니)스폰지여과기 SF2820",
-            "라이브 여과기",
-            "아마존 스펀지 여과기(大) SF2823",
-            "테트라 트윈브릴란트 미니쌍기 스펀지여과기",
-            "테트라 트윈브릴란트 쌍기 스펀지여과기",
-            "테트라 트윈브릴란트 슈퍼 쌍기 스펀지여과기",
+            "핑퐁스타(230g)",
             "리컴 측면여과기 (PF-282)",
+            "네오 큐브 H-300",
+            "테트라 트윈브릴란트 슈퍼 쌍기 스펀지여과기",
+            "테트라 트윈브릴란트 쌍기 스펀지여과기",
+            "테트라 트윈브릴란트 미니쌍기 스펀지여과기",
+            "아마존 스펀지 여과기(大) SF2823",
+            "동동부화통 2세대 옐로우",
+            "라이브 여과기",
+            "아마존 (미니)스폰지여과기 SF2820",
+            "아마존 스펀지 쌍여과기(小) SF2831",
+            "아마존 스펀지 단여과기 SF2821",
+            "아마존 스펀지 쌍여과기(中) SF2822",
+            "에어호스(4-6mm) 4m",
+            "테트라 암모니아 테스트 (NH3/NH4)",
+            "핑퐁스타(120g)",
+            "네오 큐브 H-260",
             "HB코코아레드로즈구피 1쌍",
             "턱시도코이숏바디리본구피 1쌍",
             "골든바디토파즈리본구피 SS급 1쌍",
@@ -11817,6 +11713,37 @@
             "펫퍼드코리 2마리",
             "화이트코리 2마리",
             "브론즈코리 2마리",
+            "나비비파 1마리",
+            "블랙발룬몰리(2마리)",
+            "비파 1마리",
+            "마블보석눈몰리 1쌍",
+            "미키마우스 플래티(5마리)",
+            "왁 플래티(5마리)",
+            "왁 플래티(1마리)",
+            "선셋 플래티(1마리)",
+            "화이트발룬몰리(2마리)",
+            "골든발룬몰리(2마리)",
+            "가위플래티 1마리",
+            "가위플래티 5마리",
+            "삼각플래티 5마리",
+            "삼각플래티 1마리",
+            "골드더스트몰리 1마리",
+            "골든몰리 1마리",
+            "스워드테일 1마리",
+            "레드턱시도플래티 (5마리)",
+            "레드턱시도플래티 (1마리)",
+            "베어리터스 (5마리)",
+            "베어리터스 (1마리)",
+            "블루턱시도플래티 (5마리)",
+            "블루턱시도플래티 (1마리)",
+            "화이트미키마우스플래티 (5마리)",
+            "화이트미키마우스플래티 (1마리)",
+            "팬더플래티 (2마리)",
+            "골드글라스밸리숏리본(몽바리본) 1쌍",
+            "선셋구피(1쌍)",
+            "옐로우턱시도구피(1쌍)",
+            "네온블루구피(1쌍)",
+            "레드턱시도구피(1쌍)",
             "블론드블루글라스벨리숏바디리본구피 1쌍",
             "알비노토파즈글라스벨리드레스리본숏바디구피 1쌍",
             "덤보플래티넘레드테일숏바디구피 1쌍",
@@ -11827,34 +11754,10 @@
             "알비노풀레드샤크핀리본구피 1쌍",
             "네온테트라 10마리",
             "카디날테트라 10마리",
-            "마블보석눈몰리 1쌍",
-            "골드글라스밸리숏리본(몽바리본) 1쌍",
-            "미키마우스 플래티(5마리)",
-            "왁 플래티(5마리)",
-            "왁 플래티(1마리)",
-            "선셋구피(1쌍)",
-            "옐로우턱시도구피(1쌍)",
-            "네온블루구피(1쌍)",
-            "레드턱시도구피(1쌍)",
-            "선셋 플래티(1마리)",
-            "화이트발룬몰리(2마리)",
-            "블랙발룬몰리(2마리)",
-            "골든발룬몰리(2마리)",
             "인디언복어(미니복어)",
             "블루다이아구피 (1쌍)",
-            "가위플래티 1마리",
-            "가위플래티 5마리",
-            "삼각플래티 5마리",
-            "삼각플래티 1마리",
-            "골드더스트몰리 1마리",
-            "골든몰리 1마리",
             "레드턱시도구피 1쌍",
             "로얄팔로웰라 7cm급",
-            "테트라 암모니아 테스트 (NH3/NH4)",
-            "에어호스(4-6mm) 4m",
-            "동동부화통 2세대 옐로우",
-            "네오 큐브 H-300",
-            "핑퐁스타(230g)",
             "블랙안시숏핀 3~4cm급",
             "알비노풀레드블러드빅도살구피(홍용) 1쌍",
             "네오 큐브 H-220",
@@ -11871,17 +11774,8 @@
             "테트라 코이스틱(1L)",
             "고토부키 하이 블랙큐브 수조 F-150HB",
             "리컴걸이식 여과기(HI-530)",
-            "팬더플래티 (2마리)",
-            "화이트미키마우스플래티 (1마리)",
-            "화이트미키마우스플래티 (5마리)",
-            "블루턱시도플래티 (1마리)",
-            "블루턱시도플래티 (5마리)",
-            "베어리터스 (1마리)",
-            "베어리터스 (5마리)",
-            "레드턱시도플래티 (1마리)",
             "알비노풀레드빅도살 1쌍",
             "모자이크구피 1쌍",
-            "레드턱시도플래티 (5마리)",
             "리컴걸이식 여과기(HI-630)",
             "고토부키 블랙큐브 수조 F-25CB",
             "테트라 PH 테스트",
@@ -11890,10 +11784,7 @@
             "고토부키 수조 큐브 250",
             "고토부키 수조 큐브 300",
             "리컴걸이식 여과기(HI-330)",
-            "리컴걸이식 여과기(HI-430)",
-            "스워드테일 1마리",
-            "나비비파 1마리",
-            "비파 1마리"
+            "리컴걸이식 여과기(HI-430)"
           ],
           "unnamedCount": 56,
           "candidateCount": 184
@@ -11917,11 +11808,11 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "snapshotProductCount": 150,
-      "collectorProductCount": 121,
+      "snapshotProductCount": 167,
+      "collectorProductCount": 135,
       "refreshScope": {
         "reviewHeldProductCount": 2,
-        "verifiedUrlCount": 6,
+        "verifiedUrlCount": 86,
         "selectedUrlCount": 3,
         "productBudget": 3,
         "allVerifiedUrlsSelected": false,
@@ -11934,13 +11825,13 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39098466967"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
       "collectorStatus": "partial_failure",
-      "collectorLastAttempt": "2026-10-18T05:18:08.078Z",
-      "collectorLastSuccess": "2026-10-18T05:18:38.125Z",
-      "collectorLastError": "detail_parse_failed:https://www.aquavillage.co.kr/product/%EC%95%BC%EB%A7%88%ED%86%A0-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/716/category/61/display/1/",
+      "collectorLastAttempt": "2026-10-20T05:08:24.580Z",
+      "collectorLastSuccess": "2026-10-20T05:08:59.808Z",
+      "collectorLastError": "detail_parse_failed:https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC/433/category/80/display/1/",
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
         "Scheduled run, data commit and Render deployment not yet verified."
@@ -11955,8 +11846,8 @@
         "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 17,
-        "pageBudget": 4,
-        "productBudget": 60,
+        "pageBudget": 2,
+        "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
@@ -11964,23 +11855,23 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "discoveryScope": "gear",
-        "representativeSeedCount": 3,
-        "pagesVisited": 3,
-        "detailBudget": 8,
-        "newCandidates": 45,
-        "verifiedItems": 5,
-        "pendingCandidates": 332,
-        "pendingCandidatesInScope": 183,
+        "discoveryScope": "live",
+        "representativeSeedCount": 26,
+        "pagesVisited": 2,
+        "detailBudget": 14,
+        "newCandidates": 30,
+        "verifiedItems": 14,
+        "pendingCandidates": 342,
+        "pendingCandidatesInScope": 275,
         "pendingScopeLimit": 1000,
         "pendingByGroup": {
-          "fish": 143,
-          "mixed": 183,
-          "aquatic_plant": 6
+          "fish": 164,
+          "mixed": 174,
+          "aquatic_plant": 4
         },
-        "reviewRequired": 6,
+        "reviewRequired": 7,
         "reviewReasons": {
-          "Mixed or unresolved product category requires review": 4,
+          "Mixed or unresolved product category requires review": 5,
           "Feed/artificial plant/supply conflict blocks livestock classification": 2
         },
         "reviewQueue": [
@@ -12145,79 +12036,271 @@
             },
             "classificationVersion": 9,
             "reviewedAt": "2026-10-18T05:18:38.127Z"
+          },
+          {
+            "key": "aquavillage.co.kr:785",
+            "url": "https://www.aquavillage.co.kr/product/%EC%A0%9C%EB%B8%8C%EB%9D%BC%EB%B0%94%EB%B0%94%EC%9A%B8%ED%8B%B0-%EC%89%AC%EB%A6%BC%ED%94%84/785/category/61/display/1/",
+            "title": "제브라바바울티 쉬림프",
+            "collectorKey": "retailer-16:cafe24_aquavillage_1_785:default",
+            "candidate": {
+              "url": "https://www.aquavillage.co.kr/product/%EC%A0%9C%EB%B8%8C%EB%9D%BC%EB%B0%94%EB%B0%94%EC%9A%B8%ED%8B%B0-%EC%89%AC%EB%A6%BC%ED%94%84/785/category/61/display/1/",
+              "type": null,
+              "subtype": null,
+              "mixedCategories": true,
+              "classificationBasis": "Parent researcher observed public retailer navigation; representative category, product-level checks required",
+              "discoveryScope": "gear",
+              "discoveredCategoryLabels": [
+                "새우/가재/달팽이"
+              ],
+              "discoveredInCategory": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
+              "discoveredAt": "2026-10-10T04:32:01.003Z",
+              "requiresProductClassification": true
+            },
+            "status": "needs_review",
+            "reason": "Mixed or unresolved product category requires review",
+            "evidence": {
+              "title": "제브라바바울티 쉬림프",
+              "identityTitle": "제브라바바울티 쉬림프",
+              "description": "이끼 , 잔반 청소부",
+              "options": "",
+              "salesSpecification": false,
+              "aquaticDescription": false,
+              "ownContext": true,
+              "subtypes": [],
+              "conflicts": false,
+              "sufficient": false,
+              "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+            },
+            "classificationVersion": 9,
+            "reviewedAt": "2026-10-20T05:09:03.809Z"
           }
         ],
         "excludedCandidates": 7,
-        "nextCategoryIndex": 0,
-        "lastAttempt": "2026-10-18T05:18:16.650Z",
+        "nextCategoryIndex": 19,
+        "lastAttempt": "2026-10-20T05:08:32.009Z",
         "errors": [
-          "detail_parse_failed:https://www.aquavillage.co.kr/product/%EC%95%BC%EB%A7%88%ED%86%A0-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/716/category/61/display/1/"
+          "product_budget_reached:https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/",
+          "page_budget_reached:https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/",
+          "detail_parse_failed:https://www.aquavillage.co.kr/product/%EC%95%BC%EB%A7%88%ED%86%A0-%EC%83%88%EC%9A%B0-10%EB%A7%88%EB%A6%AC/716/category/61/display/1/",
+          "detail_parse_failed:https://www.aquavillage.co.kr/product/%EB%B8%94%EB%A3%A8-%EB%AF%B8%ED%82%A4%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%94%8C%EB%9E%98%ED%8B%B0-3%EB%A7%88%EB%A6%AC/433/category/80/display/1/"
         ],
         "cursorCategories": [
           {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/?page=2",
+            "expectedProductCount": 234,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
             "entryUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/",
             "nextUrl": "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/?page=2",
-            "expectedProductCount": 36,
+            "expectedProductCount": 35,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/?page=2",
+            "expectedProductCount": 49,
             "cycleSeenProductCount": 25,
-            "cyclesCompleted": 3,
-            "lastCycle": {
-              "finishedAt": "2026-10-17T07:16:17.179Z",
-              "reportedCount": 36,
-              "observedUniqueLinks": 36,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
+            "cyclesCompleted": 0,
+            "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.aquavillage.co.kr/category/%EA%B0%91%EA%B0%81%EB%A5%98%EB%8B%AC%ED%8C%BD%EC%9D%B4/61/"
+              "https://www.aquavillage.co.kr/category/%EC%88%98%EC%B4%88/87/"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://www.aquavillage.co.kr/category/%EC%9A%A9%ED%92%88/85/",
-            "nextUrl": "https://www.aquavillage.co.kr/category/%EC%9A%A9%ED%92%88/85/?page=2",
-            "expectedProductCount": 72,
-            "cycleSeenProductCount": 25,
-            "cyclesCompleted": 2,
-            "lastCycle": {
-              "finishedAt": "2026-10-17T07:16:19.191Z",
-              "reportedCount": 72,
-              "observedUniqueLinks": 71,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/",
+            "expectedProductCount": 53,
+            "cycleSeenProductCount": 15,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.aquavillage.co.kr/category/%EC%9A%A9%ED%92%88/85/"
+              "https://www.aquavillage.co.kr/category/%EB%B2%A0%ED%83%80%EA%B5%AC%EB%9D%BC%EB%AF%B8/49/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/?page=2",
+            "expectedProductCount": 31,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%AA%B0%EB%A6%AC/79/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/",
+            "expectedProductCount": 78,
+            "cycleSeenProductCount": 21,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%A7%80%EC%8B%9C%ED%81%B4%EB%A6%AC%EB%93%9C/51/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%97%94%EC%A0%A4/55/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%97%94%EC%A0%A4/55/?page=2",
+            "expectedProductCount": 51,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%94%94%EC%8A%A4%EC%BB%A4%EC%8A%A4%EC%97%94%EC%A0%A4/55/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/50/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/50/",
+            "expectedProductCount": 124,
+            "cycleSeenProductCount": 8,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EC%B9%B4%EB%9D%BC%EC%8B%A0%ED%85%8C%ED%8A%B8%EB%9D%BC%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0/50/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/80/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/80/?page=2",
+            "expectedProductCount": 35,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%ED%94%8C%EB%9E%98%ED%8B%B0/80/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EC%95%84%EB%A1%9C%EC%99%80%EB%82%98%EA%B0%80%EC%98%A4%EB%A6%AC/45/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EC%95%84%EB%A1%9C%EC%99%80%EB%82%98%EA%B0%80%EC%98%A4%EB%A6%AC/45/",
+            "expectedProductCount": 10,
+            "cycleSeenProductCount": 5,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EC%95%84%EB%A1%9C%EC%99%80%EB%82%98%EA%B0%80%EC%98%A4%EB%A6%AC/45/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%B3%B5%EC%96%B4%EA%B8%B0%ED%83%80/53/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%B3%B5%EC%96%B4%EA%B8%B0%ED%83%80/53/?page=2",
+            "expectedProductCount": 40,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%B3%B5%EC%96%B4%EA%B8%B0%ED%83%80/53/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%A1%9C%EC%B9%98%EB%B0%94%EB%B8%8C/56/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%A1%9C%EC%B9%98%EB%B0%94%EB%B8%8C/56/",
+            "expectedProductCount": 62,
+            "cycleSeenProductCount": 7,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%A1%9C%EC%B9%98%EB%B0%94%EB%B8%8C/56/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/57/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/57/?page=2",
+            "expectedProductCount": 65,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EA%B8%88%EB%B6%95%EC%96%B4%EC%9E%89%EC%96%B4/57/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/58/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/58/",
+            "expectedProductCount": 7,
+            "cycleSeenProductCount": 6,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%A9%94%EB%8B%A4%EC%B9%B4/58/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC/78/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC/78/?page=2",
+            "expectedProductCount": 153,
+            "cycleSeenProductCount": 25,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC/78/"
             ],
             "headProbePending": false
           },
           {
             "entryUrl": "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/",
-            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=7",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=2",
             "expectedProductCount": 1088,
-            "cycleSeenProductCount": 141,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/",
-              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=2",
-              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=3",
-              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=4",
-              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=5",
-              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=6"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%ED%98%95%EC%96%B4%EC%A4%91%ED%98%95%EC%96%B4/47/",
-            "nextUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%ED%98%95%EC%96%B4%EC%A4%91%ED%98%95%EC%96%B4/47/?page=2",
-            "expectedProductCount": 820,
             "cycleSeenProductCount": 25,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://www.aquavillage.co.kr/category/%EC%86%8C%ED%98%95%EC%96%B4%EC%A4%91%ED%98%95%EC%96%B4/47/"
+              "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/81/",
+            "nextUrl": null,
+            "expectedProductCount": 16,
+            "cycleSeenProductCount": 16,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-20T05:08:33.774Z",
+              "reportedCount": 16,
+              "observedUniqueLinks": 16,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/81/"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/",
+            "nextUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/",
+            "expectedProductCount": 176,
+            "cycleSeenProductCount": 22,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/"
             ],
             "headProbePending": false
           }
@@ -12228,8 +12311,8 @@
           "allowedCategoryCount": 27,
           "excludedCategoryCount": 0,
           "reviewCategoryCount": 1,
-          "pagesVisited": 14,
-          "pendingCategoryCount": 27,
+          "pagesVisited": 16,
+          "pendingCategoryCount": 26,
           "pendingPageUrls": [
             {
               "categoryUrl": "https://www.aquavillage.co.kr/category/%EA%B5%AC%ED%94%BC%EB%AA%B0%EB%A6%AC%ED%94%8C%EB%9E%98%ED%8B%B0%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/48/",
@@ -12300,10 +12383,6 @@
               "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%A7%A4%EC%9E%A5%EC%83%9D%EB%AC%BC/23/?page=2"
             },
             {
-              "categoryUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/81/",
-              "nextPageUrl": "https://www.aquavillage.co.kr/category/%EC%86%8C%EB%93%9C%ED%85%8C%EC%9D%BC/81/"
-            },
-            {
               "categoryUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/",
               "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%96%B4%EA%B3%A0%EB%8C%80%EC%96%B4/24/"
             },
@@ -12340,10 +12419,10 @@
               "nextPageUrl": "https://www.aquavillage.co.kr/category/%EB%8C%80%ED%98%95%EC%BA%A3%ED%94%BC%EC%89%AC/44/"
             }
           ],
-          "terminalCategoryCount": 0,
-          "verifiedProductCount": 116,
-          "pendingProductCount": 322,
-          "reviewProductCount": 5,
+          "terminalCategoryCount": 1,
+          "verifiedProductCount": 135,
+          "pendingProductCount": 342,
+          "reviewProductCount": 7,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
           "fullRetailerCoverage": false
@@ -12353,83 +12432,103 @@
             "그린 릴리 새우 10마리",
             "블랙 스윗 쉬림프 (1~1.5cm)",
             "CBS모스라급 (1~1.5cm)",
-            "필그린 소형어사료 45g",
             "우드쉬림프 4~7cm내외",
             "랜덤부세 활착 클램프 활착 [ 5벌브 내외]",
+            "필그린 소형어사료 45g",
             "램프아이 테트라 5마리",
-            "크립토코리네 발란사에 [ 1뿌리 / 5뿌리 ] 5뿌리",
-            "블루콩 가재 10cm 전후",
-            "달마시안 몰리 라이어테일 3마리 1마리",
-            "[오픈특가] 블랙 우파루파 4~5cm",
-            "필그린 우파루파 사료 60g",
-            "소드테일 믹스 5마리",
-            "필그린 소형어사료 110g",
-            "미니크리스마스 모스 활착판 10x5cm",
-            "[발색좋은] 체리새우 10마리",
-            "[고객감사세일] 생이새우 믹스 10마리 (선별불가)",
-            "[고정구피] 알비노 풀레드 구피 암컷",
-            "하프문베타 수컷",
-            "그린네온테트라 10마리 1마리",
-            "[ 고객감사세일 ] [고급] 구피 믹스 10마리 (선별불가)",
-            "애플스네일",
-            "일반 풍선몰리 믹스 5마리 (선별불가)",
-            "[고정구피] 실버라도 HB 옐로우 구피 암컷",
-            "[고급구피] 레드코이 리본구피 숏바디 구피 1쌍",
-            "[소형구피] 옐로우 엔들러스 구피 10마리 2cm내외",
-            "[소형구피] 블루스타 엔들러스 구피 10마리 2cm내외",
-            "블루 가재 4xm내외",
-            "미니오렌지 가재",
-            "[고정구피] 알비노 블루 토파즈 구피 암컷",
-            "화이트 하프문베타 암컷",
-            "[신제품] 필그린 슈퍼비트 컬러부스트 M 50g/120ml",
-            "블랙릴리 새우 10마리",
-            "레드릴리 새우 10마리",
-            "블루림 플라캇 베타 수컷",
-            "블랙 사무라이 플라캇 베타 수컷",
-            "아스트로 냉동 장구벌레 (냉짱) 1곽 [1판 100g(32pcs)",
-            "[포트수초] 워터바코바",
-            "골드 미키마우스 플래티 3마리",
-            "[구피, 플래티, 몰리] 부화통 [10cm x 6cm x 15cm]",
-            "옐로우 릴리 새우 10마리",
-            "알비노 화이트 우파루파 3cm 전후",
-            "타이거 제브라 가재 10cm 전후",
-            "화이트핑크 우파루파 3cm 전후",
-            "레드코퍼 플라캇 베타 수컷",
-            "블루마블도트 플라캇 베타 수컷",
-            "[고급구피] 옐로우 코브라 글라스벨리 구피 1쌍",
-            "[고정구피] 레드글라스 구피 암컷",
-            "오렌지 메다카 [1.5cm전후]",
-            "브릴리언트 라스보라 4cm내외",
-            "루드위지아 토네이토 3촉",
-            "필그린 구피사료 50g",
-            "필그린 금붕어 사료 50g (부상성사료)",
-            "필그린 베타사료 35g",
-            "필그린 싱킹와퍼(코리,안시, 오토싱) 사료 40g",
+            "제브라바바울티 쉬림프",
+            "[신제품] 필그린 슈퍼비트 컬러부스트 L 120g/300ml",
             "오렌지 체락스 가재 10cm 전후",
+            "[구피, 플래티, 몰리] 부화통 [10cm x 6cm x 15cm]",
+            "필그린 소형어사료 110g",
+            "일반 풍선몰리 믹스 5마리 (선별불가)",
+            "[ 고객감사세일 ] [고급] 구피 믹스 10마리 (선별불가)",
+            "[신제품] 필그린 슈퍼비트 컬러부스트 M 130g/300ml",
+            "[고객감사세일] 생이새우 믹스 10마리 (선별불가)",
+            "일반 화이트 풍선몰리 5마리",
+            "일반 오렌지 풍선몰리 5마리",
+            "피노키오 새우",
+            "수마트라 믹스 5마리 (선별불가)",
+            "카붐바 슈퍼레드 3촉",
+            "[포트수초] 붉은잎 수초",
+            "아스트로 냉동 장구벌레 (냉짱) 1곽 [1판 100g(32pcs)",
+            "[신제품] 필그린 슈퍼비트 컬러부스트 M 50g/120ml",
+            "필그린 아로와나 , 대형어사료 120g",
+            "필그린 싱킹와퍼(코리,안시, 오토싱) 사료 40g",
+            "필그린 우파루파 사료 60g",
+            "필그린 구피사료 50g",
+            "필그린 구피사료 120g",
             "오리지널 야마토 새우 10마리",
             "CRS 새우 (1~1.5cm)",
             "[고객감사세일] 스노우볼 새우 10마리 (선별불가)",
+            "[발색좋은] 체리새우 10마리",
             "[고객감사세일] 블러드메리 새우 10마리",
             "[고객감사세일] 블루벨벳 새우 10마리",
             "[고객감사세일] 골든백 새우 10마리",
+            "레드릴리 새우 10마리",
+            "애플스네일",
+            "미니오렌지 가재",
             "미솔리쿠스 가재 8cm 전후",
             "오렌지 팁 가재 10cm 전후",
             "[고객감사세일] [레드,블루,옐로우,블랙] 릴리새우 랜덤 10마리",
             "오렌지 썬키스트 새우 10마리",
             "초콜렛 새우 10마리",
-            "피노키오 새우",
-            "[신제품] 필그린 슈퍼비트 컬러부스트 L 120g/300ml",
-            "[신제품] 필그린 슈퍼비트 컬러부스트 M 130g/300ml",
-            "필그린 아로와나 , 대형어사료 120g",
-            "필그린 구피사료 120g",
-            "일반 화이트 풍선몰리 5마리",
-            "일반 오렌지 풍선몰리 5마리",
-            "수마트라 믹스 5마리 (선별불가)",
-            "카붐바 슈퍼레드 3촉",
-            "[포트수초] 붉은잎 수초",
+            "필그린 금붕어 사료 50g (부상성사료)",
+            "필그린 베타사료 35g",
+            "달마시안 몰리 라이어테일 3마리 1마리",
+            "소드테일 믹스 5마리",
+            "[고정구피] 알비노 풀레드 구피 암컷",
+            "하프문베타 수컷",
+            "그린네온테트라 10마리 1마리",
+            "[빅어어] 화이트 하프문 베타 수컷",
+            "알비노 산타 소드테일 4cm 이내",
+            "화이트 하프문베타 암컷",
+            "트리칼라 소드테일 4cm 이내",
+            "레드 알비노 소드테일 4cm 이내",
+            "업사이드 캣피쉬 2cm 전후",
+            "[아시안아로와나] 과배금용 20cm 내외 [퀵, 고택, 매장방문 전용] 고속버스택배",
+            "숏바디 그린텍사스 5cm내외",
+            "[검은눈] 모스크 풀레드 구피 암컷",
+            "골든몰리 3마리 1마리",
+            "골든볼 라미네지 3~4cm",
+            "골든 라미네지 5cm전후",
+            "루드위지아 다이아몬드 3촉",
+            "[소형구피] 블루스타 엔들러스 구피 2cm내외 암컷",
+            "인디언복어 0.5cm내외",
+            "오렌지 멜론 디스커스 [6cm 내외]",
+            "블루릴리 새우 10마리",
+            "[음성수초] 미크로소리움 트라이던트 2벌브",
+            "펄 제브라다니오",
+            "플래티넘 메다카 [1.5cm전후]",
+            "오렌지 메다카 [1.5cm전후]",
             "블루코랄 칼리코 플래티 3마리 1마리",
             "골든너겟몰리 3마리 3마리",
             "블랙몰리 라이어테일 3마리 1마리",
+            "타이거 제브라 가재 10cm 전후",
+            "블루 가재 4xm내외",
+            "블루콩 가재 10cm 전후",
+            "크립토코리네 발란사에 [ 1뿌리 / 5뿌리 ] 5뿌리",
+            "[오픈특가] 블랙 우파루파 4~5cm",
+            "미니크리스마스 모스 활착판 10x5cm",
+            "[고정구피] 실버라도 HB 옐로우 구피 암컷",
+            "[고급구피] 레드코이 리본구피 숏바디 구피 1쌍",
+            "[소형구피] 옐로우 엔들러스 구피 10마리 2cm내외",
+            "[소형구피] 블루스타 엔들러스 구피 10마리 2cm내외",
+            "[고정구피] 알비노 블루 토파즈 구피 암컷",
+            "블랙릴리 새우 10마리",
+            "블루림 플라캇 베타 수컷",
+            "블랙 사무라이 플라캇 베타 수컷",
+            "[포트수초] 워터바코바",
+            "골드 미키마우스 플래티 3마리",
+            "옐로우 릴리 새우 10마리",
+            "알비노 화이트 우파루파 3cm 전후",
+            "화이트핑크 우파루파 3cm 전후",
+            "레드코퍼 플라캇 베타 수컷",
+            "블루마블도트 플라캇 베타 수컷",
+            "[고급구피] 옐로우 코브라 글라스벨리 구피 1쌍",
+            "[고정구피] 레드글라스 구피 암컷",
+            "브릴리언트 라스보라 4cm내외",
+            "루드위지아 토네이토 3촉",
             "판다 엔젤 3cm내외",
             "진주린 4cm 내외",
             "골든볼 라미네지 성어급 5cm 전후",
@@ -12447,7 +12546,6 @@
             "알비노 체리바브 롱핀",
             "마리모 [지름 1.5cm 전후]",
             "[포트수초] 하이그로필라 라지",
-            "[아시안아로와나] 과배금용 20cm 내외 [퀵, 고택, 매장방문 전용] 고속버스택배",
             "[음성수초] 볼비티스 헤우델로티 2벌브",
             "부세 미니활착석 랜덤 [ 1개 / 5개 ] 5개",
             "에리오카울론 sp. 베트남 1촉",
@@ -12455,7 +12553,6 @@
             "삼색엔젤 5~6cm 내외",
             "미크로소리움 웬델룹 1단위 [5벌브 전후]",
             "[시클리드]플라워혼 랜덤 성어사이즈 8cm내외",
-            "레드 알비노 소드테일 4cm 이내",
             "Lss 레오파드 스네이크 스킨 디스커스 [10cm내외]",
             "[입문용] 블루글라스 구피 암컷",
             "사쿠라 풍선몰리 1쌍",
@@ -12468,10 +12565,8 @@
             "슈퍼 숏바디 오스카 5cm",
             "레몬 오스카 5cm 내외",
             "저먼 라미네지 5cm전후",
-            "골든 라미네지 5cm전후",
             "일렉트릭 블루 라미네지 5cm 전후",
             "골든헤드 라미네지 5cm 전후",
-            "숏바디 그린텍사스 5cm내외",
             "트로페우스 드보이시 5cm 내외",
             "일반 골든 풍선몰리 5마리",
             "[ 라이어테일 몰리 ] 믹스 5마리 (선별불가)",
@@ -12479,8 +12574,8 @@
             "레드 코브라 구피 암컷",
             "코이턱시도 구피 5마리"
           ],
-          "unnamedCount": 343,
-          "candidateCount": 471
+          "unnamedCount": 354,
+          "candidateCount": 498
         }
       },
       "fullCatalogCoverage": false,
@@ -12501,11 +12596,11 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "snapshotProductCount": 181,
-      "collectorProductCount": 113,
+      "snapshotProductCount": 198,
+      "collectorProductCount": 127,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 25,
+        "verifiedUrlCount": 77,
         "selectedUrlCount": 3,
         "productBudget": 3,
         "allVerifiedUrlsSelected": false,
@@ -12518,12 +12613,12 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39202129100"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
       "collectorStatus": "success",
-      "collectorLastAttempt": "2026-10-19T05:09:46.453Z",
-      "collectorLastSuccess": "2026-10-19T05:12:08.650Z",
+      "collectorLastAttempt": "2026-10-20T05:09:06.801Z",
+      "collectorLastSuccess": "2026-10-20T05:12:18.367Z",
       "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
@@ -12540,8 +12635,8 @@
         "status": "partial_discovery",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 19,
-        "pageBudget": 4,
-        "productBudget": 60,
+        "pageBudget": 2,
+        "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
@@ -12549,19 +12644,19 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "discoveryScope": "gear",
-        "representativeSeedCount": 14,
-        "pagesVisited": 3,
-        "detailBudget": 8,
-        "newCandidates": 60,
-        "verifiedItems": 8,
-        "pendingCandidates": 654,
-        "pendingCandidatesInScope": 547,
+        "discoveryScope": "live",
+        "representativeSeedCount": 43,
+        "pagesVisited": 1,
+        "detailBudget": 15,
+        "newCandidates": 30,
+        "verifiedItems": 14,
+        "pendingCandidates": 692,
+        "pendingCandidatesInScope": 387,
         "pendingScopeLimit": 1000,
         "pendingByGroup": {
-          "aquatic_plant": 29,
-          "mixed": 547,
-          "fish": 78
+          "aquatic_plant": 26,
+          "mixed": 569,
+          "fish": 97
         },
         "reviewRequired": 6,
         "reviewReasons": {
@@ -12659,7 +12754,8 @@
               ],
               "discoveredInCategory": "https://magicaqua.kr/product/list1_1.html?cate_no=299",
               "discoveredAt": "2026-10-11T13:06:05.249Z",
-              "requiresProductClassification": true
+              "requiresProductClassification": true,
+              "requiresFreshVerification": true
             },
             "status": "needs_review",
             "reason": "Feed/artificial plant/supply conflict blocks livestock classification",
@@ -12679,7 +12775,7 @@
               "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
             },
             "classificationVersion": 9,
-            "reviewedAt": "2026-10-11T13:08:34.295Z"
+            "reviewedAt": "2026-10-20T05:12:18.371Z"
           },
           {
             "key": "magicaqua.kr:3994",
@@ -12803,218 +12899,133 @@
           }
         ],
         "excludedCandidates": 0,
-        "nextCategoryIndex": 12,
-        "lastAttempt": "2026-10-19T05:10:19.358Z",
+        "nextCategoryIndex": 10,
+        "lastAttempt": "2026-10-20T05:09:38.856Z",
         "errors": [
-          "expected_total_unverified:https://magicaqua.kr/product/list.html?cate_no=412",
-          "expected_total_unverified:https://magicaqua.kr/product/list11_1.html?cate_no=404",
-          "expected_total_unverified:https://magicaqua.kr/product/list.html?cate_no=411",
-          "product_budget_reached:https://magicaqua.kr/product/list.html?cate_no=411"
+          "expected_total_unverified:https://magicaqua.kr/product/list1_1.html?cate_no=295",
+          "product_budget_reached:https://magicaqua.kr/product/list1_1.html?cate_no=295"
         ],
         "cursorCategories": [
           {
-            "entryUrl": "https://magicaqua.kr/product/list11_1.html?cate_no=404",
-            "nextUrl": "https://magicaqua.kr/product/list11_1.html?cate_no=404&page=3",
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=276",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=276",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 121,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://magicaqua.kr/product/list2_1.html?cate_no=473",
+            "nextUrl": "https://magicaqua.kr/product/list2_1.html?cate_no=473",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 30,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://magicaqua.kr/product/list3_1.html?cate_no=302",
+            "nextUrl": "https://magicaqua.kr/product/list3_1.html?cate_no=302",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 31,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list11_1.html?cate_no=404",
-              "https://magicaqua.kr/product/list11_1.html?cate_no=404&page=2"
+              "https://magicaqua.kr/product/list3_1.html?cate_no=302"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=477",
-            "nextUrl": null,
+            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=306",
+            "nextUrl": "https://magicaqua.kr/product/list.html?cate_no=306",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 43,
-            "cyclesCompleted": 2,
-            "lastCycle": {
-              "finishedAt": "2026-10-11T09:27:26.636Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 43,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
+            "cycleSeenProductCount": 38,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=477"
+              "https://magicaqua.kr/product/list.html?cate_no=306"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=481",
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=299",
             "nextUrl": null,
             "expectedProductCount": null,
-            "cycleSeenProductCount": 22,
+            "cycleSeenProductCount": 16,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:27:36.604Z",
+              "finishedAt": "2026-10-11T13:06:05.251Z",
               "reportedCount": null,
-              "observedUniqueLinks": 22,
+              "observedUniqueLinks": 16,
               "terminalPageReached": true,
               "categoryLinkCountMatched": false,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=481"
+              "https://magicaqua.kr/product/list1_1.html?cate_no=299"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=483",
-            "nextUrl": null,
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=297",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=297",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 15,
-            "cyclesCompleted": 2,
-            "lastCycle": {
-              "finishedAt": "2026-10-11T09:27:46.671Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 15,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=483"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=405",
-            "nextUrl": "https://magicaqua.kr/product/list.html?cate_no=405",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 18,
+            "cycleSeenProductCount": 33,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=405"
+              "https://magicaqua.kr/product/list1_1.html?cate_no=297"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=406",
-            "nextUrl": "https://magicaqua.kr/product/list.html?cate_no=406&page=2",
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=279",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=279",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 60,
+            "cycleSeenProductCount": 47,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=406"
+              "https://magicaqua.kr/product/list1_1.html?cate_no=279"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=407",
-            "nextUrl": null,
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 41,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-17T07:17:24.818Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 41,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=407"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=408",
-            "nextUrl": "https://magicaqua.kr/product/list.html?cate_no=408",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 21,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
-            "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=408"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=484",
-            "nextUrl": null,
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 15,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-18T05:19:22.918Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 15,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=484"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=409",
-            "nextUrl": null,
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=293",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=293",
             "expectedProductCount": null,
             "cycleSeenProductCount": 40,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-18T05:19:33.725Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 40,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=409"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=410",
-            "nextUrl": "https://magicaqua.kr/product/list.html?cate_no=410",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 9,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=410"
+              "https://magicaqua.kr/product/list1_1.html?cate_no=293"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=412",
-            "nextUrl": null,
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=294",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=294",
             "expectedProductCount": null,
-            "cycleSeenProductCount": 37,
-            "cyclesCompleted": 1,
-            "lastCycle": {
-              "finishedAt": "2026-10-19T05:10:28.736Z",
-              "reportedCount": null,
-              "observedUniqueLinks": 37,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": false,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=412"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://magicaqua.kr/product/list.html?cate_no=411",
-            "nextUrl": "https://magicaqua.kr/product/list.html?cate_no=411",
-            "expectedProductCount": null,
-            "cycleSeenProductCount": 20,
+            "cycleSeenProductCount": 38,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://magicaqua.kr/product/list.html?cate_no=411"
+              "https://magicaqua.kr/product/list1_1.html?cate_no=294"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=295",
+            "nextUrl": "https://magicaqua.kr/product/list1_1.html?cate_no=295",
+            "expectedProductCount": null,
+            "cycleSeenProductCount": 31,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://magicaqua.kr/product/list1_1.html?cate_no=295"
             ],
             "headProbePending": false
           }
@@ -13025,7 +13036,7 @@
           "allowedCategoryCount": 43,
           "excludedCategoryCount": 2,
           "reviewCategoryCount": 0,
-          "pagesVisited": 7,
+          "pagesVisited": 8,
           "pendingCategoryCount": 42,
           "pendingPageUrls": [
             {
@@ -13198,8 +13209,8 @@
             }
           ],
           "terminalCategoryCount": 1,
-          "verifiedProductCount": 104,
-          "pendingProductCount": 550,
+          "verifiedProductCount": 127,
+          "pendingProductCount": 692,
           "reviewProductCount": 6,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -13207,22 +13218,57 @@
         },
         "productNames": {
           "names": [
-            "하프문베타 레드계열 - 베타침대 증정",
-            "YB 하이그로필라 씨앗수초 S",
-            "YB 하이그로필라 씨앗수초 M",
             "Salifert pH 테스트 키트",
             "하프문베타 블루계열 - 베타침대 증정",
+            "하프문베타 레드계열 - 베타침대 증정",
             "아쿠아이엘 미니 유브이 램프",
-            "KW 캐니스터 UV 외부여과기 (OWL-1408) (UV램프 내장)",
+            "YB 하이그로필라 씨앗수초 S",
+            "YB 하이그로필라 씨앗수초 M",
+            "리컴 상면여과기 CF-600 (2자용)",
+            "협신 5w 측면여과기 (NS F260)",
+            "SOBO 소보 슬림형 걸이식 여과기-508H",
+            "시루바 미니외부여과기 XB-303",
+            "퍼펙트 아크릴 박스저면 여과기 (SS)",
+            "리컴 상면여과기 CF-800 (3자용)(매장판매)",
+            "수이사쿠 터틀 필터 플러스 S (거북이 전용 여과기)",
+            "아쿠아이엘 베르사맥스 미니 (30cm 수조용)",
+            "프리미엄 네오 미디어 하드 M ( 30리터 벌크 ) 알칼리 여과재",
+            "프리미엄 네오 미디어 퓨어 L ( 5리터 ) 중성 여과재",
+            "프리미엄 네오 미디어 퓨어 L ( 30리터 벌크 ) 중성 여과재",
+            "네오 미디어 QUAD 퓨어 M (1리터) 중성 여과재-비닐포장",
+            "네오 미디어 QUAD 퓨어 M (5리터) 중성 여과재",
+            "네오 미디어 QUAD 퓨어 M (30리터) 중성 여과재",
+            "네오 미디어 QUAD 소프트 M (30리터) 약산성 여과재",
+            "네오 미디어 QUAD 소프트 M (5리터) 약산성 여과재",
+            "네오 미디어 QUAD 소프트 M (1리터) 약산성 여과재-비닐포장",
             "아마존 앉은뱅이 스펀지여과기 세트 (SF-2835)",
             "아마존 앉은뱅이 스펀지여과기 세트 (SF-2836)",
             "아마존 앉은뱅이 스펀지여과기 세트 (SF-2837)",
-            "퍼펙트 아크릴 박스저면 여과기 (SS)",
-            "리컴 상면여과기 CF-800 (3자용)(매장판매)",
-            "리컴 상면여과기 CF-600 (2자용)",
+            "필그린 측면여과기 NZ-1 (3.5w)",
+            "ALGONE 질산염제거제 (대)",
+            "리글라스 외부여과기 TJ-850D",
+            "KW 캐니스터 UV 외부여과기 (OWL-1408) (UV램프 내장)",
             "리선 미니 스키머",
             "이스타 우드스톤 (2개입)",
             "RS-4003 에어리프트 스키머",
+            "블루 트레져 해수염 1kg 소분",
+            "핀토화이트나나 무균 포트 6-8벌브",
+            "AF 리얼 리프락 (1kg)",
+            "블랙 칼부스 (6cm 전후)",
+            "트로페우스 이콜라 (2~3cm 전후)",
+            "프론토사 브룬디 (2~3cm 전후)",
+            "코리도라스 펑크타투스 (3cm 전후)",
+            "알비노 솔리드 레드 디스커스",
+            "[반값할인] 로탈라 홍콩 (3촉)",
+            "마름 1촉",
+            "무리아이 (5cm전후)",
+            "골든볼 라미네지",
+            "로탈라 sp. 홍콩 (1포트)",
+            "정품 마리모 (0.5cm 전후)",
+            "코리도라스 메타에 (2cm 전후)",
+            "타이거 오스카 (8cm 전후)",
+            "로벨리아 카디날리스 (1포트)",
+            "해캄 (소주컵 1컵)",
             "발리스넬리아 나탄스 1촉",
             "밀로모 시클리드 (8cm 전후)",
             "하스타투스 20마리",
@@ -13240,27 +13286,10 @@
             "루드위지아 레펜스 (4촉)",
             "아마존 미니 걸이식 외부 여과기 AMZ-605B",
             "KW 캐니스터 UV 외부여과기 (OWL-808) (UV램프 내장)",
-            "필그린 측면여과기 NZ-1 (3.5w)",
             "필그린 측면여과기 NZ-2 (6.5w)",
-            "수이사쿠 터틀 필터 플러스 S (거북이 전용 여과기)",
-            "협신 5w 측면여과기 (NS F260)",
             "아쿠아이엘 팬필터 유니 필터 500 UV",
             "아쿠아이엘 팬필터 유니 필터 750 UV",
-            "아쿠아이엘 베르사맥스 미니 (30cm 수조용)",
-            "SOBO 소보 슬림형 걸이식 여과기-508H",
             "제브라 엔젤 (5~6cm 전후)",
-            "리글라스 외부여과기 TJ-850D",
-            "ALGONE 질산염제거제 (대)",
-            "프리미엄 네오 미디어 하드 M ( 30리터 벌크 ) 알칼리 여과재",
-            "프리미엄 네오 미디어 퓨어 L ( 5리터 ) 중성 여과재",
-            "프리미엄 네오 미디어 퓨어 L ( 30리터 벌크 ) 중성 여과재",
-            "네오 미디어 QUAD 퓨어 M (1리터) 중성 여과재-비닐포장",
-            "네오 미디어 QUAD 퓨어 M (5리터) 중성 여과재",
-            "네오 미디어 QUAD 퓨어 M (30리터) 중성 여과재",
-            "네오 미디어 QUAD 소프트 M (30리터) 약산성 여과재",
-            "네오 미디어 QUAD 소프트 M (5리터) 약산성 여과재",
-            "네오 미디어 QUAD 소프트 M (1리터) 약산성 여과재-비닐포장",
-            "시루바 미니외부여과기 XB-303",
             "코리도라스 스터바이 (2~3cm 전후)",
             "사지테리아 1포트",
             "뉴 오란다 플랜츠 (Limnophila sp.) (1촉)",
@@ -13286,7 +13315,6 @@
             "참갈겨니 성체급",
             "코리도라스 피그메우스",
             "플라캇 슈퍼골든 베타 한쌍",
-            "블랙 칼부스 (6cm 전후)",
             "자라풀 발아체 5개",
             "레드 하이그로필라 1포트 (수상)",
             "아돌포이 코리도라스 (3cm 전후)",
@@ -13369,12 +13397,12 @@
             "부세파란드라 레드 오키드 1벌브",
             "아쿠아메딕 해수염 4kg(box) 5개"
           ],
-          "unnamedCount": 686,
-          "candidateCount": 847
+          "unnamedCount": 702,
+          "candidateCount": 880
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -13391,11 +13419,11 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "snapshotProductCount": 140,
-      "collectorProductCount": 86,
+      "snapshotProductCount": 149,
+      "collectorProductCount": 92,
       "refreshScope": {
         "reviewHeldProductCount": 0,
-        "verifiedUrlCount": 23,
+        "verifiedUrlCount": 56,
         "selectedUrlCount": 3,
         "productBudget": 3,
         "allVerifiedUrlsSelected": false,
@@ -13408,13 +13436,13 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": false,
-        "runId": "39202129100"
+        "automaticAttemptConfirmed": true,
+        "runId": "39372189468"
       },
-      "collectorStatus": "partial_failure",
-      "collectorLastAttempt": "2026-10-19T05:12:11.393Z",
-      "collectorLastSuccess": "2026-10-19T05:14:03.390Z",
-      "collectorLastError": "detail_parse_failed:https://oqua.co.kr/product/detail.html?product_no=3625&cate_no=518&display_group=1",
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-20T05:12:21.456Z",
+      "collectorLastSuccess": "2026-10-20T05:15:03.149Z",
+      "collectorLastError": null,
       "blockers": [
         "Known product URLs only; full catalog discovery and pagination are not implemented.",
         "Scheduled run, data commit and Render deployment not yet verified."
@@ -13426,11 +13454,11 @@
           "https://oqua.co.kr/product/list.html?cate_no=119",
           "https://oqua.co.kr/product/list.html?cate_no=504"
         ],
-        "status": "partial_discovery",
+        "status": "budget_limited",
         "adapter": "cafe24_category_links",
         "mappedSeedCount": 5,
-        "pageBudget": 4,
-        "productBudget": 60,
+        "pageBudget": 2,
+        "productBudget": 30,
         "maxProductVerifications": 3,
         "cursorResume": true,
         "coverageComplete": false,
@@ -13438,18 +13466,18 @@
         "knownProductUrlsOnly": false,
         "observationsAreRepresentative": true,
         "deletionEnabled": false,
-        "discoveryScope": "gear",
-        "representativeSeedCount": 52,
-        "pagesVisited": 1,
-        "detailBudget": 8,
-        "newCandidates": 60,
-        "verifiedItems": 4,
-        "pendingCandidates": 537,
-        "pendingCandidatesInScope": 446,
+        "discoveryScope": "live",
+        "representativeSeedCount": 15,
+        "pagesVisited": 2,
+        "detailBudget": 14,
+        "newCandidates": 26,
+        "verifiedItems": 6,
+        "pendingCandidates": 532,
+        "pendingCandidatesInScope": 244,
         "pendingScopeLimit": 1000,
         "pendingByGroup": {
-          "mixed": 446,
-          "aquatic_plant": 91
+          "mixed": 444,
+          "aquatic_plant": 88
         },
         "reviewRequired": 13,
         "reviewReasons": {
@@ -14419,12 +14447,12 @@
             "reviewedAt": "2026-10-14T17:24:31.458Z"
           }
         ],
-        "excludedCandidates": 30,
-        "nextCategoryIndex": 17,
-        "lastAttempt": "2026-10-19T05:12:44.689Z",
+        "excludedCandidates": 36,
+        "nextCategoryIndex": 13,
+        "lastAttempt": "2026-10-20T05:12:53.854Z",
         "errors": [
-          "product_budget_reached:https://oqua.co.kr/product/list.html?cate_no=91",
-          "detail_parse_failed:https://oqua.co.kr/product/detail.html?product_no=3625&cate_no=518&display_group=1"
+          "page_budget_reached:https://oqua.co.kr/product/list.html?cate_no=126",
+          "detail_request_failed:https://oqua.co.kr/product/detail.html?product_no=3629&cate_no=73&display_group=1:execution_deadline"
         ],
         "cursorCategories": [
           {
@@ -14434,7 +14462,7 @@
             "cycleSeenProductCount": 8,
             "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-11T06:13:58.233Z",
+              "finishedAt": "2026-10-11T09:29:19.305Z",
               "reportedCount": 8,
               "observedUniqueLinks": 8,
               "terminalPageReached": true,
@@ -14447,153 +14475,188 @@
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=504",
-            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=504&page=3",
-            "expectedProductCount": 1810,
-            "cycleSeenProductCount": 120,
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=73&page=2",
+            "expectedProductCount": 222,
+            "cycleSeenProductCount": 60,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=504",
-              "https://oqua.co.kr/product/list.html?cate_no=504&page=2"
+              "https://oqua.co.kr/product/list.html?cate_no=73"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=442",
-            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=442&page=2",
-            "expectedProductCount": 126,
-            "cycleSeenProductCount": 68,
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=119",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=119&page=2",
+            "expectedProductCount": 62,
+            "cycleSeenProductCount": 60,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=442",
-              "https://oqua.co.kr/product/list.html?cate_no=442&page=2"
+              "https://oqua.co.kr/product/list.html?cate_no=119"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=112",
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=72",
             "nextUrl": null,
-            "expectedProductCount": 3,
-            "cycleSeenProductCount": 3,
+            "expectedProductCount": 8,
+            "cycleSeenProductCount": 8,
             "cyclesCompleted": 2,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:30:39.598Z",
-              "reportedCount": 3,
-              "observedUniqueLinks": 3,
+              "finishedAt": "2026-10-14T17:22:01.578Z",
+              "reportedCount": 8,
+              "observedUniqueLinks": 8,
               "terminalPageReached": true,
               "categoryLinkCountMatched": true,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=112"
+              "https://oqua.co.kr/product/list.html?cate_no=72"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=324",
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=110",
             "nextUrl": null,
-            "expectedProductCount": 5,
-            "cycleSeenProductCount": 5,
-            "cyclesCompleted": 2,
+            "expectedProductCount": 38,
+            "cycleSeenProductCount": 38,
+            "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-11T09:30:49.357Z",
-              "reportedCount": 5,
-              "observedUniqueLinks": 5,
+              "finishedAt": "2026-10-14T17:22:11.737Z",
+              "reportedCount": 38,
+              "observedUniqueLinks": 38,
               "terminalPageReached": true,
               "categoryLinkCountMatched": true,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=324"
+              "https://oqua.co.kr/product/list.html?cate_no=110"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=99",
-            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=99",
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=109",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=109&page=2",
+            "expectedProductCount": 94,
+            "cycleSeenProductCount": 60,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://oqua.co.kr/product/list.html?cate_no=109"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=311",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=311",
+            "expectedProductCount": 10,
+            "cycleSeenProductCount": 1,
+            "cyclesCompleted": 0,
+            "lastCycle": null,
+            "visitedPageUrls": [
+              "https://oqua.co.kr/product/list.html?cate_no=311"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=111",
+            "nextUrl": null,
+            "expectedProductCount": 19,
+            "cycleSeenProductCount": 19,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-17T07:22:09.126Z",
+              "reportedCount": 19,
+              "observedUniqueLinks": 19,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
+            "visitedPageUrls": [
+              "https://oqua.co.kr/product/list.html?cate_no=111"
+            ],
+            "headProbePending": false
+          },
+          {
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=316",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=316",
             "expectedProductCount": 0,
             "cycleSeenProductCount": 0,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=99"
+              "https://oqua.co.kr/product/list.html?cate_no=316"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=495",
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=270",
             "nextUrl": null,
-            "expectedProductCount": 11,
-            "cycleSeenProductCount": 11,
-            "cyclesCompleted": 2,
-            "lastCycle": {
-              "finishedAt": "2026-10-11T09:31:09.802Z",
-              "reportedCount": 11,
-              "observedUniqueLinks": 11,
-              "terminalPageReached": true,
-              "categoryLinkCountMatched": true,
-              "detailCoverageComplete": false
-            },
-            "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=495"
-            ],
-            "headProbePending": false
-          },
-          {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=322",
-            "nextUrl": null,
-            "expectedProductCount": 37,
-            "cycleSeenProductCount": 37,
+            "expectedProductCount": 6,
+            "cycleSeenProductCount": 6,
             "cyclesCompleted": 1,
             "lastCycle": {
-              "finishedAt": "2026-10-14T05:34:58.371Z",
-              "reportedCount": 37,
-              "observedUniqueLinks": 37,
+              "finishedAt": "2026-10-17T15:41:59.183Z",
+              "reportedCount": 6,
+              "observedUniqueLinks": 6,
               "terminalPageReached": true,
               "categoryLinkCountMatched": true,
               "detailCoverageComplete": false
             },
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=322"
+              "https://oqua.co.kr/product/list.html?cate_no=270"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=494",
-            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=494",
-            "expectedProductCount": 50,
-            "cycleSeenProductCount": 28,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=437",
+            "nextUrl": null,
+            "expectedProductCount": 7,
+            "cycleSeenProductCount": 7,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-17T15:42:09.417Z",
+              "reportedCount": 7,
+              "observedUniqueLinks": 7,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=494"
+              "https://oqua.co.kr/product/list.html?cate_no=437"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=91",
-            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=91&page=3",
-            "expectedProductCount": 287,
-            "cycleSeenProductCount": 120,
-            "cyclesCompleted": 0,
-            "lastCycle": null,
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=432",
+            "nextUrl": null,
+            "expectedProductCount": 13,
+            "cycleSeenProductCount": 13,
+            "cyclesCompleted": 1,
+            "lastCycle": {
+              "finishedAt": "2026-10-20T05:13:03.149Z",
+              "reportedCount": 13,
+              "observedUniqueLinks": 13,
+              "terminalPageReached": true,
+              "categoryLinkCountMatched": true,
+              "detailCoverageComplete": false
+            },
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=91",
-              "https://oqua.co.kr/product/list.html?cate_no=91&page=2"
+              "https://oqua.co.kr/product/list.html?cate_no=432"
             ],
             "headProbePending": false
           },
           {
-            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=528",
-            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=528",
-            "expectedProductCount": 18,
-            "cycleSeenProductCount": 2,
+            "entryUrl": "https://oqua.co.kr/product/list.html?cate_no=126",
+            "nextUrl": "https://oqua.co.kr/product/list.html?cate_no=126&page=2",
+            "expectedProductCount": 117,
+            "cycleSeenProductCount": 60,
             "cyclesCompleted": 0,
             "lastCycle": null,
             "visitedPageUrls": [
-              "https://oqua.co.kr/product/list.html?cate_no=528"
+              "https://oqua.co.kr/product/list.html?cate_no=126"
             ],
             "headProbePending": false
           }
@@ -14604,8 +14667,8 @@
           "allowedCategoryCount": 15,
           "excludedCategoryCount": 3,
           "reviewCategoryCount": 8,
-          "pagesVisited": 11,
-          "pendingCategoryCount": 9,
+          "pagesVisited": 13,
+          "pendingCategoryCount": 8,
           "pendingPageUrls": [
             {
               "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=73",
@@ -14628,12 +14691,8 @@
               "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=316"
             },
             {
-              "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=432",
-              "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=432"
-            },
-            {
               "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=126",
-              "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=126"
+              "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=126&page=2"
             },
             {
               "categoryUrl": "https://oqua.co.kr/product/list.html?cate_no=125",
@@ -14644,9 +14703,9 @@
               "nextPageUrl": "https://oqua.co.kr/product/list.html?cate_no=99"
             }
           ],
-          "terminalCategoryCount": 6,
-          "verifiedProductCount": 82,
-          "pendingProductCount": 486,
+          "terminalCategoryCount": 7,
+          "verifiedProductCount": 92,
+          "pendingProductCount": 532,
           "reviewProductCount": 13,
           "menuCoverage": "unknown",
           "terminalCoverage": "incomplete",
@@ -14658,9 +14717,6 @@
             "수생식물 물매화/연못,베란다화분식물",
             "수생식물 노랑꽃 창포(대)/연못,베란다화분식물",
             "인조 연꽃 부상수초/연못꾸미기/연꽃장식 핑크",
-            "연못여과기 포세이돈 PRO300(7톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
-            "연못여과기 포세이돈 PRO400(12톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
-            "연못여과기 분수형 포세이돈 PRO더블제트(25톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 청소 세트",
             "음성수초 콩나나(미니나나) 활착유목",
             "수초 위핑모스 활착판(8x8cm) 초보 음성수초 키우기 새우 은신처",
             "수초 피콕 모스 활착판(8x8cm) 초보 음성수초 키우기 새우 은신처",
@@ -14669,114 +14725,149 @@
             "수초 크리스마스모스 소주잔 2컵 초보 음성수초 키우기 새우 은신처",
             "수초 프리미엄모스 소주잔 2컵 초보 음성수초 키우기 새우 은신처",
             "수초 펄그라스(지름5cm내외) 구피 어항 수초 키우기",
+            "연못여과기 포세이돈 PRO300(7톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
+            "연못여과기 포세이돈 PRO400(12톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
+            "연못여과기 분수형 포세이돈 PRO더블제트(25톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 청소 세트",
             "테트라 폰드 코이스틱 4L 비단잉어 금붕어 사료 먹이",
-            "제주애기모람 보틀 180일 테라리움 완제품 베이직 세트 BOM 테라리움 키트 제주애기모람보틀180일 베이직세트",
-            "제주애기모람 테라리움 키트 조명 포함 완제품 세트 보틀 180일 BOM 테라리움",
-            "이끼 테라리움 키트(조명 포함) 비단이끼 나무이끼 후마타고사리 BOM 테라리움 diy 세트 제주숲길 외",
-            "테라리움 키트 비단이끼 후마타고사리 제주숲길(조명 포함) BOM 테라리움 DIY 만들기 세트",
-            "수초버거 와인잔세트A/수초어항세트 테라리움만들기 와인잔세트A",
-            "테라리움 키트 비단이끼 너구리꼬리이끼 제주돌담(조명 포함) BOM 테라리움 DIY 만들기 세트",
-            "테라리움 비단이끼 나무이끼 키트 제주언덕(조명 포함) BOM 테라리움 DIY 만들기 세트",
-            "수초버거 와인잔세트B/수초어항세트 테라리움만들기 와인잔세트A",
-            "수초버거 수반세트/수초어항세트 테라리움만들기 와인잔세트A",
-            "제주애기모람 화산석활착+분무기+받침접시 테라리움 비바리움 넝쿨식물키우기",
-            "천연이끼 가습기 BOM 테라리움 이끼 제올라이트 자연가습",
-            "나무이끼 테라리움 유리병 키트 DIY 만들기 BOM 세트 제주식물",
-            "너구리꼬리이끼 테라리움 유리병 키트 DIY 만들기 BOM 세트 제주식물",
-            "리톱스 다육이 테라리움 키트 사막 미니 테라리움 diy 세트 선인장 코노피튬 키우기",
-            "물아카시아 1촉 물미모사 신경초 수생식물 수초",
-            "수초 로벨리아 카디날리스3촉",
-            "수초 아메리칸 워터스트라이프 3잎",
-            "수초 바코바 몬니에리 3촉",
-            "수초 프로도립 아마존 소드플랜트1뿌리",
-            "수초 사지타리아 3촉",
-            "수초 옐로우 리시마키아3촉",
-            "수초 루드위지아 레펜스 3촉",
-            "초보수초 5종 모음세트(20촉)",
-            "수초 하이그로필라 로잔네르비스 5촉",
-            "수초 물채송화(앵무새깃) 3촉",
-            "물배추(워터레터스) 10뿌리/수생식물",
-            "수초 모스볼1+1",
-            "수초 로탈라 와리키(다람쥐꼬리) 3촉",
-            "오쿠아 워터코인 50뿌리 수생식물 수경재배 농장직송 실내 공기정화 연못 어항 식물",
-            "수초 개구리밥(종이컵표면 용량)/부상수초",
-            "수초박스 풀세트(케이스 소일 식물 스펀지여과재 핀셋)",
-            "씨앗수초 이스타 바바M 2개입",
-            "씨앗수초 이스타 바바S 1개입",
-            "이스타 바바 씨앗수초 미니 헤어글라스S(1개입)",
-            "테라리움 키트 너구리꼬리이끼 물방울 요정 비단이끼 미니 테라리움 세트 DIY 만들기 너구리꼬리이끼",
-            "테라리움 키트 나무이끼 물방울 요정 비단이끼 미니 테라리움 세트 DIY 만들기 나무이끼",
-            "테라리움 키트 그늘대호꼬리이끼 물방울 요정 비단이끼 미니 테라리움 세트 DIY 만들기 그늘대호꼬리이끼",
-            "크리스마스 테라리움 키트 미니어처 소나무 북극곰 눈사람 겨울 테라리움 만들기 DIY 세트 스노우",
-            "리톱스 모종 키트(리톱스유묘, 화분, 흙, 핀셋) 선인장 다육이 키우기 세트",
-            "수초 루드위지아 세디올데스(물다이아몬드) 1줄기",
-            "제주애기모람 수태볼 테라리움 키트 이끼볼 코케다마 세트 공기정화 가습 반려식물",
+            "테라리움 유리병 에코 테라리움 심플8.5 (SH0211) 용기 화병",
+            "테라리움 유리병 에코 테라리움 와이드5.5 (SH0210) 용기 화병",
+            "테라리움 유리병 에코 테라리움 미니(SH0209) 용기 화병",
+            "칡넝쿨유목 대(두께2-4cm 길이60cm내외) 1개 테라리움 비바리움 재료 덩쿨유목 도마뱀",
+            "수생식물 칸나 빨강/연못,베란다화분식물",
+            "연꽃 모종(발아 싹틔움 완료,줄기 5~20cm)20촉 미니 연꽃 씨앗 수련 키우기 국내 생산",
             "부레옥잠 10뿌리 수생 수경식물 키우기 수질정화",
             "수생식물 어리연/연못베란다식물키우기",
             "수생식물 보라창포 붓꽃 연못,베란다 화분 식물",
-            "수생식물 칸나 빨강/연못,베란다화분식물",
-            "연꽃 모종(발아 싹틔움 완료,줄기 5~20cm)20촉 미니 연꽃 씨앗 수련 키우기 국내 생산",
+            "물배추(워터레터스) 10뿌리/수생식물",
+            "오쿠아 워터코인 50뿌리 수생식물 수경재배 농장직송 실내 공기정화 연못 어항 식물",
             "미니 연꽃 모종 연잎이 있는 뿌리내린 연꽃 5개 완성형 모종 씨앗 발아완료",
             "미니 연꽃 모종 연잎이 있는 뿌리내린 연꽃 3개 10개 20개 50개 완성형 모종 씨앗 발아완료 50개",
             "미니 연꽃 키우기 수반 세트 연꽃 모종5촉 수생흙2개 화분1개 키트 싹틔움 완료",
             "미니 연꽃 모종 도매 발아 완료 100촉 연꽃 수련 씨앗 키우기 국내 생산",
             "부레옥잠 1뿌리 수생 수경식물 키우기 수질정화",
-            "수초 워터 바코바 5촉",
-            "수초 로탈라 인디카 30촉",
-            "수초 알테란테라 세실리스 3촉",
+            "연못여과기 포세이돈 PRO100(4톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
+            "연못여과기 포세이돈 PRO200(5톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
+            "연못여과기 분수형 포세이돈 PRO싱글제트(15톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 청소 세트",
+            "비단잉어(35~40cm) 1마리",
+            "황금금 풍난 부귀란 황호반 소엽 풍란 난초 소형 착생란 테라리움 석부작 목부작 동양난",
+            "리톱스 파종 세트(믹스 씨앗 300립) 다육이 선인장 키우기",
+            "리톱스 모종 키트(리톱스유묘, 화분, 흙, 핀셋) 선인장 다육이 키우기 세트",
+            "인조수초 조화(22019)/인공수초 어항수초",
+            "에그스톤(20-30mm)1kg",
+            "후마타 상록넉줄고사리 중화분(15x13cm)분갈이완료 /실내공기정화 키우기쉬운 반려식물 슬릿분",
+            "수초 골든나나 링활착 1개/음성수초키우기",
             "수초 알테란테라 레시드 3촉",
-            "수초 레눈큘러스 파풀렌터스3촉",
-            "수초 에키노도루스 레드 플레임 1뿌리",
+            "수초 모스볼 활착판(5x5cm)/모스볼마리모키우기",
+            "수초 모스볼1+1",
+            "마리모 미니 수경식물/음성수초",
+            "마리모 1+1 /수경식물음성수초",
+            "수초 활착 모스볼 2개/마리모",
+            "수초 콩나나(미니나나) 링활착 1개/음성수초키우기",
+            "부세파란드라sp수초(웨이브그린) 포트",
+            "음성수초 부세파란드라sp (웨이브그린) 링활착1개/",
+            "수초 피시덴모스 화산석활착(5-7cm내외) 초보 음성수초 키우기 새우 은신처",
+            "마리모(소) 수경식물/음성수초",
+            "콘젠시스 나나 포트/음성수초/활착수초",
+            "수초(조직배양) 아누비아스 나나 포트/음성수초키우기",
+            "킹모스 1주/음성수초/활착수초",
+            "수초 부세파란드라sp 편석활착(20cm내외)",
+            "수초 부세파란드라sp 편석활착(10~15cm)",
+            "수초 펄그라스 화산석활착(8-12cm내외) 어항수초 키우기",
+            "수초 화분 루드위지아 페루엔시스",
+            "수초 화분 워터 위스테리아",
+            "수초 화분 워터 바코바",
+            "수초 화분 로탈라 와리키(다람쥐꼬리)",
+            "수초 화분 알테란테라 세실리스",
+            "수초 화분 바코바 몬니에리",
+            "수초 화분 하이그로필라 로잔네르비스",
+            "수초 화분 루드위지아 레펜스",
+            "수초 화분 알테란테라 레시드",
+            "수초박스 풀세트(케이스 소일 식물 스펀지여과재 핀셋)",
+            "수초가득 어항세트 무환수 수초어항 풀세트 수초가득어항세트 중(26x17x19cm)",
+            "수초 펄그라스 미니활착돔(4.5x4.5cm) 어항 수초키우기",
+            "수초 개구리밥(종이컵표면 용량)/부상수초",
+            "컵수초 초보5종 30촉내외 수초농장 직송 구피 새우 어항 생화 키우기",
+            "수초 노치도메 5x5cm",
+            "수초 미니 노치도메 5x5cm",
+            "수초 미니 노치도메 미니활착돔(4.5x4.5cm)",
+            "수초버거 수반세트/수초어항세트 테라리움만들기 와인잔세트A",
+            "수초버거 와인잔세트B/수초어항세트 테라리움만들기 와인잔세트A",
+            "수초버거 와인잔세트A/수초어항세트 테라리움만들기 와인잔세트A",
+            "이스타 바바 씨앗수초 미니 헤어글라스S(1개입)",
             "칼라 포트 수초 5개세트 (랜덤발송) - 키우기 쉬운 초보 수초 키우기",
+            "칼라 포트 수초 1개 - 키우기 쉬운 초보 수초 페루엔시스",
+            "초보수초 5종10촉 랜덤박스",
+            "씨앗수초 이스타 바바S 1개입",
+            "씨앗수초 이스타 바바M 2개입",
+            "수초 로탈라 와리키(다람쥐꼬리) 3촉",
+            "물아카시아 1촉 물미모사 신경초 수생식물 수초",
+            "수초 사지타리아 3촉",
+            "수초 옐로우 리시마키아3촉",
+            "수초 루드위지아 레펜스 3촉",
+            "수초 프로도립 아마존 소드플랜트1뿌리",
+            "수초 바코바 몬니에리 3촉",
+            "수초 아메리칸 워터스트라이프 3잎",
+            "테라리움 키트 비단이끼 다람쥐꼬리 미니 테라리움 식물 세트 더숲 더숲 다람쥐꼬리",
+            "제주애기모람 테라리움 키트 비단이끼 더숲 미니 테라리움 diy 만들기 세트 더숲 제주애기모람",
+            "제주피막이풀 비단이끼 테라리움 키트 더숲 미니 테라리움 세트 diy 더숲 제주피막이풀",
+            "테라리움 키트 12개세트+핀셋2개 더숲 학교수업 이끼 테라리움 식물 만들기 세트",
+            "리톱스 다육이 테라리움 키트 사막 미니 테라리움 diy 세트 선인장 코노피튬 키우기",
+            "봉황이끼 비단이끼 테라리움 키트 더숲 테라리움 미니 세트 만들기 더숲 봉황이끼",
+            "크리스마스 테라리움 키트 미니어처 소나무 북극곰 눈사람 겨울 테라리움 만들기 DIY 세트 스노우",
+            "테라리움 키트 너구리꼬리이끼 물방울 요정 비단이끼 미니 테라리움 세트 DIY 만들기 너구리꼬리이끼",
+            "테라리움 키트 그늘대호꼬리이끼 물방울 요정 비단이끼 미니 테라리움 세트 DIY 만들기 그늘대호꼬리이끼",
+            "테라리움 키트 나무이끼 물방울 요정 비단이끼 미니 테라리움 세트 DIY 만들기 나무이끼",
+            "제주애기모람 테라리움 키트 조명 포함 완제품 세트 보틀 180일 BOM 테라리움",
+            "제주애기모람 보틀 180일 테라리움 완제품 베이직 세트 BOM 테라리움 키트 제주애기모람보틀180일 베이직세트",
+            "제주애기모람 화산석활착+분무기+받침접시 테라리움 비바리움 넝쿨식물키우기",
+            "천연이끼 가습기 BOM 테라리움 이끼 제올라이트 자연가습",
+            "나무이끼 테라리움 유리병 키트 DIY 만들기 BOM 세트 제주식물",
+            "너구리꼬리이끼 테라리움 유리병 키트 DIY 만들기 BOM 세트 제주식물",
+            "큰솔이끼 테라리움 유리병 키트 DIY 만들기 BOM 세트 제주식물",
+            "수초 에리오카리스 비비파라 20촉",
+            "수초 미니 노치도메 6뿌리",
+            "수초 로벨리아 카디날리스3촉",
+            "수초 노치도메 6뿌리",
+            "수초 쿠바펄(지름5cm내외)1개",
+            "수초 자이언트 워터 머슈룸 3뿌리",
+            "수초 워터 머슈룸 3뿌리",
+            "수초 레눈큘러스 파풀렌터스3촉",
+            "수초 펄그라스 200촉 구피 어항 수초 키우기",
+            "테라리움 키트 비단이끼 후마타고사리 제주숲길(조명 포함) BOM 테라리움 DIY 만들기 세트",
+            "테라리움 비단이끼 나무이끼 키트 제주언덕(조명 포함) BOM 테라리움 DIY 만들기 세트",
+            "테라리움 키트 비단이끼 너구리꼬리이끼 제주돌담(조명 포함) BOM 테라리움 DIY 만들기 세트",
+            "제주애기모람 수태볼 테라리움 키트 이끼볼 코케다마 세트 공기정화 가습 반려식물",
+            "이끼 테라리움 키트(조명 포함) 비단이끼 나무이끼 후마타고사리 BOM 테라리움 diy 세트 제주숲길 외",
+            "수초 하이그로필라 자이언트 30촉",
+            "수초 미니 노치도메 40뿌리",
+            "수초 루드위지아 페루엔시스 20촉",
+            "수초 노치도메 40뿌리",
+            "수초 사지타리아 30촉",
+            "수초 하이그로필라 로잔네르비스 30촉/구피수초키우기",
+            "수초 쿠바펄(지름5cm내외)4개",
+            "수초 로탈라 인디카 30촉",
+            "수초 물채송화(앵무새깃) 3촉",
+            "테라리움 식물고정핀(U자)100개/비바리움 팔루다리움 만들기 DIY 재료",
+            "초보수초 5종 모음세트(20촉)",
+            "수초 하이그로필라 로잔네르비스 5촉",
+            "수초 루드위지아 세디올데스(물다이아몬드) 1줄기",
+            "수초 워터 바코바 5촉",
+            "수초 알테란테라 세실리스 3촉",
+            "수초 에키노도루스 레드 플레임 1뿌리",
             "수초 상파울로 레드 2촉",
             "수초 로탈라 블러드 레드 3촉",
             "수초 로탈라 인디카 3촉",
             "수초 로탈라 레드 3촉",
             "수초 로탈라 하라 3촉",
-            "칼라 포트 수초 1개 - 키우기 쉬운 초보 수초 페루엔시스",
-            "수초 펄그라스 200촉 구피 어항 수초 키우기",
-            "초보수초 5종10촉 랜덤박스",
             "수초 암마니아 3촉",
             "수초 미니 헤어글라스 100촉",
-            "수초 미니 노치도메 6뿌리",
-            "수초 노치도메 6뿌리",
-            "수초 쿠바펄(지름5cm내외)1개",
-            "수초 워터 머슈룸 3뿌리",
-            "컵수초 초보5종 30촉내외 수초농장 직송 구피 새우 어항 생화 키우기",
-            "수초(조직배양) 아누비아스 나나 포트/음성수초키우기",
-            "콘젠시스 나나 포트/음성수초/활착수초",
-            "음성수초 부세파란드라sp (웨이브그린) 링활착1개/",
-            "수초 모스볼 활착판(5x5cm)/모스볼마리모키우기",
-            "수초 펄그라스 화산석활착(8-12cm내외) 어항수초 키우기",
-            "마리모 1+1 /수경식물음성수초",
-            "마리모(소) 수경식물/음성수초",
-            "수초 피시덴모스 화산석활착(5-7cm내외) 초보 음성수초 키우기 새우 은신처",
-            "킹모스 1주/음성수초/활착수초",
-            "수초 활착 모스볼 2개/마리모",
-            "마리모 미니 수경식물/음성수초",
             "수초 미니 헤어글라스 200촉",
-            "수초 루드위지아 페루엔시스 20촉",
-            "수초 노치도메 40뿌리",
-            "수초 사지타리아 30촉",
-            "수초 하이그로필라 로잔네르비스 30촉/구피수초키우기",
-            "수초 미니 노치도메 40뿌리",
-            "수초 쿠바펄(지름5cm내외)4개",
-            "수초 노치도메 5x5cm",
-            "수초 자이언트 워터 머슈룸 3뿌리",
-            "수초 미니 노치도메 5x5cm",
             "모스카펫(5x5cm) 모스 활착판 5개 8point",
-            "황금금 풍난 부귀란 황호반 소엽 풍란 난초 소형 착생란 테라리움 석부작 목부작 동양난",
-            "후마타 상록넉줄고사리 중화분(15x13cm)분갈이완료 /실내공기정화 키우기쉬운 반려식물 슬릿분",
-            "리톱스 파종 세트(믹스 씨앗 300립) 다육이 선인장 키우기",
-            "연못여과기 분수형 포세이돈 PRO싱글제트(15톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 청소 세트",
-            "연못여과기 포세이돈 PRO100(4톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
             "연못여과기 포세이돈 V300(대) 야외 녹조 이끼 제거 대형 수질관리",
-            "연못여과기 포세이돈 PRO200(5톤) 야외 녹조 이끼 제거 대형 수질관리 대용량 양식장 연못용 세트",
             "마리모 세트 어항(소년과 마리모 세트)",
             "그로비타 마리모글로브 미니원형세트v3(A타입)",
             "마리모 세트 어항(미니핑크 세트)",
             "마리모 세트 어항(벤치커플 세트)",
-            "수초 미니 노치도메 미니활착돔(4.5x4.5cm)",
             "수초 워터 위스테리아 3촉",
             "비단잉어 1마리(8~10cm)",
             "코메트 금붕어 1마리(8~10cm) 연못 금붕어",
@@ -14785,15 +14876,6 @@
             "비단잉어(30cm내외) 1마리",
             "비단잉어 1마리(22~25cm)",
             "비단잉어 1마리(12~15cm)",
-            "비단잉어(35~40cm) 1마리",
-            "수초가득 어항세트 무환수 수초어항 풀세트 수초가득어항세트 중(26x17x19cm)",
-            "에그스톤(20-30mm)1kg",
-            "인조수초 조화(22019)/인공수초 어항수초",
-            "테라리움 유리병 에코 테라리움 와이드5.5 (SH0210) 용기 화병",
-            "테라리움 유리병 에코 테라리움 심플8.5 (SH0211) 용기 화병",
-            "테라리움 유리병 에코 테라리움 미니(SH0209) 용기 화병",
-            "칡넝쿨유목 대(두께2-4cm 길이60cm내외) 1개 테라리움 비바리움 재료 덩쿨유목 도마뱀",
-            "테라리움 식물고정핀(U자)100개/비바리움 팔루다리움 만들기 DIY 재료",
             "수초 아마존 치도메구사 3촉 (코타일)",
             "2자용(60cm) 수초세트/수초키우기",
             "1자반용(45cm) 수초세트/수초키우기",
@@ -14802,29 +14884,21 @@
             "네오 NO CO2 소일 8L (플루이드 50ml x3개 + 클린 50ml x2개)",
             "인조수초 조화 4인치 10개세트/인공수초 어항수초",
             "수초 조직배양 골든나나 포트/음성수초/활착수초",
-            "수초 펄그라스 미니활착돔(4.5x4.5cm) 어항 수초키우기",
             "네오 플랜츠탭 SOLID NO CO2 70g 수초 종합고체 비료",
             "인조수초 조화(05020)/인공수초 어항수초",
             "인조수초 조화(22020)/인공수초 어항수초",
-            "수초 화분 루드위지아 페루엔시스",
-            "수초 화분 워터 위스테리아",
-            "수초 화분 워터 바코바",
-            "수초 화분 로탈라 와리키(다람쥐꼬리)",
-            "수초 화분 알테란테라 세실리스",
-            "수초 화분 바코바 몬니에리",
-            "수초 화분 하이그로필라 로잔네르비스",
             "아마존 수중모터 펌프 3W 어항 테라리움",
             "[생물구매시 필수]생물안전포장비",
             "페이토 스퀘어 라이트 조명 PK-L9(화이트) 테라리움 어항 수조",
             "페이토 스퀘어 라이트 조명 PK-L9(블랙) 테라리움 어항 수조",
             "핀셋 직형 27cm 수초어항 테라리움 만들기"
           ],
-          "unnamedCount": 534,
-          "candidateCount": 698
+          "unnamedCount": 522,
+          "candidateCount": 701
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": false,
+      "autoRefreshVerified": true,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {

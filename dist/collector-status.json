@@ -1,56 +1,11 @@
 {
   "executionBudgetMs": 1080000,
-  "deferredSourceIds": [
-    "retailer-11",
-    "retailer-12",
-    "retailer-13",
-    "retailer-14",
-    "retailer-15",
-    "retailer-16",
-    "retailer-17",
-    "retailer-18",
-    "retailer-19",
-    "retailer-20",
-    "retailer-21",
-    "retailer-22",
-    "retailer-23",
-    "retailer-24",
-    "retailer-25",
-    "retailer-27",
-    "retailer-28",
-    "retailer-29",
-    "retailer-30",
-    "retailer-31",
-    "retailer-32",
-    "retailer-33",
-    "retailer-34",
-    "retailer-35",
-    "retailer-36",
-    "retailer-37",
-    "retailer-38",
-    "retailer-39",
-    "retailer-40",
-    "retailer-41",
-    "retailer-42",
-    "retailer-43",
-    "retailer-44",
-    "retailer-45",
-    "retailer-46",
-    "retailer-47",
-    "retailer-48",
-    "retailer-49",
-    "retailer-50",
-    "retailer-51",
-    "retailer-52",
-    "retailer-01",
-    "retailer-02",
-    "retailer-03"
-  ],
-  "startedAt": "2026-10-21T08:01:18.667Z",
-  "mode": "reconcile",
-  "discoveryScope": "all",
+  "deferredSourceIds": [],
+  "startedAt": "2026-10-21T11:58:08.975Z",
+  "mode": "live",
+  "discoveryScope": "live",
   "runTrigger": "schedule",
-  "githubRunId": "39565903041",
+  "githubRunId": "39595668247",
   "autoRefreshDeployed": false,
   "fullCatalogCoverage": false,
   "sources": [
@@ -40559,7 +40514,7 @@
       "collectorLastAttempt": "2026-10-21T08:01:18.688Z",
       "collectorLastSuccess": "2026-10-21T08:04:30.918Z",
       "count": 149,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -75564,9 +75519,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -75574,8 +75529,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-05",
@@ -75584,7 +75539,7 @@
       "collectorLastAttempt": "2026-10-21T08:04:33.780Z",
       "collectorLastSuccess": "2026-10-21T08:04:55.762Z",
       "count": 60,
-      "requests": 6,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -81240,9 +81195,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -81250,8 +81205,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-06",
@@ -81260,7 +81215,7 @@
       "collectorLastAttempt": "2026-10-21T08:05:28.710Z",
       "collectorLastSuccess": "2026-10-21T08:08:31.193Z",
       "count": 71,
-      "requests": 19,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -93756,9 +93711,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -93766,8 +93721,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true,
+      "attempted": false,
+      "evaluatedThisExecution": false,
       "requiresManualReview": false,
       "blockedUntil": null
     },
@@ -93778,7 +93733,7 @@
       "collectorLastAttempt": "2026-10-21T08:08:34.174Z",
       "collectorLastSuccess": "2026-10-21T08:11:46.359Z",
       "count": 98,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -134171,7 +134126,7 @@
         "detail_parse_failed:https://aquapro.kr/product/detail.html?product_no=10781&cate_no=923&display_group=1",
         "detail_parse_failed:https://aquapro.kr/product/detail.html?product_no=8835&cate_no=893&display_group=1"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -134181,8 +134136,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-08",
@@ -134191,7 +134146,7 @@
       "collectorLastAttempt": "2026-10-21T08:11:49.376Z",
       "collectorLastSuccess": "2026-10-21T08:15:01.426Z",
       "count": 111,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -166025,7 +165980,7 @@
         "identity_not_corroborated:https://zoonimal.co.kr/product/빨강고정-구피레드턱시도-1마리/8578/?item_code=P0000MRY000B",
         "detail_parse_failed:https://zoonimal.co.kr/product/%EC%9E%90%EC%97%B0-%EB%B6%80%EC%84%B8-%EC%9C%A0%EB%AA%A9-%EC%B2%9C%EC%9B%90%EC%9C%A0%EB%AA%A9/7782/category/350/display/1/"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -166035,8 +165990,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-09",
@@ -166045,7 +166000,7 @@
       "collectorLastAttempt": "2026-10-21T08:15:04.291Z",
       "collectorLastSuccess": "2026-10-21T08:18:16.311Z",
       "count": 120,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -197742,9 +197697,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -197752,8 +197707,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-10",
@@ -197762,7 +197717,7 @@
       "collectorLastAttempt": "2026-10-21T08:18:19.414Z",
       "collectorLastSuccess": "2026-10-21T08:18:51.575Z",
       "count": 115,
-      "requests": 5,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -221825,9 +221780,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39565903041",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -221835,8 +221790,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-11",
@@ -979677,22 +979632,14 @@
       "evaluatedThisExecution": false
     }
   ],
-  "executionDeadlineReached": true,
-  "executionBudgetLimited": true,
-  "finishedAt": "2026-10-21T08:19:07.386Z",
-  "nextSourceId": "retailer-10",
-  "attemptedSourceIds": [
-    "retailer-04",
-    "retailer-05",
-    "retailer-06",
-    "retailer-07",
-    "retailer-08",
-    "retailer-09",
-    "retailer-10"
-  ],
+  "executionDeadlineReached": false,
+  "executionBudgetLimited": false,
+  "finishedAt": "2026-10-21T11:58:08.975Z",
+  "nextSourceId": "retailer-39",
+  "attemptedSourceIds": [],
   "executionEnvironment": "github_actions",
-  "productChanges": 61,
-  "executionSkippedReason": null,
+  "productChanges": 0,
+  "executionSkippedReason": "not_due",
   "executionError": null,
   "checkpointOnly": false,
   "collectorControls": {
@@ -979711,34 +979658,34 @@
   },
   "scheduleDecision": {
     "automatic": true,
-    "due": true,
-    "reason": "due",
-    "intervalHours": 24,
-    "lastAttemptAt": "2026-10-20T07:57:01.555Z",
+    "due": false,
+    "reason": "already_attempted_window",
+    "intervalHours": 12,
+    "lastAttemptAt": "2026-10-21T04:57:12.744Z",
     "gate": "utc_slot_window",
     "window": {
-      "id": "reconcile:24:2026-10-21T02:43:00.000Z",
-      "startAt": "2026-10-21T02:43:00.000Z",
-      "endAt": "2026-10-22T02:43:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T02:43:00.000Z"
+      "id": "live:12:2026-10-21T00:17:00.000Z",
+      "startAt": "2026-10-21T00:17:00.000Z",
+      "endAt": "2026-10-21T12:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
     "previousWindow": {
-      "id": "reconcile:24:2026-10-20T02:43:00.000Z",
-      "startAt": "2026-10-20T02:43:00.000Z",
-      "endAt": "2026-10-21T02:43:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T02:43:00.000Z"
+      "id": "live:12:2026-10-21T00:17:00.000Z",
+      "startAt": "2026-10-21T00:17:00.000Z",
+      "endAt": "2026-10-21T12:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
-    "nextDueAt": "2026-10-22T02:43:00.000Z"
+    "nextDueAt": "2026-10-21T12:17:00.000Z"
   },
   "schedule": {
     "schemaVersion": 1,
     "modes": {
       "live": {
         "intervalHours": 12,
-        "lastEvaluatedAt": "2026-10-21T04:57:12.731Z",
-        "lastDecision": "attempted",
+        "lastEvaluatedAt": "2026-10-21T11:58:08.975Z",
+        "lastDecision": "already_attempted_window",
         "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
         "lastAttemptAt": "2026-10-21T04:57:12.744Z",
         "lastManualAttemptAt": "2026-10-10T04:36:16.718Z",
@@ -979812,66 +979759,8 @@
       }
     }
   },
-  "sourceDecisions": {
-    "retailer-04": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-05": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-06": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-07": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-08": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-09": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-10": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    }
-  },
-  "evaluatedSourceIds": [
-    "retailer-04",
-    "retailer-05",
-    "retailer-06",
-    "retailer-07",
-    "retailer-08",
-    "retailer-09",
-    "retailer-10"
-  ],
+  "sourceDecisions": {},
+  "evaluatedSourceIds": [],
   "lastConfirmedCheckpointAt": "2026-10-10T02:54:24.373Z",
   "lastManualValidation": {
     "kind": "bounded_saved_filter_targets",

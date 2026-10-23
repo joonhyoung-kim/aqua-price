@@ -1,51 +1,11 @@
 {
   "executionBudgetMs": 1080000,
-  "deferredSourceIds": [
-    "retailer-30",
-    "retailer-31",
-    "retailer-32",
-    "retailer-33",
-    "retailer-34",
-    "retailer-35",
-    "retailer-36",
-    "retailer-37",
-    "retailer-38",
-    "retailer-39",
-    "retailer-40",
-    "retailer-41",
-    "retailer-42",
-    "retailer-43",
-    "retailer-44",
-    "retailer-45",
-    "retailer-46",
-    "retailer-47",
-    "retailer-48",
-    "retailer-49",
-    "retailer-50",
-    "retailer-51",
-    "retailer-52",
-    "retailer-01",
-    "retailer-02",
-    "retailer-03",
-    "retailer-04",
-    "retailer-05",
-    "retailer-06",
-    "retailer-07",
-    "retailer-08",
-    "retailer-09",
-    "retailer-10",
-    "retailer-11",
-    "retailer-12",
-    "retailer-13",
-    "retailer-14",
-    "retailer-15",
-    "retailer-16"
-  ],
-  "startedAt": "2026-10-23T07:57:55.354Z",
-  "mode": "reconcile",
-  "discoveryScope": "all",
+  "deferredSourceIds": [],
+  "startedAt": "2026-10-23T11:46:42.683Z",
+  "mode": "live",
+  "discoveryScope": "live",
   "runTrigger": "schedule",
-  "githubRunId": "39921078306",
+  "githubRunId": "39948224082",
   "autoRefreshDeployed": false,
   "fullCatalogCoverage": false,
   "sources": [
@@ -323613,7 +323573,7 @@
       "collectorLastAttempt": "2026-10-23T07:57:55.377Z",
       "collectorLastSuccess": "2026-10-23T08:01:07.331Z",
       "count": 163,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -373734,9 +373694,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -373744,8 +373704,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-18",
@@ -373754,7 +373714,7 @@
       "collectorLastAttempt": "2026-10-23T08:01:10.683Z",
       "collectorLastSuccess": "2026-10-23T08:04:22.533Z",
       "count": 136,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -422604,9 +422564,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -422614,8 +422574,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-19",
@@ -436993,7 +436953,7 @@
         "blockedUntil": null
       },
       "attempted": false,
-      "evaluatedThisExecution": true
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-21",
@@ -437072,7 +437032,7 @@
       "collectorLastAttempt": "2026-10-23T08:04:29.333Z",
       "collectorLastSuccess": "2026-10-23T08:05:04.517Z",
       "count": 67,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -486501,9 +486461,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -486511,8 +486471,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-23",
@@ -486521,7 +486481,7 @@
       "collectorLastAttempt": "2026-10-23T08:05:12.018Z",
       "collectorLastSuccess": "2026-10-23T08:08:23.911Z",
       "count": 143,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -540444,7 +540404,7 @@
       "errors": [
         "detail_parse_failed:https://a2be.net/product/detail.html?product_no=15041&cate_no=924&display_group=1"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -540454,8 +540414,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-24",
@@ -540464,7 +540424,7 @@
       "collectorLastAttempt": "2026-10-23T08:08:28.173Z",
       "collectorLastSuccess": "2026-10-23T08:11:40.767Z",
       "count": 173,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -587984,9 +587944,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -587994,8 +587954,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-25",
@@ -588004,7 +587964,7 @@
       "collectorLastAttempt": "2026-10-23T08:11:44.521Z",
       "collectorLastSuccess": "2026-10-23T08:14:56.709Z",
       "count": 163,
-      "requests": 20,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -665244,9 +665204,9 @@
         }
       },
       "errors": [],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
-      "automatedExecutionVerified": true,
+      "automatedExecutionVerified": false,
       "controlDecision": {
         "requestedEnabled": true,
         "registryEligible": true,
@@ -665254,8 +665214,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-27",
@@ -665354,7 +665314,7 @@
       "collectorLastAttempt": "2026-10-23T08:15:00.838Z",
       "collectorLastSuccess": "2026-10-23T08:15:38.334Z",
       "count": 23,
-      "requests": 19,
+      "requests": 0,
       "coverage": {
         "kind": "known_product_urls",
         "paginationComplete": false,
@@ -697943,7 +697903,7 @@
       "errors": [
         "detail_request_failed:https://www.trofish.net/shop/shopdetail.html?branduid=3528044&xcode=001&mcode=005&scode=005&type=X&sort=order&current_category=001005005&search=&GfDT=a293WA%3D%3D:fetch failed"
       ],
-      "attemptedThisExecution": true,
+      "attemptedThisExecution": false,
       "executionRunId": "39921078306",
       "automatedExecutionVerified": false,
       "controlDecision": {
@@ -697953,8 +697913,8 @@
         "reason": "eligible",
         "blockedUntil": null
       },
-      "attempted": true,
-      "evaluatedThisExecution": true
+      "attempted": false,
+      "evaluatedThisExecution": false
     },
     {
       "id": "retailer-30",
@@ -1075390,22 +1075350,14 @@
       "evaluatedThisExecution": false
     }
   ],
-  "executionDeadlineReached": true,
-  "executionBudgetLimited": true,
-  "finishedAt": "2026-10-23T08:15:48.948Z",
-  "nextSourceId": "retailer-29",
-  "attemptedSourceIds": [
-    "retailer-17",
-    "retailer-18",
-    "retailer-22",
-    "retailer-23",
-    "retailer-24",
-    "retailer-25",
-    "retailer-29"
-  ],
+  "executionDeadlineReached": false,
+  "executionBudgetLimited": false,
+  "finishedAt": "2026-10-23T11:46:42.683Z",
+  "nextSourceId": "retailer-25",
+  "attemptedSourceIds": [],
   "executionEnvironment": "github_actions",
-  "productChanges": 96,
-  "executionSkippedReason": null,
+  "productChanges": 0,
+  "executionSkippedReason": "not_due",
   "executionError": null,
   "checkpointOnly": false,
   "collectorControls": {
@@ -1075424,34 +1075376,34 @@
   },
   "scheduleDecision": {
     "automatic": true,
-    "due": true,
-    "reason": "due",
-    "intervalHours": 24,
-    "lastAttemptAt": "2026-10-22T07:58:32.389Z",
+    "due": false,
+    "reason": "already_attempted_window",
+    "intervalHours": 12,
+    "lastAttemptAt": "2026-10-23T04:59:15.611Z",
     "gate": "utc_slot_window",
     "window": {
-      "id": "reconcile:24:2026-10-23T02:43:00.000Z",
-      "startAt": "2026-10-23T02:43:00.000Z",
-      "endAt": "2026-10-24T02:43:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T02:43:00.000Z"
+      "id": "live:12:2026-10-23T00:17:00.000Z",
+      "startAt": "2026-10-23T00:17:00.000Z",
+      "endAt": "2026-10-23T12:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
     "previousWindow": {
-      "id": "reconcile:24:2026-10-22T02:43:00.000Z",
-      "startAt": "2026-10-22T02:43:00.000Z",
-      "endAt": "2026-10-23T02:43:00.000Z",
-      "intervalHours": 24,
-      "anchorAt": "1970-01-01T02:43:00.000Z"
+      "id": "live:12:2026-10-23T00:17:00.000Z",
+      "startAt": "2026-10-23T00:17:00.000Z",
+      "endAt": "2026-10-23T12:17:00.000Z",
+      "intervalHours": 12,
+      "anchorAt": "1970-01-01T00:17:00.000Z"
     },
-    "nextDueAt": "2026-10-24T02:43:00.000Z"
+    "nextDueAt": "2026-10-23T12:17:00.000Z"
   },
   "schedule": {
     "schemaVersion": 1,
     "modes": {
       "live": {
         "intervalHours": 12,
-        "lastEvaluatedAt": "2026-10-23T04:59:15.602Z",
-        "lastDecision": "attempted",
+        "lastEvaluatedAt": "2026-10-23T11:46:42.683Z",
+        "lastDecision": "already_attempted_window",
         "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
         "lastAttemptAt": "2026-10-23T04:59:15.611Z",
         "lastManualAttemptAt": "2026-10-10T04:36:16.718Z",
@@ -1075525,102 +1075477,8 @@
       }
     }
   },
-  "sourceDecisions": {
-    "retailer-17": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-18": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-19": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-20": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-21": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-22": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-23": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-24": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-25": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    },
-    "retailer-27": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-28": {
-      "requestedEnabled": false,
-      "registryEligible": false,
-      "effectiveEnabled": false,
-      "reason": "requested_off",
-      "blockedUntil": null
-    },
-    "retailer-29": {
-      "requestedEnabled": true,
-      "registryEligible": true,
-      "effectiveEnabled": true,
-      "reason": "eligible",
-      "blockedUntil": null
-    }
-  },
-  "evaluatedSourceIds": [
-    "retailer-17",
-    "retailer-18",
-    "retailer-20",
-    "retailer-22",
-    "retailer-23",
-    "retailer-24",
-    "retailer-25",
-    "retailer-29"
-  ],
+  "sourceDecisions": {},
+  "evaluatedSourceIds": [],
   "lastConfirmedCheckpointAt": "2026-10-10T02:54:24.373Z",
   "lastManualValidation": {
     "kind": "bounded_saved_filter_targets",

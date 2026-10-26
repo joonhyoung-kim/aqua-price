@@ -108,10 +108,11 @@ test('complete UV canister filters stay equipment while replacement lamps, mount
  const cases=[['KW 캐니스터 UV 외부여과기 (OWL-608) (UV램프 내장)','filter_external'],['KW 외부여과기용 자외선 UV 교체램프','sterilizer'],['KW 캐니스터 UV 외부여과기 프리필터','filter_parts'],['DDA 파이프 픽서(스펀지여과기 거치대)','filter_parts'],['UP 외부여과기용 프리필터 (1개)','filter_parts'],['칸후 스펀지여과기 전용 여과통 (여과재 포함)','filter_parts'],['리글라스 아파트 단지 여과기 (대) PJJ-185 리필','media_other'],['도핀 12/16 입수관 (소)','filter_parts']];
  for(const[name,key]of cases)assert.equal(T.classification(item(name)).key,key,name);
 });
-test('whitespace-insensitive search gives identical IDs through cached and direct queries without merging SKU rows',()=>{
+test('token search retains compact matches and exact SKU rows while allowing separated words',()=>{
  const query=A.createCatalogQuery(actual),base={...A.defaultFilters,type:'gear'};
  const a=A.selectProducts(actual,{...base,query:'외부여과기'}).rows,b=A.selectProducts(actual,{...base,query:'외부 여과기'}).rows;
- assert.deepEqual(a.map(x=>x.id),b.map(x=>x.id));assert.ok(a.length>0);
- assert.deepEqual(query.select({...base,query:'외부 여과기'}).rows.map(x=>x.id),a.map(x=>x.id));
- assert.equal(new Set(a.map(x=>x.id)).size,a.length);
+ assert.ok(a.length>0);assert.ok(a.every(p=>b.some(q=>q.id===p.id)));
+ assert.ok(b.every(p=>[p.name,p.originalTitle,p.spec].some(v=>v.includes('외부')&&v.includes('여과기'))));
+ assert.deepEqual(query.select({...base,query:'외부 여과기'}).rows.map(x=>x.id),b.map(x=>x.id));
+ assert.equal(new Set(b.map(x=>x.id)).size,b.length);
 });

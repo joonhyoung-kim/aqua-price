@@ -98,7 +98,7 @@ test('gear cache and uncached queries agree across leaf, date, price and search 
 
 test('browser script dependencies load taxonomy before model and keep native buttons accessible',()=>{
  const html=fs.readFileSync('dist/index.html','utf8'),js=fs.readFileSync('dist/app.js','utf8');
- assert.ok(html.indexOf('src="gear-taxonomy.js"')<html.indexOf('src="data-model.js"'));
+ assert.ok(html.indexOf('src="gear-taxonomy.')<html.indexOf('src="data-model.'));
  assert.match(js,/data-gear-browse=.*aria-expanded/);assert.match(js,/data-gear-group=.*aria-pressed/);
  assert.match(html,/@media\(max-width:760px\)/);assert.match(html,/grid-template-columns:1fr/);
  assert.match(fs.readFileSync('scripts/serve.cjs','utf8'),/['"]\/gear-taxonomy\.js['"]:/);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T00:37:18.322Z",
+  "generatedAt": "2026-10-26T01:23:55.982Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -64,11 +64,11 @@
     }
   },
   "execution": {
-    "environment": "github_actions",
-    "trigger": "workflow_dispatch",
-    "runId": "40248624261",
-    "startedAt": "2026-10-26T00:19:22.710Z",
-    "finishedAt": "2026-10-26T00:37:16.135Z",
+    "environment": "local",
+    "trigger": "local",
+    "runId": null,
+    "startedAt": "2026-10-26T01:23:02.063Z",
+    "finishedAt": "2026-10-26T01:23:35.071Z",
     "publicationChanged": true
   },
   "controls": {
@@ -233,27 +233,30 @@
         },
         "retailer-52": {
           "enabled": false
+        },
+        "retailer-53": {
+          "enabled": true
         }
       }
     },
-    "revision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
-    "collectorRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
+    "revision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
+    "collectorRevision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
     "schedule": {
       "schemaVersion": 1,
       "modes": {
         "live": {
           "intervalHours": 12,
-          "lastEvaluatedAt": "2026-10-26T00:19:22.710Z",
+          "lastEvaluatedAt": "2026-10-26T01:23:02.063Z",
           "lastDecision": "attempted",
-          "evaluatedConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
-          "lastAttemptAt": "2026-10-26T00:19:22.728Z",
-          "lastManualAttemptAt": "2026-10-26T00:19:22.728Z",
-          "lastAttemptConfigRevision": "13bb7b9cd2753521a653568ab3d4ffc4dc38f41085965ab575a1f2e42a2260dc",
-          "lastAttemptRunId": "40248624261",
+          "evaluatedConfigRevision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
+          "lastAttemptAt": "2026-10-26T01:23:02.066Z",
+          "lastManualAttemptAt": "2026-10-26T01:23:02.066Z",
+          "lastAttemptConfigRevision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
+          "lastAttemptRunId": null,
           "lastAttemptAutomatic": false,
-          "lastManualOutcome": "partial_failure",
-          "lastOutcome": "partial_failure",
-          "lastFinishedAt": "2026-10-26T00:37:16.135Z",
+          "lastManualOutcome": "success",
+          "lastOutcome": "success",
+          "lastFinishedAt": "2026-10-26T01:23:35.071Z",
           "lastFailureAt": "2026-10-26T00:37:16.135Z",
           "lastManualFailureAt": "2026-10-26T00:37:16.135Z",
           "lastAutomatedWindow": {
@@ -265,7 +268,9 @@
           },
           "lastAutomatedAttemptAt": "2026-10-25T16:30:14.809Z",
           "lastAutomatedOutcome": "partial_failure",
-          "lastAutomatedFailureAt": "2026-10-25T16:48:05.731Z"
+          "lastAutomatedFailureAt": "2026-10-25T16:48:05.731Z",
+          "lastSuccessAt": "2026-10-26T01:23:35.071Z",
+          "lastManualSuccessAt": "2026-10-26T01:23:35.071Z"
         },
         "gear": {
           "intervalHours": 24,
@@ -91689,6 +91694,67 @@
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
       "schedule": null
+    },
+    {
+      "id": "retailer-53",
+      "name": "솔아쿠아",
+      "domain": "solaqua.kr",
+      "officialUrl": "https://solaqua.kr/",
+      "technicalReadiness": "known_single_offer_samples_verified",
+      "enabled": true,
+      "control": {
+        "requestedEnabled": true,
+        "registryEligible": true,
+        "effectiveEnabled": true,
+        "reason": "eligible",
+        "blockedUntil": null
+      },
+      "snapshotProductCount": 3,
+      "collectorProductCount": 3,
+      "refreshScope": {
+        "reviewHeldProductCount": 0,
+        "verifiedUrlCount": 3,
+        "selectedUrlCount": 3,
+        "productBudget": 3,
+        "allVerifiedUrlsSelected": true,
+        "fullRetailerCatalogCoverage": false,
+        "requestAllocation": {
+          "total": 4,
+          "knownProductLimit": 3,
+          "knownRequestLimit": 4,
+          "discoveryRequestReserve": 0
+        }
+      },
+      "execution": {
+        "automaticAttemptConfirmed": false,
+        "runId": null
+      },
+      "collectorStatus": "success",
+      "collectorLastAttempt": "2026-10-26T01:23:02.066Z",
+      "collectorLastSuccess": "2026-10-26T01:23:33.266Z",
+      "collectorLastError": null,
+      "blockers": [
+        "Only three reviewed known product URLs; no category discovery or full retailer coverage.",
+        "Options, price disagreement or stock disagreement require review and preserve lastgood.",
+        "Public terms link is under robots-disallowed /member/; terms content was not fetched and permission is not inferred."
+      ],
+      "discovery": {
+        "entryPoints": [],
+        "status": "reviewed_known_urls_only",
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true,
+        "deletionEnabled": false,
+        "productNames": {
+          "names": [],
+          "unnamedCount": 0,
+          "candidateCount": 0
+        },
+        "categoryTree": null
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     }
   ]
 }

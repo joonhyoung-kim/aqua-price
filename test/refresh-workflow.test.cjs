@@ -60,14 +60,14 @@ test('schedule metadata and admin display match the cadence without claiming exe
  assert.equal(out.sources[0].schedule,'생물 6시간마다 / 용품 12시간마다 / 목록 대조 매일 02:43 (UTC · 설정 기준)');
  assert.equal(out.sources[1].schedule,null);assert.equal(out.sources[0].autoRefreshVerified,false);
 });
-test('preview-only publication, pacing, recovery and both validation gates remain intact',()=>{
- assert.match(workflow,/ref: preview/);assert.match(workflow,/git push origin HEAD:preview/);
+test('data-only production publication, pacing, recovery and both validation gates remain intact',()=>{
+ assert.match(workflow,/ref: main/);assert.match(workflow,/node scripts\/publish-catalog\.cjs/);
  assert.equal([...workflow.matchAll(/\bnpm test\b/g)].length,2);
  assert.match(workflow,/timeout-minutes: 25/);assert.match(workflow,/cancel-in-progress: false/);
  assert.match(workflow,/Preserve lastgood and refusal quarantine\n        if: always\(\)/);
  assert.match(workflow,/Report source failures without retrying/);
- assert.doesNotMatch(workflow,/--refresh-known|--discover|HEAD:main|cancel-in-progress: true/);
- assert.match(workflow,/git add -- dist\/catalog\.json dist\/source-snapshot\.json dist\/collector-status\.json dist\/admin\/status\.json/);
+ assert.doesNotMatch(workflow,/--refresh-known|--discover|cancel-in-progress: true/);
+ assert.match(workflow,/git fetch origin main preview/);assert.match(workflow,/fetch-depth: 0/);
  assert.match(read('scripts/collect-catalog.cjs'),/executionBudgetMs\s*=\s*18\s*\*\s*60\s*\*\s*1000/);
  assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\(reportPath,\s*current\)/);
  assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\('dist\/collector-status\.json',\s*current\)/);

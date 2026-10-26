@@ -1,4 +1,4 @@
-name: Refresh preview catalog
+name: Refresh verified catalog
 
 on:
   workflow_dispatch:
@@ -27,11 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Checkout trusted preview collector
+      - name: Checkout trusted main collector
         uses: actions/checkout@v4
         with:
-          ref: preview
+          ref: main
+          fetch-depth: 0
           persist-credentials: true
+      - name: Pin publication branches before collection
+        shell: bash
+        run: |
+          git fetch origin main preview
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          echo "MAIN_BASE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "PREVIEW_BASE=$(git rev-parse origin/preview)" >> "$GITHUB_ENV"
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -68,21 +76,12 @@ jobs:
         run: |
           node scripts/build-admin-status.cjs
           npm test
-      - name: Commit only preview data paths
+      - name: Publish validated data to main and preview atomically
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- dist/catalog.json dist/source-snapshot.json dist/collector-status.json dist/admin/status.json
-          if git diff --cached --quiet; then exit 0; fi
-          git diff --cached --name-only | while IFS= read -r path; do
-            case "$path" in
-              dist/catalog.json|dist/source-snapshot.json|dist/collector-status.json|dist/admin/status.json) ;;
-              *) exit 1 ;;
-            esac
-          done
-          git commit -m 'Refresh preview catalog data'
-          git push origin HEAD:preview
+          node scripts/publish-catalog.cjs
       - name: Preserve lastgood and refusal quarantine
         if: always()
         uses: actions/cache/save@v4

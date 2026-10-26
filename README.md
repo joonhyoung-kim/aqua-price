@@ -144,3 +144,13 @@ Every publication mode requires a freshly verified update receipt before an exis
 The durable checkpoint retains per-offer queue status, identity, reason, attempts and evidence. Temporary request/parse/missing-detail failures wait at least 24 hours before another automatic revalidation attempt; ambiguous classifications, identity mismatches and robots denials remain explicit review records until the classifier changes or they are deliberately reviewed. Successful checks are not repeatedly queued solely because the name still contains packaging wording. Ordinary --refresh-known runs remain price-refresh only; use the normal discovery-enabled gear/all/reconcile run to process the queue.
 
 This is an offline-tested code repair. Applying its overlay does not collect or reclassify the current published data; changes require a later authorized discovery-enabled run with fresh merchant evidence.
+
+## Validated production data publication (2026-10-26)
+
+The active catalog-refresh workflow collects with the approved `main` code. It preserves the seven existing UTC slots, 12-hour live / 24-hour gear and reconcile windows, 18-minute collection budget, 25-minute job timeout, source controls, request limits, cache, lastgood data and refusal quarantine.
+
+After collection and the full test suite, `scripts/publish-catalog.cjs` publishes only `dist/catalog.json`, `dist/source-snapshot.json`, `dist/collector-status.json`, and `dist/admin/status.json`. Each branch receives its own child commit; preview application changes never enter main. Preview compatibility is tested before an atomic, non-forced push of both refs. Render's existing main auto-deploy publishes the production site.
+
+Publication rejects empty/unready catalogs, snapshot mismatches, incomplete/fatal reports, wrong run IDs, older observation times, or branch movement during collection/validation. A server rejection leaves both refs unchanged. There is no automatic collection retry or force push. Investigate a failed publication before retrying; a later scheduled run can recover from the preserved cache. `not_due` may update execution metadata but must keep catalog and source snapshot unchanged. Individual seller failures may still publish independently verified updates after validation, preserving other sellers' last valid records, and the workflow continues to report source failure.
+
+Bootstrap: copied only these four data paths from preview commit `7318d05` (6,123 products; catalog asOf `2026-10-25T16:47:58.764Z`) and validated against main's application and collector contracts.

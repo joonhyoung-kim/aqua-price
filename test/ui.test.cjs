@@ -12,9 +12,10 @@ const live = actual.products.filter(p => p.type === 'live'&&AquaCatalog.comparis
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
+const uxFixture=require('./fixtures/ux2-catalog.json');
 test('enhanced UI keeps drafts and IME separate, restores saved conditions and never exposes missing favorites',async()=>{
  let saved;const storage={getItem:()=>saved,setItem:(_k,v)=>{saved=v;}};
- const app=await setup(actual,false,'?type=live&query=네온테트라',true,true,storage),n=app.nodes;
+ const app=await setup(uxFixture,false,'?type=live&query=네온테트라',true,true,storage),n=app.nodes;
  assert.match(n.resultTitle.textContent,/상품 .*옵션 포함 64개/);
  const before=n.grid.innerHTML;n.query.value='체리바브';n.query.listeners.input({target:n.query});assert.equal(n.grid.innerHTML,before);assert.match(n.searchSuggestions.innerHTML,/체리바브/);
  n.query.listeners.compositionstart();n.search.listeners.submit({preventDefault(){},isComposing:true});assert.equal(n.grid.innerHTML,before);
@@ -22,17 +23,17 @@ test('enhanced UI keeps drafts and IME separate, restores saved conditions and n
  n.saveCondition.listeners.click();assert.match(n.savedConditions.innerHTML,/체리바브/);
  n.wantedQty.value='12';n.wantedQty.listeners.change();n.shoppingFilters.listeners.submit({preventDefault(){}});assert.match(n.grid.innerHTML,/실제/);assert.match(n.grid.innerHTML,/배송 포함 합계 미확인/);
  n.wantedQty.value='-1';n.wantedQty.listeners.change();assert.match(n.quantityError.textContent,/1~100000/);
- const p=actual.products.find(p=>p.name==='체리바브 5마리');n.grid.listeners.click({target:{closest:s=>s==='[data-favorite]'?{dataset:{favorite:p.id}}:null}});assert.match(n.favorites.innerHTML,/체리바브/);assert.equal(app.fetchCount(),1);
- const without=structuredClone(actual);without.products=without.products.filter(x=>x.id!==p.id);const absent=await setup(without,false,'?query=체리바브',true,true,storage);assert(!absent.nodes.grid.innerHTML.includes('data-offer-id="'+p.id+'"'));assert.match(absent.nodes.favorites.innerHTML,/재입고 확인 대기/);
+ const p=uxFixture.products.find(p=>p.name==='체리바브 5마리');n.grid.listeners.click({target:{closest:s=>s==='[data-favorite]'?{dataset:{favorite:p.id}}:null}});assert.match(n.favorites.innerHTML,/체리바브/);assert.equal(app.fetchCount(),1);
+ const without=structuredClone(uxFixture);without.products=without.products.filter(x=>x.id!==p.id);const absent=await setup(without,false,'?query=체리바브',true,true,storage);assert(!absent.nodes.grid.innerHTML.includes('data-offer-id="'+p.id+'"'));assert.match(absent.nodes.favorites.innerHTML,/재입고 확인 대기/);
 });
 test('autocomplete keyboard and touch selection only update the unsubmitted draft',async()=>{
- const app=await setup(actual,false,'?query=네온',true,true),n=app.nodes,before=n.grid.innerHTML;
+ const app=await setup(uxFixture,false,'?query=네온',true,true),n=app.nodes,before=n.grid.innerHTML;
  n.query.value='체리';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});n.query.listeners.keydown({key:'Enter',preventDefault(){}});assert.match(n.query.value,/체리/);assert.equal(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);
  n.query.listeners.keyup({key:'Enter'});n.query.value='팬더';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'Escape'});assert.equal(n.searchSuggestions.hidden,true);
  n.query.listeners.input({target:n.query});n.searchSuggestions.listeners.click({target:{closest:()=>({dataset:{suggestion:'0'}})}});assert.equal(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);n.search.listeners.submit({preventDefault(){}});assert.notEqual(n.grid.innerHTML,before);
 });
 test('enhanced price comparison retains exact option links and individual filter clearing',async()=>{
- const app=await setup(actual,false,'?type=gear&query=섭스프로&compareAcross=true',true,true),n=app.nodes;
+ const app=await setup(uxFixture,false,'?type=gear&query=섭스프로&compareAcross=true',true,true),n=app.nodes;
  assert.match(n.sellerComparisons.innerHTML,/93,000/);assert.match(n.sellerComparisons.innerHTML,/128,000/);assert.doesNotMatch(n.sellerComparisons.innerHTML,/206,000/);
  n.activeFilters.listeners.click({target:{closest:()=>({dataset:{clearFilter:'query'}})}});assert.equal(n.query.value,'');assert(!n.activeFilters.innerHTML.includes('섭스프로 ×'));
  n.activeFilters.listeners.click({target:{id:'clearAllFilters',closest:()=>null}});assert.equal(n.compareAcross.checked,false);

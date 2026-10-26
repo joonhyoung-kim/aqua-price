@@ -90,6 +90,7 @@ async function collectSource(source, previous={}, options={}) {
       // A product URL may contain several options with different confirmed classifications.
       // A URL-level refresh hint must never relabel every existing variant as its first sibling.
       for(const item of parsed.items){
+        Object.assign(item,require('./product-metadata.cjs').metadata(page.text,item,context));
         const old=state.products.find(p=>p.collector_key===item.collector_key&&p.source_id===item.source_id&&p.retailer_product_id===item.retailer_product_id&&(p.variant_id||null)===(item.variant_id||null));
         if(!old)continue;
         item.id=old.id;item.type=old.type;item.subtype=old.subtype??null;delete item.replaces_snapshot_id;

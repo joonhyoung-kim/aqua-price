@@ -195,7 +195,7 @@ test('known metrics enable sorts, count unknown exclusions and respect exact sel
 });
 test('cards show seller, full name, option, price, observation and shipping with a safe link', async () => {
  const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
- assert.match(app.nodes.dataStatus.textContent,/실시간 가격·재고는 판매처 확인/);
+ assert.match(app.nodes.dataStatus.textContent,/가격·재고는 마지막 확인 기준/);
  const cards=[...app.nodes.grid.innerHTML.matchAll(/<article class="card">([\s\S]*?)<\/article>/g)];assert.equal(cards.length,Math.min(24,gear.length));
  for(const card of cards){assert.match(card[1],/class="offer-spec"/);assert.match(card[1],/배송비 미확인/);assert.match(card[1],/<time datetime=/);assert.match(card[1],/판매처 이동/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
  for(const product of gear.slice(0,24))assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.sourceUrl)));

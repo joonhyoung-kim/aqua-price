@@ -23,6 +23,7 @@
   const groups={all:'전체',...Object.assign({},...navigation.map(g=>g.children)),other:'기타·미분류'};
   const parent=key=>navigation.find(g=>Object.hasOwn(g.children,key))||null;
   const rules=[
+    ['filter_parts',/(?:외부\s*여과기|에하임|EHEIM).{0,45}(?:헤드\s*고무링|패킹|호스|입수관|출수관|임펠[라러]|O[-\s]?링)/i],
     // Accessory/consumable phrases must win over the equipment mentioned in them.
     ['filter_external',/^(?!.*(?:교체|램프만|부품|외부여과기용|프리\s*필터|리필|카트리지|임펠)).*(?:캐니스터\s+UV\s+외부여과기(?!용)|외부여과기(?!용).{0,30}UV\s*램프\s*내장)/i],
     ['filter_parts',/프리\s*필터|여과기.{0,20}거치대|파이프\s*픽서|스펀지여과기\s*전용\s*여과통|^[^\s]+\s+\d+\/\d+\s+(?:입수관|출수관)/i],

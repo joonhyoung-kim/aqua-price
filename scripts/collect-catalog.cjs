@@ -218,7 +218,7 @@ async function main(args = process.argv.slice(2)) {
       const allocation = requestAllocation(source, discoveryMode), scope = refreshScope(source, previous, mode, discoveryMode, { limit: allocation.knownProductLimit });
       const scoped = { ...source, maxRequests: allocation.knownRequestLimit, products: scope.products };
       evaluations.set(source.id, { priceModes: scope.products.length ? [mode] : [], discoveryLanes: [], fetchedPages: [], generatedRevalidationIds: [] });
-      if (['live', 'gear'].includes(mode) && scoped.products.length === 0 && !discoveryMode) continue;
+      if (['live', 'gear'].includes(mode) && scoped.products.length === 0 && (!discoveryMode || source.adapter === 'cafe24_single_offer')) continue;
       const seed = seeds.find(s => s.id === source.id);
       if (requestedCategory && seed && !seed.categories.some(c => c.url === requestedCategory)) throw Error('Discovery category must match observed seed exactly');
       const fetchObserved = async (url, options) => {

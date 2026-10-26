@@ -84,7 +84,7 @@ async function collectSource(source, previous={}, options={}) {
       state.coverage.visitedPages++;
       const observedAt=page.cacheHit?(page.fetchedAt || prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
       const context={...product,url:product.url,sourceId:source.id,domain:source.sourceDomain,name:source.name,photosAllowed:source.photosAllowed===true,verifiedPhotoUrls:source.verifiedPhotoUrls,observedAt};
-      const parsed=limits.adapter==='wpet_public_price'?require('./wpet-public.cjs').parseWpetPage(page.text,context):limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
+      const parsed=limits.adapter==='cafe24_single_offer'?require('./cafe24-single-offer.cjs').parseSingleOffer(page.text,context):limits.adapter==='wpet_public_price'?require('./wpet-public.cjs').parseWpetPage(page.text,context):limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
       if(parsed.status!=='success'){state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;continue;}
       if(parsed.issues.some(x=>x!=='duplicate_offer')){state.errors.push(...parsed.issues.filter(x=>x!=='duplicate_offer').map(x=>x+':'+product.url));state.coverage.parseFailures++;}
       // A product URL may contain several options with different confirmed classifications.

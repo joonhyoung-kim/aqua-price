@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryStatus": "original_45_plus_6_user_approved_partial_collectors",
+  "registryStatus": "original_45_plus_7_user_approved_partial_collectors",
   "originalSourceCount": 45,
   "originalSourcesWithSnapshot": 9,
   "collectorVerifiedSources": 0,
@@ -2705,6 +2705,60 @@
         "newProductDiscovery": false,
         "knownProductUrlsOnly": true
       }
+    },
+    {
+      "id": "retailer-53",
+      "name": "솔아쿠아",
+      "sourceDomain": "solaqua.kr",
+      "officialURL": "https://solaqua.kr/",
+      "original45": false,
+      "userApprovedAdditional": true,
+      "approvalBatch": "2026-10-26",
+      "platform": "Cafe24",
+      "adapter": "cafe24_single_offer",
+      "enabled": true,
+      "photosAllowed": false,
+      "technicalReadiness": "known_single_offer_samples_verified",
+      "currentIntegrationStatus": "three_known_products_verified_no_discovery",
+      "products": [
+        {
+          "url": "https://solaqua.kr/product/화이트-팬더-코리도라스/135/category/53/display/1/",
+          "type": "live",
+          "subtype": "fish",
+          "classificationBasis": "Reviewed current primary product title: ornamental fish, no selectable options"
+        },
+        {
+          "url": "https://solaqua.kr/product/그린-네온-테트라/200/category/1/display/2/?icid=MAIN.product_listmain_1",
+          "type": "live",
+          "subtype": "fish",
+          "classificationBasis": "Reviewed current primary product title: ornamental fish, no selectable options"
+        },
+        {
+          "url": "https://solaqua.kr/product/네온-테트라/102/category/1/display/3/?icid=MAIN.product_listmain_2",
+          "type": "live",
+          "subtype": "fish",
+          "classificationBasis": "Reviewed current primary product title: ornamental fish, no selectable options"
+        }
+      ],
+      "maxRequests": 4,
+      "delayMs": 10000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "Only three reviewed known product URLs; no category discovery or full retailer coverage.",
+        "Options, price disagreement or stock disagreement require review and preserve lastgood.",
+        "Public terms link is under robots-disallowed /member/; terms content was not fetched and permission is not inferred."
+      ],
+      "discovery": {
+        "entryPoints": [],
+        "status": "reviewed_known_urls_only",
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true,
+        "deletionEnabled": false
+      },
+      "reviewEvidence": "sources/solaqua-review.json"
     }
   ],
   "auditSamplePassed": 33,

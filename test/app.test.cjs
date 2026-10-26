@@ -221,7 +221,7 @@ test('UI controls, data script order and honest status exist in HTML', () => {
   for (const value of ['low', 'high', 'sales', 'new', 'observed']) assert.ok(sortSelect.includes(`value="${value}"`));
   assert.ok(html.includes('<label for="sort" class="label">'));assert.ok(html.indexOf('id="sort"')<html.indexOf('id="period"'));assert.ok(!html.includes('data-sort='));
   for (const value of [7, 30, 90]) assert.ok(html.includes(`value="${value}"`));
-  assert.ok(html.indexOf('src="data-model.js"') < html.indexOf('src="app.js"'));
+  assert.ok(html.indexOf('src="data-model.') < html.indexOf('src="app.'));
   assert.ok(html.includes('id="dataStatus"')); assert.ok(html.includes('id="moreResults"'));
 });
 test('expanded snapshot deduplicates sellers and requires explicit category for new items', () => {

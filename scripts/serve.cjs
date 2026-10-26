@@ -18,6 +18,10 @@ const routes = {
   '/admin/app.js': ['admin/app.js', 'text/javascript; charset=utf-8'],
   '/admin/status.json': ['admin/status.json', 'application/json; charset=utf-8'],
 };
+// Only public, generated script names are eligible; never arbitrary paths.
+for(const file of fs.readdirSync(path.join(__dirname,'../dist'))){
+  if(/^(?:gear-taxonomy|data-model|app|enhancements)\.[a-f0-9]{12}\.js$/.test(file))routes['/'+file]=[file,'text/javascript; charset=utf-8'];
+}
 http.createServer((req, res) => {
   const route = routes[new URL(req.url, 'http://localhost').pathname];
   if (!route) { res.writeHead(404); res.end('Not found'); return; }

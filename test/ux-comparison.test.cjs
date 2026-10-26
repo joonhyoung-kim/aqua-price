@@ -10,9 +10,9 @@ test('zero alone is unconfirmed; affirmative free offers and paid online offers 
  const all=A.selectProducts(input,{...A.defaultFilters,comparison:'all'}).rows;assert.equal(all.length,7);assert.deepEqual(all.slice(0,2).map(p=>p.id),['무료 분양','paid']);
  assert.equal(A.selectProducts(input,{...A.defaultFilters,comparison:'unpriced'}).rows.length,5);assert.equal(input.products[0].price.amount,0);
 });
-test('unit prices use verified count only; titles and dimensions never create counts',()=>{
+test('unit prices accept explicit title counts; dimensions never create counts',()=>{
  for(const [count,total,unitAmount]of [[1,600,600],[5,3000,600],[10,5000,500]])assert.deepEqual(A.unitPrice(p('fish',{subtype:'fish',quantityPerPack:count,price:{amount:total,currency:'KRW'}})),{count,unit:'마리',amount:unitAmount});
- assert.equal(A.unitPrice(p('10마리 6cm 등급 A')),null);
+ assert.deepEqual(A.unitPrice(p('10마리 6cm 등급 A')),{count:10,unit:'마리',amount:100});assert.equal(A.unitPrice(p('6cm 등급 A')),null);
  assert.equal(A.unitPrice(p('ambiguous',{quantityPerPack:0})),null);
  assert.deepEqual(A.unitPrice(p('pair',{pairsPerPack:2})),{count:2,unit:'쌍',amount:500});
  assert.deepEqual(A.unitPrice(p('gear',{type:'gear',subtype:null,quantityPerPack:4})),{count:4,unit:'개',amount:250});

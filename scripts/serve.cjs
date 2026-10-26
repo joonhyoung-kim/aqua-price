@@ -5,6 +5,7 @@ const routes = {
   '/': ['index.html', 'text/html; charset=utf-8'],
   '/index.html': ['index.html', 'text/html; charset=utf-8'],
   '/app.js': ['app.js', 'text/javascript; charset=utf-8'],
+  '/enhancements.js': ['enhancements.js', 'text/javascript; charset=utf-8'],
   '/gear-taxonomy.js': ['gear-taxonomy.js', 'text/javascript; charset=utf-8'],
   '/data-model.js': ['data-model.js', 'text/javascript; charset=utf-8'],
   '/catalog.json': ['catalog.json', 'application/json; charset=utf-8'],

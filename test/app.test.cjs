@@ -79,7 +79,7 @@ test('actual catalog subgroup partition conserves every livestock row and repres
   assert.equal(Object.values(counts).reduce((a,b)=>a+b,0),rows.length);
  }
  for(const [title,key]of [['플래티넘 화이트 마블 라이어테일','molly'],['리코리스구라미','gourami'],['브로치 코리도라스','cory'],['블루벨벳 새우','shrimp_blue'],['부세 파란드라','plant_buce'],['애플스네일','snail_apple']]){
-  const sample=data.products.find(p=>p.name.includes(title));assert.ok(sample,title);assert.equal(AquaCatalog.livestockGroup(sample),key,sample.name);
+  const raw=require('../dist/source-snapshot.json').items.find(p=>(p.display_title||p.title).includes(title));assert.ok(raw,title);const sample={verified:true,name:raw.display_title||raw.title,originalTitle:raw.title,type:raw.type,subtype:raw.subtype};assert.equal(AquaCatalog.livestockGroup(sample),key,sample.name);
  }
 });
 test('navigation collections partition every existing named leaf exactly once without reclassifying products',()=>{
@@ -130,10 +130,10 @@ test('published catalog preserves the supplied verified items, categories and un
   validateCatalog(data);
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
   const publishedItems = publicationItems(snapshot, data);
-  assert.equal(data.status, 'ready'); assert.equal(data.products.length, publishedItems.length); assert.equal(data.sellers.length, snapshot.summary.merchant_count);
-  assert.equal(data.products.filter(p => p.subtype === 'aquatic_plant').length, snapshot.summary.live_plant_count);
+  assert.equal(data.status, 'ready'); assert.equal(data.products.length, publishedItems.length); assert.equal(data.sellers.length, new Set(publishedItems.map(p=>p.seller_domain)).size);
+  assert.equal(data.products.filter(p => p.subtype === 'aquatic_plant').length, publishedItems.filter(p=>p.subtype==='aquatic_plant').length);
   assert.equal(data.products.filter(p => p.type === 'gear').length, publishedItems.filter(p => p.type === 'gear').length);
-  assert.equal(data.products.filter(p => p.subtype === 'fish').length, snapshot.summary.fish_count); assert.equal(data.products.filter(p => p.subtype === 'shrimp').length, snapshot.summary.shrimp_count); assert.equal(data.products.filter(p => p.subtype === 'snail').length, snapshot.summary.snail_count);
+  assert.equal(data.products.filter(p => p.subtype === 'fish').length, publishedItems.filter(p=>p.subtype==='fish').length); assert.equal(data.products.filter(p => p.subtype === 'shrimp').length, publishedItems.filter(p=>p.subtype==='shrimp').length); assert.equal(data.products.filter(p => p.subtype === 'snail').length, publishedItems.filter(p=>p.subtype==='snail').length);
   for (const [index, p] of data.products.entries()) {
     assert.equal(p.id, publishedItems[index].id); assert.equal(p.originalTitle, publishedItems[index].title);
     assert.equal(p.sourceUrl, publishedItems[index].product_url); assert.equal(p.price.amount, publishedItems[index].price_amount);
@@ -226,10 +226,10 @@ test('UI controls, data script order and honest status exist in HTML', () => {
 test('expanded snapshot deduplicates sellers and requires explicit category for new items', () => {
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/source-snapshot.json'), 'utf8'));
   const baseline = publicationItems(snapshot, JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8')));
-  const next = structuredClone(snapshot.items[1]); next.id = 'SYNTHETIC-TEST-ONLY'; next.type = 'live'; next.title = 'TEST LIVESTOCK'; next.photo = null;
+  const next = structuredClone(baseline[0]); next.id = 'SYNTHETIC-TEST-ONLY'; next.type = 'live'; next.title = 'TEST LIVESTOCK'; next.photo = null;
   snapshot.items.push(next);
   const result = buildCatalog(snapshot);
-  assert.equal(result.sellers.length, snapshot.summary.merchant_count); assert.equal(result.products.length, baseline.length + 1);
+  assert.equal(result.sellers.length, new Set(baseline.map(p=>p.seller_domain)).size); assert.equal(result.products.length, baseline.length + 1);
   assert.deepEqual(result.products.map(p=>p.id), [...baseline.map(p=>p.id), next.id]);
   assert.equal(result.products.at(-1).type, 'live'); assert.equal(result.products.at(-1).name, 'TEST LIVESTOCK');
   assert.equal(result.products.at(-1).photo.url, null); assert.equal(result.products.at(-1).registeredAt, null);

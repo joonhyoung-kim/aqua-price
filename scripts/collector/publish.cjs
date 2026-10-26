@@ -26,7 +26,7 @@ function applyUpdates(snapshot, states, mode='all'){
      if(update.replaces_snapshot_id && rows.has(update.replaces_snapshot_id)){rows.delete(update.replaces_snapshot_id);changes++;}
      if(old && Date.parse(update.observed_at_utc)<Date.parse(old.observed_at_utc))continue;
      const photo=old && old.photo?.verified_https_url===update.photo?.verified_https_url?old.photo:update.photo;
-     const merged={...old,...update,photo};
+     const merged=require('./stock-policy.cjs').preserveStockHold(old,update,{...old,...update,photo});
      if(old?.registered_at && !update.registered_at)merged.registered_at=old.registered_at;
      if(old?.shipping_amount!=null && update.shipping_amount==null)merged.shipping_amount=old.shipping_amount;
      if(JSON.stringify(old)!==JSON.stringify(merged)){rows.set(update.id,merged);changes++;}

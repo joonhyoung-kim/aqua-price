@@ -1,5 +1,5 @@
 'use strict';
-const {test}=require('node:test'),assert=require('node:assert/strict'),M=require('../dist/data-model.js'),data=require('../dist/catalog.json');
+const {test}=require('node:test'),assert=require('node:assert/strict'),M=require('../dist/data-model.js'),data=require('./fixtures/ux2-catalog.json');
 const template=data.products.find(p=>p.type==='live'&&p.subtype==='fish');
 const product=(name,extra={})=>({...structuredClone(template),name,originalTitle:name,spec:'미확인',quantityPerPack:null,pairsPerPack:null,variantId:null,price:{amount:5000,currency:'KRW'},...extra});
 test('reviewed aliases, punctuation and model identities remain distinct',()=>{

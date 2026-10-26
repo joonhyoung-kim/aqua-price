@@ -1,5 +1,5 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),M=require('../dist/data-model.js'),{buildCatalog}=require('../scripts/build-catalog.cjs');
-const snapshot=require('../dist/source-snapshot.json'),data=buildCatalog(snapshot);
+const snapshot=require('./fixtures/ux2-prime-snapshot.json'),data=buildCatalog(snapshot);
 test('reviewed Prime is a normal source product with current price, stock and explicit incomplete shipping',()=>{
  const p=data.products.find(p=>p.id==='retailer-25:cafe24_sangaquamall_1_20385:default');assert(p);assert.equal(p.price.amount,24000);assert.equal(p.available,true);assert.equal(p.shipping.amount,3000);assert.equal(p.shippingPolicy.freeThreshold,50000);assert.equal(p.shippingPolicy.conditionsComplete,false);assert.equal(M.estimatePurchase(p,3,p.shippingPolicy).total,null);assert.equal(M.estimatePurchase(p,3,p.shippingPolicy).subtotal,72000);assert.equal(M.comparisonUnit(p).amount,96000);
  const q=M.createCatalogQuery(data);assert.deepEqual(q.select({...M.defaultFilters,type:'gear',query:'시켐 프라임'}).rows.map(p=>p.id),q.select({...M.defaultFilters,type:'gear',query:'Seachem Prime'}).rows.map(p=>p.id));

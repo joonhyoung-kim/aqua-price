@@ -1196327,16 +1196327,10 @@
   ],
   "lastConfirmedCheckpointAt": "2026-10-10T02:54:24.373Z",
   "lastManualValidation": {
-    "kind": "bounded_saved_filter_targets",
-    "startedAt": "2026-10-15T10:32:48.972Z",
-    "finishedAt": "2026-10-15T10:34:46.022Z",
-    "deadline": "2026-10-15T10:50:48.972Z",
-    "productChanges": 11,
-    "sourceIds": [
-      "retailer-34",
-      "retailer-06",
-      "retailer-02"
-    ],
-    "automatic": false
+    "at": "2026-10-26T08:39:05.755Z",
+    "sourceId": "retailer-25",
+    "requests": 2,
+    "productId": "retailer-25:cafe24_sangaquamall_1_20385:default",
+    "reason": "Requested Prime coverage gap: existing collector robots/detail validation, applyUpdates publication; no full collection or schedule/cursor change"
   }
 }

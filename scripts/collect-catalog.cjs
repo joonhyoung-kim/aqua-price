@@ -215,7 +215,7 @@ async function main(args = process.argv.slice(2)) {
       report.sourceDecisions[source.id] = sourceControl;
       visited.add(source.id);
       if (!sourceControl.effectiveEnabled) continue;
-      const allocation = requestAllocation(source, discoveryMode), scope = refreshScope(source, previous, mode, discoveryMode, { limit: allocation.knownProductLimit });
+      const allocation = requestAllocation(source, discoveryMode), scope = refreshScope(source, previous, mode, discoveryMode, { limit: allocation.knownProductLimit, prioritizeOldest: true });
       const scoped = { ...source, maxRequests: allocation.knownRequestLimit, products: scope.products };
       evaluations.set(source.id, { priceModes: scope.products.length ? [mode] : [], discoveryLanes: [], fetchedPages: [], generatedRevalidationIds: [] });
       if (['live', 'gear'].includes(mode) && scoped.products.length === 0 && (!discoveryMode || source.adapter === 'cafe24_single_offer')) continue;

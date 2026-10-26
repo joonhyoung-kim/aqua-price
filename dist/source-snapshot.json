@@ -6,16 +6,16 @@
   "collection_scope": "19 limited searches, maximum 8 results per query, first page only; no additional pages or bulk crawling; not full-market coverage",
   "created_at_utc": "2026-10-08T08:29:06.935413+00:00",
   "summary": {
-    "offer_count": 6308,
+    "offer_count": 6309,
     "merchant_count": 43,
     "live_plant_count": 641,
     "fish_count": 3751,
     "shrimp_count": 229,
     "snail_count": 36,
     "fish_or_shrimp_count": 3980,
-    "gear_count": 1651,
-    "verified_https_photos": 6020,
-    "direct_retailer_products": 6301
+    "gear_count": 1652,
+    "verified_https_photos": 6021,
+    "direct_retailer_products": 6302
   },
   "photo_validation": {
     "basis": "HTTPS HEAD verification supplied by the collecting task; no image download or rehosting",
@@ -484189,6 +484189,62 @@
           "observedAt": null
         }
       ]
+    },
+    {
+      "id": "retailer-25:cafe24_sangaquamall_1_20385:default",
+      "collector_key": "retailer-25:cafe24_sangaquamall_1_20385:default",
+      "source_id": "retailer-25",
+      "retailer_product_id": "cafe24_sangaquamall_1_20385",
+      "variant_id": null,
+      "retailer": "상아쿠아",
+      "seller_domain": "sangaqua.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Product JSON-LD identity and KRW price corroborated against visible page text",
+      "type": "gear",
+      "subtype": "water_conditioner",
+      "title": "시켐 프라임 고농축 물갈이제 [250ml]",
+      "variant_title": "250mL 1개 · 선택 옵션 없음",
+      "quantity_per_pack": 1,
+      "unit_price_amount": null,
+      "product_url": "https://sangaqua.co.kr/product/시켐-프라임-고농축-물갈이제-250ml/20385/",
+      "declared_product_url": "https://sangaqua.co.kr/product/시켐-프라임-고농축-물갈이제-250ml/20385/",
+      "observed_at_utc": "2026-10-26T08:39:05.755Z",
+      "registered_at": null,
+      "price_amount": 24000,
+      "currency": "KRW",
+      "shipping_amount": 3000,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "24000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "24000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory; visible purchase control enabled, sold-out controls displaynone, has_option F, is_soldout_icon F",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://sangaqua.co.kr/web/product/big/202608/07fd7b283fd636cb152d0a5864f85897.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://sangaqua.co.kr/product/시켐-프라임-고농축-물갈이제-250ml/20385/",
+        "downloaded_or_rehosted": false
+      },
+      "minimum_order_packs": 1,
+      "classification_basis": "Fresh public detail: Seachem Prime concentrated water conditioner 250mL; single no-option product",
+      "shipping_policy": {
+        "verified": true,
+        "sellerId": "sangaqua.co.kr",
+        "evidenceUrl": "https://sangaqua.co.kr/product/시켐-프라임-고농축-물갈이제-250ml/20385/",
+        "observedAt": "2026-10-26T08:39:05.755Z",
+        "amount": 3000,
+        "freeThreshold": 50000,
+        "chargeUnit": "order",
+        "minimumOrderPacks": 1,
+        "conditionsComplete": false,
+        "packaging": null,
+        "summary": "2026-10-26 상품 페이지: 기본 배송 3,000원, 50,000원 이상 무료. 도서·산간 추가금 가능. 포장비·혼합 주문 조건 미확인으로 배송 포함 합계는 보류합니다."
+      }
     }
   ],
   "direct_photo_validation": {

@@ -139,7 +139,7 @@ test('published catalog preserves the supplied verified items, categories and un
     assert.equal(p.sourceUrl, publishedItems[index].product_url); assert.equal(p.price.amount, publishedItems[index].price_amount);
     assert.equal(p.photo.url, publishedItems[index].photo?.verified_https_url ?? null);
     assert.equal(p.observedAt, publishedItems[index].observed_at_utc);
-    assert.equal(p.registeredAt, null); assert.equal(p.shipping, null); assert.equal(p.periodSales, null); assert.equal(p.cumulativeSales, null);
+    assert.equal(p.registeredAt, null); assert.equal(p.shipping?.amount ?? null, publishedItems[index].shipping_amount ?? null);if(p.shipping){assert.equal(p.shippingPolicy?.verified,true);assert.equal(p.shippingPolicy?.evidenceUrl,p.sourceUrl);} assert.equal(p.periodSales, null); assert.equal(p.cumulativeSales, null);
     assert.equal(new URL(p.sourceUrl).hostname.replace(/^www\./,''), p.sellerId); assert.equal(p.photo.permissionScope, p.photo.url ? (p.sourceKind === 'direct_retailer_product_page' ? 'product-comparison' : 'api-catalog-comparison') : null);
     assert.equal(p.photo.generalRepublicationLicenseVerified, false);
   }
@@ -259,7 +259,7 @@ test('direct retailer evidence is separate from API and six livestock photos use
  const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/catalog.json'),'utf8'));
  const direct=data.products.filter(p=>p.sourceKind==='direct_retailer_product_page'); const snapshot=JSON.parse(fs.readFileSync(path.join(__dirname,'../dist/source-snapshot.json'),'utf8')); const publishedItems=publicationItems(snapshot,data); assert.equal(direct.length,publishedItems.filter(p=>p.source_kind==='direct_retailer_product_page').length); assert.equal(data.products.length,publishedItems.length); assert.equal(data.sellers.length,new Set(publishedItems.map(p=>p.seller_domain)).size);
  assert.equal(data.products.filter(p=>p.sourceKind==='cafe24_global_catalog_api').length,publishedItems.filter(p=>!p.source_kind).length); assert.equal(data.products.filter(p=>p.photo.url).length,publishedItems.filter(p=>p.photo?.verified_https_url).length);
- for(const p of direct){if(p.photo.url){assert.ok(p.photo.url.startsWith('https://'));assert.equal(p.photo.usePermission,'allowed');assert.equal(p.photo.permissionEvidenceUrl,p.sourceUrl);assert.equal(p.photo.permissionBasis,'explicit_user_instruction');}else assert.equal(p.photo.usePermission,'unknown');assert.equal(p.registeredAt,null);assert.equal(p.shipping,null);assert.equal(p.periodSales,null);assert.match(p.availabilityBasis,/checkout|not supplied|not verified/);assert.equal(typeof p.verificationMethod,'string');}
+ for(const p of direct){if(p.photo.url){assert.ok(p.photo.url.startsWith('https://'));assert.equal(p.photo.usePermission,'allowed');assert.equal(p.photo.permissionEvidenceUrl,p.sourceUrl);assert.equal(p.photo.permissionBasis,'explicit_user_instruction');}else assert.equal(p.photo.usePermission,'unknown');assert.equal(p.registeredAt,null);assert.equal(p.shipping?.amount??null,publishedItems.find(item=>item.id===p.id).shipping_amount??null);if(p.shipping)assert.equal(p.shippingPolicy?.verified,true);assert.equal(p.periodSales,null);assert.match(p.availabilityBasis,/checkout|not supplied|not verified/);assert.equal(typeof p.verificationMethod,'string');}
 });
 
 test('all period includes old and unknown registration without fabricating dates or all-time sales',()=>{

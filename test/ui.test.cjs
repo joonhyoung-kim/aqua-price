@@ -12,11 +12,36 @@ const live = actual.products.filter(p => p.type === 'live'&&AquaCatalog.comparis
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
+test('enhanced UI keeps drafts and IME separate, restores saved conditions and never exposes missing favorites',async()=>{
+ let saved;const storage={getItem:()=>saved,setItem:(_k,v)=>{saved=v;}};
+ const app=await setup(actual,false,'?type=live&query=네온테트라',true,true,storage),n=app.nodes;
+ assert.match(n.resultTitle.textContent,/상품 .*옵션 포함 64개/);
+ const before=n.grid.innerHTML;n.query.value='체리바브';n.query.listeners.input({target:n.query});assert.equal(n.grid.innerHTML,before);assert.match(n.searchSuggestions.innerHTML,/체리바브/);
+ n.query.listeners.compositionstart();n.search.listeners.submit({preventDefault(){},isComposing:true});assert.equal(n.grid.innerHTML,before);
+ n.query.listeners.compositionend();n.query.listeners.keyup({key:'Enter'});n.search.listeners.submit({preventDefault(){}});assert.match(n.recentSearches.innerHTML,/체리바브/);
+ n.saveCondition.listeners.click();assert.match(n.savedConditions.innerHTML,/체리바브/);
+ n.wantedQty.value='12';n.wantedQty.listeners.change();n.shoppingFilters.listeners.submit({preventDefault(){}});assert.match(n.grid.innerHTML,/실제/);assert.match(n.grid.innerHTML,/배송 포함 합계 미확인/);
+ n.wantedQty.value='-1';n.wantedQty.listeners.change();assert.match(n.quantityError.textContent,/1~100000/);
+ const p=actual.products.find(p=>p.name==='체리바브 5마리');n.grid.listeners.click({target:{closest:s=>s==='[data-favorite]'?{dataset:{favorite:p.id}}:null}});assert.match(n.favorites.innerHTML,/체리바브/);assert.equal(app.fetchCount(),1);
+ const without=structuredClone(actual);without.products=without.products.filter(x=>x.id!==p.id);const absent=await setup(without,false,'?query=체리바브',true,true,storage);assert(!absent.nodes.grid.innerHTML.includes('data-offer-id="'+p.id+'"'));assert.match(absent.nodes.favorites.innerHTML,/재입고 확인 대기/);
+});
+test('autocomplete keyboard and touch selection only update the unsubmitted draft',async()=>{
+ const app=await setup(actual,false,'?query=네온',true,true),n=app.nodes,before=n.grid.innerHTML;
+ n.query.value='체리';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});n.query.listeners.keydown({key:'Enter',preventDefault(){}});assert.match(n.query.value,/체리/);assert.equal(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);
+ n.query.listeners.keyup({key:'Enter'});n.query.value='팬더';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'Escape'});assert.equal(n.searchSuggestions.hidden,true);
+ n.query.listeners.input({target:n.query});n.searchSuggestions.listeners.click({target:{closest:()=>({dataset:{suggestion:'0'}})}});assert.equal(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);n.search.listeners.submit({preventDefault(){}});assert.notEqual(n.grid.innerHTML,before);
+});
+test('enhanced price comparison retains exact option links and individual filter clearing',async()=>{
+ const app=await setup(actual,false,'?type=gear&query=섭스프로&compareAcross=true',true,true),n=app.nodes;
+ assert.match(n.sellerComparisons.innerHTML,/93,000/);assert.match(n.sellerComparisons.innerHTML,/128,000/);assert.doesNotMatch(n.sellerComparisons.innerHTML,/206,000/);
+ n.activeFilters.listeners.click({target:{closest:()=>({dataset:{clearFilter:'query'}})}});assert.equal(n.query.value,'');assert(!n.activeFilters.innerHTML.includes('섭스프로 ×'));
+ n.activeFilters.listeners.click({target:{id:'clearAllFilters',closest:()=>null}});assert.equal(n.compareAcross.checked,false);
+});
 // Existing card/gear scenarios use an explicit URL; default-entry behavior has its own regression.
-async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant', grouped = false) {
+async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant', grouped = false, enhanced = false, localStorage) {
   if(!grouped)search+=(search?'&':'?')+'groupOptions=false';
-  const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['draftStatus','comparison','observedDays','minPrice','maxPrice','groupOptions','seller','advancedMetrics','emptyActions','shoppingFilters','filterError','clearQuery','resetFilters','searchAllTypes','recoveryStatus','grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
+  const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { const prior=this.listeners[e];this.listeners[e]=event=>{prior?.(event);cb(event);}; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
+  const nodes = Object.fromEntries(['unitScope','unitControls','wantedQty','quantityError','compareAcross','quickRecent','activeFilters','recentSearches','favorites','savedConditions','storageStatus','personalLibrary','saveCondition','clearLibrary','sellerComparisons','searchSuggestions','draftStatus','comparison','observedDays','minPrice','maxPrice','groupOptions','seller','advancedMetrics','emptyActions','shoppingFilters','filterError','clearQuery','resetFilters','searchAllTypes','recoveryStatus','grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
   nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
   const sortOptions = Object.fromEntries(['low','high','sales','new','observed'].map(value=>[value,element()]));
   nodes.sort.querySelector = selector => sortOptions[selector.match(/value="([^"]+)"/)[1]];
@@ -43,8 +68,9 @@ async function setup(data = actual, fail = false, search = '?type=gear&subtype=a
   let renderCalls=0,fetchCalls=0;
   const location={search,href:'https://example.invalid/'+search},history={replaceState(_a,_b,value){renderCalls++;location.href=new URL(value,location.href).href;location.search=new URL(location.href).search;}};
   const windowListeners={};history.pushState=history.replaceState;
-  const context = vm.createContext({ addEventListener:(name,fn)=>{windowListeners[name]=fn;},document, AquaCatalog, location, history, URL, fetch: () => {fetchCalls++;return fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) });} });
+  const context = vm.createContext({ localStorage,addEventListener:(name,fn)=>{windowListeners[name]=fn;},document, AquaCatalog, location, history, URL, fetch: () => {fetchCalls++;return fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) });} });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
+  if(enhanced)vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/enhancements.js'),'utf8'),context);
   await new Promise(resolve => setImmediate(resolve));
   const choose=(leaf,browse='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-live-group]'?{dataset:{liveGroup:leaf,browseFilter:browse}}:null;}}});
   const chooseGear=(leaf,category='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-gear-group]'?{dataset:{gearGroup:leaf,gearCategory:category}}:null;}}});

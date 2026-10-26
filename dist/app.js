@@ -15,7 +15,7 @@ catalog=catalogQuery.catalog;
 let draftQuery=filters.query;
 let composing=false,compositionEnter=false;
 let lastGridHTML=null,lastTreeHTML=null,historyReady=false,restoringHistory=false;
-function draftStatus(){const changed=draftQuery.trim()!==filters.query;$('#draftStatus').hidden=!changed;$('#draftStatus').textContent=changed?'입력 중 · 조회 버튼 또는 Enter로 검색하세요. 현재 결과는 이전 검색 조건입니다.':'';}
+function draftStatus(){const changed=draftQuery.trim()!==filters.query;$('#draftStatus').hidden=!changed;$('#draftStatus').textContent=changed?'입력 중 · 검색 버튼 또는 Enter로 검색하세요. 현재 결과는 이전 검색 조건입니다.':'';}
 function money(amount){return amount.toLocaleString('ko-KR',{maximumFractionDigits:2});}
 function displayName(product){return product.name;}
 function offerHTML(product){
@@ -23,7 +23,7 @@ function offerHTML(product){
   const spec=product.spec.replace(/^판매단위\/옵션:\s*/, '');
   const price=status.comparable?(product.price.amount===0?status.label:money(product.price.amount)+' 원'):status.label;
   const detail=spec&&!/^(?:미확인|Retailer concrete offer)$/i.test(spec)?spec:'옵션·수량 미확인';
-  return '<div class="offer" data-offer-id="'+escapeHtml(product.id)+'"><div class="offer-spec">'+escapeHtml(detail)+'</div><div class="price">'+escapeHtml(price)+'</div>'+(!status.comparable&&product.price?.amount>0?'<div class="price-note">표시가격 '+money(product.price.amount)+'원 · 기본 비교 제외</div>':'')+(unit?'<div class="unit-price">총 '+unit.count+unit.unit+' · '+unit.unit+'당 '+money(unit.amount)+'원</div>':'')+'<div class="shipping">'+(product.shipping===null?'배송비 미확인 · 판매처 확인':product.shipping.amount===0?'배송비 0원 확인 · 적용 조건은 판매처 확인':'배송비 '+money(product.shipping.amount)+'원 · 적용 조건은 판매처 확인')+'</div><div class="observed'+(age.stale?' stale':'')+'"><time datetime="'+escapeHtml(product.observedAt)+'">가격 확인 '+escapeHtml(new Date(product.observedAt).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}))+' KST</time>'+(age.stale?'<span>'+age.days+'일 경과 · 가격·재고 재확인</span>':'')+'</div>'+(product.available===null?'<div class="stock-unknown">재고 미확인</div>':'')+'<a class="source" href="'+escapeHtml(product.sourceUrl)+'" target="_blank" rel="noopener noreferrer">판매처 이동 ↗</a></div>';
+  return '<div class="offer" data-offer-id="'+escapeHtml(product.id)+'"><div class="offer-spec">'+escapeHtml(detail)+'</div><div class="price">'+escapeHtml(price)+'</div>'+(!status.comparable&&product.price?.amount>0?'<div class="price-note">표시가격 '+money(product.price.amount)+'원 · 기본 비교 제외</div>':'')+(unit?'<div class="unit-price">총 '+unit.count+unit.unit+' · '+unit.unit+'당 '+money(unit.amount)+'원</div>':'')+'<div class="shipping">'+(product.shipping===null?'배송비 미확인 · 판매처 확인':product.shipping.amount===0?'배송비 0원 확인 · 적용 조건은 판매처 확인':'배송비 '+money(product.shipping.amount)+'원 · 적용 조건은 판매처 확인')+'</div><div class="observed'+(age.stale?' stale':'')+'"><time datetime="'+escapeHtml(product.observedAt)+'">가격 확인 '+escapeHtml(new Date(product.observedAt).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}))+' KST</time>'+(age.stale?'<span>'+age.days+'일 경과 · 가격·재고 재확인</span>':'')+'</div>'+(product.available===null?'<div class="stock-unknown">재고 미확인</div>':'')+'<a class="source" href="'+escapeHtml(product.sourceUrl)+'" target="_blank" rel="noopener noreferrer">판매처에서 보기 ↗</a></div>';
 }
 function setGridHTML(html){
   if(html===lastGridHTML)return false;
@@ -46,6 +46,7 @@ function renderGearNavigation(view){
   if(treeHTML!==lastTreeHTML){$('#groupTree').innerHTML=treeHTML;lastTreeHTML=treeHTML;}
 }
 function renderGroupNavigation(view=catalogQuery.view(filters)) {
+  if(filters.type==='all'){$('#groupPath').textContent='전체 범위 · 생물 또는 용품을 선택해 세부 분류를 좁힐 수 있습니다.';$('#groupTree').innerHTML='';lastTreeHTML=null;return;}
   if(filters.type==='gear'){renderGearNavigation(view);return;}
   const groups=AquaCatalog.livestockGroups[filters.subtype]||{all:'전체'},leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup;
   const counts=view.groupCounts;
@@ -64,7 +65,7 @@ function renderGroupNavigation(view=catalogQuery.view(filters)) {
 }
 function syncSubtypeControls(view) {
   document.querySelectorAll('[data-type]').forEach(button => { const active = button.dataset.type === filters.type; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); button.querySelector('.check').textContent = active ? '✓' : ''; });
-  $('#fishFilters').hidden = filters.type === 'live' && filters.subtype === 'all';
+  $('#fishFilters').hidden = filters.type === 'all' || filters.type === 'live' && filters.subtype === 'all';
   $('#groupTree').setAttribute('aria-label',filters.type==='gear'?'용품 세부 종류 탐색':'생물 세부 종류 탐색');
   renderGroupNavigation(view);
   $('#livestockFilters').hidden = filters.type !== 'live';
@@ -195,11 +196,7 @@ $('#observedDays').addEventListener('change',()=>{filters.observedDays=$('#obser
 $('#groupOptions').addEventListener('change',()=>{filters.groupOptions=$('#groupOptions').checked;render();});
 $('#clearQuery').addEventListener('click',()=>{filters.query='';draftQuery='';$('#query').value='';render();});
 $('#resetFilters').addEventListener('click',()=>{filters={...AquaCatalog.defaultFilters,type:filters.type,query:filters.query};render();});
-$('#searchAllTypes').addEventListener('click',()=>{
-  const other=filters.type==='live'?'gear':'live',base={...AquaCatalog.defaultFilters,query:filters.query};
-  const here=catalogQuery.select({...base,type:filters.type}).rows,there=catalogQuery.select({...base,type:other}).rows;
-  filters={...base,type:here.length?filters.type:there.length?other:filters.type};render();$('#recoveryStatus').textContent='두 종류 모두 검색: 생물 '+catalogQuery.select({...base,type:'live'}).rows.length+'개 · 용품 '+catalogQuery.select({...base,type:'gear'}).rows.length+'개. 종류 버튼으로 전환할 수 있습니다.';
-});
+$('#searchAllTypes').addEventListener('click',()=>{filters={...AquaCatalog.defaultFilters,type:'all',query:filters.query};render();});
 if(typeof addEventListener==='function')addEventListener('popstate',()=>{restoringHistory=true;filters=AquaCatalog.filtersFromSearch(location.search);draftQuery=filters.query;$('#query').value=draftQuery;$('#includeUnknown').checked=filters.includeUnknownRegistration;expandedBrowse=null;expandedGear=null;render();restoringHistory=false;});
 $('#query').value = draftQuery;
 $('#includeUnknown').checked = filters.includeUnknownRegistration;
@@ -215,7 +212,7 @@ fetch('catalog.json?view='+Date.now(), { cache: 'no-store' }).then(response => {
 if (document.modelContext?.registerTool) {
   try { Promise.resolve(document.modelContext.registerTool({
     name: 'set_product_filters', description: '검증된 관찰 상품의 종류·정렬·실제 등록 기간·검색어를 변경합니다. 데이터가 없거나 미확인이면 결과가 비어 있습니다.',
-    inputSchema: { type: 'object', properties: { productRole:{enum:Object.keys(AquaCatalog.roleLabels)},...Object.fromEntries(Object.entries(AquaCatalog.specialDefaults).map(([k,v])=>[k,AquaCatalog.specialEnums[k]?{enum:AquaCatalog.specialEnums[k]}:typeof v==='boolean'?{type:'boolean'}:{type:['number','null'],minimum:0,maximum:1000000}])),unitScope:{type: 'string'},wantedQty:{type:['integer','null'],minimum:1,maximum:100000},compareAcross:{type:'boolean'},comparison:{enum:['priced','all','unpriced']},seller:{type:'string'},minPrice:{type:['integer','null'],minimum:0},maxPrice:{type:['integer','null'],minimum:0},observedDays:{enum:['all',1,7,14,30]},groupOptions:{type:'boolean'},type: { enum: ['live', 'gear'] }, gearCategory:{enum:Object.keys(AquaCatalog.gearCategories)},gearGroup:{enum:Object.keys(AquaCatalog.gearGroups)}, fishGroup: { enum: Object.keys(AquaCatalog.fishGroups) }, liveGroup: { enum: [...new Set(Object.values(AquaCatalog.livestockGroups).flatMap(groups=>Object.keys(groups)))] }, browseGroup:{enum:['all',...new Set(Object.values(AquaCatalog.livestockNavigation).flatMap(groups=>groups.map(group=>group.key)))]}, subtype: { enum: ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new', 'observed', 'unit', 'relevance', 'delivered'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
+    inputSchema: { type: 'object', properties: { productRole:{enum:Object.keys(AquaCatalog.roleLabels)},...Object.fromEntries(Object.entries(AquaCatalog.specialDefaults).map(([k,v])=>[k,AquaCatalog.specialEnums[k]?{enum:AquaCatalog.specialEnums[k]}:typeof v==='boolean'?{type:'boolean'}:{type:['number','null'],minimum:0,maximum:1000000}])),unitScope:{type: 'string'},wantedQty:{type:['integer','null'],minimum:1,maximum:100000},compareAcross:{type:'boolean'},comparison:{enum:['priced','all','unpriced']},seller:{type:'string'},minPrice:{type:['integer','null'],minimum:0},maxPrice:{type:['integer','null'],minimum:0},observedDays:{enum:['all',1,7,14,30]},groupOptions:{type:'boolean'},type: { enum: ['all', 'live', 'gear'] }, gearCategory:{enum:Object.keys(AquaCatalog.gearCategories)},gearGroup:{enum:Object.keys(AquaCatalog.gearGroups)}, fishGroup: { enum: Object.keys(AquaCatalog.fishGroups) }, liveGroup: { enum: [...new Set(Object.values(AquaCatalog.livestockGroups).flatMap(groups=>Object.keys(groups)))] }, browseGroup:{enum:['all',...new Set(Object.values(AquaCatalog.livestockNavigation).flatMap(groups=>groups.map(group=>group.key)))]}, subtype: { enum: ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'] }, sort: { enum: ['low', 'high', 'sales', 'new', 'observed', 'unit', 'relevance', 'delivered'] }, days: { enum: [7, 30, 90, 'all'] }, query: { type: 'string' }, includeUnknownRegistration: { type: 'boolean' } }, required: ['type', 'sort', 'days'], additionalProperties: false },
     annotations: { readOnlyHint: false },
     execute(value) {
       const next = { ...filters,...Object.fromEntries(Object.keys(AquaCatalog.specialDefaults).filter(k=>value?.[k]!==undefined).map(k=>[k,value[k]])),productRole:value?.productRole??filters.productRole, unitScope:value?.unitScope??filters.unitScope,wantedQty:value?.wantedQty===undefined?filters.wantedQty:value.wantedQty,compareAcross:value?.compareAcross??filters.compareAcross,comparison:value?.comparison??filters.comparison,seller:value?.seller??filters.seller,minPrice:value?.minPrice===undefined?filters.minPrice:value.minPrice,maxPrice:value?.maxPrice===undefined?filters.maxPrice:value.maxPrice,observedDays:value?.observedDays??filters.observedDays,groupOptions:value?.groupOptions??filters.groupOptions, type: value?.type, subtype: value?.subtype ?? filters.subtype, fishGroup: value?.fishGroup ?? filters.fishGroup, liveGroup:value?.liveGroup??(value?.subtype&&value.subtype!==filters.subtype?'all':filters.liveGroup), sort: value?.sort, days: value?.days, query: value?.query ?? '', includeUnknownRegistration: value?.includeUnknownRegistration ?? filters.includeUnknownRegistration };

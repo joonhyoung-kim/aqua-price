@@ -227,7 +227,7 @@
     const rows=[];for(const p of products){const label=p.name;for(const token of [label,...label.split(/\s+/).slice(0,8)]){const key=normalize(token);if(key.length>1)rows.push({key,label,type:p.type});}}
     for(const group of aliases)if(products.some(p=>canonical(p.name).includes(canonical(group[0]))))for(const label of group)rows.push({key:canonical(label),label,type:null});
     rows.sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0);
-    return (input,type)=>{const key=canonical(input);if(key.length<1)return [];let lo=0,hi=rows.length;while(lo<hi){const mid=(lo+hi)>>1;if(rows[mid].key<key)lo=mid+1;else hi=mid;}const out=new Set();for(let i=lo;i<rows.length&&rows[i].key.startsWith(key)&&out.size<8;i++)if(!rows[i].type||rows[i].type===type)out.add(rows[i].label);return [...out];};
+    return (input,type)=>{const key=canonical(input);if(key.length<1)return [];let lo=0,hi=rows.length;while(lo<hi){const mid=(lo+hi)>>1;if(rows[mid].key<key)lo=mid+1;else hi=mid;}const out=new Set();for(let i=lo;i<rows.length&&rows[i].key.startsWith(key)&&out.size<8;i++)if(type==='all'||!rows[i].type||rows[i].type===type)out.add(rows[i].label);return [...out];};
   }
   function createLocalLibrary(storage){
     let value={recent:[],favorites:[],saved:[]},persistent=!!storage;
@@ -255,6 +255,7 @@
     }
     return groups;
   }
+  function offerSpec(p){const f=purchaseFacts(p);const models=p.type==='gear'?(p.name.match(/(?:[A-Z]{1,6}[ -]?\d{2,5}[A-Z]?|\b22\d{2}\b)/g)||[]):[];const extras=[...new Set(models)].filter(x=>!canonical(f.option).includes(canonical(x)));const raw=p.type==='gear'&&f.option.includes('미확인')?[...new Set(p.name.match(/\d+(?:\.\d+)?\s*(?:kg|mg|g|mL|ml|L|리터)(?![a-z])/gi)||[])]:[];return f.option+(raw.length?' · 상품명 표기 '+raw.join(' / ')+' (구성 확인 필요)':'')+(extras.length?' · 모델 표기 '+extras.join(' / '):'');}
   function formatQuantity(v){const large=v.amount>=1000;return (large?v.amount/1000:v.amount)+(v.dimension==='volume'?(large?'L':'mL'):(large?'kg':'g'));}
   const roleLabels={all:'모든 구성',body:'본체',part:'부품',consumable:'소모품',set:'세트',unknown:'구성 미확인'};
   function productRole(p){
@@ -345,9 +346,28 @@
     return {read:()=>structuredClone(state),persistent:()=>persistent,set(w){if(typeof w.id!=='string'||w.targetPrice!==null&&(!Number.isSafeInteger(w.targetPrice)||w.targetPrice<0))throw Error('잘못된 목표 가격');state.watches=state.watches.filter(x=>x.id!==w.id);state.watches.push(structuredClone(w));state.watches=state.watches.slice(-100);save();},remove(id){state.watches=state.watches.filter(x=>x.id!==id);save();},observe(catalog){state.watches=state.watches.map(w=>{const a=advanceWatch(w,watchObservation(catalog,w.id));for(const e of a.events)if(!state.events.some(x=>x.id===e.id&&x.kind===e.kind&&x.at===e.at))state.events.push(e);return a.watch;});state.events=state.events.slice(-100);save();},report(p,kind){if(!['price','stock','identity','link'].includes(kind))throw Error('잘못된 신고 유형');if(!state.reports.some(r=>r.id===p.id&&r.kind===kind&&r.status==='draft'))state.reports.push({id:p.id,name:p.name,url:p.sourceUrl,kind,status:'draft',createdAt:new Date().toISOString(),observedAt:p.observedAt});state.reports=state.reports.slice(-100);save();},exportReports(){state.reports=state.reports.map(r=>({...r,status:'exported'}));save();return JSON.stringify({schemaVersion:1,delivery:'not_submitted',reports:state.reports},null,2);},clearEvents(){state.events=[];save();}};
   }
 
+
+  function guidanceContext(filters){
+    if(filters.type==='live')return 'live';
+    if(filters.type!=='gear')return 'none';
+    const leaf=filters.gearGroup||'all',category=filters.gearCategory||'all';
+    if(leaf!=='all')return /^feed_/.test(leaf)?'feed':/^media_/.test(leaf)?'media':/^filter_/.test(leaf)?'filter':'none';
+    if(category==='feeding')return 'feed';
+    if(category!=='all'&&category!=='filtration')return 'none';
+    const query=canonical(filters.query||'');
+    return /사료|먹이|feed/.test(query)?'feed':/여과재|섭스트라트|섭스프로/.test(query)?'media':/여과기|filter/.test(query)?'filter':'none';
+  }
+  const guidanceFields={live:['careTemp','carePH','adultMax','tankLength','careDifficulty'],feed:['feedTarget','feedBuoyancy','particleMax','volumeMin','massMin'],filter:['filterMethod','tankLitres','flowMin','wattMax','hose'],media:['mediaPurpose','mediaMaterial','volumeMin','massMin'],none:[]};
+  function normalizeContextFilters(filters){
+    const context=guidanceContext(filters),allowed=guidanceFields[context],changes={};
+    for(const [key,value]of Object.entries(specialDefaults))if(key!=='includeUnknownGuidance'&&!allowed.includes(key)&&filters[key]!==undefined&&filters[key]!==value)changes[key]=value;
+    if(filters.type!=='gear'&&filters.productRole&&filters.productRole!=='all')changes.productRole='all';
+    return {filters:Object.assign(Object.create(filters),changes),changes,context,fields:allowed};
+  }
+
   function validateSelectionFilters(filters) {
     for(const [k,v]of Object.entries(specialDefaults)){if(filters[k]===undefined)continue;if(k==='includeUnknownGuidance')requireValue(typeof filters[k]==='boolean','잘못된 미확인 정보 필터');else if(specialEnums[k])requireValue(specialEnums[k].includes(filters[k]),'잘못된 특화 필터');else requireValue(filters[k]===null||typeof filters[k]==='number'&&Number.isFinite(filters[k])&&filters[k]>0&&filters[k]<=1000000,'잘못된 수치 필터');}
-    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed', 'unit', 'relevance', 'delivered'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
+    requireValue(filters && ['all', 'live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed', 'unit', 'relevance', 'delivered'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
     requireValue(filters.productRole===undefined||Object.hasOwn(roleLabels,filters.productRole),'잘못된 구성 필터');
     requireValue(filters.comparison===undefined||['priced','all','unpriced'].includes(filters.comparison),'잘못된 가격 비교 범위');
     requireValue(filters.unitScope===undefined||typeof filters.unitScope==='string','잘못된 단가 비교 범위');
@@ -366,9 +386,10 @@
     requireValue(!filters.gearGroup || filters.gearGroup==='all' || !filters.gearCategory || filters.gearCategory==='all' || (gearParent(filters.gearGroup)?.key||'other')===filters.gearCategory, '용품 상위·하위 분류 불일치');
   }
   function selectionCandidates(catalog, filters, index) {
+    filters=normalizeContextFilters(filters).filters;
     const needles = queryTokens(filters.query);
     const effectiveFishGroup=filters.fishGroup&&filters.fishGroup!=='all'?filters.fishGroup:filters.liveGroup||'all';
-    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || (index ? index.get(p).group : fishGroup(p)) === effectiveFishGroup) && (index ? index.get(p).search.some(value => needles.every(needle=>value.includes(needle))) : [p.name, p.originalTitle || '', p.spec].some(value => needles.every(needle=>searchText(value).includes(needle)))));
+    let rows = catalog.products.filter(p => (filters.type==='all'||p.type === filters.type) && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || (index ? index.get(p).group : fishGroup(p)) === effectiveFishGroup) && (index ? index.get(p).search.some(value => needles.every(needle=>value.includes(needle))) : [p.name, p.originalTitle || '', p.spec].some(value => needles.every(needle=>searchText(value).includes(needle)))));
     if(filters.type==='live'&&filters.subtype!=='fish'&&filters.subtype!=='all'&&filters.liveGroup&&filters.liveGroup!=='all')rows=rows.filter(p=>(index ? index.get(p).group : livestockGroup(p))===filters.liveGroup);
     const leaf=filters.subtype==='fish'?effectiveFishGroup:filters.liveGroup||'all';
     if(filters.type==='live'&&leaf==='all'&&filters.browseGroup&&filters.browseGroup!=='all'){
@@ -391,6 +412,7 @@
   }
   function selectValidated(catalog, filters, index, candidates, now=Date.now()) {
     validateSelectionFilters(filters);
+    const contextState=normalizeContextFilters(filters);filters=contextState.filters;
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
     const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
     const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
@@ -424,7 +446,7 @@
     const missingSubtype = filters.type === 'live' && filters.subtype !== undefined && filters.subtype !== 'all' && !catalog.products.some(p => p.type === 'live' && p.subtype === filters.subtype);
     const reason = missingSubtype ? '현재 연결된 상품정보에 해당 생물이 없습니다. 모든 판매처의 품절·미판매를 뜻하지 않습니다.' : !catalog.products.some(p => p.type === filters.type) && filters.type === 'live' ? catalog.livestockNotice || '이번 연동에서 확인된 생물 상품이 없습니다.' : filters.sort === 'sales' && !rows.length ? '선택한 기간과 정확히 일치하는 실제 판매량이 없습니다. 누적 판매수로 기간 순위를 만들지 않습니다.' : filters.sort === 'new' && !rows.length && unknownCount ? '실제 상품 등록일이 확인되지 않아 신상품순으로 정렬할 수 없습니다. 관찰 시각으로 임의 정렬하지 않습니다.' : !rows.length ? '등록일·검색어·정렬 조건을 충족하는 확인 상품이 없습니다.' : '';
     const outputReason = filters.sort==='delivered'&&!rows.length?'수량·최소 주문·배송·포장 조건이 모두 확인된 예상 합계가 없습니다. 상품가격순으로 확인하세요.':unitState.needsSelection?'단가 비교 범위를 선택하세요. 검색 결과 없음과 다른 상태입니다.':unitState.noComparable?'현재 조건에는 수량·단위가 확인된 단가 비교 상품이 없습니다. 판매가격순으로 확인하세요.':filters.sort === 'sales' && !rows.length && start === null ? '판매처에서 확인된 실제 판매량이 없습니다. 클릭수·조회수로 판매순을 대신하지 않습니다.' : reason;
-    return { rows, reason: outputReason, unitState, effectiveFilters:{unitScope:filters.unitScope}, excludedComparison, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
+    return { rows, reason: outputReason, unitState, effectiveFilters:{...contextState.changes,unitScope:filters.unitScope}, excludedComparison, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
 
   function createCatalogQuery(input, options={}) {
@@ -517,7 +539,7 @@
   const defaultFilters = Object.freeze({ ...specialDefaults,type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', gearCategory:'all', gearGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true, comparison:'priced', seller:'', minPrice:null, maxPrice:null, observedDays:'all', groupOptions:true,unitScope:'',wantedQty:null,compareAcross:false,productRole:'all' });
   function filtersFromSearch(search = '') {
     const params = new URLSearchParams(search), filters = { ...defaultFilters };
-    for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), productRole:Object.keys(roleLabels),sort: ['low','high','sales','new','observed','unit','relevance','delivered'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
+    for (const [key, allowed] of Object.entries({ type: ['all','live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), productRole:Object.keys(roleLabels),sort: ['low','high','sales','new','observed','unit','relevance','delivered'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
     for(const [k,v]of Object.entries(specialDefaults)){const raw=params.get(k);if(raw===null)continue;if(k==='includeUnknownGuidance')filters[k]=raw!=='false';else if(specialEnums[k]){if(specialEnums[k].includes(raw))filters[k]=raw;}else if(/^(?:\d+)(?:\.\d+)?$/.test(raw)&&Number(raw)>0&&Number(raw)<=1000000)filters[k]=Number(raw);}
     const days = params.get('days'); if (days === 'all') filters.days = 'all'; else if (['7','30','90'].includes(days)) filters.days = Number(days);
     const group=params.get('liveGroup');if(group&&livestockGroups[filters.subtype]&&Object.hasOwn(livestockGroups[filters.subtype],group))filters.liveGroup=group;
@@ -550,5 +572,5 @@
     for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==undefined&&value!==null&&value!==defaultFilters[key])params.set(key,String(value));
     const text=params.toString();return text?'?'+text:'';
   }
-  return { watchObservation,advanceWatch,createWatchStore,guidance,careProfile,equipmentFacts,specialDefaults,specialEnums,matchesGuidance,knownShipping,sellerQuality,formatQuantity,roleLabels,productRole,relevance,resolveUnitScope,aliases, canonical, queryTokens, purchaseFacts, comparisonUnit, exactIdentity, compareSellers, estimatePurchase, relativeObservation, sellerDisplay, createSuggestionIndex, createLocalLibrary, comparisonStatus, unitPrice, observationAge, groupOffers, validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
+  return { offerSpec,guidanceContext,guidanceFields,normalizeContextFilters,watchObservation,advanceWatch,createWatchStore,guidance,careProfile,equipmentFacts,specialDefaults,specialEnums,matchesGuidance,knownShipping,sellerQuality,formatQuantity,roleLabels,productRole,relevance,resolveUnitScope,aliases, canonical, queryTokens, purchaseFacts, comparisonUnit, exactIdentity, compareSellers, estimatePurchase, relativeObservation, sellerDisplay, createSuggestionIndex, createLocalLibrary, comparisonStatus, unitPrice, observationAge, groupOffers, validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

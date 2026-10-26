@@ -197,7 +197,7 @@ test('cards show seller, full name, option, price, observation and shipping with
  const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
  assert.match(app.nodes.dataStatus.textContent,/가격·재고는 마지막 확인 기준/);
  const cards=[...app.nodes.grid.innerHTML.matchAll(/<article class="card">([\s\S]*?)<\/article>/g)];assert.equal(cards.length,Math.min(24,gear.length));
- for(const card of cards){assert.match(card[1],/class="offer-spec"/);assert.match(card[1],/배송비 미확인/);assert.match(card[1],/<time datetime=/);assert.match(card[1],/판매처 이동/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
+ for(const card of cards){assert.match(card[1],/class="offer-spec"/);assert.match(card[1],/배송비 미확인/);assert.match(card[1],/<time datetime=/);assert.match(card[1],/판매처에서 보기/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
  for(const product of gear.slice(0,24))assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.sourceUrl)));
  assert.equal(app.images.length,gear.slice(0,24).filter(p=>p.photo.url).length);
 });
@@ -266,7 +266,7 @@ test('product text and attribute strings are escaped; source links remain safe',
   assert.ok(card.includes(`<h3 title="${escaped(product.name)}">${escaped(product.name)}</h3>`));
   assert.ok(card.includes(`<img src="${escaped(product.photo.url)}" alt="${escaped(product.name)} 상품 사진"`));
   assert.equal((card.match(/<img /g) || []).length, 1, 'the fixture photo is the only image element');
-  const link = card.match(/<a class="source" href="([^"]+)" target="_blank" rel="noopener noreferrer">판매처 이동 ↗<\/a>/);
+  const link = card.match(/<a class="source" href="([^"]+)" target="_blank" rel="noopener noreferrer">판매처에서 보기 ↗<\/a>/);
   assert.ok(link, 'one escaped HTTPS source link with safe new-tab attributes must remain');
   assert.equal(decoded(link[1]), product.sourceUrl);
   assert.equal(new URL(decoded(link[1])).protocol, 'https:');
@@ -287,7 +287,7 @@ test('failed photo keeps accessible fallback and seller link without extra card 
   assert.equal(app.images.length, 1, 'the isolated photo fixture must actually render');
   const image = app.images[0]; image.listeners.error();
   assert.equal(image.hidden, true); assert.equal(image.fallback.hidden, false);
-  assert.doesNotMatch(app.nodes.grid.innerHTML,/사진을 불러오지 못했습니다/); assert.match(app.nodes.grid.innerHTML, /판매처 이동/);
+  assert.doesNotMatch(app.nodes.grid.innerHTML,/사진을 불러오지 못했습니다/); assert.match(app.nodes.grid.innerHTML, /판매처에서 보기/);
 });
 test('failed or invalid catalog never falls back to fictitious sample products', async () => {
   for (const app of [await setup(actual, true), await setup({ bad: true })]) {
@@ -335,7 +335,7 @@ test('livestock subfilters default to plants, show honest empty categories and s
   app.type('live'); assert.equal(app.nodes.livestockFilters.hidden, false); assert.equal(app.names().length, Math.min(24,plants.length));
   assert.match(app.nodes.resultTitle.textContent, /수초/);
   for (const subtype of ['fish','shrimp','snail']) {
-    app.subtype(subtype); assert.equal(app.names().length, Math.min(24, actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).length)); assert.match(app.nodes.grid.innerHTML, /판매처 이동/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).filter(p=>p.photo.url).length);
+    app.subtype(subtype); assert.equal(app.names().length, Math.min(24, actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).length)); assert.match(app.nodes.grid.innerHTML, /판매처에서 보기/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).filter(p=>p.photo.url).length);
     assert.equal(app.subtypes.filter(b=>b.attributes['aria-pressed']==='true').length, 1);
   }
   app.type('gear'); assert.equal(app.nodes.livestockFilters.hidden, true); assert.equal(app.names().length, 24);
@@ -353,7 +353,7 @@ test('livestock controls wrap into four mobile columns with clear pressed state 
 
 test('missing verified subtype still explains only connected information; direct photos never become placeholders',async()=>{
  const data=structuredClone(actual); data.products=data.products.filter(p=>p.subtype!=='fish'); const app=await setup(data);app.type('live');app.subtype('fish');assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/현재 연결된 상품정보에 해당 생물이 없습니다/);assert.match(app.nodes.grid.innerHTML,/모든 판매처의 품절·미판매를 뜻하지 않습니다/);
- const actualApp=await setup();actualApp.type('live');actualApp.subtype('fish');assert.equal(actualApp.names().length,Math.min(24,fish.length));assert.equal(actualApp.images.length,fish.slice(0,24).filter(p=>p.photo.url).length); for (const img of actualApp.images) {assert.ok(img.src.startsWith('https://')); img.listeners.error(); assert.equal(img.hidden,true); assert.equal(img.fallback.hidden,false);}assert.match(actualApp.nodes.grid.innerHTML,/판매처 이동/);assert.ok(!actualApp.nodes.grid.innerHTML.includes('카페24 공식 API'));
+ const actualApp=await setup();actualApp.type('live');actualApp.subtype('fish');assert.equal(actualApp.names().length,Math.min(24,fish.length));assert.equal(actualApp.images.length,fish.slice(0,24).filter(p=>p.photo.url).length); for (const img of actualApp.images) {assert.ok(img.src.startsWith('https://')); img.listeners.error(); assert.equal(img.hidden,true); assert.equal(img.fallback.hidden,false);}assert.match(actualApp.nodes.grid.innerHTML,/판매처에서 보기/);assert.ok(!actualApp.nodes.grid.innerHTML.includes('카페24 공식 API'));
  actualApp.subtype('aquatic_plant');assert.equal(actualApp.images.length,plants.slice(0,24).filter(p=>p.photo.url).length);assert.doesNotMatch(actualApp.nodes.grid.innerHTML,/class="provenance"/);
 });
 

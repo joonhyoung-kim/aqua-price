@@ -11,9 +11,9 @@ function shippingDetail(p){
 }
 function estimateHTML(p){
   if(!filters.wantedQty)return '';
-  const e=AquaCatalog.estimatePurchase(p,filters.wantedQty,p.shippingPolicy);
+  const e=AquaCatalog.estimatePurchase(p,filters.wantedQty,p.shippingPolicy);const partial=AquaCatalog.knownShipping(p,e.subtotal);
   if(e.subtotal===undefined)return '<p class="estimate">'+escapeHtml(e.reason)+'</p>';
-  return '<div class="estimate">희망 '+e.wanted+e.unit+' → '+e.packs+'묶음 · 실제 '+e.actual+e.unit+'<br>예상 상품금액 '+money(e.subtotal)+'원'+(!e.minimumConfirmed?'<br>최소 주문 조건 별도 확인':'')+(e.total===null?'<br>배송 포함 합계 미확인':'<br>배송 '+money(e.shipping)+'원 + 포장 '+money(e.packaging)+'원 = 예상 합계 '+money(e.total)+'원')+'</div>';
+  return '<div class="estimate">희망 '+e.wanted+e.unit+' → '+e.packs+'묶음 · 실제 '+e.actual+e.unit+'<br>예상 상품금액 '+money(e.subtotal)+'원'+(!e.minimumConfirmed?'<br>최소 주문 조건 별도 확인':'')+(e.total===null?(partial?'<br>상품+기본배송 '+money(partial.knownSubtotal)+'원 · 지역·포장비 미확인':'<br>배송 포함 합계 미확인'):'<br>배송 '+money(e.shipping)+'원 + 포장 '+money(e.packaging)+'원 = 예상 합계 '+money(e.total)+'원')+'</div>';
 }
 offerHTML=function(p){
   const f=AquaCatalog.purchaseFacts(p),u=AquaCatalog.unitPrice(p),status=AquaCatalog.comparisonStatus(p),age=AquaCatalog.observationAge(p);
@@ -30,22 +30,27 @@ function renderLibrary(){
   $('#storageStatus').textContent=library.persistent()?'이 브라우저에만 저장합니다. 다른 기기·수집기와 공유하지 않습니다.':'브라우저 저장을 사용할 수 없어 이번 화면에서만 유지됩니다. 검색은 계속 사용할 수 있습니다.';
 }
 function scopeOptions(rows){const map=new Map();for(const p of rows){const u=AquaCatalog.comparisonUnit(p);if(u)map.set(u.scope,u.label);}return map;}
-function chipLabels(){return {query:filters.query,subtype:subtypeNames[filters.subtype],fishGroup:AquaCatalog.fishGroups[filters.fishGroup],liveGroup:AquaCatalog.livestockGroups[filters.subtype]?.[filters.liveGroup],browseGroup:AquaCatalog.livestockNavigation[filters.subtype]?.find(x=>x.key===filters.browseGroup)?.label,gearCategory:AquaCatalog.gearCategories[filters.gearCategory],gearGroup:AquaCatalog.gearGroups[filters.gearGroup],sort:{low:'낮은 가격',high:'높은 가격',observed:'최근 확인순',unit:'단가순',new:'신상품순',sales:'판매순'}[filters.sort],seller:filters.seller?AquaCatalog.sellerDisplay(catalogQuery.seller(filters.seller)||{id:filters.seller,name:filters.seller}):'',minPrice:filters.minPrice===null?'':money(filters.minPrice)+'원 이상',maxPrice:filters.maxPrice===null?'':money(filters.maxPrice)+'원 이하',observedDays:filters.observedDays==='all'?'':'최근 '+filters.observedDays+'일',unitScope:$('#unitScope').selectedOptions?.[0]?.textContent||filters.unitScope,wantedQty:filters.wantedQty?'희망 '+filters.wantedQty+'단위':'',compareAcross:'동일 제품 비교',comparison:{all:'미확인 가격 포함',unpriced:'가격 확인 필요만'}[filters.comparison],groupOptions:'옵션 개별 표시',days:'등록 '+filters.days+'일',includeUnknownRegistration:'등록일 미확인 제외'};}
+function chipLabels(){return {query:filters.query,subtype:subtypeNames[filters.subtype],fishGroup:AquaCatalog.fishGroups[filters.fishGroup],liveGroup:AquaCatalog.livestockGroups[filters.subtype]?.[filters.liveGroup],browseGroup:AquaCatalog.livestockNavigation[filters.subtype]?.find(x=>x.key===filters.browseGroup)?.label,gearCategory:AquaCatalog.gearCategories[filters.gearCategory],gearGroup:AquaCatalog.gearGroups[filters.gearGroup],sort:{low:'낮은 가격',high:'높은 가격',observed:'최근 확인순',unit:'단가순',relevance:'관련도순',delivered:'배송 포함 예상금액순',new:'신상품순',sales:'판매순'}[filters.sort],seller:filters.seller?AquaCatalog.sellerDisplay(catalogQuery.seller(filters.seller)||{id:filters.seller,name:filters.seller}):'',minPrice:filters.minPrice===null?'':money(filters.minPrice)+'원 이상',maxPrice:filters.maxPrice===null?'':money(filters.maxPrice)+'원 이하',observedDays:filters.observedDays==='all'?'':'최근 '+filters.observedDays+'일',productRole:filters.type==='gear'?AquaCatalog.roleLabels[filters.productRole]:'',unitScope:filters.sort==='unit'?(catalogQuery.view(filters).result.unitState?.scopes.find(s=>s.value===filters.unitScope)?.label||''):'',wantedQty:filters.wantedQty?'희망 '+filters.wantedQty+(catalogQuery.view(filters).result.unitState?.scopes.find(s=>s.value===filters.unitScope)?.unit||' (상품별 구매단위)'):'',compareAcross:'동일 제품 비교',comparison:{all:'미확인 가격 포함',unpriced:'가격 확인 필요만'}[filters.comparison],groupOptions:'옵션 개별 표시',days:'등록 '+filters.days+'일',includeUnknownRegistration:'등록일 미확인 제외'};}
 render=function(resetPage=true){
+  const selected=catalogQuery.view(filters).result;
+  const unitNotice=selected.unitState?.changed&&filters.sort==='unit';
+  if(selected.effectiveFilters)filters={...filters,...selected.effectiveFilters};
   originalRender(resetPage);
   if(!$('#unitScope'))return;
   if(filters.sort==='unit'){const scopes=scopeOptions(catalogQuery.select({...filters,sort:'low'}).rows);$('#unitScope').innerHTML='<option value="">단가 비교 범위 선택</option>'+[...scopes].map(([id,label])=>'<option value="'+escapeHtml(id)+'">'+escapeHtml(label)+'</option>').join('');$('#unitScope').value=filters.unitScope;}
   $('#unitControls').hidden=filters.sort!=='unit';$('#wantedQty').value=filters.wantedQty||'';$('#compareAcross').checked=filters.compareAcross;
+  if(filters.sort==='delivered'){$('#sortStatus').hidden=false;$('#sortStatus').textContent='수량·최소 주문·일반 배송·포장비가 모두 확인된 예상 합계만 정렬합니다. 미확인 비용이 있는 상품은 상품가격순에서 확인하세요.';}
   if(filters.sort==='unit'){$('#sortStatus').hidden=false;$('#sortStatus').textContent='선택한 용도·단위만 정렬합니다. 품종·규격·등급이 같다는 뜻은 아닙니다. 수량 미확인은 제외합니다.';}
   const labels=chipLabels();$('#activeFilters').innerHTML=Object.entries(labels).filter(([k,v])=>v&&filters[k]!==AquaCatalog.defaultFilters[k]).map(([k,v])=>'<button type="button" data-clear-filter="'+k+'">'+escapeHtml(v)+' ×</button>').join('');if($('#activeFilters').innerHTML)$('#activeFilters').innerHTML+='<button type="button" id="clearAllFilters">전체 초기화</button>';
   const rows=catalogQuery.view(filters).result.rows,products=AquaCatalog.groupOffers(rows),visible=filters.groupOptions===false?rows.slice(0,visibleLimit):products.slice(0,visibleLimit).flatMap(g=>g.offers);
   $('#resultTitle').textContent='상품 '+products.length.toLocaleString('ko-KR')+'개 · 옵션 포함 '+rows.length.toLocaleString('ko-KR')+'개';
   $('#paginationStatus').textContent=rows.length?'현재 상품 '+AquaCatalog.groupOffers(visible).length+'개 · 옵션 '+visible.length+'개 표시 / 전체 상품 '+products.length+'개':'';
-  if(!rows.length&&catalog.status==='ready')$('#grid').innerHTML='<div class="empty"><strong>현재 조건에서 확인된 상품이 없습니다.</strong>검색어·가격·판매처 조건을 바꿔 보세요. 미수집·품절 제외된 상품을 임의로 표시하지 않습니다.</div>';
+  if(!rows.length&&catalog.status==='ready')$('#grid').innerHTML='<div class="empty"><strong>'+(selected.unitState?.needsSelection?'단가 범위 선택 필요':'현재 조건에서 확인된 상품이 없습니다.')+'</strong>'+escapeHtml(selected.reason)+'</div>';
   const matches=filters.compareAcross?AquaCatalog.compareSellers(rows):[];
   $('#sellerComparisons').hidden=!filters.compareAcross;
   $('#sellerComparisons').innerHTML=filters.compareAcross?(matches.length?matches.map(g=>'<details class="seller-comparison" open><summary>'+escapeHtml(g.label)+' · '+new Set(g.offers.map(p=>p.sellerId)).size+'개 판매처</summary><p>'+escapeHtml(g.basis)+' · 상품금액 기준. 배송 포함 최저가를 뜻하지 않습니다.</p>'+g.offers.map(p=>'<div class="comparison-offer"><strong>'+escapeHtml(AquaCatalog.sellerDisplay(catalogQuery.seller(p.sellerId)))+'</strong>'+offerHTML(p)+'</div>').join('')+'</details>').join(''):'<p>동일 조건이 확인된 판매처 조합이 없습니다. 브랜드·모델·구성 또는 생물의 품종·크기·성별·등급·수량이 불명확하면 묶지 않습니다.</p>'):'';
-  renderLibrary();
+  if(catalog.status!=="ready")$("#resultTitle").textContent=catalog.status==="pending"?"데이터 불러오는 중":"데이터 불러오기 실패";
+  renderLibrary();if(typeof renderAdvancedUI==="function")renderAdvancedUI();
 };
 let suggestions=[],suggestionIndex=-1;
 function closeSuggestions(){suggestions=[];suggestionIndex=-1;$('#searchSuggestions').innerHTML='';$('#searchSuggestions').hidden=true;$('#query').setAttribute('aria-expanded','false');$('#query').setAttribute('aria-activedescendant','');}
@@ -74,3 +79,45 @@ $('#personalLibrary').addEventListener('click',event=>{
 $('#saveCondition').addEventListener('click',()=>{library.saveCondition((filters.query||'전체')+' · '+(filters.type==='live'?'생물':'용품'),AquaCatalog.filtersToSearch(filters));renderLibrary();});
 $('#clearLibrary').addEventListener('click',()=>{library.clear();render();});
 render(false);
+
+var renderAdvancedUI;
+if($('#productRole')){
+ const observations=AquaCatalog.createWatchStore(libraryStorage);let qualityCatalog=null,quality=[],observedCatalog=null,returnRestored=false;
+ const specialLabels={careTemp:'수온 °C',carePH:'pH',adultMax:'성어 크기 상한 cm',tankLength:'수조 길이 cm',careDifficulty:'관리 조건',filterMethod:'여과 방식',tankLitres:'제조사 수조 L',flowMin:'유량 최솟값 L/h',wattMax:'소비전력 상한 W',hose:'호스',feedTarget:'사료 대상',feedBuoyancy:'사료 형태',particleMax:'입자 상한 mm',mediaPurpose:'여과재 용도',mediaMaterial:'여과재 재질',volumeMin:'용량 최솟값 mL',massMin:'중량 최솟값 g',includeUnknownGuidance:'조건 미확인 제외'};
+ const oldChips=chipLabels;chipLabels=function(){const labels=oldChips();for(const k of Object.keys(AquaCatalog.specialDefaults)){if(filters[k]===AquaCatalog.specialDefaults[k]||filters[k]===undefined)continue;labels[k]=specialLabels[k]+(typeof filters[k]==='boolean'?'':' '+($('#'+k)?.selectedOptions?.[0]?.textContent||filters[k]));}return labels;};
+ function guidanceHTML(p){const c=AquaCatalog.careProfile(p),e=AquaCatalog.equipmentFacts(p),r=e.reference;let h='';if(c)h+='<p>'+escapeHtml(c.label+' · '+c.id+' · '+c.temperature.join('~')+'°C · pH '+c.ph.join('~')+' · '+c.compatibility)+'</p><a href="'+escapeHtml(c.sourceUrl)+'" target="_blank" rel="noopener">사육 출처</a>';else if(p.type==='live')h+='<p>학명 동정 근거 미확인 · 사육 조건 자동 연결 보류. 필터의 대표 종 참고 자료를 확인하세요.</p>';if(r)h+='<p>'+escapeHtml(r.label+' · '+(r.region?r.region+' '+r.frequencyHz+'Hz 참고: '+r.tankLitres.join('~')+'L, '+r.flowLph+'L/h, '+r.watts+'W, '+r.hose+'mm · ':'')+r.caveat)+'</p><a href="'+escapeHtml(r.sourceUrl)+'" target="_blank" rel="noopener">제조사 출처 · '+AquaCatalog.guidance.checkedAt+' 확인</a>';return h;}
+ const oldOffer=offerHTML;offerHTML=function(p){const role=AquaCatalog.productRole(p),shipping=AquaCatalog.knownShipping(p,p.price?.amount),review=p.reviewEvidence;
+  let h=oldOffer(p);h=h.replace('<div class="offer-spec">',(p.type==='gear'?'<span class="role-tag" title="'+escapeHtml(role.basis)+'">'+role.label+'</span>':'')+'<div class="offer-spec">');
+  h=h.replace('<div class="shipping">'+(p.shipping===null?'배송비 미확인':('배송비 '+money(p.shipping.amount)+'원 표시'))+'</div>','<div class="shipping">'+(shipping?'기본 배송 '+money(shipping.shipping)+'원 · 상품+기본배송 '+money(shipping.knownSubtotal)+'원<br><small>지역·포장 추가금 미확인 · 결제 총액 아님</small>':p.shippingPolicy?'배송 조건 확인 후 7일 경과 또는 근거 부족 · 재확인 필요':'배송비 미확인')+'</div>');
+  const stock=p.stockObservedAt?('재고 '+formatTime(p.stockObservedAt)+' 확인 · '+(p.available===true?'당시 판매 가능':'미확인')):'재고 확인 시각 미확인';
+  h=h.replace(/<div class="stock-unknown">.*?<\/div>/,'<div class="stock-unknown">'+escapeHtml(stock)+'</div>');
+  const extra=guidanceHTML(p)+'<p><a href="'+escapeHtml(review?.url||p.sourceUrl)+'" target="_blank" rel="noopener">'+(review?'원본 후기'+(review.count===null?'':' '+review.count+'개'):'원본에서 후기 확인')+'</a>'+(review?' · '+escapeHtml(formatTime(review.checkedAt))+' 확인 · 평점·구매 인증 미확인':' · 후기 수·위치 미확인')+'</p><fieldset class="watch-controls"><legend>관심상품 관찰 (사이트 열 때만)</legend><label>목표 판매가격 이하 (원)<input data-watch-price="'+escapeHtml(p.id)+'" type="number" min="0" step="1" inputmode="numeric"></label><label><input type="checkbox" data-watch-restock="'+escapeHtml(p.id)+'">확인된 품절 후 재입고 관찰</label><button type="button" data-watch-save="'+escapeHtml(p.id)+'">관찰 저장</button></fieldset><fieldset class="report-controls"><legend>오류 신고 초안 · 운영자 미접수</legend><select data-report-kind="'+escapeHtml(p.id)+'" aria-label="오류 유형"><option value="price">가격이 달라요</option><option value="stock">품절이에요</option><option value="identity">다른 상품이에요</option><option value="link">링크가 안 열려요</option></select><button type="button" data-report-save="'+escapeHtml(p.id)+'">내 브라우저에 초안 저장</button></fieldset>';
+  return h.replace('</details></div>',extra+'</details></div>');
+ };
+ renderAdvancedUI=function(){
+  $('#roleControls').hidden=filters.type!=='gear';$('#productRole').value=filters.productRole||'all';$('#liveSpecial').hidden=filters.type!=='live';$('#gearSpecial').hidden=filters.type!=='gear';
+  for(const [k,v]of Object.entries(AquaCatalog.specialDefaults)){const n=$('#'+k);if(!n)continue;if(typeof v==='boolean')n.checked=filters[k]!==false;else n.value=filters[k]??'';}
+  $('#grid').classList.toggle('table-view',$('#resultView').value==='table');
+  if(catalog.status==='ready'&&catalog!==qualityCatalog){qualityCatalog=catalog;quality=AquaCatalog.sellerQuality(catalog);}
+  $('#qualitySummary').innerHTML='<p>가격 7일 초과 비율 · 재고 확인 시각 별도. 가격/재고 불일치율은 원본 동시 대조 자료가 없어 미측정입니다. 아래 마지막 상품 시각은 판매처 수집 성공 시각과 다릅니다.</p><table><thead><tr><th>판매처</th><th>상품</th><th>7일 초과</th><th>재고시각 미확인</th></tr></thead><tbody>'+quality.map(s=>'<tr><td>'+escapeHtml(s.name)+'</td><td>'+s.count+'</td><td>'+Math.round(s.staleRatio*100)+'%</td><td>'+s.stockUnknown+'</td></tr>').join('')+'</tbody></table>';
+  if(catalog.status==='ready'&&catalog!==observedCatalog){observedCatalog=catalog;observations.observe(catalog);}
+  if(!returnRestored&&catalog.status==='ready'&&typeof requestAnimationFrame==='function'){returnRestored=true;try{const r=JSON.parse(sessionStorage.getItem('aqua-return'));if(r?.url===location.pathname+location.search&&Number.isFinite(r.y)&&r.y>=0&&Number.isSafeInteger(r.limit)){requestAnimationFrame(()=>{visibleLimit=Math.max(PAGE_SIZE,Math.min(r.limit,10000));render(false);requestAnimationFrame(()=>scrollTo(0,r.y));});}}catch{}}
+  const st=observations.read();$('#watchStatus').textContent=(observations.persistent()?'내 브라우저에 저장됨':'저장소 사용 불가 · 이번 화면에서만 유지')+' · 백그라운드 알림·운영자 접수 서버 미연결';
+  $('#watchList').innerHTML=st.watches.map(w=>'<p>'+escapeHtml(w.name)+' · '+(w.targetPrice===null?'':money(w.targetPrice)+'원 이하')+(w.restock?' · 재입고':'')+'<button type="button" data-watch-remove="'+escapeHtml(w.id)+'">관찰 해제</button></p>').join('')||'<p>관찰 설정 없음. 관심상품의 구매 조건에서 설정하세요.</p>';
+  $('#watchEvents').innerHTML=st.events.map(e=>'<p>'+escapeHtml(st.watches.find(w=>w.id===e.id)?.name||e.id)+' · '+(e.kind==='restock'?'확인된 품절 후 재입고 관찰':'목표 판매가격 도달 '+money(e.price)+'원')+' · '+escapeHtml(formatTime(e.at))+'</p>').join('')||'<p>새로 확인된 관찰 변화 없음</p>';
+  $('#reportDrafts').innerHTML=st.reports.map(r=>'<p>'+escapeHtml(r.name)+' · '+({price:'가격',stock:'품절',identity:'상품 연결',link:'링크'})[r.kind]+' · '+(r.status==='exported'?'내보내기 준비됨 · 미접수':'초안 · 미접수')+'</p>').join('')||'<p>신고 초안 없음</p>';
+ };
+ $('#careReference').innerHTML=AquaCatalog.guidance.species.map(c=>'<details><summary>'+escapeHtml(c.label+' · '+c.id)+'</summary><p>'+escapeHtml(c.temperature.join('~')+'°C · pH '+c.ph.join('~')+' · '+c.adultCm+'cm ('+c.sizeBasis+') · '+(c.tankBaseCm?'수조 바닥 '+c.tankBaseCm.join('×')+'cm':c.tankNote))+'</p><p>'+escapeHtml(c.diet+' · '+c.reason+' · '+c.compatibility)+'</p><a href="'+escapeHtml(c.sourceUrl)+'" target="_blank" rel="noopener">출처 · '+AquaCatalog.guidance.checkedAt+' 확인</a><p>'+escapeHtml(c.sourceScope)+'</p></details>').join('');
+ $('#productRole').addEventListener('change',()=>{filters.productRole=$('#productRole').value;render();});
+ $('#resultView').addEventListener('change',()=>render(false));
+ $('#specialForm').addEventListener('submit',e=>{e.preventDefault();const n={...filters};for(const [k,v]of Object.entries(AquaCatalog.specialDefaults)){const el=$('#'+k);n[k]=typeof v==='boolean'?el.checked:AquaCatalog.specialEnums[k]?el.value:el.value.trim()===''?null:Number(el.value);}try{catalogQuery.select(n);filters=n;$('#specialError').textContent='';render();}catch{$('#specialError').textContent='양수인 수치와 선택 조건을 확인하세요.';}});
+ function action(e){const save=e.target.closest('[data-watch-save]'),report=e.target.closest('[data-report-save]');const id=save?.dataset.watchSave||report?.dataset.reportSave;if(!id)return;const p=catalog.products.find(p=>p.id===id);if(!p)return;const scope=e.target.closest('.offer');if(save){const raw=scope.querySelector('[data-watch-price]').value.trim(),restock=scope.querySelector('[data-watch-restock]').checked;if(raw!==''&&(!/^\d+$/.test(raw)||!Number.isSafeInteger(Number(raw)))||raw===''&&!restock){$('#watchStatus').textContent='목표 가격 0 이상 또는 재입고 관찰을 선택하세요.';return;}if(!library.read().favorites.some(f=>f.id===p.id))library.favorite(p);observations.set({id:p.id,name:p.name,targetPrice:raw===''?null:Number(raw),restock,enabled:true,last:AquaCatalog.watchObservation(catalog,p.id)});}else observations.report(p,scope.querySelector('[data-report-kind]').value);render(false);}
+ $('#grid').addEventListener('click',action);$('#sellerComparisons').addEventListener('click',action);
+ $('#observationPanel').addEventListener('click',e=>{const b=e.target.closest('[data-watch-remove]');if(b){observations.remove(b.dataset.watchRemove);render(false);}});
+ $('#clearWatchEvents').addEventListener('click',()=>{observations.clearEvents();render(false);});
+ $('#exportReports').addEventListener('click',()=>{$('#reportExport').hidden=false;$('#reportExport').value=observations.exportReports();renderAdvancedUI();});
+ // Browser handles bfcache scroll restoration. Persist a same-path fallback only on user navigation.
+ if(typeof addEventListener==='function')addEventListener('pagehide',()=>{try{sessionStorage.setItem('aqua-return',JSON.stringify({url:location.pathname+location.search,y:scrollY,limit:visibleLimit}));}catch{}});
+ render(false);
+
+}

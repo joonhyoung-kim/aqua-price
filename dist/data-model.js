@@ -180,7 +180,7 @@
     }
     let baseName=p.name;
     if(count&&(!reason||optionConfirmed))baseName=baseName.replace(/\d+\s*(?:마리|쌍|개)(?:입|\s*묶음)?/g,'').replace(/\[\s*\]|\(\s*\)/g,'').replace(/\s+/g,' ').trim();
-    const option=spec&&!/^(?:미확인|Retailer concrete offer|기본)$/i.test(spec)?spec:count?count+unit:volume?(volume.amount/(volume.dimension==='volume'?1000:1000))+(volume.dimension==='volume'?'L':'kg'):'옵션·수량 미확인';
+    const option=spec&&!/^(?:미확인|Retailer concrete offer|기본)$/i.test(spec)?spec:count?count+unit:volume?formatQuantity(volume):'옵션·수량 미확인';
     const result={count,unit,basis,reason,volume,baseName:baseName||p.name,option,optionConfirmed};
     if(Object.isFrozen(p))factsCache.set(p,result);return result;
   }
@@ -255,8 +255,100 @@
     }
     return groups;
   }
+  function formatQuantity(v){const large=v.amount>=1000;return (large?v.amount/1000:v.amount)+(v.dimension==='volume'?(large?'L':'mL'):(large?'kg':'g'));}
+  const roleLabels={all:'모든 구성',body:'본체',part:'부품',consumable:'소모품',set:'세트',unknown:'구성 미확인'};
+  function productRole(p){
+    if(p.type!=='gear')return {key:'unknown',label:roleLabels.unknown,basis:'용품 외 항목'};
+    const c=gearClassification(p),t=(p.name+' '+(p.originalTitle||'')).normalize('NFKC');let key='unknown';
+    if(c?.key?.endsWith('_parts')||c?.key==='plumbing')key='part';
+    else if(/(?:세트|패키지|여과재\s*포함|[+]\s*링여과재)/i.test(t)||c?.key?.endsWith('_set'))key='set';
+    else if(/^(?:media_|feed_|plant_fertilizer|conditioner|bacteria|water_adjuster|medication|marine_salt)/.test(c?.key||''))key='consumable';
+    else if(/^(?:filter_|air_pump|water_pump|light_led|light_other|heater|chiller|cooling_fan|sterilizer|tank_only|marine_skimmer|marine_reactor)/.test(c?.key||''))key='body';
+    if(key==='body'&&c?.key==='tank_only'&&/(?:수조용|어항용|수조|큐브|슬림).{0,30}매트/.test(t))key='part';
+    if(key==='body'&&/여과기용|보조\s*외부여과기/.test(t))key='unknown';
+    if(key==='body'&&c?.key==='filter_external'){
+      const model=/(?:\b[a-z]{1,6}[ -]?\d{2,5}[a-z]?\b|\b22\d{2}\b|클래식\s*\d{2,4})/i.test(t);
+      const category=(p.observedCategoryLabels||[]).some(e=>/외부\s*여과기/.test(typeof e==='string'?e:e.label||''));
+      if(!model&&!category)key='unknown';
+    }
+    return {key,label:roleLabels[key],basis:key==='unknown'?'본체·보조 장치 구성 근거 부족':('제품 유형 '+(gearGroups[c?.key]||'미확인')+' · '+c.basis)};
+  }
+  function relevance(p,query){const q=canonical(query),t=canonical(p.name),role=productRole(p).key;const part=/호스|고무링|패킹|입수관|출수관|부품|임펠라|임펠러/.test(q);let score=t===q?100:0;if(/여과기|filter/.test(q)&&p.type==='gear')score+=part?(role==='part'?50:0):(role==='body'?50:role==='set'?25:0);return score;}
+  function resolveUnitScope(rows,filters){
+    if(filters.sort!=="unit")return {filters:{unitScope:""},scopes:[],changed:!!filters.unitScope,needsSelection:false,noComparable:false};
+    const scopes=new Map();for(const p of rows){const u=comparisonUnit(p);if(u)scopes.set(u.scope,{label:u.label,unit:u.unit});}
+    const previous=filters.unitScope||'';let selected=filters.sort==='unit'&&scopes.has(previous)?previous:'';
+    if(filters.sort==='unit'&&!selected&&scopes.size===1)selected=scopes.keys().next().value;
+    return {filters:{unitScope:selected},scopes:[...scopes].map(([value,info])=>({value,...info})),changed:previous!==selected,needsSelection:filters.sort==='unit'&&!selected&&scopes.size>0,noComparable:filters.sort==='unit'&&scopes.size===0};
+  }
+  const guidance={
+  "checkedAt":"2026-10-26",
+  "species":[
+    {"id":"Paracheirodon innesi","label":"네온테트라","sourceUrl":"https://www.seriouslyfish.com/species/paracheirodon-innesi","temperature":[21,25],"ph":[4,7.5],"adultCm":3,"sizeBasis":"SL: 꼬리지느러미 제외 표준체장","tankBaseCm":[60,30],"difficulty":"조건 관리","diet":"작은 건조 먹이와 냉동·생먹이를 다양하게 제공","reason":"안정된 수온과 수질, 8~10마리 이상 군영을 고려","compatibility":"대체로 온순하나 상대 크기·성향과 은신처를 확인. 합사·치새우 안전을 보장하지 않음","sourceScope":"종별 참고 자료, 개별 판매 생물의 동정 아님"},
+    {"id":"Poecilia reticulata","label":"구피","sourceUrl":"https://www.seriouslyfish.com/species/poecilia-reticulata","temperature":[17,28],"ph":[7,8.5],"adultCm":6,"sizeBasis":"SL: 꼬리지느러미 제외 표준체장","tankBaseCm":[45,30],"difficulty":"조건 관리","diet":"사육 개체는 대부분의 먹이에 적응","reason":"중경수 이상과 약한 수류를 고려. 과번식·수컷의 추적 관리 필요","compatibility":"지느러미를 무는 어종을 피함. 치어·치새우 합사 안전 보장 없음","sourceScope":"종별 참고 자료, 엔들러·교잡종에 자동 적용하지 않음"},
+    {"id":"Neocaridina davidi","label":"체리새우","sourceUrl":"https://www.aquariumcoop.com/blogs/aquarium/cherry-shrimp-care","temperature":[22,24],"ph":[6.5,8.5],"adultCm":4,"sizeBasis":"암컷 최대 약 4cm, 수컷 2.5~3cm","tankBaseCm":null,"tankNote":"번식 군집에 10 US gal 이상을 선호한다는 출처 권장, 보편적 최소치 아님","difficulty":"조건 관리","diet":"성숙한 수조의 미생물막과 새우 먹이, 과급여 주의","reason":"GH/KH와 안정된 성숙 수조, 탈피·흡입구 보호가 필요","compatibility":"어류의 치새우 포식 위험. 번식은 새우 전용 수조를 고려","sourceScope":"22~24°C 쾌적 범위. 생존 범위 16~28°C와 구분"}
+  ],
+  "equipment":[
+    {"id":"eheim-2213","model":"2213","label":"EHEIM classic250 / 2213","sourceUrl":"https://eheim.com/de_DE/ersatzteil-shop/technik/aussenfilter/classic/classic-250","filterMethod":"external","tankLitres":[80,250],"flowLph":440,"watts":8,"hose":"12/16","region":"EUR","frequencyHz":50,"verificationStatus":"reference_only","measurementBasis":"50Hz 명목 펌프 유량","caveat":"국내 60Hz 판매 옵션 사양 미확인. 실제 여과 유량·사육 적합성 보장 아님"},
+    {"id":"eheim-2215","model":"2215","label":"EHEIM classic350 / 2215","sourceUrl":"https://eheim.com/ersatzteil-shop/technik/aussenfilter/classic/classic-350","filterMethod":"external","tankLitres":[120,350],"flowLph":620,"watts":15,"hose":"12/16","region":"EUR","frequencyHz":50,"verificationStatus":"reference_only","measurementBasis":"50Hz 명목 펌프 유량","caveat":"국내 60Hz 판매 옵션 사양 미확인. 실제 여과 유량·사육 적합성 보장 아님"},
+    {"id":"eheim-substrat-pro","label":"EHEIM SUBSTRATpro","sourceUrl":"https://eheim.com/en_GB/aquatics/filter-media/biological/substratpro/","mediaPurpose":"biological","mediaMaterial":"sintered_glass","form":"구형","verificationStatus":"manufacturer_product_family","caveat":"담수·해수용. 부드럽게 세척 후 재사용. 판매 옵션의 용량은 별도 확인"}
+  ]
+}
+;
+  function careProfile(p){const i=p.careIdentity;if(i?.verified!==true||!httpsUrl(i.evidenceUrl)||!validDate(i.checkedAt))return null;return guidance.species.find(g=>g.id===i.species)||null;}
+  function equipmentFacts(p){
+    if(p.type!=='gear')return {};const role=productRole(p),key=gearGroup(p),t=p.name+' '+p.spec,f=purchaseFacts(p);
+    const v={sourceUrl:p.sourceUrl,checkedAt:p.observedAt,verificationStatus:'retailer_explicit',volumeMl:f.volume?.dimension==='volume'?f.volume.amount:null,massG:f.volume?.dimension==='mass'?f.volume.amount:null};
+    const methods={filter_external:'external',filter_sponge:'sponge',filter_hangon:'hangon',filter_internal:'internal',filter_top:'top',filter_bottom:'bottom'};
+    if(role.key==='body'&&methods[key])v.filterMethod=methods[key];
+    if(/^feed_/.test(key)){if(/구피/.test(t))v.feedTarget='guppy';else if(/새우/.test(t))v.feedTarget='shrimp';else if(/베타/.test(t))v.feedTarget='betta';v.feedBuoyancy=/침강/.test(t)&&!/부상/.test(t)?'sinking':/부상/.test(t)&&!/침강/.test(t)?'floating':null;const size=t.match(/(?:입자|알갱이)\s*(\d+(?:\.\d+)?)\s*mm/i);v.particleMm=size?Number(size[1]):null;}
+    const identity=exactIdentity(p);if(identity?.key.startsWith('eheim:substrat-pro:')){v.mediaPurpose='biological';v.mediaMaterial='sintered_glass';v.form='구형';v.reference=guidance.equipment.find(g=>g.id==='eheim-substrat-pro');}
+    if(role.key==='body'&&/에하임|eheim/i.test(t)){const models=[...new Set(t.match(/\b221[35]\b/g)||[])];if(models.length===1)v.reference=guidance.equipment.find(g=>g.model===models[0]);}
+    const exact=p.equipmentIdentity;if(exact?.verified===true&&httpsUrl(exact.evidenceUrl)&&validDate(exact.checkedAt)){for(const k of ['tankLitres','flowLph','watts','hose','feedTarget','feedBuoyancy','particleMm','mediaPurpose','mediaMaterial'])if(exact[k]!==undefined)v[k]=exact[k];}
+    return v;
+  }
+  const specialDefaults={careTemp:null,carePH:null,adultMax:null,tankLength:null,careDifficulty:'all',filterMethod:'all',tankLitres:null,flowMin:null,wattMax:null,hose:'all',feedTarget:'all',feedBuoyancy:'all',particleMax:null,mediaPurpose:'all',mediaMaterial:'all',volumeMin:null,massMin:null,includeUnknownGuidance:true};
+  const specialEnums={careDifficulty:['all','조건 관리'],filterMethod:['all','external','sponge','hangon','internal','top','bottom'],hose:['all','12/16','16/22'],feedTarget:['all','guppy','shrimp','betta'],feedBuoyancy:['all','floating','sinking'],mediaPurpose:['all','biological','chemical','mechanical'],mediaMaterial:['all','sintered_glass','ceramic','sponge']};
+  function matchesGuidance(p,filters){
+    const c=careProfile(p),e=equipmentFacts(p),unknown=filters.includeUnknownGuidance!==false;
+    const check=(want,value,test)=>want==null||want==='all'||(value==null?unknown:test(value,want));
+    const within=(range,w)=>Array.isArray(range)&&range.length===2&&range[0]<=w&&range[1]>=w;
+    if(p.type==='live')return check(filters.careTemp,c?.temperature,within)&&check(filters.carePH,c?.ph,within)&&check(filters.adultMax,c?.adultCm,(v,w)=>v<=w)&&check(filters.tankLength,c?.tankBaseCm?.[0],(v,w)=>v<=w)&&check(filters.careDifficulty,c?.difficulty,(v,w)=>v===w);
+    return ['filterMethod','hose','feedTarget','feedBuoyancy','mediaPurpose','mediaMaterial'].every(k=>check(filters[k],e[k],(v,w)=>v===w))&&check(filters.tankLitres,e.tankLitres,within)&&check(filters.flowMin,e.flowLph,(v,w)=>v>=w)&&check(filters.wattMax,e.watts,(v,w)=>v<=w)&&check(filters.particleMax,e.particleMm,(v,w)=>v<=w)&&check(filters.volumeMin,e.volumeMl,(v,w)=>v>=w)&&check(filters.massMin,e.massG,(v,w)=>v>=w);
+  }
+  function knownShipping(p,subtotal,now=Date.now()){
+    const s=p.shippingPolicy;if(!s?.verified||s.sellerId!==p.sellerId||!httpsUrl(s.evidenceUrl)||!validDate(s.observedAt)||Date.parse(s.observedAt)>now||now-Date.parse(s.observedAt)>7*DAY||!Number.isSafeInteger(subtotal)||subtotal<0||!Number.isSafeInteger(s.amount)||s.amount<0||s.freeThreshold!==null&&(!Number.isSafeInteger(s.freeThreshold)||s.freeThreshold<0)||s.chargeUnit!=='order')return null;
+    const shipping=s.freeThreshold!==null&&subtotal>=s.freeThreshold?0:s.amount;return {shipping,knownSubtotal:subtotal+shipping,complete:s.conditionsComplete===true,unknown:s.conditionsComplete===true?[]:['지역 추가금','포장비','합배송 조건']};
+  }
+  function sellerQuality(catalog,now=Date.now()){return catalog.sellers.map(s=>{const rows=catalog.products.filter(p=>p.sellerId===s.id),stale=rows.filter(p=>observationAge(p,now).stale).length,stockKnown=rows.filter(p=>validDate(p.stockObservedAt)).length;return {id:s.id,name:sellerDisplay(s),count:rows.length,stale,staleRatio:rows.length?stale/rows.length:null,stockKnown,stockUnknown:rows.length-stockKnown,priceStockMismatchRatio:null,latestPriceAt:rows.map(p=>p.observedAt).sort().at(-1)||null};});}
+
+  function watchObservation(catalog,id,now=Date.now()){
+    const p=catalog.products.find(p=>p.id===id),out=catalog.publicationExclusions?.find(p=>p.id===id&&p.code==='confirmed_out_of_stock');
+    if(out)return {id,stock:false,stockAt:out.originalObservedAt,price:null,priceAt:null};
+    if(!p)return {id,stock:null,price:null};
+    const stockAt=p.stockObservedAt;const fresh=validDate(stockAt)&&Date.parse(stockAt)<=now&&now-Date.parse(stockAt)<=7*DAY;
+    return {id,stock:fresh&&typeof p.available==='boolean'?p.available:null,stockAt:fresh?stockAt:null,price:comparisonStatus(p).comparable&&!observationAge(p,now).stale?p.price.amount:null,priceAt:p.observedAt};
+  }
+  function advanceWatch(w,observation){
+    const next=structuredClone(w),events=[];if(!w.enabled||w.id!==observation.id)return {watch:next,events};
+    const old=w.last||{},o=observation;
+    const newer=(a,b)=>validDate(a)&&(!validDate(b)||Date.parse(a)>Date.parse(b));
+    if(w.restock&&old.stock===false&&o.stock===true&&newer(o.stockAt,old.stockAt))events.push({kind:'restock',id:w.id,at:o.stockAt});
+    if(Number.isSafeInteger(w.targetPrice)&&w.targetPrice>=0&&Number.isFinite(old.price)&&old.price>w.targetPrice&&Number.isFinite(o.price)&&o.price<=w.targetPrice&&newer(o.priceAt,old.priceAt))events.push({kind:'target_price',id:w.id,at:o.priceAt,price:o.price});
+    next.last={...old};if(o.stock!==null&&o.stock!==undefined&&newer(o.stockAt,old.stockAt)){next.last.stock=o.stock;next.last.stockAt=o.stockAt;}if(o.price!==null&&o.price!==undefined&&newer(o.priceAt,old.priceAt)){next.last.price=o.price;next.last.priceAt=o.priceAt;}
+    return {watch:next,events};
+  }
+  function createWatchStore(storage){
+    let state={watches:[],events:[],reports:[]},persistent=!!storage;
+    try{const raw=storage?.getItem('aqua-observations-v1');if(raw){const p=JSON.parse(raw);if(p&&Array.isArray(p.watches)&&Array.isArray(p.events)&&Array.isArray(p.reports))state={watches:p.watches.filter(w=>typeof w?.id==='string'&&typeof w.enabled==='boolean'&&(w.targetPrice===null||Number.isSafeInteger(w.targetPrice)&&w.targetPrice>=0)).slice(0,100),events:p.events.filter(e=>typeof e?.id==='string'&&['restock','target_price'].includes(e.kind)).slice(-100),reports:p.reports.filter(r=>typeof r?.id==='string'&&['price','stock','identity','link'].includes(r.kind)&&['draft','exported'].includes(r.status)).slice(-100)};}}catch{persistent=false;}
+    const save=()=>{try{storage?.setItem('aqua-observations-v1',JSON.stringify(state));}catch{persistent=false;}};
+    return {read:()=>structuredClone(state),persistent:()=>persistent,set(w){if(typeof w.id!=='string'||w.targetPrice!==null&&(!Number.isSafeInteger(w.targetPrice)||w.targetPrice<0))throw Error('잘못된 목표 가격');state.watches=state.watches.filter(x=>x.id!==w.id);state.watches.push(structuredClone(w));state.watches=state.watches.slice(-100);save();},remove(id){state.watches=state.watches.filter(x=>x.id!==id);save();},observe(catalog){state.watches=state.watches.map(w=>{const a=advanceWatch(w,watchObservation(catalog,w.id));for(const e of a.events)if(!state.events.some(x=>x.id===e.id&&x.kind===e.kind&&x.at===e.at))state.events.push(e);return a.watch;});state.events=state.events.slice(-100);save();},report(p,kind){if(!['price','stock','identity','link'].includes(kind))throw Error('잘못된 신고 유형');if(!state.reports.some(r=>r.id===p.id&&r.kind===kind&&r.status==='draft'))state.reports.push({id:p.id,name:p.name,url:p.sourceUrl,kind,status:'draft',createdAt:new Date().toISOString(),observedAt:p.observedAt});state.reports=state.reports.slice(-100);save();},exportReports(){state.reports=state.reports.map(r=>({...r,status:'exported'}));save();return JSON.stringify({schemaVersion:1,delivery:'not_submitted',reports:state.reports},null,2);},clearEvents(){state.events=[];save();}};
+  }
+
   function validateSelectionFilters(filters) {
-    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed', 'unit'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
+    for(const [k,v]of Object.entries(specialDefaults)){if(filters[k]===undefined)continue;if(k==='includeUnknownGuidance')requireValue(typeof filters[k]==='boolean','잘못된 미확인 정보 필터');else if(specialEnums[k])requireValue(specialEnums[k].includes(filters[k]),'잘못된 특화 필터');else requireValue(filters[k]===null||typeof filters[k]==='number'&&Number.isFinite(filters[k])&&filters[k]>0&&filters[k]<=1000000,'잘못된 수치 필터');}
+    requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed', 'unit', 'relevance', 'delivered'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
+    requireValue(filters.productRole===undefined||Object.hasOwn(roleLabels,filters.productRole),'잘못된 구성 필터');
     requireValue(filters.comparison===undefined||['priced','all','unpriced'].includes(filters.comparison),'잘못된 가격 비교 범위');
     requireValue(filters.unitScope===undefined||typeof filters.unitScope==='string','잘못된 단가 비교 범위');
     requireValue(filters.wantedQty===undefined||filters.wantedQty===null||Number.isSafeInteger(filters.wantedQty)&&filters.wantedQty>=1&&filters.wantedQty<=100000,'잘못된 희망 수량');
@@ -289,6 +381,8 @@
         return (!filters.gearCategory||filters.gearCategory==='all'||category===filters.gearCategory)&&(!filters.gearGroup||filters.gearGroup==='all'||key===filters.gearGroup);
       });
     }
+    if(filters.type==='gear'&&filters.productRole&&filters.productRole!=='all')rows=rows.filter(p=>productRole(p).key===filters.productRole);
+    if(Object.keys(specialDefaults).some(k=>filters[k]!==undefined&&filters[k]!==specialDefaults[k]))rows=rows.filter(p=>matchesGuidance(p,filters));
     return rows;
   }
   function selectProducts(catalog, filters) {
@@ -315,6 +409,7 @@
     rows = rows.filter(p => p.registeredAt === null ? includeUnknown : filters.days === 'all' || Date.parse(p.registeredAt) >= start && Date.parse(p.registeredAt) <= end);
     const excludedPrice = rows.filter(p => p.price === null).length;
     if ((filters.sort === 'low' || filters.sort === 'high') && comparison==='priced') rows = rows.filter(p => p.price !== null);
+    const unitState=resolveUnitScope(rows,filters);filters=Object.assign(Object.create(filters),unitState.filters);
     let excludedSales = 0;
     if (filters.sort === 'sales') {
       const matches = p => start === null ? p.cumulativeSales !== null : p.periodSales !== null && Date.parse(p.periodSales.startAt) === start && Date.parse(p.periodSales.endAt) === end;
@@ -322,12 +417,14 @@
       rows = rows.filter(matches).sort((a, b) => start === null ? b.cumulativeSales - a.cumulativeSales : b.periodSales.count - a.periodSales.count);
     } else if (filters.sort === 'new') rows.sort((a, b) => Date.parse(b.registeredAt) - Date.parse(a.registeredAt));
     else if (filters.sort === 'observed') rows.sort((a, b) => Date.parse(b.observedAt) - Date.parse(a.observedAt));
+    else if(filters.sort==='delivered'){const total=p=>estimatePurchase(p,filters.wantedQty||purchaseFacts(p).count||1,p.shippingPolicy,now).total;rows=rows.filter(p=>total(p)!==null).sort((a,b)=>total(a)-total(b));}
+    else if(filters.sort==='relevance')rows.sort((a,b)=>relevance(b,filters.query)-relevance(a,filters.query)||(a.price?.amount??Infinity)-(b.price?.amount??Infinity));
     else if(filters.sort==='unit')rows=rows.filter(p=>comparisonUnit(p)?.scope===filters.unitScope).sort((a,b)=>comparisonUnit(a).amount-comparisonUnit(b).amount);
     else rows.sort((a, b) => Number(comparisonStatus(b).comparable)-Number(comparisonStatus(a).comparable) || (a.price===null&&b.price===null?0:a.price===null?1:b.price===null?-1:filters.sort==='high'?b.price.amount-a.price.amount:a.price.amount-b.price.amount));
     const missingSubtype = filters.type === 'live' && filters.subtype !== undefined && filters.subtype !== 'all' && !catalog.products.some(p => p.type === 'live' && p.subtype === filters.subtype);
     const reason = missingSubtype ? '현재 연결된 상품정보에 해당 생물이 없습니다. 모든 판매처의 품절·미판매를 뜻하지 않습니다.' : !catalog.products.some(p => p.type === filters.type) && filters.type === 'live' ? catalog.livestockNotice || '이번 연동에서 확인된 생물 상품이 없습니다.' : filters.sort === 'sales' && !rows.length ? '선택한 기간과 정확히 일치하는 실제 판매량이 없습니다. 누적 판매수로 기간 순위를 만들지 않습니다.' : filters.sort === 'new' && !rows.length && unknownCount ? '실제 상품 등록일이 확인되지 않아 신상품순으로 정렬할 수 없습니다. 관찰 시각으로 임의 정렬하지 않습니다.' : !rows.length ? '등록일·검색어·정렬 조건을 충족하는 확인 상품이 없습니다.' : '';
-    const outputReason = filters.sort==='unit'&&!rows.length?'단가 비교 범위를 선택하세요. 동일한 용도·단위의 확인된 수량만 비교합니다.':filters.sort === 'sales' && !rows.length && start === null ? '판매처에서 확인된 실제 판매량이 없습니다. 클릭수·조회수로 판매순을 대신하지 않습니다.' : reason;
-    return { rows, reason: outputReason, excludedComparison, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
+    const outputReason = filters.sort==='delivered'&&!rows.length?'수량·최소 주문·배송·포장 조건이 모두 확인된 예상 합계가 없습니다. 상품가격순으로 확인하세요.':unitState.needsSelection?'단가 비교 범위를 선택하세요. 검색 결과 없음과 다른 상태입니다.':unitState.noComparable?'현재 조건에는 수량·단위가 확인된 단가 비교 상품이 없습니다. 판매가격순으로 확인하세요.':filters.sort === 'sales' && !rows.length && start === null ? '판매처에서 확인된 실제 판매량이 없습니다. 클릭수·조회수로 판매순을 대신하지 않습니다.' : reason;
+    return { rows, reason: outputReason, unitState, effectiveFilters:{unitScope:filters.unitScope}, excludedComparison, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
 
   function createCatalogQuery(input, options={}) {
@@ -358,11 +455,11 @@
       // Key only the values actually read by selection, including inherited ones.
       // Unrelated properties must not change or break a valid query.
       filters={
-        type:filters.type,subtype:filters.subtype,fishGroup:filters.fishGroup,
+        ...Object.fromEntries(Object.keys(specialDefaults).map(k=>[k,filters[k]])),type:filters.type,subtype:filters.subtype,fishGroup:filters.fishGroup,
         liveGroup:filters.liveGroup,browseGroup:filters.browseGroup,
         gearCategory:filters.gearCategory,gearGroup:filters.gearGroup,
         sort:filters.sort,days:filters.days,query:filters.query,
-        unitScope:filters.unitScope,wantedQty:filters.wantedQty,compareAcross:filters.compareAcross,comparison:filters.comparison,seller:filters.seller,minPrice:filters.minPrice,maxPrice:filters.maxPrice,observedDays:filters.observedDays,groupOptions:filters.groupOptions,
+        productRole:filters.productRole,unitScope:filters.unitScope,wantedQty:filters.wantedQty,compareAcross:filters.compareAcross,comparison:filters.comparison,seller:filters.seller,minPrice:filters.minPrice,maxPrice:filters.maxPrice,observedDays:filters.observedDays,groupOptions:filters.groupOptions,
         includeUnknownRegistration:filters.includeUnknownRegistration
       };
       const now=options.now?options.now():Date.now();
@@ -417,10 +514,11 @@
   }
 
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', gearCategory:'all', gearGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true, comparison:'priced', seller:'', minPrice:null, maxPrice:null, observedDays:'all', groupOptions:true,unitScope:'',wantedQty:null,compareAcross:false });
+  const defaultFilters = Object.freeze({ ...specialDefaults,type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', gearCategory:'all', gearGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true, comparison:'priced', seller:'', minPrice:null, maxPrice:null, observedDays:'all', groupOptions:true,unitScope:'',wantedQty:null,compareAcross:false,productRole:'all' });
   function filtersFromSearch(search = '') {
     const params = new URLSearchParams(search), filters = { ...defaultFilters };
-    for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), sort: ['low','high','sales','new','observed','unit'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
+    for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), productRole:Object.keys(roleLabels),sort: ['low','high','sales','new','observed','unit','relevance','delivered'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
+    for(const [k,v]of Object.entries(specialDefaults)){const raw=params.get(k);if(raw===null)continue;if(k==='includeUnknownGuidance')filters[k]=raw!=='false';else if(specialEnums[k]){if(specialEnums[k].includes(raw))filters[k]=raw;}else if(/^(?:\d+)(?:\.\d+)?$/.test(raw)&&Number(raw)>0&&Number(raw)<=1000000)filters[k]=Number(raw);}
     const days = params.get('days'); if (days === 'all') filters.days = 'all'; else if (['7','30','90'].includes(days)) filters.days = Number(days);
     const group=params.get('liveGroup');if(group&&livestockGroups[filters.subtype]&&Object.hasOwn(livestockGroups[filters.subtype],group))filters.liveGroup=group;
     if(!params.has('subtype')&&params.has('fishGroup')&&filters.fishGroup!=='all')filters.subtype='fish';
@@ -448,9 +546,9 @@
     return Object.fromEntries(['sales','new'].map(sort => { const result = selectProducts(catalog, { ...filters, sort }); return [sort, { available: catalog.status === 'ready' && result.rows.length > 0, count: result.rows.length, reason: result.reason }]; }));
   }
   function filtersToSearch(filters,search=''){
-    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','browseGroup','gearCategory','gearGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown','comparison','seller','minPrice','maxPrice','observedDays','groupOptions','unitScope','wantedQty','compareAcross'])params.delete(key);
+    const params=new URLSearchParams(search);for(const key of [...Object.keys(specialDefaults),'type','subtype','fishGroup','liveGroup','browseGroup','gearCategory','gearGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown','comparison','seller','minPrice','maxPrice','observedDays','groupOptions','unitScope','wantedQty','compareAcross','productRole'])params.delete(key);
     for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==undefined&&value!==null&&value!==defaultFilters[key])params.set(key,String(value));
     const text=params.toString();return text?'?'+text:'';
   }
-  return { aliases, canonical, queryTokens, purchaseFacts, comparisonUnit, exactIdentity, compareSellers, estimatePurchase, relativeObservation, sellerDisplay, createSuggestionIndex, createLocalLibrary, comparisonStatus, unitPrice, observationAge, groupOffers, validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
+  return { watchObservation,advanceWatch,createWatchStore,guidance,careProfile,equipmentFacts,specialDefaults,specialEnums,matchesGuidance,knownShipping,sellerQuality,formatQuantity,roleLabels,productRole,relevance,resolveUnitScope,aliases, canonical, queryTokens, purchaseFacts, comparisonUnit, exactIdentity, compareSellers, estimatePurchase, relativeObservation, sellerDisplay, createSuggestionIndex, createLocalLibrary, comparisonStatus, unitPrice, observationAge, groupOffers, validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

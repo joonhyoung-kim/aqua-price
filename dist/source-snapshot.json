@@ -29105,7 +29105,7 @@
       "unit_price_amount": null,
       "product_url": "https://fishermanbt.com/product/체리새우/4961/",
       "declared_product_url": "https://fishermanbt.com/product/체리새우/4961/",
-      "observed_at_utc": "2026-10-14T08:08:56.384Z",
+      "observed_at_utc": "2026-10-26T10:57:36.754Z",
       "registered_at": null,
       "price_amount": 300,
       "currency": "KRW",
@@ -29146,7 +29146,31 @@
           "evidencePage": "https://fishermanbt.com/product/list.html?cate_no=76",
           "observedAt": "2026-10-26T08:11:08.018Z"
         }
-      ]
+      ],
+      "stock_observed_at_utc": "2026-10-26T10:57:36.754Z",
+      "shipping_policy": {
+        "verified": true,
+        "sellerId": "fishermanbt.com",
+        "evidenceUrl": "https://fishermanbt.com/product/체리새우/4961/",
+        "observedAt": "2026-10-26T10:57:36.754Z",
+        "amount": 4000,
+        "freeThreshold": 29900,
+        "chargeUnit": "order",
+        "conditionsComplete": false,
+        "packaging": null,
+        "regionalSurcharge": null,
+        "combinedShipping": null,
+        "benefitConditions": null,
+        "summary": "상품 페이지 기본 배송 4,000원 · 29,900원 이상 무료. 지역 추가금·포장비·합배송 조건 미확인.",
+        "sourceScope": "this_product_only"
+      },
+      "review_evidence": {
+        "url": "https://fishermanbt.com/product/체리새우/4961/#prdReview",
+        "checkedAt": "2026-10-26T10:57:36.754Z",
+        "count": 2,
+        "purchaseVerified": null,
+        "rating": null
+      }
     },
     {
       "id": "retailer-49:cafe24_week22_1_3657:default",
@@ -325060,7 +325084,7 @@
       "unit_price_amount": null,
       "product_url": "https://sangaqua.co.kr/product/특가아마존-미니외부여과기-hw-603b/5016/",
       "declared_product_url": "https://sangaqua.co.kr/product/특가아마존-미니외부여과기-hw-603b/5016/",
-      "observed_at_utc": "2026-10-18T07:30:42.638Z",
+      "observed_at_utc": "2026-10-26T10:57:26.136Z",
       "registered_at": null,
       "price_amount": 50000,
       "currency": "KRW",
@@ -325120,7 +325144,31 @@
           "evidencePage": "https://sangaqua.co.kr/category/%EB%8B%AC%ED%8C%BD%EC%9D%B4/294/",
           "observedAt": "2026-10-26T00:20:15.424Z"
         }
-      ]
+      ],
+      "stock_observed_at_utc": "2026-10-26T10:57:26.136Z",
+      "shipping_policy": {
+        "verified": true,
+        "sellerId": "sangaqua.co.kr",
+        "evidenceUrl": "https://sangaqua.co.kr/product/특가아마존-미니외부여과기-hw-603b/5016/",
+        "observedAt": "2026-10-26T10:57:26.136Z",
+        "amount": 3000,
+        "freeThreshold": 50000,
+        "chargeUnit": "order",
+        "conditionsComplete": false,
+        "packaging": null,
+        "regionalSurcharge": null,
+        "combinedShipping": null,
+        "benefitConditions": null,
+        "summary": "상품 페이지 기본 배송 3,000원 · 50,000원 이상 무료. 지역 추가금·포장비·합배송 조건 미확인.",
+        "sourceScope": "this_product_only"
+      },
+      "review_evidence": {
+        "url": "https://sangaqua.co.kr/product/특가아마존-미니외부여과기-hw-603b/5016/#prdReview",
+        "checkedAt": "2026-10-26T10:57:26.136Z",
+        "count": 21,
+        "purchaseVerified": null,
+        "rating": null
+      }
     },
     {
       "id": "retailer-25:cafe24_sangaquamall_1_20183:default",
@@ -484252,5 +484300,6 @@
     "method": "HTTPS HEAD",
     "status": 200,
     "body_downloaded": false
-  }
+  },
+  "snapshot_at_utc": "2026-10-26T10:57:36.754Z"
 }

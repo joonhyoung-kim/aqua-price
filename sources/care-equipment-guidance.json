@@ -1,0 +1,13 @@
+{
+  "checkedAt":"2026-10-26",
+  "species":[
+    {"id":"Paracheirodon innesi","label":"네온테트라","sourceUrl":"https://www.seriouslyfish.com/species/paracheirodon-innesi","temperature":[21,25],"ph":[4,7.5],"adultCm":3,"sizeBasis":"SL: 꼬리지느러미 제외 표준체장","tankBaseCm":[60,30],"difficulty":"조건 관리","diet":"작은 건조 먹이와 냉동·생먹이를 다양하게 제공","reason":"안정된 수온과 수질, 8~10마리 이상 군영을 고려","compatibility":"대체로 온순하나 상대 크기·성향과 은신처를 확인. 합사·치새우 안전을 보장하지 않음","sourceScope":"종별 참고 자료, 개별 판매 생물의 동정 아님"},
+    {"id":"Poecilia reticulata","label":"구피","sourceUrl":"https://www.seriouslyfish.com/species/poecilia-reticulata","temperature":[17,28],"ph":[7,8.5],"adultCm":6,"sizeBasis":"SL: 꼬리지느러미 제외 표준체장","tankBaseCm":[45,30],"difficulty":"조건 관리","diet":"사육 개체는 대부분의 먹이에 적응","reason":"중경수 이상과 약한 수류를 고려. 과번식·수컷의 추적 관리 필요","compatibility":"지느러미를 무는 어종을 피함. 치어·치새우 합사 안전 보장 없음","sourceScope":"종별 참고 자료, 엔들러·교잡종에 자동 적용하지 않음"},
+    {"id":"Neocaridina davidi","label":"체리새우","sourceUrl":"https://www.aquariumcoop.com/blogs/aquarium/cherry-shrimp-care","temperature":[22,24],"ph":[6.5,8.5],"adultCm":4,"sizeBasis":"암컷 최대 약 4cm, 수컷 2.5~3cm","tankBaseCm":null,"tankNote":"번식 군집에 10 US gal 이상을 선호한다는 출처 권장, 보편적 최소치 아님","difficulty":"조건 관리","diet":"성숙한 수조의 미생물막과 새우 먹이, 과급여 주의","reason":"GH/KH와 안정된 성숙 수조, 탈피·흡입구 보호가 필요","compatibility":"어류의 치새우 포식 위험. 번식은 새우 전용 수조를 고려","sourceScope":"22~24°C 쾌적 범위. 생존 범위 16~28°C와 구분"}
+  ],
+  "equipment":[
+    {"id":"eheim-2213","model":"2213","label":"EHEIM classic250 / 2213","sourceUrl":"https://eheim.com/de_DE/ersatzteil-shop/technik/aussenfilter/classic/classic-250","filterMethod":"external","tankLitres":[80,250],"flowLph":440,"watts":8,"hose":"12/16","region":"EUR","frequencyHz":50,"verificationStatus":"reference_only","measurementBasis":"50Hz 명목 펌프 유량","caveat":"국내 60Hz 판매 옵션 사양 미확인. 실제 여과 유량·사육 적합성 보장 아님"},
+    {"id":"eheim-2215","model":"2215","label":"EHEIM classic350 / 2215","sourceUrl":"https://eheim.com/ersatzteil-shop/technik/aussenfilter/classic/classic-350","filterMethod":"external","tankLitres":[120,350],"flowLph":620,"watts":15,"hose":"12/16","region":"EUR","frequencyHz":50,"verificationStatus":"reference_only","measurementBasis":"50Hz 명목 펌프 유량","caveat":"국내 60Hz 판매 옵션 사양 미확인. 실제 여과 유량·사육 적합성 보장 아님"},
+    {"id":"eheim-substrat-pro","label":"EHEIM SUBSTRATpro","sourceUrl":"https://eheim.com/en_GB/aquatics/filter-media/biological/substratpro/","mediaPurpose":"biological","mediaMaterial":"sintered_glass","form":"구형","verificationStatus":"manufacturer_product_family","caveat":"담수·해수용. 부드럽게 세척 후 재사용. 판매 옵션의 용량은 별도 확인"}
+  ]
+}

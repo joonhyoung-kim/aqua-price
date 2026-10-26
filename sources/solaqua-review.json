@@ -1,0 +1,72 @@
+{
+  "reviewedAt": "2026-10-26T01:18:00.665Z",
+  "source": "https://solaqua.kr/",
+  "robots": {
+    "url": "https://solaqua.kr/robots.txt",
+    "status": 200,
+    "productPathsAllowed": true,
+    "excludedPaths": [
+      "/admin",
+      "/api",
+      "/exec/front/",
+      "/member/",
+      "/myshop/"
+    ],
+    "conservativeDelayMs": 10000
+  },
+  "terms": {
+    "observedURL": "https://solaqua.kr/member/mall_agreement.html",
+    "status": "not_fetched_robots_disallowed",
+    "permissionClaimed": false
+  },
+  "popularity": {
+    "kind": "indirect_third_party_activity_not_visits",
+    "suppliedBy": "parent public research",
+    "evidence": [
+      {
+        "url": "https://woodongsu.com/ecommerce/product/15851",
+        "product": "가오리비파",
+        "reviews": 31
+      },
+      {
+        "url": "https://woodongsu.com/ecommerce/product/15830",
+        "product": "카디날",
+        "reviews": 18
+      }
+    ],
+    "trafficRank": null
+  },
+  "samples": [
+    {
+      "url": "https://solaqua.kr/product/화이트-팬더-코리도라스/135/category/53/display/1/",
+      "observedAt": "2026-10-26T01:14:25.155Z"
+    },
+    {
+      "url": "https://solaqua.kr/product/그린-네온-테트라/200/category/1/display/2/?icid=MAIN.product_listmain_1",
+      "observedAt": "2026-10-26T01:15:10.426Z"
+    },
+    {
+      "url": "https://solaqua.kr/product/네온-테트라/102/category/1/display/3/?icid=MAIN.product_listmain_2",
+      "observedAt": "2026-10-26T01:15:22.653Z"
+    }
+  ],
+  "scope": "Three reviewed no-option fish products only; photos not republished; no category crawling; existing source order and resume cursors unchanged.",
+  "excludedCandidates": [
+    {
+      "domain": "sideman111.com",
+      "reason": "Separate unresolved option/stock evidence and unfetched terms; remains unregistered"
+    },
+    {
+      "domain": "iseulaqua.kr",
+      "reason": "Parent observed access restriction; no request"
+    },
+    {
+      "domain": "spaquari.cafe24.com",
+      "reason": "Alias of existing riaqua.com"
+    },
+    {
+      "name": "피쉬웨이",
+      "reason": "Only platform selling confirmed, no distinct direct shop verified"
+    }
+  ]
+}

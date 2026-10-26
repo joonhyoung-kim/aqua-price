@@ -144,3 +144,12 @@ Every publication mode requires a freshly verified update receipt before an exis
 The durable checkpoint retains per-offer queue status, identity, reason, attempts and evidence. Temporary request/parse/missing-detail failures wait at least 24 hours before another automatic revalidation attempt; ambiguous classifications, identity mismatches and robots denials remain explicit review records until the classifier changes or they are deliberately reviewed. Successful checks are not repeatedly queued solely because the name still contains packaging wording. Ordinary --refresh-known runs remain price-refresh only; use the normal discovery-enabled gear/all/reconcile run to process the queue.
 
 This is an offline-tested code repair. Applying its overlay does not collect or reclassify the current published data; changes require a later authorized discovery-enabled run with fresh merchant evidence.
+
+
+## Solaqua limited source (2026-10-26)
+
+솔아쿠아를 신규 판매처로 추가했습니다. 직접 확인한 옵션 없는 열대어 상품 3개만 갱신하며 카테고리 자동 확장은 하지 않습니다. 공개 화면의 상품명·가격·품절 표시와 구조화 데이터가 일치해야 게시합니다. 옵션 발생, 가격 불일치, 재고 불일치는 검토 대상으로 남기고 마지막 유효 데이터를 보존합니다. 사진은 재게시하지 않습니다.
+
+한 실행당 robots 포함 최대 4회 요청, 요청 간 최소 10초이며 기존 18분 실행 예산과 모드별 재개 커서를 공유합니다. 기존 판매처의 제한·순서·생물 12시간/용품 24시간 간격과 main/preview 원자 게시 흐름은 그대로입니다. 신규 소스는 목록 끝에 추가해 기존 커서를 앞당기거나 초기화하지 않습니다.
+
+인기 근거는 우리동네수족관 상품 후기 31개·18개라는 간접 활동 지표이며 방문자 수나 시장 순위가 아닙니다. 약관 링크는 robots 차단 경로라 읽지 않았으며 약관 검토 완료나 별도 사용 허가를 주장하지 않습니다. 검증 근거와 제외 후보는 sources/solaqua-review.json에 기록합니다.

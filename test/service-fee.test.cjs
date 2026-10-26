@@ -1,6 +1,8 @@
 'use strict';
 const assert=require('node:assert/strict');
 function runChecks(buildCatalog, snapshot, priorCatalog, applyUpdates) {
+ snapshot={...snapshot,items:snapshot.items.filter(p=>p.available!==false)};
+ priorCatalog={...priorCatalog,products:priorCatalog.products.filter(p=>p.available!==false)};
  const ids = [
   'retailer-25:cafe24_sangaquamall_1_19497:default',
   'retailer-18:cafe24_weegal_1_2513:default'

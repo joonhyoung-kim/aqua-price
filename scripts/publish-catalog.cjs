@@ -12,11 +12,12 @@ const read = (cwd, file) => JSON.parse(fs.readFileSync(path.join(cwd, file), 'ut
 
 function validateBundle(cwd, baseline, runId) {
   const catalog = read(cwd, DATA_PATHS[0]), snapshot = read(cwd, DATA_PATHS[1]), report = read(cwd, DATA_PATHS[2]);
-  assert.ok(catalog.status === 'ready' && catalog.products?.length > 0 && snapshot.items?.length > 0, 'Refusing empty or unready data');
+  assert.ok(catalog.status === 'ready' && Array.isArray(catalog.products) && snapshot.items?.length > 0, 'Refusing empty or unready data');
   assert.ok(Number.isFinite(Date.parse(catalog.asOf)), 'Catalog timestamp is required');
   assert.ok(Date.parse(catalog.asOf) <= Date.now() + 300000, 'Future catalog timestamp');
   const { buildCatalog } = require(path.join(cwd, 'scripts/build-catalog.cjs'));
   assert.ok(isDeepStrictEqual(catalog, JSON.parse(JSON.stringify(buildCatalog(snapshot)))), 'Catalog must match the verified source snapshot');
+  if (!catalog.products.length) assert.ok(catalog.publicationExclusions?.length === snapshot.items.length && catalog.publicationExclusions.every(x => ['service_fee', 'confirmed_out_of_stock'].includes(x.code)) && catalog.publicationExclusions.some(x => x.code === 'confirmed_out_of_stock'), 'Empty publication requires complete confirmed exclusion evidence');
   assert.ok(report.checkpointOnly === false && Number.isFinite(Date.parse(report.finishedAt)) && !report.executionError, 'Incomplete or fatal collection cannot publish');
   assert.ok(Array.isArray(report.sources) && report.sources.length > 0, 'Missing durable source state');
   if (runId) assert.equal(String(report.githubRunId), String(runId), 'Report must belong to this run');

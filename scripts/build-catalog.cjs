@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { validateCatalog } = require('../dist/data-model.js');
+const { isConfirmedOutOfStock } = require('./collector/stock-policy.cjs');
 const folder = path.join(__dirname, '../dist');
 const knownTitles = {
   cafe24_auroom260404_1_24799: 'LED 미니어항 세트',
@@ -22,15 +23,19 @@ const confirmedServiceFees = [
 function isConfirmedServiceFee(item) {
   return confirmedServiceFees.some(e => e.id === item.id && e.title === item.title && e.product_url === item.product_url);
 }
+function publicationExclusion(item) {
+  const code = isConfirmedServiceFee(item) ? 'service_fee' : isConfirmedOutOfStock(item) ? 'confirmed_out_of_stock' : null;
+  return code ? { id:item.id, title:item.title, sourceUrl:item.product_url, code,
+    reason:code === 'service_fee' ? 'Verified standalone packaging service fee is not a comparison product' : 'Confirmed out-of-stock offer is hidden; source evidence and refresh tracking are retained',
+    originalObservedAt:item.availability_last_confirmed_at_utc || item.observed_at_utc || item.snapshot_at_utc } : null;
+}
 function buildCatalog(snapshot) {
   if (!snapshot || !Array.isArray(snapshot.items)) throw Error('확인 상품 배열 필요');
-  const publicationExclusions = snapshot.items.filter(isConfirmedServiceFee).map(item => ({
-    id:item.id, title:item.title, sourceUrl:item.product_url, code:'service_fee',
-    reason:'Verified standalone packaging service fee is not a comparison product',
-    originalObservedAt:item.observed_at_utc || item.snapshot_at_utc
-  }));
-  snapshot = {...snapshot, items:snapshot.items.filter(item => !isConfirmedServiceFee(item))};
-  const dates = snapshot.items.map(item => item.observed_at_utc || item.snapshot_at_utc);
+  const originalItems = snapshot.items;
+  const publicationExclusions = originalItems.map(publicationExclusion).filter(Boolean);
+  snapshot = {...snapshot, items:originalItems.filter(item => !publicationExclusion(item))};
+  // Publication filtering must not roll the last observation time backwards.
+  const dates = originalItems.map(item => item.observed_at_utc || item.snapshot_at_utc);
   if (dates.some(date => !Number.isFinite(Date.parse(date)))) throw Error('관찰 시각 오류');
   const asOf = snapshot.snapshot_at_utc || (dates.length ? dates.reduce((latest, date) => Date.parse(date) > Date.parse(latest) ? date : latest) : null);
   const sellers = new Map();
@@ -50,7 +55,7 @@ function buildCatalog(snapshot) {
   products: snapshot.items.map(item => {
     const type = item.type || (knownTitles[item.id] ? 'gear' : null);
     if (!['live', 'gear'].includes(type)) throw Error('새 상품은 검증된 live/gear 종류가 필요합니다');
-    const photoAvailable = item.photo && typeof item.photo.verified_https_url === 'string' && item.photo.verified_https_url.startsWith('https://') && (item.photo.permission_basis === 'explicit_user_instruction' || (item.photo.http_status === 200 && item.photo.content_type?.startsWith('image/')) || (snapshot.photo_validation?.https_head_status === 200 && (snapshot.photo_validation.verified_item_ids?.includes(item.id) || snapshot.photo_validation.verified_count === snapshot.items.filter(p => !p.source_kind && p.photo?.verified_https_url).length)));
+    const photoAvailable = item.photo && typeof item.photo.verified_https_url === 'string' && item.photo.verified_https_url.startsWith('https://') && (item.photo.permission_basis === 'explicit_user_instruction' || (item.photo.http_status === 200 && item.photo.content_type?.startsWith('image/')) || (snapshot.photo_validation?.https_head_status === 200 && (snapshot.photo_validation.verified_item_ids?.includes(item.id) || snapshot.photo_validation.verified_count === originalItems.filter(p => !p.source_kind && p.photo?.verified_https_url).length)));
     return {
     id: item.id, verified: true, sellerId: item.seller_domain, sourceUrl: item.product_url,
     name: item.display_title || knownTitles[item.id] || item.title, originalTitle: item.title, description: item.description, spec: '판매단위/옵션: ' + (item.variant_title || item.variant || '미확인'),
@@ -71,4 +76,4 @@ if (require.main === module) {
   const snapshot = JSON.parse(fs.readFileSync(path.join(folder, 'source-snapshot.json'), 'utf8'));
   fs.writeFileSync(path.join(folder, 'catalog.json'), JSON.stringify(buildCatalog(snapshot), null, 2) + '\n');
 }
-module.exports = { buildCatalog };
+module.exports = { buildCatalog, publicationExclusion };

@@ -201,6 +201,8 @@ function parseProductPage(html, context) {
       if (keys.has(key)) { issues.push('duplicate_offer'); continue; } keys.add(key);
       const availability = typeof offer.availability === 'string' ? offer.availability.split(/[\/#]/).pop() : null;
       const available = availability === 'InStock' ? true : ['OutOfStock','Discontinued','SoldOut'].includes(availability) ? false : null;
+      const stockIssue = require('./stock-policy.cjs').stockConflict(html, {title, parentTitle:product._groupName, variantId, properties, available, url:productUrl}, visibleText);
+      if (stockIssue) { issues.push(stockIssue); continue; }
       const image = Array.isArray(product.image) ? product.image[0] : product.image;
       const imageUrl = typeof image === 'string' ? image : image?.url || image?.contentUrl;
       let photoUrl = httpsUrl(imageUrl) && context.photosAllowed === true ? imageUrl : null;

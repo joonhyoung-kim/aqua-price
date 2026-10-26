@@ -17,7 +17,7 @@ function fixture(fn) {
   try {
     git(temp, 'init', '--bare', remote); git(cwd, 'init', '-b', 'main');
     git(cwd, 'config', 'user.name', 'Publication test'); git(cwd, 'config', 'user.email', 'test@example.invalid');
-    for (const file of ['scripts/build-catalog.cjs', 'dist/data-model.js', 'dist/gear-taxonomy.js']) {
+    for (const file of ['scripts/build-catalog.cjs', 'scripts/collector/stock-policy.cjs', 'dist/data-model.js', 'dist/gear-taxonomy.js']) {
       fs.mkdirSync(path.dirname(path.join(cwd, file)), { recursive: true }); fs.copyFileSync(path.join(root, file), path.join(cwd, file));
     }
     const snapshot = require('./isolated-snapshot.cjs')();
@@ -71,6 +71,15 @@ test('not_due cannot publish changed prices even if schema-valid', () => fixture
   snapshot.items[0].price_amount += 1; save(DATA_PATHS[1], snapshot); save(DATA_PATHS[0], buildCatalog(snapshot));
   save(DATA_PATHS[2], { ...report, executionSkippedReason: 'not_due' });
   assert.throws(() => publish(options), /not_due/);
+}));
+
+test('zero public offers is allowed only with complete retained sold-out evidence', () => fixture(({ cwd, save, snapshot, options }) => {
+  snapshot.items[0].available = false;
+  snapshot.items[0].availability_basis = 'Retailer JSON-LD OutOfStock; not checkout-confirmed inventory';
+  save(DATA_PATHS[1], snapshot); save(DATA_PATHS[0], buildCatalog(snapshot));
+  assert.doesNotThrow(() => validateBundle(cwd, options.mainBase, '123'));
+  save(DATA_PATHS[1], { ...snapshot, items: [] });
+  assert.throws(() => validateBundle(cwd, options.mainBase, '123'), /empty/);
 }));
 test('validation failure changes neither remote branch', () => fixture(({ remote, options, mainBase, previewBase }) => {
   assert.throws(() => publish({ ...options, validate: () => { throw Error('preview validation failed'); } }), /preview validation failed/);

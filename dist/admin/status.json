@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T11:20:19.746Z",
+  "generatedAt": "2026-10-26T18:47:34.958Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -66,10 +66,10 @@
   "execution": {
     "environment": "github_actions",
     "trigger": "schedule",
-    "runId": "40289995596",
-    "startedAt": "2026-10-26T08:08:53.965Z",
-    "finishedAt": "2026-10-26T08:26:42.689Z",
-    "publicationChanged": true
+    "runId": "40380497667",
+    "startedAt": "2026-10-26T18:47:33.290Z",
+    "finishedAt": "2026-10-26T18:47:33.290Z",
+    "publicationChanged": false
   },
   "controls": {
     "schemaVersion": 1,
@@ -274,8 +274,8 @@
         },
         "gear": {
           "intervalHours": 24,
-          "lastEvaluatedAt": "2026-10-26T05:19:35.975Z",
-          "lastDecision": "attempted",
+          "lastEvaluatedAt": "2026-10-26T18:47:33.290Z",
+          "lastDecision": "already_attempted_window",
           "evaluatedConfigRevision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
           "lastAttemptAt": "2026-10-26T05:19:35.988Z",
           "lastManualAttemptAt": "2026-10-10T04:17:40.348Z",
@@ -864,7 +864,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "partial_failure",
@@ -4894,7 +4894,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "success",
@@ -7355,7 +7355,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -7402,7 +7402,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "success",
@@ -9434,7 +9434,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -9481,7 +9481,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "success",
@@ -13938,7 +13938,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -13956,8 +13956,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 93,
-        "staleRatio": 0.7380952380952381,
+        "staleOver7Days": 101,
+        "staleRatio": 0.8015873015873016,
         "stockTimeUnknown": 126,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -13985,7 +13985,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "budget_limited",
@@ -15655,8 +15655,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 107,
-        "staleRatio": 0.5911602209944752,
+        "staleOver7Days": 121,
+        "staleRatio": 0.6685082872928176,
         "stockTimeUnknown": 181,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -16707,8 +16707,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 177,
-        "staleRatio": 0.7254098360655737,
+        "staleOver7Days": 188,
+        "staleRatio": 0.7704918032786885,
         "stockTimeUnknown": 244,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -18130,8 +18130,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 107,
-        "staleRatio": 0.6331360946745562,
+        "staleOver7Days": 118,
+        "staleRatio": 0.6982248520710059,
         "stockTimeUnknown": 169,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -19145,8 +19145,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 139,
-        "staleRatio": 0.7091836734693877,
+        "staleOver7Days": 154,
+        "staleRatio": 0.7857142857142857,
         "stockTimeUnknown": 196,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -19951,8 +19951,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 59,
-        "staleRatio": 0.5,
+        "staleOver7Days": 64,
+        "staleRatio": 0.5423728813559322,
         "stockTimeUnknown": 118,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -67557,7 +67557,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "partial_failure",
@@ -74428,7 +74428,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "success",
@@ -77887,7 +77887,7 @@
         }
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     },
     {
@@ -77934,7 +77934,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "budget_limited",
@@ -79767,7 +79767,7 @@
         }
       },
       "execution": {
-        "automaticAttemptConfirmed": true,
+        "automaticAttemptConfirmed": false,
         "runId": "40289995596"
       },
       "collectorStatus": "success",
@@ -79794,7 +79794,7 @@
         "categoryTree": null
       },
       "fullCatalogCoverage": false,
-      "autoRefreshVerified": true,
+      "autoRefreshVerified": false,
       "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
     }
   ]

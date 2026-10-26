@@ -145,8 +145,9 @@ test('published catalog preserves the supplied verified items, categories and un
   }
   assert.deepEqual(select(data).rows, []);
   const displayed = select(data, { type: 'gear', includeUnknownRegistration: true });
-  assert.equal(displayed.rows.length, publishedItems.filter(p => p.type === 'gear').length);
-  assert.deepEqual(displayed.rows.map(p => p.price.amount), publishedItems.filter(p => p.type === 'gear').map(p => p.price_amount).sort((a,b) => a-b));
+  const comparable=data.products.filter(p=>p.type==='gear'&&AquaCatalog.comparisonStatus(p).comparable);
+  assert.equal(displayed.rows.length, comparable.length);
+  assert.deepEqual(displayed.rows.map(p => p.price.amount), comparable.map(p => p.price.amount).sort((a,b) => a-b));
 });
 test('pending state contains no products and explains unavailable data', () => {
   const pending = { schemaVersion: 1, status: 'pending', reason: '아직 제공되지 않음', asOf: null, sellers: [], products: [] };
@@ -180,9 +181,9 @@ test('price sorting, newest sorting and case-insensitive trimmed search', () => 
   assert.equal(select(data, { query: '없음' }).rows.length, 0);
 });
 test('unknown price is excluded from price ranking, zero price and free shipping remain known', () => {
-  const data = catalog([product('unknown', { price: null }), product('free', { price: { amount: 0, currency: 'KRW' }, shipping: { amount: 0, currency: 'KRW' } })]);
-  assert.deepEqual(select(data).rows.map(p => p.id), ['free']); assert.equal(select(data).excludedPrice, 1);
-  assert.equal(select(data, { sort: 'new' }).rows.length, 2);
+  const data = catalog([product('unknown', { price: null }), product('free', { name:'무료 분양',price: { amount: 0, currency: 'KRW' }, shipping: { amount: 0, currency: 'KRW' } })]);
+  assert.deepEqual(select(data).rows.map(p => p.id), ['free']); assert.equal(select(data).excludedComparison, 1);
+  assert.equal(select(data, { sort: 'new',comparison:'all' }).rows.length, 2);
   assert.equal(data.products[0].shipping, null); assert.equal(data.products[1].shipping.amount, 0);
 });
 test('cumulative sales and other sales windows cannot rank selected-period sales', () => {

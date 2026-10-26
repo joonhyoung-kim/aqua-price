@@ -66,7 +66,7 @@
     aquatic_plant:{plant_moss:/모스|리시아|\bmoss\b/i,plant_anubias:/나나(?!스말)|아누비아스|\banubias\b/i,plant_buce:/부세\s*파란드라|\bbucephalandra\b/i,plant_fern:/미크로소리움|볼비티스|자바펀|\bmicrosorum\b|\bbolbitis\b/i,plant_rotala:/로탈라|\brotala\b/i,plant_ludwigia:/루드위지아|\bludwigia\b/i,plant_hygro:/하이그로필라|\bhygrophila\b/i,plant_crypto:/크립토코리네|\bcryptocoryne\b/i,plant_small:/쿠바펄|진주펄|몬테카를로|글로소|헤어글라스/i,plant_float:/부상|부레옥잠|개구리밥|물배추|살비니아|가가부타|연꽃|수련/i},
     snail:{snail_apple:/애플\s*(?:스네일|달팽이)|\bapple\s+snail\b/i,snail_trumpet:/트럼펫|뾰족달팽이|\btrumpet\b/i,snail_nerite:/네리트|네리티나|\bnerite\b/i,snail_ramshorn:/램즈혼|램스혼|\bramshorn\b/i,snail_pond:/우렁이/},
   };
-  const searchText = value => String(value).toLowerCase().replace(/플레티/g, '플래티').replace(/\s+/g, '');
+  const searchText = value => String(value).toLowerCase().replace(/플레티/g, '플래티').replace(/팬더/g, '판다').replace(/\s+/g, '');
   Object.assign(fishGroups,{swordtail:'소드테일',puffer:'복어',goby:'고비',catfish:'캣피쉬·메기',channa:'찬나',arowana:'아로와나',native:'강준치·갈겨니·납자루'});
   fishGroups.killifish='킬리피쉬·램프아이';
   Object.assign(livestockGroups.aquatic_plant,{plant_ambulia:'암브리아·림노필라',plant_bacopa:'바코바·쿠페아',plant_myrio:'미리오필름·밀리오필룸',plant_val:'발리스네리아',plant_didiplis:'디디플리스',plant_echino:'에키노도루스',plant_marimo:'마리모',plant_lobelia:'로베리아·카디날리스',plant_pogostemon:'포고스테몬',plant_alternanthera:'알테란테라',plant_anacharis:'아나카리스·검정말',plant_bamboo:'개운죽',plant_attached:'활착·부착 수초',plant_pot:'포트·조직배양 수초'});
@@ -136,8 +136,47 @@
   const gearNavigation=gearTaxonomy.navigation,gearCategories=gearTaxonomy.categories,gearGroups=gearTaxonomy.groups;
   const gearClassification=gearTaxonomy.classification,gearParent=gearTaxonomy.parent;
   const gearGroup=product=>gearClassification(product)?.key??null;
+  // Only explicit public price/offer facts are used. Zero is not proof of free.
+  function comparisonStatus(p) {
+    const text=[p.name,p.originalTitle||'',p.spec||''].join(' ');
+    if(/매장\s*(?:판매\s*)?전용|방문\s*판매|가격\s*문의|견적\s*(?:문의|의뢰|요청)|전화\s*문의/.test(text))return {comparable:false,label:'매장·문의 상품'};
+    if(p.price===null)return {comparable:false,label:'가격 미확인'};
+    if(p.price.amount===0){
+      const free=/(?:무료\s*나눔|무료\s*분양)/.test(text)&&!/(구매\s*시|이상\s*구매|사은|증정|조건부)/.test(text);
+      return {comparable:free,label:free?'무료 나눔·분양 표시':'0원 표시 · 판매가격 확인 필요'};
+    }
+    return {comparable:true,label:'확인된 판매가격'};
+  }
+  function unitPrice(p){
+    if(!comparisonStatus(p).comparable||!p.price)return null;
+    const pairs=Number.isSafeInteger(p.pairsPerPack)&&p.pairsPerPack>0?p.pairsPerPack:null;
+    const count=Number.isSafeInteger(p.quantityPerPack)&&p.quantityPerPack>0?p.quantityPerPack:null;
+    if(pairs)return {count:pairs,unit:'쌍',amount:p.price.amount/pairs};
+    if(!count)return null;
+    return {count,unit:p.type==='live'&&['fish','shrimp','snail'].includes(p.subtype)?'마리':'개',amount:p.price.amount/count};
+  }
+  function observationAge(p,now=Date.now()){
+    const stamp=Date.parse(p.observedAt);if(!Number.isFinite(stamp)||stamp>now)return {days:null,stale:false};
+    const days=Math.floor((now-stamp)/DAY);return {days,stale:now-stamp>7*DAY};
+  }
+  function groupOffers(rows){
+    const groups=[],known=new Map();
+    for(const p of rows){
+      let key=p.id;
+      if(p.variantId){const u=new URL(p.sourceUrl);u.searchParams.delete('item_code');u.hash='';u.searchParams.sort();key=p.sellerId+'|'+u.href;}
+      if(!known.has(key)){const group={key,offers:[]};known.set(key,group);groups.push(group);}
+      known.get(key).offers.push(p);
+    }
+    return groups;
+  }
   function validateSelectionFilters(filters) {
     requireValue(filters && ['live', 'gear'].includes(filters.type) && ['low', 'high', 'new', 'sales', 'observed'].includes(filters.sort) && [7, 30, 90, 'all'].includes(filters.days) && typeof filters.query === 'string' && (filters.includeUnknownRegistration === undefined || typeof filters.includeUnknownRegistration === 'boolean') && (filters.subtype === undefined || ['all', 'fish', 'shrimp', 'aquatic_plant', 'snail'].includes(filters.subtype)), '잘못된 조회 조건');
+    requireValue(filters.comparison===undefined||['priced','all','unpriced'].includes(filters.comparison),'잘못된 가격 비교 범위');
+    requireValue(filters.seller===undefined||typeof filters.seller==='string','잘못된 판매처');
+    requireValue(filters.observedDays===undefined||['all',1,7,14,30].includes(filters.observedDays),'잘못된 최근 확인 기간');
+    requireValue(filters.groupOptions===undefined||typeof filters.groupOptions==='boolean','잘못된 옵션 묶기');
+    for(const key of ['minPrice','maxPrice'])requireValue(filters[key]===undefined||filters[key]===null||Number.isSafeInteger(filters[key])&&filters[key]>=0,'잘못된 가격 범위');
+    requireValue(filters.minPrice==null||filters.maxPrice==null||filters.minPrice<=filters.maxPrice,'최소 가격은 최대 가격 이하여야 합니다');
     requireValue(filters.fishGroup === undefined || Object.hasOwn(fishGroups, filters.fishGroup), '잘못된 어종 조건');
     requireValue(filters.liveGroup === undefined || filters.liveGroup === 'all' || livestockGroups[filters.subtype] && Object.hasOwn(livestockGroups[filters.subtype], filters.liveGroup), '잘못된 생물 세부 분류');
     requireValue(filters.browseGroup === undefined || filters.browseGroup === 'all' || livestockNavigation[filters.subtype]?.some(group=>group.key===filters.browseGroup), '잘못된 탐색 그룹');
@@ -146,9 +185,9 @@
     requireValue(!filters.gearGroup || filters.gearGroup==='all' || !filters.gearCategory || filters.gearCategory==='all' || (gearParent(filters.gearGroup)?.key||'other')===filters.gearCategory, '용품 상위·하위 분류 불일치');
   }
   function selectionCandidates(catalog, filters, index) {
-    const needle = searchText(filters.query.trim());
+    const needles = filters.query.trim().split(/\s+/).filter(Boolean).map(searchText);
     const effectiveFishGroup=filters.fishGroup&&filters.fishGroup!=='all'?filters.fishGroup:filters.liveGroup||'all';
-    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || (index ? index.get(p).group : fishGroup(p)) === effectiveFishGroup) && (index ? index.get(p).search.some(value => value.includes(needle)) : [p.name, p.originalTitle || '', p.spec].some(value => searchText(value).includes(needle))));
+    let rows = catalog.products.filter(p => p.type === filters.type && (filters.type !== 'live' || filters.subtype === undefined || filters.subtype === 'all' || p.subtype === filters.subtype) && (filters.type !== 'live' || filters.subtype !== 'fish' || effectiveFishGroup === 'all' || (index ? index.get(p).group : fishGroup(p)) === effectiveFishGroup) && (index ? index.get(p).search.some(value => needles.every(needle=>value.includes(needle))) : [p.name, p.originalTitle || '', p.spec].some(value => needles.every(needle=>searchText(value).includes(needle)))));
     if(filters.type==='live'&&filters.subtype!=='fish'&&filters.subtype!=='all'&&filters.liveGroup&&filters.liveGroup!=='all')rows=rows.filter(p=>(index ? index.get(p).group : livestockGroup(p))===filters.liveGroup);
     const leaf=filters.subtype==='fish'?effectiveFishGroup:filters.liveGroup||'all';
     if(filters.type==='live'&&leaf==='all'&&filters.browseGroup&&filters.browseGroup!=='all'){
@@ -167,19 +206,26 @@
     validateCatalog(catalog);
     return selectValidated(catalog, filters);
   }
-  function selectValidated(catalog, filters, index, candidates) {
+  function selectValidated(catalog, filters, index, candidates, now=Date.now()) {
     validateSelectionFilters(filters);
     if (catalog.status !== 'ready') return { rows: [], reason: catalog.reason, excludedRegistration: 0, excludedPrice: 0, excludedSales: 0, startAt: null, endAt: null };
     const end = Date.parse(catalog.asOf), start = filters.days === 'all' ? null : end - filters.days * DAY;
     const startAt = start === null ? null : new Date(start).toISOString(), endAt = new Date(end).toISOString();
     let rows = candidates ?? selectionCandidates(catalog, filters, index);
+    const comparison=filters.comparison??'priced';
+    if(filters.seller)rows=rows.filter(p=>p.sellerId===filters.seller);
+    if(filters.minPrice!=null)rows=rows.filter(p=>p.price!==null&&p.price.amount>=filters.minPrice);
+    if(filters.maxPrice!=null)rows=rows.filter(p=>p.price!==null&&p.price.amount<=filters.maxPrice);
+    if(filters.observedDays!==undefined&&filters.observedDays!=='all')rows=rows.filter(p=>Date.parse(p.observedAt)<=now&&Date.parse(p.observedAt)>=now-filters.observedDays*DAY);
+    const excludedComparison=rows.filter(p=>!comparisonStatus(p).comparable).length;
+    if(comparison!=='all')rows=rows.filter(p=>comparisonStatus(p).comparable===(comparison==='priced'));
     const unknownCount = rows.filter(p => p.registeredAt === null).length;
     const includeUnknown = (filters.days === 'all' || filters.includeUnknownRegistration === true) && filters.sort !== 'new';
     const excludedRegistration = includeUnknown ? 0 : unknownCount;
     const includedUnknownRegistration = includeUnknown ? unknownCount : 0;
     rows = rows.filter(p => p.registeredAt === null ? includeUnknown : filters.days === 'all' || Date.parse(p.registeredAt) >= start && Date.parse(p.registeredAt) <= end);
     const excludedPrice = rows.filter(p => p.price === null).length;
-    if (filters.sort === 'low' || filters.sort === 'high') rows = rows.filter(p => p.price !== null);
+    if ((filters.sort === 'low' || filters.sort === 'high') && comparison==='priced') rows = rows.filter(p => p.price !== null);
     let excludedSales = 0;
     if (filters.sort === 'sales') {
       const matches = p => start === null ? p.cumulativeSales !== null : p.periodSales !== null && Date.parse(p.periodSales.startAt) === start && Date.parse(p.periodSales.endAt) === end;
@@ -187,14 +233,14 @@
       rows = rows.filter(matches).sort((a, b) => start === null ? b.cumulativeSales - a.cumulativeSales : b.periodSales.count - a.periodSales.count);
     } else if (filters.sort === 'new') rows.sort((a, b) => Date.parse(b.registeredAt) - Date.parse(a.registeredAt));
     else if (filters.sort === 'observed') rows.sort((a, b) => Date.parse(b.observedAt) - Date.parse(a.observedAt));
-    else rows.sort((a, b) => filters.sort === 'high' ? b.price.amount - a.price.amount : a.price.amount - b.price.amount);
+    else rows.sort((a, b) => Number(comparisonStatus(b).comparable)-Number(comparisonStatus(a).comparable) || (a.price===null&&b.price===null?0:a.price===null?1:b.price===null?-1:filters.sort==='high'?b.price.amount-a.price.amount:a.price.amount-b.price.amount));
     const missingSubtype = filters.type === 'live' && filters.subtype !== undefined && filters.subtype !== 'all' && !catalog.products.some(p => p.type === 'live' && p.subtype === filters.subtype);
     const reason = missingSubtype ? '현재 연결된 상품정보에 해당 생물이 없습니다. 모든 판매처의 품절·미판매를 뜻하지 않습니다.' : !catalog.products.some(p => p.type === filters.type) && filters.type === 'live' ? catalog.livestockNotice || '이번 연동에서 확인된 생물 상품이 없습니다.' : filters.sort === 'sales' && !rows.length ? '선택한 기간과 정확히 일치하는 실제 판매량이 없습니다. 누적 판매수로 기간 순위를 만들지 않습니다.' : filters.sort === 'new' && !rows.length && unknownCount ? '실제 상품 등록일이 확인되지 않아 신상품순으로 정렬할 수 없습니다. 관찰 시각으로 임의 정렬하지 않습니다.' : !rows.length ? '등록일·검색어·정렬 조건을 충족하는 확인 상품이 없습니다.' : '';
     const outputReason = filters.sort === 'sales' && !rows.length && start === null ? '판매처에서 확인된 실제 판매량이 없습니다. 클릭수·조회수로 판매순을 대신하지 않습니다.' : reason;
-    return { rows, reason: outputReason, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
+    return { rows, reason: outputReason, excludedComparison, excludedRegistration, includedUnknownRegistration, excludedPrice, excludedSales, startAt, endAt };
   }
 
-  function createCatalogQuery(input) {
+  function createCatalogQuery(input, options={}) {
     // Own a private immutable snapshot. Validation is never cached on input.
     const snapshot=structuredClone(input);
     validateCatalog(snapshot);
@@ -224,15 +270,17 @@
         liveGroup:filters.liveGroup,browseGroup:filters.browseGroup,
         gearCategory:filters.gearCategory,gearGroup:filters.gearGroup,
         sort:filters.sort,days:filters.days,query:filters.query,
+        comparison:filters.comparison,seller:filters.seller,minPrice:filters.minPrice,maxPrice:filters.maxPrice,observedDays:filters.observedDays,groupOptions:filters.groupOptions,
         includeUnknownRegistration:filters.includeUnknownRegistration
       };
-      const key=JSON.stringify(Object.values(filters));
+      const now=options.now?options.now():Date.now();
+      const key=JSON.stringify([...Object.values(filters),filters.observedDays&&filters.observedDays!=='all'?Math.floor(now/60000):null]);
       if(views.has(key))return views.get(key);
 
       const candidates=selectionCandidates(snapshot,filters,index);
-      const result=selectValidated(snapshot,filters,index,candidates);
+      const result=selectValidated(snapshot,filters,index,candidates,now);
       const availability=Object.fromEntries(['sales','new'].map(sort=>{
-        const selected=selectValidated(snapshot,{...filters,sort},index,candidates);
+        const selected=selectValidated(snapshot,{...filters,sort},index,candidates,now);
         return [sort,{
           available:snapshot.status==='ready'&&selected.rows.length>0,
           count:selected.rows.length,reason:selected.reason
@@ -247,7 +295,7 @@
       const baseCandidates=sameScope?candidates:
         selectionCandidates(snapshot,baseFilters,index);
       const base=sameScope&&baseFilters.sort===filters.sort?result:
-        selectValidated(snapshot,baseFilters,index,baseCandidates);
+        selectValidated(snapshot,baseFilters,index,baseCandidates,now);
       const groups=livestockGroups[filters.subtype]||{all:'전체'};
       const groupCounts=Object.fromEntries(Object.keys(groups).map(k=>[k,0]));
       for(const p of base.rows){
@@ -269,7 +317,7 @@
     return Object.freeze({
       catalog:snapshot,
       view,
-      select:filters=>selectValidated(snapshot,filters,index),
+      select:filters=>selectValidated(snapshot,filters,index,undefined,options.now?options.now():Date.now()),
       group:product=>index.get(product)?.group??null,
       gearGroup:product=>index.get(product)?.gearGroup??null,
       seller:id=>sellers.get(id)
@@ -277,7 +325,7 @@
   }
 
   function usablePhoto(product) { return product.photo.usePermission === 'allowed' ? product.photo.url : null; }
-  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', gearCategory:'all', gearGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true });
+  const defaultFilters = Object.freeze({ type: 'live', subtype: 'all', fishGroup: 'all', liveGroup:'all', browseGroup:'all', gearCategory:'all', gearGroup:'all', sort: 'low', days: 'all', query: '', includeUnknownRegistration: true, comparison:'priced', seller:'', minPrice:null, maxPrice:null, observedDays:'all', groupOptions:true });
   function filtersFromSearch(search = '') {
     const params = new URLSearchParams(search), filters = { ...defaultFilters };
     for (const [key, allowed] of Object.entries({ type: ['live','gear'], subtype: ['all','fish','shrimp','aquatic_plant','snail'], fishGroup: Object.keys(fishGroups), sort: ['low','high','sales','new','observed'] })) if (allowed.includes(params.get(key))) filters[key] = params.get(key);
@@ -293,6 +341,12 @@
       const parent=gearParent(gear)?.key||'other';
       if(gear==='all'||filters.gearCategory==='all'||filters.gearCategory===parent){filters.gearGroup=gear;if(gear!=='all')filters.gearCategory=parent;}
     }
+    if(['priced','all','unpriced'].includes(params.get('comparison')))filters.comparison=params.get('comparison');
+    filters.seller=params.get('seller')||'';
+    for(const key of ['minPrice','maxPrice']){const raw=params.get(key);if(raw!==null&&/^\d+$/.test(raw)&&Number.isSafeInteger(Number(raw)))filters[key]=Number(raw);}
+    if(filters.minPrice!==null&&filters.maxPrice!==null&&filters.minPrice>filters.maxPrice){filters.minPrice=null;filters.maxPrice=null;}
+    if(['1','7','14','30'].includes(params.get('observedDays')))filters.observedDays=Number(params.get('observedDays'));
+    if(params.get('groupOptions')==='false')filters.groupOptions=false;
     filters.query = params.get('query') ?? params.get('q') ?? '';
     const unknown = params.get('includeUnknownRegistration') ?? params.get('includeUnknown'); if (unknown === 'true' || unknown === 'false') filters.includeUnknownRegistration = unknown === 'true';
     return filters;
@@ -301,9 +355,9 @@
     return Object.fromEntries(['sales','new'].map(sort => { const result = selectProducts(catalog, { ...filters, sort }); return [sort, { available: catalog.status === 'ready' && result.rows.length > 0, count: result.rows.length, reason: result.reason }]; }));
   }
   function filtersToSearch(filters,search=''){
-    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','browseGroup','gearCategory','gearGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown'])params.delete(key);
-    for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==defaultFilters[key])params.set(key,String(value));
+    const params=new URLSearchParams(search);for(const key of ['type','subtype','fishGroup','liveGroup','browseGroup','gearCategory','gearGroup','sort','days','query','q','includeUnknownRegistration','includeUnknown','comparison','seller','minPrice','maxPrice','observedDays','groupOptions'])params.delete(key);
+    for(const [key,value]of Object.entries(filters))if(Object.hasOwn(defaultFilters,key)&&value!==undefined&&value!==null&&value!==defaultFilters[key])params.set(key,String(value));
     const text=params.toString();return text?'?'+text:'';
   }
-  return { validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
+  return { comparisonStatus, unitPrice, observationAge, groupOffers, validateCatalog, createCatalogQuery, selectProducts, usablePhoto, httpsUrl, sourceUrl, fishGroup, fishGroups, livestockGroup, livestockClassification, livestockGroups, livestockNavigation, navigationParent, gearNavigation, gearCategories, gearGroups, gearClassification, gearParent, gearGroup, defaultFilters, filtersFromSearch, filtersToSearch, sortAvailability };
 });

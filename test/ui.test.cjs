@@ -5,17 +5,18 @@ const path = require('node:path');
 const vm = require('node:vm');
 const AquaCatalog = require('../dist/data-model.js');
 const actual = JSON.parse(fs.readFileSync(path.join(__dirname, '../dist/catalog.json'), 'utf8'));
-const gear = actual.products.filter(p => p.type === 'gear').sort((a,b) => a.price.amount - b.price.amount);
-const plants = actual.products.filter(p=>p.subtype==='aquatic_plant').sort((a,b)=>a.price.amount-b.price.amount);
-const fish = actual.products.filter(p=>p.subtype==='fish').sort((a,b)=>a.price.amount-b.price.amount);
-const live = actual.products.filter(p => p.type === 'live');
+const gear = actual.products.filter(p => p.type === 'gear'&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b) => a.price.amount - b.price.amount);
+const plants = actual.products.filter(p=>p.subtype==='aquatic_plant'&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b)=>a.price.amount-b.price.amount);
+const fish = actual.products.filter(p=>p.subtype==='fish'&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b)=>a.price.amount-b.price.amount);
+const live = actual.products.filter(p => p.type === 'live'&&AquaCatalog.comparisonStatus(p).comparable);
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 // Existing card/gear scenarios use an explicit URL; default-entry behavior has its own regression.
-async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant') {
+async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant', grouped = false) {
+  if(!grouped)search+=(search?'&':'?')+'groupOptions=false';
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { this.listeners[e] = cb; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
+  const nodes = Object.fromEntries(['draftStatus','comparison','observedDays','minPrice','maxPrice','groupOptions','seller','advancedMetrics','emptyActions','shoppingFilters','filterError','clearQuery','resetFilters','searchAllTypes','recoveryStatus','grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
   nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
   const sortOptions = Object.fromEntries(['low','high','sales','new','observed'].map(value=>[value,element()]));
   nodes.sort.querySelector = selector => sortOptions[selector.match(/value="([^"]+)"/)[1]];
@@ -41,12 +42,13 @@ async function setup(data = actual, fail = false, search = '?type=gear&subtype=a
   };
   let renderCalls=0,fetchCalls=0;
   const location={search,href:'https://example.invalid/'+search},history={replaceState(_a,_b,value){renderCalls++;location.href=new URL(value,location.href).href;location.search=new URL(location.href).search;}};
-  const context = vm.createContext({ document, AquaCatalog, location, history, URL, fetch: () => {fetchCalls++;return fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) });} });
+  const windowListeners={};history.pushState=history.replaceState;
+  const context = vm.createContext({ addEventListener:(name,fn)=>{windowListeners[name]=fn;},document, AquaCatalog, location, history, URL, fetch: () => {fetchCalls++;return fail ? Promise.reject(Error('offline')) : Promise.resolve({ ok: true, json: () => Promise.resolve(data) });} });
   vm.runInContext(source, context, { filename: 'dist/app.js' });
   await new Promise(resolve => setImmediate(resolve));
   const choose=(leaf,browse='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-live-group]'?{dataset:{liveGroup:leaf,browseFilter:browse}}:null;}}});
   const chooseGear=(leaf,category='all')=>nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-gear-group]'?{dataset:{gearGroup:leaf,gearCategory:category}}:null;}}});
-  return { chooseGear, openGear(category){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-gear-browse]'?{dataset:{gearBrowse:category}}:null;}}});}, renderCount:()=>renderCalls,fetchCount:()=>fetchCalls, nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
+  return { pop(search){location.search=search;location.href='https://example.invalid/'+search;windowListeners.popstate();}, chooseGear, openGear(category){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-gear-browse]'?{dataset:{gearBrowse:category}}:null;}}});}, renderCount:()=>renderCalls,fetchCount:()=>fetchCalls, nodes, types, subtypes, fishGroups, sortOptions, fishGroup:choose, choose, open(browse){nodes.groupTree.listeners.click({target:{closest(selector){return selector==='[data-browse-group]'?{dataset:{browseGroup:browse}}:null;}}});}, search(){return location.search;}, subtype(v) { subtypes.find(e => e.dataset.subtype === v).click(); }, get images() { return images; }, get tool() { return tool; }, names() { return [...nodes.grid.innerHTML.matchAll(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/g)].map(m => decoded(m[1])); }, sort(v) { nodes.sort.value=v;nodes.sort.listeners.change(); }, type(v) { types.find(e => e.dataset.type === v).click(); } };
 }
 test('default entry selects all livestock, while explicit URL re-entry preserves controls', async () => {
  const app=await setup(actual,false,'');
@@ -61,7 +63,7 @@ test('default entry selects all livestock, while explicit URL re-entry preserves
 test('published missing metrics disable unavailable sorts without inventing ranking',async()=>{
  assert.equal(actual.products.filter(p=>p.registeredAt!==null||p.cumulativeSales!==null||p.periodSales!==null).length,0);
  const app=await setup(actual,false,'');assert.equal(app.sortOptions.sales.disabled,true);assert.equal(app.sortOptions.new.disabled,true);
- assert.match(app.nodes.sortStatus.textContent,/현재 조회 조건/);assert.match(app.nodes.sortStatus.textContent,/판매처 등록일·최초 수집일이 아닙니다/);
+ assert.equal(app.nodes.sortStatus.hidden,true);assert.equal(app.nodes.advancedMetrics.hidden,true);assert.equal(app.sortOptions.sales.hidden,true);
  app.sort('observed');assert.deepEqual(app.names(),[...live].sort((a,b)=>Date.parse(b.observedAt)-Date.parse(a.observedAt)).slice(0,24).map(p=>p.name));
  const explicit=await setup(actual,false,'?sort=new');assert.equal(explicit.nodes.sort.value,'new');assert.deepEqual(explicit.names(),[]);assert.match(explicit.nodes.grid.innerHTML,/실제 상품 등록일/);
 });
@@ -164,11 +166,11 @@ test('known metrics enable sorts, count unknown exclusions and respect exact sel
  app.nodes.period.value='30';app.nodes.period.listeners.change();assert.equal(app.sortOptions.sales.disabled,true);assert.deepEqual(app.names(),[]);assert.match(app.nodes.grid.innerHTML,/정확히 일치/);
  app.sort('new');assert.deepEqual(app.names(),[p.name]);
 });
-test('cards show only photo, seller, full product name, price and one seller link', async () => {
+test('cards show seller, full name, option, price, observation and shipping with a safe link', async () => {
  const app=await setup();assert.deepEqual(app.names(),gear.slice(0,24).map(p=>p.name));
- assert.match(app.nodes.dataStatus.textContent,/실시간 가격·재고·전체 판매처 비교가 아닙니다/);
+ assert.match(app.nodes.dataStatus.textContent,/실시간 가격·재고는 판매처 확인/);
  const cards=[...app.nodes.grid.innerHTML.matchAll(/<article class="card">([\s\S]*?)<\/article>/g)];assert.equal(cards.length,Math.min(24,gear.length));
- for(const card of cards){assert.doesNotMatch(card[1],/<details|class="(?:spec|meta|badge|provenance|original)"/);assert.match(card[1],/<div class="body"><div class="category">[^<]*<\/div><h3 title="[^"]*">[^<]*<\/h3><div class="price">[^<]*<\/div><a class="source"[^>]*>판매처 이동 ↗<\/a><\/div>$/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
+ for(const card of cards){assert.match(card[1],/class="offer-spec"/);assert.match(card[1],/배송비 미확인/);assert.match(card[1],/<time datetime=/);assert.match(card[1],/판매처 이동/);assert.equal((card[1].match(/<a /g)||[]).length,1);}
  for(const product of gear.slice(0,24))assert.ok(app.nodes.grid.innerHTML.includes(escaped(product.sourceUrl)));
  assert.equal(app.images.length,gear.slice(0,24).filter(p=>p.photo.url).length);
 });
@@ -306,7 +308,7 @@ test('livestock subfilters default to plants, show honest empty categories and s
   app.type('live'); assert.equal(app.nodes.livestockFilters.hidden, false); assert.equal(app.names().length, Math.min(24,plants.length));
   assert.match(app.nodes.resultTitle.textContent, /수초/);
   for (const subtype of ['fish','shrimp','snail']) {
-    app.subtype(subtype); assert.equal(app.names().length, Math.min(24, actual.products.filter(p=>p.subtype===subtype).length)); assert.match(app.nodes.grid.innerHTML, /판매처 이동/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).filter(p=>p.photo.url).length);
+    app.subtype(subtype); assert.equal(app.names().length, Math.min(24, actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).length)); assert.match(app.nodes.grid.innerHTML, /판매처 이동/); assert.equal(app.images.length, actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24).filter(p=>p.photo.url).length);
     assert.equal(app.subtypes.filter(b=>b.attributes['aria-pressed']==='true').length, 1);
   }
   app.type('gear'); assert.equal(app.nodes.livestockFilters.hidden, true); assert.equal(app.names().length, 24);
@@ -329,11 +331,11 @@ test('missing verified subtype still explains only connected information; direct
 });
 
 test('direct livestock original photos have descriptive escaped alt text and retain seller fallback',async()=>{
- const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+escaped(p.name)+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.photo.url)));}assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
+ const app=await setup();app.type('live');for(const subtype of ['fish','shrimp','snail']){app.subtype(subtype);const rows=actual.products.filter(p=>p.subtype===subtype&&AquaCatalog.comparisonStatus(p).comparable).sort((a,b)=>a.price.amount-b.price.amount).slice(0,24);assert.equal(app.images.length,rows.filter(p=>p.photo.url).length);for(const p of rows){if(p.photo.url){assert.ok(app.nodes.grid.innerHTML.includes('alt="'+escaped(p.name)+' 상품 사진"'));assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.photo.url)));}assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));}assert.ok(!app.nodes.grid.innerHTML.includes('<svg'));}
 });
 
 test('all period defaults without a registration bound and tool preserves category/query/sort',async()=>{
- const app=await setup();assert.equal(app.nodes.period.value,'all');assert.equal(app.nodes.includeUnknown.disabled,true);assert.match(app.nodes.hint.textContent,/전체 기간/);
+ const app=await setup();assert.equal(app.nodes.period.value,'all');assert.equal(app.nodes.includeUnknown.disabled,true);assert.match(app.nodes.hint.textContent,/총 판매금액 기준/);
  assert.equal(app.tool.execute({type:'live',subtype:'fish',sort:'low',days:'all',query:'',includeUnknownRegistration:false}).count,fish.length);assert.match(app.nodes.resultTitle.textContent,/물고기/);
  app.nodes.period.value='7';app.nodes.period.listeners.change();assert.equal(app.nodes.includeUnknown.disabled,false);app.nodes.period.value='all';app.nodes.period.listeners.change();assert.equal(app.names().length,Math.min(24,fish.length));
  app.sort('sales');assert.deepEqual(app.names(),[]);app.sort('new');assert.deepEqual(app.names(),[]);
@@ -497,4 +499,20 @@ test('unknown gear stays visible and selected zero-result categories remain navi
  const empty=await setup(withoutHeaters,false,'?type=gear&gearCategory=temperature&gearGroup=heater');
  assert.deepEqual(empty.names(),[]);assert.match(empty.nodes.groupTree.innerHTML,/data-gear-group="heater"[^>]*aria-pressed="true"/);
  empty.chooseGear('all','all');assert.deepEqual(empty.names(),AquaCatalog.selectProducts(withoutHeaters,AquaCatalog.filtersFromSearch(empty.search())).rows.slice(0,24).map(p=>p.name));
+});
+
+test('default grouped cards retain seven exact option prices, labels and source links',async()=>{
+ const rows=actual.products.filter(p=>p.sellerId==='wpet.co.kr'&&p.name==='골든 스트라이프 비파');assert.equal(rows.length,7);
+ const app=await setup({...actual,products:rows},false,'?query=골든+스트라이프+비파',true);
+ assert.equal(app.names().length,1);assert.match(app.nodes.grid.innerHTML,/같은 상품의 다른 옵션 6개/);
+ for(const p of rows){assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.spec.replace(/^판매단위\/옵션:\s*/,''))));assert.ok(app.nodes.grid.innerHTML.includes(p.price.amount.toLocaleString('ko-KR')+' 원'));assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));}
+ assert.equal((app.nodes.grid.innerHTML.match(/data-offer-id=/g)||[]).length,7);
+ app.nodes.groupOptions.checked=false;app.nodes.groupOptions.listeners.change();assert.equal(app.names().length,7);
+});
+test('draft hint, price errors, recovery and back navigation preserve submitted state',async()=>{
+ const app=await setup(actual,false,'?query=테트라+네온',true);
+ app.nodes.query.value='아직 미제출';app.nodes.query.listeners.input({target:app.nodes.query});assert.equal(app.nodes.draftStatus.hidden,false);
+ app.nodes.minPrice.value='900';app.nodes.maxPrice.value='100';app.nodes.shoppingFilters.listeners.submit({preventDefault(){}});assert.match(app.nodes.filterError.textContent,/가격 범위/);assert.equal(new URLSearchParams(app.search()).get('minPrice'),null);
+ app.nodes.query.value='존재하지않는검색어123';app.nodes.search.listeners.submit({preventDefault(){}});assert.equal(app.nodes.emptyActions.hidden,false);app.nodes.clearQuery.click();assert.ok(app.names().length);assert.equal(app.nodes.query.value,'');
+ app.pop('?query=판다+코리&observedDays=7');assert.equal(app.nodes.query.value,'판다 코리');assert.equal(app.nodes.observedDays.value,'7');assert.equal(app.nodes.draftStatus.hidden,true);assert.equal(new URLSearchParams(app.search()).get('query'),'판다 코리');
 });

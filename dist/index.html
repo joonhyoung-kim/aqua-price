@@ -123,6 +123,35 @@ main{padding:18px 24px 48px}
  .card .body>.offer>.offer-actions>button[data-favorite]{top:5px;right:5px}
 }
 
+/* Share natural content tracks within each visual row, never fixed card heights.
+   Optional unit/estimate tracks collapse when absent across that row. Expanded
+   details and options grow only their row; no product facts are clipped. */
+@supports(grid-template-rows:subgrid){
+ #grid{row-gap:0}
+ #grid>.card{display:grid;grid-row:span 14;grid-template-columns:minmax(0,1fr);grid-template-rows:subgrid;row-gap:0;margin-bottom:24px;align-items:start}
+ #grid>.card>.art{grid-row:1}
+ #grid>.card>.body,#grid>.card>.body>.offer{display:contents}
+ #grid>.card>.body>h3{grid-row:2;margin-top:10px}
+ #grid>.card>.body>.offer>.role-tag{grid-row:3}
+ #grid>.card>.body>.offer>.offer-spec{grid-row:4}
+ #grid>.card>.body>.offer>.price{grid-row:5}
+ #grid>.card>.body>.offer>.unit-price{grid-row:6}
+ #grid>.card>.body>.offer>.estimate{grid-row:7}
+ #grid>.card>.body>.offer>.shipping{grid-row:8}
+ #grid>.card>.body>.offer>.seller-label{grid-row:9}
+ #grid>.card>.body>.offer>.observed{grid-row:10}
+ #grid>.card>.body>.offer>.stock-unknown{grid-row:11}
+ #grid>.card>.body>.offer>.offer-actions{grid-row:12;align-self:start}
+ #grid>.card>.body>.offer>.offer-details{grid-row:13;margin:3px 0 0;min-width:0}
+ #grid>.card>.body>.option-group{grid-row:14;min-width:0}
+ #grid>.card>.body>.offer>.offer-details>summary{margin:0}
+}
+/* Long evidence and form labels must remain readable in narrow expanded cards. */
+#grid .offer-details{overflow-wrap:anywhere}
+#grid .offer-details fieldset{min-width:0;max-width:100%;margin-inline:0;padding:8px}
+#grid .offer-details input,#grid .offer-details select{min-width:0;max-width:100%;box-sizing:border-box}
+#grid .offer-details legend{max-width:100%;white-space:normal}
+
 </style></head><body>
 <header><div><div><div class="logo">아쿠아<span>픽.</span></div><p class="service-description">관상어·수족관 용품 가격 비교</p></div><button type="button" id="openFavorites" class="header-favorites" aria-controls="personalLibrary">♡ 관심상품</button></div></header>
 <main><a class="skip-search" href="#search">검색·정렬로 이동 ↑</a><div class="intro"><h1>생물과 용품, 조건을 보고 비교하세요.</h1></div>

@@ -76,7 +76,7 @@ function render(resetPage = true) {
   if(resetPage){$('#recoveryStatus').textContent='';$('#filterError').textContent='';}
   const view=catalogQuery.view(filters);
   if (resetPage) visibleLimit = PAGE_SIZE;
-  if(catalog.status==='ready'&&typeof history==='object'&&typeof location==='object'){
+  if(catalog.status==='ready'&&typeof history==='object'&&typeof location==='object'&&!(typeof ux5PanelEditing!=='undefined'&&ux5PanelEditing)){
     const url=new URL(location.href);const nextSearch=AquaCatalog.filtersToSearch(filters,url.search);const changed=nextSearch!==url.search;url.search=nextSearch;const method=historyReady&&!restoringHistory&&changed&&history.pushState?'pushState':'replaceState';history[method](null,'',url.pathname+url.search+url.hash);historyReady=true;
   }
   $('#sort').value = filters.sort;
@@ -195,7 +195,7 @@ $('#shoppingFilters').addEventListener('submit',event=>{
 $('#observedDays').addEventListener('change',()=>{filters.observedDays=$('#observedDays').value==='all'?'all':Number($('#observedDays').value);render();});
 $('#groupOptions').addEventListener('change',()=>{filters.groupOptions=$('#groupOptions').checked;render();});
 $('#clearQuery').addEventListener('click',()=>{filters.query='';draftQuery='';$('#query').value='';render();});
-$('#resetFilters').addEventListener('click',()=>{filters={...AquaCatalog.defaultFilters,type:filters.type,query:filters.query};render();});
+$('#resetFilters').addEventListener('click',()=>{filters={...AquaCatalog.defaultFilters,type:filters.type,query:filters.query,sort:filters.sort};render();});
 $('#searchAllTypes').addEventListener('click',()=>{filters={...AquaCatalog.defaultFilters,type:'all',query:filters.query};render();});
 if(typeof addEventListener==='function')addEventListener('popstate',()=>{restoringHistory=true;filters=AquaCatalog.filtersFromSearch(location.search);draftQuery=filters.query;$('#query').value=draftQuery;$('#includeUnknown').checked=filters.includeUnknownRegistration;expandedBrowse=null;expandedGear=null;render();restoringHistory=false;});
 $('#query').value = draftQuery;

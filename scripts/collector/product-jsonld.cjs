@@ -178,8 +178,9 @@ function parseProductPage(html, context) {
     const title = typeof product.name === 'string' ? decode(product.name).trim() : '';
     const retailerProductId = product._groupId || productIdentity(product, context.url);
     const properties=Array.isArray(product.additionalProperty)?product.additionalProperty:product.additionalProperty?[product.additionalProperty]:[];
+    const selected = !product._groupName && require("./selected-variant.cjs").selectedVariant(html, product, context, visibleText);
     const groupCorroborated=product._groupName && identityIsVisible(text,decode(product._groupName)) && ((properties.length && properties.every(p=>p&&typeof p.value==='string'&&identityIsVisible(text,decode(p.value)))) || typeof product.color==='string'&&identityIsVisible(text,decode(product.color)));
-    if (!title || (!identityIsVisible(text,title)&&!groupCorroborated) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
+    if (!title || (!identityIsVisible(text,title)&&!groupCorroborated&&!selected) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
     const offers = Array.isArray(product.offers) ? product.offers : product.offers ? [product.offers] : [];
     for (const offer of offers) {
       if (!offer || typeof offer !== 'object' || offer['@type'] === 'AggregateOffer') { issues.push('no_concrete_offer'); continue; }
@@ -189,7 +190,7 @@ function parseProductPage(html, context) {
       const visiblePrice=priceIsVisible(text,amount);
       const metaPrice=meta['product:price:currency']==='KRW' && /^\d+$/.test(meta['product:price:amount']||'') && Number(meta['product:price:amount'])===amount;
       const groupBaseCorroborated=product._groupName && Number.isFinite(Number(product._groupLowPrice)) && (priceIsVisible(text,Number(product._groupLowPrice)) || (meta['product:price:currency']==='KRW' && Number(meta['product:price:amount'])===Number(product._groupLowPrice)));
-      const optionPriceCorroborated=visibleGroupOptionPrice(product,offer,context,html,amount);
+      const optionPriceCorroborated=Boolean(selected) || visibleGroupOptionPrice(product,offer,context,html,amount);
       if (!Number.isSafeInteger(amount) || (!visiblePrice&&!metaPrice&&!groupBaseCorroborated&&!optionPriceCorroborated)) { issues.push('visible_price_unverified'); continue; }
       const declaredUrl=offer.url || product.url || context.url;
       const productUrl = typeof declaredUrl==='string' && declaredUrl.startsWith('http://') && host(declaredUrl)===host(context.url) ? context.url : declaredUrl;
@@ -201,7 +202,7 @@ function parseProductPage(html, context) {
       if (keys.has(key)) { issues.push('duplicate_offer'); continue; } keys.add(key);
       const availability = typeof offer.availability === 'string' ? offer.availability.split(/[\/#]/).pop() : null;
       const available = availability === 'InStock' ? true : ['OutOfStock','Discontinued','SoldOut'].includes(availability) ? false : null;
-      const stockIssue = require('./stock-policy.cjs').stockConflict(html, {title, parentTitle:product._groupName, variantId, properties, available, url:productUrl}, visibleText);
+      const stockIssue = require('./stock-policy.cjs').stockConflict(html, {title, parentTitle:product._groupName || selected?.parentName, variantId:variantId || selected?.sku, properties, available, url:productUrl}, visibleText);
       if (stockIssue) { issues.push(stockIssue); continue; }
       const image = Array.isArray(product.image) ? product.image[0] : product.image;
       const imageUrl = typeof image === 'string' ? image : image?.url || image?.contentUrl;
@@ -215,8 +216,8 @@ function parseProductPage(html, context) {
       const quantity = context.quantityPerPack ?? (product.quantitativeValue?.unitCode === 'C62' ? product.quantitativeValue.value : countProperty ? Number.parseInt(countProperty.value,10) : null);
       const quantityPerPack = Number.isSafeInteger(quantity) && quantity > 0 ? quantity : null;
       const item = { id: products.length === 1 && offers.length === 1 && context.existingId ? context.existingId : key, collector_key: key, source_id: context.sourceId, retailer_product_id: retailerProductId, variant_id: variantId,
-        retailer: context.name, seller_domain: host(context.url), source_kind: 'direct_retailer_product_page', verification_method: visiblePrice ? 'Product JSON-LD identity and KRW price corroborated against visible page text' : optionPriceCorroborated ? 'Exact inline ProductGroup member and SKU-bound visible selector delta corroborate the concrete KRW Offer price; not checkout-confirmed' : groupBaseCorroborated ? 'ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked' : 'Visible product identity and JSON-LD Offer corroborated against matching public product price metadata; rendered purchase price not independently checked',
-        type: context.type, subtype: context.subtype ?? null, title, variant_title: typeof offer.name === 'string' ? decode(offer.name) : typeof product.color==='string' ? '색상: '+product.color : context.variant ?? (quantityPerPack ? quantityPerPack+'마리 묶음' : null), quantity_per_pack: quantityPerPack, unit_price_amount: quantityPerPack ? amount / quantityPerPack : null,
+        retailer: context.name, seller_domain: host(context.url), source_kind: 'direct_retailer_product_page', verification_method: selected ? "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified" : visiblePrice ? 'Product JSON-LD identity and KRW price corroborated against visible page text' : optionPriceCorroborated ? 'Exact inline ProductGroup member and SKU-bound visible selector delta corroborate the concrete KRW Offer price; not checkout-confirmed' : groupBaseCorroborated ? 'ProductGroup identity and starting price corroborated; each concrete variant Offer price retained, rendered option checkout price not independently checked' : 'Visible product identity and JSON-LD Offer corroborated against matching public product price metadata; rendered purchase price not independently checked',
+        type: context.type, subtype: context.subtype ?? null, title, variant_title: selected ? selected.option : typeof offer.name === 'string' ? decode(offer.name) : typeof product.color==='string' ? '색상: '+product.color : context.variant ?? (quantityPerPack ? quantityPerPack+'마리 묶음' : null), quantity_per_pack: quantityPerPack, unit_price_amount: quantityPerPack ? amount / quantityPerPack : null,
         product_url: productUrl, declared_product_url:declaredUrl, observed_at_utc: context.observedAt, registered_at: null, price_amount: amount, currency: 'KRW', shipping_amount: null, variant_attributes: properties, price_metadata:meta, price_basis:'Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified',
         available, availability_basis: availability ? `Retailer JSON-LD ${availability}; not checkout-confirmed inventory` : 'Availability not supplied', stock_quantity: null,
         photo: photoUrl ? { verified_https_url: photoUrl, permission_basis: 'explicit_user_instruction', source_page_url: context.url, downloaded_or_rehosted: false } : null };

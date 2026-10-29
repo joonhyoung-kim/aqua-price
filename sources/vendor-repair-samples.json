@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-29T23:04:36.523Z",
+  "method": "Bounded public samples ingested through existing parsers, metadata and applyUpdates projection. No full collector rerun, no fabricated automated run receipt; prior collector-status and cursors untouched.",
+  "before": 5267,
+  "after": 5269,
+  "unchanged": 5267,
+  "samples": [
+    {
+      "id": "retailer-42:cafe24_rorio2_1_2699_P0000DZV000D:default",
+      "source": "retailer-42",
+      "url": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+      "observedAt": "2026-10-29T22:53:46.863Z",
+      "price": 4000,
+      "available": true,
+      "shippingPolicy": {
+        "verified": true,
+        "sellerId": "aquagardenshop.com",
+        "evidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+        "observedAt": "2026-10-29T22:53:46.863Z",
+        "amount": 3500,
+        "freeThreshold": 50000,
+        "chargeUnit": "order",
+        "conditionsComplete": false,
+        "packaging": null,
+        "regionalSurcharge": null,
+        "combinedShipping": null,
+        "benefitConditions": null,
+        "summary": "상품 페이지 기본 배송 3,500원 · 50,000원 이상 무료. 지역 추가금·포장비·합배송 조건 미확인.",
+        "sourceScope": "this_product_only"
+      }
+    },
+    {
+      "id": "retailer-54:cafe24_whwnsah_1_309:default",
+      "source": "retailer-54",
+      "url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/",
+      "observedAt": "2026-10-29T23:01:36.344Z",
+      "price": 3000,
+      "available": true,
+      "shippingPolicy": null
+    }
+  ],
+  "publicConfirmedOutOfStock": 0
+}

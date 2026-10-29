@@ -25,7 +25,7 @@ test('bounded known source reserves no discovery work and keeps the existing nex
  assert.deepEqual(requestAllocation(source,true),{total:4,knownProductLimit:3,knownRequestLimit:4,discoveryRequestReserve:0});
  const registry=require('../sources/registry.json').sources,prior={runNextSourceIds:{live:'retailer-38'}};
  assert.equal(registry[sourceCursor(registry,prior,'live')].id,'retailer-38');
- assert.equal(registry.at(-1).id,source.id);assert.equal(require('../sources/collector-controls.json').sources[source.id].enabled,true);
+ assert.ok(registry.findIndex(s=>s.id===source.id)<registry.findIndex(s=>s.id==='retailer-54'));assert.equal(require('../sources/collector-controls.json').sources[source.id].enabled,true);
 });
 test('strict adapter is used by the collector, respects four requests and preserves lastgood on mismatch',async()=>{
  const fixture={...source,id:'fixture',officialURL:'https://example.invalid/',sourceDomain:'example.invalid',delayMs:0,cacheTtlMs:0,products:[{url,type:'live',subtype:'fish'}]};

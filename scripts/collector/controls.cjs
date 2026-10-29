@@ -62,11 +62,13 @@ function sourceDecision(source, prior = {}, controls, now = Date.now()) {
   const reason = !requestedEnabled ? 'requested_off' : source.enabled !== true ? 'registry_disabled' : source.technicalReadiness === 'blocked' ? 'technical_blocked' : manualReview ? 'manual_review' : blockedUntil && now < Date.parse(blockedUntil) ? 'backoff' : 'eligible';
   return { requestedEnabled, registryEligible, effectiveEnabled: reason === 'eligible', reason, blockedUntil: reason === 'backoff' ? blockedUntil : null };
 }
-// Fixed UTC anchors match the unchanged workflow slots. Longer periods are
+// The combined run uses UTC 00/12 (KST 09/21). Legacy lane anchors remain for
+// explicitly requested lane runs and their history. Longer periods are
 // deterministic multiples from the Unix epoch, not elapsed timers after a delay.
-const WINDOW_ANCHORS = Object.freeze({ live: 17 * 60000, gear: 29 * 60000, reconcile: (2 * 60 + 43) * 60000 });
+const WINDOW_ANCHORS = Object.freeze({ all: 0, live: 17 * 60000, gear: 29 * 60000, reconcile: (2 * 60 + 43) * 60000 });
+const windowPresets = mode => mode === 'all' ? INTERVAL_PRESETS.live : INTERVAL_PRESETS[mode];
 function scheduleWindow(mode, intervalHours, now) {
-  if (!INTERVAL_PRESETS[mode]?.includes(intervalHours) || !Number.isFinite(now)) throw Error('Invalid schedule window');
+  if (!windowPresets(mode)?.includes(intervalHours) || !Number.isFinite(now)) throw Error('Invalid schedule window');
   const width = intervalHours * 3600000, anchor = WINDOW_ANCHORS[mode];
   const start = Math.floor((now - anchor) / width) * width + anchor;
   const startAt = new Date(start).toISOString(), endAt = new Date(start + width).toISOString();
@@ -75,18 +77,20 @@ function scheduleWindow(mode, intervalHours, now) {
 function scheduleDecision(controls, publicStatus = {}, { mode, runTrigger = 'local', now = Date.now() } = {}) {
   if (![...MODES, 'all'].includes(mode)) throw Error('Invalid collection mode');
   const automatic = runTrigger === 'schedule';
-  if (automatic && mode === 'all') throw Error('Automatic collection requires live, gear, or reconcile mode');
-  const intervalHours = mode === 'all' ? null : (controls.config || controls).intervalsHours[mode];
+  const intervals=(controls.config || controls).intervalsHours;
+  // One shared budget and cursor for both types; the faster configured lane is
+  // the combined cadence. Production live/gear are both 12 hours.
+  const intervalHours = mode === 'all' ? Math.min(intervals.live,intervals.gear) : intervals[mode];
   const lane = publicStatus.schedule?.modes?.[mode] || {};
   const lastAttemptAt = lane.lastAutomatedAttemptAt || null;
   if (lastAttemptAt && !Number.isFinite(Date.parse(lastAttemptAt))) throw Error('Invalid durable last automated attempt for ' + mode);
-  const window = mode === 'all' ? null : scheduleWindow(mode, intervalHours, now);
+  const window = scheduleWindow(mode, intervalHours, now);
   const storedWindow = lane.lastAutomatedWindow || null;
-  if (storedWindow && (typeof storedWindow !== 'object' || !Number.isFinite(Date.parse(storedWindow.startAt)) || !Number.isFinite(Date.parse(storedWindow.endAt)) || !INTERVAL_PRESETS[mode]?.includes(storedWindow.intervalHours))) throw Error('Invalid durable automated window for ' + mode);
+  if (storedWindow && (typeof storedWindow !== 'object' || !Number.isFinite(Date.parse(storedWindow.startAt)) || !Number.isFinite(Date.parse(storedWindow.endAt)) || !windowPresets(mode)?.includes(storedWindow.intervalHours))) throw Error('Invalid durable automated window for ' + mode);
   // Re-anchor the actual attempt under the CURRENT interval when configuration
   // changes. A longer period absorbs old attempts; a newly reached shorter period
   // becomes eligible. Legacy elapsed-gate timestamps also migrate deterministically.
-  const previousWindow = mode === 'all' ? null : lastAttemptAt ? scheduleWindow(mode, intervalHours, Date.parse(lastAttemptAt)) : storedWindow ? scheduleWindow(mode, intervalHours, Date.parse(storedWindow.startAt)) : null;
+  const previousWindow = lastAttemptAt ? scheduleWindow(mode, intervalHours, Date.parse(lastAttemptAt)) : storedWindow ? scheduleWindow(mode, intervalHours, Date.parse(storedWindow.startAt)) : null;
   const clockRollback = !!(lastAttemptAt && now < Date.parse(lastAttemptAt)) || !!(previousWindow && now < Date.parse(previousWindow.startAt));
   const due = !automatic || !previousWindow || !clockRollback && Date.parse(window.startAt) > Date.parse(previousWindow.startAt);
   return { automatic, due, reason: !automatic ? 'manual_bypass' : clockRollback ? 'clock_rollback' : due ? 'due' : 'already_attempted_window', intervalHours, lastAttemptAt, gate: 'utc_slot_window', window, previousWindow, nextDueAt: previousWindow && Date.parse(previousWindow.endAt) > Date.parse(window.endAt) ? previousWindow.endAt : window?.endAt || null };

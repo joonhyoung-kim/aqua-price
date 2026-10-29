@@ -1,4 +1,4 @@
-name: Refresh preview catalog
+name: Refresh verified catalog
 
 on:
   workflow_dispatch:
@@ -8,12 +8,10 @@ on:
         type: choice
         options: [all, live, gear, reconcile]
         default: all
-  # Seven scheduled slots per UTC day: live 4, gear 2, reconcile 1.
+  # Two shared-budget refreshes: UTC 00/12, Korea 09/21. Both product types.
   # GitHub may delay delivery; manual dispatches and retries are additional.
   schedule:
-    - cron: '17 */6 * * *'
-    - cron: '29 */12 * * *'
-    - cron: '43 2 * * *'
+    - cron: '0 0,12 * * *'
 
 permissions:
   contents: write
@@ -27,11 +25,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Checkout trusted preview collector
+      - name: Checkout trusted main collector
         uses: actions/checkout@v4
         with:
-          ref: preview
+          ref: main
+          fetch-depth: 0
           persist-credentials: true
+      - name: Pin publication branches before collection
+        shell: bash
+        run: |
+          git fetch origin main preview
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          echo "MAIN_BASE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "PREVIEW_BASE=$(git rev-parse origin/preview)" >> "$GITHUB_ENV"
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -54,9 +60,7 @@ jobs:
         run: |
           mode=all
           case "$EVENT_SCHEDULE" in
-            '17 */6 * * *') mode=live ;;
-            '29 */12 * * *') mode=gear ;;
-            '43 2 * * *') mode=reconcile ;;
+            '0 0,12 * * *') mode=all ;;
           esac
           case "$REQUESTED_MODE" in
             all|live|gear|reconcile) mode="$REQUESTED_MODE" ;;
@@ -68,21 +72,12 @@ jobs:
         run: |
           node scripts/build-admin-status.cjs
           npm test
-      - name: Commit only preview data paths
+      - name: Publish validated data to main and preview atomically
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- dist/catalog.json dist/source-snapshot.json dist/collector-status.json dist/admin/status.json
-          if git diff --cached --quiet; then exit 0; fi
-          git diff --cached --name-only | while IFS= read -r path; do
-            case "$path" in
-              dist/catalog.json|dist/source-snapshot.json|dist/collector-status.json|dist/admin/status.json) ;;
-              *) exit 1 ;;
-            esac
-          done
-          git commit -m 'Refresh preview catalog data'
-          git push origin HEAD:preview
+          node scripts/publish-catalog.cjs
       - name: Preserve lastgood and refusal quarantine
         if: always()
         uses: actions/cache/save@v4

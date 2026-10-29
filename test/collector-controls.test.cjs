@@ -48,7 +48,7 @@ test('UTC slot windows honor every preset, delayed jitter, clock rollback, and i
   assert.equal(scheduleDecision(validateControls(longer, registry), status, { mode: 'live', runTrigger: 'schedule', now: Date.parse('2026-10-09T06:20:00Z') }).due, false);
   assert.equal(scheduleDecision(validateControls(longer, registry), status, { mode: 'live', runTrigger: 'schedule', now: Date.parse('2026-10-09T12:20:00Z') }).due, true);
   assert.equal(scheduleDecision(validateControls(config(), registry), status, { mode: 'live', runTrigger: 'schedule', now: Date.parse('2026-10-09T06:20:00Z') }).due, true);
-  assert.throws(() => scheduleDecision(validateControls(config(), registry), {}, { mode: 'all', runTrigger: 'schedule' }), /requires/);
+  assert.equal(scheduleDecision(validateControls(config(), registry), {}, { mode: 'all', runTrigger: 'schedule' }).due,true);
 });
 function fixture() {
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'aqua-controls-')), repo = path.join(__dirname, '..');
@@ -83,6 +83,24 @@ const rename=fs.renameSync.bind(fs);fs.renameSync=(a,b)=>{rename(a,b);if(b==='di
   };
   return { cwd, save, read, source, product, host, run, cleanup: () => fs.rmSync(cwd, { recursive: true, force: true }) };
 }
+
+test('combined scheduled CLI publishes a fresh cutoff and the next fixed slot survives late completion',()=>{
+ const f=fixture();
+ try{
+  const controls=f.read('sources/collector-controls.json');controls.intervalsHours.live=12;controls.intervalsHours.gear=12;f.save('sources/collector-controls.json',controls);
+  const snapshot=f.read('dist/source-snapshot.json');snapshot.snapshot_at_utc='2026-10-08T00:00:00Z';f.save('dist/source-snapshot.json',snapshot);
+  const args=['--mode','all','--refresh-known','--publish'];
+  let result=f.run({now:'2026-10-09T00:42:00Z',args});assert.equal(result.status,0,result.stderr);
+  const catalog=f.read('dist/catalog.json');assert.equal(catalog.asOf,'2026-10-09T00:42:00.000Z');
+  assert.equal(catalog.products.find(p=>p.id==='neutral-background-fixture').observedAt,'2026-01-01T00:00:00Z');
+  result=f.run({now:'2026-10-09T01:00:00Z',args});assert.equal(result.status,0,result.stderr);
+  assert.deepEqual(f.read('calls.json'),[]);assert.deepEqual(f.read('dist/catalog.json'),catalog);
+  assert.equal(f.read('dist/collector-status.json').executionSkippedReason,'not_due');
+  f.save('.collector/state.json',{sources:{}});
+  result=f.run({now:'2026-10-09T12:02:00Z',args});assert.equal(result.status,0,result.stderr);
+  assert.equal(f.read('calls.json').length,2);assert.equal(f.read('dist/catalog.json').asOf,'2026-10-09T12:02:00.000Z');
+ }finally{f.cleanup();}
+});
 test('actual CLI persists attempts before requests; fresh checkouts skip until due and preserve unrelated lane state at every checkpoint', () => {
   const f = fixture();
   try {

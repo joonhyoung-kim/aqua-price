@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T22:37:38.208Z",
+  "generatedAt": "2026-10-29T23:05:42.011Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -234,10 +234,13 @@
         },
         "retailer-53": {
           "enabled": true
+        },
+        "retailer-54": {
+          "enabled": true
         }
       }
     },
-    "revision": "3084e67ddd4c215f441aaffb4557d71bd8aba27465a9b15a35b8b1ca5a847312",
+    "revision": "04ed9990621ca7b9a9960b3b2e314e076c842c60c2a1d3f23fc2af46ad478111",
     "collectorRevision": "3084e67ddd4c215f441aaffb4557d71bd8aba27465a9b15a35b8b1ca5a847312",
     "schedule": {
       "schemaVersion": 1,
@@ -87358,7 +87361,7 @@
       },
       "quality": {
         "staleOver7Days": 48,
-        "staleRatio": 0.6857142857142857,
+        "staleRatio": 0.676056338028169,
         "stockTimeUnknown": 67,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -87367,8 +87370,8 @@
         "representativePending": 144,
         "globalPopularityAvailable": false
       },
-      "snapshotProductCount": 82,
-      "publicProductCount": 70,
+      "snapshotProductCount": 83,
+      "publicProductCount": 71,
       "confirmedOutOfStockCount": 12,
       "collectorProductCount": 99,
       "refreshScope": {
@@ -93352,6 +93355,7 @@
             "시세 WHALE 외부여과기 200 6W",
             "아쿠아가든 에어스톤 25파이 콩돌+10파이 원통형",
             "아쿠아가든 에어종합세트 콩돌+역류방지기+에어호스",
+            "아쿠아가든 구피 열대어 사료 미니비트 1000ml 아쿠아가든 구피 열대어 사료 미니비트 100ml",
             "아쿠아가든 열대어 물고기 사료 어항에 붙이는 아쿠아탭 90ml",
             "아쿠아가든 열대어 물고기 사료 어항에 붙이는 아쿠아탭 250ml",
             "테트라 브릴란트 빌리필터 소",
@@ -93389,7 +93393,7 @@
             "Y자 분배기 50pcs",
             "아쿠아가든 블랙우드 M 사이즈 B등급 (30-40cm) MB-43"
           ],
-          "unnamedCount": 174,
+          "unnamedCount": 173,
           "candidateCount": 287
         }
       },
@@ -112190,6 +112194,67 @@
         "Only three reviewed known product URLs; no category discovery or full retailer coverage.",
         "Options, price disagreement or stock disagreement require review and preserve lastgood.",
         "Public terms link is under robots-disallowed /member/; terms content was not fetched and permission is not inferred."
+      ],
+      "discovery": {
+        "entryPoints": [],
+        "status": "reviewed_known_urls_only",
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true,
+        "deletionEnabled": false,
+        "productNames": {
+          "names": [],
+          "unnamedCount": 0,
+          "candidateCount": 0
+        },
+        "categoryTree": null
+      },
+      "fullCatalogCoverage": false,
+      "autoRefreshVerified": false,
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
+    },
+    {
+      "id": "retailer-54",
+      "name": "드림아쿠아",
+      "domain": "dreamaqua.kr",
+      "officialUrl": "https://www.dreamaqua.kr/",
+      "technicalReadiness": "known_single_offer_sample_verified",
+      "enabled": true,
+      "control": {
+        "requestedEnabled": true,
+        "registryEligible": true,
+        "effectiveEnabled": true,
+        "reason": "eligible",
+        "blockedUntil": null
+      },
+      "quality": {
+        "staleOver7Days": 0,
+        "staleRatio": 0,
+        "stockTimeUnknown": 0,
+        "priceStockMismatchRatio": null,
+        "priceStockMismatchBasis": "not_measured",
+        "duplicateLinks": 0,
+        "zeroPrice": 0,
+        "representativePending": null,
+        "globalPopularityAvailable": false
+      },
+      "snapshotProductCount": 1,
+      "publicProductCount": 1,
+      "confirmedOutOfStockCount": 0,
+      "collectorProductCount": 0,
+      "refreshScope": null,
+      "execution": {
+        "automaticAttemptConfirmed": false,
+        "runId": null
+      },
+      "collectorStatus": "not_run",
+      "collectorLastAttempt": null,
+      "collectorLastSuccess": null,
+      "collectorLastError": null,
+      "blockers": [
+        "One reviewed shrimp URL only; no category crawling or full retailer coverage.",
+        "Option, price or stock disagreements require review and preserve last valid evidence.",
+        "Terms link under robots-disallowed /member/ was not fetched; permission is not inferred."
       ],
       "discovery": {
         "entryPoints": [],

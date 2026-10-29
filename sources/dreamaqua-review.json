@@ -1,0 +1,60 @@
+{
+  "reviewedAt": "2026-10-29T23:01:36.344Z",
+  "source": "https://www.dreamaqua.kr/",
+  "robots": {
+    "url": "https://www.dreamaqua.kr/robots.txt",
+    "status": 200,
+    "productPathsAllowed": true,
+    "conservativeDelayMs": 10000,
+    "forbiddenPaths": [
+      "/admin",
+      "/api",
+      "/exec/front/",
+      "/member/",
+      "/myshop/",
+      "/protected/"
+    ]
+  },
+  "terms": {
+    "status": "not_fetched_robots_disallowed_member_path",
+    "permissionClaimed": false
+  },
+  "trafficRank": null,
+  "selectionReason": "New direct-shop coverage of Sulawesi shrimp; no public traffic ranking asserted.",
+  "sample": {
+    "url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/",
+    "title": "화이트 글로브 술라웨시 새우/슬라웨시 관상용 새우",
+    "observedAt": "2026-10-29T23:01:36.344Z",
+    "priceKRW": 3000,
+    "available": true,
+    "quantityPerPack": null,
+    "shipping": {
+      "visibleBaseKRW": 5000,
+      "conditionsComplete": false,
+      "packaging": null,
+      "regionalSurcharge": null,
+      "combinedShipping": null,
+      "publishedAsConfirmedTotal": false
+    }
+  },
+  "requests": 2,
+  "scope": "One no-option shrimp only; append source without changing existing order, cursors, global runtime or request budgets. No photos republished.",
+  "excluded": [
+    {
+      "product": "폼폼 크랩",
+      "reason": "Crab subtype unsupported; no product request or forced fish/shrimp classification."
+    },
+    {
+      "domain": "haeriaqua.com",
+      "reason": "Parent reports displayed sale price vs structured base-price conflict; no request or integration."
+    },
+    {
+      "domain": "myreef.co.kr",
+      "reason": "Parent reports robots denial; not accessed."
+    },
+    {
+      "domain": "animalls.co.kr",
+      "reason": "Parent reports HTTPS downgrade; not accessed."
+    }
+  ]
+}

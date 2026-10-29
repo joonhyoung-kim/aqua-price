@@ -6,16 +6,16 @@
   "collection_scope": "19 limited searches, maximum 8 results per query, first page only; no additional pages or bulk crawling; not full-market coverage",
   "created_at_utc": "2026-10-08T08:29:06.935413+00:00",
   "summary": {
-    "offer_count": 6351,
-    "merchant_count": 43,
+    "offer_count": 6353,
+    "merchant_count": 44,
     "live_plant_count": 647,
     "fish_count": 3758,
-    "shrimp_count": 234,
+    "shrimp_count": 235,
     "snail_count": 41,
-    "fish_or_shrimp_count": 3992,
-    "gear_count": 1671,
+    "fish_or_shrimp_count": 3993,
+    "gear_count": 1672,
     "verified_https_photos": 6063,
-    "direct_retailer_products": 6344
+    "direct_retailer_products": 6346
   },
   "photo_validation": {
     "basis": "HTTPS HEAD verification supplied by the collecting task; no image download or rehosting",
@@ -488922,6 +488922,118 @@
           "observedAt": "2026-10-29T22:37:25.787Z"
         }
       ]
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_2699_P0000DZV000D:default",
+      "collector_key": "retailer-42:cafe24_rorio2_1_2699_P0000DZV000D:default",
+      "source_id": "retailer-42",
+      "retailer_product_id": "cafe24_rorio2_1_2699_P0000DZV000D",
+      "variant_id": null,
+      "retailer": "아쿠아가든 쇼핑몰",
+      "seller_domain": "aquagardenshop.com",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": "food",
+      "title": "아쿠아가든 구피 열대어 사료 미니비트 1000ml 아쿠아가든 구피 열대어 사료 미니비트 100ml",
+      "variant_title": "아쿠아가든 구피 열대어 사료 미니비트 100ml",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+      "declared_product_url": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+      "observed_at_utc": "2026-10-29T22:53:46.863Z",
+      "registered_at": null,
+      "price_amount": 4000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [
+        {
+          "@type": "PropertyValue",
+          "name": "아쿠아가든  미니비트",
+          "value": "아쿠아가든 구피 열대어 사료 미니비트 100ml"
+        }
+      ],
+      "price_metadata": {
+        "product:price:amount": "20000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "16000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": null,
+      "stock_observed_at_utc": "2026-10-29T22:53:46.863Z",
+      "shipping_policy": {
+        "verified": true,
+        "sellerId": "aquagardenshop.com",
+        "evidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+        "observedAt": "2026-10-29T22:53:46.863Z",
+        "amount": 3500,
+        "freeThreshold": 50000,
+        "chargeUnit": "order",
+        "conditionsComplete": false,
+        "packaging": null,
+        "regionalSurcharge": null,
+        "combinedShipping": null,
+        "benefitConditions": null,
+        "summary": "상품 페이지 기본 배송 3,500원 · 50,000원 이상 무료. 지역 추가금·포장비·합배송 조건 미확인.",
+        "sourceScope": "this_product_only"
+      },
+      "review_evidence": {
+        "url": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D#prdReview",
+        "checkedAt": "2026-10-29T22:53:46.863Z",
+        "count": null,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Reviewed visible primary product and selected food option"
+    },
+    {
+      "id": "retailer-54:cafe24_whwnsah_1_309:default",
+      "collector_key": "retailer-54:cafe24_whwnsah_1_309:default",
+      "source_id": "retailer-54",
+      "retailer_product_id": "cafe24_whwnsah_1_309",
+      "variant_id": null,
+      "retailer": "드림아쿠아",
+      "seller_domain": "dreamaqua.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Single offer: primary heading, visible KRW sale price, absence of options, JSON-LD and page sold-out state agree",
+      "type": "live",
+      "subtype": "shrimp",
+      "title": "화이트 글로브 술라웨시 새우/슬라웨시 관상용 새우",
+      "variant_title": null,
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/",
+      "declared_product_url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/",
+      "observed_at_utc": "2026-10-29T23:01:36.344Z",
+      "registered_at": null,
+      "price_amount": 3000,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "3000",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "3000",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD and primary page sold-out state agree; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": null,
+      "stock_observed_at_utc": "2026-10-29T23:01:36.344Z",
+      "review_evidence": {
+        "url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/#prdReview",
+        "checkedAt": "2026-10-29T23:01:36.344Z",
+        "count": null,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Reviewed public primary title and Sulawesi shrimp category; no crab mapping"
     }
   ],
   "direct_photo_validation": {
@@ -488930,5 +489042,5 @@
     "status": 200,
     "body_downloaded": false
   },
-  "snapshot_at_utc": "2026-10-29T22:37:35.734Z"
+  "snapshot_at_utc": "2026-10-29T23:04:36.523Z"
 }

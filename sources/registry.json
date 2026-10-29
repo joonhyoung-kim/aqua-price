@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryStatus": "original_45_plus_7_user_approved_partial_collectors",
+  "registryStatus": "original_45_plus_8_user_approved_partial_collectors",
   "originalSourceCount": 45,
   "originalSourcesWithSnapshot": 9,
   "collectorVerifiedSources": 0,
@@ -2767,6 +2767,48 @@
         "deletionEnabled": false
       },
       "reviewEvidence": "sources/solaqua-review.json"
+    },
+    {
+      "id": "retailer-54",
+      "name": "드림아쿠아",
+      "sourceDomain": "dreamaqua.kr",
+      "officialURL": "https://www.dreamaqua.kr/",
+      "original45": false,
+      "userApprovedAdditional": true,
+      "approvalBatch": "2026-10-29",
+      "platform": "Cafe24",
+      "adapter": "cafe24_single_offer",
+      "enabled": true,
+      "photosAllowed": false,
+      "technicalReadiness": "known_single_offer_sample_verified",
+      "currentIntegrationStatus": "one_known_shrimp_product_verified_no_discovery",
+      "products": [
+        {
+          "url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/",
+          "type": "live",
+          "subtype": "shrimp",
+          "classificationBasis": "Reviewed primary title and public category: Sulawesi ornamental shrimp; no selectable options. Crab products excluded."
+        }
+      ],
+      "maxRequests": 2,
+      "delayMs": 10000,
+      "cacheTtlMs": 10800000,
+      "timeoutMs": 15000,
+      "maxBytes": 2000000,
+      "blockers": [
+        "One reviewed shrimp URL only; no category crawling or full retailer coverage.",
+        "Option, price or stock disagreements require review and preserve last valid evidence.",
+        "Terms link under robots-disallowed /member/ was not fetched; permission is not inferred."
+      ],
+      "discovery": {
+        "entryPoints": [],
+        "status": "reviewed_known_urls_only",
+        "coverageComplete": false,
+        "newProductDiscovery": false,
+        "knownProductUrlsOnly": true,
+        "deletionEnabled": false
+      },
+      "reviewEvidence": "sources/dreamaqua-review.json"
     }
   ],
   "auditSamplePassed": 33,

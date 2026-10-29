@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "status": "ready",
   "reason": "",
-  "asOf": "2026-10-29T22:37:35.734Z",
+  "asOf": "2026-10-29T23:04:36.523Z",
   "notice": "상품정보 확인본입니다. 가격은 항목별 확인 시각 기준이며 실시간 최저가·전체 판매처 비교가 아닙니다. 갱신 실패 시 마지막 확인 정보를 보존합니다. 배송비와 현재 재고는 판매처에서 확인하세요.",
   "sourceName": "Cafe24 Global Catalog MCP + directly verified retailer product pages",
   "sourceDocumentationUrl": "https://developers.cafe24.vn/app/front/mcpserver/globalcatalogmcp",
-  "livestockNotice": "이번 확인본: 물고기 2877개 · 새우 185개 · 수초 603개 · 달팽이 33개. 공식 API 수초와 판매처 페이지 직접 확인 생물을 함께 표시합니다.",
+  "livestockNotice": "이번 확인본: 물고기 2877개 · 새우 186개 · 수초 603개 · 달팽이 33개. 공식 API 수초와 판매처 페이지 직접 확인 생물을 함께 표시합니다.",
   "publicationExclusions": [
     {
       "id": "retailer-29:001001000836:default",
@@ -8932,6 +8932,12 @@
       "id": "solaqua.kr",
       "name": "솔아쿠아",
       "officialUrl": "https://solaqua.kr/",
+      "sellerNameConfirmed": true
+    },
+    {
+      "id": "dreamaqua.kr",
+      "name": "드림아쿠아",
+      "officialUrl": "https://www.dreamaqua.kr/",
       "sellerNameConfirmed": true
     }
   ],
@@ -285958,6 +285964,116 @@
         "permissionEvidenceUrl": "https://chunjane.com/product/05-azoo-바이오-스펀지-단기-60/1476/",
         "permissionScope": "product-comparison",
         "permissionBasis": "explicit_user_instruction",
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-42:cafe24_rorio2_1_2699_P0000DZV000D:default",
+      "verified": true,
+      "sellerId": "aquagardenshop.com",
+      "sourceUrl": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+      "name": "아쿠아가든 구피 열대어 사료 미니비트 1000ml 아쿠아가든 구피 열대어 사료 미니비트 100ml",
+      "originalTitle": "아쿠아가든 구피 열대어 사료 미니비트 1000ml 아쿠아가든 구피 열대어 사료 미니비트 100ml",
+      "spec": "판매단위/옵션: 아쿠아가든 구피 열대어 사료 미니비트 100ml",
+      "variantId": null,
+      "type": "gear",
+      "subtype": "food",
+      "observedAt": "2026-10-29T22:53:46.863Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 4000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "shippingPolicy": {
+        "verified": true,
+        "sellerId": "aquagardenshop.com",
+        "evidenceUrl": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D",
+        "observedAt": "2026-10-29T22:53:46.863Z",
+        "amount": 3500,
+        "freeThreshold": 50000,
+        "chargeUnit": "order",
+        "conditionsComplete": false,
+        "packaging": null,
+        "regionalSurcharge": null,
+        "combinedShipping": null,
+        "benefitConditions": null,
+        "summary": "상품 페이지 기본 배송 3,500원 · 50,000원 이상 무료. 지역 추가금·포장비·합배송 조건 미확인.",
+        "sourceScope": "this_product_only"
+      },
+      "stockObservedAt": "2026-10-29T22:53:46.863Z",
+      "reviewEvidence": {
+        "url": "https://aquagardenshop.com/product/아쿠아가든-구피-열대어-사료-미니비트-1000ml/2699/?item_code=P0000DZV000D#prdReview",
+        "checkedAt": "2026-10-29T22:53:46.863Z",
+        "count": null,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "observedCategoryLabels": [],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "classificationBasis": "Reviewed visible primary product and selected food option",
+      "discoveryCategoryUrl": null,
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": null,
+        "usePermission": "unknown",
+        "permissionEvidenceUrl": null,
+        "permissionScope": null,
+        "permissionBasis": null,
+        "generalRepublicationLicenseVerified": false,
+        "checkedAt": null
+      }
+    },
+    {
+      "id": "retailer-54:cafe24_whwnsah_1_309:default",
+      "verified": true,
+      "sellerId": "dreamaqua.kr",
+      "sourceUrl": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/",
+      "name": "화이트 글로브 술라웨시 새우/슬라웨시 관상용 새우",
+      "originalTitle": "화이트 글로브 술라웨시 새우/슬라웨시 관상용 새우",
+      "spec": "판매단위/옵션: 미확인",
+      "variantId": null,
+      "type": "live",
+      "subtype": "shrimp",
+      "observedAt": "2026-10-29T23:01:36.344Z",
+      "registeredAt": null,
+      "price": {
+        "amount": 3000,
+        "currency": "KRW"
+      },
+      "shipping": null,
+      "cumulativeSales": null,
+      "periodSales": null,
+      "available": true,
+      "availabilityBasis": "Retailer JSON-LD and primary page sold-out state agree; not checkout-confirmed inventory",
+      "stockObservedAt": "2026-10-29T23:01:36.344Z",
+      "reviewEvidence": {
+        "url": "https://www.dreamaqua.kr/product/화이트-글로브-술라웨시-새우슬라웨시-관상용-새우/309/#prdReview",
+        "checkedAt": "2026-10-29T23:01:36.344Z",
+        "count": null,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "observedCategoryLabels": [],
+      "sourceKind": "direct_retailer_product_page",
+      "verificationMethod": "Single offer: primary heading, visible KRW sale price, absence of options, JSON-LD and page sold-out state agree",
+      "classificationBasis": "Reviewed public primary title and Sulawesi shrimp category; no crab mapping",
+      "discoveryCategoryUrl": null,
+      "quantityPerPack": null,
+      "pairsPerPack": null,
+      "photo": {
+        "url": null,
+        "usePermission": "unknown",
+        "permissionEvidenceUrl": null,
+        "permissionScope": null,
+        "permissionBasis": null,
         "generalRepublicationLicenseVerified": false,
         "checkedAt": null
       }

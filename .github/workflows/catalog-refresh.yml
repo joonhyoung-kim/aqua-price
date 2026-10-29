@@ -8,12 +8,10 @@ on:
         type: choice
         options: [all, live, gear, reconcile]
         default: all
-  # Seven scheduled slots per UTC day: live 4, gear 2, reconcile 1.
+  # Two shared-budget refreshes: UTC 00/12, Korea 09/21. Both product types.
   # GitHub may delay delivery; manual dispatches and retries are additional.
   schedule:
-    - cron: '17 */6 * * *'
-    - cron: '29 */12 * * *'
-    - cron: '43 2 * * *'
+    - cron: '0 0,12 * * *'
 
 permissions:
   contents: write
@@ -62,9 +60,7 @@ jobs:
         run: |
           mode=all
           case "$EVENT_SCHEDULE" in
-            '17 */6 * * *') mode=live ;;
-            '29 */12 * * *') mode=gear ;;
-            '43 2 * * *') mode=reconcile ;;
+            '0 0,12 * * *') mode=all ;;
           esac
           case "$REQUESTED_MODE" in
             all|live|gear|reconcile) mode="$REQUESTED_MODE" ;;

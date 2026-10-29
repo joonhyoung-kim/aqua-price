@@ -9,7 +9,7 @@ function enrichCategoryEvidence(items,states){
  }
  return items;
 }
-function applyUpdates(snapshot, states, mode='all'){
+function applyUpdates(snapshot, states, mode='all', {now=Date.now()}={}){
  const next=structuredClone(snapshot);if(next.photo_validation && !next.photo_validation.verified_item_ids)next.photo_validation.verified_item_ids=next.items.filter(p=>!p.source_kind&&p.photo?.verified_https_url).map(p=>p.id);const rows=new Map(next.items.map(p=>[p.id,p])),publishedGearByCollector=new Map(next.items.filter(p=>p.type==='gear'&&p.collector_key).map(p=>[p.collector_key,p]));let changes=0;
  for(const state of Object.values(states)){
    if(!['success','partial_failure','budget_limited'].includes(state.status)||state.cacheOnly)continue;
@@ -39,6 +39,14 @@ function applyUpdates(snapshot, states, mode='all'){
  next.items=[...rows.values()];next.summary={...next.summary,fish_or_shrimp_count:next.items.filter(p=>["fish","shrimp"].includes(p.subtype)).length,direct_retailer_products:next.items.filter(p=>p.source_kind==="direct_retailer_product_page").length,verified_https_photos:next.items.filter(p=>p.photo?.verified_https_url).length,offer_count:next.items.length,merchant_count:new Set(next.items.map(p=>p.seller_domain)).size,live_plant_count:next.items.filter(p=>p.subtype==='aquatic_plant').length,fish_count:next.items.filter(p=>p.subtype==='fish').length,shrimp_count:next.items.filter(p=>p.subtype==='shrimp').length,snail_count:next.items.filter(p=>p.subtype==='snail').length,gear_count:next.items.filter(p=>p.type==='gear').length};
  next.snapshot_notice_ko='상품정보 확인본입니다. 가격은 항목별 확인 시각 기준이며 실시간 최저가·전체 판매처 비교가 아닙니다. 갱신 실패 시 마지막 확인 정보를 보존합니다. 배송비와 현재 재고는 판매처에서 확인하세요.';
  enrichCategoryEvidence(next.items,states);
+ // The publication cutoff belongs to this projection, not the input snapshot.
+ // Keep every product's actual observation (including stock holds) unchanged.
+ // Do not advance an unchanged/cache-only/failed projection or mask future evidence.
+ if(changes){
+  if(!Number.isFinite(now)||snapshot.snapshot_at_utc&&Date.parse(snapshot.snapshot_at_utc)>now)throw Error('Invalid publication clock');
+  if(next.items.some(p=>[p.observed_at_utc||p.snapshot_at_utc,p.stock_observed_at_utc,p.availability_last_confirmed_at_utc].filter(Boolean).some(at=>!Number.isFinite(Date.parse(at))||Date.parse(at)>now)))throw Error('Observation exceeds publication cutoff');
+  next.snapshot_at_utc=new Date(now).toISOString();
+ }
  const catalog=buildCatalog(next);return {snapshot:next,catalog,changes};
 }
 module.exports={applyUpdates,enrichCategoryEvidence};

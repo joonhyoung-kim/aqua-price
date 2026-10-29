@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T18:47:34.958Z",
+  "generatedAt": "2026-10-29T22:13:50.936Z",
   "originalSourceCount": 45,
   "additionalSnapshotDomains": [
     "sonstory.co.kr",
@@ -14,9 +14,7 @@
     "workflowUrl": "https://github.com/joonhyoung-kim/aqua-price/actions/workflows/catalog-refresh.yml",
     "dispatchMode": "all",
     "scheduleUTC": {
-      "live": "17 */6 * * *",
-      "gear": "29 */12 * * *",
-      "reconcile": "43 2 * * *"
+      "all": "0 0,12 * * *"
     },
     "newProductDiscovery": true,
     "deletionEnabled": false,
@@ -77,7 +75,7 @@
       "schemaVersion": 1,
       "intervalsHours": {
         "live": 12,
-        "gear": 24,
+        "gear": 12,
         "reconcile": 24
       },
       "sources": {
@@ -239,7 +237,7 @@
         }
       }
     },
-    "revision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
+    "revision": "3084e67ddd4c215f441aaffb4557d71bd8aba27465a9b15a35b8b1ca5a847312",
     "collectorRevision": "0c56ba8d2fad6fb41f0d3f525f457e9986d0e537305792f5584d50efa8b94170",
     "schedule": {
       "schemaVersion": 1,
@@ -818,7 +816,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-02",
@@ -835,8 +833,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 78,
-        "staleRatio": 0.6554621848739496,
+        "staleOver7Days": 95,
+        "staleRatio": 0.7983193277310925,
         "stockTimeUnknown": 119,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -4787,7 +4785,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-03",
@@ -4865,8 +4863,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 198,
-        "staleRatio": 0.7096774193548387,
+        "staleOver7Days": 241,
+        "staleRatio": 0.8637992831541219,
         "stockTimeUnknown": 279,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -7356,7 +7354,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-05",
@@ -7373,8 +7371,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 15,
-        "staleRatio": 0.8333333333333334,
+        "staleOver7Days": 16,
+        "staleRatio": 0.8888888888888888,
         "stockTimeUnknown": 18,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -9435,7 +9433,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-06",
@@ -9452,8 +9450,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 34,
-        "staleRatio": 0.6938775510204082,
+        "staleOver7Days": 39,
+        "staleRatio": 0.7959183673469388,
         "stockTimeUnknown": 49,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -13939,7 +13937,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-07",
@@ -13956,8 +13954,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 101,
-        "staleRatio": 0.8015873015873016,
+        "staleOver7Days": 115,
+        "staleRatio": 0.9126984126984127,
         "stockTimeUnknown": 126,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -15638,7 +15636,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-08",
@@ -15655,8 +15653,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 121,
-        "staleRatio": 0.6685082872928176,
+        "staleOver7Days": 160,
+        "staleRatio": 0.8839779005524862,
         "stockTimeUnknown": 181,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -16690,7 +16688,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-09",
@@ -16707,8 +16705,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 188,
-        "staleRatio": 0.7704918032786885,
+        "staleOver7Days": 220,
+        "staleRatio": 0.9016393442622951,
         "stockTimeUnknown": 244,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -18113,7 +18111,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-10",
@@ -18130,8 +18128,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 118,
-        "staleRatio": 0.6982248520710059,
+        "staleOver7Days": 148,
+        "staleRatio": 0.8757396449704142,
         "stockTimeUnknown": 169,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -19128,7 +19126,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-11",
@@ -19145,8 +19143,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 154,
-        "staleRatio": 0.7857142857142857,
+        "staleOver7Days": 184,
+        "staleRatio": 0.9387755102040817,
         "stockTimeUnknown": 196,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -19934,7 +19932,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-12",
@@ -19951,8 +19949,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 64,
-        "staleRatio": 0.5423728813559322,
+        "staleOver7Days": 108,
+        "staleRatio": 0.9152542372881356,
         "stockTimeUnknown": 118,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -21405,7 +21403,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-13",
@@ -21422,8 +21420,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 118,
-        "staleRatio": 0.855072463768116,
+        "staleOver7Days": 137,
+        "staleRatio": 0.9927536231884058,
         "stockTimeUnknown": 138,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -22142,7 +22140,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-14",
@@ -22554,7 +22552,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-15",
@@ -22571,8 +22569,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 78,
-        "staleRatio": 0.7358490566037735,
+        "staleOver7Days": 87,
+        "staleRatio": 0.8207547169811321,
         "stockTimeUnknown": 106,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -23786,7 +23784,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-16",
@@ -23803,8 +23801,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 136,
-        "staleRatio": 0.7083333333333334,
+        "staleOver7Days": 160,
+        "staleRatio": 0.8333333333333334,
         "stockTimeUnknown": 192,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -24688,7 +24686,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-17",
@@ -24705,8 +24703,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 160,
-        "staleRatio": 0.6926406926406926,
+        "staleOver7Days": 177,
+        "staleRatio": 0.7662337662337663,
         "stockTimeUnknown": 231,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -25682,7 +25680,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-18",
@@ -25699,8 +25697,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 121,
-        "staleRatio": 0.6612021857923497,
+        "staleOver7Days": 138,
+        "staleRatio": 0.7540983606557377,
         "stockTimeUnknown": 183,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -27422,7 +27420,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-19",
@@ -27769,7 +27767,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-21",
@@ -27861,8 +27859,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 60,
-        "staleRatio": 0.7692307692307693,
+        "staleOver7Days": 64,
+        "staleRatio": 0.8205128205128205,
         "stockTimeUnknown": 78,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -31334,7 +31332,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-23",
@@ -31351,8 +31349,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 134,
-        "staleRatio": 0.7165775401069518,
+        "staleOver7Days": 143,
+        "staleRatio": 0.7647058823529411,
         "stockTimeUnknown": 187,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -32629,7 +32627,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-24",
@@ -32646,8 +32644,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 172,
-        "staleRatio": 0.7288135593220338,
+        "staleOver7Days": 186,
+        "staleRatio": 0.788135593220339,
         "stockTimeUnknown": 236,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -33488,7 +33486,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-25",
@@ -33505,8 +33503,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 176,
-        "staleRatio": 0.701195219123506,
+        "staleOver7Days": 189,
+        "staleRatio": 0.7529880478087649,
         "stockTimeUnknown": 250,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -34961,7 +34959,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-27",
@@ -39390,7 +39388,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-30",
@@ -39529,8 +39527,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 33,
-        "staleRatio": 0.4230769230769231,
+        "staleOver7Days": 42,
+        "staleRatio": 0.5384615384615384,
         "stockTimeUnknown": 78,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -43315,7 +43313,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-33",
@@ -43332,8 +43330,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 76,
-        "staleRatio": 0.5170068027210885,
+        "staleOver7Days": 105,
+        "staleRatio": 0.7142857142857143,
         "stockTimeUnknown": 147,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -43595,7 +43593,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-34",
@@ -43612,8 +43610,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 14,
-        "staleRatio": 0.3783783783783784,
+        "staleOver7Days": 23,
+        "staleRatio": 0.6216216216216216,
         "stockTimeUnknown": 37,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -50084,7 +50082,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-35",
@@ -50163,8 +50161,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 108,
-        "staleRatio": 0.7058823529411765,
+        "staleOver7Days": 123,
+        "staleRatio": 0.803921568627451,
         "stockTimeUnknown": 153,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -51847,7 +51845,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-37",
@@ -51864,8 +51862,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 138,
-        "staleRatio": 0.6934673366834171,
+        "staleOver7Days": 158,
+        "staleRatio": 0.7939698492462312,
         "stockTimeUnknown": 199,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -52849,7 +52847,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-38",
@@ -52866,8 +52864,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 157,
-        "staleRatio": 0.6767241379310345,
+        "staleOver7Days": 176,
+        "staleRatio": 0.7586206896551724,
         "stockTimeUnknown": 232,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -54946,7 +54944,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-39",
@@ -54963,8 +54961,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 19,
-        "staleRatio": 0.5135135135135135,
+        "staleOver7Days": 24,
+        "staleRatio": 0.6486486486486487,
         "stockTimeUnknown": 37,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -58510,7 +58508,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-40",
@@ -58527,8 +58525,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 14,
-        "staleRatio": 0.42424242424242425,
+        "staleOver7Days": 22,
+        "staleRatio": 0.6666666666666666,
         "stockTimeUnknown": 33,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -63045,7 +63043,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-41",
@@ -63123,8 +63121,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 36,
-        "staleRatio": 0.5294117647058824,
+        "staleOver7Days": 49,
+        "staleRatio": 0.7205882352941176,
         "stockTimeUnknown": 68,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -65093,7 +65091,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-43",
@@ -65339,7 +65337,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-46",
@@ -65417,8 +65415,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 105,
-        "staleRatio": 0.4605263157894737,
+        "staleOver7Days": 151,
+        "staleRatio": 0.6622807017543859,
         "stockTimeUnknown": 228,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -66726,7 +66724,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-48",
@@ -66743,8 +66741,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 210,
-        "staleRatio": 0.7692307692307693,
+        "staleOver7Days": 235,
+        "staleRatio": 0.8608058608058609,
         "stockTimeUnknown": 273,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -67511,7 +67509,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-49",
@@ -67528,8 +67526,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 193,
-        "staleRatio": 0.7148148148148148,
+        "staleOver7Days": 227,
+        "staleRatio": 0.8407407407407408,
         "stockTimeUnknown": 269,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -74382,7 +74380,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-50",
@@ -74399,8 +74397,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 61,
-        "staleRatio": 0.6777777777777778,
+        "staleOver7Days": 80,
+        "staleRatio": 0.8888888888888888,
         "stockTimeUnknown": 90,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -77888,7 +77886,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-51",
@@ -77905,8 +77903,8 @@
         "blockedUntil": null
       },
       "quality": {
-        "staleOver7Days": 72,
-        "staleRatio": 0.5806451612903226,
+        "staleOver7Days": 99,
+        "staleRatio": 0.7983870967741935,
         "stockTimeUnknown": 124,
         "priceStockMismatchRatio": null,
         "priceStockMismatchBasis": "not_measured",
@@ -79661,7 +79659,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     },
     {
       "id": "retailer-52",
@@ -79795,7 +79793,7 @@
       },
       "fullCatalogCoverage": false,
       "autoRefreshVerified": false,
-      "schedule": "생물 12시간 / 용품 24시간 / 목록 대조 24시간 (예약 슬롯 기준)"
+      "schedule": "생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)"
     }
   ]
 }

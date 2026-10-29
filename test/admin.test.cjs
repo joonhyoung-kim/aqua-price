@@ -50,7 +50,7 @@ test('served admin snapshot uses current configured cadence without rewriting ru
  const served=JSON.parse(fs.readFileSync('dist/admin/status.json','utf8')),config=require('../sources/automation-status.json');
  assert.deepEqual(served.automation.scheduleUTC,config.scheduleUTC);
  const {scheduleText}=require('../scripts/build-admin-status.cjs');
- assert.match(scheduleText(served.automation),/생물 6시간마다 \/ 용품 12시간마다/);
+ assert.match(scheduleText(served.automation),/09:00 \/ 21:00/);
 });
 
 

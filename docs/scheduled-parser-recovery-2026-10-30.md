@@ -24,4 +24,8 @@ No collector timing, cron (UTC00/12), request limits/delays, 18-minute shared bu
 
 ## Validation
 
-Windows Node 24.21.0 full npm test: main 480 total / 472 pass / 8 platform skips / 0 failures; preview 473 total / 466 pass / 7 platform skips / 0 failures. Counts are per-branch executions, not unique tests. Both npm run build:ui succeeded without generated asset changes. Full captured Fisherman HTML and minimized fixture both parse successfully. No live collection was dispatched.
+Windows Node 24.21.0 full npm test: main 481 total / 473 pass / 8 platform skips / 0 failures; preview 474 total / 467 pass / 7 platform skips / 0 failures. Counts are per-branch executions, not unique tests. Both npm run build:ui succeeded without generated asset changes. Full captured Fisherman HTML and minimized fixture both parse successfully. No live collection was dispatched.
+
+## Existing option identity follow-up
+
+Live catalog comparison found that Fisherman 2989 already uses the inline ProductGroup parent key plus variant SKU. Newly supported SKU-valued standalone responses now keep that same parent/variant identity, instead of creating a standalone :default key. This applies only to the newly accepted, independently verified SKU-valued selector path; existing label-valued Garden keys remain unchanged. A mocked collectSource integration test preserves all three existing 1/10/50-fish siblings, refreshes only the selected 1-fish option, and asserts no deletion, duplicate identity, or sibling timestamp change. GitHub read confirms no new collection ran between the parser and identity follow-up.

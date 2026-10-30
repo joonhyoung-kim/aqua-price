@@ -4,7 +4,14 @@ var ux5PanelEditing=false,ux5PanelState=null;
 let libraryStorage;try{libraryStorage=typeof localStorage==='undefined'?null:localStorage;}catch{libraryStorage=null;}
 const library=AquaCatalog.createLocalLibrary(libraryStorage);
 const originalRender=render;
-function displayName(p){return AquaCatalog.purchaseFacts(p).baseName;}
+function displayName(p){return p.type==='live'&&!p.variantId?p.name:AquaCatalog.purchaseFacts(p).baseName;}
+function livestockCardSpec(p){
+  const spec=AquaCatalog.offerSpec(p);
+  // Real selected options remain visible; inferred standalone counts are redundant.
+  if(spec==='옵션·수량 미확인')return '';
+  if(!p.variantId&&/^(?:(?:수량|판매단위|옵션)\s*[:：]?\s*)?\d+(?:\.\d+)?\s*(?:마리|쌍|개|촉|포트|컵)(?:\s*묶음)?$/.test(spec.trim()))return '';
+  return spec;
+}
 function shippingDetail(p){
   if(p.shippingPolicy?.summary)return p.shippingPolicy.summary;
   if(p.sellerId==='solaqua.kr'&&/\/200\//.test(p.sourceUrl))return '배송 안내 상충: 상품 영역 5,000원·5만원 이상 무료 / 하단 2,500~6,000원. 2026-10-26 공개 페이지 확인. 포장비 등 최종 조건 확인 전 합계 보류.';
@@ -20,6 +27,10 @@ offerHTML=function(p){
   const f=AquaCatalog.purchaseFacts(p),u=AquaCatalog.unitPrice(p),status=AquaCatalog.comparisonStatus(p),age=AquaCatalog.observationAge(p);
   const price=status.comparable?(p.price.amount===0?status.label:money(p.price.amount)+' 원'):status.label;
   const saved=library.read().favorites.some(x=>x.id===p.id);
+  if(p.type==='live'){
+    const spec=livestockCardSpec(p);
+    return '<div class="offer live-offer" data-offer-id="'+escapeHtml(p.id)+'">'+(spec?'<div class="offer-spec">'+escapeHtml(spec)+'</div>':'')+'<div class="price">'+escapeHtml(price)+'</div>'+(u?'<div class="unit-price">'+u.unit+'당 '+money(u.amount)+'원</div>':'')+estimateHTML(p)+'<div class="seller-label">'+escapeHtml(AquaCatalog.sellerDisplay(catalogQuery.seller(p.sellerId)))+'</div><div class="offer-actions"><a class="source" href="'+escapeHtml(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">판매처 보기 ↗</a><button type="button" data-favorite="'+escapeHtml(p.id)+'" aria-pressed="'+saved+'">'+(saved?'♥ 관심':'♡ 관심')+'</button></div></div>';
+  }
   return '<div class="offer" data-offer-id="'+escapeHtml(p.id)+'"><div class="offer-spec">'+escapeHtml(AquaCatalog.offerSpec(p))+'</div><div class="price">'+escapeHtml(price)+'</div>'+(u?'<div class="unit-price">'+(f.volume?'내용량 '+money(f.volume.amount)+(f.volume.dimension==='volume'?'mL':'g'):'총 '+u.count+u.unit)+' · '+u.unit+'당 '+money(u.amount)+'원</div>':'')+estimateHTML(p)+'<div class="shipping">'+(p.shipping===null?'배송비 미확인':('배송비 '+money(p.shipping.amount)+'원 표시'))+'</div><div class="observed'+(age.stale?' stale':'')+'">'+escapeHtml('가격 '+AquaCatalog.relativeObservation(p))+'</div><div class="stock-unknown">'+(p.available===true?'재고: 마지막 상품 확인 당시 판매 가능':'재고 미확인')+'</div><div class="seller-label">'+escapeHtml(AquaCatalog.sellerDisplay(catalogQuery.seller(p.sellerId)))+'</div><div class="offer-actions"><a class="source" href="'+escapeHtml(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">판매처 보기 ↗</a><button type="button" data-favorite="'+escapeHtml(p.id)+'" aria-pressed="'+saved+'">'+(saved?'♥ 관심':'♡ 관심')+'</button></div><details class="offer-details"><summary>상품 상세·확인 정보</summary><p>원문: '+escapeHtml(p.originalTitle||p.name)+'</p><p>'+escapeHtml(f.basis||'구매 수량 근거 없음')+(f.reason?' · '+escapeHtml(f.reason):'')+'</p><p>'+escapeHtml(shippingDetail(p))+'</p><time datetime="'+escapeHtml(p.observedAt)+'">가격·상품 확인 '+escapeHtml(formatTime(p.observedAt))+'</time><p>가격 확인과 현재 재고는 다릅니다. 주문 전에 판매처의 옵션과 재고를 확인하세요.</p></details></div>';
 };
 function restoreFilters(next){filters=next;draftQuery=filters.query;$('#query').value=draftQuery;expandedBrowse=null;expandedGear=null;render();}

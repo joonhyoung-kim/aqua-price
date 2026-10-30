@@ -13,6 +13,17 @@ const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 const uxFixture=require('./fixtures/ux2-catalog.json');
+test('all livestock cards hide auxiliary evidence and duplicate quantity while preserving prices and options',async()=>{
+ for(const subtype of ['fish','shrimp','aquatic_plant','snail']){
+  const app=await setup(actual,false,'?type=live&subtype='+subtype,true,true),html=app.nodes.grid.innerHTML;
+  assert.match(html,/live-offer/);assert.match(html,/seller-label/);assert.match(html,/class="source"/);
+  assert.doesNotMatch(html,/class="(?:shipping|observed|stock-unknown|offer-details)"|상품 상세·확인 정보|총 \d+마리|옵션·수량 미확인/);
+ }
+ const fish=await setup(uxFixture,false,'?type=live&query=체리바브',true,true);
+ assert.match(fish.nodes.grid.innerHTML,/마리당/);assert.match(fish.nodes.grid.innerHTML,/data-favorite/);
+ const gear=await setup(actual,false,'?type=gear',true,true);
+ assert.match(gear.nodes.grid.innerHTML,/class="shipping"/);assert.match(gear.nodes.grid.innerHTML,/상품 상세·확인 정보/);assert.doesNotMatch(gear.nodes.grid.innerHTML,/live-offer/);
+});
 test('enhanced UI keeps drafts and IME separate, restores saved conditions and never exposes missing favorites',async()=>{
  let saved;const storage={getItem:()=>saved,setItem:(_k,v)=>{saved=v;}};
  const app=await setup(uxFixture,false,'?type=live&query=네온테트라',true,true,storage),n=app.nodes;

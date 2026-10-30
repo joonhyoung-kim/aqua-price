@@ -13,6 +13,23 @@ const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 const uxFixture=require('./fixtures/ux2-catalog.json');
+test('livestock sex options retain identity in names without a separate sex row',async()=>{
+ const rows=actual.products.filter(p=>p.type==='live'&&p.name==='화이트 구피'&&p.variantId);
+ assert.equal(rows.length,2);
+ const app=await setup({...actual,products:rows},false,'?query=화이트+구피',true,true);
+ assert.equal(app.names().length,2);assert(app.names().some(n=>n.includes('암컷')));assert(app.names().some(n=>n.includes('수컷')));
+ assert.doesNotMatch(app.nodes.grid.innerHTML,/성별:|option-group|offer-spec/);
+ for(const p of rows){assert(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));assert(app.nodes.grid.innerHTML.includes(escaped(p.id)));}
+ app.pop('?query=화이트+구피&groupOptions=true');assert.equal(app.names().length,2);
+});
+test('livestock pagination loses no options and gear grouping remains unchanged',async()=>{
+ const app=await setup(actual,false,'?type=live&query=구피',true,true);
+ const ids=()=>[...app.nodes.grid.innerHTML.matchAll(/data-offer-id="([^"]+)"/g)].map(m=>decoded(m[1]));
+ assert.equal(ids().length,24);const first=ids();app.nodes.moreResults.click();assert.equal(ids().length,48);assert.deepEqual(ids().slice(0,24),first);assert.equal(new Set(ids()).size,48);
+ const gearRows=AquaCatalog.groupOffers(actual.products.filter(p=>p.type==='gear')).find(g=>g.offers.length>1).offers;
+ const gearApp=await setup({...actual,products:gearRows},false,'?type=gear',true,true);
+ assert.equal(gearApp.names().length,1);assert.match(gearApp.nodes.grid.innerHTML,/같은 상품의 다른 옵션/);
+});
 test('all livestock cards hide auxiliary evidence and duplicate quantity while preserving prices and options',async()=>{
  for(const subtype of ['fish','shrimp','aquatic_plant','snail']){
   const app=await setup(actual,false,'?type=live&subtype='+subtype,true,true),html=app.nodes.grid.innerHTML;
@@ -537,10 +554,10 @@ test('unknown gear stays visible and selected zero-result categories remain navi
  empty.chooseGear('all','all');assert.deepEqual(empty.names(),AquaCatalog.selectProducts(withoutHeaters,AquaCatalog.filtersFromSearch(empty.search())).rows.slice(0,24).map(p=>p.name));
 });
 
-test('default grouped cards retain seven exact option prices, labels and source links',async()=>{
+test('livestock options remain seven independent searchable cards with exact prices and links',async()=>{
  const rows=actual.products.filter(p=>p.sellerId==='wpet.co.kr'&&p.name==='골든 스트라이프 비파');assert.equal(rows.length,7);
  const app=await setup({...actual,products:rows},false,'?query=골든+스트라이프+비파',true);
- assert.equal(app.names().length,1);assert.match(app.nodes.grid.innerHTML,/같은 상품의 다른 옵션 6개/);
+ assert.equal(app.names().length,7);assert.doesNotMatch(app.nodes.grid.innerHTML,/같은 상품의 다른 옵션/);
  for(const p of rows){assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.spec.replace(/^판매단위\/옵션:\s*/,''))));assert.ok(app.nodes.grid.innerHTML.includes(p.price.amount.toLocaleString('ko-KR')+' 원'));assert.ok(app.nodes.grid.innerHTML.includes(escaped(p.sourceUrl)));}
  assert.equal((app.nodes.grid.innerHTML.match(/data-offer-id=/g)||[]).length,7);
  app.nodes.groupOptions.checked=false;app.nodes.groupOptions.listeners.change();assert.equal(app.names().length,7);

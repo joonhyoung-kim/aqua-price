@@ -188,6 +188,14 @@ if($('#ux5Dialog')){
  const parking=$('#ux5Parking'),dialog=$('#ux5Dialog');
  const quick=document.createElement('div');quick.id='quickConditions';quick.className='quick-conditions';$('.filter-selects').before(quick);
  quick.append($('#livestockFilters'));
+ const directCategories=document.createElement('details');directCategories.id='quickCategories';directCategories.hidden=true;directCategories.setAttribute('aria-label','생물 분류 선택');
+ const categorySummary=document.createElement('summary');categorySummary.id='quickCategorySummary';directCategories.append(categorySummary);quick.after(directCategories);
+ let directCategoryContext=null;
+ document.querySelectorAll('[data-subtype]').forEach(button=>button.addEventListener('click',()=>{if(!directCategories.hidden)directCategories.open=true;}));
+ $('#groupTree').addEventListener('click',event=>{if(!directCategories.hidden&&event.target.closest('[data-live-group]')){directCategories.open=false;categorySummary.focus({preventScroll:true});}});
+
+ const browseDetails=$('#fishFilters').closest('.browse-details');
+
  const roles=document.createElement('div');roles.id='quickRoles';roles.className='pills';roles.setAttribute('role','group');roles.setAttribute('aria-label','용품 구성');
  roles.innerHTML=Object.entries({all:'모든 구성',body:'본체만',part:'부품',consumable:'소모품',set:'세트'}).map(([key,label])=>'<button type="button" data-quick-role="'+key+'">'+label+'</button>').join('');quick.append(roles);
  roles.addEventListener('click',e=>{const b=e.target.closest('[data-quick-role]');if(b){filters.productRole=b.dataset.quickRole;render();}});
@@ -229,6 +237,17 @@ if($('#ux5Dialog')){
   previousWorkspace();
   if(ux5PanelState?.kind==='filters')for(const [id,value]of Object.entries(ux5PanelState.fields)){const el=$('#'+id);if(el&&!el.closest('label')?.hidden){el.value=value.value;el.checked=value.checked;}}
   if(filters.query&&!$('#scopeStatus').textContent.startsWith('저장 조건'))$('#scopeStatus').textContent='';
+  const direct=filters.type==='live'&&['fish','shrimp'].includes(filters.subtype);
+  const target=direct?directCategories:browseDetails;
+  if($('#fishFilters').parentElement!==target){if(direct)target.append($('#fishFilters'));else target.prepend($('#fishFilters'));}
+  if(direct){
+   const leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup,browse=filters.browseGroup||'all',key=filters.subtype+':'+leaf+':'+browse;
+   if(key!==directCategoryContext)directCategories.open=leaf==='all'&&browse==='all';
+   directCategoryContext=key;
+   const label=leaf!=='all'?AquaCatalog.livestockGroups[filters.subtype][leaf]:AquaCatalog.livestockNavigation[filters.subtype]?.find(group=>group.key===browse)?.label||'전체';
+   categorySummary.textContent=subtypeNames[filters.subtype]+' 분류 · '+label+' (선택·변경)';
+  }else directCategoryContext=null;
+  directCategories.hidden=!direct;browseDetails.hidden=direct;
   $('#quickRoles').hidden=filters.type!=='gear';$('#livestockFilters').hidden=filters.type!=='live';
   roles.querySelectorAll('button').forEach(b=>{b.classList.toggle('active',b.dataset.quickRole===filters.productRole);b.setAttribute('aria-pressed',String(b.dataset.quickRole===filters.productRole));});
   const count=[...$('#activeFilters').querySelectorAll('[data-clear-filter]')].filter(b=>!['query','sort','compareAcross'].includes(b.dataset.clearFilter)).length;

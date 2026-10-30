@@ -55,6 +55,15 @@ function renderGroupNavigation(view=catalogQuery.view(filters)) {
   const selectedBrowse=navigation.find(group=>group.key===filters.browseGroup);
   $('#groupPath').textContent='생물 › '+subtypeNames[filters.subtype]+(leaf&&leaf!=='all'?(parent?' › '+parent.label:'')+' › '+groups[leaf]:selectedBrowse?' › '+selectedBrowse.label+' › 그룹 전체':' › 전체');
   const choice=(key,label,count,browse='all')=>`<button type="button" class="group-choice" data-live-group="${key}" data-browse-filter="${browse}" aria-pressed="${leaf===key&&(filters.browseGroup||'all')===browse}"><span>${escapeHtml(label)}</span><span class="group-count">${count}개</span></button>`;
+  // Fish and shrimp expose their actual categories immediately, without another panel.
+  if(['fish','shrimp'].includes(filters.subtype)){
+    const keys=Object.keys(groups).filter(key=>key!=='all'&&(counts[key]>0||key===leaf));
+    const treeHTML=choice('all',subtypeNames[filters.subtype]+' 전체',counts.all)+
+      (selectedBrowse&&leaf==='all'?choice('all',selectedBrowse.label+' 전체',selectedBrowse.children.reduce((n,key)=>n+(counts[key]||0),0),selectedBrowse.key):'')+
+      keys.map(key=>choice(key,groups[key],counts[key]||0)).join('');
+    if(treeHTML!==lastTreeHTML){$('#groupTree').innerHTML=treeHTML;lastTreeHTML=treeHTML;}
+    return;
+  }
   const treeHTML=choice('all',subtypeNames[filters.subtype]+' 전체',counts.all)+navigation.map(group=>{
     const keys=group.children.filter(key=>counts[key]>0||key===leaf),count=group.children.reduce((sum,key)=>sum+(counts[key]||0),0);
     if(!keys.length&&filters.browseGroup!==group.key)return '';

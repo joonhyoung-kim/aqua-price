@@ -161,6 +161,20 @@ main{padding:18px 24px 48px}
 #grid>.live-card .offer-actions{display:contents;margin:0}
 #grid>.live-card .offer-actions>button[data-favorite]{z-index:3}
 #grid>.live-card h3{cursor:inherit}
+/* Compact product browsing without shrinking touch targets or cropping photos. */
+@media(min-width:1101px){#grid{grid-template-columns:repeat(6,minmax(0,1fr));column-gap:14px}}
+@media(min-width:1400px){#grid{grid-template-columns:repeat(7,minmax(0,1fr))}}
+#grid>.card>.art{aspect-ratio:4/3}
+#grid>.card h3{font-size:15px;line-height:1.4}
+#grid>.card .price{font-size:22px}
+#grid>.live-card{margin-bottom:12px}
+#grid>.live-card h3{margin-top:4px;margin-bottom:1px}
+#grid>.live-card .body{padding-top:4px}
+@media(max-width:600px){
+ #grid{column-gap:10px}
+ #grid>.card h3{font-size:14px;line-height:1.4}
+ #grid>.card .price{font-size:20px}
+}
 /* Long evidence and form labels must remain readable in narrow expanded cards. */
 #grid .offer-details{overflow-wrap:anywhere}
 #grid .offer-details fieldset{min-width:0;max-width:100%;margin-inline:0;padding:8px}

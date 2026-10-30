@@ -201,3 +201,21 @@ test('group starting price verifies only group basis while preserving four concr
 });
 
 test('identity review holds exclude only those product keys and retain other verified refresh URLs',()=>{const {refreshScope}=require('../scripts/collector/refresh-scope.cjs');const a={url:'https://example.invalid/product/a/12/',type:'live',subtype:'fish'},b={url:'https://example.invalid/product/b/13/',type:'live',subtype:'fish'};const r=refreshScope({id:'test',products:[a,b],reviewHoldProducts:[{url:a.url,reason:'identity_not_corroborated'}]},{},'all',false);assert.deepEqual(r.products,[b]);assert.equal(r.summary.reviewHeldProductCount,1);});
+
+test('response byte ceiling accepts exact limit and never overwrites last valid cache on overflow',async()=>{
+ const {request}=require('../scripts/collector/engine.cjs'),url=ctx.url,limit=2000000;
+ const limits={...source,maxBytes:limit,cacheTtlMs:0};
+ const old={text:'last verified response',fetchedAt:'2026-10-01T00:00:00Z'};
+ for(const advertised of [false,true]){
+  const prior={cache:{[url]:{...old}}};let cancelled=false;
+  const response={status:200,ok:true,headers:new Headers(advertised?{'content-length':String(limit+1)}:{}),body:{getReader(){let n=0;return{async read(){return n++===0?{done:false,value:Buffer.alloc(limit+1,97)}:{done:true};},async cancel(){cancelled=true;}};}}};
+  const runtime={now:()=>NOW,fetch:async()=>response,sleep:async()=>{},requests:0,lastRequest:null};
+  await assert.rejects(request(url,limits,runtime,prior),/response_too_large/);
+  assert.deepEqual(prior.cache[url],old);assert.equal(runtime.requests,1);
+  if(!advertised)assert.equal(cancelled,true);
+ }
+ const prior={cache:{[url]:{...old}}};
+ const runtime={now:()=>NOW,fetch:async()=>new Response(Buffer.alloc(limit,97)),sleep:async()=>{},requests:0,lastRequest:null};
+ const result=await request(url,limits,runtime,prior);
+ assert.equal(Buffer.byteLength(result.text),limit);assert.equal(prior.cache[url].fetchedAt,new Date(NOW).toISOString());
+});

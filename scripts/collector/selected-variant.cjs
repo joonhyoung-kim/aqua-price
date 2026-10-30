@@ -25,7 +25,7 @@ function selectedVariant(html, product, context, visibleText) {
   if (!headings && !(nameRows.length === 1 && !/hidden|displaynone|display\s*:\s*none/i.test(nameRows[0][1]) && visibleText(nameRows[0][3]) === name && metaNames.length === 1 && attr(metaNames[0][0], 'content') === name)) return fail();
   const grids = [...visible.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select\s*>/gi)].filter(m => attr(m[1], 'product_type') === 'product_option');
   if (grids.length !== 1 || attr(grids[0][1], 'option_product_no') !== id || attr(grids[0][1], 'option_type') !== 'T' || attr(grids[0][1], 'option_title') !== prop.name || /\bhidden\b|display\s*:\s*none/i.test(grids[0][1])) return fail();
-  const options = [...grids[0][2].matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option\s*>/gi)].filter(m => attr(m[1], 'value') === prop.value && visibleText(m[2]) === value);
+  const options = [...grids[0][2].matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option\s*>/gi)].filter(m => (attr(m[1], 'value') === prop.value || attr(m[1], 'value') === code));
   if (options.length !== 1 || /\bdisabled\b|\bhidden\b/i.test(options[0][1])) return fail();
   const bases = [...visible.matchAll(/<(span|strong)\b([^>]*\bid=["']span_product_price_text["'][^>]*)>([\s\S]*?)<\/\1>/gi)];
   const base = bases.length === 1 && !/\bhidden\b|display\s*:\s*none/i.test(bases[0][2]) && visibleText(bases[0][3]).match(/^(\d+(?:,\d{3})*)\s*원$/);
@@ -39,6 +39,13 @@ function selectedVariant(html, product, context, visibleText) {
   if (!row || !/^-?\d+(?:\.0+)?$/.test(String(row.stock_price)) || !Number.isSafeInteger(baseAmount) || !Number.isSafeInteger(amount) || !Number.isSafeInteger(adjustment) || !Number.isSafeInteger(row.option_price) || row.option_price !== amount || baseAmount + adjustment !== amount) return fail();
   if (row.option_name !== prop.name || row.option_value !== prop.value || JSON.stringify(row.option_name_original) !== JSON.stringify([prop.name]) || JSON.stringify(row.option_value_orginal) !== JSON.stringify([prop.value])) return fail();
   if (Object.values(rows).filter(r => r && typeof r === 'object' && r.option_name === prop.name && r.option_value === prop.value).length !== 1 || row.is_display !== 'T' || row.is_selling !== 'T' || row.is_auto_soldout === 'T') return fail();
+  // Some public selectors use the exact item code as their value. In that case
+  // corroborate the visible label and signed KRW adjustment as well as the row.
+  const label = visibleText(options[0][2]);
+  const delta = label.match(/^(.*?)\s+\(([+-])(\d+(?:,\d{3})*)원\)$/);
+  const labelMatches = label === value && adjustment === 0 ||
+    delta && delta[1] === value && Number(delta[3].replaceAll(',', '')) * (delta[2] === '-' ? -1 : 1) === adjustment;
+  if (attr(options[0][1], 'value') === code ? !labelMatches : label !== value) return fail();
   return { parentName: name, option: prop.value, sku: product.sku };
 }
 module.exports = { selectedVariant };

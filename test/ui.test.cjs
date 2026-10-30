@@ -13,6 +13,17 @@ const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'
 const decoded = value => value.replace(/&(amp|lt|gt|quot|#39);/g,(_,key)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[key]));
 const source = fs.readFileSync(path.join(__dirname, '../dist/app.js'), 'utf8');
 const uxFixture=require('./fixtures/ux2-catalog.json');
+test('livestock card uses one sibling external link with exact option URL and independent favorite',async()=>{
+ const rows=actual.products.filter(p=>p.type==='live'&&p.name==='화이트 구피'&&p.variantId);
+ const app=await setup({...actual,products:rows},false,'?query=화이트+구피',true,true),html=app.nodes.grid.innerHTML;
+ assert.equal((html.match(/class="card-product-link"/g)||[]).length,rows.length);
+ for(const p of rows)assert(html.includes('class="card-product-link" href="'+escaped(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer"'));
+ assert.doesNotMatch(html,/<a class="card-product-link"[^>]*>[^<]*<(?:button|a)/);
+ assert.equal((html.match(/data-favorite=/g)||[]).length,rows.length);
+ const css=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
+ assert.match(css,/#grid>\.live-card \.unit-price,#grid>\.live-card \.offer-actions>\.source\{display:none\}/);
+ assert.match(css,/card-product-link:focus-visible/);
+});
 test('livestock sex options retain identity in names without a separate sex row',async()=>{
  const rows=actual.products.filter(p=>p.type==='live'&&p.name==='화이트 구피'&&p.variantId);
  assert.equal(rows.length,2);

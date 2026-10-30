@@ -158,13 +158,11 @@ test('an explicitly selected empty other group remains selectable',async()=>{
  assert.deepEqual(empty.names(),[]);
 });
 
-test('accordion expands one collection, preserves results and exposes accessible relationships',async()=>{
+test('fish categories are immediately exposed without accordion expansion',async()=>{
  const app=await setup(actual,false,'?subtype=fish');const before=app.names();
- assert.equal((app.nodes.groupTree.innerHTML.match(/aria-expanded="true"/g)||[]).length,0);
- app.open('popular');assert.match(app.nodes.groupTree.innerHTML,/data-browse-group="popular" aria-expanded="true" aria-controls="group-panel-popular"/);
- app.open('bottom');assert.equal((app.nodes.groupTree.innerHTML.match(/aria-expanded="true"/g)||[]).length,1);
- assert.match(app.nodes.groupTree.innerHTML,/id="group-panel-bottom" role="group" aria-labelledby="group-toggle-bottom">/);
- assert.deepEqual(app.names(),before);app.open('bottom');assert.equal((app.nodes.groupTree.innerHTML.match(/aria-expanded="true"/g)||[]).length,0);
+ assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-browse-group=|aria-expanded=/);
+ for(const key of ['guppy','cory','tetra'])assert.match(app.nodes.groupTree.innerHTML,new RegExp('data-live-group="'+key+'"'));
+ app.choose('cory');assert.notDeepEqual(app.names(),before);assert.match(app.nodes.groupTree.innerHTML,/data-live-group="cory"[^>]*aria-pressed="true"/);
 });
 test('collection all and leaf selections preserve counts, paths, URL reload and overall reset',async()=>{
  const app=await setup(actual,false,'?subtype=fish&sort=high&days=7');app.open('bottom');app.choose('all','bottom');
@@ -179,7 +177,7 @@ test('collection all and leaf selections preserve counts, paths, URL reload and 
 });
 test('hierarchy keeps a selected empty collection and leaf available without showing unrelated empties',async()=>{
  const app=await setup(actual,false,'?subtype=shrimp&browseGroup=color&days=7&includeUnknown=false');
- assert.match(app.nodes.groupTree.innerHTML,/data-browse-filter="color" aria-pressed="true"/);assert.match(app.nodes.groupTree.innerHTML,/색상으로 찾기<\/span><span class="group-count">0개/);
+ assert.match(app.nodes.groupTree.innerHTML,/data-browse-filter="color" aria-pressed="true"/);assert.match(app.nodes.groupTree.innerHTML,/색상으로 찾기 전체<\/span><span class="group-count">0개/);
  assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_bee"/);assert.deepEqual(app.names(),[]);
  app.choose('shrimp_blue');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_blue"[^>]*aria-pressed="true"/);assert.match(app.nodes.groupTree.innerHTML,/블루벨벳·블루드림<\/span><span class="group-count">0개/);
 });
@@ -542,4 +540,22 @@ test('draft hint, price errors, recovery and back navigation preserve submitted 
  app.nodes.minPrice.value='900';app.nodes.maxPrice.value='100';app.nodes.shoppingFilters.listeners.submit({preventDefault(){}});assert.match(app.nodes.filterError.textContent,/가격 범위/);assert.equal(new URLSearchParams(app.search()).get('minPrice'),null);
  app.nodes.query.value='존재하지않는검색어123';app.nodes.search.listeners.submit({preventDefault(){}});assert.equal(app.nodes.emptyActions.hidden,false);app.nodes.clearQuery.click();assert.ok(app.names().length);assert.equal(app.nodes.query.value,'');
  app.pop('?query=판다+코리&observedDays=7');assert.equal(app.nodes.query.value,'판다 코리');assert.equal(app.nodes.observedDays.value,'7');assert.equal(app.nodes.draftStatus.hidden,true);assert.equal(new URLSearchParams(app.search()).get('query'),'판다 코리');
+});
+
+test('fish and shrimp immediately expose only their own categories and preserve search/sort',async()=>{
+ const app=await setup(actual,false,'?type=live&sort=high',true);
+ app.subtype('fish');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="guppy"/);assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-browse-group=|data-live-group="shrimp_/);
+ app.choose('guppy');assert.equal(AquaCatalog.filtersFromSearch(app.search()).fishGroup,'guppy');
+ app.subtype('shrimp');let f=AquaCatalog.filtersFromSearch(app.search());assert.equal(f.fishGroup,'all');assert.equal(f.browseGroup,'all');assert.equal(f.sort,'high');
+ assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_red"/);assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="guppy"|data-browse-group=/);
+ app.choose('shrimp_red');assert.ok(app.names().length);app.choose('all');assert.equal(AquaCatalog.filtersFromSearch(app.search()).liveGroup,'all');
+ app.nodes.query.value='새우';app.nodes.search.listeners.submit({preventDefault(){}});app.subtype('fish');assert.equal(AquaCatalog.filtersFromSearch(app.search()).query,'새우');assert.equal(app.nodes.sort.value,'high');
+});
+test('direct categories restore selected zero-result leaves and legacy browse-group conditions',async()=>{
+ const app=await setup(actual,false,'?type=live&subtype=fish&browseGroup=bottom',true);
+ assert.match(app.nodes.groupTree.innerHTML,/data-browse-filter="bottom" aria-pressed="true"/);
+ app.choose('guppy');assert.equal(AquaCatalog.filtersFromSearch(app.search()).browseGroup,'all');
+ app.pop('?subtype=shrimp&liveGroup=shrimp_bee&query=존재하지않는상품');
+ assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_bee"[^>]*aria-pressed="true"/);
+ app.pop('?subtype=fish&fishGroup=tetra&sort=high');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="tetra"[^>]*aria-pressed="true"/);assert.equal(app.nodes.sort.value,'high');
 });

@@ -4,11 +4,19 @@ var ux5PanelEditing=false,ux5PanelState=null;
 let libraryStorage;try{libraryStorage=typeof localStorage==='undefined'?null:localStorage;}catch{libraryStorage=null;}
 const library=AquaCatalog.createLocalLibrary(libraryStorage);
 const originalRender=render;
-function displayName(p){return p.type==='live'&&!p.variantId?p.name:AquaCatalog.purchaseFacts(p).baseName;}
+function selectedSexOption(p){
+  if(p.type!=='live'||!p.variantId)return '';
+  const match=AquaCatalog.offerSpec(p).match(/^성별\s*[:：]\s*(.+)$/);
+  return match&&!/미확인|알\s*수\s*없음/.test(match[1])?match[1].trim():'';
+}
+function displayName(p){
+  const name=p.type==='live'&&!p.variantId?p.name:AquaCatalog.purchaseFacts(p).baseName,sex=selectedSexOption(p);
+  return sex&&!name.includes(sex)?name+' · '+sex:name;
+}
 function livestockCardSpec(p){
   const spec=AquaCatalog.offerSpec(p);
   // Real selected options remain visible; inferred standalone counts are redundant.
-  if(spec==='옵션·수량 미확인')return '';
+  if(spec==='옵션·수량 미확인'||/^성별\s*[:：]/.test(spec))return '';
   if(!p.variantId&&/^(?:(?:수량|판매단위|옵션)\s*[:：]?\s*)?\d+(?:\.\d+)?\s*(?:마리|쌍|개|촉|포트|컵)(?:\s*묶음)?$/.test(spec.trim()))return '';
   return spec;
 }
@@ -54,9 +62,9 @@ render=function(resetPage=true){
   if(filters.sort==='delivered'){$('#sortStatus').hidden=false;$('#sortStatus').textContent='수량·최소 주문·일반 배송·포장비가 모두 확인된 예상 합계만 정렬합니다. 미확인 비용이 있는 상품은 상품가격순에서 확인하세요.';}
   if(filters.sort==='unit'){$('#sortStatus').hidden=false;$('#sortStatus').textContent='선택한 용도·단위만 정렬합니다. 품종·규격·등급이 같다는 뜻은 아닙니다. 수량 미확인은 제외합니다.';}
   const labels=chipLabels();$('#activeFilters').innerHTML=Object.entries(labels).filter(([k,v])=>v&&filters[k]!==AquaCatalog.defaultFilters[k]).map(([k,v])=>'<button type="button" data-clear-filter="'+k+'">'+escapeHtml(v)+' ×</button>').join('');if($('#activeFilters').innerHTML)$('#activeFilters').innerHTML+='<button type="button" id="clearAllFilters">전체 초기화</button>';
-  const rows=catalogQuery.view(filters).result.rows,products=AquaCatalog.groupOffers(rows),visible=filters.groupOptions===false?rows.slice(0,visibleLimit):products.slice(0,visibleLimit).flatMap(g=>g.offers);
+  const rows=catalogQuery.view(filters).result.rows,products=cardGroups(rows),visible=products.slice(0,visibleLimit).flatMap(g=>g.offers);
   $('#resultTitle').textContent='상품 '+products.length.toLocaleString('ko-KR')+'개 · 옵션 포함 '+rows.length.toLocaleString('ko-KR')+'개';
-  $('#paginationStatus').textContent=rows.length?'현재 상품 '+AquaCatalog.groupOffers(visible).length+'개 · 옵션 '+visible.length+'개 표시 / 전체 상품 '+products.length+'개':'';
+  $('#paginationStatus').textContent=rows.length?'현재 상품 '+cardGroups(visible).length+'개 · 옵션 '+visible.length+'개 표시 / 전체 상품 '+products.length+'개':'';
   if(!rows.length&&catalog.status==='ready')$('#grid').innerHTML='<div class="empty"><strong>'+(selected.unitState?.needsSelection?'단가 범위 선택 필요':'현재 조건에 맞는 상품이 없습니다')+'</strong>'+escapeHtml(selected.reason)+'</div>';
   const matches=filters.compareAcross?AquaCatalog.compareSellers(rows):[];
   $('#sellerComparisons').hidden=!filters.compareAcross;
@@ -143,7 +151,7 @@ if($('#toggleFilters')){
  function makeTable(rows){return '<div class="table-caption">검색 결과 표 · 서로 다른 상품도 포함합니다. 동일 규격 판매처 비교와 별개입니다. 좁은 화면에서는 표 안에서 좌우로 이동하세요.</div><table><thead><tr><th scope="col">상품</th><th scope="col">규격·수량</th><th scope="col">판매처</th><th scope="col" class="numeric" aria-sort="'+(filters.sort==='low'?'ascending':filters.sort==='high'?'descending':'none')+'"><button type="button" data-table-price>판매가격 '+(filters.sort==='high'?'↓':'↑')+'</button></th><th scope="col" class="numeric">단가</th><th scope="col">배송비</th><th scope="col">확인 시점</th><th scope="col">판매처에서 보기</th></tr></thead><tbody>'+rows.map(p=>{const f=AquaCatalog.purchaseFacts(p),unit=AquaCatalog.unitPrice(p),status=AquaCatalog.comparisonStatus(p),saved=library.read().favorites.some(f=>f.id===p.id);return '<tr data-product-id="'+escapeHtml(p.id)+'"><td><strong>'+escapeHtml(displayName(p))+'</strong><details><summary>원문·확인 근거</summary><p>'+escapeHtml(p.originalTitle||p.name)+'</p><p>'+escapeHtml(f.basis||'규격 근거 미확인')+'</p><p>'+escapeHtml(shippingDetail(p))+'</p><p>재고 확인 '+escapeHtml(p.stockObservedAt?formatTime(p.stockObservedAt):'미확인')+'</p></details></td><td>'+escapeHtml(AquaCatalog.offerSpec(p))+'</td><td>'+escapeHtml(AquaCatalog.sellerDisplay(catalogQuery.seller(p.sellerId)))+'</td><td class="numeric">'+escapeHtml(status.comparable?priceText(p.price):status.label)+'</td><td class="numeric">'+(unit?escapeHtml(money(unit.amount)+'원/'+unit.unit):'단가 미확인')+'</td><td>'+escapeHtml(displayShipping(p))+'</td><td><time datetime="'+escapeHtml(p.observedAt)+'" title="'+escapeHtml(formatTime(p.observedAt))+'">가격 '+escapeHtml(AquaCatalog.relativeObservation(p))+'</time><small>'+(!p.stockObservedAt?'재고 시각 미확인':p.available===true?'재고: 확인 당시 판매 가능':'재고 미확인')+'</small></td><td><a href="'+escapeHtml(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">판매처 보기 ↗</a><br><button type="button" data-favorite="'+escapeHtml(p.id)+'" aria-pressed="'+saved+'">'+(saved?'♥ 관심':'♡ 관심')+'</button></td></tr>';}).join('')+'</tbody></table>';}
  function scopeBase(type){return {...AquaCatalog.defaultFilters,type,query:filters.query};}
  renderWorkspaceUI=function(){
-  const result=catalogQuery.view(filters).result,rows=result.rows,groups=AquaCatalog.groupOffers(rows),shown=filters.groupOptions===false?rows.slice(0,visibleLimit):groups.slice(0,visibleLimit).flatMap(g=>g.offers);
+  const result=catalogQuery.view(filters).result,rows=result.rows,groups=cardGroups(rows),shown=groups.slice(0,visibleLimit).flatMap(g=>g.offers);
   $('#toggleFilters').setAttribute('aria-expanded',String($('#moreFilters').open));
   $('#scopeStatus').textContent=restoredCondition?'저장 조건을 불러왔습니다 · 검색 범위 '+scopeNames[filters.type]:filters.query?'검색 범위: '+scopeNames[filters.type]:'기본 범위: '+scopeNames[filters.type]+' · 저장 조건은 직접 불러옵니다.';
   $('#openFavorites').textContent='♡ 관심상품 '+library.read().favorites.length;
@@ -160,7 +168,7 @@ if($('#toggleFilters')){
   $('#comparisonEntry').innerHTML=catalog.status!=='ready'?'':matches.length?matches.map((g,i)=>'<button type="button" data-compare-entry="'+i+'">판매처 '+new Set(g.offers.map(p=>p.sellerId)).size+'곳 비교 · '+escapeHtml(g.label)+'</button>').join(''):'';
   if(filters.compareAcross)$('#sellerComparisons').querySelectorAll('details.seller-comparison').forEach((el,i)=>{el.id='exact-comparison-'+i;el.querySelector('summary').textContent='동일 규격 판매처 비교 · '+el.querySelector('summary').textContent;});
   $('#rangeRecovery').innerHTML='';
-  if(!rows.length&&catalog.status==='ready'&&filters.query){const counts=Object.fromEntries(['all','live','gear'].map(t=>[t,AquaCatalog.groupOffers(catalogQuery.view(scopeBase(t)).result.rows).length]));const own=counts[filters.type];$('#rangeRecovery').innerHTML='<p>'+(own?'검색어에 해당하는 상품이 '+own+'개 있지만 현재 필터로 제외됐습니다.':'현재 범위에서 이 검색어로 확인된 상품이 없습니다.')+'</p>'+Object.entries(counts).filter(([t,n])=>n>0).map(([t,n])=>'<button type="button" data-result-scope="'+t+'">'+scopeNames[t]+' '+n+'개 보기 · 추가 필터 해제</button>').join('')+(counts.all===0?'<p>다른 범위도 0개입니다. 검색어를 줄이거나 별칭을 확인하세요. 품절·미확인 상품은 결과를 늘리기 위해 노출하지 않습니다.</p>':'');}
+  if(!rows.length&&catalog.status==='ready'&&filters.query){const counts=Object.fromEntries(['all','live','gear'].map(t=>[t,cardGroups(catalogQuery.view(scopeBase(t)).result.rows).length]));const own=counts[filters.type];$('#rangeRecovery').innerHTML='<p>'+(own?'검색어에 해당하는 상품이 '+own+'개 있지만 현재 필터로 제외됐습니다.':'현재 범위에서 이 검색어로 확인된 상품이 없습니다.')+'</p>'+Object.entries(counts).filter(([t,n])=>n>0).map(([t,n])=>'<button type="button" data-result-scope="'+t+'">'+scopeNames[t]+' '+n+'개 보기 · 추가 필터 해제</button>').join('')+(counts.all===0?'<p>다른 범위도 0개입니다. 검색어를 줄이거나 별칭을 확인하세요. 품절·미확인 상품은 결과를 늘리기 위해 노출하지 않습니다.</p>':'');}
  };
  const contextHint=document.createElement('p');contextHint.id='specialContextHint';contextHint.className='hint';$('#specialForm').prepend(contextHint);
  const familyButtons=document.createElement('div');familyButtons.className='compact-actions';familyButtons.id='specFamilies';familyButtons.innerHTML='<button type="button" data-spec-family="feed">사료</button><button type="button" data-spec-family="filter">외부여과기</button><button type="button" data-spec-family="media">생물학 여과재</button>';contextHint.after(familyButtons);

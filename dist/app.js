@@ -81,6 +81,12 @@ function syncSubtypeControls(view) {
   document.querySelectorAll('[data-subtype]').forEach(button => { const active = button.dataset.subtype === filters.subtype; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
 }
 
+function cardGroups(rows){
+  if(filters.groupOptions===false)return rows.map(p=>({key:p.id,offers:[p]}));
+  const grouped=AquaCatalog.groupOffers(rows.filter(p=>p.type!=='live')),byId=new Map(),seen=new Set();
+  for(const g of grouped)for(const p of g.offers)byId.set(p.id,g);
+  return rows.flatMap(p=>{if(p.type==='live')return [{key:p.id,offers:[p]}];const g=byId.get(p.id);if(seen.has(g))return [];seen.add(g);return [g];});
+}
 function render(resetPage = true) {
   if(resetPage){$('#recoveryStatus').textContent='';$('#filterError').textContent='';}
   const view=catalogQuery.view(filters);
@@ -102,7 +108,7 @@ function render(resetPage = true) {
   $('#sortStatus').textContent = filters.sort==='observed'?'최근 확인순은 개별 가격 확인 시각 기준입니다. 판매처 등록일·최초 수집일이 아닙니다.':['sales','new'].includes(filters.sort)?(availability[filters.sort].reason||'현재 조회 조건의 확인된 자료 기준입니다.'):'';
   $('#includeUnknown').disabled = filters.days === 'all';
   const result = view.result;
-  const groups=filters.groupOptions===false?result.rows.map(p=>({key:p.id,offers:[p]})):AquaCatalog.groupOffers(result.rows);
+  const groups=cardGroups(result.rows);
   const visibleGroups=groups.slice(0,visibleLimit),visibleRows=visibleGroups.flatMap(g=>g.offers);
   $('#emptyActions').hidden=result.rows.length>0||catalog.status!=='ready';
   $('#paginationStatus').textContent = result.rows.length ? (filters.groupOptions===false?`조회 ${result.rows.length}개 중 ${visibleRows.length}개 표시`:`옵션 ${result.rows.length}개 · 상품 ${visibleGroups.length}/${groups.length}개 표시`) : '';
@@ -120,7 +126,7 @@ function render(resetPage = true) {
   }
   const gridHTML = visibleGroups.map(group => {
     const product=group.offers[0],seller=catalogQuery.seller(product.sellerId),photo=AquaCatalog.usablePhoto(product);
-    return '<article class="card"><div class="art'+(photo?'':' no-photo')+'"'+(photo?'':' role="img" aria-label="상품 사진 없음"')+'>'+(photo?'<img src="'+escapeHtml(photo)+'" alt="'+escapeHtml(product.name)+' 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden role="img" aria-label="상품 사진 없음"></span>':'사진 없음')+'</div><div class="body"><div class="category">'+escapeHtml(AquaCatalog.sellerDisplay(seller))+'</div><h3 title="'+escapeHtml(product.name)+'">'+escapeHtml(displayName(product))+'</h3>'+offerHTML(product)+(group.offers.length>1?'<details class="option-group"><summary>같은 상품의 다른 옵션 '+(group.offers.length-1)+'개</summary><p class="option-help">선택한 검색·가격 조건에 맞는 옵션입니다. 판매처에서 크기·수량을 다시 선택하세요.</p>'+group.offers.slice(1).map(p=>'<div class="option-name">'+escapeHtml(displayName(p))+'</div>'+offerHTML(p)).join('')+'</details>':'')+'</div></article>';
+    return '<article class="card'+(product.type==='live'?' live-card':'')+'"><div class="art'+(photo?'':' no-photo')+'"'+(photo?'':' role="img" aria-label="상품 사진 없음"')+'>'+(photo?'<img src="'+escapeHtml(photo)+'" alt="'+escapeHtml(product.name)+' 상품 사진" loading="lazy" referrerpolicy="no-referrer"><span class="photo-fallback" hidden role="img" aria-label="상품 사진 없음"></span>':'사진 없음')+'</div><div class="body"><div class="category">'+escapeHtml(AquaCatalog.sellerDisplay(seller))+'</div><h3 title="'+escapeHtml(product.name)+'">'+escapeHtml(displayName(product))+'</h3>'+offerHTML(product)+(group.offers.length>1?'<details class="option-group"><summary>같은 상품의 다른 옵션 '+(group.offers.length-1)+'개</summary><p class="option-help">선택한 검색·가격 조건에 맞는 옵션입니다. 판매처에서 크기·수량을 다시 선택하세요.</p>'+group.offers.slice(1).map(p=>'<div class="option-name">'+escapeHtml(displayName(p))+'</div>'+offerHTML(p)).join('')+'</details>':'')+'</div></article>';
   }).join('');
   if(!setGridHTML(gridHTML))return;
   $('#grid').querySelectorAll('img').forEach(img => {

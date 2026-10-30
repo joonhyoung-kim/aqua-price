@@ -176,9 +176,9 @@ function parseProductPage(html, context) {
   for (const product of products) {
     if(!product._groupName && groupedSkus.has(product.sku))continue;
     const title = typeof product.name === 'string' ? decode(product.name).trim() : '';
-    const retailerProductId = product._groupId || productIdentity(product, context.url);
     const properties=Array.isArray(product.additionalProperty)?product.additionalProperty:product.additionalProperty?[product.additionalProperty]:[];
     const selected = !product._groupName && require("./selected-variant.cjs").selectedVariant(html, product, context, visibleText);
+    const retailerProductId = product._groupId || selected?.selectorGroupId || productIdentity(product, context.url);
     const groupCorroborated=product._groupName && identityIsVisible(text,decode(product._groupName)) && ((properties.length && properties.every(p=>p&&typeof p.value==='string'&&identityIsVisible(text,decode(p.value)))) || typeof product.color==='string'&&identityIsVisible(text,decode(product.color)));
     if (!title || (!identityIsVisible(text,title)&&!groupCorroborated&&!selected) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
     const offers = Array.isArray(product.offers) ? product.offers : product.offers ? [product.offers] : [];
@@ -195,7 +195,7 @@ function parseProductPage(html, context) {
       const declaredUrl=offer.url || product.url || context.url;
       const productUrl = typeof declaredUrl==='string' && declaredUrl.startsWith('http://') && host(declaredUrl)===host(context.url) ? context.url : declaredUrl;
       if (!sourceUrl(productUrl) || host(productUrl) !== host(context.url)) { issues.push('unsafe_product_url'); continue; }
-      const variantId = product._groupName ? product.sku || offer.sku || offer['@id'] || null : offer.sku || offer['@id'] || null;
+      const variantId = product._groupName || selected?.selectorGroupId ? product.sku || offer.sku || offer['@id'] || null : offer.sku || offer['@id'] || null;
       if (offers.length > 1 && !variantId) { issues.push('ambiguous_variant_identity'); continue; }
       if (variantId !== null && typeof variantId !== 'string') { issues.push('invalid_variant_id'); continue; }
       const key = `${context.sourceId}:${encodeURIComponent(retailerProductId)}:${encodeURIComponent(variantId || 'default')}`;

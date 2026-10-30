@@ -40,7 +40,7 @@ const parseFisher=(html,context=fishermanContext)=>parseProductPage(html,context
 test('captured SKU-valued selector corroborates selected fish without confusing accessory selectors',()=>{
  const r=parseFisher(fisherman.html);assert.equal(r.status,'success');assert.deepEqual(r.issues,[]);
  const p=r.items[0];assert.equal(p.price_amount,800);assert.equal(p.variant_title,'1마리');assert.equal(p.available,true);
- assert.equal(p.collector_key,'retailer-49:cafe24_week22_1_2989_P0000EKZ000D:default');
+ assert.equal(p.collector_key,'retailer-49:cafe24_week22_1_2989:cafe24_week22_1_2989_P0000EKZ000D');
  assert.equal(p.product_url,fisherman.url);assert.equal(p.quantity_per_pack,null);assert.equal(p.primary_product_evidence,undefined);
 });
 test('SKU selector requires exact public label, unique option, availability and price agreement',()=>{
@@ -68,4 +68,19 @@ test('synthetic selected bundle must match exact visible signed KRW delta; other
  for(const label of ['10마리','10마리 (+5,199원)','10마리 (-5,200원)','50마리 (+5,200원)','10마리 (+5,200달러)']){
   assert.equal(parseFisher(h.replace('10마리 (+5,200원)',label),c).items.length,0);
  }
+});
+
+test('standalone SKU refresh keeps existing group identities and preserves unobserved siblings',async()=>{
+ const {collectSource}=require('../scripts/collector/engine.cjs');
+ const fresh=parseFisher(fisherman.html).items[0],oldTime='2026-10-08T16:53:15.721Z';
+ const siblings=[['D',800,'1마리'],['E',6000,'10마리'],['F',29000,'50마리']].map(([suffix,price,label])=>{
+  const sku='cafe24_week22_1_2989_P0000EKZ000'+suffix,key='retailer-49:cafe24_week22_1_2989:'+sku;
+  return {...fresh,id:key,collector_key:key,retailer_product_id:'cafe24_week22_1_2989',variant_id:sku,price_amount:price,variant_title:label,title:'네온 테트라 '+label,product_url:fisherman.url.replace('000D','000'+suffix),observed_at_utc:oldTime};
+ });
+ const source={id:'retailer-49',name:'피셔맨브라더스',sourceDomain:'fishermanbt.com',officialURL:'https://fishermanbt.com/',enabled:true,technicalReadiness:'adapter_sample_tested',maxRequests:2,delayMs:0,cacheTtlMs:0,timeoutMs:1000,maxBytes:2000000,products:[{url:fisherman.url,type:'live',subtype:'fish'}]};
+ const result=await collectSource(source,{products:siblings},{now:()=>Date.parse(fisherman.observedAt),sleep:async()=>{},fetch:async url=>new Response(url.endsWith('/robots.txt')?'User-agent: *\nAllow: /':fisherman.html)});
+ assert.equal(result.status,'success');assert.equal(result.products.length,3);
+ assert.deepEqual(result.updatedKeys,[siblings[0].collector_key]);
+ assert.equal(result.products[0].id,siblings[0].id);assert.equal(result.products[0].observed_at_utc,fisherman.observedAt);
+ assert.deepEqual(result.products.slice(1),siblings.slice(1));assert.equal(result.deletionAllowed,false);
 });

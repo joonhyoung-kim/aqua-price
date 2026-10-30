@@ -46,6 +46,6 @@ function selectedVariant(html, product, context, visibleText) {
   const labelMatches = label === value && adjustment === 0 ||
     delta && delta[1] === value && Number(delta[3].replaceAll(',', '')) * (delta[2] === '-' ? -1 : 1) === adjustment;
   if (attr(options[0][1], 'value') === code ? !labelMatches : label !== value) return fail();
-  return { parentName: name, option: prop.value, sku: product.sku };
+  return { parentName: name, option: prop.value, sku: product.sku, selectorGroupId: attr(options[0][1], 'value') === code ? group : null };
 }
 module.exports = { selectedVariant };

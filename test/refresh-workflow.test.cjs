@@ -63,7 +63,7 @@ test('schedule metadata and admin display match the cadence without claiming exe
 test('data-only production publication, pacing, recovery and both validation gates remain intact',()=>{
  assert.match(workflow,/ref: main/);assert.match(workflow,/node scripts\/publish-catalog\.cjs/);
  assert.equal([...workflow.matchAll(/\bnpm test\b/g)].length,2);
- assert.match(workflow,/timeout-minutes: 25/);assert.match(workflow,/cancel-in-progress: false/);
+ assert.match(workflow,/timeout-minutes: 30/);assert.match(workflow,/cancel-in-progress: false/);
  assert.match(workflow,/Preserve lastgood and refusal quarantine\n        if: always\(\)/);
  assert.match(workflow,/Report source failures without retrying/);
  assert.doesNotMatch(workflow,/--refresh-known|--discover|cancel-in-progress: true/);

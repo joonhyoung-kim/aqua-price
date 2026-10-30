@@ -23,7 +23,8 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # Keep the collector at 18 minutes; reserve time for all validation and publication.
+    timeout-minutes: 30
     steps:
       - name: Checkout trusted main collector
         uses: actions/checkout@v4

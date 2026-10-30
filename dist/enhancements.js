@@ -275,7 +275,7 @@ if($('#ux5Dialog')){
   $('#compareProducts').setAttribute('aria-pressed',String(filters.compareAcross));
   $('#compareProducts').hidden=catalog.status!=='ready';
   if(filters.compareAcross&&!AquaCatalog.compareSellers(catalogQuery.view(filters).result.rows).length){$('#sellerComparisons').innerHTML='<p>동일 규격·구성이 확인된 판매처 조합이 없습니다. 조건이 불명확한 상품은 합치지 않습니다.</p><button type="button" id="leaveComparison">일반 검색 계속 보기</button>';$('#leaveComparison').addEventListener('click',()=>{filters.compareAcross=false;render(false);});}
-  document.querySelectorAll('#grid .body>h3').forEach(h=>{h.dataset.fullName='true';h.tabIndex=0;h.setAttribute('role','button');h.setAttribute('aria-expanded',String(h.classList.contains('full-name')));h.setAttribute('aria-label',h.textContent+' · 전체 상품명 펼치기');});
+  document.querySelectorAll('#grid .card:not(.live-card) .body>h3').forEach(h=>{h.dataset.fullName='true';h.tabIndex=0;h.setAttribute('role','button');h.setAttribute('aria-expanded',String(h.classList.contains('full-name')));h.setAttribute('aria-label',h.textContent+' · 전체 상품명 펼치기');});
   document.querySelectorAll('.offer').forEach(o=>{
    const seller=o.querySelector(':scope>.seller-label'),observed=o.querySelector(':scope>.observed');if(seller&&observed)observed.before(seller);
    o.querySelectorAll('[data-favorite]').forEach(b=>{b.setAttribute('aria-label',b.getAttribute('aria-pressed')==='true'?'관심상품 해제':'관심상품 저장');b.textContent=b.getAttribute('aria-pressed')==='true'?'♥':'♡';});

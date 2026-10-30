@@ -33,3 +33,39 @@ test('sale-stopped wpet notice remains a review failure without new price or inf
  assert.equal(parseWpetPage('<p>Unknown error</p>',c).issues[0],'wpet_canonical_identity_mismatch');
  assert.equal(parseWpetPage('<p>Unknown</p>',{url:'https://www.wpet.co.kr/?act=shop.goods_view&GS=1895'}).issues[0],'wpet_detail_route_unverified');
 });
+
+const fisherman=require('./fixtures/fisherman-selected.json');
+const fishermanContext={url:fisherman.url,domain:'fishermanbt.com',sourceId:'retailer-49',name:'피셔맨브라더스',type:'live',subtype:'fish',observedAt:fisherman.observedAt};
+const parseFisher=(html,context=fishermanContext)=>parseProductPage(html,context);
+test('captured SKU-valued selector corroborates selected fish without confusing accessory selectors',()=>{
+ const r=parseFisher(fisherman.html);assert.equal(r.status,'success');assert.deepEqual(r.issues,[]);
+ const p=r.items[0];assert.equal(p.price_amount,800);assert.equal(p.variant_title,'1마리');assert.equal(p.available,true);
+ assert.equal(p.collector_key,'retailer-49:cafe24_week22_1_2989_P0000EKZ000D:default');
+ assert.equal(p.product_url,fisherman.url);assert.equal(p.quantity_per_pack,null);assert.equal(p.primary_product_evidence,undefined);
+});
+test('SKU selector requires exact public label, unique option, availability and price agreement',()=>{
+ const mutations=[
+  h=>h.replace('value="P0000EKZ000D"  link_image="">1마리','value="P0000EKZ000D">2마리'),
+  h=>h.replace('value="P0000EKZ000D"  link_image="">1마리','value="P0000EKZ000D"  link_image="">1마리 (+1원)'),
+  h=>h.replace('value="P0000EKZ000D"  link_image="">1마리','disabled value="P0000EKZ000D"  link_image="">1마리'),
+  h=>h.replace('value="P0000EKZ000D"  link_image="">1마리','value="P0000EKZ000X">1마리'),
+  h=>h.replace('800원','799원'),
+  h=>h.replace('</optgroup>','<option value="P0000EKZ000D"  link_image="">1마리</option></optgroup>'),
+  h=>h+'<select product_type="product_option"></select>',
+  h=>h.replace('option_stock_data','unverified_stock')
+ ];
+ for(const mutate of mutations){const h=mutate(fisherman.html);assert.notEqual(h,fisherman.html);assert.equal(parseFisher(h).items.length,0);}
+});
+test('synthetic selected bundle must match exact visible signed KRW delta; other option prices do not suffice',()=>{
+ let h=fisherman.html;
+ const re=/<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
+ const product=JSON.parse(h.match(re)[1]);
+ product.name='네온 테트라 10마리';product.sku=product.sku.replace('000D','000E');
+ product.additionalProperty[0].value='10마리';product.offers.price=6000;product.offers.url=product.offers.url.replace('000D','000E');
+ h=h.replace(re,'<script type="application/ld+json">'+JSON.stringify(product)+'</script>');
+ const c={...fishermanContext,url:product.offers.url};
+ assert.equal(parseFisher(h,c).items[0].price_amount,6000);
+ for(const label of ['10마리','10마리 (+5,199원)','10마리 (-5,200원)','50마리 (+5,200원)','10마리 (+5,200달러)']){
+  assert.equal(parseFisher(h.replace('10마리 (+5,200원)',label),c).items.length,0);
+ }
+});

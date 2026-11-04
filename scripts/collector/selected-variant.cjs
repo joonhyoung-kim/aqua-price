@@ -28,7 +28,7 @@ function selectedVariant(html, product, context, visibleText) {
   const options = [...grids[0][2].matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option\s*>/gi)].filter(m => (attr(m[1], 'value') === prop.value || attr(m[1], 'value') === code));
   if (options.length !== 1 || /\bdisabled\b|\bhidden\b/i.test(options[0][1])) return fail();
   const bases = [...visible.matchAll(/<(span|strong)\b([^>]*\bid=["']span_product_price_text["'][^>]*)>([\s\S]*?)<\/\1>/gi)];
-  const base = bases.length === 1 && !/\bhidden\b|display\s*:\s*none/i.test(bases[0][2]) && visibleText(bases[0][3]).match(/^(\d+(?:,\d{3})*)\s*원$/);
+  const base = bases.length === 1 && !/\bhidden\b|display\s*:\s*none/i.test(bases[0][2]) && visibleText(bases[0][3]).match(/^₩?\s*(\d+(?:,\d{3})*)\s*원$/);
   if (!base) return fail();
   const literals = [...html.matchAll(/\boption_stock_data\s*=\s*'((?:\\.|[^'\\])*)'\s*;/g)];
   if (literals.length !== 1) return fail();
@@ -41,8 +41,15 @@ function selectedVariant(html, product, context, visibleText) {
   if (Object.values(rows).filter(r => r && typeof r === 'object' && r.option_name === prop.name && r.option_value === prop.value).length !== 1 || row.is_display !== 'T' || row.is_selling !== 'T' || row.is_auto_soldout === 'T') return fail();
   // Some public selectors use the exact item code as their value. In that case
   // corroborate the visible label and signed KRW adjustment as well as the row.
-  const label = visibleText(options[0][2]);
-  const delta = label.match(/^(.*?)\s+\(([+-])(\d+(?:,\d{3})*)원\)$/);
+  let label = visibleText(options[0][2]);
+  // Observed Cafe24 stock/dispatch annotations are not part of the option name.
+  // Match only this positive-stock suffix after the exact corroborated value;
+  // never strip arbitrary brackets, sold-out text, price or shipping conditions.
+  if (label.startsWith(value) && /^\[재고\s*:\s*[1-9]\d*개\]\[당일발송\]$/.test(label.slice(value.length))) {
+    if (offer.availability !== 'https://schema.org/InStock') return fail();
+    label = value;
+  }
+  const delta = label.match(/^(.*?)\s+\(([+-])₩?(\d+(?:,\d{3})*)원\)$/);
   const labelMatches = label === value && adjustment === 0 ||
     delta && delta[1] === value && Number(delta[3].replaceAll(',', '')) * (delta[2] === '-' ? -1 : 1) === adjustment;
   if (attr(options[0][1], 'value') === code ? !labelMatches : label !== value) return fail();

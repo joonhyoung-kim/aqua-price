@@ -5,6 +5,51 @@ const {parseProductPage}=require('../scripts/collector/product-jsonld.cjs');
 const {parseWpetPage}=require('../scripts/collector/wpet-public.cjs');
 const context={url:fixture.url,domain:'aquagardenshop.com',sourceId:'retailer-42',name:'아쿠아가든 쇼핑몰',type:'gear',subtype:'food',observedAt:fixture.observedAt};
 const parse=html=>parseProductPage(html,context);
+
+const selvas=require('./fixtures/selvas-selected.json');
+const aquauju=require('./fixtures/aquauju-selected.json');
+const sampleContext=f=>({url:f.url,domain:new URL(f.url).hostname,sourceId:f.sourceId,name:f.sourceId,type:'gear',observedAt:f.observedAt});
+const parseSample=(f,html=f.html)=>parseProductPage(html,sampleContext(f));
+test('captured Selvas stock annotation preserves exact option identity and concrete price',()=>{
+ const r=parseSample(selvas);assert.equal(r.status,'success');assert.deepEqual(r.issues,[]);assert.equal(r.items.length,1);
+ const p=r.items[0];assert.equal(p.price_amount,198000);assert.equal(p.variant_title,'블랙');assert.equal(p.available,true);
+ assert.equal(p.product_url,selvas.url);assert.equal(p.collector_key,'retailer-33:cafe24_turquoise3531_1_6108:cafe24_turquoise3531_1_6108_P0000JAY00CQ');
+ assert.equal(p.quantity_per_pack,null);assert.equal(p.stock_quantity,null);assert.equal(p.shipping_amount,null);
+});
+test('stock annotation never erases sold-out, unknown conditions, different options or price conflicts',()=>{
+ const original='블랙[재고 : 4547개][당일발송]';
+ for(const label of ['블랙[재고 : 0개][당일발송]','블랙[품절][당일발송]','블랙[재고 : 4547개][예약배송]','미백색[재고 : 4547개][당일발송]','블랙[재고 : 4547개][당일발송] (+1원)','블랙[재고 : 4547개][당일발송][회원전용]']){
+  const h=selvas.html.replace(original,label);assert.notEqual(h,selvas.html);assert.equal(parseSample(selvas,h).items.length,0,label);
+ }
+ for(const mutate of [h=>h.replace('https://schema.org/InStock','https://schema.org/OutOfStock'),h=>h.replace('198,000원','197,999원'),h=>h.replace('value="P0000JAY00CQ"','disabled value="P0000JAY00CQ"'),h=>h.replace('option_stock_data','missing_option_stock_data_proof'),h=>h.replace('is_selling\\\":\\\"T','is_selling\\\":\\\"F')]){
+  const h=mutate(selvas.html);assert.notEqual(h,selvas.html);assert.equal(parseSample(selvas,h).items.length,0);
+ }
+});
+test('captured won symbol is accepted without inventing shipping for pickup option',()=>{
+ const r=parseSample(aquauju);assert.equal(r.status,'success');assert.deepEqual(r.issues,[]);
+ const p=r.items[0];assert.equal(p.price_amount,128700);assert.equal(p.variant_title,'매장방문픽업');assert.equal(p.shipping_amount,null);assert.equal(p.available,true);
+ assert.equal(p.product_url,aquauju.url);assert.equal(p.collector_key,'retailer-38:cafe24_aquauju_1_13648:cafe24_aquauju_1_13648_P0000UEY000A');
+ for(const text of ['$128,700원','₩128,699원','₩128,700원 (회원가)','₩128,700달러']){
+  assert.equal(parseSample(aquauju,aquauju.html.replace('&#8361;128,700원',text)).items.length,0,text);
+ }
+});
+test('synthetic delivery option requires the exact won-prefixed delta; pickup and courier remain distinct',()=>{
+ const re=/<script type="application\/ld\+json">([\s\S]*?)<\/script>/,product=JSON.parse(aquauju.html.match(re)[1]);
+ product.name=product.isVariantOf.name+' 택배발송';product.sku=product.sku.replace('000A','000C');product.additionalProperty[0].value='택배발송';product.offers.price=163700;product.offers.url=product.offers.url.replace('000A','000C');
+ const f={...aquauju,url:product.offers.url,html:aquauju.html.replace(re,'<script type="application/ld+json">'+JSON.stringify(product)+'</script>')};
+ const p=parseSample(f).items[0];assert.equal(p.price_amount,163700);assert.equal(p.variant_title,'택배발송');assert.equal(p.product_url,f.url);assert.equal(p.shipping_amount,null);
+ for(const label of ['택배발송','택배발송 (+&#8361;34,999원)','택배발송 (-&#8361;35,000원)','택배발송 (+$35,000원)'])assert.equal(parseSample(f,f.html.replace('택배발송 (+&#8361;35,000원)',label)).items.length,0);
+});
+test('bounded captured refresh updates only the selected SKU and retains lastgood on identity failure',async()=>{
+ const {collectSource}=require('../scripts/collector/engine.cjs');
+ for(const f of [selvas,aquauju]){
+  const fresh=parseSample(f).items[0],old={...fresh,observed_at_utc:'2026-10-08T16:53:15.721Z'},sibling={...old,id:old.id+'-sibling',collector_key:old.collector_key+'-sibling',variant_id:'unobserved-sibling',product_url:f.url.replace(/item_code=[^&]+/,'item_code=UNOBSERVED')};
+  const source={id:f.sourceId,name:f.sourceId,sourceDomain:new URL(f.url).hostname,officialURL:new URL('/',f.url).href,enabled:true,technicalReadiness:'adapter_sample_tested',maxRequests:2,delayMs:0,cacheTtlMs:0,timeoutMs:1000,maxBytes:2000000,products:[{url:f.url,type:'gear'}]};
+  const options=html=>({now:()=>Date.parse(f.observedAt),sleep:async()=>{},fetch:async url=>new Response(url.endsWith('/robots.txt')?'User-agent: *\nAllow: /':html)});
+  const ok=await collectSource(source,{products:[old,sibling]},options(f.html));assert.equal(ok.status,'success');assert.deepEqual(ok.updatedKeys,[old.collector_key]);assert.equal(ok.products[0].observed_at_utc,f.observedAt);assert.deepEqual(ok.products[1],sibling);assert.equal(ok.deletionAllowed,false);
+  const bad=await collectSource(source,{products:[old,sibling]},options(f.html.replace('option_stock_data','missing_option_stock_data_proof')));assert.notEqual(bad.status,'success');assert.deepEqual(bad.products,[old,sibling]);assert.deepEqual(bad.updatedKeys,[]);assert.equal(bad.deletionAllowed,false);
+ }
+});
 test('captured standalone selected variant keeps exact 100mL price, URL and stable identity',()=>{
  const r=parse(fixture.html);assert.equal(r.status,'success');assert.deepEqual(r.issues,[]);assert.equal(r.items.length,1);
  const p=r.items[0];assert.equal(p.price_amount,4000);assert.equal(p.available,true);assert.equal(p.variant_title,'아쿠아가든 구피 열대어 사료 미니비트 100ml');assert.equal(p.product_url,fixture.url);

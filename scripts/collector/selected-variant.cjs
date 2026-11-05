@@ -45,9 +45,10 @@ function selectedVariant(html, product, context, visibleText) {
   // Observed Cafe24 stock/dispatch annotations are not part of the option name.
   // Match only this positive-stock suffix after the exact corroborated value;
   // never strip arbitrary brackets, sold-out text, price or shipping conditions.
-  if (label.startsWith(value) && /^\[재고\s*:\s*[1-9]\d*개\]\[당일발송\]$/.test(label.slice(value.length))) {
+  const annotation = label.startsWith(value) && label.slice(value.length).match(/^\[재고\s*:\s*[1-9]\d*개\]\[당일발송\](?=\s+\([+-]₩?\d+(?:,\d{3})*원\)$|$)/);
+  if (annotation) {
     if (offer.availability !== 'https://schema.org/InStock') return fail();
-    label = value;
+    label = value + label.slice(value.length + annotation[0].length);
   }
   const delta = label.match(/^(.*?)\s+\(([+-])₩?(\d+(?:,\d{3})*)원\)$/);
   const labelMatches = label === value && adjustment === 0 ||

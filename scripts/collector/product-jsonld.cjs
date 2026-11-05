@@ -177,7 +177,9 @@ function parseProductPage(html, context) {
     if(!product._groupName && groupedSkus.has(product.sku))continue;
     const title = typeof product.name === 'string' ? decode(product.name).trim() : '';
     const properties=Array.isArray(product.additionalProperty)?product.additionalProperty:product.additionalProperty?[product.additionalProperty]:[];
-    const selected = !product._groupName && require("./selected-variant.cjs").selectedVariant(html, product, context, visibleText);
+    const sizeMember = context.domain.replace(/^www\./,'') === 'selvas.co.kr' && product[GROUP_MEMBER] && product[GROUP_MEMBER].group.variesBy?.includes('size');
+    const selected = sizeMember ? verifiedSizeMember(html,product,context) : !product._groupName && require("./selected-variant.cjs").selectedVariant(html, product, context, visibleText);
+    if(sizeMember&&!selected){issues.push('size_option_not_corroborated');continue;}
     const retailerProductId = product._groupId || selected?.selectorGroupId || productIdentity(product, context.url);
     const groupCorroborated=product._groupName && identityIsVisible(text,decode(product._groupName)) && ((properties.length && properties.every(p=>p&&typeof p.value==='string'&&identityIsVisible(text,decode(p.value)))) || typeof product.color==='string'&&identityIsVisible(text,decode(product.color)));
     if (!title || (!identityIsVisible(text,title)&&!groupCorroborated&&!selected) || !retailerProductId) { issues.push('identity_not_corroborated'); continue; }
@@ -228,5 +230,16 @@ function parseProductPage(html, context) {
   }
   if(context.existingId && products.length>1 && items.length>1 && issues.length===0)for(const item of items)item.replaces_snapshot_id=context.existingId;
   return { status: items.length ? 'success' : 'parse_failed', items, issues };
+}
+// Standard schema.org size is an option axis, not an arbitrary title suffix.
+// Reuse the exact SKU/selector/stock-row/base+delta checks for inline members.
+function verifiedSizeMember(html,product,context){
+ const {group,variant}=product[GROUP_MEMBER];
+ if(JSON.stringify(group.variesBy)!==JSON.stringify(['size'])||typeof variant.size!=='string'||variant.additionalProperty||!sameProductPage(group['@id'],context.url)||!sameProductPage(variant.offers?.url,context.url))return null;
+ const proof=require('./selected-variant.cjs').selectedVariant(html,{
+  ...variant,isVariantOf:{'@type':'ProductGroup','@id':group['@id'],name:group.name,productGroupID:group.productGroupID},
+  inProductGroupWithID:group.productGroupID,additionalProperty:[{name:'사이즈',value:variant.size}]
+ },{...context,url:variant.offers.url},visibleText);
+ return proof?{...proof,selectorGroupId:group.productGroupID}:null;
 }
 module.exports = { parseProductPage, visibleText, priceIsVisible, validatedPrimaryProductEvidence };

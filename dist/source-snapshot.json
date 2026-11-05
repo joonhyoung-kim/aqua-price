@@ -6,16 +6,16 @@
   "collection_scope": "19 limited searches, maximum 8 results per query, first page only; no additional pages or bulk crawling; not full-market coverage",
   "created_at_utc": "2026-10-08T08:29:06.935413+00:00",
   "summary": {
-    "offer_count": 6977,
+    "offer_count": 6991,
     "merchant_count": 44,
     "live_plant_count": 708,
     "fish_count": 4016,
     "shrimp_count": 244,
     "snail_count": 47,
     "fish_or_shrimp_count": 4260,
-    "gear_count": 1962,
-    "verified_https_photos": 6661,
-    "direct_retailer_products": 6970
+    "gear_count": 1976,
+    "verified_https_photos": 6675,
+    "direct_retailer_products": 6984
   },
   "photo_validation": {
     "basis": "HTTPS HEAD verification supplied by the collecting task; no image download or rehosting",
@@ -559722,6 +559722,1244 @@
           "observedAt": "2026-10-08T14:46:53.916Z"
         }
       ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000P",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000P",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_5175",
+      "variant_id": "cafe24_turquoise3531_1_5175_P0000HRB000P",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) D-타공43m",
+      "variant_title": "D-타공43m",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000P",
+      "declared_product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000P",
+      "observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "registered_at": null,
+      "price_amount": 19800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.selvas.co.kr/web/product/big/202504/bba43a21855c770a7d9f075bacd2fc6c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "review_evidence": {
+        "url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:42.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) D-타공43m",
+        "identityTitle": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) D-타공43m",
+        "description": "",
+        "options": "D-타공43m",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "Other Supplies (기타용품)",
+          "url": "/category/other-supplies-기타용품/38/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "활성탄/보충수/편의용품",
+          "url": "/category/활성탄보충수편의용품/125/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000Q",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000Q",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_5175",
+      "variant_id": "cafe24_turquoise3531_1_5175_P0000HRB000Q",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) E-타공36mm",
+      "variant_title": "E-타공36mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000Q",
+      "declared_product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000Q",
+      "observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "registered_at": null,
+      "price_amount": 15800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.selvas.co.kr/web/product/big/202504/bba43a21855c770a7d9f075bacd2fc6c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "review_evidence": {
+        "url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:42.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) E-타공36mm",
+        "identityTitle": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) E-타공36mm",
+        "description": "",
+        "options": "E-타공36mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "Other Supplies (기타용품)",
+          "url": "/category/other-supplies-기타용품/38/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "활성탄/보충수/편의용품",
+          "url": "/category/활성탄보충수편의용품/125/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000R",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000R",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_5175",
+      "variant_id": "cafe24_turquoise3531_1_5175_P0000HRB000R",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) F-타공32mm",
+      "variant_title": "F-타공32mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000R",
+      "declared_product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000R",
+      "observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "registered_at": null,
+      "price_amount": 12800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.selvas.co.kr/web/product/big/202504/bba43a21855c770a7d9f075bacd2fc6c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "review_evidence": {
+        "url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:42.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) F-타공32mm",
+        "identityTitle": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) F-타공32mm",
+        "description": "",
+        "options": "F-타공32mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "Other Supplies (기타용품)",
+          "url": "/category/other-supplies-기타용품/38/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "활성탄/보충수/편의용품",
+          "url": "/category/활성탄보충수편의용품/125/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000S",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000S",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_5175",
+      "variant_id": "cafe24_turquoise3531_1_5175_P0000HRB000S",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) G-타공30mm",
+      "variant_title": "G-타공30mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000S",
+      "declared_product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000S",
+      "observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "registered_at": null,
+      "price_amount": 11800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.selvas.co.kr/web/product/big/202504/bba43a21855c770a7d9f075bacd2fc6c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "review_evidence": {
+        "url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:42.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) G-타공30mm",
+        "identityTitle": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) G-타공30mm",
+        "description": "",
+        "options": "G-타공30mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "Other Supplies (기타용품)",
+          "url": "/category/other-supplies-기타용품/38/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "활성탄/보충수/편의용품",
+          "url": "/category/활성탄보충수편의용품/125/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000T",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000T",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_5175",
+      "variant_id": "cafe24_turquoise3531_1_5175_P0000HRB000T",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) H-타공25mm",
+      "variant_title": "H-타공25mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000T",
+      "declared_product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000T",
+      "observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "registered_at": null,
+      "price_amount": 10800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.selvas.co.kr/web/product/big/202504/bba43a21855c770a7d9f075bacd2fc6c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "review_evidence": {
+        "url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:42.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) H-타공25mm",
+        "identityTitle": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) H-타공25mm",
+        "description": "",
+        "options": "H-타공25mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "Other Supplies (기타용품)",
+          "url": "/category/other-supplies-기타용품/38/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "활성탄/보충수/편의용품",
+          "url": "/category/활성탄보충수편의용품/125/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000U",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_5175:cafe24_turquoise3531_1_5175_P0000HRB000U",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_5175",
+      "variant_id": "cafe24_turquoise3531_1_5175_P0000HRB000U",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) I-타공20mm",
+      "variant_title": "I-타공20mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000U",
+      "declared_product_url": "https://www.selvas.co.kr/product/다이아몬드-유리-홀쏘-유리타공-도구-d-e-f-g-h-i/5175/?item_code=P0000HRB000U",
+      "observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "registered_at": null,
+      "price_amount": 8800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "8800",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "8800",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://www.selvas.co.kr/web/product/big/202504/bba43a21855c770a7d9f075bacd2fc6c.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:42.122Z",
+      "review_evidence": {
+        "url": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:42.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) I-타공20mm",
+        "identityTitle": "다이아몬드 유리 홀쏘 유리타공 도구 (D E F G H I ) I-타공20mm",
+        "description": "",
+        "options": "I-타공20mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "Other Supplies (기타용품)",
+          "url": "/category/other-supplies-기타용품/38/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        },
+        {
+          "label": "활성탄/보충수/편의용품",
+          "url": "/category/활성탄보충수편의용품/125/",
+          "evidencePage": "https://www.selvas.co.kr/product/%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C-%EC%9C%A0%EB%A6%AC-%ED%99%80%EC%8F%98-%EC%9C%A0%EB%A6%AC%ED%83%80%EA%B3%B5-%EB%8F%84%EA%B5%AC-abcdef/5175/category/125/display/1/",
+          "observedAt": "2026-11-05T05:21:42.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4914:cafe24_turquoise3531_1_4914_P0000HGZ00BD",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4914:cafe24_turquoise3531_1_4914_P0000HGZ00BD",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4914",
+      "variant_id": "cafe24_turquoise3531_1_4914_P0000HGZ00BD",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 20mm",
+      "variant_title": "20mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/국산-타공-중국-lesso-규격-블랙-벌크헤드-32mm-25mm-20mm/4914/?item_code=P0000HGZ00BD",
+      "declared_product_url": "https://selvas.co.kr/product/국산-타공-중국-lesso-규격-블랙-벌크헤드-32mm-25mm-20mm/4914/?item_code=P0000HGZ00BD",
+      "observed_at_utc": "2026-11-05T05:21:52.130Z",
+      "registered_at": null,
+      "price_amount": 4200,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "4200",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "4200",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202509/1eefc465dc2b2f917dd8bec0e85a7709.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:52.130Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:52.130Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 20mm",
+        "identityTitle": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 20mm",
+        "description": "",
+        "options": "20mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "중국규격만 따로",
+          "url": "/category/중국규격만-따로/570/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "암나사 숫나사 벌크헤드 밸브소켓",
+          "url": "/category/암나사-숫나사-벌크헤드-밸브소켓/585/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4914:cafe24_turquoise3531_1_4914_P0000HGZ00BE",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4914:cafe24_turquoise3531_1_4914_P0000HGZ00BE",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4914",
+      "variant_id": "cafe24_turquoise3531_1_4914_P0000HGZ00BE",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 25mm",
+      "variant_title": "25mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/국산-타공-중국-lesso-규격-블랙-벌크헤드-32mm-25mm-20mm/4914/?item_code=P0000HGZ00BE",
+      "declared_product_url": "https://selvas.co.kr/product/국산-타공-중국-lesso-규격-블랙-벌크헤드-32mm-25mm-20mm/4914/?item_code=P0000HGZ00BE",
+      "observed_at_utc": "2026-11-05T05:21:52.130Z",
+      "registered_at": null,
+      "price_amount": 5200,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "4200",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "4200",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202509/1eefc465dc2b2f917dd8bec0e85a7709.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:52.130Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:52.130Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 25mm",
+        "identityTitle": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 25mm",
+        "description": "",
+        "options": "25mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "중국규격만 따로",
+          "url": "/category/중국규격만-따로/570/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "암나사 숫나사 벌크헤드 밸브소켓",
+          "url": "/category/암나사-숫나사-벌크헤드-밸브소켓/585/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4914:cafe24_turquoise3531_1_4914_P0000HGZ00BF",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4914:cafe24_turquoise3531_1_4914_P0000HGZ00BF",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4914",
+      "variant_id": "cafe24_turquoise3531_1_4914_P0000HGZ00BF",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 32mm",
+      "variant_title": "32mm",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/국산-타공-중국-lesso-규격-블랙-벌크헤드-32mm-25mm-20mm/4914/?item_code=P0000HGZ00BF",
+      "declared_product_url": "https://selvas.co.kr/product/국산-타공-중국-lesso-규격-블랙-벌크헤드-32mm-25mm-20mm/4914/?item_code=P0000HGZ00BF",
+      "observed_at_utc": "2026-11-05T05:21:52.130Z",
+      "registered_at": null,
+      "price_amount": 6200,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "4200",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "4200",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202509/1eefc465dc2b2f917dd8bec0e85a7709.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:21:52.130Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:21:52.130Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Verified primary product breadcrumb has aquarium supply ancestry",
+      "classification_evidence": {
+        "title": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 32mm",
+        "identityTitle": "국산 타공 중국 LESSO 규격 블랙 벌크헤드 (32mm, 25mm, 20mm) 32mm",
+        "description": "",
+        "options": "32mm",
+        "salesSpecification": true,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": false,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": null,
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "중국규격만 따로",
+          "url": "/category/중국규격만-따로/570/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        },
+        {
+          "label": "암나사 숫나사 벌크헤드 밸브소켓",
+          "url": "/category/암나사-숫나사-벌크헤드-밸브소켓/585/",
+          "evidencePage": "https://selvas.co.kr/product/%EA%B5%AD%EC%82%B0-%ED%83%80%EA%B3%B5-%EC%A4%91%EA%B5%AD-lesso-%EA%B7%9C%EA%B2%A9-%EB%B8%94%EB%9E%99-%EB%B2%8C%ED%81%AC%ED%97%A4%EB%93%9C-32mm-25mm-20mm/4914/category/585/display/1/",
+          "observedAt": "2026-11-05T05:21:52.130Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000B",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000B",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4169",
+      "variant_id": "cafe24_turquoise3531_1_4169_P0000GEJ000B",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A  슬립형 국산파이프용 1개 16A",
+      "variant_title": "16A",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000B",
+      "declared_product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000B",
+      "observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "registered_at": null,
+      "price_amount": 1480,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "1480",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1480",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202510/dac2a9fbce0ebebd48ba4b3c115b19f6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:22:02.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 16A",
+        "identityTitle": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 16A",
+        "description": "",
+        "options": "16A",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://selvas.co.kr/category/%EC%96%B4%EB%8C%91%ED%84%B0-%EC%BB%A4%ED%94%8C%EB%9F%AC/593/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "국산규격만 따로",
+          "url": "/category/국산규격만-따로/571/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "어댑터 커플러",
+          "url": "/category/어댑터-커플러/593/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000C",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000C",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4169",
+      "variant_id": "cafe24_turquoise3531_1_4169_P0000GEJ000C",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A  슬립형 국산파이프용 1개 20A",
+      "variant_title": "20A",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000C",
+      "declared_product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000C",
+      "observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "registered_at": null,
+      "price_amount": 2400,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "1480",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1480",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202510/dac2a9fbce0ebebd48ba4b3c115b19f6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:22:02.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 20A",
+        "identityTitle": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 20A",
+        "description": "",
+        "options": "20A",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://selvas.co.kr/category/%EC%96%B4%EB%8C%91%ED%84%B0-%EC%BB%A4%ED%94%8C%EB%9F%AC/593/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "국산규격만 따로",
+          "url": "/category/국산규격만-따로/571/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "어댑터 커플러",
+          "url": "/category/어댑터-커플러/593/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000D",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000D",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4169",
+      "variant_id": "cafe24_turquoise3531_1_4169_P0000GEJ000D",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A  슬립형 국산파이프용 1개 25A",
+      "variant_title": "25A",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000D",
+      "declared_product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000D",
+      "observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "registered_at": null,
+      "price_amount": 2800,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "1480",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1480",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202510/dac2a9fbce0ebebd48ba4b3c115b19f6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:22:02.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 25A",
+        "identityTitle": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 25A",
+        "description": "",
+        "options": "25A",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://selvas.co.kr/category/%EC%96%B4%EB%8C%91%ED%84%B0-%EC%BB%A4%ED%94%8C%EB%9F%AC/593/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "국산규격만 따로",
+          "url": "/category/국산규격만-따로/571/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "어댑터 커플러",
+          "url": "/category/어댑터-커플러/593/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000E",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000E",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4169",
+      "variant_id": "cafe24_turquoise3531_1_4169_P0000GEJ000E",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A  슬립형 국산파이프용 1개 30A",
+      "variant_title": "30A",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000E",
+      "declared_product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000E",
+      "observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "registered_at": null,
+      "price_amount": 3780,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "1480",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1480",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202510/dac2a9fbce0ebebd48ba4b3c115b19f6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:22:02.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 30A",
+        "identityTitle": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 30A",
+        "description": "",
+        "options": "30A",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://selvas.co.kr/category/%EC%96%B4%EB%8C%91%ED%84%B0-%EC%BB%A4%ED%94%8C%EB%9F%AC/593/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "국산규격만 따로",
+          "url": "/category/국산규격만-따로/571/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "어댑터 커플러",
+          "url": "/category/어댑터-커플러/593/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        }
+      ]
+    },
+    {
+      "id": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000F",
+      "collector_key": "retailer-33:cafe24_turquoise3531_1_4169:cafe24_turquoise3531_1_4169_P0000GEJ000F",
+      "source_id": "retailer-33",
+      "retailer_product_id": "cafe24_turquoise3531_1_4169",
+      "variant_id": "cafe24_turquoise3531_1_4169_P0000GEJ000F",
+      "retailer": "셀바스",
+      "seller_domain": "selvas.co.kr",
+      "source_kind": "direct_retailer_product_page",
+      "verification_method": "Selected Cafe24 variant matched exact parent page, visible single-axis option, SKU-bound public option price and displayed base-price adjustment; sale conditions and checkout not verified",
+      "type": "gear",
+      "subtype": null,
+      "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A  슬립형 국산파이프용 1개 40A",
+      "variant_title": "40A",
+      "quantity_per_pack": null,
+      "unit_price_amount": null,
+      "product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000F",
+      "declared_product_url": "https://selvas.co.kr/product/블랙-호스어댑터인서트-어댑터-25a1인치-16a-20a-30a-40a-슬립형-국산파이프용-1개/4169/?item_code=P0000GEJ000F",
+      "observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "registered_at": null,
+      "price_amount": 4580,
+      "currency": "KRW",
+      "shipping_amount": null,
+      "variant_attributes": [],
+      "price_metadata": {
+        "product:price:amount": "1480",
+        "product:price:currency": "KRW",
+        "product:sale_price:amount": "1480",
+        "product:sale_price:currency": "KRW"
+      },
+      "price_basis": "Concrete JSON-LD Offer base price; sale metadata is preserved separately, discount conditions not verified",
+      "available": true,
+      "availability_basis": "Retailer JSON-LD InStock; not checkout-confirmed inventory",
+      "stock_quantity": null,
+      "photo": {
+        "verified_https_url": "https://selvas.co.kr/web/product/big/202510/dac2a9fbce0ebebd48ba4b3c115b19f6.jpg",
+        "permission_basis": "explicit_user_instruction",
+        "source_page_url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+        "downloaded_or_rehosted": false
+      },
+      "stock_observed_at_utc": "2026-11-05T05:22:02.122Z",
+      "review_evidence": {
+        "url": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/#prdReview",
+        "checkedAt": "2026-11-05T05:22:02.122Z",
+        "count": 0,
+        "purchaseVerified": null,
+        "rating": null
+      },
+      "classification_basis": "Explicit primary supply title corroborates the observed aquarium-supply category",
+      "classification_evidence": {
+        "title": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 40A",
+        "identityTitle": "블랙 호스어댑터(인서트 어댑터) 25A(1인치) 16A 20A 30A 40A 슬립형 국산파이프용 1개 40A",
+        "description": "",
+        "options": "40A",
+        "salesSpecification": false,
+        "aquaticDescription": false,
+        "ownContext": false,
+        "subtypes": [],
+        "conflicts": true,
+        "sufficient": false,
+        "basis": "Primary product title, own breadcrumb and description/options/sales specification; category is a discovery hint"
+      },
+      "classification_version": 9,
+      "discovery_category_url": "https://selvas.co.kr/category/%EC%96%B4%EB%8C%91%ED%84%B0-%EC%BB%A4%ED%94%8C%EB%9F%AC/593/",
+      "product_breadcrumb_evidence": [
+        {
+          "label": "홈",
+          "url": "/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "나라별 규격으로 배관찾기",
+          "url": "/category/나라별-규격으로-배관찾기/568/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "국산규격만 따로",
+          "url": "/category/국산규격만-따로/571/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        },
+        {
+          "label": "어댑터 커플러",
+          "url": "/category/어댑터-커플러/593/",
+          "evidencePage": "https://selvas.co.kr/product/%EB%B8%94%EB%9E%99-%ED%98%B8%EC%8A%A4%EC%96%B4%EB%8C%91%ED%84%B0%EC%9D%B8%EC%84%9C%ED%8A%B8-%EC%96%B4%EB%8C%91%ED%84%B0-25a1%EC%9D%B8%EC%B9%98-16a-20a-30a-40a-%EC%8A%AC%EB%A6%BD%ED%98%95-%EA%B5%AD%EC%82%B0%ED%8C%8C%EC%9D%B4%ED%94%84%EC%9A%A9-1%EA%B0%9C/4169/category/593/display/1/",
+          "observedAt": "2026-11-05T05:22:02.122Z"
+        }
+      ]
     }
   ],
   "direct_photo_validation": {
@@ -559730,5 +560968,5 @@
     "status": 200,
     "body_downloaded": false
   },
-  "snapshot_at_utc": "2026-11-05T04:56:48.423Z"
+  "snapshot_at_utc": "2026-11-05T05:25:25.146Z"
 }

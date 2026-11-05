@@ -5,6 +5,20 @@ const {parseProductPage}=require('../scripts/collector/product-jsonld.cjs');
 const {parseWpetPage}=require('../scripts/collector/wpet-public.cjs');
 const context={url:fixture.url,domain:'aquagardenshop.com',sourceId:'retailer-42',name:'아쿠아가든 쇼핑몰',type:'gear',subtype:'food',observedAt:fixture.observedAt};
 const parse=html=>parseProductPage(html,context);
+for(const [id,prices] of [[5175,[19800,15800,12800,11800,10800,8800]],[4914,[4200,5200,6200]],[4169,[1480,2400,2800,3780,4580]]]){
+ const f=require('./fixtures/selvas-size-'+id+'.json'),c={url:f.url,domain:'selvas.co.kr',sourceId:'retailer-33',type:'gear',observedAt:f.observedAt};
+ test('captured Selvas size group '+id+' verifies each concrete SKU price and preserves units',()=>{
+  const r=parseProductPage(f.html,c);assert.equal(r.status,'success');assert.deepEqual(r.issues,[]);assert.deepEqual(r.items.map(p=>p.price_amount),prices);
+  assert.equal(new Set(r.items.map(p=>p.collector_key)).size,prices.length);assert(r.items.every(p=>p.quantity_per_pack===null&&p.variant_id&&p.variant_title));
+ });
+ test('Selvas size group '+id+' rejects wrong price, parent, model, hidden base and missing stock proof',()=>{
+  const re=/<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
+  for(const mutate of [g=>g.hasVariant[0].offers.price++,g=>g.productGroupID+='wrong',g=>g.hasVariant[0].size+='wrong',g=>g.hasVariant[0].offers.url=g.hasVariant[0].offers.url.replace('/'+id+'/','/999999/'),g=>g.variesBy.push('color')]){
+   const g=JSON.parse(f.html.match(re)[1]);mutate(g);const r=parseProductPage(f.html.replace(re,'<script type="application/ld+json">'+JSON.stringify(g)+'</script>'),c);assert(r.issues.includes('size_option_not_corroborated'));
+  }
+  for(const h of [f.html.replace('option_stock_data','missing_stock'),f.html.replace('id="span_product_price_text"','hidden id="span_product_price_text"')])assert.equal(parseProductPage(h,c).items.length,0);
+ });
+}
 
 const selvas=require('./fixtures/selvas-selected.json');
 const aquauju=require('./fixtures/aquauju-selected.json');

@@ -8,10 +8,8 @@ on:
         type: choice
         options: [all, live, gear, reconcile]
         default: all
-  # Two shared-budget refreshes: UTC 00/12, Korea 09/21. Both product types.
-  # GitHub may delay delivery; manual dispatches and retries are additional.
-  schedule:
-    - cron: '0 0,12 * * *'
+  # Automatic collection paused at the owner's request on 2026-11-08.
+  # Previous schedule: '0 0,12 * * *' (Korea 09/21).
 
 permissions:
   contents: write

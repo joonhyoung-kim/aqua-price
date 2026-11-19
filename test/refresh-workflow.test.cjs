@@ -72,5 +72,22 @@ test('data-only production publication, pacing, recovery and both validation gat
  assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\(reportPath,\s*current\)/);
  assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\('dist\/collector-status\.json',\s*current\)/);
  const active=path.join(root,'.github/workflows/catalog-refresh.yml');
- if(fs.existsSync(active))assert.equal(fs.readFileSync(active,'utf8'),workflow,'active main workflow must match its preview template');
+ if(fs.existsSync(active)){
+  const deployed=fs.readFileSync(active,'utf8');
+  const legacySchedule=[
+   '  # Two shared-budget refreshes: UTC 00/12, Korea 09/21. Both product types.',
+   '  # GitHub may delay delivery; manual dispatches and retries are additional.',
+   '  schedule:',
+   "    - cron: '0 0,12 * * *'",
+  ].join('\n');
+  const explicitPause=[
+   "  # Automatic collection paused at the owner's request on 2026-11-08.",
+   "  # Previous schedule: '0 0,12 * * *' (Korea 09/21).",
+  ].join('\n');
+  assert.ok(workflow.includes(legacySchedule),'historical template retains its original cadence fixture');
+  assert.match(deployed,/^on:\s*\n {2}workflow_dispatch:/m,'active workflow must keep manual dispatch');
+  assert.doesNotMatch(deployed,/^\s*(?:schedule|cron):/m,'automatic triggers remain paused');
+  assert.equal(deployed,workflow.replace(legacySchedule,explicitPause),
+   'active main workflow must match the template except its deliberately paused schedule');
+ }
 });

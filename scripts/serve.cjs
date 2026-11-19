@@ -14,6 +14,7 @@ const routes = {
   '/collector-status.json': ['collector-status.json', 'application/json; charset=utf-8'],
   '/admin': ['admin/index.html', 'text/html; charset=utf-8'],
   '/admin/': ['admin/index.html', 'text/html; charset=utf-8'],
+  '/admin/manual-refresh.js': ['admin/manual-refresh.js', 'text/javascript; charset=utf-8'],
   '/admin/controls.js': ['admin/controls.js', 'text/javascript; charset=utf-8'],
   '/admin/app.js': ['admin/app.js', 'text/javascript; charset=utf-8'],
   '/admin/status.json': ['admin/status.json', 'application/json; charset=utf-8'],

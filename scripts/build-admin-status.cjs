@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('fs');const {atomicJson}=require('./collect-catalog.cjs');
 function scheduleText(automation={}){
+ if(automation.scheduleUTC?.all==='17 11,23 * * *')return '생물·용품 매일 08:17 / 20:17 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)';
  if(automation.scheduleUTC?.all==='0 0,12 * * *')return '생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)';
  const entries=Object.entries({live:'생물',gear:'용품',reconcile:'목록 대조'}).map(([key,label])=>{
   const cron=automation.scheduleUTC?.[key];if(typeof cron!=='string'||!cron.trim())return null;

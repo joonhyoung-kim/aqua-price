@@ -11,7 +11,7 @@ const workflow=read('sources/catalog-refresh.workflow.yml');
 // Routing executes on the Linux Actions runner; native Windows keeps static checks.
 const bashAvailable=process.platform!=='win32'&&spawnSync('bash',['--version'],{encoding:'utf8',timeout:3000}).status===0;
 const schedules=[...workflow.matchAll(/^    - cron: '([^']+)'$/gm)].map(m=>m[1]);
-const expected=['0 0,12 * * *'];
+const expected=['17 11,23 * * *'];
 function runSelection(schedule='',requested=''){
  const block=workflow.match(/      - name: Refresh registered sources\n([\s\S]*?)(?=      - name:)/)?.[1];
  assert.ok(block,'collector step exists');
@@ -22,7 +22,7 @@ function runSelection(schedule='',requested=''){
   return spawnSync('bash',['-e','-o','pipefail','-c',command],{cwd,encoding:'utf8',timeout:5000,env:{...process.env,PATH:cwd+path.delimiter+process.env.PATH,EVENT_SCHEDULE:schedule,REQUESTED_MODE:requested}});
  }finally{fs.rmSync(cwd,{recursive:true,force:true});}
 }
-test('exactly two shared-budget slots at Korea 09 and 21, with no duplicate slots',()=>{
+test('exactly two shared-budget slots at Korea 08:17 and 20:17, with no duplicate slots',()=>{
  assert.deepEqual(schedules,expected);
  assert.ok(workflow.includes("'"+expected[0]+"') mode=all ;;"));
  const slots=[];
@@ -32,7 +32,7 @@ test('exactly two shared-budget slots at Korea 09 and 21, with no duplicate slot
   const selected=hours.split(',').map(Number);
   for(const hour of selected)slots.push(hour*60+Number(minute));
  }
- assert.deepEqual(slots,[0,720]);assert.equal(new Set(slots).size,2);
+ assert.deepEqual(slots,[677,1397]);assert.equal(new Set(slots).size,2);
 });
 for(const [index,mode]of ['all'].entries())test('scheduled '+mode+' selects the existing combined collection mode',{skip:!bashAvailable},()=>{
  const result=runSelection(expected[index]);
@@ -57,7 +57,7 @@ test('schedule metadata and admin display match the cadence without claiming exe
  const {adminStatus}=require('../scripts/build-admin-status.cjs');
  const enabled={id:'fixture',sourceDomain:'example.invalid',enabled:true};
  const out=adminStatus({sources:[enabled,{...enabled,id:'disabled',enabled:false}]},{sources:[]},{items:[]},automation);
- assert.equal(out.sources[0].schedule,'생물·용품 매일 09:00 / 21:00 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)');
+ assert.equal(out.sources[0].schedule,'생물·용품 매일 08:17 / 20:17 (한국시간 · 시작 예정, 예약 지연 가능 · 공유 18분 예산)');
  assert.equal(out.sources[1].schedule,null);assert.equal(out.sources[0].autoRefreshVerified,false);
 });
 test('data-only production publication, pacing, recovery and both validation gates remain intact',()=>{
@@ -73,4 +73,15 @@ test('data-only production publication, pacing, recovery and both validation gat
  assert.match(read('scripts/collect-catalog.cjs'),/atomicJson\('dist\/collector-status\.json',\s*current\)/);
  const active=path.join(root,'.github/workflows/catalog-refresh.yml');
  if(fs.existsSync(active))assert.equal(fs.readFileSync(active,'utf8'),workflow,'active main workflow must match its preview template');
+});
+
+test('combined lane permits both new slots and blocks repeats within the slot',()=>{
+ const {scheduleDecision}=require('../scripts/collector/controls.cjs');
+ const controls={intervalsHours:{live:12,gear:12,reconcile:24}};
+ const older={schedule:{modes:{all:{lastAutomatedAttemptAt:'2026-11-21T23:40:00Z'}}}};
+ const next={schedule:{modes:{all:{lastAutomatedAttemptAt:'2026-11-22T11:31:00Z'}}}};
+ const check=(state,at)=>scheduleDecision(controls,state,{mode:'all',runTrigger:'schedule',now:Date.parse(at)});
+ assert.equal(check(older,'2026-11-22T11:17:00Z').due,true);
+ assert.equal(check(next,'2026-11-22T11:45:00Z').due,false);
+ assert.equal(check(next,'2026-11-22T23:17:00Z').due,true);
 });

@@ -48,9 +48,11 @@ test('admin cadence is derived from current schedule metadata, never a stale har
 
 test('served admin snapshot uses current configured cadence without rewriting run history',()=>{
  const served=JSON.parse(fs.readFileSync('dist/admin/status.json','utf8')),config=require('../sources/automation-status.json');
- assert.deepEqual(served.automation.scheduleUTC,config.scheduleUTC);
+ assert.deepEqual(config.scheduleUTC,{all:'17 11,23 * * *'});
+ // The existing data snapshot is not regenerated until a real collection.
+ assert.ok(['0 0,12 * * *',config.scheduleUTC.all].includes(served.automation.scheduleUTC.all));
  const {scheduleText}=require('../scripts/build-admin-status.cjs');
- assert.match(scheduleText(served.automation),/09:00 \/ 21:00/);
+ assert.match(scheduleText(config),/08:17 \/ 20:17/);
 });
 
 

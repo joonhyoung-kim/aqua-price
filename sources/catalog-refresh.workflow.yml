@@ -8,10 +8,10 @@ on:
         type: choice
         options: [all, live, gear, reconcile]
         default: all
-  # Two shared-budget refreshes: UTC 00/12, Korea 09/21. Both product types.
+  # Two shared-budget refreshes: UTC 11:17/23:17, Korea 08:17/20:17. Both product types.
   # GitHub may delay delivery; manual dispatches and retries are additional.
   schedule:
-    - cron: '0 0,12 * * *'
+    - cron: '17 11,23 * * *'
 
 permissions:
   contents: write
@@ -61,7 +61,7 @@ jobs:
         run: |
           mode=all
           case "$EVENT_SCHEDULE" in
-            '0 0,12 * * *') mode=all ;;
+            '17 11,23 * * *') mode=all ;;
           esac
           case "$REQUESTED_MODE" in
             all|live|gear|reconcile) mode="$REQUESTED_MODE" ;;

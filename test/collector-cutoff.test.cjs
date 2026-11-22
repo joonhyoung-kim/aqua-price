@@ -35,18 +35,18 @@ test('future price or stock evidence and clock rollback still fail closed',()=>{
  assert.throws(()=>applyUpdates(snapshot,{source:state},'all',{now:Date.parse('2026-10-25')}),/clock/);
  assert.throws(()=>applyUpdates(snapshot,{source:{...state,products:[{...update,stock_observed_at_utc:'2026-11-01'}]}},'all',{now:Date.parse('2026-10-30')}),/cutoff/);
 });
-test('combined Korea 09/21 windows tolerate delayed starts and late finishes without duplicating a slot',()=>{
+test('combined Korea 08:17/20:17 windows tolerate delayed starts and late finishes without duplicating a slot',()=>{
  const controls=validateControls({schemaVersion:1,intervalsHours:{live:12,gear:12,reconcile:24},sources:{}},{sources:[]});
- let now=Date.parse('2026-10-29T00:42:00Z');
+ let now=Date.parse('2026-10-29T12:01:00Z');
  const decision=scheduleDecision(controls,{}, {mode:'all',runTrigger:'schedule',now});
- assert.equal(decision.window.startAt,'2026-10-29T00:00:00.000Z');
+ assert.equal(decision.window.startAt,'2026-10-29T11:17:00.000Z');
  const schedule=initializeSchedule({},controls,'all',decision);
  markAttempt(schedule,'all',{at:new Date(now).toISOString(),automatic:true,revision:controls.revision,runId:'test'});
- markOutcome(schedule,'all','partial_failure','2026-10-29T01:00:00Z');
+ markOutcome(schedule,'all','partial_failure','2026-10-29T12:20:00Z');
  const read=at=>scheduleDecision(controls,{schedule},{mode:'all',runTrigger:'schedule',now:Date.parse(at)});
- assert.equal(read('2026-10-29T11:59:59Z').due,false);
- assert.equal(read('2026-10-29T12:00:00Z').due,true);
- assert.equal(read('2026-10-29T00:41:59Z').reason,'clock_rollback');
+ assert.equal(read('2026-10-29T23:16:59Z').due,false);
+ assert.equal(read('2026-10-29T23:17:00Z').due,true);
+ assert.equal(read('2026-10-29T12:00:59Z').reason,'clock_rollback');
  assert.equal(scheduleDecision(controls,{schedule},{mode:'all',runTrigger:'workflow_dispatch',now}).reason,'manual_bypass');
- assert.equal(schedule.modes.all.lastAutomatedAttemptAt,'2026-10-29T00:42:00.000Z');
+ assert.equal(schedule.modes.all.lastAutomatedAttemptAt,'2026-10-29T12:01:00.000Z');
 });

@@ -62,10 +62,10 @@ function sourceDecision(source, prior = {}, controls, now = Date.now()) {
   const reason = !requestedEnabled ? 'requested_off' : source.enabled !== true ? 'registry_disabled' : source.technicalReadiness === 'blocked' ? 'technical_blocked' : manualReview ? 'manual_review' : blockedUntil && now < Date.parse(blockedUntil) ? 'backoff' : 'eligible';
   return { requestedEnabled, registryEligible, effectiveEnabled: reason === 'eligible', reason, blockedUntil: reason === 'backoff' ? blockedUntil : null };
 }
-// The combined run uses UTC 00/12 (KST 09/21). Legacy lane anchors remain for
+// The combined run uses UTC 11:17/23:17 (KST 08:17/20:17). Legacy lane anchors remain for
 // explicitly requested lane runs and their history. Longer periods are
 // deterministic multiples from the Unix epoch, not elapsed timers after a delay.
-const WINDOW_ANCHORS = Object.freeze({ all: 0, live: 17 * 60000, gear: 29 * 60000, reconcile: (2 * 60 + 43) * 60000 });
+const WINDOW_ANCHORS = Object.freeze({ all: (11 * 60 + 17) * 60000, live: 17 * 60000, gear: 29 * 60000, reconcile: (2 * 60 + 43) * 60000 });
 const windowPresets = mode => mode === 'all' ? INTERVAL_PRESETS.live : INTERVAL_PRESETS[mode];
 function scheduleWindow(mode, intervalHours, now) {
   if (!windowPresets(mode)?.includes(intervalHours) || !Number.isFinite(now)) throw Error('Invalid schedule window');

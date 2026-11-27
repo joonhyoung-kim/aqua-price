@@ -1,6 +1,7 @@
 'use strict';
 const { parseProductPage } = require('./product-jsonld.cjs');
 const { parseGodoPage } = require('./godo-public.cjs');
+const {isDeferred,deferRefresh,recoverRefresh}=require('./refresh-deferrals.cjs');
 const { httpsUrl, sourceUrl } = require('../../dist/data-model.js');
 const AGENT = 'AquaPriceCatalog/0.1 (+https://github.com/joonhyoung-kim/aqua-price)';
 function sameHost(a,b) { return new URL(a).hostname.replace(/^www\./,'') === new URL(b).hostname.replace(/^www\./,''); }
@@ -78,14 +79,34 @@ async function collectSource(source, previous={}, options={}) {
     const crawlDelays=[...robots.text.matchAll(/^\s*Crawl-delay:\s*(\d+(?:\.\d+)?)\s*$/gmi)].map(m=>Number(m[1])*1000);
     if(crawlDelays.length)limits.delayMs=Math.max(limits.delayMs,...crawlDelays);
     for(const [productIndex,product] of (limits.products||[]).entries()) {
+      if(isDeferred(state,product.url,now())){state.priceRefreshCompletedCount=productIndex+1;continue;}
       if(!robotsAllows(robots.text,product.url)){state.priceRefreshCompletedCount=productIndex+1;state.errors.push('robots_denied:'+product.url);state.coverage.requestFailures++;continue;}
-      const page=await request(product.url,limits,run,prior);state.priceRefreshCompletedCount=productIndex+1;
-      if([404,410].includes(page.status)){state.errors.push('product_'+page.status+'_preserved:'+product.url);state.coverage.requestFailures++;continue;}
+      let page;
+      try { page=await request(product.url,limits,run,prior); }
+      catch(error) {
+        // The existing byte ceiling is still enforced by request(). Only an
+        // oversized individual detail is isolated; access/robots/budget errors
+        // and all other request errors retain the existing source stop policy.
+        if(error.message!=='response_too_large')throw error;
+        state.priceRefreshCompletedCount=productIndex+1;
+        state.errors.push('detail_request_failed:'+product.url+':response_too_large');
+        state.coverage.requestFailures++;
+        deferRefresh(state,product.url,'response_too_large',new Date(now()).toISOString());
+        continue;
+      }
+      state.priceRefreshCompletedCount=productIndex+1;
+      if([404,410].includes(page.status)){const reason='product_'+page.status+'_preserved';state.errors.push(reason+':'+product.url);state.coverage.requestFailures++;deferRefresh(state,product.url,reason,new Date(now()).toISOString());continue;}
       state.coverage.visitedPages++;
       const observedAt=page.cacheHit?(page.fetchedAt || prior.cache?.[product.url]?.fetchedAt || state.collectorLastAttempt):new Date(now()).toISOString();
       const context={...product,url:product.url,sourceId:source.id,domain:source.sourceDomain,name:source.name,photosAllowed:source.photosAllowed===true,verifiedPhotoUrls:source.verifiedPhotoUrls,observedAt};
       const parsed=limits.adapter==='cafe24_single_offer'?require('./cafe24-single-offer.cjs').parseSingleOffer(page.text,context):limits.adapter==='wpet_public_price'?require('./wpet-public.cjs').parseWpetPage(page.text,context):limits.adapter==='godo_public_price'?parseGodoPage(page.text,context):limits.adapter==='legacy_godo_public_price'?parseGodoPage(page.text,context,true):parseProductPage(page.text,context);
-      if(parsed.status!=='success'){state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;continue;}
+      const errorsBefore=state.errors.length;
+      if(parsed.status!=='success'){
+        state.errors.push(...parsed.issues.map(x=>x+':'+product.url));state.coverage.parseFailures++;
+        if(!page.cacheHit)deferRefresh(state,product.url,'detail_parse_failed',observedAt,parsed.issues);
+        console.error('[DETAIL_PARSE_FAILED]',JSON.stringify({sourceId:source.id,url:product.url,issues:parsed.issues}));
+        continue;
+      }
       if(parsed.issues.some(x=>x!=='duplicate_offer')){state.errors.push(...parsed.issues.filter(x=>x!=='duplicate_offer').map(x=>x+':'+product.url));state.coverage.parseFailures++;}
       // A product URL may contain several options with different confirmed classifications.
       // A URL-level refresh hint must never relabel every existing variant as its first sibling.
@@ -102,6 +123,7 @@ async function collectSource(source, previous={}, options={}) {
         if(classified.status!=='classified'){state.errors.push('known_subtype_conflict:'+product.url);state.coverage.parseFailures++;return false;}
         item.type=classified.type;item.subtype=classified.subtype;item.classification_basis=classified.basis;return true;
       });
+      if(!page.cacheHit){if(state.errors.length>errorsBefore)deferRefresh(state,product.url,'detail_parse_failed',observedAt,state.errors.slice(errorsBefore).map(x=>x.split(':',1)[0]));else if(parsed.items.length)recoverRefresh(state,product.url,observedAt);}
       incoming.push(...parsed.items);if(!page.cacheHit){fresh++;updatedKeys.push(...parsed.items.map(p=>p.collector_key));}else updatedKeys.push(...parsed.items.filter(p=>!state.products.some(old=>old.collector_key===p.collector_key)).map(p=>p.collector_key));
     }
     const merged=reconcile(state.products,incoming,state.coverage);state.products=merged.products;state.updatedKeys=updatedKeys;state.deletionAllowed=merged.deletionAllowed;state.cache=prior.cache||{};state.requests=run.requests;state.lastRequestAt=run.lastRequest;
@@ -109,6 +131,6 @@ async function collectSource(source, previous={}, options={}) {
     if(incoming.length && !state.errors.length && (fresh>0||!prior.collectorLastSuccess))state.collectorLastSuccess=new Date(now()).toISOString();
     state.cacheOnly=fresh===0&&incoming.length>0&&updatedKeys.length===0;
     return state;
-  }catch(error){if(['execution_deadline','request_limit'].includes(error.message)){state.products=reconcile(state.products,incoming,state.coverage).products;state.updatedKeys=updatedKeys;state.cacheOnly=fresh===0&&updatedKeys.length===0;state.deletionAllowed=false;return fail('budget_limited',error.message);}state.coverage.requestFailures++;if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
+  }catch(error){if(['execution_deadline','request_limit'].includes(error.message)){state.products=reconcile(state.products,incoming,state.coverage).products;state.updatedKeys=updatedKeys;state.cacheOnly=fresh===0&&updatedKeys.length===0;state.deletionAllowed=false;return fail('budget_limited',error.message);}state.coverage.requestFailures++;if(typeof error.cause?.code==='string'&&/^[A-Z0-9_]{1,80}$/.test(error.cause.code))console.error('[REQUEST_CAUSE]',JSON.stringify({sourceId:source.id,code:error.cause.code}));if([403,429].includes(error.status)){state.blockedUntil=new Date(now()+24*3600000).toISOString();state.httpStatus=error.status;state.requiresManualReview=error.status===403;state.retryAfter=error.retryAfter??null;return fail('access_stopped',String(error.message));}return fail('failed',String(error.message));}
 }
 module.exports={collectSource,reconcile,robotsAllows,request};

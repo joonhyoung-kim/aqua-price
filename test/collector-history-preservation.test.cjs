@@ -292,3 +292,25 @@ test('a completed failed attempt cannot regress the latest published success to 
     const final = f.read('dist/collector-status.json'); assert.equal(final.sources[0].status, 'access_stopped'); assert.equal(final.sources[0].collectorLastAttempt, NOW); assert.equal(final.sources[0].evaluatedThisExecution, true);
   } finally { f.cleanup(); }
 });
+
+test('public collector status compacts JSON without changing durable history or other file formats', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'aqua-compact-status-'));
+  const writer = path.resolve(__dirname, '../scripts/collect-catalog.cjs');
+  const value = { schedule: { modes: { all: { lastAutomatedAttemptAt: '2026-11-27T00:00:00Z' } } }, nextSourceId: 'retailer-01', sources: [{ id: 'retailer-01', discoveryProgress: { cursor: { nextCategoryIndex: 3 }, pendingCandidates: [{ key: 'fixture:1', title: '수초  A\nB', evidence: [{ page: 'https://fixture.invalid/', observedAt: '2026-11-27T00:00:00Z' }] }], reviewQueue: [], excludedCandidates: [], discoveryLedger: { entries: [{ key: 'fixture:1', status: 'pending' }] }, requiresManualReview: true, blockedUntil: '2026-11-28T00:00:00Z', unknownFutureCheckpointField: { nested: [null, false, 0, '  '] }, classificationRevalidationUpdates: [{ transient: true }] } }] };
+  const pretty = JSON.stringify(value, (key, entry) => key === 'classificationRevalidationUpdates' ? undefined : entry, 2) + '\n';
+  try {
+    fs.mkdirSync(path.join(root, 'dist'));
+    const status = path.join(root, 'dist/collector-status.json');
+    fs.writeFileSync(status, pretty);
+    const result = spawnSync(process.execPath, ['-e', "const { atomicJson } = require(process.argv[1]); const value = JSON.parse(process.argv[2]); atomicJson('dist/collector-status.json', value); atomicJson(require('node:path').resolve('dist/collector-status.json'), value); atomicJson('.collector/report.json', value); atomicJson('dist/catalog.json', value);", writer, JSON.stringify(value)], { cwd: root, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr || String(result.error || ''));
+    const compact = fs.readFileSync(status, 'utf8');
+    assert.equal(compact, JSON.stringify(JSON.parse(pretty)) + '\n');
+    assert.deepEqual(JSON.parse(compact), JSON.parse(pretty));
+    assert.ok(Buffer.byteLength(compact) < Buffer.byteLength(pretty));
+    assert.equal(fs.readFileSync(path.join(root, '.collector/report.json'), 'utf8'), pretty);
+    assert.equal(fs.readFileSync(path.join(root, 'dist/catalog.json'), 'utf8'), pretty);
+    assert.equal(fs.existsSync(status + '.tmp'), false);
+    console.log('fixture bytes:', Buffer.byteLength(pretty), '->', Buffer.byteLength(compact));
+  } finally { fs.rmSync(root, { recursive: true, force: true }); }
+});

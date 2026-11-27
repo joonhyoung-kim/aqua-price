@@ -75,11 +75,24 @@ render=function(resetPage=true){
 let suggestions=[],suggestionIndex=-1;
 function closeSuggestions(){suggestions=[];suggestionIndex=-1;$('#searchSuggestions').innerHTML='';$('#searchSuggestions').hidden=true;$('#query').setAttribute('aria-expanded','false');$('#query').setAttribute('aria-activedescendant','');}
 function paintSuggestions(){const list=$('#searchSuggestions');list.hidden=!suggestions.length;list.innerHTML=suggestions.map((s,i)=>'<button type="button" role="option" id="suggestion-'+i+'" data-suggestion="'+i+'" aria-selected="'+(i===suggestionIndex)+'">'+escapeHtml(s)+'</button>').join('');$('#query').setAttribute('aria-expanded',String(!!suggestions.length));$('#query').setAttribute('aria-activedescendant',suggestionIndex<0?'':'suggestion-'+suggestionIndex);}
-function chooseSuggestion(i){if(!suggestions[i])return;draftQuery=suggestions[i];$('#query').value=draftQuery;draftStatus();closeSuggestions();}
+function chooseSuggestion(i){
+ const query=suggestions[i];if(!query||composing)return;
+ closeSuggestions();
+ restoreFilters({...filters,query});
+ library.search(filters.query);renderLibrary();$('#query').focus?.({preventScroll:true});
+}
+$('#searchStarters')?.addEventListener('click',event=>{
+ const b=event.target.closest('[data-search-example]');if(!b)return;
+ const {searchExample:query,searchScope:type}=b.dataset;
+ if(!query||!['live','gear'].includes(type))return;
+ closeSuggestions();
+ restoreFilters({...AquaCatalog.defaultFilters,type,query,sort:'relevance'});
+ library.search(filters.query);renderLibrary();
+});
 $('#query').setAttribute('role','combobox');$('#query').setAttribute('aria-autocomplete','list');$('#query').setAttribute('aria-controls','searchSuggestions');$('#query').setAttribute('aria-expanded','false');
 $('#query').addEventListener('input',event=>{draftQuery=event.target.value;draftStatus();if(composing)return;suggestions=catalogQuery.suggest(draftQuery,filters.type);suggestionIndex=-1;paintSuggestions();});
 $('#query').addEventListener('compositionstart',closeSuggestions);
-$('#query').addEventListener('keydown',event=>{if(composing||event.isComposing||event.keyCode===229)return;if(event.key==='Escape'){closeSuggestions();return;}if(!suggestions.length)return;if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();suggestionIndex=(suggestionIndex+(event.key==='ArrowDown'?1:-1)+suggestions.length)%suggestions.length;paintSuggestions();}else if(event.key==='Enter'&&suggestionIndex>=0){event.preventDefault();chooseSuggestion(suggestionIndex);compositionEnter=true;}});
+$('#query').addEventListener('keydown',event=>{if(composing||event.isComposing||event.keyCode===229)return;if(event.key==='Escape'){closeSuggestions();return;}if(!suggestions.length)return;if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();suggestionIndex=suggestionIndex<0?(event.key==='ArrowDown'?0:suggestions.length-1):(suggestionIndex+(event.key==='ArrowDown'?1:-1)+suggestions.length)%suggestions.length;paintSuggestions();}else if(event.key==='Enter'&&suggestionIndex>=0){event.preventDefault();chooseSuggestion(suggestionIndex);}});
 $('#searchSuggestions').addEventListener('click',event=>{const b=event.target.closest('[data-suggestion]');if(b)chooseSuggestion(Number(b.dataset.suggestion));});
 $('#search').addEventListener('submit',()=>{if(!composing&&!compositionEnter){closeSuggestions();library.search(filters.query);renderLibrary();}});
 $('#unitScope').addEventListener('change',()=>{filters.unitScope=$('#unitScope').value;render();});
@@ -256,10 +269,18 @@ if($('#ux5Dialog')){
   previousWorkspace();
   if(ux5PanelState?.kind==='filters')for(const [id,value]of Object.entries(ux5PanelState.fields)){const el=$('#'+id);if(el&&!el.closest('label')?.hidden){el.value=value.value;el.checked=value.checked;}}
   if(filters.query&&!$('#scopeStatus').textContent.startsWith('저장 조건'))$('#scopeStatus').textContent='';
-  const direct=filters.type==='live'&&['fish','shrimp'].includes(filters.subtype);
+  const gearDirect=filters.type==='gear';
+  const direct=gearDirect||(filters.type==='live'&&['fish','shrimp'].includes(filters.subtype));
+  directCategories.classList.toggle('gear-direct',gearDirect);
+  directCategories.setAttribute('aria-label',gearDirect?'용품 분류 선택':'생물 분류 선택');
   const target=direct?directCategories:browseDetails;
   if($('#fishFilters').parentElement!==target){if(direct)target.append($('#fishFilters'));else target.prepend($('#fishFilters'));}
-  if(direct){
+  if(gearDirect){
+   const leaf=filters.gearGroup||'all',major=filters.gearCategory||'all';
+   if(!directCategoryContext?.startsWith('gear:'))directCategories.open=false;
+   directCategoryContext='gear:'+major+':'+leaf;
+   categorySummary.textContent='용품 종류 · '+(leaf!=='all'?AquaCatalog.gearGroups[leaf]:major!=='all'?AquaCatalog.gearCategories[major]:'전체')+' (선택·변경)';
+  }else if(direct){
    const leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup,browse=filters.browseGroup||'all',key=filters.subtype+':'+leaf+':'+browse;
    if(key!==directCategoryContext)directCategories.open=leaf==='all'&&browse==='all';
    directCategoryContext=key;
@@ -267,6 +288,7 @@ if($('#ux5Dialog')){
    categorySummary.textContent=subtypeNames[filters.subtype]+' 분류 · '+label+' (선택·변경)';
   }else directCategoryContext=null;
   directCategories.hidden=!direct;browseDetails.hidden=direct;
+  $('#query').placeholder=gearDirect?'예: 외부여과기, 퓨리젠 250mL':filters.type==='live'?'예: 네온테트라, 체리새우':'예: 체리새우, 외부여과기';
   $('#quickRoles').hidden=filters.type!=='gear';$('#livestockFilters').hidden=filters.type!=='live';
   roles.querySelectorAll('button').forEach(b=>{b.classList.toggle('active',b.dataset.quickRole===filters.productRole);b.setAttribute('aria-pressed',String(b.dataset.quickRole===filters.productRole));});
   const count=[...$('#activeFilters').querySelectorAll('[data-clear-filter]')].filter(b=>!['query','sort','compareAcross'].includes(b.dataset.clearFilter)).length;

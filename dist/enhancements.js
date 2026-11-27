@@ -92,6 +92,7 @@ $('#searchStarters')?.addEventListener('click',event=>{
 $('#query').setAttribute('role','combobox');$('#query').setAttribute('aria-autocomplete','list');$('#query').setAttribute('aria-controls','searchSuggestions');$('#query').setAttribute('aria-expanded','false');
 $('#query').addEventListener('input',event=>{draftQuery=event.target.value;draftStatus();if(composing)return;suggestions=catalogQuery.suggest(draftQuery,filters.type);suggestionIndex=-1;paintSuggestions();});
 $('#query').addEventListener('compositionstart',closeSuggestions);
+document.querySelectorAll('[data-type]').forEach(button=>button.addEventListener('click',closeSuggestions));
 $('#query').addEventListener('keydown',event=>{if(composing||event.isComposing||event.keyCode===229)return;if(event.key==='Escape'){closeSuggestions();return;}if(!suggestions.length)return;if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();suggestionIndex=suggestionIndex<0?(event.key==='ArrowDown'?0:suggestions.length-1):(suggestionIndex+(event.key==='ArrowDown'?1:-1)+suggestions.length)%suggestions.length;paintSuggestions();}else if(event.key==='Enter'&&suggestionIndex>=0){event.preventDefault();chooseSuggestion(suggestionIndex);}});
 $('#searchSuggestions').addEventListener('click',event=>{const b=event.target.closest('[data-suggestion]');if(b)chooseSuggestion(Number(b.dataset.suggestion));});
 $('#search').addEventListener('submit',()=>{if(!composing&&!compositionEnter){closeSuggestions();library.search(filters.query);renderLibrary();}});

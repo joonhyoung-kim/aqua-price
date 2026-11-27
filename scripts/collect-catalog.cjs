@@ -12,7 +12,8 @@ const { loadControls, sourceDecision, scheduleDecision, initializeSchedule, mark
 function atomicJson(file, value) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   const temp = file + '.tmp';
-  fs.writeFileSync(temp, JSON.stringify(value, (key, entry) => key === 'classificationRevalidationUpdates' ? undefined : entry, 2) + '\n');
+  const compact = path.resolve(file) === path.resolve('dist/collector-status.json');
+  fs.writeFileSync(temp, JSON.stringify(value, (key, entry) => key === 'classificationRevalidationUpdates' ? undefined : entry, compact ? 0 : 2) + '\n');
   fs.renameSync(temp, file);
 }
 function entryLanes(entry) {

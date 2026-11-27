@@ -78,6 +78,20 @@ test('autocomplete applies the chosen suggestion in one action and Escape cancel
  assert.equal(n.searchSuggestions.hidden,true);assert.notEqual(n.grid.innerHTML,committed);
  assert.match(n.recentSearches.innerHTML,/팬더/);
 });
+test('changing search scope dismisses stale autocomplete without losing the draft',async()=>{
+ const app=await setup(uxFixture,false,'?type=live',true,true),n=app.nodes;
+ n.query.value='체리';n.query.listeners.input({target:n.query});
+ n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});
+ assert.match(n.searchSuggestions.innerHTML,/체리바브/);
+ app.type('gear');
+ assert.equal(n.searchSuggestions.hidden,true);assert.equal(n.query.attributes['aria-expanded'],'false');
+ assert.equal(n.query.attributes['aria-activedescendant'],'');assert.equal(n.query.value,'체리');
+ assert.match(n.draftStatus.textContent,/입력 중/);
+ n.searchSuggestions.listeners.click({target:{closest:()=>({dataset:{suggestion:'0'}})}});
+ assert.equal(AquaCatalog.filtersFromSearch(app.search()).query,'');
+ n.query.value='외부';n.query.listeners.input({target:n.query});
+ assert.match(n.searchSuggestions.innerHTML,/외부여과기/);
+});
 test('one-click searches choose their scope and leave unrelated narrow filters behind',async()=>{
  const app=await setup(uxFixture,false,'?type=live&subtype=shrimp&query=체리새우&sort=unit&maxPrice=200',true,true),n=app.nodes;
  n.searchStarters.listeners.click({target:{closest:()=>({dataset:{searchExample:'외부여과기',searchScope:'gear'}})}});

@@ -3,6 +3,7 @@ const crypto = require('node:crypto');
 const {productKey} = require('./discovery.cjs');
 const {revalidationCandidates} = require('./classification-revalidation.cjs');
 const {verifyDiscovered} = require('./verify-discovered.cjs');
+const {isDeferred} = require('./refresh-deferrals.cjs');
 const VERSION = 1;
 const {CLASSIFICATION_VERSION} = require('./queue-policy.cjs');
 const terminal = new Set(['corrected', 'verified_gear', 'needs_review', 'identity_mismatch', 'robots_denied_product']);
@@ -65,7 +66,7 @@ async function revalidateExisting(source, seed, state, snapshot, options = {}) {
  const groups = new Map();
  for (const entry of next.classificationRevalidationQueue) {
   if (!(snapshot.items||[]).some(p=>p.id===entry.id&&p.type==='gear'&&sameIdentity(p,rows.get(entry.id))))continue;
-  if (terminal.has(entry.status) || entry.status === 'no_longer_gear' || held.has(entry.key) || entry.retryAfter && now() < Date.parse(entry.retryAfter)) continue;
+  if (terminal.has(entry.status) || entry.status === 'no_longer_gear' || held.has(entry.key) || isDeferred(next,entry.url,now()) || entry.retryAfter && now() < Date.parse(entry.retryAfter)) continue;
   if (!groups.has(entry.key)) groups.set(entry.key, []);
   groups.get(entry.key).push(entry);
  }

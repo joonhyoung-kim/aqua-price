@@ -219,3 +219,66 @@ test('response byte ceiling accepts exact limit and never overwrites last valid 
  const result=await request(url,limits,runtime,prior);
  assert.equal(Buffer.byteLength(result.text),limit);assert.equal(prior.cache[url].fetchedAt,new Date(NOW).toISOString());
 });
+
+// All new cases use local synthetic responses, never live retailer traffic.
+test('known 404 is retained, deferred for seven days, skipped and recovered only by a fresh valid detail',async()=>{
+ const {isDeferred,keyOf}=require('../scripts/collector/refresh-deferrals.cjs');
+ const {refreshScope}=require('../scripts/collector/refresh-scope.cjs');
+ const old=parseProductPage(page(),{...ctx,observedAt:new Date(NOW-1000).toISOString()}).items;
+ const cfg={...source,delayMs:0,cacheTtlMs:0};
+ const r=runtime(response(404));const failed=await collectSource(cfg,{products:old},r);
+ assert.equal(failed.status,'partial_failure');assert.deepEqual(failed.products,old);
+ const row=failed.productRefreshDeferrals[keyOf(ctx.url)],retryAt=Date.parse(row.retryAfter);
+ assert.equal(retryAt-Date.parse(row.lastFailureAt),7*86400000);assert.equal(row.attempts,1);
+ assert.equal(isDeferred(failed,ctx.url,retryAt-1),true);
+ assert.equal(refreshScope(cfg,failed,'all',false,{now:retryAt-1}).products.length,0);
+ const skipped=runtime(response(200,page(2000)));const waiting=await collectSource(cfg,failed,skipped);
+ assert.ok(skipped.calls.every(c=>c.url.endsWith('/robots.txt')));assert.deepEqual(waiting.products,old);
+ assert.equal(refreshScope(cfg,failed,'all',false,{now:retryAt}).products.length,1);
+ const later=runtime(response(200,page(2000)));later.now=()=>retryAt;
+ const recovered=await collectSource(cfg,failed,later);
+ assert.equal(recovered.status,'success');assert.equal(recovered.products[0].price_amount,2000);
+ assert.equal(recovered.products[0].id,old[0].id);assert.equal(recovered.productRefreshDeferrals[keyOf(ctx.url)].status,'recovered');
+ assert.equal(isDeferred(recovered,ctx.url,retryAt),false);
+});
+test('exact detail URL hold preserves sibling option URLs, stable rotation and recovery across cache restore',()=>{
+ const {deferRefresh,recoverRefresh,isDeferred,keyOf}=require('../scripts/collector/refresh-deferrals.cjs');
+ const {refreshScope,refreshCursorAfter}=require('../scripts/collector/refresh-scope.cjs');
+ const {restoreCheckpoint,progress}=require('../scripts/collector/queue-policy.cjs');
+ const urls=[1,2,3,4].map(i=>'https://example.invalid/product/fish/'+i+'/');
+ const cfg={...source,products:urls.map(url=>({url,type:'live',subtype:'fish'}))};
+ const state={priceRefreshCursor:{all:0}};deferRefresh(state,urls[0],'product_404_preserved',new Date(NOW).toISOString());
+ assert.equal(isDeferred(state,urls[0]+'?item_code=ABC',NOW),false);
+ const scope=refreshScope(cfg,state,'all',false,{limit:2,now:NOW});
+ assert.deepEqual(scope.products.map(p=>p.url),urls.slice(1,3));assert.equal(scope.summary.deferredProductCount,1);
+ assert.equal(scope.summary.allVerifiedUrlsSelected,false);assert.equal(scope.cursor.all,3);assert.equal(refreshCursorAfter(scope,'all',1).all,2);
+ const checkpoint={discoveryProgress:progress(state)};
+ const restored=restoreCheckpoint({}, {items:[]},cfg,checkpoint);
+ assert.equal(isDeferred(restored,urls[0],NOW),true);
+ const recovered=structuredClone(state);recoverRefresh(recovered,urls[0],new Date(NOW+8*86400000).toISOString());
+ const merged=restoreCheckpoint(recovered,{items:[]},cfg,checkpoint);
+ assert.equal(merged.productRefreshDeferrals[keyOf(urls[0])].status,'recovered');
+ const cold=restoreCheckpoint(state,{items:[]},cfg,{discoveryProgress:progress(recovered)});
+ assert.equal(cold.productRefreshDeferrals[keyOf(urls[0])].status,'recovered');
+});
+test('oversized detail does not bypass byte limit or prevent another verified product from being collected',async()=>{
+ const {keyOf}=require('../scripts/collector/refresh-deferrals.cjs');
+ const other={url:'https://example.invalid/product/test/13/',type:'live',subtype:'fish'};
+ const old=parseProductPage(page(),ctx).items;
+ const cfg={...source,delayMs:0,cacheTtlMs:0,products:[...source.products,other]};
+ const r=runtime();r.fetch=async(url,options)=>{r.calls.push({url,options});if(url.endsWith('/robots.txt'))return response(200,'User-agent: *\nAllow: /');if(url===ctx.url)return {...response(200),headers:{get:name=>name==='content-length'?String(cfg.maxBytes+1):null}};return response(200,page(3000,'InStock',{sku:'SKU-13'}));};
+ const result=await collectSource(cfg,{products:old},r);
+ assert.equal(result.status,'partial_failure');assert.equal(result.coverage.requestFailures,1);
+ assert.deepEqual(result.products.find(p=>p.collector_key===old[0].collector_key),old[0]);
+ assert.ok(result.products.some(p=>p.price_amount===3000));
+ assert.equal(result.productRefreshDeferrals[keyOf(ctx.url)].reason,'response_too_large');
+ assert.equal(result.deletionAllowed,false);assert.equal(r.calls.length,3);
+});
+test('fresh parse failure defers a day but never refreshes the preserved offer or suppresses failure',async()=>{
+ const {keyOf}=require('../scripts/collector/refresh-deferrals.cjs');
+ const old=parseProductPage(page(),{...ctx,observedAt:new Date(NOW-1000).toISOString()}).items;
+ const result=await collectSource({...source,delayMs:0,cacheTtlMs:0},{products:old},runtime(response(200,'<p>unverified</p>')));
+ assert.equal(result.status,'partial_failure');assert.deepEqual(result.products,old);
+ const record=result.productRefreshDeferrals[keyOf(ctx.url)];assert.equal(record.reason,'detail_parse_failed');
+ assert.ok(record.issues.includes('no_product_jsonld'));assert.equal(Date.parse(record.retryAfter)-Date.parse(record.lastFailureAt),86400000);
+});

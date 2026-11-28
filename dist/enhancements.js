@@ -110,7 +110,7 @@ $('#personalLibrary').addEventListener('click',event=>{
   const remove=target.closest('[data-remove-condition]');if(remove){library.removeCondition(Number(remove.dataset.removeCondition));renderLibrary();}
   const fav=target.closest('[data-open-favorite]');if(fav){const p=catalog.products.find(p=>p.id===fav.dataset.openFavorite);if(p)restoreFilters({...AquaCatalog.defaultFilters,type:p.type,query:p.name,seller:p.sellerId,comparison:'all'});}
 });
-$('#saveCondition').addEventListener('click',()=>{library.saveCondition((filters.query||'전체')+' · '+({all:'전체',live:'생물',gear:'용품'}[filters.type]),AquaCatalog.filtersToSearch(filters));renderLibrary();});
+$('#saveCondition').addEventListener('click',()=>{library.saveCondition((filters.query||'전체')+' · '+({all:'전체',live:'생물',gear:'용품'}[filters.type]),AquaCatalog.filtersToSearch(filters));renderLibrary();const status=$('#savedSearchStatus');if(status)status.textContent=library.persistent()?'현재 조건을 이 브라우저에 저장했어요.':'현재 화면에만 저장했어요. 브라우저 저장을 사용할 수 없습니다.';});
 $('#clearLibrary').addEventListener('click',()=>{library.clear();render();});
 render(false);
 
@@ -190,7 +190,7 @@ if($('#toggleFilters')){
  $('#toggleFilters').addEventListener('click',()=>openUX5Panel('filters'));
  $('#moreFilters').addEventListener('toggle',()=>$('#toggleFilters').setAttribute('aria-expanded',String($('#moreFilters').open)));
  $('#openFavorites').addEventListener('click',()=>openUX5Panel('favorites'));
- $('#recentSearches').addEventListener('click',e=>{const b=e.target.closest('[data-recent]');if(b){restoreFilters({...filters,query:library.read().recent[Number(b.dataset.recent)]});$('#recentPanel').open=false;}});
+ $('#recentSearches').addEventListener('click',e=>{const b=e.target.closest('[data-recent]');const query=b?library.read().recent[Number(b.dataset.recent)]:'';if(query){restoredCondition=false;restoreFilters({...filters,query,sort:sortForSearch(query)});finishUX5Panel(true);}});
  $('#savedConditions').addEventListener('click',e=>{const b=e.target.closest('[data-condition]'),remove=e.target.closest('[data-remove-condition]');if(b){restoredCondition=true;restoreFilters(AquaCatalog.filtersFromSearch(library.read().saved[Number(b.dataset.condition)].search));}if(remove){library.removeCondition(Number(remove.dataset.removeCondition));renderLibrary();}});
  $('#rangeRecovery').addEventListener('click',e=>{const b=e.target.closest('[data-result-scope]');if(b)restoreFilters(scopeBase(b.dataset.resultScope));});
  $('#comparisonEntry').addEventListener('click',e=>{const b=e.target.closest('[data-compare-entry]');if(!b)return;filters.compareAcross=true;render(false);const target=b.dataset.compareEntry==='none'?$('#sellerComparisons'):$('#exact-comparison-'+b.dataset.compareEntry);target?.scrollIntoView({block:'nearest'});});
@@ -206,11 +206,13 @@ function openUX5Panel(kind){
  ux5PanelState={kind,original:{...filters},draft:draftQuery,focus:document.activeElement,y:scrollY,node,fields:{}};ux5PanelEditing=true;
  history.pushState({aquaPanel:kind},'',location.href);
  $('#ux5PanelBody').append(node);node.open=true;
- $('#ux5PanelTitle').textContent={filters:'상세 필터',favorites:'관심상품',saved:'저장한 검색 조건'}[kind];
+ $('#ux5PanelTitle').textContent={filters:'상세 필터',favorites:'관심상품',saved:'검색 기록'}[kind];
  $('#ux5PanelHint').textContent=kind==='filters'?'조건을 고른 뒤 적용하세요. 닫기·뒤로가기는 변경을 취소합니다.':'이 브라우저에만 저장됩니다. 상품이나 조건을 선택하면 검색 결과로 이동합니다.';
  $('#ux5PanelFooter').hidden=kind!=='filters';$('#ux5Close').setAttribute('aria-label',kind==='filters'?'변경 취소하고 닫기':'닫고 원래 결과로 돌아가기');
  document.body.classList.add('panel-open');dialog.showModal();$('#ux5Close').focus();
  $('#toggleFilters').setAttribute('aria-expanded',String(kind==='filters'));$('#openFavorites').setAttribute('aria-expanded',String(kind==='favorites'));
+ $('#loadConditions').setAttribute('aria-expanded',String(kind==='saved'));
+ if(kind==='saved')$('#savedSearchStatus').textContent='';
 }
 function finishUX5Panel(commit){
  if(!ux5PanelState||ux5PanelState.pending)return;
@@ -233,8 +235,9 @@ if($('#ux5Dialog')){
  roles.innerHTML=Object.entries({all:'모든 구성',body:'본체만',part:'부품',consumable:'소모품',set:'세트'}).map(([key,label])=>'<button type="button" data-quick-role="'+key+'">'+label+'</button>').join('');quick.append(roles);
  roles.addEventListener('click',e=>{const b=e.target.closest('[data-quick-role]');if(b){filters.productRole=b.dataset.quickRole;render();}});
  $('#paginationStatus').after($('#dataStatus'));
- const results=$('.results-head'),tools=document.createElement('div');tools.className='result-tools';tools.append($('#sort').closest('.control'),$('#resultView').closest('label'));results.append(tools);
- const load=document.createElement('button');load.id='loadConditions';load.type='button';load.textContent='조건 불러오기';$('#saveCondition').after(load);load.addEventListener('click',()=>openUX5Panel('saved'));
+ const results=$('.results-head'),tools=$('.filter-selects');
+ tools.className='result-tools';tools.append($('#resultView').closest('label'));results.append(tools);
+ $('#loadConditions').addEventListener('click',()=>openUX5Panel('saved'));
  const compare=document.createElement('button');compare.id='compareProducts';compare.type='button';compare.textContent='판매처 비교';compare.setAttribute('aria-label','같은 제품의 판매처 비교');results.append(compare);compare.addEventListener('click',()=>{filters.compareAcross=!filters.compareAcross;render(false);});
  $('#compareAcross').closest('label').hidden=true;
  const pricePanel=$('#shoppingFilters').closest('details');pricePanel.open=true;$('#moreFilters').prepend(pricePanel);
@@ -257,7 +260,7 @@ if($('#ux5Dialog')){
   const state=ux5PanelState,pending=state.pending||{commit:false,filters:state.original};ux5PanelState=null;
   dialog.close();state.node.open=false;parking.append(state.node);document.body.classList.remove('panel-open');ux5PanelEditing=false;
   restoreFilters(pending.filters);if(!pending.commit||state.kind==='filters'){draftQuery=state.draft;$('#query').value=draftQuery;draftStatus();}state.focus?.focus({preventScroll:true});
-  if(pending.commit&&state.kind==='filters')results.scrollIntoView({block:'start'});else scrollTo({top:state.y,behavior:'instant'});
+  if(pending.commit&&(state.kind==='filters'||state.kind==='saved'))results.scrollIntoView({block:'start'});else scrollTo({top:state.y,behavior:'instant'});
  });
  $('#favorites').addEventListener('click',e=>{if(e.target.closest('[data-open-favorite]'))setTimeout(()=>finishUX5Panel(true),0);});
  $('#savedConditions').addEventListener('click',e=>{if(e.target.closest('[data-condition]'))finishUX5Panel(true);});
@@ -268,6 +271,8 @@ if($('#ux5Dialog')){
  const previousWorkspace=renderWorkspaceUI;
  renderWorkspaceUI=function(){
   previousWorkspace();
+  $('.search-links').hidden=Boolean(filters.query);
+  $('#loadConditions').setAttribute('aria-expanded',String(ux5PanelState?.kind==='saved'));
   if(ux5PanelState?.kind==='filters')for(const [id,value]of Object.entries(ux5PanelState.fields)){const el=$('#'+id);if(el&&!el.closest('label')?.hidden){el.value=value.value;el.checked=value.checked;}}
   if(filters.query&&!$('#scopeStatus').textContent.startsWith('저장 조건'))$('#scopeStatus').textContent='';
   const gearDirect=filters.type==='gear';

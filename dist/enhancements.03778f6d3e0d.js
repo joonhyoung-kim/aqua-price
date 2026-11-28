@@ -169,7 +169,7 @@ if($('#toggleFilters')){
   $('#toggleFilters').setAttribute('aria-expanded',String($('#moreFilters').open));
   $('#scopeStatus').textContent=restoredCondition?'저장 조건을 불러왔습니다 · 검색 범위 '+scopeNames[filters.type]:filters.query?'검색 범위: '+scopeNames[filters.type]:'';
   $('#openFavorites').textContent='♡ 관심상품 '+library.read().favorites.length;
-  if(catalog.status==='ready'){$('#resultTitle').textContent=(filters.query?'‘'+filters.query+'’ 검색 결과':scopeNames[filters.type]+' 상품')+' '+groups.length.toLocaleString('ko-KR')+'개';$('#optionCount').textContent='옵션 '+rows.length.toLocaleString('ko-KR')+'개';$('#dataStatus').textContent='전체 수집 '+catalog.products.length.toLocaleString('ko-KR')+'개 · 확인된 품절 제외';}
+  if(catalog.status==='ready'){$('#resultTitle').textContent=(filters.query?'‘'+filters.query+'’ 검색 결과':scopeNames[filters.type]+' 상품')+' '+groups.length.toLocaleString('ko-KR')+'개';$('#optionCount').hidden=rows.length===groups.length;$('#optionCount').textContent='옵션 '+rows.length.toLocaleString('ko-KR')+'개';$('#dataStatus').textContent='전체 수집 '+catalog.products.length.toLocaleString('ko-KR')+'개 · 확인된 품절 제외';}
   $('#resultTable').hidden=$('#resultView').value!=='table'||!rows.length;
   $('#grid').hidden=$('#resultView').value==='table'&&rows.length>0;
   if(!$('#resultTable').hidden)$('#resultTable').innerHTML=makeTable(shown);
@@ -235,7 +235,7 @@ if($('#ux5Dialog')){
  $('#paginationStatus').after($('#dataStatus'));
  const results=$('.results-head'),tools=document.createElement('div');tools.className='result-tools';tools.append($('#sort').closest('.control'),$('#resultView').closest('label'));results.append(tools);
  const load=document.createElement('button');load.id='loadConditions';load.type='button';load.textContent='조건 불러오기';$('#saveCondition').after(load);load.addEventListener('click',()=>openUX5Panel('saved'));
- const compare=document.createElement('button');compare.id='compareProducts';compare.type='button';compare.textContent='같은 제품 판매처 비교';results.append(compare);compare.addEventListener('click',()=>{filters.compareAcross=!filters.compareAcross;render(false);});
+ const compare=document.createElement('button');compare.id='compareProducts';compare.type='button';compare.textContent='판매처 비교';compare.setAttribute('aria-label','같은 제품의 판매처 비교');results.append(compare);compare.addEventListener('click',()=>{filters.compareAcross=!filters.compareAcross;render(false);});
  $('#compareAcross').closest('label').hidden=true;
  const pricePanel=$('#shoppingFilters').closest('details');pricePanel.open=true;$('#moreFilters').prepend(pricePanel);
  for(const n of [$('#moreFilters'),$('#personalLibrary'),$('#savedPanel')]){parking.append(n);n.open=false;}

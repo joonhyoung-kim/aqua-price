@@ -13,6 +13,10 @@ let expandedGear = null;
 let catalogQuery=AquaCatalog.createCatalogQuery(catalog);
 catalog=catalogQuery.catalog;
 let draftQuery=filters.query;
+// Preserve an explicitly selected sort. A fresh search otherwise uses relevance;
+// browsing with an empty query continues to use the existing price default.
+let searchSortChosen=typeof location==='object'&&/(?:^|[?&])sort=/.test(location.search);
+function sortForSearch(query){return query&&!searchSortChosen&&filters.sort===AquaCatalog.defaultFilters.sort?'relevance':filters.sort;}
 let composing=false,compositionEnter=false;
 let lastGridHTML=null,lastTreeHTML=null,historyReady=false,restoringHistory=false;
 function draftStatus(){const changed=draftQuery.trim()!==filters.query;$('#draftStatus').hidden=!changed;$('#draftStatus').textContent=changed?'입력 중 · 검색 버튼 또는 Enter로 검색하세요. 현재 결과는 이전 검색 조건입니다.':'';}
@@ -140,6 +144,7 @@ document.querySelectorAll('[data-type]').forEach(button => button.addEventListen
   render();
 }));
 $('#sort').addEventListener('change', () => {
+  searchSortChosen = true;
   filters.sort = $('#sort').value;
   render();
 });
@@ -197,6 +202,7 @@ $('#search').addEventListener('submit',event=>{
   draftQuery=$('#query').value;
   const nextQuery=draftQuery.trim();
   if(nextQuery===filters.query)return;
+  filters.sort=sortForSearch(nextQuery);
   filters.query=nextQuery;
   render();
 });

@@ -214,15 +214,96 @@ main{padding:18px 24px 48px}
 .search-workspace button:focus-visible,#quickCategorySummary:focus-visible{outline:3px solid #286b58;outline-offset:2px}
 .filters #quickCategories.gear-direct #groupTree{display:block}
 @media(max-width:480px){.search-workspace{padding:10px}.search-workspace #query{padding-inline:9px}.search-links{column-gap:5px}#searchStarters button{padding-inline:7px}}
+/* AquaPick storefront: search first, with a calm, aligned comparison grid. */
+:root{--ink:#142f31;--sea:#14564f;--paper:#f3f7f6;--line:#d9e5e0;--mint:#b7f1ce}
+body{background:var(--paper);color:var(--ink);accent-color:var(--sea)}
+header{background:#fff;border-color:var(--line)}
+header>div{padding:10px 22px;gap:14px;min-height:64px}
+.brand-lockup{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:12px;background:#134d46;color:#c1f0b6}
+.brand-mark svg{width:25px;height:25px}
+.logo{line-height:1.2;letter-spacing:-.065em;color:#153a35}
+.logo span{color:#247361}.service-description{color:#526b63}
+.header-admin,.header-favorites{border-radius:10px;border-color:var(--line);background:#fff;color:var(--sea)}
+main{padding:20px 22px 48px}
+main>.skip-search{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);display:block}
+main>.skip-search:focus{width:auto;height:auto;clip-path:none;top:6px;left:8px;z-index:10;padding:10px 14px;background:#fff;color:var(--sea);border-radius:8px}
+.filters{background:transparent;border:0;border-radius:0;padding:0;column-gap:10px}
+.search-workspace{position:relative;isolation:isolate;min-width:0;padding:19px 22px 13px;border:1px solid #225b56;border-radius:22px;background:linear-gradient(113deg,#113c3b 5%,#125650 68%,#176b60);box-shadow:0 9px 22px #1a49421a}
+.search-workspace::before{content:'';position:absolute;z-index:-1;inset:0;border-radius:inherit;pointer-events:none;background:repeating-radial-gradient(ellipse at 98% 80%,transparent 0 24px,#d0ffec24 25px,transparent 26px 42px);mask-image:linear-gradient(to right,transparent 61%,#000)}
+.search-workspace .intro{display:block;margin:0 0 10px}
+.search-workspace h1{font-size:clamp(21px,2.4vw,31px);letter-spacing:-.055em;line-height:1.2;color:#fff;overflow-wrap:anywhere}
+.hero-caption{color:#d7eee6;font-size:13px;margin-top:4px;line-height:1.45}
+.search-workspace .choice{margin:0 0 8px;gap:6px;max-width:510px}
+.search-workspace .choice button,.search-workspace .choice button.active{justify-content:center;gap:6px;min-height:44px;border-color:#ffffff55;background:#ffffff12;color:#fff;border-radius:9px}
+.search-workspace .choice button.active{background:#d9f6e5;color:#113d35;border-color:#d9f6e5}
+.search-workspace .choice button:not(.active):hover{background:#ffffff28}
+.scope-icon{display:block;width:17px;height:17px;flex:none}
+.search-workspace .search{gap:7px;max-width:760px}
+.search-workspace #query{height:49px;border:1px solid transparent;border-radius:11px;color:var(--ink);min-width:0;padding-inline:14px}
+.search-workspace .search button{min-width:76px;color:#113d35;background:#baf1c9;border-radius:11px}
+.search-workspace .search button:hover{background:#d6f9de}
+.search-workspace :is(button,input):focus-visible{outline:3px solid #f5d380;outline-offset:2px}
+.search-workspace .suggestions{background:#fff;border-radius:10px;max-width:760px}
+.search-workspace .suggestions button{color:#15584d}
+.search-workspace .suggestions button:focus-visible{outline-color:#136052;outline-offset:-3px}
+.search-workspace .draft-status{color:#fff4c2;max-width:760px}
+.search-links{margin-top:5px;align-items:center;column-gap:9px}
+.search-links>span,.search-links .recent-panel summary{color:#def5ec}
+#searchStarters button{color:#fff;background:#ffffff15;text-decoration:none;border-radius:8px;font-size:12px;min-height:44px;padding-inline:8px}
+#searchStarters button:hover{background:#ffffff2b}.search-links .recent-panel[open] .compact-actions button{background:#fff;color:var(--sea)}
+.scope-status{color:#4d685f}.scope-status:empty{display:none}
+.filters>.filter-selects{background:transparent;padding-inline:0}
+#toggleFilters,#saveCondition,#loadConditions{border-radius:9px;border-color:var(--line);color:var(--sea)}
+#quickCategories{padding-block:0}
+@media(min-width:821px){.filters>#quickConditions:not([hidden]){grid-column:1;grid-row:2;padding-inline:0}.filters>.filter-selects{grid-column:2;grid-row:2;align-items:center}.filters:has(#quickConditions>:not([hidden])) #quickCategories{grid-row:3}}
+.results-head{border-bottom:1px solid var(--line);margin:12px 0 12px;padding:0 0 7px;gap:7px;scroll-margin-top:8px}
+.results-head h2{color:var(--ink);font-size:clamp(16px,1.55vw,22px);letter-spacing:-.045em;overflow-wrap:anywhere;min-width:0}
+.results-head #optionCount{white-space:nowrap;color:#49655e;background:#e5efeb;border-radius:20px;padding:3px 8px}
+.results-head .result-tools select{border-radius:8px;border-color:var(--line);color:var(--ink)}
+#grid{background:transparent;column-gap:12px}
+#grid>.card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:7px 8px 8px;box-shadow:0 2px 6px #142f3108}
+#grid>.card:hover,#grid>.card:focus-within{border-color:#87b9a8}
+#grid>.card>.art{border-radius:9px;background:#edf3f0}
+#grid>.card .body{padding-inline:0}
+#grid>.card h3{font-weight:700;color:#193733}
+#grid>.card .price{color:#104c43;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+#grid>.card .offer-details summary{color:#305f53}
+#grid>.card .source{background:#edf5f0;border-radius:9px;color:#174f43}
+#grid>.live-card .card-product-link{border-radius:15px}
+#grid>.card .photo-fallback:not([hidden]){display:grid;place-items:center;height:100%;padding:8px}
+#grid>.card .photo-fallback::after{content:'사진 없음'}
+@media(max-width:640px){
+ header>div{padding:7px 12px;min-height:57px}.brand-lockup{gap:7px}.brand-mark{width:32px;height:32px;border-radius:9px}.brand-mark svg{width:21px;height:21px}
+ .service-description{display:none}main{padding:10px 10px 32px}
+ .search-workspace{padding:11px 10px 8px;border-radius:16px}
+ .search-workspace h1{font-size:21px}.search-workspace .intro{margin-bottom:8px}
+ .hero-caption{font-size:12px}.search-workspace .choice strong{font-size:13px;white-space:nowrap}.search-workspace .scope-icon{display:none}
+ .search-workspace .search button{min-width:57px}.search-workspace #query{padding-inline:8px}
+ .search-links{column-gap:5px}.search-links>span{display:none}
+ .results-head{gap:4px}.results-head h2{flex-basis:0}.results-head #compareProducts{font-size:11px;margin-left:auto}
+ #grid{column-gap:8px}#grid>.card{padding:5px 5px 7px;border-radius:12px}
+ #grid>.live-card .card-product-link{border-radius:12px}#grid>.card>.art{border-radius:8px}
+ #grid>.card .price{font-size:20px}#grid>.card .source{white-space:normal}
+}
+@media(max-width:355px){
+ .hero-caption{display:none}
+ .search-workspace .intro{margin-bottom:7px}.search-workspace .choice{gap:4px}
+ #searchStarters{gap:3px}#searchStarters button{font-size:11px;padding-inline:5px}
+ .search-links .recent-panel summary{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){:focus-within{scroll-behavior:auto}}
+
 </style></head><body>
-<header><div><div><div class="logo">아쿠아<span>픽.</span></div><p class="service-description">관상어·수족관 용품 가격 비교</p></div><div class="header-actions"><a class="header-admin" href="/admin/">관리자</a><button type="button" id="openFavorites" class="header-favorites" aria-controls="personalLibrary">♡ 관심상품</button></div></div></header>
-<main><a class="skip-search" href="#search">검색·정렬로 이동 ↑</a><div class="intro"><h1>어떤 생물이나 용품을 찾으세요?</h1></div>
+<header><div><div class="brand-lockup"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12c3.7-5.2 9-5.7 13.4-1.5L21 7.4v9.2l-4.6-3.1C12 17.7 6.7 17.2 3 12Z"/><circle cx="8" cy="11.5" r="1" fill="#134d46"/></svg></span><div><div class="logo">아쿠아<span>픽.</span></div><p class="service-description">관상어·수족관 용품 가격 비교</p></div></div><div class="header-actions"><a class="header-admin" href="/admin/">관리자</a><button type="button" id="openFavorites" class="header-favorites" aria-controls="personalLibrary">♡ 관심상품</button></div></div></header>
+<main><a class="skip-search" href="#query">상품 검색으로 이동</a>
 <section class="filters" aria-label="조회 조건">
-<div class="search-workspace"><form class="search" id="search" role="search" aria-label="아쿠아픽 상품 검색"><input id="query" type="search" placeholder="상품명·옵션 검색" aria-label="상품 검색"><button type="submit">검색</button></form>
+<div class="search-workspace"><div class="intro"><h1>물고기와 용품, 한곳에서 비교</h1><p class="hero-caption">이름이나 모델을 검색하고 판매처별 가격을 살펴보세요.</p></div>
+<div class="choice" role="group" aria-label="검색 범위"><button data-type="all" aria-pressed="false"><svg class="scope-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z"/></svg><strong>전체</strong><span class="check"></span></button><button data-type="live" class="active" aria-pressed="true"><svg class="scope-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12c-2.7-4.5-7.2-5.2-10.5-1.8L3 14c4.5 4.2 10 2.8 14-2l4-4v8z"/><path d="M8 12h.01"/></svg><strong>물고기·생물</strong><span class="check">✓</span></button><button data-type="gear" aria-pressed="false"><svg class="scope-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="3"/><path d="M6 9h12m-8 5h4"/></svg><strong>용품</strong><span class="check"></span></button></div>
+<form class="search" id="search" role="search" aria-label="아쿠아픽 상품 검색"><input id="query" type="search" placeholder="상품명·옵션 검색" aria-label="상품 검색"><button type="submit">검색</button></form>
 <div id="searchSuggestions" class="suggestions" role="listbox" aria-label="검색어 제안" hidden></div><p id="draftStatus" class="draft-status" role="status" hidden></p>
-<div class="choice" role="group" aria-label="검색 범위"><button data-type="all" aria-pressed="false"><strong>전체</strong><span class="check"></span></button><button data-type="live" class="active" aria-pressed="true"><strong>생물</strong><span class="check">✓</span></button><button data-type="gear" aria-pressed="false"><strong>용품</strong><span class="check"></span></button></div>
 <div class="search-links"><span>바로 검색</span><div id="searchStarters" role="group" aria-label="예시 검색어"><button type="button" data-search-example="네온테트라" data-search-scope="live">네온테트라</button><button type="button" data-search-example="체리새우" data-search-scope="live">체리새우</button><button type="button" data-search-example="외부여과기" data-search-scope="gear">외부여과기</button></div><details id="recentPanel" class="recent-panel"><summary>최근 검색</summary><div id="recentSearches" class="compact-actions"></div></details></div></div>
-<div class="filter-selects"><button type="button" id="toggleFilters" aria-expanded="false" aria-controls="moreFilters">필터</button><button type="button" id="saveCondition" title="이 브라우저에 현재 검색 조건 저장">조건 저장</button><div class="control"><label for="sort" class="label">정렬</label><select id="sort" aria-label="정렬" aria-describedby="sortStatus"><option value="relevance">관련도순 · 본체 우선</option><option value="low">낮은 판매가격</option><option value="high">높은 판매가격</option><option value="delivered">낮은 배송 포함 예상금액 (확인 조건만)</option><option value="unit">낮은 단가 (범위 선택)</option><option value="observed">최근 가격 확인순</option><option value="sales" hidden disabled>판매순 (미확인)</option><option value="new" hidden disabled>신상품순 (미확인)</option></select></div></div>
+<div class="filter-selects"><button type="button" id="toggleFilters" aria-expanded="false" aria-controls="moreFilters">필터</button><button type="button" id="saveCondition" title="이 브라우저에 현재 검색 조건 저장">조건 저장</button><div class="control"><label for="sort" class="label">정렬</label><select id="sort" aria-label="정렬" aria-describedby="sortStatus"><option value="relevance">관련도순</option><option value="low">낮은 판매가격</option><option value="high">높은 판매가격</option><option value="delivered">배송 포함 예상금액순</option><option value="unit">낮은 단가 (범위 선택)</option><option value="observed">최근 가격 확인순</option><option value="sales" hidden disabled>판매순 (미확인)</option><option value="new" hidden disabled>신상품순 (미확인)</option></select></div></div>
 <p id="scopeStatus" class="scope-status" role="status"></p><div id="unitControls" hidden><label for="unitScope">단가 비교 범위</label><select id="unitScope"><option value="">단가 비교 범위 선택</option></select></div><div id="activeFilters" class="compact-actions" aria-label="적용 중인 조건"></div><p class="hint" id="sortStatus" role="status" hidden></p>
 <details id="moreFilters" class="filter-more"><summary>필터 패널</summary><div id="livestockFilters" class="livestock-filters"><div class="pills" role="group" aria-label="생물 하위분류"><button type="button" data-subtype="all" class="active" aria-pressed="true">전체</button><button type="button" data-subtype="fish" aria-pressed="false">물고기</button><button type="button" data-subtype="shrimp" aria-pressed="false">새우</button><button type="button" data-subtype="aquatic_plant" aria-pressed="false">수초</button><button type="button" data-subtype="snail" aria-pressed="false">달팽이</button></div></div>
 <div id="roleControls" hidden><label for="productRole">상품 구성</label><select id="productRole"><option value="all">모든 구성</option><option value="body">본체만 보기</option><option value="part">부품</option><option value="consumable">소모품</option><option value="set">세트</option><option value="unknown">구성 미확인</option></select></div><div id="quickRecent" class="compact-actions"><button type="button" data-recent-days="1">최근 24시간</button><button type="button" data-recent-days="7">최근 7일</button></div><details class="filter-more"><summary>가격 범위·판매처·비교 범위</summary><form id="shoppingFilters" class="shopping-fields"><label>최소 판매가격 (원)<input id="minPrice" type="number" min="0" step="1" inputmode="numeric" placeholder="제한 없음"></label><label>최대 판매가격 (원)<input id="maxPrice" type="number" min="0" step="1" inputmode="numeric" placeholder="제한 없음"></label><label>가격 확인 시점<select id="observedDays"><option value="all">전체</option><option value="1">최근 24시간</option><option value="7">최근 7일</option><option value="14">최근 14일</option><option value="30">최근 30일</option></select></label><label>판매처<select id="seller"><option value="">모든 판매처</option></select></label><label>비교 범위<select id="comparison"><option value="priced">확인된 판매가격</option><option value="all">매장·가격 확인 필요 포함</option><option value="unpriced">매장·가격 확인 필요만</option></select></label><label>구매 희망 수량<input id="wantedQty" type="number" min="1" max="100000" step="1" inputmode="numeric" placeholder="마리·쌍·개"></label><p id="quantityError" class="filter-error" role="alert"></p><p class="hint">개별 상품의 마리·쌍·개 기준입니다. 묶음 수량이 확인된 경우에만 필요한 묶음과 실제 구매량을 계산합니다.</p><button class="apply-button" type="submit">필터 적용</button><p class="filter-error" id="filterError" role="alert"></p></form></details>
@@ -236,4 +317,4 @@ main{padding:18px 24px 48px}
 <section id="resultTable" class="result-table" aria-label="검색 결과 표" tabindex="0" hidden></section><div id="rangeRecovery" class="range-recovery" role="status"></div><div class="recovery" id="emptyActions" hidden><button type="button" id="clearQuery">검색어 지우기</button><button type="button" id="resetFilters">필터만 초기화</button><button type="button" id="searchAllTypes">전체 범위에서 검색</button></div><p class="hint" id="recoveryStatus" role="status"></p>
 <p class="hint" id="paginationStatus" role="status"></p><button id="moreResults" class="more-results" type="button" hidden>상품 더 보기</button>
 <details class="guide"><summary>가격 비교 안내</summary><p id="hint" class="hint"></p><p>수량이 확인된 상품만 단위 가격을 표시합니다. 품종·크기·성별·등급이 다르면 같은 조건의 최저가가 아닙니다. 0원 표시는 무료를 보장하지 않습니다. 배송비·배송 조건·최종 가격과 재고는 판매처에서 확인하세요. 확인된 품절은 제외하며, 재입고 확인 후 다시 표시합니다.</p></details>
-<details id="personalLibrary" class="personal-library"><summary>관심상품 · 이 브라우저에 저장</summary><div id="favorites"></div><button type="button" id="clearLibrary">최근 검색·관심상품·저장 조건 전체 삭제</button><p id="storageStatus" class="hint"></p></details><section id="observationPanel"><details><summary>가격·재입고 관찰과 오류 신고 초안</summary><p>이 브라우저에서 사이트를 열어 새 데이터를 읽을 때만 확인합니다. 닫은 동안 감시·외부 알림은 없습니다. 오류 신고는 내 브라우저 초안이며 운영자에게 전송되지 않습니다.</p><div id="watchStatus" role="status"></div><div id="watchList"></div><div id="watchEvents"></div><button id="clearWatchEvents" type="button">관찰 알림 지우기</button><div id="reportDrafts"></div><button id="exportReports" type="button">신고 초안 내보내기</button><textarea id="reportExport" readonly hidden aria-label="미접수 신고 초안 JSON"></textarea></details></section><details class="quality-panel"><summary>판매처 갱신 품질</summary><div id="qualitySummary"></div><a href="/admin/">판매처별 수집 성공·실패·수집량·누락 대기열 확인</a></details><footer><span>아쿠아픽 · 확인된 정보로 비교하세요.</span></footer></main><div id="ux5Parking" hidden></div><dialog id="ux5Dialog" aria-labelledby="ux5PanelTitle"><div class="panel-heading"><h2 id="ux5PanelTitle"></h2><button id="ux5Close" type="button" aria-label="변경 취소하고 닫기">닫기 ×</button></div><p id="ux5PanelHint" class="panel-hint"></p><div id="ux5PanelBody"></div><div id="ux5PanelFooter"><button id="ux5Reset" type="button">필터 초기화</button><button id="ux5Apply" type="button">적용하고 결과 보기</button></div></dialog><script src="gear-taxonomy.c28ec5f15721.js"></script><script src="data-model.39061614cea4.js"></script><script src="app.5f95a8c84b01.js"></script><script src="enhancements.9b5dc32c1897.js"></script></body></html>
+<details id="personalLibrary" class="personal-library"><summary>관심상품 · 이 브라우저에 저장</summary><div id="favorites"></div><button type="button" id="clearLibrary">최근 검색·관심상품·저장 조건 전체 삭제</button><p id="storageStatus" class="hint"></p></details><section id="observationPanel"><details><summary>가격·재입고 관찰과 오류 신고 초안</summary><p>이 브라우저에서 사이트를 열어 새 데이터를 읽을 때만 확인합니다. 닫은 동안 감시·외부 알림은 없습니다. 오류 신고는 내 브라우저 초안이며 운영자에게 전송되지 않습니다.</p><div id="watchStatus" role="status"></div><div id="watchList"></div><div id="watchEvents"></div><button id="clearWatchEvents" type="button">관찰 알림 지우기</button><div id="reportDrafts"></div><button id="exportReports" type="button">신고 초안 내보내기</button><textarea id="reportExport" readonly hidden aria-label="미접수 신고 초안 JSON"></textarea></details></section><details class="quality-panel"><summary>판매처 갱신 품질</summary><div id="qualitySummary"></div><a href="/admin/">판매처별 수집 성공·실패·수집량·누락 대기열 확인</a></details><footer><span>아쿠아픽 · 확인된 정보로 비교하세요.</span></footer></main><div id="ux5Parking" hidden></div><dialog id="ux5Dialog" aria-labelledby="ux5PanelTitle"><div class="panel-heading"><h2 id="ux5PanelTitle"></h2><button id="ux5Close" type="button" aria-label="변경 취소하고 닫기">닫기 ×</button></div><p id="ux5PanelHint" class="panel-hint"></p><div id="ux5PanelBody"></div><div id="ux5PanelFooter"><button id="ux5Reset" type="button">필터 초기화</button><button id="ux5Apply" type="button">적용하고 결과 보기</button></div></dialog><script src="gear-taxonomy.c28ec5f15721.js"></script><script src="data-model.39061614cea4.js"></script><script src="app.43413d23f619.js"></script><script src="enhancements.03778f6d3e0d.js"></script></body></html>

@@ -652,3 +652,30 @@ test('direct categories restore selected zero-result leaves and legacy browse-gr
  assert.match(app.nodes.groupTree.innerHTML,/data-live-group="shrimp_bee"[^>]*aria-pressed="true"/);
  app.pop('?subtype=fish&fishGroup=tetra&sort=high');assert.match(app.nodes.groupTree.innerHTML,/data-live-group="tetra"[^>]*aria-pressed="true"/);assert.equal(app.nodes.sort.value,'high');
 });
+
+test('snail and plant categories are selectable directly without a nested taxonomy',async()=>{
+ const app=await setup(actual,false,'?type=live',true);
+ app.subtype('snail');
+ const snail=app.nodes.groupTree.innerHTML;
+ assert.match(snail,/data-live-group="snail_apple"/);
+ assert.match(snail,/data-live-group="snail_pond"/);
+ assert.doesNotMatch(snail,/data-browse-group=|more-live-categories/);
+ app.choose('snail_pond');
+ assert.equal(AquaCatalog.filtersFromSearch(app.search()).liveGroup,'snail_pond');
+ assert(app.names().length>0);
+ app.subtype('aquatic_plant');
+ assert.match(app.nodes.groupTree.innerHTML,/data-live-group="plant_moss"/);
+ assert.doesNotMatch(app.nodes.groupTree.innerHTML,/data-live-group="snail_/);
+});
+
+test('long live category menus tuck secondary options away and pin the selected group',async()=>{
+ const app=await setup(actual,false,'?type=live&subtype=fish',true);
+ const tree=app.nodes.groupTree.innerHTML;
+ const marker='<details class="more-live-categories">';
+ assert(tree.includes(marker));
+ assert.match(tree.split(marker)[0],/data-live-group="guppy"/);
+ const extra=tree.split(marker)[1].match(/data-live-group="(\w+)"/)[1];
+ app.choose(extra);
+ assert.match(app.nodes.groupTree.innerHTML.split(marker)[0],new RegExp('data-live-group="'+extra+'"[^>]*aria-pressed="true"'));
+ assert.equal(AquaCatalog.filtersFromSearch(app.search()).fishGroup,extra);
+});

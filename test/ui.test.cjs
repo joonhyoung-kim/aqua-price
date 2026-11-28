@@ -65,11 +65,55 @@ test('enhanced UI keeps drafts and IME separate, restores saved conditions and n
  const p=uxFixture.products.find(p=>p.name==='체리바브 5마리');n.grid.listeners.click({target:{closest:s=>s==='[data-favorite]'?{dataset:{favorite:p.id}}:null}});assert.match(n.favorites.innerHTML,/체리바브/);assert.equal(app.fetchCount(),1);
  const without=structuredClone(uxFixture);without.products=without.products.filter(x=>x.id!==p.id);const absent=await setup(without,false,'?query=체리바브',true,true,storage);assert(!absent.nodes.grid.innerHTML.includes('data-offer-id="'+p.id+'"'));assert.match(absent.nodes.favorites.innerHTML,/재입고 확인 대기/);
 });
-test('autocomplete keyboard and touch selection only update the unsubmitted draft',async()=>{
+test('autocomplete applies the chosen suggestion in one action and Escape cancels',async()=>{
  const app=await setup(uxFixture,false,'?query=네온',true,true),n=app.nodes,before=n.grid.innerHTML;
- n.query.value='체리';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});n.query.listeners.keydown({key:'Enter',preventDefault(){}});assert.match(n.query.value,/체리/);assert.equal(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);
- n.query.listeners.keyup({key:'Enter'});n.query.value='팬더';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'Escape'});assert.equal(n.searchSuggestions.hidden,true);
- n.query.listeners.input({target:n.query});n.searchSuggestions.listeners.click({target:{closest:()=>({dataset:{suggestion:'0'}})}});assert.equal(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);n.search.listeners.submit({preventDefault(){}});assert.notEqual(n.grid.innerHTML,before);
+ n.query.value='체리';n.query.listeners.input({target:n.query});assert.equal(n.grid.innerHTML,before);
+ n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});n.query.listeners.keydown({key:'Enter',preventDefault(){}});
+ assert.match(n.query.value,/체리/);assert.notEqual(n.grid.innerHTML,before);assert.equal(n.searchSuggestions.hidden,true);
+ assert.equal(new URLSearchParams(app.search()).get('query'),n.query.value);
+ const committed=n.grid.innerHTML;
+ n.query.value='팬더';n.query.listeners.input({target:n.query});n.query.listeners.keydown({key:'Escape'});
+ assert.equal(n.searchSuggestions.hidden,true);assert.equal(n.grid.innerHTML,committed);
+ n.query.listeners.input({target:n.query});n.searchSuggestions.listeners.click({target:{closest:()=>({dataset:{suggestion:'0'}})}});
+ assert.equal(n.searchSuggestions.hidden,true);assert.notEqual(n.grid.innerHTML,committed);
+ assert.match(n.recentSearches.innerHTML,/팬더/);
+});
+test('changing search scope dismisses stale autocomplete without losing the draft',async()=>{
+ const app=await setup(uxFixture,false,'?type=live',true,true),n=app.nodes;
+ n.query.value='체리';n.query.listeners.input({target:n.query});
+ n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});
+ assert.match(n.searchSuggestions.innerHTML,/체리바브/);
+ app.type('gear');
+ assert.equal(n.searchSuggestions.hidden,true);assert.equal(n.query.attributes['aria-expanded'],'false');
+ assert.equal(n.query.attributes['aria-activedescendant'],'');assert.equal(n.query.value,'체리');
+ assert.match(n.draftStatus.textContent,/입력 중/);
+ n.searchSuggestions.listeners.click({target:{closest:()=>({dataset:{suggestion:'0'}})}});
+ assert.equal(AquaCatalog.filtersFromSearch(app.search()).query,'');
+ n.query.value='외부';n.query.listeners.input({target:n.query});
+ assert.match(n.searchSuggestions.innerHTML,/외부여과기/);
+});
+test('fresh typed and autocomplete searches use relevance without replacing deliberate price sorting',async()=>{
+ const search=async(initial,sort,select=false)=>{
+  const app=await setup(uxFixture,false,initial,true,true),n=app.nodes;
+  if(sort){app.sort('high');app.sort(sort);}
+  n.query.value='외부';n.query.listeners.input({target:n.query});
+  if(select){n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});n.query.listeners.keydown({key:'Enter',preventDefault(){}});}
+  else n.search.listeners.submit({preventDefault(){}});
+  return AquaCatalog.filtersFromSearch(app.search());
+ };
+ for(const select of [false,true]){
+  assert.equal((await search('?type=gear',null,select)).sort,'relevance');
+  assert.equal((await search('?type=gear','low',select)).sort,'low');
+  assert.equal((await search('?type=gear&sort=high',null,select)).sort,'high');
+ }
+ assert.equal((await search('?type=gear&sort=low')).sort,'low');
+});
+test('one-click searches choose their scope and leave unrelated narrow filters behind',async()=>{
+ const app=await setup(uxFixture,false,'?type=live&subtype=shrimp&query=체리새우&sort=unit&maxPrice=200',true,true),n=app.nodes;
+ n.searchStarters.listeners.click({target:{closest:()=>({dataset:{searchExample:'외부여과기',searchScope:'gear'}})}});
+ const f=AquaCatalog.filtersFromSearch(app.search());assert.equal(f.type,'gear');assert.equal(f.query,'외부여과기');assert.equal(f.sort,'relevance');
+ assert.equal(f.subtype,'all');assert.equal(f.maxPrice,null);assert.equal(f.unitScope,'');assert.equal(app.fetchCount(),1);
+ assert.match(n.recentSearches.innerHTML,/외부여과기/);
 });
 test('enhanced price comparison retains exact option links and individual filter clearing',async()=>{
  const app=await setup(uxFixture,false,'?type=gear&query=섭스프로&compareAcross=true',true,true),n=app.nodes;
@@ -81,7 +125,7 @@ test('enhanced price comparison retains exact option links and individual filter
 async function setup(data = actual, fail = false, search = '?type=gear&subtype=aquatic_plant', grouped = false, enhanced = false, localStorage) {
   if(!grouped)search+=(search?'&':'?')+'groupOptions=false';
   const element = (dataset = {}) => ({ dataset, value: '', checked: false, textContent: '', innerHTML: '', listeners: {}, attributes: {}, classList: { toggle() {} }, check: { textContent: '' }, setAttribute(k, v) { this.attributes[k] = String(v); }, addEventListener(e, cb) { const prior=this.listeners[e];this.listeners[e]=event=>{prior?.(event);cb(event);}; }, click() { this.listeners.click?.(); }, querySelector() { return this.check; } });
-  const nodes = Object.fromEntries(['unitScope','unitControls','wantedQty','quantityError','compareAcross','quickRecent','activeFilters','recentSearches','favorites','savedConditions','storageStatus','personalLibrary','saveCondition','clearLibrary','sellerComparisons','searchSuggestions','draftStatus','comparison','observedDays','minPrice','maxPrice','groupOptions','seller','advancedMetrics','emptyActions','shoppingFilters','filterError','clearQuery','resetFilters','searchAllTypes','recoveryStatus','grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
+  const nodes = Object.fromEntries(['unitScope','unitControls','wantedQty','quantityError','compareAcross','quickRecent','activeFilters','recentSearches','favorites','savedConditions','storageStatus','personalLibrary','saveCondition','clearLibrary','sellerComparisons','searchStarters','searchSuggestions','draftStatus','comparison','observedDays','minPrice','maxPrice','groupOptions','seller','advancedMetrics','emptyActions','shoppingFilters','filterError','clearQuery','resetFilters','searchAllTypes','recoveryStatus','grid', 'resultTitle', 'resultNote', 'dataStatus', 'hint', 'sellerLinks', 'catalogScope', 'coverageNotice', 'paginationStatus', 'moreResults', 'sort', 'period', 'query', 'search', 'includeUnknown', 'livestockFilters', 'fishFilters', 'sortStatus', 'groupTree', 'groupPath'].map(id => [id, element()]));
   nodes.sort.value = 'low'; nodes.period.value = 'all'; nodes.includeUnknown.checked = true;
   const sortOptions = Object.fromEntries(['low','high','sales','new','observed'].map(value=>[value,element()]));
   nodes.sort.querySelector = selector => sortOptions[selector.match(/value="([^"]+)"/)[1]];

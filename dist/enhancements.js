@@ -61,7 +61,7 @@ render=function(resetPage=true){
   $('#unitControls').hidden=filters.sort!=='unit';$('#wantedQty').value=filters.wantedQty||'';$('#compareAcross').checked=filters.compareAcross;
   if(filters.sort==='delivered'){$('#sortStatus').hidden=false;$('#sortStatus').textContent='수량·최소 주문·일반 배송·포장비가 모두 확인된 예상 합계만 정렬합니다. 미확인 비용이 있는 상품은 상품가격순에서 확인하세요.';}
   if(filters.sort==='unit'){$('#sortStatus').hidden=false;$('#sortStatus').textContent='선택한 용도·단위만 정렬합니다. 품종·규격·등급이 같다는 뜻은 아닙니다. 수량 미확인은 제외합니다.';}
-  const labels=chipLabels();$('#activeFilters').innerHTML=Object.entries(labels).filter(([k,v])=>v&&filters[k]!==AquaCatalog.defaultFilters[k]).map(([k,v])=>'<button type="button" data-clear-filter="'+k+'">'+escapeHtml(v)+' ×</button>').join('');if($('#activeFilters').innerHTML)$('#activeFilters').innerHTML+='<button type="button" id="clearAllFilters">전체 초기화</button>';
+  const labels=chipLabels();$('#activeFilters').innerHTML=Object.entries(labels).filter(([k,v])=>k!=='sort'&&v&&filters[k]!==AquaCatalog.defaultFilters[k]).map(([k,v])=>'<button type="button" data-clear-filter="'+k+'">'+escapeHtml(v)+' ×</button>').join('');if($('#activeFilters').innerHTML)$('#activeFilters').innerHTML+='<button type="button" id="clearAllFilters">전체 초기화</button>';
   const rows=catalogQuery.view(filters).result.rows,products=cardGroups(rows),visible=products.slice(0,visibleLimit).flatMap(g=>g.offers);
   $('#resultTitle').textContent='상품 '+products.length.toLocaleString('ko-KR')+'개 · 옵션 포함 '+rows.length.toLocaleString('ko-KR')+'개';
   $('#paginationStatus').textContent=rows.length?'현재 상품 '+cardGroups(visible).length+'개 · 옵션 '+visible.length+'개 표시 / 전체 상품 '+products.length+'개':'';
@@ -75,11 +75,25 @@ render=function(resetPage=true){
 let suggestions=[],suggestionIndex=-1;
 function closeSuggestions(){suggestions=[];suggestionIndex=-1;$('#searchSuggestions').innerHTML='';$('#searchSuggestions').hidden=true;$('#query').setAttribute('aria-expanded','false');$('#query').setAttribute('aria-activedescendant','');}
 function paintSuggestions(){const list=$('#searchSuggestions');list.hidden=!suggestions.length;list.innerHTML=suggestions.map((s,i)=>'<button type="button" role="option" id="suggestion-'+i+'" data-suggestion="'+i+'" aria-selected="'+(i===suggestionIndex)+'">'+escapeHtml(s)+'</button>').join('');$('#query').setAttribute('aria-expanded',String(!!suggestions.length));$('#query').setAttribute('aria-activedescendant',suggestionIndex<0?'':'suggestion-'+suggestionIndex);}
-function chooseSuggestion(i){if(!suggestions[i])return;draftQuery=suggestions[i];$('#query').value=draftQuery;draftStatus();closeSuggestions();}
+function chooseSuggestion(i){
+ const query=suggestions[i];if(!query||composing)return;
+ closeSuggestions();
+ restoreFilters({...filters,query,sort:sortForSearch(query)});
+ library.search(filters.query);renderLibrary();$('#query').focus?.({preventScroll:true});
+}
+$('#searchStarters')?.addEventListener('click',event=>{
+ const b=event.target.closest('[data-search-example]');if(!b)return;
+ const {searchExample:query,searchScope:type}=b.dataset;
+ if(!query||!['live','gear'].includes(type))return;
+ closeSuggestions();
+ restoreFilters({...AquaCatalog.defaultFilters,type,query,sort:'relevance'});
+ library.search(filters.query);renderLibrary();
+});
 $('#query').setAttribute('role','combobox');$('#query').setAttribute('aria-autocomplete','list');$('#query').setAttribute('aria-controls','searchSuggestions');$('#query').setAttribute('aria-expanded','false');
 $('#query').addEventListener('input',event=>{draftQuery=event.target.value;draftStatus();if(composing)return;suggestions=catalogQuery.suggest(draftQuery,filters.type);suggestionIndex=-1;paintSuggestions();});
 $('#query').addEventListener('compositionstart',closeSuggestions);
-$('#query').addEventListener('keydown',event=>{if(composing||event.isComposing||event.keyCode===229)return;if(event.key==='Escape'){closeSuggestions();return;}if(!suggestions.length)return;if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();suggestionIndex=(suggestionIndex+(event.key==='ArrowDown'?1:-1)+suggestions.length)%suggestions.length;paintSuggestions();}else if(event.key==='Enter'&&suggestionIndex>=0){event.preventDefault();chooseSuggestion(suggestionIndex);compositionEnter=true;}});
+document.querySelectorAll('[data-type]').forEach(button=>button.addEventListener('click',closeSuggestions));
+$('#query').addEventListener('keydown',event=>{if(composing||event.isComposing||event.keyCode===229)return;if(event.key==='Escape'){closeSuggestions();return;}if(!suggestions.length)return;if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();suggestionIndex=suggestionIndex<0?(event.key==='ArrowDown'?0:suggestions.length-1):(suggestionIndex+(event.key==='ArrowDown'?1:-1)+suggestions.length)%suggestions.length;paintSuggestions();}else if(event.key==='Enter'&&suggestionIndex>=0){event.preventDefault();chooseSuggestion(suggestionIndex);}});
 $('#searchSuggestions').addEventListener('click',event=>{const b=event.target.closest('[data-suggestion]');if(b)chooseSuggestion(Number(b.dataset.suggestion));});
 $('#search').addEventListener('submit',()=>{if(!composing&&!compositionEnter){closeSuggestions();library.search(filters.query);renderLibrary();}});
 $('#unitScope').addEventListener('change',()=>{filters.unitScope=$('#unitScope').value;render();});
@@ -153,9 +167,9 @@ if($('#toggleFilters')){
  renderWorkspaceUI=function(){
   const result=catalogQuery.view(filters).result,rows=result.rows,groups=cardGroups(rows),shown=groups.slice(0,visibleLimit).flatMap(g=>g.offers);
   $('#toggleFilters').setAttribute('aria-expanded',String($('#moreFilters').open));
-  $('#scopeStatus').textContent=restoredCondition?'저장 조건을 불러왔습니다 · 검색 범위 '+scopeNames[filters.type]:filters.query?'검색 범위: '+scopeNames[filters.type]:'기본 범위: '+scopeNames[filters.type]+' · 저장 조건은 직접 불러옵니다.';
+  $('#scopeStatus').textContent=restoredCondition?'저장 조건을 불러왔습니다 · 검색 범위 '+scopeNames[filters.type]:filters.query?'검색 범위: '+scopeNames[filters.type]:'';
   $('#openFavorites').textContent='♡ 관심상품 '+library.read().favorites.length;
-  if(catalog.status==='ready'){$('#resultTitle').textContent='검색 결과 '+groups.length.toLocaleString('ko-KR')+'개';$('#optionCount').textContent='옵션 '+rows.length.toLocaleString('ko-KR')+'개';$('#dataStatus').textContent='전체 수집 '+catalog.products.length.toLocaleString('ko-KR')+'개 · 확인된 품절 제외';}
+  if(catalog.status==='ready'){$('#resultTitle').textContent=(filters.query?'‘'+filters.query+'’ 검색 결과':scopeNames[filters.type]+' 상품')+' '+groups.length.toLocaleString('ko-KR')+'개';$('#optionCount').hidden=rows.length===groups.length;$('#optionCount').textContent='옵션 '+rows.length.toLocaleString('ko-KR')+'개';$('#dataStatus').textContent='전체 수집 '+catalog.products.length.toLocaleString('ko-KR')+'개 · 확인된 품절 제외';}
   $('#resultTable').hidden=$('#resultView').value!=='table'||!rows.length;
   $('#grid').hidden=$('#resultView').value==='table'&&rows.length>0;
   if(!$('#resultTable').hidden)$('#resultTable').innerHTML=makeTable(shown);
@@ -180,7 +194,7 @@ if($('#toggleFilters')){
  $('#savedConditions').addEventListener('click',e=>{const b=e.target.closest('[data-condition]'),remove=e.target.closest('[data-remove-condition]');if(b){restoredCondition=true;restoreFilters(AquaCatalog.filtersFromSearch(library.read().saved[Number(b.dataset.condition)].search));}if(remove){library.removeCondition(Number(remove.dataset.removeCondition));renderLibrary();}});
  $('#rangeRecovery').addEventListener('click',e=>{const b=e.target.closest('[data-result-scope]');if(b)restoreFilters(scopeBase(b.dataset.resultScope));});
  $('#comparisonEntry').addEventListener('click',e=>{const b=e.target.closest('[data-compare-entry]');if(!b)return;filters.compareAcross=true;render(false);const target=b.dataset.compareEntry==='none'?$('#sellerComparisons'):$('#exact-comparison-'+b.dataset.compareEntry);target?.scrollIntoView({block:'nearest'});});
- $('#resultTable').addEventListener('click',e=>{if(e.target.closest('[data-table-price]')){filters.sort=filters.sort==='low'?'high':'low';render(false);}else favoriteClick(e);});
+ $('#resultTable').addEventListener('click',e=>{if(e.target.closest('[data-table-price]')){searchSortChosen=true;filters.sort=filters.sort==='low'?'high':'low';render(false);}else favoriteClick(e);});
  $('#search').addEventListener('submit',()=>{if(!composing&&!compositionEnter){restoredCondition=false;renderWorkspaceUI();}});
 
  render(false);
@@ -208,7 +222,7 @@ if($('#ux5Dialog')){
  const quick=document.createElement('div');quick.id='quickConditions';quick.className='quick-conditions';$('.filter-selects').before(quick);
  quick.append($('#livestockFilters'));
  const directCategories=document.createElement('details');directCategories.id='quickCategories';directCategories.hidden=true;directCategories.setAttribute('aria-label','생물 분류 선택');
- const categorySummary=document.createElement('summary');categorySummary.id='quickCategorySummary';directCategories.append(categorySummary);quick.after(directCategories);
+ const categorySummary=document.createElement('summary');categorySummary.id='quickCategorySummary';directCategories.append(categorySummary);$('#toggleFilters').closest('.filter-selects').after(directCategories);
  let directCategoryContext=null;
  document.querySelectorAll('[data-subtype]').forEach(button=>button.addEventListener('click',()=>{if(!directCategories.hidden)directCategories.open=true;}));
  $('#groupTree').addEventListener('click',event=>{if(!directCategories.hidden&&event.target.closest('[data-live-group]')){directCategories.open=false;categorySummary.focus({preventScroll:true});}});
@@ -221,7 +235,7 @@ if($('#ux5Dialog')){
  $('#paginationStatus').after($('#dataStatus'));
  const results=$('.results-head'),tools=document.createElement('div');tools.className='result-tools';tools.append($('#sort').closest('.control'),$('#resultView').closest('label'));results.append(tools);
  const load=document.createElement('button');load.id='loadConditions';load.type='button';load.textContent='조건 불러오기';$('#saveCondition').after(load);load.addEventListener('click',()=>openUX5Panel('saved'));
- const compare=document.createElement('button');compare.id='compareProducts';compare.type='button';compare.textContent='같은 제품 판매처 비교';results.append(compare);compare.addEventListener('click',()=>{filters.compareAcross=!filters.compareAcross;render(false);});
+ const compare=document.createElement('button');compare.id='compareProducts';compare.type='button';compare.textContent='판매처 비교';compare.setAttribute('aria-label','같은 제품의 판매처 비교');results.append(compare);compare.addEventListener('click',()=>{filters.compareAcross=!filters.compareAcross;render(false);});
  $('#compareAcross').closest('label').hidden=true;
  const pricePanel=$('#shoppingFilters').closest('details');pricePanel.open=true;$('#moreFilters').prepend(pricePanel);
  for(const n of [$('#moreFilters'),$('#personalLibrary'),$('#savedPanel')]){parking.append(n);n.open=false;}
@@ -256,10 +270,18 @@ if($('#ux5Dialog')){
   previousWorkspace();
   if(ux5PanelState?.kind==='filters')for(const [id,value]of Object.entries(ux5PanelState.fields)){const el=$('#'+id);if(el&&!el.closest('label')?.hidden){el.value=value.value;el.checked=value.checked;}}
   if(filters.query&&!$('#scopeStatus').textContent.startsWith('저장 조건'))$('#scopeStatus').textContent='';
-  const direct=filters.type==='live'&&['fish','shrimp'].includes(filters.subtype);
+  const gearDirect=filters.type==='gear';
+  const direct=gearDirect||(filters.type==='live'&&['fish','shrimp'].includes(filters.subtype));
+  directCategories.classList.toggle('gear-direct',gearDirect);
+  directCategories.setAttribute('aria-label',gearDirect?'용품 분류 선택':'생물 분류 선택');
   const target=direct?directCategories:browseDetails;
   if($('#fishFilters').parentElement!==target){if(direct)target.append($('#fishFilters'));else target.prepend($('#fishFilters'));}
-  if(direct){
+  if(gearDirect){
+   const leaf=filters.gearGroup||'all',major=filters.gearCategory||'all';
+   if(!directCategoryContext?.startsWith('gear:'))directCategories.open=false;
+   directCategoryContext='gear:'+major+':'+leaf;
+   categorySummary.textContent='용품 종류 · '+(leaf!=='all'?AquaCatalog.gearGroups[leaf]:major!=='all'?AquaCatalog.gearCategories[major]:'전체')+' (선택·변경)';
+  }else if(direct){
    const leaf=filters.subtype==='fish'?filters.fishGroup:filters.liveGroup,browse=filters.browseGroup||'all',key=filters.subtype+':'+leaf+':'+browse;
    if(key!==directCategoryContext)directCategories.open=leaf==='all'&&browse==='all';
    directCategoryContext=key;
@@ -267,6 +289,7 @@ if($('#ux5Dialog')){
    categorySummary.textContent=subtypeNames[filters.subtype]+' 분류 · '+label+' (선택·변경)';
   }else directCategoryContext=null;
   directCategories.hidden=!direct;browseDetails.hidden=direct;
+  $('#query').placeholder=gearDirect?'예: 외부여과기, 퓨리젠 250mL':filters.type==='live'?'예: 네온테트라, 체리새우':'예: 체리새우, 외부여과기';
   $('#quickRoles').hidden=filters.type!=='gear';$('#livestockFilters').hidden=filters.type!=='live';
   roles.querySelectorAll('button').forEach(b=>{b.classList.toggle('active',b.dataset.quickRole===filters.productRole);b.setAttribute('aria-pressed',String(b.dataset.quickRole===filters.productRole));});
   const count=[...$('#activeFilters').querySelectorAll('[data-clear-filter]')].filter(b=>!['query','sort','compareAcross'].includes(b.dataset.clearFilter)).length;

@@ -108,6 +108,16 @@ test('fresh typed and autocomplete searches use relevance without replacing deli
  }
  assert.equal((await search('?type=gear&sort=low')).sort,'low');
 });
+test('product filter chips omit the query and reset preserves search and sort',async()=>{
+ const search='?type=gear&query=외부여과기&sort=high&minPrice=1000&maxPrice=500000';
+ const app=await setup(uxFixture,false,search,true,true),n=app.nodes;
+ assert.doesNotMatch(n.activeFilters.innerHTML,/data-clear-filter="(?:query|sort)"/);
+ assert.match(n.activeFilters.innerHTML,/id="clearAllFilters"/);
+ n.activeFilters.listeners.click({target:{id:'clearAllFilters',closest:()=>null}});
+ const f=AquaCatalog.filtersFromSearch(app.search());
+ assert.equal(f.type,'gear');assert.equal(f.query,'외부여과기');assert.equal(f.sort,'high');
+ assert.equal(f.minPrice,null);assert.equal(f.maxPrice,null);
+});
 test('one-click searches choose their scope and leave unrelated narrow filters behind',async()=>{
  const app=await setup(uxFixture,false,'?type=live&subtype=shrimp&query=체리새우&sort=unit&maxPrice=200',true,true),n=app.nodes;
  n.searchStarters.listeners.click({target:{closest:()=>({dataset:{searchExample:'외부여과기',searchScope:'gear'}})}});

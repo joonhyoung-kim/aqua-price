@@ -92,6 +92,22 @@ test('changing search scope dismisses stale autocomplete without losing the draf
  n.query.value='외부';n.query.listeners.input({target:n.query});
  assert.match(n.searchSuggestions.innerHTML,/외부여과기/);
 });
+test('fresh typed and autocomplete searches use relevance without replacing deliberate price sorting',async()=>{
+ const search=async(initial,sort,select=false)=>{
+  const app=await setup(uxFixture,false,initial,true,true),n=app.nodes;
+  if(sort){app.sort('high');app.sort(sort);}
+  n.query.value='외부';n.query.listeners.input({target:n.query});
+  if(select){n.query.listeners.keydown({key:'ArrowDown',preventDefault(){}});n.query.listeners.keydown({key:'Enter',preventDefault(){}});}
+  else n.search.listeners.submit({preventDefault(){}});
+  return AquaCatalog.filtersFromSearch(app.search());
+ };
+ for(const select of [false,true]){
+  assert.equal((await search('?type=gear',null,select)).sort,'relevance');
+  assert.equal((await search('?type=gear','low',select)).sort,'low');
+  assert.equal((await search('?type=gear&sort=high',null,select)).sort,'high');
+ }
+ assert.equal((await search('?type=gear&sort=low')).sort,'low');
+});
 test('one-click searches choose their scope and leave unrelated narrow filters behind',async()=>{
  const app=await setup(uxFixture,false,'?type=live&subtype=shrimp&query=체리새우&sort=unit&maxPrice=200',true,true),n=app.nodes;
  n.searchStarters.listeners.click({target:{closest:()=>({dataset:{searchExample:'외부여과기',searchScope:'gear'}})}});

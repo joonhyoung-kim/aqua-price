@@ -19,7 +19,12 @@ let searchSortChosen=typeof location==='object'&&/(?:^|[?&])sort=/.test(location
 function sortForSearch(query){return query&&!searchSortChosen&&filters.sort===AquaCatalog.defaultFilters.sort?'relevance':filters.sort;}
 let composing=false,compositionEnter=false;
 let lastGridHTML=null,lastTreeHTML=null,historyReady=false,restoringHistory=false;
-function draftStatus(){const changed=draftQuery.trim()!==filters.query;$('#draftStatus').hidden=!changed;$('#draftStatus').textContent=changed?'입력 중 · 검색 버튼 또는 Enter로 검색하세요. 현재 결과는 이전 검색 조건입니다.':'';}
+function draftStatus(){
+ const changed=draftQuery.trim()!==filters.query,clear=$('#clearSearchField');
+ $('#draftStatus').hidden=!changed;
+ $('#draftStatus').textContent=changed?'입력 중 · Enter로 검색':'';
+ if(clear)clear.hidden=!draftQuery&&!filters.query;
+}
 function money(amount){return amount.toLocaleString('ko-KR',{maximumFractionDigits:2});}
 function displayName(product){return product.name;}
 function offerHTML(product){
